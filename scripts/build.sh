@@ -9,7 +9,7 @@ MARKED=marked@18.0.14
 
 rm -rf _site
 mkdir -p _site/vision
-cp site/index.html site/stil.css _site/
+cp site/index.html site/404.html site/stil.css _site/
 
 npx --yes "$BIZ42" --dir docs/biz42 validate
 npx --yes "$BIZ42" --dir docs/biz42 build --out _site/about --base /docs/about/
