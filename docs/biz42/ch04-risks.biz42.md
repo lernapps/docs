@@ -2,14 +2,14 @@
 
 ## Island proliferation
 
-As AI-assisted development makes it trivially cheap to build educational tools, there is a real risk that the community produces hundreds of isolated, incompatible tools with no shared vocabulary, no common capability map, and no coordination layer. Each tool reinvents the same patterns, and the ecosystem fragments instead of compounds. Likelihood is high given current trends; impact is high as it would undermine edugo's core value proposition.
+As AI-assisted development makes it trivially cheap to build educational tools, there is a real risk that the community produces hundreds of isolated, incompatible tools with no shared vocabulary, no common capability map, and no coordination layer. Each tool reinvents the same patterns, and the ecosystem fragments instead of compounds. Likelihood is high given current trends; impact is high as it would undermine lernapps.net's core value proposition.
 
 ```biz42
 :::risk
 id: risk-island
 title: Island proliferation — fragmented tools with no coordination layer
 severity: high
-mitigation: edugo's capability map and registry provide the coordination layer; architecture guidelines ensure tools are ecosystem-connected from day one
+mitigation: lernapps.net's capability map and registry provide the coordination layer; architecture guidelines ensure tools are ecosystem-connected from day one
 :::
 ```
 
@@ -41,7 +41,7 @@ mitigation: solution registry with PR-based contributions gives every tool a per
 
 ## Unsafe adoption driven by teacher isolation
 
-When teachers cannot find safe, vetted tools through official channels, they resort to whatever they find informally — often passive content platforms or tools with unclear data practices. This is not a knowledge failure; it is a structural gap in the ecosystem that edugo is positioned to fill. Likelihood is high (already observed); impact is medium — harmful to individual teachers but not existential for edugo.
+When teachers cannot find safe, vetted tools through official channels, they resort to whatever they find informally — often passive content platforms or tools with unclear data practices. This is not a knowledge failure; it is a structural gap in the ecosystem that lernapps.net is positioned to fill. Likelihood is high (already observed); impact is medium — harmful to individual teachers but not existential for lernapps.net.
 
 ```biz42
 :::risk
@@ -54,7 +54,7 @@ mitigation: solution registry with active/passive taxonomy and DSGVO signals giv
 
 ## Endorsement reputation risk
 
-If edugo lists or highlights a tool that later proves harmful — to student data, pedagogical outcomes, or community trust — it risks becoming associated with the failure, undermining the credibility of the entire platform. Likelihood is low in the short term; impact is medium.
+If lernapps.net lists or highlights a tool that later proves harmful — to student data, pedagogical outcomes, or community trust — it risks becoming associated with the failure, undermining the credibility of the entire platform. Likelihood is low in the short term; impact is medium.
 
 ```biz42
 :::ignore H005 risk-endorsement is an internally-inferred reputational risk with no single external signal — accepted as a known gap

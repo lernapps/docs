@@ -2,12 +2,12 @@
 
 ## Establish the narrative and positioning
 
-edugo's first obligation is to make clear what it is and what it is not. Without a sharp, credible narrative, contributors won't submit tools, teachers won't trust the registry, and the PISA political window closes before the platform has established itself. This objective addresses the risks of invisibility and unsafe adoption by establishing a trustworthy public identity.
+lernapps.net's first obligation is to make clear what it is and what it is not. Without a sharp, credible narrative, contributors won't submit tools, teachers won't trust the registry, and the PISA political window closes before the platform has established itself. This objective addresses the risks of invisibility and unsafe adoption by establishing a trustworthy public identity.
 
 ```biz42
 :::objective
 id: obj-narrative
-title: Establish clear public narrative — what edugo is and is not
+title: Establish clear public narrative — what lernapps.net is and is not
 addresses: risk-invisibility, risk-unsafe-adoption, opp-pisa-window
 measured-by: measure-landing-engagement
 owner: owner-vorstand
@@ -17,7 +17,7 @@ requires: cap-communication
 
 ## Publish a live capability inventory
 
-The capability map is the strategic core of edugo. Without it, the registry is just a list. With it, gaps become visible build opportunities, contributors can position their work, and school coordinators can assess coverage. This directly addresses island proliferation by providing the coordination vocabulary.
+The capability map is the strategic core of lernapps.net. Without it, the registry is just a list. With it, gaps become visible build opportunities, contributors can position their work, and school coordinators can assess coverage. This directly addresses island proliferation by providing the coordination vocabulary.
 
 ```biz42
 :::objective
@@ -62,7 +62,7 @@ requires: cap-scaffolding, cap-capability-mapping
 
 ## Protect platform credibility through progressive trust
 
-As the registry grows, edugo must not become a source of harmful tool recommendations. The progressive trust model (anecdotal → community-validated → research-backed) and DSGVO signal taxonomy must be operational and visible before growth accelerates.
+As the registry grows, lernapps.net must not become a source of harmful tool recommendations. The progressive trust model (anecdotal → community-validated → research-backed) and DSGVO signal taxonomy must be operational and visible before growth accelerates.
 
 ```biz42
 :::objective

@@ -67,7 +67,7 @@ surfaces: risk-island, opp-ai-creation
 
 ## KMK Strategie "Bildung in der digitalen Welt"
 
-The KMK published its "Bildung in der digitalen Welt" strategy in 2016, establishing a binding Kompetenzrahmen for digital competences across all German states. The strategy was extended in 2021 with recommendations on teaching and learning in the digital world, and again in 2024 with a dedicated AI guidance addendum. This creates both the institutional legitimacy and the vocabulary framework that edugo's capability map is grounded in — and demonstrates that the political system has already committed to this direction, even if implementation lags.
+The KMK published its "Bildung in der digitalen Welt" strategy in 2016, establishing a binding Kompetenzrahmen for digital competences across all German states. The strategy was extended in 2021 with recommendations on teaching and learning in the digital world, and again in 2024 with a dedicated AI guidance addendum. This creates both the institutional legitimacy and the vocabulary framework that lernapps.net's capability map is grounded in — and demonstrates that the political system has already committed to this direction, even if implementation lags.
 
 ```biz42
 :::signal

@@ -38,12 +38,12 @@ target: 20 entries at launch, all with DSGVO status and active/passive level pop
 
 ## Scaffolding and agent guidance usage
 
-Once the scaffolding layer is published, uptake by contributors — measured as new tool submissions that cite edugo architecture or use starter templates — indicates whether the guidance is actually reducing friction.
+Once the scaffolding layer is published, uptake by contributors — measured as new tool submissions that cite lernapps.net architecture or use starter templates — indicates whether the guidance is actually reducing friction.
 
 ```biz42
 :::measure
 id: measure-scaffold-usage
-title: New tool submissions using edugo scaffolding or referencing capability map gaps
+title: New tool submissions using lernapps.net scaffolding or referencing capability map gaps
 target: 5 submissions citing capability map gap within 90 days of scaffolding layer launch
 :::
 ```

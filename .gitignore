@@ -1,18 +1,6 @@
-# dependencies
-node_modules/
-
 # build output
-dist/
-docs/.vitepress/dist/
-
-# VitePress cache (wherever it lands)
-.vitepress/cache/
-docs/.vitepress/cache/
-
-# Playwright
-test-results/
-playwright-report/
-.playwright-cli/
+_site/
+node_modules/
 
 # local env
 .env

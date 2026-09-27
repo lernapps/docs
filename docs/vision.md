@@ -1,4 +1,4 @@
-# edugo — Vision
+# lernapps.net — Vision
 
 > The infrastructure layer that turns isolated educational micro-innovations into a coherent, trustworthy ecosystem.
 
@@ -12,7 +12,7 @@ Study director Samuel Greiff named three systemic causes: weak early childhood e
 
 The Digitalpakt had already invested €11.5 billion by that point. The devices exist. The WiFi exists. What the Digitalpakt could not buy was the right kind of software, used in the right kind of way. Devices in classrooms without a supporting ecosystem mostly produce passive consumption — more screen time, not better learning.
 
-edugo exists to fill that gap.
+lernapps.net exists to fill that gap.
 
 ---
 
@@ -48,7 +48,7 @@ A motivated teacher or developer can now build a working educational app prototy
 
 This is a profound shift. But it creates a second-order problem: **when personal software is cheap, many isolated "software islands" proliferate.** Without coordination infrastructure, these islands don't connect. Their capabilities cannot be compared. Their quality cannot be trusted. They cannot be extended systematically. The proliferation of cheap tools without a unifying layer produces noise, not progress.
 
-edugo's fundamental job is to prevent the island problem — to provide the coordination layer that makes cheap creation compound into a coherent ecosystem.
+lernapps.net's fundamental job is to prevent the island problem — to provide the coordination layer that makes cheap creation compound into a coherent ecosystem.
 
 ---
 
@@ -62,14 +62,14 @@ A teacher who built a classroom tool and wants others to use it. A developer who
 **Their current situation:**  
 Their work is invisible. It exists in a tweet, a Barcamp session, a GitHub repo nobody can find, or a private folder. Even if they share it, there is no structure that makes it trustworthy or findable for a busy teacher.
 
-**What they need from edugo:**  
+**What they need from lernapps.net:**  
 - A structured way to describe what they've built (template that makes quality visible without being burdensome)
 - A way to position it on the capability map (so it's findable by people with the matching need)
 - A trust signal mechanism (so a teacher can evaluate it quickly)
 - The knowledge that others can build on it (fork relationships, visible lineage)
 - AI-assisted contribution tooling that makes the submission process fast
 
-**What edugo needs from them:**  
+**What lernapps.net needs from them:**  
 Their work. Their energy. Their willingness to describe what they built honestly, including its limitations.
 
 ---
@@ -82,12 +82,12 @@ A classroom teacher. Time-poor. DSGVO-anxious. Has devices. Has motivation. Know
 **Their current situation:**  
 Every search leads to either a large passive content platform (sofatutor, Anton) or a 50-page procurement document. The tools that would actually make students create and think are invisible to them. When they do find something, they can't quickly assess whether it's safe for their school context.
 
-**What they need from edugo:**  
+**What they need from lernapps.net:**  
 - "Something I can use next week that is safe, appropriate for my students, and makes them *do* something"
 - Fast, honest answers to: Is this DSGVO-safe? Is it active or passive? Has anyone else used it in a classroom like mine?
 - Discovery that starts from their actual need, not a taxonomy they have to learn
 
-**What edugo needs from them:**  
+**What lernapps.net needs from them:**  
 Their feedback when they try something. "I used this" signals. The knowledge that accumulates from actual classroom use.
 
 ---
@@ -100,7 +100,7 @@ A school principal, digital coordinator, or Medienpädagoge responsible for scho
 **Their current situation:**  
 No structured overview exists of the community-built tool landscape. Official channels give them approved, procured solutions. Everything else is noise.
 
-**What they need from edugo:**  
+**What they need from lernapps.net:**  
 - A structured view of the capability map for their school context: what's well covered, what's missing
 - Evidence-backed quality signals they can use to justify recommendations
 - Alignment to KMK framework without having to do the mapping themselves
@@ -115,16 +115,16 @@ An education researcher, PISA follow-up analyst, education journalist, or policy
 **Their current situation:**  
 The only data available about educational software in use is from large commercial platforms (user counts, ratings). Community-built tools are invisible to institutional observation.
 
-**What they need from edugo:**  
+**What they need from lernapps.net:**  
 - A real-time picture of what teachers and builders are actually making and using
 - Capability map evolution over time: which gaps are being filled, which persist
 - Evidence that certain approaches are gaining or losing community traction
 
 ---
 
-## The gaps edugo fills
+## The gaps lernapps.net fills
 
-| Gap | Current state | What edugo provides |
+| Gap | Current state | What lernapps.net provides |
 |---|---|---|
 | **Capability visibility** | No map of what should exist vs. what does | Living capability map with gap signals |
 | **Data safety trust** | DSGVO review is slow, opaque, per-tool | Lightweight, honest trust signals; frontend-only badge |
@@ -136,23 +136,23 @@ The only data available about educational software in use is from large commerci
 
 ---
 
-## What edugo is not
+## What lernapps.net is not
 
-**Not a content platform.** edugo does not host learning content. It links to and describes tools and approaches.
+**Not a content platform.** lernapps.net does not host learning content. It links to and describes tools and approaches.
 
-**Not an LMS.** edugo has nothing to do with class management, assignment submission, or student records.
+**Not an LMS.** lernapps.net has nothing to do with class management, assignment submission, or student records.
 
-**Not a certification body.** edugo does not officially approve or endorse tools. It makes quality signals visible.
+**Not a certification body.** lernapps.net does not officially approve or endorse tools. It makes quality signals visible.
 
-**Not a procurement platform.** edugo does not help schools buy software or navigate procurement.
+**Not a procurement platform.** lernapps.net does not help schools buy software or navigate procurement.
 
-**Not a replacement for MUNDO, Serlo, or sofatutor.** edugo connects to and bridges these platforms. It fills the coordination layer they don't provide.
+**Not a replacement for MUNDO, Serlo, or sofatutor.** lernapps.net connects to and bridges these platforms. It fills the coordination layer they don't provide.
 
 ---
 
 ## The platform's own architecture as a statement
 
-edugo's own infrastructure is deliberately minimal: structured data files in a GitHub repository, a static frontend, no server, no database. Contributions are pull requests — naturally auditable, forkable, and community-moderated.
+lernapps.net's own infrastructure is deliberately minimal: structured data files in a GitHub repository, a static frontend, no server, no database. Contributions are pull requests — naturally auditable, forkable, and community-moderated.
 
 This is not just pragmatism. It is a statement of values: the platform we build to recommend trustworthy, open, DSGVO-safe tools should itself be trustworthy, open, and DSGVO-safe. It should be possible to audit every decision, fork the whole thing, and run it independently.
 
@@ -162,7 +162,7 @@ The architecture we live is the architecture we recommend.
 
 ## Delivery: vaporware first
 
-Before building infrastructure, edugo will launch a highly polished landing page. The purpose is not to ship — it is to validate. Does this idea resonate with the teachers and builders it's designed for? Is the framing right? Does the capability map concept land?
+Before building infrastructure, lernapps.net will launch a highly polished landing page. The purpose is not to ship — it is to validate. Does this idea resonate with the teachers and builders it's designed for? Is the framing right? Does the capability map concept land?
 
 A compelling landing page that generates genuine signal from the education community is more valuable than a full platform that nobody uses.
 
