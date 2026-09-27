@@ -2,7 +2,7 @@
 
 ## Strategic communication
 
-The ability to articulate what edugo is and is not — in plain language that resonates with teachers, builders, researchers, and policy audiences — across the landing page, documentation, and community channels.
+The ability to articulate what lernapps.net is and is not — in plain language that resonates with teachers, builders, researchers, and policy audiences — across the landing page, documentation, and community channels.
 
 ```biz42
 :::capability

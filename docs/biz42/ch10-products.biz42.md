@@ -2,7 +2,7 @@
 
 ## Landing page
 
-The narrative entry point for all personas — contributors, adopters, navigators, researchers. It communicates the value proposition clearly, directs each stakeholder to the right next step, and establishes edugo's credibility during the PISA political window.
+The narrative entry point for all personas — contributors, adopters, navigators, researchers. It communicates the value proposition clearly, directs each stakeholder to the right next step, and establishes lernapps.net's credibility during the PISA political window.
 
 ```biz42
 :::product
@@ -15,7 +15,7 @@ owner: owner-vorstand
 
 ## Capability map
 
-A publicly accessible, living map of educational capabilities organised by the six KMK Kompetenzrahmen domains. Each capability node carries a coverage status (`needed`, `partial`, `well-covered`). Gap nodes are surfaced as explicit build invitations for contributors. This is the strategic core that differentiates edugo from a plain tool list.
+A publicly accessible, living map of educational capabilities organised by the six KMK Kompetenzrahmen domains. Each capability node carries a coverage status (`needed`, `partial`, `well-covered`). Gap nodes are surfaced as explicit build invitations for contributors. This is the strategic core that differentiates lernapps.net from a plain tool list.
 
 ```biz42
 :::product
