@@ -28,3 +28,7 @@ No npm dependencies: the biz42 CLI and `marked` run via `npx` with pinned versio
 ## History
 
 This repo was `mrsimpson/edugo`, transferred on 2026-09-27; the project edugo is now lernapps.net. The web app (capability map and registry), its data, schemas and arc42 moved to [lernapps/map](https://github.com/lernapps/map) with their history.
+
+## License
+
+The texts in this repo are licensed under [CC BY-SA 4.0](LICENSE) (Creative Commons Attribution-ShareAlike 4.0 International). This covers the few scripts and templates as well, so the whole repo has one license. Contributions are made under the same license.
