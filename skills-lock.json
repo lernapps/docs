@@ -18,6 +18,12 @@
       "sourceType": "github",
       "skillPath": "packages/skill-biz42-context/SKILL.md",
       "computedHash": "d2e41b84358f8c38025b811f9516fb36d0b51c9f3d9c7dcb24026f6aee200498"
+    },
+    "commit": {
+      "source": "mrsimpson/pdt42",
+      "sourceType": "github",
+      "skillPath": ".claude/skills/commit/SKILL.md",
+      "computedHash": "80e8867e584e430f9c7bab78fafc2edf6e0e6b7a0de189a24bbfd88e336d85ca"
     }
   }
 }
