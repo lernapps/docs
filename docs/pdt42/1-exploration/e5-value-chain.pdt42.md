@@ -72,6 +72,7 @@ title: Small educational app
 arena: ar-into-use
 visibility: 80
 evolution: custom
+target: product
 needs: c-hosting, c-devices, c-ai-assistants
 :::
 ```
@@ -102,6 +103,7 @@ title: Discoverability of apps
 arena: ar-into-use
 visibility: 60
 evolution: custom
+target: product
 :::
 ```
 
@@ -116,6 +118,7 @@ title: Signal of fitness for use
 arena: ar-into-use
 visibility: 55
 evolution: genesis
+target: product
 :::
 ```
 
