@@ -37,12 +37,16 @@ Students understand the subject for good grades; parents want the same with litt
 All six plays apply to "Getting apps into use"; PP2 (bring creators on top) is the most important, the others serve it. Targets: app custom → product, discoverability custom → product, signal of fitness for use genesis → product.
 - **Decision**: Personalise on the website only, via local storage and collections carried in a link or QR code. An optional website backend (never for the apps, never with student accounts) is left for later, as an assumption to test in D8.
 
+### KD-08: Brief "Attention for small learning apps" closes Exploration (E7)
+Scenarios from the Pattern Cards E3 (niches meet), E8 (apps that work in class rise) and E12 (teacher platforms become channels). E7, E4 and E9 were left out: no visible signal, or acting mainly in "Building the app".
+- **Decision**: Platformization space is "Getting apps into use", with the core relationship app creators ↔ adopting adults; students are ancillary. Standardise listing, passing on by link or QR code, and the signal of fitness for use.
+
 ---
 
 ## Notes
 
 - Exploration is optional in the PDT, but we do it to find the platformization space before designing.
-- `pdt42 next` points to D1, because the E2 entities already count as started D1 work. We finish Exploration (E7) first.
+- `pdt42 next` points to D1, because the E2 entities already count as started D1 work. Exploration is now done; Strategy Design continues with D1.
 - Preview: `pdt42 serve` only works locally; in a cloud session build with `pdt42 build --out <dir> --single-file`.
 
 ---
@@ -50,7 +54,7 @@ All six plays apply to "Getting apps into use"; PP2 (bring creators on top) is t
 ## Exploration
 
 ### Tasks
-- [ ] E7 Identify the platformization space and consolidate the brief (`:::scenario`, `:::brief`)
+*None — Exploration is done*
 
 ### Completed
 - [x] E1 Identify the ecosystem and its arenas
@@ -59,6 +63,7 @@ All six plays apply to "Getting apps into use"; PP2 (bring creators on top) is t
 - [x] E4 Choose the arena to focus on
 - [x] E5 Map the value chain
 - [x] E6 Apply the six Platform Plays
+- [x] E7 Identify the platformization space and consolidate the brief
 
 ## Strategy Design
 
