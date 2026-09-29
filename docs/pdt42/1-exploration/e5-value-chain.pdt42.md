@@ -71,6 +71,7 @@ id: c-app
 title: Small educational app
 arena: ar-into-use
 visibility: 80
+evolution: custom
 needs: c-hosting, c-devices, c-ai-assistants
 :::
 ```
@@ -85,6 +86,7 @@ id: c-bring-to-students
 title: Bringing the app to students
 arena: ar-into-use
 visibility: 70
+evolution: product
 needs: c-discoverability, c-fitness-signal, c-devices
 :::
 ```
@@ -99,6 +101,7 @@ id: c-discoverability
 title: Discoverability of apps
 arena: ar-into-use
 visibility: 60
+evolution: custom
 :::
 ```
 
@@ -112,6 +115,7 @@ id: c-fitness-signal
 title: Signal of fitness for use
 arena: ar-into-use
 visibility: 55
+evolution: genesis
 :::
 ```
 
@@ -154,5 +158,6 @@ id: c-devices
 title: Devices and connectivity
 arena: ar-into-use
 visibility: 15
+evolution: commodity
 :::
 ```
