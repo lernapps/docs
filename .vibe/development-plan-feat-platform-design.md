@@ -33,12 +33,16 @@ Regulated, in the focus arena, without a holder. Teacher platforms are not a moa
 Students understand the subject for good grades; parents want the same with little time; teachers gain free time by keeping students busy.
 - **Decision**: Evolution today: app custom, bringing to students product, discoverability custom, signal of fitness for use genesis; hosting, AI assistants, devices and connectivity commodity.
 
+### KD-07: Attention for contributed apps is the scarce resource (E6)
+All six plays apply to "Getting apps into use"; PP2 (bring creators on top) is the most important, the others serve it. Targets: app custom → product, discoverability custom → product, signal of fitness for use genesis → product.
+- **Decision**: Personalise on the website only, via local storage and collections carried in a link or QR code. An optional website backend (never for the apps, never with student accounts) is left for later, as an assumption to test in D8.
+
 ---
 
 ## Notes
 
 - Exploration is optional in the PDT, but we do it to find the platformization space before designing.
-- `pdt42 next` points to D1, because the E2 entities already count as started D1 work. We finish Exploration (E6, E7) first.
+- `pdt42 next` points to D1, because the E2 entities already count as started D1 work. We finish Exploration (E7) first.
 - Preview: `pdt42 serve` only works locally; in a cloud session build with `pdt42 build --out <dir> --single-file`.
 
 ---
@@ -46,7 +50,6 @@ Students understand the subject for good grades; parents want the same with litt
 ## Exploration
 
 ### Tasks
-- [ ] E6 Apply the six Platform Plays (`:::play`, `component.target`)
 - [ ] E7 Identify the platformization space and consolidate the brief (`:::scenario`, `:::brief`)
 
 ### Completed
@@ -55,6 +58,7 @@ Students understand the subject for good grades; parents want the same with litt
 - [x] E3 Identify leverageable assets and moats (3 hints open on purpose, see KD-04)
 - [x] E4 Choose the arena to focus on
 - [x] E5 Map the value chain
+- [x] E6 Apply the six Platform Plays
 
 ## Strategy Design
 
