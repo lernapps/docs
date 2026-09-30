@@ -58,6 +58,10 @@ Creators and adopting adults form the core; AI assistants seek to reach a workin
 Between the core roles, tangible values flow today (apps, access, attention); feedback, reputation and gratitude are all potential. Gratitude can flow in all directions, to a different degree in each. Money flows only to commercial teacher platforms.
 - **Decision**: Exchanges with teacher platforms are limited to non-profits: for commercial ones, free apps are unwelcome competition (also in the D2 portrait and scenario E12). AI assistants receive nothing from the peers; what they need comes from the platform.
 
+### KD-13: Core triangle, adopting adults first (D4)
+Core relationships: creators ↔ adults, adults ↔ students, creators ↔ students.
+- **Decision**: The core entity is the adopting adults: without them, no app reaches a classroom and no attention reaches a creator. The triangle widens the brief, where students were ancillary, because students also look for apps themselves and gratitude flows between all three.
+
 ---
 
 ## Notes
@@ -86,7 +90,6 @@ Between the core roles, tangible values flow today (apps, access, attention); fe
 ## Strategy Design
 
 ### Tasks
-- [ ] D4 Choose the core relationships
 - [ ] D5 Identify the elementary transactions and channels
 - [ ] D6 Design the learning engine
 - [ ] D7 Assemble the platform experiences
@@ -96,6 +99,7 @@ Between the core roles, tangible values flow today (apps, access, attention); fe
 - [x] D1 Map the ecosystem (H101 for GitHub and H102 ignored on purpose, see KD-10)
 - [x] D2 Portray the entity-roles (many portrait items are unvalidated assumptions, named in the prose)
 - [x] D3 Analyse the motivations to exchange value
+- [x] D4 Choose the core relationships
 
 ## Growth
 
