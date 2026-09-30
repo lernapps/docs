@@ -1,12 +1,12 @@
 # Chapter 8: Owners
 
-## lernapps.net maintainers
+## Platform owner
 
-The two owners of the GitHub organisation lernapps, Oliver Jägle and Ralf D. Müller, are jointly accountable for all strategic objectives and products. They co-own every common repository with equal rights; app repositories belong to their authors. There is no registered legal entity. How decisions are made is described in [GOVERNANCE.md](https://github.com/lernapps/.github/blob/main/GOVERNANCE.md).
+Oliver Jägle is accountable for the platform: all strategic objectives and products. Ralf D. Müller, the second owner of the GitHub organisation lernapps, focuses on the apps themselves, such as the Mathe-Karte, and does not take part in the platform. App repositories belong to their authors. There is no registered legal entity. How decisions are made is described in [GOVERNANCE.md](https://github.com/lernapps/.github/blob/main/GOVERNANCE.md); it still describes the two owners with equal rights on all common repositories.
 
 ```biz42
 :::owner
-id: owner-vorstand
-title: lernapps.net maintainers (Oliver Jägle, Ralf D. Müller)
+id: owner-platform
+title: Platform owner (Oliver Jägle)
 :::
 ```

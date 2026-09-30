@@ -10,7 +10,7 @@ id: obj-narrative
 title: Establish clear public narrative — what lernapps.net is and is not
 addresses: risk-invisibility, risk-unsafe-adoption, opp-pisa-window
 measured-by: measure-landing-engagement
-owner: owner-vorstand
+owner: owner-platform
 requires: cap-communication
 :::
 ```
@@ -25,7 +25,7 @@ id: obj-capability-map
 title: Publish a live KMK-aligned capability inventory with coverage status
 addresses: risk-island, risk-invisibility, opp-pisa-window
 measured-by: measure-capability-coverage
-owner: owner-vorstand
+owner: owner-platform
 requires: cap-capability-mapping, cap-registry-ops
 :::
 ```
@@ -40,7 +40,7 @@ id: obj-first-apps
 title: Curate a high-quality initial set of registry entries
 addresses: risk-dsgvo, risk-unsafe-adoption, opp-dsgvo-framing
 measured-by: measure-registry-entries
-owner: owner-vorstand
+owner: owner-platform
 requires: cap-curation, cap-registry-ops
 :::
 ```
@@ -55,7 +55,7 @@ id: obj-agent-guidance
 title: Provide scaffolding and agent guidance for ecosystem-connected tool creation
 addresses: risk-island, opp-ai-creation
 measured-by: measure-scaffold-usage
-owner: owner-vorstand
+owner: owner-platform
 requires: cap-scaffolding, cap-capability-mapping
 :::
 ```
@@ -70,7 +70,7 @@ id: obj-trust-model
 title: Operate a progressive trust model that protects platform credibility
 addresses: risk-endorsement, risk-dsgvo
 measured-by: measure-trust-signals
-owner: owner-vorstand
+owner: owner-platform
 requires: cap-curation, cap-registry-ops
 :::
 ```

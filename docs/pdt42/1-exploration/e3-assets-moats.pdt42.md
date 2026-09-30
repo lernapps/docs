@@ -7,15 +7,15 @@ canvas: vrio
 :::
 ```
 
-*The assets are tested in VRIO order: valuable, rare, inimitable, organised; the test stops at the first "no". The ratings are the owners' own assessment.*
+*The assets are tested in VRIO order: valuable, rare, inimitable, organised; the test stops at the first "no". The ratings are the platform owner's own assessment.*
 
-None of the assets is inimitable, so none grounds a lasting advantage on its own: they are supporting assets. Together they make a free, low-doubt offering possible, but whatever advantage lernapps.net gains has to come from the platform itself, not from what the owners hold today.
+None of the assets is inimitable, so none grounds a lasting advantage on its own: they are supporting assets. Together they make a free, low-doubt offering possible, but whatever advantage lernapps.net gains has to come from the platform itself, not from what lernapps.net holds today.
 
 ## Assets
 
 ### Structured modelling DSLs as agent guidance
 
-The owners build and use their own documentation DSLs (biz42, arc42, pdt42): structured models that both people and AI assistants can read, write and validate. The same approach can turn into the guidelines creators give their agents, so that similar apps get built quickly and efficiently instead of each one following its own principles.
+lernapps.net builds on documentation DSLs: biz42 and pdt42 by the platform owner, and arc42 from docToolchain. They are structured models that both people and AI assistants can read, write and validate. The same approach can turn into the guidelines creators give their agents, so that similar apps get built quickly and efficiently instead of each one following its own principles.
 
 Valuable, because agent guidance is what "Building the app" lacks today. Rare, because lernapps.net does not intend to earn money with it: commercial players keep such guidance to themselves, while we can give it away. Not inimitable: the DSLs are open source, and anyone can copy the approach.
 

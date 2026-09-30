@@ -18,7 +18,7 @@ Apps with an explicit educational focus that make students active, each teaching
 Spotting a need → Building the app → Getting apps into use → Evolving the app. No feedback loop from evolving to spotting, as gaps are usually whole apps.
 - **Decision**: "Getting apps into use" is the focus arena. Making an app available and using it are one arena, because the outcome only exists jointly.
 
-### KD-03: The ecosystem scan reflects the owners' own observations (E2)
+### KD-03: The ecosystem scan reflects the platform owner's own observations (E2)
 Eight entities, five jobs in the focus arena. Not yet validated with other ecosystem representatives; that students search via social media and AI assistants is an assumption.
 
 ### KD-04: No asset is inimitable (E3)
@@ -40,6 +40,11 @@ All six plays apply to "Getting apps into use"; PP2 (bring creators on top) is t
 ### KD-08: Brief "Attention for small learning apps" closes Exploration (E7)
 Scenarios from the Pattern Cards E3 (niches meet), E8 (apps that work in class rise) and E12 (teacher platforms become channels). E7, E4 and E9 were left out: no visible signal, or acting mainly in "Building the app".
 - **Decision**: Platformization space is "Getting apps into use", with the core relationship app creators ↔ adopting adults; students are ancillary. Standardise listing, passing on by link or QR code, and the signal of fitness for use.
+
+### KD-09: Oliver Jägle alone owns the platform (2026-09-30)
+Ralf D. Müller focuses on the apps themselves (Mathe-Karte) and does not take part in the platform.
+- **Decision**: The platform owner is Oliver Jägle alone (biz42 `owner-platform`, formerly `owner-vorstand`). Ralf appears as an app creator, not as an owner. In D1, the owner entity-role holds only Oliver.
+- **Open**: GOVERNANCE.md in lernapps/.github still describes two owners with equal rights on all common repositories.
 
 ---
 

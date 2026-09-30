@@ -8,7 +8,7 @@ of: ar-into-use
 :::
 ```
 
-*The value chain of the focus arena "Getting apps into use" as it works today, without lernapps.net. It is based on the owners' own observations.*
+*The value chain of the focus arena "Getting apps into use" as it works today, without lernapps.net. It is based on the platform owner's own observations.*
 
 ## User needs
 
