@@ -60,7 +60,7 @@ Between the core roles, tangible values flow today (apps, access, attention); fe
 
 ### KD-13: Core triangle, adopting adults first (D4)
 Core relationships: creators ↔ adults, adults ↔ students, creators ↔ students.
-- **Decision**: The core entity is the adopting adults: without them, no app reaches a classroom and no attention reaches a creator. The triangle widens the brief, where students were ancillary, because students also look for apps themselves and gratitude flows between all three.
+- **Decision**: The core entity is the adopting adults: without them, no app reaches a classroom and no attention reaches a creator. Creators build personal software without the platform anyway; use by others is a nice-to-have for them. The triangle widens the brief, where students were ancillary, because students also look for apps themselves and gratitude flows between all three.
 
 ---
 

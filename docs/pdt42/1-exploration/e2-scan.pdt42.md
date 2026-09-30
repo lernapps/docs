@@ -15,7 +15,7 @@ This scan covers the focus arena "Getting apps into use" as it works today, with
 
 Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves. Ralf D. Müller, co-owner of the GitHub organisation lernapps, is one of them: he builds the Mathe-Karte and does not take part in the platform.
 
-Portrait (D2): the lack of feedback, the wish for recognition and knowing the app helped are assumptions of the platform owner, still to be validated with creators.
+Portrait (D2): the lack of feedback, the wish for recognition and knowing the app helped are assumptions of the platform owner, still to be validated with creators. Creators build their apps as personal software anyway; reaching other classrooms is a nice-to-have for them, not what drives them (D4).
 
 ```pdt42
 :::entity
