@@ -33,4 +33,5 @@
 | lernapps/map: docs/arc42/04-solution-strategy.arc42.md | Phase 0: landing page first ("vaporware first") | ch12 imp-landing | high | |
 | lernapps/map: docs/arc42/04-solution-strategy.arc42.md | Phase 1: static registry with capability map | ch12 imp-registry | high | |
 | lernapps/map: docs/arc42/04-solution-strategy.arc42.md | Phase 2: scaffolding layer + AI-assisted creation | ch12 imp-scaffolding | high | |
-| lernapps/.github GOVERNANCE.md | Owners: the two org owners, equal rights on all common repos | ch08 | high | Confirmed 2026-09-27 |
+| lernapps/.github GOVERNANCE.md | Owners: the two org owners, equal rights on all common repos | ch08 | high | OPEN: superseded for the platform on 2026-09-30, GOVERNANCE.md not yet updated |
+| user answer (Ralf D. Müller, relayed by Oliver Jägle) | Ralf focuses on the apps (Mathe-Karte), not on the platform; Oliver alone is accountable for the platform | ch08 owner-platform | high | Confirmed 2026-09-30 |

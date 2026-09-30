@@ -9,7 +9,7 @@ The narrative entry point for all personas — contributors, adopters, navigator
 id: prod-landing-page
 title: Landing page — narrative entry point for all personas
 fulfills: exp-contributor, exp-adopter, exp-navigator, exp-signal-reader
-owner: owner-vorstand
+owner: owner-platform
 :::
 ```
 
@@ -22,7 +22,7 @@ A publicly accessible, living map of educational capabilities organised by the s
 id: prod-capability-map
 title: Capability map — KMK-aligned living inventory of educational capabilities
 fulfills: exp-navigator, exp-signal-reader, exp-contributor
-owner: owner-vorstand
+owner: owner-platform
 :::
 ```
 
@@ -35,7 +35,7 @@ A structured, filterable catalog of community-built educational tools. Every ent
 id: prod-registry
 title: Solution registry — structured, trusted catalog of community-built tools
 fulfills: exp-adopter, exp-contributor, exp-navigator, exp-maintainer
-owner: owner-vorstand
+owner: owner-platform
 :::
 ```
 
@@ -48,6 +48,6 @@ Architecture guidelines, starter templates, and an AI-assisted creation flow tha
 id: prod-scaffolding
 title: Scaffolding layer — architecture guidelines and AI-assisted creation flow
 fulfills: exp-contributor, exp-oss-contributor
-owner: owner-vorstand
+owner: owner-platform
 :::
 ```

@@ -7,13 +7,13 @@ canvas: ecosystem-scan
 :::
 ```
 
-This scan covers the focus arena "Getting apps into use" as it works today, without lernapps.net. Jobs are phrased by their outcome; how they are done today is described in the prose. The picture is based on the owners' own observations and has not yet been validated with other ecosystem representatives.
+This scan covers the focus arena "Getting apps into use" as it works today, without lernapps.net. Jobs are phrased by their outcome; how they are done today is described in the prose. The picture is based on the platform owner's own observations and has not yet been validated with other ecosystem representatives.
 
 ## Entities
 
 ### App creators
 
-Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves.
+Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves. Ralf D. Müller, co-owner of the GitHub organisation lernapps, is one of them: he builds the Mathe-Karte and does not take part in the platform.
 
 ```pdt42
 :::entity
