@@ -173,7 +173,7 @@ clusters:
 
 Platforms where teachers find digital teaching offerings, some commercial, some non-profit. Some came out of government initiatives.
 
-Portrait (D2): apart from their reach among teachers, the portrait consists of assumptions of the platform owner, still to be validated.
+Portrait (D2): apart from their reach among teachers, the portrait consists of assumptions of the platform owner, still to be validated. Commercial and non-profit platforms differ here: for commercial ones, free apps are rather unwelcome competition, so the convenience gain mainly applies to non-profit platforms.
 
 ```pdt42
 :::entity

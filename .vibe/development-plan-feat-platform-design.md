@@ -54,6 +54,10 @@ Roles: creators peer-producer; adopting adults and students peer-consumer; schoo
 Creators and adopting adults form the core; AI assistants seek to reach a working app with fewer iterations and to build apps that can easily be used. Instructions and scaffolding are the platform's offer to them, not a gain they seek (D3, D5).
 - **Decision**: Portraits rest on E1/E2, the vision and the owner's statements. Unvalidated items are named as assumptions in each entity's prose; social media is kept minimal on purpose.
 
+### KD-12: Recognition and feedback are the missing flows (D3)
+Between the core roles, tangible values flow today (apps, access, attention); feedback, reputation and gratitude are all potential. Gratitude can flow in all directions, to a different degree in each. Money flows only to commercial teacher platforms.
+- **Decision**: Exchanges with teacher platforms are limited to non-profits: for commercial ones, free apps are unwelcome competition (also in the D2 portrait and scenario E12). AI assistants receive nothing from the peers; what they need comes from the platform.
+
 ---
 
 ## Notes
@@ -82,7 +86,6 @@ Creators and adopting adults form the core; AI assistants seek to reach a workin
 ## Strategy Design
 
 ### Tasks
-- [ ] D3 Analyse the motivations to exchange value
 - [ ] D4 Choose the core relationships
 - [ ] D5 Identify the elementary transactions and channels
 - [ ] D6 Design the learning engine
@@ -92,6 +95,7 @@ Creators and adopting adults form the core; AI assistants seek to reach a workin
 ### Completed
 - [x] D1 Map the ecosystem (H101 for GitHub and H102 ignored on purpose, see KD-10)
 - [x] D2 Portray the entity-roles (many portrait items are unvalidated assumptions, named in the prose)
+- [x] D3 Analyse the motivations to exchange value
 
 ## Growth
 
