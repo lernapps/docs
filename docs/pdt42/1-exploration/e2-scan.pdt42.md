@@ -194,6 +194,8 @@ layer: infrastructure
 
 The tools creators build their apps with. For engineers they also replace discovery: instead of searching further, they have an assistant build their own app. They are a partner the platform has to design for: whatever lernapps.net offers creators has to work through their AI assistants.
 
+Portrait (D2): lernapps.net plans to serve their convenience gain with better instructions and scaffolding (D3, D5). Their potential, goal and pressure are assumptions of the platform owner.
+
 ```pdt42
 :::entity
 id: e-ai-assistants
@@ -202,6 +204,28 @@ role: partner
 layer: infrastructure
 clusters:
   - Claude
+context:
+  - Tools creators build apps with
+  - Replace discovery for engineers
+  - Becoming part of every household's basic equipment
+potential:
+  - Build apps that follow shared guidelines, if they get them as context
+goals:
+  - Deliver useful results to their users
+pressures:
+  - Competition between providers
+convenience-gains:
+  - Reach a working app with fewer iterations and less guessing
+value-gains:
+  - Build apps that can easily be used
+:::
+```
+
+```pdt42
+:::canvas
+id: cv-portrait-ai-assistants
+canvas: entity-portrait
+of: e-ai-assistants
 :::
 ```
 
