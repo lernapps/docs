@@ -15,6 +15,8 @@ This scan covers the focus arena "Getting apps into use" as it works today, with
 
 Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves. Ralf D. Müller, co-owner of the GitHub organisation lernapps, is one of them: he builds the Mathe-Karte and does not take part in the platform.
 
+Portrait (D2): the lack of feedback, the wish for recognition and knowing the app helped are assumptions of the platform owner, still to be validated with creators.
+
 ```pdt42
 :::entity
 id: e-creators
@@ -25,12 +27,46 @@ clusters:
   - Teachers
   - Parents
   - Engineers
+context:
+  - Build apps with AI assistants, alongside their actual job
+  - Publish on their own website, GitHub or social media
+assets:
+  - Their apps
+  - Classroom experience (teachers) or development skills (engineers)
+capabilities:
+  - Build a working app in a weekend with AI assistance
+potential:
+  - Build on existing apps instead of starting from scratch
+  - Evolve apps with feedback from use
+goals:
+  - Close a gap they noticed themselves, for their own class or child
+pressures:
+  - Little time
+  - The app rots after a single use
+  - No feedback whether the app works elsewhere
+convenience-gains:
+  - Build and publish with less effort
+reach-gains:
+  - The app reaches classrooms beyond their own circle
+value-gains:
+  - Recognition for their work
+  - Knowing the app helped others learn
+:::
+```
+
+```pdt42
+:::canvas
+id: cv-portrait-creators
+canvas: entity-portrait
+of: e-creators
 :::
 ```
 
 ### Adopting adults
 
 Adults who come across apps built by others, browse them and show them to their students. Engineers belong here too, as they also look for existing apps to re-use.
+
+Portrait (D2): recommending apps to colleagues and the next test as a pressure are assumptions of the platform owner, still to be validated with teachers and parents.
 
 ```pdt42
 :::entity
@@ -42,6 +78,38 @@ clusters:
   - Teachers
   - Parents
   - Engineers
+context:
+  - Short of time
+  - Devices exist at school and at home
+  - Find apps by word of mouth, on teacher platforms or on GitHub
+assets:
+  - Access to students
+  - Devices
+potential:
+  - Give feedback from classroom use
+  - Recommend apps to colleagues
+goals:
+  - Teachers: gain free time by keeping students busy, for individual support or preparation
+  - Parents: support their children's learning with little time
+pressures:
+  - Lack of time
+  - Responsibility for data protection
+  - The next test
+convenience-gains:
+  - An app usable next week, without installation or sign-up
+reach-gains:
+  - Active-learning apps beyond the large, passive platforms
+value-gains:
+  - Certainty that an app may be used
+  - Students actively doing something
+:::
+```
+
+```pdt42
+:::canvas
+id: cv-portrait-adopters
+canvas: entity-portrait
+of: e-adopters
 :::
 ```
 
