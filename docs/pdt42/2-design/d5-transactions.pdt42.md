@@ -1,6 +1,12 @@
 # Identify the elementary transactions and channels
 
-*Draft for discussion. One Transactions Board per core relationship (D4). Each transaction is a repeatable action with a specific value unit; `happening: yes` marks what already occurs today, without lernapps.net. The channels are what the platform would build to lower the cost of each transaction.*
+*One Transactions Board per core relationship (D4). Each transaction is a repeatable action with a specific value unit; `happening: yes` marks what already occurs today, without lernapps.net. The channels are what the platform would build to lower the cost of each transaction.*
+
+Three transactions have no platform channel on purpose: learning with an app and working on it happen inside the app itself, and students thank adults directly in class. The platform does not need to stand between them.
+
+```pdt42
+:::ignore H108 Learning with and working on an app happen in the app, thanks to adults in class; no platform channel on purpose :::
+```
 
 ## Transactions Board: Creators and adults
 
