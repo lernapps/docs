@@ -23,7 +23,7 @@ Eight entities, five jobs in the focus arena. Not yet validated with other ecosy
 
 ### KD-04: No asset is inimitable (E3)
 Modelling DSLs as agent guidance (vr, rare because we do not intend to earn money), frontend-only architecture (v), non-profit at near-zero marginal cost (vr).
-- **Decision**: The H002 hints stay open on purpose. The assets are supporting; the advantage has to come from the platform itself.
+- **Decision**: The H002 hints are accepted on purpose (`:::ignore H002` in E3). The assets are supporting; the advantage has to come from the platform itself.
 
 ### KD-05: The only moat is data protection law and terms of use (E3)
 Regulated, in the focus arena, without a holder. Teacher platforms are not a moat (alternative routes exist), and school gatekeepers can be bypassed by an entrepreneurial teacher.
@@ -48,7 +48,7 @@ Ralf D. Müller focuses on the apps themselves (Mathe-Karte) and does not take p
 
 ### KD-10: Six peer roles, GitHub as means of production (D1)
 Roles: creators peer-producer; adopting adults and students peer-consumer; school gatekeepers stakeholder; teacher platforms, social media and AI assistants partner; platform owner (Oliver Jägle) owner.
-- **Decision**: GitHub has no platform role: lernapps.net is not large enough for a relationship with GitHub, so it is a means of production in the platform's infrastructure. AI assistants are a partner the platform has to design for. Social media stays a partner despite little expected potential. The six peer roles are kept on purpose (H102 open).
+- **Decision**: GitHub has no platform role: lernapps.net is not large enough for a relationship with GitHub, so it is a means of production in the platform's infrastructure. AI assistants are a partner the platform has to design for. Social media stays a partner despite little expected potential. The six peer roles are kept on purpose; H101 (GitHub) and H102 are accepted with `:::ignore` in E2.
 
 ---
 
@@ -56,6 +56,7 @@ Roles: creators peer-producer; adopting adults and students peer-consumer; schoo
 
 - Exploration is optional in the PDT, but we do it to find the platformization space before designing.
 - `pdt42 next` points to D1, because the E2 entities already count as started D1 work. Exploration is now done; Strategy Design continues with D1.
+- Accepted deviations: `:::ignore <code> <reason> :::` inside a `pdt42` fence (undocumented in pdt42 0.4.0). It silences that code for the whole file, so a new finding of the same code in that file stays hidden too.
 - Preview: `pdt42 serve` only works locally; in a cloud session build with `pdt42 build --out <dir> --single-file`.
 
 ---
@@ -68,7 +69,7 @@ Roles: creators peer-producer; adopting adults and students peer-consumer; schoo
 ### Completed
 - [x] E1 Identify the ecosystem and its arenas
 - [x] E2 Scan the ecosystem
-- [x] E3 Identify leverageable assets and moats (3 hints open on purpose, see KD-04)
+- [x] E3 Identify leverageable assets and moats (H002 ignored on purpose, see KD-04)
 - [x] E4 Choose the arena to focus on
 - [x] E5 Map the value chain
 - [x] E6 Apply the six Platform Plays
@@ -86,7 +87,7 @@ Roles: creators peer-producer; adopting adults and students peer-consumer; schoo
 - [ ] D8 Set up the Minimum Viable Platform
 
 ### Completed
-- [x] D1 Map the ecosystem (H102 and H101 for GitHub open on purpose, see KD-10)
+- [x] D1 Map the ecosystem (H101 for GitHub and H102 ignored on purpose, see KD-10)
 
 ## Growth
 

@@ -11,6 +11,10 @@ canvas: vrio
 
 None of the assets is inimitable, so none grounds a lasting advantage on its own: they are supporting assets. Together they make a free, low-doubt offering possible, but whatever advantage lernapps.net gains has to come from the platform itself, not from what lernapps.net holds today.
 
+```pdt42
+:::ignore H002 No asset is inimitable; the assets are supporting on purpose (KD-04) :::
+```
+
 ## Assets
 
 ### Structured modelling DSLs as agent guidance
