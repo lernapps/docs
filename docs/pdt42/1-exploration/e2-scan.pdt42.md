@@ -19,6 +19,7 @@ Engaged people who build small educational apps, typically with AI tools, for a 
 :::entity
 id: e-creators
 title: App creators
+role: peer-producer
 layer: long-tail
 clusters:
   - Teachers
@@ -35,6 +36,7 @@ Adults who come across apps built by others, browse them and show them to their 
 :::entity
 id: e-adopters
 title: Adopting adults
+role: peer-consumer
 layer: long-tail
 clusters:
   - Teachers
@@ -51,6 +53,7 @@ The learners the apps are built for. They usually get to know an app through an 
 :::entity
 id: e-students
 title: Students
+role: peer-consumer
 layer: long-tail
 :::
 ```
@@ -63,6 +66,7 @@ People at school whom careful teachers ask before using an app. They act as loca
 :::entity
 id: e-gatekeepers
 title: School gatekeepers
+role: stakeholder
 layer: aggregator
 clusters:
   - School director
@@ -78,6 +82,7 @@ Platforms where teachers find digital teaching offerings, some commercial, some 
 :::entity
 id: e-teacher-platforms
 title: Teacher platforms (commercial or non-profit)
+role: partner
 layer: aggregator
 clusters:
   - fobizz
@@ -87,12 +92,13 @@ clusters:
 
 ### Social media
 
-Where creators share their apps and where apps travel by recommendation.
+Where creators share their apps and where apps travel by recommendation. It stays a partner, although the platform owner expects little potential from it.
 
 ```pdt42
 :::entity
 id: e-social-media
 title: Social media
+role: partner
 layer: aggregator
 :::
 ```
@@ -100,6 +106,8 @@ layer: aggregator
 ### GitHub
 
 Where many creators publish their apps' code. Engineers search it for apps to re-use, but there is usually little content, and hardly anything that specific.
+
+For lernapps.net, GitHub is a means of production rather than a partner: the platform is neither large nor prominent enough to have a relationship with GitHub. It still deliberately builds its own infrastructure on it, such as issue templates, GitHub Actions workflows, and the apps themselves with their labels. So GitHub has no platform role and appears in the platform's infrastructure instead (D1).
 
 ```pdt42
 :::entity
@@ -111,12 +119,13 @@ layer: infrastructure
 
 ### AI assistants
 
-The tools creators build their apps with. For engineers they also replace discovery: instead of searching further, they have an assistant build their own app.
+The tools creators build their apps with. For engineers they also replace discovery: instead of searching further, they have an assistant build their own app. They are a partner the platform has to design for: whatever lernapps.net offers creators has to work through their AI assistants.
 
 ```pdt42
 :::entity
 id: e-ai-assistants
 title: AI assistants
+role: partner
 layer: infrastructure
 clusters:
   - Claude
