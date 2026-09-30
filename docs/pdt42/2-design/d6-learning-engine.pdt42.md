@@ -9,7 +9,7 @@ canvas: learning-engine
 
 *Draft for discussion. One row per core role (D4): how it arrives, and the key challenges when onboarding, getting better and catching a new opportunity. The services answer these challenges; like the channels (D5), they say what the platform offers, not how it is built.*
 
-The engine has to solve the supply insight from D4: creators start for themselves, so the first listing must cost almost nothing, and once their app is used, use and praise must reach them. It also opens a path from the consumption to the production side: adults who use apps can start adapting and building their own, with the same guidance.
+The engine has to solve the supply insight from D4: creators start for themselves, so the first listing must cost almost nothing, and once their app is used, use and praise must reach them. It also opens paths from the consumption to the production side: adults and students who use apps can start adapting and building their own, with the same guidance.
 
 ## Learning engine
 
@@ -58,7 +58,7 @@ evolves-to: e-creators
 
 ### Students
 
-Students arrive through an adult. They get better at using apps on their own, for instance before a test. Whether some later build apps themselves is left open.
+Students arrive through an adult. They get better at using apps on their own, for instance before a test. Some can become creators themselves, building an app for a topic they struggled with.
 
 ```pdt42
 :::learning-engine
@@ -71,6 +71,9 @@ onboarding:
 getting-better:
   - Return to apps and find new ones for their topic before a test
   - Thank the creator
+new-opportunity:
+  - Build their own app
+evolves-to: e-creators
 :::
 ```
 
@@ -138,16 +141,48 @@ kind: empowering
 
 ### Finding apps by topic and grade
 
-Helps adults and students find a fitting app in one place.
+Helps adults find a fitting app in one place.
 
 ```pdt42
 :::service
 id: s-finding
 title: Finding apps by topic and grade
-for: e-adopters, e-students
+for: e-adopters
 stage: onboarding
 kind: other
-supports: t-find-app, t-return-to-app
+supports: t-find-app
+channel: ch-app-overview
+:::
+```
+
+### Starting an app right away
+
+Students open an app an adult brought to them and start right away, without installation or sign-up.
+
+```pdt42
+:::service
+id: s-start-right-away
+title: Starting an app right away
+for: e-students
+stage: onboarding
+kind: other
+supports: t-bring-app
+channel: ch-collections
+:::
+```
+
+### Finding apps before a test
+
+Helps students return to apps and find new ones for their topic on their own, for instance before a test.
+
+```pdt42
+:::service
+id: s-student-finding
+title: Finding apps before a test
+for: e-students
+stage: getting-better
+kind: other
+supports: t-return-to-app
 channel: ch-app-overview
 :::
 ```
@@ -202,13 +237,13 @@ channel: ch-feedback
 
 ### From using to adapting apps
 
-Opens the path from the consumption to the production side: adults adapt an app or build their own, using the guidance for building apps.
+Opens the path from the consumption to the production side: adults and students adapt an app or build their own, using the guidance for building apps.
 
 ```pdt42
 :::service
 id: s-adapt-apps
 title: From using to adapting apps
-for: e-adopters
+for: e-adopters, e-students
 stage: new-opportunity
 kind: other
 :::
