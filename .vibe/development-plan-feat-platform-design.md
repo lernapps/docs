@@ -73,7 +73,7 @@ Ralf D. Müller focuses on the apps themselves (Mathe-Karte) and does not take p
 ## Strategy Design
 
 ### Tasks
-- [ ] D1 Map the ecosystem: give the eight entities a role, add the `:::platform` block and the Ecosystem Canvas (9 findings open)
+- [ ] D1 Map the ecosystem: roles, platform block and Ecosystem Canvas done; open: 7 peer roles, cluster down to five (H102)
 - [ ] D2 Portray the entity-roles
 - [ ] D3 Analyse the motivations to exchange value
 - [ ] D4 Choose the core relationships
