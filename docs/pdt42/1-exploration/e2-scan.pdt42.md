@@ -131,6 +131,7 @@ context:
 potential:
   - Return to apps on their own
   - Recommend apps to classmates
+  - Build apps themselves
 goals:
   - Understand the subject to get good grades
 pressures:
