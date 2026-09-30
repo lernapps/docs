@@ -27,7 +27,7 @@ clusters:
 
 ## lernapps.net
 
-The platform for the ecosystem of small, active-learning educational apps. The owner runs its infrastructure on GitHub, the platform's means of production: the website with the app overview, the agent guidance and starter templates, and the issue templates and GitHub Actions workflows contributions go through. Narrative, core entity and value propositions follow in the later steps.
+The platform for the ecosystem of small, active-learning educational apps. The owner runs its infrastructure on GitHub, the platform's means of production: the website with the app overview, the agent guidance and starter templates, and the issue templates and GitHub Actions workflows contributions go through. Its core entity, chosen in D4, is the adopting adults. Narrative and value propositions follow in the later steps.
 
 ```pdt42
 :::platform
@@ -36,6 +36,7 @@ title: lernapps.net
 ecosystem: eco-edu-apps
 brief: br-attention
 owners: e-platform-owner
+core-entity: e-adopters
 infrastructure:
   - Website with the app overview
   - Agent guidance and starter templates
