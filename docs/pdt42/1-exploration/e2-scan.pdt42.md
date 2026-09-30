@@ -117,12 +117,39 @@ of: e-adopters
 
 The learners the apps are built for. They usually get to know an app through an adult, and may later return to it on their own.
 
+Portrait (D2): recommending apps to classmates and all three gains are assumptions of the platform owner, still to be validated.
+
 ```pdt42
 :::entity
 id: e-students
 title: Students
 role: peer-consumer
 layer: long-tail
+context:
+  - Get to know apps through an adult
+  - Use them on school tablets or at home
+potential:
+  - Return to apps on their own
+  - Recommend apps to classmates
+goals:
+  - Understand the subject to get good grades
+pressures:
+  - The next test
+convenience-gains:
+  - Quick help right before the test
+reach-gains:
+  - An app for exactly the topic they struggle with
+value-gains:
+  - Better grades
+  - Understanding the subject
+:::
+```
+
+```pdt42
+:::canvas
+id: cv-portrait-students
+canvas: entity-portrait
+of: e-students
 :::
 ```
 
@@ -146,6 +173,8 @@ clusters:
 
 Platforms where teachers find digital teaching offerings, some commercial, some non-profit. Some came out of government initiatives.
 
+Portrait (D2): apart from their reach among teachers, the portrait consists of assumptions of the platform owner, still to be validated.
+
 ```pdt42
 :::entity
 id: e-teacher-platforms
@@ -155,6 +184,29 @@ layer: aggregator
 clusters:
   - fobizz
   - Serlo
+context:
+  - Collect digital teaching offerings
+  - Some commercial, some non-profit, some came out of government initiatives
+assets:
+  - Reach among teachers
+goals:
+  - An attractive, trustworthy offering for teachers
+pressures:
+  - Keeping the offering current and broad
+convenience-gains:
+  - More offerings without producing them themselves
+reach-gains:
+  - More teachers
+value-gains:
+  - Revenue (commercial) or mission impact (non-profit)
+:::
+```
+
+```pdt42
+:::canvas
+id: cv-portrait-teacher-platforms
+canvas: entity-portrait
+of: e-teacher-platforms
 :::
 ```
 
@@ -162,12 +214,30 @@ clusters:
 
 Where creators share their apps and where apps travel by recommendation. It stays a partner, although the platform owner expects little potential from it.
 
+Portrait (D2): kept minimal on purpose, as little potential is expected; goal and gain are assumptions.
+
 ```pdt42
 :::entity
 id: e-social-media
 title: Social media
 role: partner
 layer: aggregator
+context:
+  - Where creators share their apps and apps travel by recommendation
+potential:
+  - Spread apps by recommendation
+goals:
+  - Engagement
+reach-gains:
+  - Content that gets shared
+:::
+```
+
+```pdt42
+:::canvas
+id: cv-portrait-social-media
+canvas: entity-portrait
+of: e-social-media
 :::
 ```
 
