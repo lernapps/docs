@@ -9,7 +9,7 @@ canvas: motivations-matrix
 
 *Draft for discussion: each cell is what one role gives, or could give, to another. Current flows happen today; potential ones need the platform to enable them.*
 
-Money flows only to commercial teacher platforms. Feedback and reputation, which drive quality, are all potential: they are exactly what creators lack today. AI assistants receive nothing from the peer roles; what they need, instructions and scaffolding, comes from the platform itself.
+Money flows only to commercial teacher platforms. Feedback and reputation, which drive quality, are all potential: they are exactly what creators lack today, from adults as well as from students. Teacher platforms gain little: for commercial ones, free apps are competition, so exchanges with them are likely limited to non-profit platforms. AI assistants receive nothing from the peer roles; what they need, instructions and scaffolding, comes from the platform itself.
 
 ## Apps for their class or child
 
@@ -101,6 +101,21 @@ kind: attention
 :::
 ```
 
+## Gratitude for the app
+
+Students who were helped by an app could show some gratitude to its creator. This is recognition, like a recommendation from adults, and it comes from the people the app was built for.
+
+```pdt42
+:::motivation
+id: m-students-creators-gratitude
+from: e-students
+to: e-creators
+gives: Gratitude for the app
+status: potential
+kind: reputation
+:::
+```
+
 ## Access to the app by link, QR code or projector
 
 Students usually get to know an app through an adult, who uses every available channel.
@@ -178,14 +193,14 @@ kind: money
 
 ## Reach among teachers
 
-If teacher platforms show contributed apps (scenario E12), they give creators reach among teachers.
+If teacher platforms show contributed apps (scenario E12), they give creators reach among teachers. As free apps compete with commercial offerings, this is likely only from non-profit platforms.
 
 ```pdt42
 :::motivation
 id: m-platforms-creators
 from: e-teacher-platforms
 to: e-creators
-gives: Reach among teachers
+gives: Reach among teachers (likely only from non-profits)
 status: potential
 kind: attention
 :::
@@ -193,14 +208,14 @@ kind: attention
 
 ## Offerings they don't have to produce themselves
 
-In return, creators give teacher platforms offerings without producing them themselves.
+In return, creators give teacher platforms offerings without producing them themselves. The gain is small: for commercial platforms, free apps are rather unwelcome competition, so probably only non-profit platforms appreciate them.
 
 ```pdt42
 :::motivation
 id: m-creators-platforms
 from: e-creators
 to: e-teacher-platforms
-gives: Offerings they don't have to produce themselves
+gives: Offerings they don't have to produce themselves (mainly welcome to non-profits)
 status: potential
 kind: goods
 :::

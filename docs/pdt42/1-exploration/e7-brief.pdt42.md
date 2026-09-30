@@ -41,7 +41,7 @@ impact: Feedback from classroom use and forks direct the scarce attention to the
 
 ### Teacher platforms show apps from lernapps.net
 
-Adults already find apps on teacher platforms such as fobizz or Serlo. Instead of competing with them, lernapps.net lets them show its apps, so the platforms become a channel for contributed apps.
+Adults already find apps on teacher platforms such as fobizz or Serlo. Instead of competing with them, lernapps.net lets them show its apps, so the platforms become a channel for contributed apps. This is likely limited to non-profit platforms such as Serlo: for commercial ones, free apps are rather unwelcome competition (D3).
 
 ```pdt42
 :::scenario
@@ -49,7 +49,7 @@ id: sc-platforms-as-channels
 title: Teacher platforms show apps from lernapps.net
 pattern: e12
 arena: ar-into-use
-impact: Teacher platforms become a channel for contributed apps instead of a competing offering
+impact: Non-profit teacher platforms become a channel for contributed apps instead of a competing offering
 :::
 ```
 
