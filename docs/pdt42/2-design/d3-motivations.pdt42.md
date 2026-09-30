@@ -9,7 +9,7 @@ canvas: motivations-matrix
 
 *Draft for discussion: each cell is what one role gives, or could give, to another. Current flows happen today; potential ones need the platform to enable them.*
 
-Money flows only to commercial teacher platforms. Feedback and reputation, which drive quality, are all potential: they are exactly what creators lack today, from adults as well as from students. Teacher platforms gain little: for commercial ones, free apps are competition, so exchanges with them are likely limited to non-profit platforms. AI assistants receive nothing from the peer roles; what they need, instructions and scaffolding, comes from the platform itself.
+Money flows only to commercial teacher platforms. Feedback and reputation, which drive quality, are all potential: they are exactly what creators lack today, from adults as well as from students. Gratitude can flow in all directions, to a different degree in each. Teacher platforms gain little: for commercial ones, free apps are competition, so exchanges with them are likely limited to non-profit platforms. AI assistants receive nothing from the peer roles; what they need, instructions and scaffolding, comes from the platform itself.
 
 ## Apps for their class or child
 
@@ -101,16 +101,95 @@ kind: attention
 :::
 ```
 
-## Gratitude for the app
+## Gratitude
 
-Students who were helped by an app could show some gratitude to its creator. This is recognition, like a recommendation from adults, and it comes from the people the app was built for.
+Gratitude can potentially flow in all directions, to a different degree in each. It is a form of recognition, so it is recorded as reputation. The cells below cover the three core roles; between the partners it is weaker and left out. How strong each direction is remains open.
+
+### Gratitude for an app that helped
+
+Students who were helped by an app could show some gratitude to its creator. This recognition comes from the people the app was built for.
 
 ```pdt42
 :::motivation
 id: m-students-creators-gratitude
 from: e-students
 to: e-creators
-gives: Gratitude for the app
+gives: Gratitude for an app that helped
+status: potential
+kind: reputation
+:::
+```
+
+### Gratitude for bringing the app to them
+
+Students could be grateful to the adult who showed them an app that helped.
+
+```pdt42
+:::motivation
+id: m-students-adopters-gratitude
+from: e-students
+to: e-adopters
+gives: Gratitude for bringing the app to them
+status: potential
+kind: reputation
+:::
+```
+
+### Gratitude for an app that worked in class
+
+Adults could thank a creator for an app that worked in their class, beyond recommending it.
+
+```pdt42
+:::motivation
+id: m-adopters-creators-gratitude
+from: e-adopters
+to: e-creators
+gives: Gratitude for an app that worked in class
+status: potential
+kind: reputation
+:::
+```
+
+### Gratitude for putting the app into use
+
+Creators could be grateful to adults who put their app into use and give feedback.
+
+```pdt42
+:::motivation
+id: m-creators-adopters-gratitude
+from: e-creators
+to: e-adopters
+gives: Gratitude for putting the app into use
+status: potential
+kind: reputation
+:::
+```
+
+### Gratitude for using the app
+
+Creators could be grateful to students who use their app and come back to it.
+
+```pdt42
+:::motivation
+id: m-creators-students-gratitude
+from: e-creators
+to: e-students
+gives: Gratitude for using the app
+status: potential
+kind: reputation
+:::
+```
+
+### Gratitude for working on their own
+
+Teachers and parents could be grateful to students who work on their own with an app.
+
+```pdt42
+:::motivation
+id: m-adopters-students-gratitude
+from: e-adopters
+to: e-students
+gives: Gratitude for working on their own
 status: potential
 kind: reputation
 :::
