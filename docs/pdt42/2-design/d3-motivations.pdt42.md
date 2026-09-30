@@ -7,7 +7,7 @@ canvas: motivations-matrix
 :::
 ```
 
-*Draft for discussion: each cell is what one role gives, or could give, to another. Current flows happen today; potential ones need the platform to enable them.*
+*Each cell is what one role gives, or could give, to another. Current flows happen today; potential ones need the platform to enable them.*
 
 Money flows only to commercial teacher platforms. Feedback and reputation, which drive quality, are all potential: they are exactly what creators lack today, from adults as well as from students. Gratitude can flow in all directions, to a different degree in each. Teacher platforms gain little: for commercial ones, free apps are competition, so exchanges with them are likely limited to non-profit platforms. AI assistants receive nothing from the peer roles; what they need, instructions and scaffolding, comes from the platform itself.
 
