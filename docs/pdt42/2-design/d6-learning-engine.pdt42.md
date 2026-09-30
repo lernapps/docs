@@ -15,7 +15,7 @@ The engine has to solve the supply insight from D4: creators start for themselve
 
 ### App creators
 
-Creators arrive with an app they built for their own class or child. Their hurdle is the first listing; after that, what keeps them is learning that and how their app is used.
+Creators arrive with an app they built for their own class or child. Their hurdle is the first listing; after that, what keeps them is learning that and how their app is used. Experienced creators may want to bring their own best practices into the guidance, and so grow into co-owners of the platform.
 
 ```pdt42
 :::learning-engine
@@ -31,6 +31,8 @@ getting-better:
   - Improve the app with feedback from classes
 new-opportunity:
   - Let others build on the app and build on theirs
+  - Bring their own best practices into the guidance and co-own the platform
+evolves-to: e-platform-owner
 :::
 ```
 
@@ -133,6 +135,20 @@ Lets creators start from an existing app instead of from scratch, and lets other
 :::service
 id: s-build-on-apps
 title: Building on existing apps
+for: e-creators
+stage: new-opportunity
+kind: empowering
+:::
+```
+
+### Contributing best practices to the guidance
+
+Lets experienced creators bring their own best practices into the guidance for building apps. Whoever shapes the guidance shapes the platform, so this is the path from creator to co-owner.
+
+```pdt42
+:::service
+id: s-contribute-practices
+title: Contributing best practices to the guidance
 for: e-creators
 stage: new-opportunity
 kind: empowering

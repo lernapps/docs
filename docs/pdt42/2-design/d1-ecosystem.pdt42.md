@@ -13,7 +13,7 @@ Six entity-roles stand in the peer spectrum, one more than PDT recommends. They 
 
 ## Platform owner
 
-Oliver Jägle owns and shapes the platform strategy. Ralf D. Müller, the second owner of the GitHub organisation, builds apps and appears among the app creators.
+Oliver Jägle owns and shapes the platform strategy. Creators who bring their own best practices into the guidance can grow into co-owners (D6). Ralf D. Müller, the second owner of the GitHub organisation, builds apps and appears among the app creators.
 
 ```pdt42
 :::entity
