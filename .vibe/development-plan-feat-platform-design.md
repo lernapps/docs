@@ -66,6 +66,10 @@ Core relationships: creators ↔ adults, adults ↔ students, creators ↔ stude
 Creators build personal software anyway; use by others is a nice-to-have for them. Their motivation to contribute is weak, while the benefit lies with the adults. Once their apps are used, though, praise and use motivate most engaged creators strongly: the hurdle is the first contribution, and the reputation flow (D3) keeps them.
 - **Decision**: Recorded as insight in D4 and as biz42 risk `risk-weak-supply` (high). biz42 `exp-contributor` reworded accordingly and now surfaces the risk. Follow-ups: D6 (a benefit for creators independent of reach, e.g. guidance; make use and praise visible to creators), G4 (where the first supply comes from), D8 (a riskiest `attraction` assumption; needs the MVP block first).
 
+### KD-15: Generic channels, means decided in the MVP (D5)
+13 transactions across the three core relationships; five channels: effortless listing, one place to find apps, visible fitness for use, passing apps on to a class, returning use and praise to creators.
+- **Decision**: Channels are described by what they make easier, not by how they are built; concrete means (templates, workflows, storage, codes) are decided in D8. Learning with and working on an app happen in the app, thanks to adults in class: no platform channel on purpose.
+
 ---
 
 ## Notes
@@ -94,7 +98,6 @@ Creators build personal software anyway; use by others is a nice-to-have for the
 ## Strategy Design
 
 ### Tasks
-- [ ] D5 Identify the elementary transactions and channels
 - [ ] D6 Design the learning engine
 - [ ] D7 Assemble the platform experiences
 - [ ] D8 Set up the Minimum Viable Platform
@@ -104,6 +107,7 @@ Creators build personal software anyway; use by others is a nice-to-have for the
 - [x] D2 Portray the entity-roles (many portrait items are unvalidated assumptions, named in the prose)
 - [x] D3 Analyse the motivations to exchange value
 - [x] D4 Choose the core relationships
+- [x] D5 Identify the elementary transactions and channels (H108 ignored for three transactions without a platform channel)
 
 ## Growth
 
