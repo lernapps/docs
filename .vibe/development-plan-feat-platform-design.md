@@ -62,6 +62,10 @@ Between the core roles, tangible values flow today (apps, access, attention); fe
 Core relationships: creators ↔ adults, adults ↔ students, creators ↔ students.
 - **Decision**: The core entity is the adopting adults: without them, no app reaches a classroom and no attention reaches a creator. Creators build personal software without the platform anyway; use by others is a nice-to-have for them. The triangle widens the brief, where students were ancillary, because students also look for apps themselves and gratitude flows between all three.
 
+### KD-14: Supply does not come by itself (D4)
+Creators build personal software anyway; use by others is a nice-to-have for them. Their motivation to contribute is weak, while the benefit lies with the adults.
+- **Decision**: Recorded as insight in D4 and as biz42 risk `risk-weak-supply` (high). Follow-ups: D6 (a benefit for creators independent of reach, e.g. guidance), G4 (where the first supply comes from), D8 (a riskiest `attraction` assumption; needs the MVP block first).
+
 ---
 
 ## Notes

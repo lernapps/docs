@@ -53,7 +53,7 @@ The scaffolding layer — architecture guidelines, starter templates, AI-assiste
 :::objective
 id: obj-agent-guidance
 title: Provide scaffolding and agent guidance for ecosystem-connected tool creation
-addresses: risk-island, opp-ai-creation
+addresses: risk-island, risk-weak-supply, opp-ai-creation
 measured-by: measure-scaffold-usage
 owner: owner-platform
 requires: cap-scaffolding, cap-capability-mapping

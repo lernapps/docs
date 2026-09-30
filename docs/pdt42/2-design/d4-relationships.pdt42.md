@@ -4,6 +4,8 @@
 
 Creators are not the core entity because they build software without the platform anyway, as personal software for their own class or child. That others use their app too is a nice-to-have for them. Adults, in contrast, depend on finding apps they can use without doubt; this is where the platform makes the difference.
 
+**Insight: supply does not come by itself.** If use by others is only a nice-to-have for creators, their motivation to bring their apps onto the platform is weak. PP2 stays right (attention is scarce and has to reach creators and their apps, E6), but the benefit lies with the adults more than with the creators. The platform therefore has to make listing an app almost effortless, or offer creators a benefit that does not depend on reach, such as better guidance when building. This shapes the learning engine (D6), the liquidity plan (G4), and is a riskiest assumption to test with the MVP (D8).
+
 The brief (E7) named creators and adults as the core relationship and students as an ancillary role. The triangle widens this: students also look for apps on their own and return to them, and gratitude flows between all three roles. Every role in the triangle has a portrait (D2).
 
 ## Creators and adults
