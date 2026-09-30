@@ -46,6 +46,10 @@ Ralf D. Müller focuses on the apps themselves (Mathe-Karte) and does not take p
 - **Decision**: The platform owner is Oliver Jägle alone (biz42 `owner-platform`, formerly `owner-vorstand`). Ralf appears as an app creator, not as an owner. In D1, the owner entity-role holds only Oliver.
 - **Open**: GOVERNANCE.md in lernapps/.github still describes two owners with equal rights on all common repositories.
 
+### KD-10: Six peer roles, GitHub as means of production (D1)
+Roles: creators peer-producer; adopting adults and students peer-consumer; school gatekeepers stakeholder; teacher platforms, social media and AI assistants partner; platform owner (Oliver Jägle) owner.
+- **Decision**: GitHub has no platform role: lernapps.net is not large enough for a relationship with GitHub, so it is a means of production in the platform's infrastructure. AI assistants are a partner the platform has to design for. Social media stays a partner despite little expected potential. The six peer roles are kept on purpose (H102 open).
+
 ---
 
 ## Notes
@@ -73,7 +77,6 @@ Ralf D. Müller focuses on the apps themselves (Mathe-Karte) and does not take p
 ## Strategy Design
 
 ### Tasks
-- [ ] D1 Map the ecosystem: roles, platform block and Ecosystem Canvas done; open: 7 peer roles, cluster down to five (H102)
 - [ ] D2 Portray the entity-roles
 - [ ] D3 Analyse the motivations to exchange value
 - [ ] D4 Choose the core relationships
@@ -83,7 +86,7 @@ Ralf D. Müller focuses on the apps themselves (Mathe-Karte) and does not take p
 - [ ] D8 Set up the Minimum Viable Platform
 
 ### Completed
-*None yet*
+- [x] D1 Map the ecosystem (H102 and H101 for GitHub open on purpose, see KD-10)
 
 ## Growth
 

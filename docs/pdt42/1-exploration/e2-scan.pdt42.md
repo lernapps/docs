@@ -92,7 +92,7 @@ clusters:
 
 ### Social media
 
-Where creators share their apps and where apps travel by recommendation.
+Where creators share their apps and where apps travel by recommendation. It stays a partner, although the platform owner expects little potential from it.
 
 ```pdt42
 :::entity
@@ -107,20 +107,19 @@ layer: aggregator
 
 Where many creators publish their apps' code. Engineers search it for apps to re-use, but there is usually little content, and hardly anything that specific.
 
-GitHub is a partner, not just one place among others: lernapps.net deliberately builds its own infrastructure on it, such as issue templates, GitHub Actions workflows, and the apps themselves with their labels.
+For lernapps.net, GitHub is a means of production rather than a partner: the platform is neither large nor prominent enough to have a relationship with GitHub. It still deliberately builds its own infrastructure on it, such as issue templates, GitHub Actions workflows, and the apps themselves with their labels. So GitHub has no platform role and appears in the platform's infrastructure instead (D1).
 
 ```pdt42
 :::entity
 id: e-github
 title: GitHub
-role: partner
 layer: infrastructure
 :::
 ```
 
 ### AI assistants
 
-The tools creators build their apps with. For engineers they also replace discovery: instead of searching further, they have an assistant build their own app.
+The tools creators build their apps with. For engineers they also replace discovery: instead of searching further, they have an assistant build their own app. They are a partner the platform has to design for: whatever lernapps.net offers creators has to work through their AI assistants.
 
 ```pdt42
 :::entity
