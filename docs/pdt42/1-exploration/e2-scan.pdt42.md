@@ -110,6 +110,11 @@ Where many creators publish their apps' code. Engineers search it for apps to re
 For lernapps.net, GitHub is a means of production rather than a partner: the platform is neither large nor prominent enough to have a relationship with GitHub. It still deliberately builds its own infrastructure on it, such as issue templates, GitHub Actions workflows, and the apps themselves with their labels. So GitHub has no platform role and appears in the platform's infrastructure instead (D1).
 
 ```pdt42
+:::ignore H101 GitHub is a means of production, not a platform role (KD-10) :::
+:::ignore H102 Six peer roles are kept on purpose, see D1 (KD-10) :::
+```
+
+```pdt42
 :::entity
 id: e-github
 title: GitHub
