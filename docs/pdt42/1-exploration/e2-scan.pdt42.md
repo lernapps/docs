@@ -15,6 +15,8 @@ This scan covers the focus arena "Getting apps into use" as it works today, with
 
 Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves. Ralf D. Müller, co-owner of the GitHub organisation lernapps, is one of them: he builds the Mathe-Karte and does not take part in the platform.
 
+Portrait (D2): the lack of feedback, the wish for recognition and knowing the app helped are assumptions of the platform owner, still to be validated with creators.
+
 ```pdt42
 :::entity
 id: e-creators
@@ -25,12 +27,46 @@ clusters:
   - Teachers
   - Parents
   - Engineers
+context:
+  - Build apps with AI assistants, alongside their actual job
+  - Publish on their own website, GitHub or social media
+assets:
+  - Their apps
+  - Classroom experience (teachers) or development skills (engineers)
+capabilities:
+  - Build a working app in a weekend with AI assistance
+potential:
+  - Build on existing apps instead of starting from scratch
+  - Evolve apps with feedback from use
+goals:
+  - Close a gap they noticed themselves, for their own class or child
+pressures:
+  - Little time
+  - The app rots after a single use
+  - No feedback whether the app works elsewhere
+convenience-gains:
+  - Build and publish with less effort
+reach-gains:
+  - The app reaches classrooms beyond their own circle
+value-gains:
+  - Recognition for their work
+  - Knowing the app helped others learn
+:::
+```
+
+```pdt42
+:::canvas
+id: cv-portrait-creators
+canvas: entity-portrait
+of: e-creators
 :::
 ```
 
 ### Adopting adults
 
 Adults who come across apps built by others, browse them and show them to their students. Engineers belong here too, as they also look for existing apps to re-use.
+
+Portrait (D2): recommending apps to colleagues and the next test as a pressure are assumptions of the platform owner, still to be validated with teachers and parents.
 
 ```pdt42
 :::entity
@@ -42,6 +78,38 @@ clusters:
   - Teachers
   - Parents
   - Engineers
+context:
+  - Short of time
+  - Devices exist at school and at home
+  - Find apps by word of mouth, on teacher platforms or on GitHub
+assets:
+  - Access to students
+  - Devices
+potential:
+  - Give feedback from classroom use
+  - Recommend apps to colleagues
+goals:
+  - Teachers: gain free time by keeping students busy, for individual support or preparation
+  - Parents: support their children's learning with little time
+pressures:
+  - Lack of time
+  - Responsibility for data protection
+  - The next test
+convenience-gains:
+  - An app usable next week, without installation or sign-up
+reach-gains:
+  - Active-learning apps beyond the large, passive platforms
+value-gains:
+  - Certainty that an app may be used
+  - Students actively doing something
+:::
+```
+
+```pdt42
+:::canvas
+id: cv-portrait-adopters
+canvas: entity-portrait
+of: e-adopters
 :::
 ```
 
@@ -49,12 +117,39 @@ clusters:
 
 The learners the apps are built for. They usually get to know an app through an adult, and may later return to it on their own.
 
+Portrait (D2): recommending apps to classmates and all three gains are assumptions of the platform owner, still to be validated.
+
 ```pdt42
 :::entity
 id: e-students
 title: Students
 role: peer-consumer
 layer: long-tail
+context:
+  - Get to know apps through an adult
+  - Use them on school tablets or at home
+potential:
+  - Return to apps on their own
+  - Recommend apps to classmates
+goals:
+  - Understand the subject to get good grades
+pressures:
+  - The next test
+convenience-gains:
+  - Quick help right before the test
+reach-gains:
+  - An app for exactly the topic they struggle with
+value-gains:
+  - Better grades
+  - Understanding the subject
+:::
+```
+
+```pdt42
+:::canvas
+id: cv-portrait-students
+canvas: entity-portrait
+of: e-students
 :::
 ```
 
@@ -78,6 +173,8 @@ clusters:
 
 Platforms where teachers find digital teaching offerings, some commercial, some non-profit. Some came out of government initiatives.
 
+Portrait (D2): apart from their reach among teachers, the portrait consists of assumptions of the platform owner, still to be validated.
+
 ```pdt42
 :::entity
 id: e-teacher-platforms
@@ -87,6 +184,29 @@ layer: aggregator
 clusters:
   - fobizz
   - Serlo
+context:
+  - Collect digital teaching offerings
+  - Some commercial, some non-profit, some came out of government initiatives
+assets:
+  - Reach among teachers
+goals:
+  - An attractive, trustworthy offering for teachers
+pressures:
+  - Keeping the offering current and broad
+convenience-gains:
+  - More offerings without producing them themselves
+reach-gains:
+  - More teachers
+value-gains:
+  - Revenue (commercial) or mission impact (non-profit)
+:::
+```
+
+```pdt42
+:::canvas
+id: cv-portrait-teacher-platforms
+canvas: entity-portrait
+of: e-teacher-platforms
 :::
 ```
 
@@ -94,12 +214,30 @@ clusters:
 
 Where creators share their apps and where apps travel by recommendation. It stays a partner, although the platform owner expects little potential from it.
 
+Portrait (D2): kept minimal on purpose, as little potential is expected; goal and gain are assumptions.
+
 ```pdt42
 :::entity
 id: e-social-media
 title: Social media
 role: partner
 layer: aggregator
+context:
+  - Where creators share their apps and apps travel by recommendation
+potential:
+  - Spread apps by recommendation
+goals:
+  - Engagement
+reach-gains:
+  - Content that gets shared
+:::
+```
+
+```pdt42
+:::canvas
+id: cv-portrait-social-media
+canvas: entity-portrait
+of: e-social-media
 :::
 ```
 
@@ -126,6 +264,8 @@ layer: infrastructure
 
 The tools creators build their apps with. For engineers they also replace discovery: instead of searching further, they have an assistant build their own app. They are a partner the platform has to design for: whatever lernapps.net offers creators has to work through their AI assistants.
 
+Portrait (D2): lernapps.net plans to serve their convenience gain with better instructions and scaffolding (D3, D5). Their potential, goal and pressure are assumptions of the platform owner.
+
 ```pdt42
 :::entity
 id: e-ai-assistants
@@ -134,6 +274,28 @@ role: partner
 layer: infrastructure
 clusters:
   - Claude
+context:
+  - Tools creators build apps with
+  - Replace discovery for engineers
+  - Becoming part of every household's basic equipment
+potential:
+  - Build apps that follow shared guidelines, if they get them as context
+goals:
+  - Deliver useful results to their users
+pressures:
+  - Competition between providers
+convenience-gains:
+  - Reach a working app with fewer iterations and less guessing
+value-gains:
+  - Build apps that can easily be used
+:::
+```
+
+```pdt42
+:::canvas
+id: cv-portrait-ai-assistants
+canvas: entity-portrait
+of: e-ai-assistants
 :::
 ```
 

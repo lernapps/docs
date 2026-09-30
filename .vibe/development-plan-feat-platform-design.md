@@ -50,6 +50,10 @@ Ralf D. Müller focuses on the apps themselves (Mathe-Karte) and does not take p
 Roles: creators peer-producer; adopting adults and students peer-consumer; school gatekeepers stakeholder; teacher platforms, social media and AI assistants partner; platform owner (Oliver Jägle) owner.
 - **Decision**: GitHub has no platform role: lernapps.net is not large enough for a relationship with GitHub, so it is a means of production in the platform's infrastructure. AI assistants are a partner the platform has to design for. Social media stays a partner despite little expected potential. The six peer roles are kept on purpose; H101 (GitHub) and H102 are accepted with `:::ignore` in E2.
 
+### KD-11: Portraits of the six peer roles (D2)
+Creators and adopting adults form the core; AI assistants seek to reach a working app with fewer iterations and to build apps that can easily be used. Instructions and scaffolding are the platform's offer to them, not a gain they seek (D3, D5).
+- **Decision**: Portraits rest on E1/E2, the vision and the owner's statements. Unvalidated items are named as assumptions in each entity's prose; social media is kept minimal on purpose.
+
 ---
 
 ## Notes
@@ -78,7 +82,6 @@ Roles: creators peer-producer; adopting adults and students peer-consumer; schoo
 ## Strategy Design
 
 ### Tasks
-- [ ] D2 Portray the entity-roles
 - [ ] D3 Analyse the motivations to exchange value
 - [ ] D4 Choose the core relationships
 - [ ] D5 Identify the elementary transactions and channels
@@ -88,6 +91,7 @@ Roles: creators peer-producer; adopting adults and students peer-consumer; schoo
 
 ### Completed
 - [x] D1 Map the ecosystem (H101 for GitHub and H102 ignored on purpose, see KD-10)
+- [x] D2 Portray the entity-roles (many portrait items are unvalidated assumptions, named in the prose)
 
 ## Growth
 
