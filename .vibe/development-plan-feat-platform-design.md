@@ -70,6 +70,11 @@ Creators build personal software anyway; use by others is a nice-to-have for the
 13 transactions across the three core relationships; five channels: effortless listing, one place to find apps, visible fitness for use, passing apps on to a class, returning use and praise to creators.
 - **Decision**: Channels are described by what they make easier, not by how they are built; concrete means (templates, workflows, storage, codes) are decided in D8. Learning with and working on an app happen in the app, thanks to adults in class: no platform channel on purpose.
 
+### KD-16: Guidance is the common thread of the learning engine (D6)
+Adults and students can evolve into creators; creators can grow into co-owners by bringing their best practices into the guidance. The guidance for building apps attracts creators, turns users into creators and creators into co-owners.
+- **Decision**: Services stay generic like the channels. A service shared by several roles sits at one stage for all of them, so services are split per role where the roles meet them at different stages.
+- **Open**: How a creator becomes co-owner (rights, procedure) belongs in GOVERNANCE.md in lernapps/.github, which still describes two owners with equal rights.
+
 ---
 
 ## Notes
@@ -98,7 +103,6 @@ Creators build personal software anyway; use by others is a nice-to-have for the
 ## Strategy Design
 
 ### Tasks
-- [ ] D6 Design the learning engine
 - [ ] D7 Assemble the platform experiences
 - [ ] D8 Set up the Minimum Viable Platform
 
@@ -108,6 +112,7 @@ Creators build personal software anyway; use by others is a nice-to-have for the
 - [x] D3 Analyse the motivations to exchange value
 - [x] D4 Choose the core relationships
 - [x] D5 Identify the elementary transactions and channels (H108 ignored for three transactions without a platform channel)
+- [x] D6 Design the learning engine
 
 ## Growth
 

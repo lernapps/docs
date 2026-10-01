@@ -7,7 +7,7 @@ canvas: learning-engine
 :::
 ```
 
-*Draft for discussion. One row per core role (D4): how it arrives, and the key challenges when onboarding, getting better and catching a new opportunity. The services answer these challenges; like the channels (D5), they say what the platform offers, not how it is built.*
+*One row per core role (D4): how it arrives, and the key challenges when onboarding, getting better and catching a new opportunity. The services answer these challenges; like the channels (D5), they say what the platform offers, not how it is built.*
 
 The engine has to solve the supply insight from D4: creators start for themselves, so the first listing must cost almost nothing, and once their app is used, use and praise must reach them. It also opens paths from the consumption to the production side: adults and students who use apps can start adapting and building their own, with the same guidance.
 
