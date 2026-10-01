@@ -67,3 +67,16 @@ severity: medium
 mitigation: progressive trust model (anecdotal → community-validated → research-backed) distributes responsibility; no single authority endorses tools
 :::
 ```
+
+## Creators have little reason to contribute
+
+Creators build their apps as personal software for their own class or child, with or without lernapps.net. That others use their app is only a nice-to-have for them. So the supply of apps does not come by itself: if contributing costs effort, few creators will do it, and adults find too little to come back. Once an app is used, however, praise and use motivate most engaged creators strongly; the hurdle is the first contribution. Identified in the platform design (pdt42 D4, 2026-09-30).
+
+```biz42
+:::risk
+id: risk-weak-supply
+title: Creators have little reason to contribute their apps
+severity: high
+mitigation: make listing an app almost effortless, offer creators a benefit independent of reach such as better guidance when building, and make use and praise visible to creators once their app is used
+:::
+```

@@ -1,15 +1,15 @@
 # Chapter 3: Expectations
 
-## Contributors need visibility and reuse
+## Contributors build for themselves, and stay for recognition
 
-Creators of educational software — teachers, developers, and media educators — need their work to be findable, trustworthy, and buildable-upon by others, rather than disappearing after a tweet or a barcamp session.
+Creators of educational software — teachers, developers, and media educators — build their apps as personal software for their own class or child, with or without a platform. That others find, trust and build on their work is a nice-to-have, not their reason to start. Once their apps are used, though, most engaged creators are strongly motivated by praise and use; their work should then not disappear after a tweet or a barcamp session.
 
 ```biz42
 :::expectation
 id: exp-contributor
-title: Contributors need visibility and reuse of their work
+title: Contributors build for themselves; once their work is used, recognition motivates them strongly
 source: Contributor (builder — teacher, developer, media educator)
-surfaces: risk-invisibility, opp-ai-creation
+surfaces: risk-invisibility, risk-weak-supply, opp-ai-creation
 :::
 ```
 
