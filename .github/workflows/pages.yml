@@ -1,7 +1,9 @@
 name: Pages
 
-# Builds the docs (biz42, vision, index) on every push and PR; deploys main to
-# https://lernapps.github.io/docs/. Actions are pinned to full commit SHAs (org rule).
+# Builds the docs (biz42, pdt42, vision, index) on every push and PR; deploys main to
+# https://lernapps.github.io/docs/. In a PR, the built site, including the platform
+# design's changes against main, is uploaded as an artifact for review.
+# Actions are pinned to full commit SHAs (org rule).
 on:
   push:
     branches: [main]
@@ -20,10 +22,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # the diff of a PR needs origin/main
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version: 22
       - run: ./scripts/build.sh
+        env:
+          PDT42_DIFF_BASE: ${{ github.event_name == 'pull_request' && 'origin/main' || '' }}
+      - uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        if: github.event_name == 'pull_request'
+        with:
+          name: site-preview
+          path: _site
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         if: github.ref == 'refs/heads/main'
         with:
