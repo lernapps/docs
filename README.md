@@ -26,7 +26,7 @@ python3 -m http.server -d _site 8000   # preview; links assume the /docs/ prefix
 
 No npm dependencies: the biz42 and pdt42 CLIs and `marked` run via `npx` with pinned versions.
 
-In a pull request, the Pages workflow uploads the built site as the artifact `site-preview`. With `PDT42_DIFF_BASE` set (the workflow uses `origin/main`), it also contains `platform-design-diff/`, the platform design's changes against that base, once the pinned pdt42 supports `--diff`.
+In a pull request, the Pages workflow uploads the built site as the artifact `site-preview`. With `PDT42_DIFF_BASE` set (the workflow uses the PR's base branch, e.g. `origin/main`), it also contains `platform-design-diff/`: the platform design's changes since the merge base with that ref, as one page, plus `changes.json`. The page is also uploaded unzipped (`platform-design-review.html`, opens in the browser), and a comment on the pull request, updated on every push, links to both and lists the changed elements. Locally: `PDT42_DIFF_BASE=origin/main ./scripts/build.sh` (compares commits, not the working tree).
 
 ## History
 
