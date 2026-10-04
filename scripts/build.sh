@@ -19,13 +19,14 @@ npx --yes "$PDT42" --dir docs/pdt42 validate
 npx --yes "$PDT42" --dir docs/pdt42 build --out _site/platform-design
 
 # Review builds: with PDT42_DIFF_BASE set (e.g. origin/main in a pull request),
-# also render the platform design's changes against that base.
+# also render the platform design's changes since the merge base with that ref as
+# one self-contained page, and write the change as JSON (changes.json) for the PR
+# comment. Compares commits (<base>...HEAD), not the working tree. Findings of
+# `pdt42 diff` (block and prose not changed together) are reported, not fatal.
 if [ -n "${PDT42_DIFF_BASE:-}" ]; then
-  if npx --yes "$PDT42" --help | grep -- '--diff' >/dev/null; then
-    npx --yes "$PDT42" --dir docs/pdt42 build --single-file --diff "$PDT42_DIFF_BASE" --out _site/platform-design-diff
-  else
-    echo "skipping the platform design diff: $PDT42 has no --diff yet"
-  fi
+  range="$PDT42_DIFF_BASE...HEAD"
+  npx --yes "$PDT42" --dir docs/pdt42 build --single-file --diff "$range" --out _site/platform-design-diff
+  npx --yes "$PDT42" --dir docs/pdt42 diff "$range" --format json > _site/platform-design-diff/changes.json || [ -s _site/platform-design-diff/changes.json ]
 fi
 
 npx --yes "$MARKED" --gfm -i docs/vision.md -o _site/vision/content.html
