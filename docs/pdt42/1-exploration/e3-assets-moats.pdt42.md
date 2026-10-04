@@ -11,10 +11,6 @@ canvas: vrio
 
 None of the assets is inimitable, so none grounds a lasting advantage on its own: they are supporting assets. Together they make a free, low-doubt offering possible, but whatever advantage lernapps.net gains has to come from the platform itself, not from what lernapps.net holds today.
 
-```pdt42
-:::ignore H002 No asset is inimitable; the assets are supporting on purpose (KD-04) :::
-```
-
 ## Assets
 
 ### Structured modelling DSLs as agent guidance
@@ -24,6 +20,7 @@ lernapps.net builds on documentation DSLs: biz42 and pdt42 by the platform owner
 Valuable, because agent guidance is what "Building the app" lacks today. Rare, because lernapps.net does not intend to earn money with it: commercial players keep such guidance to themselves, while we can give it away. Not inimitable: the DSLs are open source, and anyone can copy the approach.
 
 ```pdt42
+:::ignore H002 No asset is inimitable; the assets are supporting on purpose (KD-04) :::
 :::asset
 id: as-modelling-dsls
 title: Structured modelling DSLs as agent guidance
@@ -40,6 +37,7 @@ The platform and the apps it recommends run in the browser only: no server, no d
 Valuable, because it answers exactly the question adults ask before bringing an app to students. Not rare: many small AI-built apps are static anyway. The advantage only arises once the property is made visible.
 
 ```pdt42
+:::ignore H002 No asset is inimitable; the assets are supporting on purpose (KD-04) :::
 :::asset
 id: as-frontend-only
 title: Frontend-only architecture
@@ -56,6 +54,7 @@ lernapps.net is planned as a non-profit. This is sustainable because the fronten
 Valuable, because it removes commercial doubts for adults and schools. Rare, because commercial teacher platforms cannot do this. Not inimitable: other non-profits such as Serlo show that the model can be copied.
 
 ```pdt42
+:::ignore H002 No asset is inimitable; the assets are supporting on purpose (KD-04) :::
 :::asset
 id: as-non-profit
 title: Non-profit at near-zero marginal cost

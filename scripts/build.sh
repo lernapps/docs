@@ -6,7 +6,7 @@ cd "$(dirname "$0")/.."
 
 BIZ42=@biz42/cli@0.6.0
 MARKED=marked@18.0.14
-PDT42=@pdt42/cli@0.4.0
+PDT42=@pdt42/cli@0.6.1
 
 rm -rf _site
 mkdir -p _site/vision
