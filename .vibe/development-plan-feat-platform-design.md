@@ -48,7 +48,7 @@ Ralf D. Müller focuses on the apps themselves (Mathe-Karte) and does not take p
 
 ### KD-10: Six peer roles, GitHub as means of production (D1)
 Roles: creators peer-producer; adopting adults and students peer-consumer; school gatekeepers stakeholder; teacher platforms, social media and AI assistants partner; platform owner (Oliver Jägle) owner.
-- **Decision**: GitHub has no platform role: lernapps.net is not large enough for a relationship with GitHub, so it is a means of production in the platform's infrastructure. AI assistants are a partner the platform has to design for. Social media stays a partner despite little expected potential. The six peer roles are kept on purpose; H101 (GitHub) and H102 are accepted with `:::ignore` in E2.
+- **Decision**: GitHub has no platform role: lernapps.net is not large enough for a relationship with GitHub, so it is a means of production in the platform's infrastructure. AI assistants are a partner the platform has to design for. Social media stays a partner despite little expected potential. The six peer roles are kept on purpose; H101 (GitHub) and H102 are accepted with `:::ignore` in D1 (in E2 until the entities moved to D1 with pdt42 0.6.1).
 
 ### KD-11: Portraits of the six peer roles (D2)
 Creators and adopting adults form the core; AI assistants seek to reach a working app with fewer iterations and to build apps that can easily be used. Instructions and scaffolding are the platform's offer to them, not a gain they seek (D3, D5).
@@ -81,7 +81,10 @@ Adults and students can evolve into creators; creators can grow into co-owners b
 
 - Exploration is optional in the PDT, but we do it to find the platformization space before designing.
 - `pdt42 next` points to D1, because the E2 entities already count as started D1 work. Exploration is now done; Strategy Design continues with D1.
-- Accepted deviations: `:::ignore <code> <reason> :::` inside a `pdt42` fence (undocumented in pdt42 0.4.0). It silences that code for the whole file, so a new finding of the same code in that file stays hidden too.
+- pdt42 is pinned in `scripts/build.sh` (`@pdt42/cli@0.6.1`, before 0.4.0); run the same version locally (`npx @pdt42/cli@0.6.1 …`).
+- Under pdt42 0.6.1 every element lives in the chapter of the step that introduces its kind (EG03, an error): the entity-roles moved from E2 to D1 unchanged; the E2 jobs reference them.
+- Accepted deviations: `:::ignore <code> <reason> :::` inside a `pdt42` fence suppresses the next finding with that code at or after the directive, one finding per directive. It sits directly before the block it accepts (H002 before each of the three assets in E3, H101 before GitHub in D1, H108 before each of the three transactions without a channel in D5); the H102 directive follows the D1 paragraph explaining the six peer roles, as H102 is reported at the sixth one. A directive that suppresses nothing is a warning (WG06), and errors cannot be ignored (WG07).
+- Review: in a pull request, `scripts/build.sh` with `PDT42_DIFF_BASE` renders the change since the merge base (`pdt42 build --single-file --diff <base>...HEAD`) into `platform-design-diff/`; the Pages workflow uploads it and comments a summary on the PR. Locally: `pdt42 diff` checks that blocks and their prose change together.
 - Preview: `pdt42 serve` only works locally; in a cloud session build with `pdt42 build --out <dir> --single-file`.
 
 ---

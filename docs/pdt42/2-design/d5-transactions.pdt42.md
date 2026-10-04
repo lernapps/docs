@@ -4,10 +4,6 @@
 
 Three transactions have no platform channel on purpose: learning with an app and working on it happen inside the app itself, and students thank adults directly in class. The platform does not need to stand between them.
 
-```pdt42
-:::ignore H108 Learning with and working on an app happen in the app, thanks to adults in class; no platform channel on purpose :::
-```
-
 ## Transactions Board: Creators and adults
 
 ```pdt42
@@ -196,6 +192,7 @@ job: j-bring-to-students
 Students work with the app on their own, which gives the teacher free time.
 
 ```pdt42
+:::ignore H108 Working on an app happens in the app; no platform channel on purpose :::
 :::transaction
 id: t-work-alone
 title: Work on their own with an app
@@ -215,6 +212,7 @@ motivation: m-students-adopters
 Students thank the adult who showed them an app that helped.
 
 ```pdt42
+:::ignore H108 Students thank adults directly in class; no platform channel on purpose :::
 :::transaction
 id: t-thank-adult
 title: Thank for bringing the app
@@ -244,6 +242,7 @@ of: r-creators-students
 Students use the app to understand the subject.
 
 ```pdt42
+:::ignore H108 Learning with an app happens in the app; no platform channel on purpose :::
 :::transaction
 id: t-learn-with-app
 title: Learn with an app
