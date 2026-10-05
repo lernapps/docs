@@ -237,7 +237,7 @@ channel: ch-collections
 
 ### Giving feedback and thanks
 
-Makes it easy for adults and students to give feedback, recommendations and thanks, without accounts and without identifying students.
+Makes it easy for adults and students to give feedback, recommendations and thanks, without accounts and without identifying students. It explains, without being pushy, that a thank-you is what keeps the free platform alive.
 
 ```pdt42
 :::service

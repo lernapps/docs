@@ -48,7 +48,7 @@ Ralf D. Müller focuses on the apps themselves (Mathe-Karte) and does not take p
 
 ### KD-10: Six peer roles, GitHub as means of production (D1)
 Roles: creators peer-producer; adopting adults and students peer-consumer; school gatekeepers stakeholder; teacher platforms, social media and AI assistants partner; platform owner (Oliver Jägle) owner.
-- **Decision**: GitHub has no platform role: lernapps.net is not large enough for a relationship with GitHub, so it is a means of production in the platform's infrastructure. AI assistants are a partner the platform has to design for. Social media stays a partner despite little expected potential. The six peer roles are kept on purpose; H101 (GitHub) and H102 are accepted with `:::ignore` in D1 (in E2 until the entities moved to D1 with pdt42 0.6.1).
+- **Decision**: GitHub has no platform role: lernapps.net is not large enough for a relationship with GitHub, so it is a means of production in the platform's infrastructure. AI assistants are a partner the platform has to design for. Social media stays a partner despite little expected potential. The six peer roles are kept on purpose; H101 (GitHub) and H102 are accepted with `:::ignore` in E2, the entities' home chapter.
 
 ### KD-11: Portraits of the six peer roles (D2)
 Creators and adopting adults form the core; AI assistants seek to reach a working app with fewer iterations and to build apps that can easily be used. Instructions and scaffolding are the platform's offer to them, not a gain they seek (D3, D5).
@@ -75,15 +75,24 @@ Adults and students can evolve into creators; creators can grow into co-owners b
 - **Decision**: Services stay generic like the channels. A service shared by several roles sits at one stage for all of them, so services are split per role where the roles meet them at different stages.
 - **Open**: How a creator becomes co-owner (rights, procedure) belongs in GOVERNANCE.md in lernapps/.github, which still describes two owners with equal rights.
 
+### KD-17: Acute moments, and thanks as the currency (D7)
+Adults look for apps in an acute moment: teachers right before a lesson, parents the evening before a test. They feel relief, not excitement. Three experiences: "An app in class within minutes" (teachers), "Practice tonight, before the test" (parents), "List an app and hear it is used" (creators).
+- **Decision**: Trust is built in rather than checked (only apps that meet the fitness criteria are listed); one app counts more than a collection; anything asked afterwards takes one click.
+- **Decision**: The platform is free and lives on thanks. Every user should understand that a thank-you keeps it alive, without the platform being pushy. This is the platform's narrative (D1) and a step of its own in every experience.
+
+### KD-18: No tracking, anonymous clicks only (D5, D7)
+- **Decision**: No tracking of any kind, also not cookieless analytics in the apps: apps stay fully frontend-only. Thanks and feedback are sent only on an explicit click, anonymous and structured (no free text, no mailto), never identifying a student; counts only motivate creators and are no ranking signal (they cannot be deduplicated).
+- **Decision**: Creators may include the same thanks component in their app; it steps aside quietly when unreachable.
+- **For D8 (means)**: a small API on a subdomain (e.g. `api.lernapps.net`, same site, CORS) instead of the same origin, which would put a proxy in front of every app load; a host without access logs, ideally in the EU; a short privacy notice; the fitness signal says "sends nothing unless you click thanks; then only an anonymous click".
+
 ---
 
 ## Notes
 
 - Exploration is optional in the PDT, but we do it to find the platformization space before designing.
-- `pdt42 next` points to D1, because the E2 entities already count as started D1 work. Exploration is now done; Strategy Design continues with D1.
-- pdt42 is pinned in `scripts/build.sh` (`@pdt42/cli@0.6.1`, before 0.4.0); run the same version locally (`npx @pdt42/cli@0.6.1 …`).
-- Under pdt42 0.6.1 every element lives in the chapter of the step that introduces its kind (EG03, an error): the entity-roles moved from E2 to D1 unchanged; the E2 jobs reference them.
-- Accepted deviations: `:::ignore <code> <reason> :::` inside a `pdt42` fence suppresses the next finding with that code at or after the directive, one finding per directive. It sits directly before the block it accepts (H002 before each of the three assets in E3, H101 before GitHub in D1, H108 before each of the three transactions without a channel in D5); the H102 directive follows the D1 paragraph explaining the six peer roles, as H102 is reported at the sixth one. A directive that suppresses nothing is a warning (WG06), and errors cannot be ignored (WG07).
+- pdt42 is pinned in `scripts/build.sh` (`@pdt42/cli@0.6.2`); run the same version locally (`npx @pdt42/cli@0.6.2 …`).
+- Every block type has exactly one home chapter, the chapter of the step that creates it (EG03, an error); later steps fill its blocks in there, and an element discovered later is still written there. Entities live in E2: D1 adds their roles, D2 their portraits (pdt42 0.6.2; under 0.6.1 they had to sit in D1, see mrsimpson/pdt42#38).
+- Accepted deviations: `:::ignore <code> <reason> :::` inside a `pdt42` fence suppresses the next finding with that code at or after the directive, one finding per directive. It sits directly before the block it accepts (H002 before each of the three assets in E3, H101 before GitHub in E2, H108 before each of the three transactions without a channel in D5); the H102 directive follows the E2 paragraph explaining the six peer roles, as H102 is reported at the sixth one. A directive that suppresses nothing is a warning (WG06), and errors cannot be ignored (WG07).
 - Review: in a pull request, `scripts/build.sh` with `PDT42_DIFF_BASE` renders the change since the merge base (`pdt42 build --single-file --diff <base>...HEAD`) into `platform-design-diff/`; the Pages workflow uploads it and comments a summary on the PR. Locally: `pdt42 diff` checks that blocks and their prose change together.
 - Preview: `pdt42 serve` only works locally; in a cloud session build with `pdt42 build --out <dir> --single-file`.
 
@@ -106,7 +115,6 @@ Adults and students can evolve into creators; creators can grow into co-owners b
 ## Strategy Design
 
 ### Tasks
-- [ ] D7 Assemble the platform experiences
 - [ ] D8 Set up the Minimum Viable Platform
 
 ### Completed
@@ -116,6 +124,7 @@ Adults and students can evolve into creators; creators can grow into co-owners b
 - [x] D4 Choose the core relationships
 - [x] D5 Identify the elementary transactions and channels (H108 ignored for three transactions without a platform channel)
 - [x] D6 Design the learning engine
+- [x] D7 Assemble the platform experiences
 
 ## Growth
 
