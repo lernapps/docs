@@ -371,7 +371,9 @@ improvement: Several apps reach a class in one step
 
 ### Returning use and praise to creators
 
-Makes use, feedback, recommendations and thanks visible to the creator, so the reputation flow keeps them (D4).
+Makes use, feedback, recommendations and thanks visible to the creator, so the reputation flow keeps them (D4). Thanks is the currency of the free platform: every user should understand that a thank-you is how they keep it alive, without the platform being pushy about it.
+
+There is no tracking of any kind. Thanks and feedback are only sent when someone clicks, they are anonymous and structured (no free text), and they never identify a student. Creators can include the same thanks in their app; where it cannot be reached, it quietly steps aside.
 
 ```pdt42
 :::channel
@@ -379,9 +381,10 @@ id: ch-feedback
 title: Returning use and praise to creators
 medium: digital
 components:
-  - Use in class made visible
-  - Feedback, recommendations and thanks without accounts
-  - Nothing that identifies students
-improvement: Use and praise reach the creator instead of staying invisible
+  - Thanks and structured feedback with one click, after use
+  - Optionally inside the app, if its creator includes it
+  - Anonymous and without tracking, accounts or free text
+  - Steps aside quietly when it cannot be reached
+improvement: Use and praise reach the creator instead of staying invisible, and every user knows that thanking keeps the free platform alive
 :::
 ```
