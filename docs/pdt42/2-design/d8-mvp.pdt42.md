@@ -84,22 +84,6 @@ status: open
 :::
 ```
 
-#### The platform owner can run the platform alone
-
-The platform has one owner (KD-09) and no money. The effort of the first draft shows whether that is sustainable until co-owners join (D6).
-
-```pdt42
-:::assumption
-id: a-owner-alone
-title: The platform owner can run the platform alone
-mvp: mvp-first-draft
-kind: business-model
-riskiest: no
-test: The owner notes the hours spent each week
-status: open
-:::
-```
-
 ## First apps, first thanks
 
 The real MVP, once the first draft holds. All three experiences take part. Teachers are reached through referral links that the platform owner's contacts forward, with the platform itself as the pitch and a short letter to go with it. Thanks and feedback run through the real anonymous click; users are not accompanied or observed.
