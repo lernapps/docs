@@ -69,7 +69,7 @@ status: open
 
 #### The anonymous thanks works, also from school networks
 
-The thanks has to reach the platform from school networks, which often filter, and has to step aside quietly where it cannot. Without tracking, the origin of a thank-you is unknown, so creators who teach try it once from their school and report.
+The thanks has to reach the platform from school networks, which often filter, and has to step aside quietly where it cannot. Without tracking, the origin of a thank-you is unknown, so creators who teach try it once from their school and report. It is good enough if it works at most of their schools.
 
 ```pdt42
 :::assumption
@@ -79,6 +79,7 @@ mvp: mvp-first-draft
 kind: other
 riskiest: no
 test: Creators who teach send one thank-you from their school network and say whether it worked
+criteria: It works at most of the schools of the creators who teach
 status: open
 :::
 ```
@@ -214,9 +215,10 @@ status: open
 
 #### Parents find the platform the evening before a test
 
-Parents are not in the base yet; this is tested once the riskiest assumptions hold.
+Parents are not in the base yet. This is tested on purpose only once the riskiest assumptions hold, so it has no test yet.
 
 ```pdt42
+:::ignore H115 Tested only after the riskiest assumptions hold, once parents are reached (KD-19) :::
 :::assumption
 id: a-parents-find
 title: Parents find the platform the evening before a test
