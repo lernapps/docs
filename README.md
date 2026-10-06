@@ -11,6 +11,7 @@ This repo holds documents about **the platform as a whole and how the repos rela
 | `docs/vision.md` | Why lernapps.net exists: the problem, personas, gaps, non-goals | `/docs/vision/` |
 | `docs/biz42/` | Business model in the [biz42](https://github.com/mrsimpson/biz42) DSL | `/docs/about/` |
 | `docs/pdt42/` | Platform design in the [pdt42](https://github.com/mrsimpson/pdt42) DSL (Platform Design Toolkit) | `/docs/platform-design/` |
+| `skills/pdt/` | Agent skill for other repos: where the platform design lives and how to read it with the pdt42 CLI | – |
 | `site/` | Index page, style, template for the vision page | `/docs/` |
 | `.vibe/` | Planning log of the edugo research phase (historical, not published) | – |
 | `.agents/skills/` | Agent skills for authoring biz42 and arc42 | – |
