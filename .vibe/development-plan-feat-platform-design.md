@@ -80,13 +80,14 @@ Adults look for apps in an acute moment: teachers right before a lesson, parents
 - **Decision**: Trust is built in rather than checked (only apps that meet the fitness criteria are listed); one app counts more than a collection; anything asked afterwards takes one click.
 - **Decision**: The platform is free and lives on thanks. Every user should understand that a thank-you keeps it alive, without the platform being pushy. This is the platform's narrative (D1) and a step of its own in every experience.
 
-### KD-18: No tracking, anonymous clicks only (D5, D7)
-- **Decision**: No tracking of any kind, also not cookieless analytics in the apps: apps stay fully frontend-only. Thanks and feedback are sent only on an explicit click, anonymous and structured (no free text, no mailto), never identifying a student; counts only motivate creators and are no ranking signal (they cannot be deduplicated).
-- **Decision**: Creators may include the same thanks component in their app; it steps aside quietly when unreachable.
-- **For D8 (means)**: a small API on a subdomain (e.g. `api.lernapps.net`, same site, CORS) instead of the same origin, which would put a proxy in front of every app load; a host without access logs, ideally in the EU; a short privacy notice; the fitness signal says "sends nothing unless you click thanks; then only an anonymous click".
+### KD-18: No hidden data collection; open counting on the platform only (D5, D7, D8)
+- **Decision**: Tracking means collecting data without the user's knowledge, and there is none. On the platform, single interactions are counted openly, to learn whether valuable use happens: only explicit actions ("I'll have a look", "used in class", thanks, structured feedback), only totals, no cookies or browser storage, no personal data kept, explained right where the click happens. The apps collect nothing and stay fully frontend-only.
+- **Decision**: Thanks and feedback are anonymous and structured (no free text, no mailto), never identifying a student; counts motivate creators and are no ranking signal (they cannot be deduplicated). Creators may include the thanks component in their app; it steps aside quietly when unreachable.
+- **Decision**: Referral links carry one code per wave or channel, never per person (small totals would reveal individual behaviour); the code travels only in the address while on the platform and is not stored in the browser (§ 25 TDDDG).
+- **For D8 (means)**: a small API on a subdomain (e.g. `api.lernapps.net`, same site, CORS) instead of the same origin, which would put a proxy in front of every app load; a host without access logs, ideally in the EU; a short notice at each counted button and in the privacy notice; legal review by someone with data protection expertise. The user-facing wording is still to be polished.
 
 ### KD-19: Two stages before the platform is tested with teachers (D8, draft)
-- **Decision**: A first draft ("First draft: first apps") starts now with the 5 to 10 creators the owner knows; it tests the supply side and the anonymous thanks, and produces the material to win teachers. The real MVP ("First apps, first thanks") follows with about 10 teachers won through the owner's contacts and tests thanks and trust.
+- **Decision**: A first draft ("First draft: first apps") starts now with the 5 to 10 creators the owner knows; it tests the supply side, the anonymous thanks, and whether the platform convinces teachers the owner does not know (referral links forwarded by contacts). The real MVP ("First apps, first thanks") follows with about 10 teachers reached through forwarding and tests thanks and built-in trust.
 - **Decision**: No rates (no tracking) and no accompanied test group (observed users behave differently): small absolute criteria and creator conversations. Comparing ways of asking for thanks is left for when there are enough users.
 - **Open**: criteria for the school-network test and the owner's weekly hours; when to test whether parents find the platform.
 
@@ -135,8 +136,9 @@ Adults look for apps in an acute moment: teachers right before a lesson, parents
 
 - [ ] Build the first draft in its simplest form: listing, overview, anonymous thanks (means per KD-18)
 - [ ] Invite the 5 to 10 creators and help with their first listing
-- [ ] Prepare material to win teachers from the first draft: real apps, screenshots, a short demo, a short letter for the owner's contacts
-- [ ] Win about 10 teachers for the real MVP
+- [ ] Make the platform explain itself, so it convinces teachers without the owner (it is the pitch)
+- [ ] Referral links per wave, and a short letter the owner's contacts can forward to subject-matching colleagues
+- [ ] Reach about 10 teachers through forwarding for the real MVP
 
 ## Growth
 
