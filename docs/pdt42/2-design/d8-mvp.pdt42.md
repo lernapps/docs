@@ -1,39 +1,38 @@
 # Set up the Minimum Viable Platform
 
+*Draft for discussion. Two stages: a first draft that can start now with the creators the platform owner knows, and the real MVP, which needs teachers who still have to be won. The first draft also produces what is needed to win them.*
+
+Two constraints shape every test. There is no tracking (KD-18), so no rate can be measured: nobody knows how many uses a thank-you is out of. And users are not accompanied or observed, because people who know they are watched would behave differently, above all when saying thanks. The tests therefore measure outcomes that need neither: whether apps get listed, whether thanks arrive, whether creators stay. With 5 to 10 creators and about 10 teachers, the criteria are small absolute numbers, and the conversations with creators are the main source. These are learning tests, not statistical ones. Comparing two ways of asking for thanks needs far more users and is left for later.
+
+## First draft: first apps
+
+Starts now, with the creators the platform owner knows. It tests the supply side and whether the anonymous thanks works at all, also from school networks: many of these creators are teachers or parents themselves. The apps, screenshots and a short demo that come out of it are the material for winning teachers for the real MVP.
+
 ```pdt42
 :::canvas
-id: cv-mvp
+id: cv-mvp-first-draft
 canvas: mvp
-of: mvp-first-thanks
+of: mvp-first-draft
 :::
 ```
 
-*Draft for discussion. The MVP tests whether the platform's riskiest assumptions hold with the real ecosystem: whether supply comes about, and whether thanks works as the currency of a free platform.*
-
-Two constraints shape every test. There is no tracking (KD-18), so no rate can be measured: nobody knows how many uses a thank-you is out of. And users are not accompanied or observed, because people who know they are watched would behave differently, above all when saying thanks. The tests therefore measure outcomes that need neither: whether thanks arrive at all, and whether creators stay. With 5 to 10 creators and up to 10 teachers, the criteria are small absolute numbers, and the conversations with creators are the main source. This is a learning MVP, not a statistical test.
-
-## First apps, first thanks
-
-All three experiences take part. The platform owner invites the creators personally and helps with their first listing (concierge); teachers are reached through the owner's contacts. Thanks and feedback run through the real anonymous click from the start, so what is tested is what will be built.
-
 ```pdt42
 :::mvp
-id: mvp-first-thanks
-title: First apps, first thanks
-experiences: x-app-in-minutes, x-practice-tonight, x-list-and-hear-back
+id: mvp-first-draft
+title: First draft: first apps
+experiences: x-list-and-hear-back
 base:
   - 5 to 10 potential creators from the platform owner's network
-  - Up to 10 teachers, reached through the owner's contacts
   - The Mathe-Karte as a first app
   - The docs site and the GitHub organisation lernapps with its workflows
-implementation: Concierge: the owner invites creators and teachers personally and helps with the first listing; thanks and structured feedback run through the real anonymous click; users are not accompanied or observed
+implementation: Concierge: the owner invites the creators personally and helps with the first listing; listing, overview and the anonymous thanks are built for real, in their simplest form
 status: planned
 :::
 ```
 
-## Assumptions
+### Assumptions
 
-### Creators list an app when it costs minutes
+#### Creators list an app when it costs minutes
 
 Reach is no reason for creators to start (D4), so the first listing has to cost almost nothing. If they do not list even when invited personally, there is nothing to test the rest with.
 
@@ -41,7 +40,7 @@ Reach is no reason for creators to start (D4), so the first listing has to cost 
 :::assumption
 id: a-creators-list
 title: Creators list an app when it costs minutes
-mvp: mvp-first-thanks
+mvp: mvp-first-draft
 kind: attraction
 riskiest: yes
 test: Invite the 5 to 10 creators personally and help with the first listing
@@ -50,7 +49,84 @@ status: open
 :::
 ```
 
-### Thanks arrive
+#### The anonymous thanks works, also from school networks
+
+The thanks has to reach the platform from school networks, which often filter, and has to step aside quietly where it cannot. Without tracking, the origin of a thank-you is unknown, so creators who teach try it once from their school and report.
+
+```pdt42
+:::assumption
+id: a-school-filters
+title: The anonymous thanks works, also from school networks
+mvp: mvp-first-draft
+kind: other
+riskiest: no
+test: Creators who teach send one thank-you from their school network and say whether it worked
+status: open
+:::
+```
+
+#### The platform owner can run the platform alone
+
+The platform has one owner (KD-09) and no money. The effort of the first draft shows whether that is sustainable until co-owners join (D6).
+
+```pdt42
+:::assumption
+id: a-owner-alone
+title: The platform owner can run the platform alone
+mvp: mvp-first-draft
+kind: business-model
+riskiest: no
+test: The owner notes the hours spent each week
+status: open
+:::
+```
+
+## First apps, first thanks
+
+The real MVP, once the first draft holds and teachers are won. All three experiences take part. Teachers are reached through the platform owner's contacts with prepared material from the first draft. Thanks and feedback run through the real anonymous click; users are not accompanied or observed.
+
+```pdt42
+:::canvas
+id: cv-mvp-first-thanks
+canvas: mvp
+of: mvp-first-thanks
+:::
+```
+
+```pdt42
+:::mvp
+id: mvp-first-thanks
+title: First apps, first thanks
+experiences: x-app-in-minutes, x-practice-tonight, x-list-and-hear-back
+base:
+  - The apps listed in the first draft
+  - Material to win teachers, built from the first draft
+  - About 10 teachers, still to be won through the owner's contacts
+implementation: Concierge: the owner wins teachers personally with the prepared material; thanks and structured feedback run through the real anonymous click; users are not accompanied or observed
+status: planned
+:::
+```
+
+### Assumptions
+
+#### Teachers can be won with prepared material
+
+Without teachers, none of the demand-side assumptions can be tested. Winning them is not a given: it needs material made for the purpose and the owner's contacts.
+
+```pdt42
+:::assumption
+id: a-teachers-won
+title: Teachers can be won with prepared material
+mvp: mvp-first-thanks
+kind: attraction
+riskiest: yes
+test: Approach teachers through the owner's contacts with the prepared material
+criteria: At least 10 teachers agree to use the platform in their lessons
+status: open
+:::
+```
+
+#### Thanks arrive
 
 The platform is free and lives on thanks (KD-17). Without tracking, the test cannot say how many users do not thank; it can only say whether thanks reach the creators at all.
 
@@ -67,7 +143,7 @@ status: open
 :::
 ```
 
-### Thanks keep creators
+#### Thanks keep creators
 
 Once their apps are used, praise and use should keep creators (D4). This decides whether thanks works as the currency.
 
@@ -84,7 +160,7 @@ status: open
 :::
 ```
 
-### Teachers use an app without checking it themselves
+#### Teachers use an app without checking it themselves
 
 Trust is built in rather than checked (KD-17): only apps that meet the fitness criteria are listed. The structured feedback after use carries the question, so no one is observed.
 
@@ -101,9 +177,9 @@ status: open
 :::
 ```
 
-### An app runs in class within minutes
+#### An app runs in class within minutes
 
-The value proposition for teachers in an acute moment. Measured the same way as trust, through an answer in the structured feedback.
+The value proposition for teachers in an acute moment, measured through an answer in the structured feedback.
 
 ```pdt42
 :::assumption
@@ -118,41 +194,9 @@ status: open
 :::
 ```
 
-### The way thanks is asked for makes a difference
+#### Parents find the platform the evening before a test
 
-Thanks should be well integrated without being pushy. Without tracking, two wordings or placements can still be compared: the platform shows one of them at random, so both reach about the same number of users.
-
-```pdt42
-:::assumption
-id: a-thanks-wording
-title: The way thanks is asked for makes a difference
-mvp: mvp-first-thanks
-kind: other
-riskiest: no
-test: Show one of two wordings or placements at random and count the thanks per variant
-status: open
-:::
-```
-
-### School networks let the thanks through
-
-The thanks has to reach the platform from school networks, which often filter. Without tracking, the origin of a thank-you is unknown, so teachers try it once and report.
-
-```pdt42
-:::assumption
-id: a-school-filters
-title: School networks let the thanks through
-mvp: mvp-first-thanks
-kind: other
-riskiest: no
-test: Ask the teachers to send one thank-you from their school network and say whether it worked
-status: open
-:::
-```
-
-### Parents find the platform the evening before a test
-
-Parents are not in the base yet; this is tested once the first assumptions hold.
+Parents are not in the base yet; this is tested once the riskiest assumptions hold.
 
 ```pdt42
 :::assumption
@@ -161,22 +205,6 @@ title: Parents find the platform the evening before a test
 mvp: mvp-first-thanks
 kind: attraction
 riskiest: no
-status: open
-:::
-```
-
-### The platform owner can run the platform alone
-
-The platform has one owner (KD-09) and no money. The effort of the MVP shows whether that is sustainable until co-owners join (D6).
-
-```pdt42
-:::assumption
-id: a-owner-alone
-title: The platform owner can run the platform alone
-mvp: mvp-first-thanks
-kind: business-model
-riskiest: no
-test: The owner notes the hours spent on the MVP each week
 status: open
 :::
 ```
