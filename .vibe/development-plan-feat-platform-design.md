@@ -90,7 +90,7 @@ Adults look for apps in an acute moment: teachers right before a lesson, parents
 - **Decision**: A first draft ("First draft: first apps") starts now with the 5 to 10 creators the owner knows; it tests the supply side, the anonymous thanks, and whether the platform convinces teachers the owner does not know (referral links forwarded by contacts). The real MVP ("First apps, first thanks") follows with about 10 teachers reached through forwarding and tests thanks and built-in trust.
 - **Decision**: No rates (no tracking) and no accompanied test group (observed users behave differently): small absolute criteria and creator conversations. Comparing ways of asking for thanks is left for when there are enough users.
 - **Decision**: The school-network test succeeds if the thanks works at most of the schools of the creators who teach. Whether parents find the platform is tested only after the riskiest assumptions hold (H115 accepted).
-- **Open**: the owner's weekly hours as the criterion for running the platform alone.
+- **Decision**: Whether the owner can run the platform alone is no decision criterion for the MVP: the effort changes a lot over time (initial investment vs. operation). It is an aspect when building the solution.
 
 ---
 
@@ -122,7 +122,6 @@ Adults look for apps in an acute moment: teachers right before a lesson, parents
 ## Strategy Design
 
 ### Tasks
-- [ ] D8 Set up the Minimum Viable Platform
 
 ### Completed
 - [x] D1 Map the ecosystem (H101 for GitHub and H102 ignored on purpose, see KD-10)
@@ -132,6 +131,7 @@ Adults look for apps in an acute moment: teachers right before a lesson, parents
 - [x] D5 Identify the elementary transactions and channels (H108 ignored for three transactions without a platform channel)
 - [x] D6 Design the learning engine
 - [x] D7 Assemble the platform experiences
+- [x] D8 Set up the Minimum Viable Platform (first draft and real MVP planned)
 
 ## Next actions (outside the model)
 
