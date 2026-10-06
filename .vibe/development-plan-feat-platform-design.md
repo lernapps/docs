@@ -89,6 +89,7 @@ Adults look for apps in an acute moment: teachers right before a lesson, parents
 ### KD-19: Two stages before the platform is tested with teachers (D8, draft)
 - **Decision**: A first draft ("First draft: first apps") starts now with the 5 to 10 creators the owner knows; it tests the supply side, the anonymous thanks, and whether the platform convinces teachers the owner does not know (referral links forwarded by contacts). The real MVP ("First apps, first thanks") follows with about 10 teachers reached through forwarding and tests thanks and built-in trust.
 - **Decision**: No rates (no tracking) and no accompanied test group (observed users behave differently): small absolute criteria and creator conversations. Comparing ways of asking for thanks is left for when there are enough users.
+- **Decision**: The first draft also tests the business model: thanks arrive without being explained to anyone (the platform has to make them self-evident), and creators contribute without payment, for guidance and thanks.
 - **Decision**: The school-network test succeeds if the thanks works at most of the schools of the creators who teach. Whether parents find the platform is tested only after the riskiest assumptions hold (H115 accepted).
 - **Decision**: Whether the owner can run the platform alone is no decision criterion for the MVP: the effort changes a lot over time (initial investment vs. operation). It is an aspect when building the solution.
 
