@@ -6,7 +6,7 @@ Two constraints shape every test. There is no hidden data collection (KD-18): on
 
 ## First draft: first apps
 
-Starts now, with the creators the platform owner knows. It tests the supply side, whether the anonymous thanks works at all, also from school networks, and whether the platform convinces teachers on its own. For the last, the owner's contacts forward a referral link to colleagues the owner does not know: the platform itself is the pitch.
+Starts now, with the creators the platform owner knows. It tests the supply side, whether the anonymous thanks works at all, also from school networks, and whether the platform convinces teachers on its own. For the last, the owner's contacts forward a referral link to colleagues the owner does not know: the platform itself is the pitch. The thanks is part of the first draft too, and nobody is told about it: if thanks arrive, the platform made them self-evident.
 
 ```pdt42
 :::canvas
@@ -26,7 +26,7 @@ base:
   - Teachers reached through the owner's contacts, who forward a referral link
   - The Mathe-Karte as a first app
   - The docs site and the GitHub organisation lernapps with its workflows
-implementation: Concierge: the owner invites the creators personally and helps with the first listing; listing, overview, referral links and the anonymous thanks are built for real, in their simplest form
+implementation: Concierge: the owner invites the creators personally and helps with the first listing; listing, overview, referral links and the anonymous thanks are built for real, in their simplest form; the thanks is explained to no one, the platform has to make it self-evident
 status: planned
 :::
 ```
@@ -63,6 +63,40 @@ kind: trust
 riskiest: yes
 test: The owner's contacts forward a referral link of one wave to subject-matching colleagues; count "I'll have a look" and "used in class" clicks of that wave
 criteria: At least 3 teachers from the forwarded wave use an app and report it with a click
+status: open
+:::
+```
+
+#### Thanks arrive without being explained
+
+The platform is free and lives on thanks (KD-17). Already in the first draft, thanks should arrive, without the owner explaining the thanks to anyone: the platform has to make it self-evident. With few users, the test can only say whether thanks arrive at all.
+
+```pdt42
+:::assumption
+id: a-thanks-arrive-unexplained
+title: Thanks arrive without being explained
+mvp: mvp-first-draft
+kind: business-model
+riskiest: yes
+test: Count the anonymous thanks per listed app; the owner explains the thanks to no one
+criteria: Thanks arrive for at least 3 listed apps within 4 weeks
+status: open
+:::
+```
+
+#### Creators contribute without payment
+
+The platform pays no one. Creators list their apps because they get guidance for building and thanks when their app helps (D4, D6), not money. This is the core of the free model.
+
+```pdt42
+:::assumption
+id: a-creators-unpaid
+title: Creators contribute without payment
+mvp: mvp-first-draft
+kind: business-model
+riskiest: yes
+test: Talk to each creator after listing and again after 4 weeks
+criteria: No creator asks for payment, and most name the guidance or the thanks as reason enough
 status: open
 :::
 ```
