@@ -321,7 +321,7 @@ improvement: Contributing an app takes minutes, without an own website or post
 
 ### One place to find apps
 
-Adults and students find apps in one place instead of by word of mouth.
+Adults and students find apps in one place instead of by word of mouth. Referral links let people recommend the platform; who follows one takes an explicit first step ("I'll have a look"), which is counted openly per referral wave, never per person.
 
 ```pdt42
 :::channel
@@ -332,6 +332,7 @@ components:
   - Listings in one comparable format
   - Finding by topic and grade
   - Tailored to the visitor without accounts
+  - Entry through referral links, with an explicit first step to have a look
 improvement: Finding an app no longer depends on word of mouth or luck
 :::
 ```
@@ -373,7 +374,7 @@ improvement: Several apps reach a class in one step
 
 Makes use, feedback, recommendations and thanks visible to the creator, so the reputation flow keeps them (D4). Thanks is the currency of the free platform: every user should understand that a thank-you is how they keep it alive, without the platform being pushy about it.
 
-There is no tracking of any kind. Thanks and feedback are only sent when someone clicks, they are anonymous and structured (no free text), and they never identify a student. Creators can include the same thanks in their app; where it cannot be reached, it quietly steps aside.
+There is no hidden data collection. Single interactions are counted openly, to learn whether valuable use happens: only explicit clicks, only totals, no cookies or browser storage, no personal data kept, and explained right where the click happens. Thanks and feedback are anonymous and structured (no free text), and they never identify a student. The apps themselves collect nothing. Creators can include the same thanks in their app; where it cannot be reached, it quietly steps aside.
 
 ```pdt42
 :::channel
@@ -383,7 +384,7 @@ medium: digital
 components:
   - Thanks and structured feedback with one click, after use
   - Optionally inside the app, if its creator includes it
-  - Anonymous and without tracking, accounts or free text
+  - Counted openly: only explicit clicks and totals, no accounts or free text
   - Steps aside quietly when it cannot be reached
 improvement: Use and praise reach the creator instead of staying invisible, and every user knows that thanking keeps the free platform alive
 :::

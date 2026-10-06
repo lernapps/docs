@@ -2,11 +2,11 @@
 
 *Draft for discussion. Two stages: a first draft that can start now with the creators the platform owner knows, and the real MVP, which needs teachers who still have to be won. The first draft also produces what is needed to win them.*
 
-Two constraints shape every test. There is no tracking (KD-18), so no rate can be measured: nobody knows how many uses a thank-you is out of. And users are not accompanied or observed, because people who know they are watched would behave differently, above all when saying thanks. The tests therefore measure outcomes that need neither: whether apps get listed, whether thanks arrive, whether creators stay. With 5 to 10 creators and about 10 teachers, the criteria are small absolute numbers, and the conversations with creators are the main source. These are learning tests, not statistical ones. Comparing two ways of asking for thanks needs far more users and is left for later.
+Two constraints shape every test. There is no hidden data collection (KD-18): only explicit clicks are counted, openly, so most rates cannot be measured: nobody knows how many uses a thank-you is out of. And users are not accompanied or observed, because people who know they are watched would behave differently, above all when saying thanks. The tests therefore measure outcomes that need neither: whether apps get listed, whether thanks arrive, whether creators stay. With 5 to 10 creators and about 10 teachers, the criteria are small absolute numbers, and the conversations with creators are the main source. These are learning tests, not statistical ones. Comparing two ways of asking for thanks needs far more users and is left for later.
 
 ## First draft: first apps
 
-Starts now, with the creators the platform owner knows. It tests the supply side and whether the anonymous thanks works at all, also from school networks: many of these creators are teachers or parents themselves. The apps, screenshots and a short demo that come out of it are the material for winning teachers for the real MVP.
+Starts now, with the creators the platform owner knows. It tests the supply side, whether the anonymous thanks works at all, also from school networks, and whether the platform convinces teachers on its own. For the last, the owner's contacts forward a referral link to colleagues the owner does not know: the platform itself is the pitch.
 
 ```pdt42
 :::canvas
@@ -20,12 +20,13 @@ of: mvp-first-draft
 :::mvp
 id: mvp-first-draft
 title: First draft: first apps
-experiences: x-list-and-hear-back
+experiences: x-list-and-hear-back, x-app-in-minutes
 base:
   - 5 to 10 potential creators from the platform owner's network
+  - Teachers reached through the owner's contacts, who forward a referral link
   - The Mathe-Karte as a first app
   - The docs site and the GitHub organisation lernapps with its workflows
-implementation: Concierge: the owner invites the creators personally and helps with the first listing; listing, overview and the anonymous thanks are built for real, in their simplest form
+implementation: Concierge: the owner invites the creators personally and helps with the first listing; listing, overview, referral links and the anonymous thanks are built for real, in their simplest form
 status: planned
 :::
 ```
@@ -45,6 +46,23 @@ kind: attraction
 riskiest: yes
 test: Invite the 5 to 10 creators personally and help with the first listing
 criteria: At least 5 creators list an app within 2 weeks
+status: open
+:::
+```
+
+#### The platform convinces teachers on its own
+
+Trust is tested at the moment of decision: does the platform's own address convince a teacher to use an app? Warm contacts would say yes for the owner's sake, so the owner's contacts forward a referral link to subject-matching colleagues the owner does not know. Only an action counts, not a promise. The referral code is one per wave, never per person: with numbers this small, totals per person would reveal individual behaviour.
+
+```pdt42
+:::assumption
+id: a-platform-convinces
+title: The platform convinces teachers on its own
+mvp: mvp-first-draft
+kind: trust
+riskiest: yes
+test: The owner's contacts forward a referral link of one wave to subject-matching colleagues; count "I'll have a look" and "used in class" clicks of that wave
+criteria: At least 3 teachers from the forwarded wave use an app and report it with a click
 status: open
 :::
 ```
@@ -83,7 +101,7 @@ status: open
 
 ## First apps, first thanks
 
-The real MVP, once the first draft holds and teachers are won. All three experiences take part. Teachers are reached through the platform owner's contacts with prepared material from the first draft. Thanks and feedback run through the real anonymous click; users are not accompanied or observed.
+The real MVP, once the first draft holds. All three experiences take part. Teachers are reached through referral links that the platform owner's contacts forward, with the platform itself as the pitch and a short letter to go with it. Thanks and feedback run through the real anonymous click; users are not accompanied or observed.
 
 ```pdt42
 :::canvas
@@ -100,28 +118,28 @@ title: First apps, first thanks
 experiences: x-app-in-minutes, x-practice-tonight, x-list-and-hear-back
 base:
   - The apps listed in the first draft
-  - Material to win teachers, built from the first draft
-  - About 10 teachers, still to be won through the owner's contacts
-implementation: Concierge: the owner wins teachers personally with the prepared material; thanks and structured feedback run through the real anonymous click; users are not accompanied or observed
+  - Referral links and a short letter for the owner's contacts to forward
+  - About 10 teachers, still to be reached through forwarding
+implementation: Concierge: the owner's contacts forward referral links per wave; thanks and structured feedback run through the real anonymous click; users are not accompanied or observed
 status: planned
 :::
 ```
 
 ### Assumptions
 
-#### Teachers can be won with prepared material
+#### The platform reaches enough teachers through forwarding
 
-Without teachers, none of the demand-side assumptions can be tested. Winning them is not a given: it needs material made for the purpose and the owner's contacts.
+Without teachers, none of the demand-side assumptions can be tested. Reaching them is not a given: it depends on contacts forwarding the platform, and on the platform convincing on its own (tested in the first draft).
 
 ```pdt42
 :::assumption
-id: a-teachers-won
-title: Teachers can be won with prepared material
+id: a-teachers-reached
+title: The platform reaches enough teachers through forwarding
 mvp: mvp-first-thanks
 kind: attraction
 riskiest: yes
-test: Approach teachers through the owner's contacts with the prepared material
-criteria: At least 10 teachers agree to use the platform in their lessons
+test: Forwarding waves through the owner's contacts, counted per wave
+criteria: At least 10 teachers from forwarded waves use an app and report it with a click
 status: open
 :::
 ```
