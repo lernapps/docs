@@ -2,6 +2,8 @@
 
 > The infrastructure layer that turns isolated educational micro-innovations into a coherent, trustworthy ecosystem.
 
+*This vision was written before the [platform design](../platform-design/). The design refines it: it focuses on getting apps into use, with teachers and parents in an acute moment, people who build apps for their own class or child, a free platform that lives on thanks, and no hidden data collection. Where the two differ, the platform design applies.*
+
 ---
 
 ## The context: PISA 2026 and what it actually means

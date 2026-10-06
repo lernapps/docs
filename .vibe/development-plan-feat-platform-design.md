@@ -92,6 +92,11 @@ Adults look for apps in an acute moment: teachers right before a lesson, parents
 - **Decision**: The school-network test succeeds if the thanks works at most of the schools of the creators who teach. Whether parents find the platform is tested only after the riskiest assumptions hold (H115 accepted).
 - **Decision**: Whether the owner can run the platform alone is no decision criterion for the MVP: the effort changes a lot over time (initial investment vs. operation). It is an aspect when building the solution.
 
+### KD-20: Idealistic, free, possibly a Verein later
+The platform owner does this idealistically: complaining about poor digitalisation in schools does not help, the marginal cost of building apps is dropping, yet using an app remains a teacher's personal risk. No money is to be earned; first see whether the need exists.
+- **Decision**: If lernapps.net takes off, it could become a registered association (Verein), so that it belongs to those who fill it with life (see the creators' path to co-ownership, D6). Recorded in biz42 chapter 8.
+- **Decision**: The home page (lernapps.github.io) tells the platform's story in plain German (ISO 24495-1): portraits for teachers, parents, people who build apps and learners; the principles; why it is free with a personal word; an honest answer for sceptics linking to the rendered design. The older vision (docs/vision.md) carries a note that the platform design refines it.
+
 ---
 
 ## Notes
