@@ -85,6 +85,11 @@ Adults look for apps in an acute moment: teachers right before a lesson, parents
 - **Decision**: Creators may include the same thanks component in their app; it steps aside quietly when unreachable.
 - **For D8 (means)**: a small API on a subdomain (e.g. `api.lernapps.net`, same site, CORS) instead of the same origin, which would put a proxy in front of every app load; a host without access logs, ideally in the EU; a short privacy notice; the fitness signal says "sends nothing unless you click thanks; then only an anonymous click".
 
+### KD-19: Two stages before the platform is tested with teachers (D8, draft)
+- **Decision**: A first draft ("First draft: first apps") starts now with the 5 to 10 creators the owner knows; it tests the supply side and the anonymous thanks, and produces the material to win teachers. The real MVP ("First apps, first thanks") follows with about 10 teachers won through the owner's contacts and tests thanks and trust.
+- **Decision**: No rates (no tracking) and no accompanied test group (observed users behave differently): small absolute criteria and creator conversations. Comparing ways of asking for thanks is left for when there are enough users.
+- **Open**: criteria for the school-network test and the owner's weekly hours; when to test whether parents find the platform.
+
 ---
 
 ## Notes
@@ -125,6 +130,13 @@ Adults look for apps in an acute moment: teachers right before a lesson, parents
 - [x] D5 Identify the elementary transactions and channels (H108 ignored for three transactions without a platform channel)
 - [x] D6 Design the learning engine
 - [x] D7 Assemble the platform experiences
+
+## Next actions (outside the model)
+
+- [ ] Build the first draft in its simplest form: listing, overview, anonymous thanks (means per KD-18)
+- [ ] Invite the 5 to 10 creators and help with their first listing
+- [ ] Prepare material to win teachers from the first draft: real apps, screenshots, a short demo, a short letter for the owner's contacts
+- [ ] Win about 10 teachers for the real MVP
 
 ## Growth
 
