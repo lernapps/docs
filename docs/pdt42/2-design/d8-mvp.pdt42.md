@@ -69,7 +69,7 @@ status: open
 
 #### The anonymous thanks works, also from school networks
 
-The thanks has to reach the platform from school networks, which often filter, and has to step aside quietly where it cannot. Without tracking, the origin of a thank-you is unknown, so creators who teach try it once from their school and report.
+The thanks has to reach the platform from school networks, which often filter, and has to step aside quietly where it cannot. Without tracking, the origin of a thank-you is unknown, so creators who teach try it once from their school and report. It is good enough if it works at most of their schools.
 
 ```pdt42
 :::assumption
