@@ -79,6 +79,7 @@ mvp: mvp-first-draft
 kind: other
 riskiest: no
 test: Creators who teach send one thank-you from their school network and say whether it worked
+criteria: It works at most of the schools of the creators who teach
 status: open
 :::
 ```
@@ -214,9 +215,10 @@ status: open
 
 #### Parents find the platform the evening before a test
 
-Parents are not in the base yet; this is tested once the riskiest assumptions hold.
+Parents are not in the base yet. This is tested on purpose only once the riskiest assumptions hold, so it has no test yet.
 
 ```pdt42
+:::ignore H115 Tested only after the riskiest assumptions hold, once parents are reached (KD-19) :::
 :::assumption
 id: a-parents-find
 title: Parents find the platform the evening before a test
