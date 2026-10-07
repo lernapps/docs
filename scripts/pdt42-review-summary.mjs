@@ -2,7 +2,7 @@
 // Renders the PR comment for the platform design review from the change that
 // `pdt42 diff <base>...HEAD --format json` wrote (scripts/build.sh, changes.json).
 // Modelled on pdt42's own scripts/platform-review.ts. Placeholders the workflow
-// replaces: {{PAGE_URL}} (the diff page, unzipped) and {{ARTIFACT_URL}} (site-preview).
+// replaces: {{PAGE_URL}} (the diff page in the preview) and {{SITE_URL}} (the preview of the whole site).
 //
 //   node scripts/pdt42-review-summary.mjs <changes.json> <base> > summary.md
 import { readFileSync } from "node:fs";
@@ -21,7 +21,7 @@ const { elements, edges, proseSections, documents } = diff.model;
 const lines = [MARKER, "### Platform design review", ""];
 if (elements.length + edges.length + proseSections.length === 0) {
   lines.push(`No platform design changes compared with \`${base}\`.`, "");
-  lines.push(`The built site: [site-preview]({{ARTIFACT_URL}})`, "");
+  lines.push(`**[Open the preview of the docs]({{SITE_URL}})**`, "");
   process.stdout.write(`${lines.join("\n")}\n`);
   process.exit(0);
 }
@@ -38,11 +38,11 @@ lines.push(
   "",
   "**[Open the platform design review]({{PAGE_URL}})** — the changes inside their chapters, in the browser",
   "",
+  "**[Open the preview of the docs]({{SITE_URL}})** — vision, organisation (biz42) and platform design as they would be published",
+  "",
   "| Added | Modified | Removed | Warnings |",
   "|---:|---:|---:|---:|",
   `| ${sum("added")} | ${sum("modified")} | ${sum("removed")} | ${diff.findings.length} |`,
-  "",
-  "The whole built site (`platform-design/`, `platform-design-diff/`, …): [site-preview]({{ARTIFACT_URL}})",
   "",
 );
 
