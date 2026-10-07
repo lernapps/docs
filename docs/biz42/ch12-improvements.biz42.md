@@ -37,7 +37,7 @@ Until the check runs, every listing says that its fitness is declared, not check
 ```biz42
 :::improvement
 id: imp-fitness-check
-title: Check every listed app for requests to third parties
+title: Check every listed app with an agent: click through, record the network, review the source
 type: proactive
 triggered-by: eval-first-draft
 addresses: cap-fitness-check, obj-trust

@@ -49,12 +49,12 @@ requires: cap-communication, cap-listing
 
 ## Trust built in
 
-Every listed app meets the conditions for listing, and what an app loads is checked, not taken on trust. Target: the check runs for every listing before the real MVP.
+Every listed app meets the conditions for listing, and what an app loads is checked, not taken on trust: an agent clicks through the app while the network is recorded, and reviews its source code. Target: the check runs for every listing before the real MVP.
 
 ```biz42
 :::objective
 id: obj-trust
-title: Every listed app checked against the conditions for listing, before the real MVP
+title: Every listed app checked by an agent before the real MVP
 owner: owner-platform
 addresses: risk-dsgvo, risk-endorsement, opp-fitness-signal
 measured-by: measure-fitness-checked
