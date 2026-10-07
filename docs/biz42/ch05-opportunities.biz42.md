@@ -1,34 +1,34 @@
 # Chapter 5: Opportunities
 
-## PISA political window
+## Cheap building, with guidance
 
-The PISA 2026 results have opened a rare political window where politicians, media, school leadership, and teachers are simultaneously motivated to act on digital education. lernapps.net can establish itself as the credible coordination layer before this window closes.
-
-```biz42
-:::opportunity
-id: opp-pisa-window
-title: PISA 2026 political moment creates demand for ecosystem coordination
-:::
-```
-
-## AI-assisted community creation
-
-AI-assisted development means motivated teachers and developers can build working educational prototypes in a weekend. lernapps.net can capture this creative energy by providing the capability map, scaffolding, and registry that turn individual experiments into ecosystem contributions.
+AI assistants let teachers and parents build working learning apps in a weekend. With guidance their assistant can follow, the next app is built faster and works for others too. That guidance is a benefit for creators independent of reach (pdt42 D6).
 
 ```biz42
 :::opportunity
 id: opp-ai-creation
-title: AI-assisted dev enables rapid community tool creation at scale
+title: AI-assisted building, guided so that apps work for others too
 :::
 ```
 
-## Frontend-only DSGVO framing
+## Fitness for use at a glance
 
-Tools that run entirely in the browser with no backend are structurally incapable of exfiltrating student data — yet this framing does not yet exist in the school adoption conversation. lernapps.net can pioneer a "frontend-only = DSGVO-safe by design" badge that unlocks immediate classroom adoption without bureaucratic review.
+Apps that run in the browser without account, installation and requests to third parties before a click can be used without a long review. Made visible and checked on every listing, this answers the question teachers ask before bringing an app to class.
 
 ```biz42
 :::opportunity
-id: opp-dsgvo-framing
-title: Frontend-only badge unlocks school adoption without procurement review
+id: opp-fitness-signal
+title: A checked fitness signal lets adults use an app without checking it themselves
+:::
+```
+
+## PISA window
+
+The PISA 2026 results created attention for better ways of learning with digital tools. A free platform with apps that work in class fits that moment.
+
+```biz42
+:::opportunity
+id: opp-pisa-window
+title: PISA 2026 creates attention for active learning with digital tools
 :::
 ```
