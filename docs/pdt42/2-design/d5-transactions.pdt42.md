@@ -339,7 +339,7 @@ improvement: Finding an app no longer depends on word of mouth or luck
 
 ### Visible fitness for use
 
-Every listing answers the question adults ask before using an app.
+Every listing answers the question adults ask before using an app. Having no server is not enough for that: what an app sends to third parties is checked, not taken from what its entry declares (lernapps/docs#11).
 
 ```pdt42
 :::channel
