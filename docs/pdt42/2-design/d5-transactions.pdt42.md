@@ -347,7 +347,7 @@ id: ch-fitness-signal
 title: Visible fitness for use
 medium: digital
 components:
-  - Whether data leaves the device
+  - Whether the app sends anything to third parties, checked rather than declared
   - Whether installation or sign-up is needed
 improvement: Adults no longer judge fitness for use alone or wait for a gatekeeper
 :::
