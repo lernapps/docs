@@ -1,0 +1,70 @@
+name: Preview
+
+# A preview of the docs for every pull request, at https://lernapps.net/docs/pr-preview/pr-<number>/,
+# updated on every push and removed when the pull request is closed. It contains the platform design's
+# changes since the merge base as one page (platform-design-diff/). One comment on the pull request,
+# updated in place, links both and lists the changed elements (scripts/pdt42-review-summary.mjs).
+# It shares the gh-pages branch with pages.yml (main at the root).
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: preview-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    # Pull requests from forks and from Dependabot get a read-only token and cannot push to gh-pages.
+    if: github.event.pull_request.head.repo.full_name == github.repository && github.event.pull_request.user.login != 'dependabot[bot]'
+    env:
+      SITE_PATH_PREFIX: /docs/pr-preview/pr-${{ github.event.pull_request.number }}/
+      SITE_PREVIEW: "1"
+      PREVIEW_URL: https://lernapps.net/docs/pr-preview/pr-${{ github.event.pull_request.number }}/
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0 # the platform design's diff needs the base branch
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        if: github.event.action != 'closed'
+        with:
+          node-version: 22
+      - if: github.event.action != 'closed'
+        run: ./scripts/build.sh
+        env:
+          PDT42_DIFF_BASE: origin/${{ github.base_ref }}
+      - uses: rossjrw/pr-preview-action@ffa7509e91a3ec8dfc2e5536c4d5c1acdf7a6de9 # v1.8.1
+        with:
+          source-dir: _site
+          preview-branch: gh-pages
+          umbrella-dir: pr-preview
+          pages-base-url: lernapps.net/docs
+          comment: false
+          qr-code: false
+          action: auto
+      - if: github.event.action != 'closed'
+        run: node scripts/pdt42-review-summary.mjs _site/platform-design-diff/changes.json "origin/${{ github.base_ref }}" > summary.md
+      - name: Comment on the pull request
+        if: github.event.action != 'closed'
+        uses: actions/github-script@3a2844b7e9c422d3c10d287c895573f7108da1b3 # v9.0.0
+        with:
+          script: |
+            const fs = require("node:fs");
+            const marker = "<!-- lernapps-docs-platform-design-review -->";
+            const { owner, repo } = context.repo;
+            const site = process.env.PREVIEW_URL;
+            const body = fs.readFileSync("summary.md", "utf8")
+              .replaceAll("{{PAGE_URL}}", `${site}platform-design-diff/`)
+              .replaceAll("{{SITE_URL}}", site)
+              + "\n<sub>The preview is ready once the GitHub Pages deployment of `gh-pages` has finished.</sub>\n";
+            await core.summary.addRaw(body).write();
+            const issue_number = context.payload.pull_request.number;
+            const comments = await github.paginate(github.rest.issues.listComments, { owner, repo, issue_number, per_page: 100 });
+            const existing = comments.find((c) => c.user?.type === "Bot" && c.body?.includes(marker));
+            if (existing) await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
+            else await github.rest.issues.createComment({ owner, repo, issue_number, body });

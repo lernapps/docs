@@ -1,6 +1,6 @@
 # docs
 
-Platform-level documentation of lernapps.net, served at <https://lernapps.github.io/docs/>.
+Platform-level documentation of lernapps.net, served at <https://lernapps.net/docs/>.
 
 This repo holds documents about **the platform as a whole and how the repos relate**. A document about a single repo lives in that repo, e.g. the architecture of the map in [lernapps/map](https://github.com/lernapps/map) and that of the Mathe-Karte in [lernapps/mathe-karte](https://github.com/lernapps/mathe-karte) ([ORGANIZATION.md §3.1](https://github.com/lernapps/.github/blob/main/ORGANIZATION.md#where-to-find-what)).
 
@@ -27,7 +27,7 @@ python3 -m http.server -d _site 8000   # preview; links assume the /docs/ prefix
 
 No npm dependencies: the biz42 and pdt42 CLIs and `marked` run via `npx` with pinned versions.
 
-In a pull request, the Pages workflow uploads the built site as the artifact `site-preview`. With `PDT42_DIFF_BASE` set (the workflow uses the PR's base branch, e.g. `origin/main`), it also contains `platform-design-diff/`: the platform design's changes since the merge base with that ref, as one page, plus `changes.json`. The page is also uploaded unzipped (`platform-design-review.html`, opens in the browser), and a comment on the pull request, updated on every push, links to both and lists the changed elements. Locally: `PDT42_DIFF_BASE=origin/main ./scripts/build.sh` (compares commits, not the working tree).
+GitHub Pages serves the `gh-pages` branch: `pages.yml` publishes `main` at its root. Every pull request gets a preview at `https://lernapps.net/docs/pr-preview/pr-<number>/` (`pr-preview.yml`), built with `SITE_PATH_PREFIX` and `SITE_PREVIEW` (banner and `noindex` on the static pages) and with `PDT42_DIFF_BASE` set to the base branch, so it also contains `platform-design-diff/`: the platform design's changes since the merge base, as one page, plus `changes.json`. One comment on the pull request, updated on every push, links the preview and the change page and lists the changed elements. The preview is removed when the pull request closes. Locally: `PDT42_DIFF_BASE=origin/main ./scripts/build.sh` (compares commits, not the working tree).
 
 ## History
 
