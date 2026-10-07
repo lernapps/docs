@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex">
+  <title>Seite nicht gefunden – lernapps.net</title>
+  <link rel="stylesheet" href="/docs/stil.css">
+  <script>
+    // Until 2026-09-27 the Mathe-Karte served its architecture docs at /docs/ (arc42, uebersicht, abgrenzung).
+    // That path belongs to this repo now; the Mathe-Karte docs live at /mathe-karte/docs/. Everything under
+    // /docs/ that is not ours is forwarded there, keeping query and hash.
+    (function () {
+      var EIGENE = /^\/docs\/(vision|about)(\/|$)|^\/docs\/(stil\.css|index\.html)?$/;
+      var pfad = location.pathname;
+      if (pfad.indexOf("/docs/") === 0 && !EIGENE.test(pfad)) {
+        location.replace("/mathe-karte" + pfad + location.search + location.hash);
+      }
+    })();
+  </script>
+</head>
+<body>
+  <header>
+    <p class="marke"><a href="/">lernapps.net</a> · <a href="/docs/">Dokumentation</a></p>
+  </header>
+  <main id="inhalt">
+    <h1>Seite nicht gefunden</h1>
+    <p>Die Architektur-Dokumentation der Mathe-Karte liegt jetzt unter
+      <a href="/mathe-karte/docs/">/mathe-karte/docs/</a>.</p>
+  </main>
+</body>
+</html>
