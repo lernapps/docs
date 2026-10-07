@@ -25,7 +25,7 @@ The model was rewritten on 2026-10-07 from the [platform design](../pdt42/) (pdt
 | pdt42 D8 `a-platform-convinces`, `a-teachers-reached` | At least 3 teachers from the forwarded wave; about 10 in the real MVP | ch07 measure-teacher-use | high | |
 | agent inference | All listed apps checked automatically before the real MVP | ch06 obj-trust, ch07 measure-fitness-checked | low | OPEN: confirm target and timing |
 | pdt42 D8 `a-creators-unpaid` | Most creators name the guidance or the thanks as reason enough | ch07 measure-guidance-use | high | |
-| agent inference | Objectives dated relative to the start of the first draft (October 2026); guidance before the real MVP | ch06 | low | OPEN: confirm dates |
+| user answer (2026-10-07) | The first draft starts at the end of October 2026; listing by mid-November, thanks and first referral wave by the end of November follow from its time frames (pdt42 D8) | ch06 obj-first-apps, obj-thanks, obj-teacher-use | high | Confirmed 2026-10-07 |
 | user answer (2026-10-06) | Oliver Jägle alone is accountable for the platform; Ralf D. Müller focuses on the Mathe-Karte | ch08 owner-platform | high | Confirmed 2026-10-06 |
 | lernapps/.github GOVERNANCE.md | Still describes two owners with equal rights | ch08 | high | OPEN: GOVERNANCE.md not yet updated |
 | lernapps/apps (2026-10-07) | Listing from a few fields, checked against a schema; thanks and feedback by prepared e-mail | ch09 cap-listing, cap-thanks, ch10 prod-apps | high | |

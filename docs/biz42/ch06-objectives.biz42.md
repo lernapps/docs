@@ -1,15 +1,15 @@
 # Chapter 6: Objectives
 
-The objectives follow the two stages of the platform design's [MVP](/docs/platform-design/#2-design/d8-mvp.pdt42.md) (D8): a first draft with the creators the owner knows, then the real MVP with teachers who still have to be won. Dates are relative to the start of the first draft (October 2026).
+The objectives follow the two stages of the platform design's [MVP](/docs/platform-design/#2-design/d8-mvp.pdt42.md) (D8): a first draft with the creators the owner knows, then the real MVP with teachers who still have to be won. The first draft starts at the end of October 2026; the dates follow from the time frames of its assumptions.
 
 ## First apps listed
 
-Creators list an app when it costs minutes. Without apps there is nothing to find and nothing to thank for. Target: within two weeks of inviting them.
+Creators list an app when it costs minutes. Without apps there is nothing to find and nothing to thank for. Target: within two weeks of inviting them at the end of October, so by mid-November 2026.
 
 ```biz42
 :::objective
 id: obj-first-apps
-title: First apps listed by the owner's creators, within two weeks of the invitation
+title: First apps listed by the owner's creators, by mid-November 2026
 owner: owner-platform
 addresses: risk-weak-supply, risk-invisibility
 measured-by: measure-apps-listed
@@ -19,12 +19,12 @@ requires: cap-listing, cap-communication
 
 ## Thanks arrive
 
-Already in the first draft, thanks should arrive without anyone explaining the thank-you: the platform has to make it self-evident. Target: within four weeks of the first listings.
+Already in the first draft, thanks should arrive without anyone explaining the thank-you: the platform has to make it self-evident. Target: within four weeks of the start, so by the end of November 2026.
 
 ```biz42
 :::objective
 id: obj-thanks
-title: Thanks arrive for listed apps without being explained, within four weeks
+title: Thanks arrive for listed apps without being explained, by the end of November 2026
 owner: owner-platform
 addresses: risk-no-thanks, risk-weak-supply
 measured-by: measure-thanks
@@ -34,12 +34,12 @@ requires: cap-thanks
 
 ## Apps used in class through the platform alone
 
-The platform has to convince teachers on its own: a referral link, passed on by the owner's contacts to colleagues the owner does not know, must lead to use in class. Target: in the first draft's referral wave, then about 10 teachers in the real MVP.
+The platform has to convince teachers on its own: a referral link, passed on by the owner's contacts to colleagues the owner does not know, must lead to use in class. Target: the first draft's referral wave in November 2026, then about 10 teachers in the real MVP.
 
 ```biz42
 :::objective
 id: obj-teacher-use
-title: Teachers reached by referral use apps in class, first wave in the first draft
+title: Teachers reached by referral use apps in class, first wave in November 2026
 owner: owner-platform
 addresses: risk-reach, risk-unsafe-adoption, opp-pisa-window
 measured-by: measure-teacher-use
