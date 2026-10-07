@@ -1,6 +1,6 @@
 # Chapter 3: Expectations
 
-The interested parties follow the roles of the platform design: adults who bring apps into use, people who build apps, and learners. Their portraits, with jobs, pains and gains, are in the platform design's [E2](/docs/platform-design/#1-exploration/e2-scan.pdt42.md).
+The interested parties follow the roles of the platform design: adults who bring apps into use, people who build apps, and learners. Their portraits, with jobs, pains and gains, are in the platform design's [E2](../platform-design/#1-exploration/e2-scan.pdt42.md).
 
 ## Adults in an acute moment
 
