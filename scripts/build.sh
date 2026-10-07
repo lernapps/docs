@@ -6,9 +6,7 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
-BIZ42=@biz42/cli@0.6.0
-MARKED=marked@18.0.14
-PDT42=@pdt42/cli@0.6.2
+source scripts/versions.sh
 PREFIX="${SITE_PATH_PREFIX:-/docs/}"
 
 rm -rf _site
@@ -22,7 +20,7 @@ npx --yes "$PDT42" --dir docs/pdt42 validate
 npx --yes "$PDT42" --dir docs/pdt42 build --out _site/platform-design
 
 # Review builds: with PDT42_DIFF_BASE set (e.g. origin/main in a pull request),
-# also render the platform design's changes since the merge base with that ref as
+# also render the platform design's and the organisation's changes since the merge base with that ref as
 # one self-contained page, and write the change as JSON (changes.json) for the PR
 # comment. Compares commits (<base>...HEAD), not the working tree. Findings of
 # `pdt42 diff` (block and prose not changed together) are reported, not fatal.
@@ -30,6 +28,9 @@ if [ -n "${PDT42_DIFF_BASE:-}" ]; then
   range="$PDT42_DIFF_BASE...HEAD"
   npx --yes "$PDT42" --dir docs/pdt42 build --single-file --diff "$range" --out _site/platform-design-diff
   npx --yes "$PDT42" --dir docs/pdt42 diff "$range" --format json > _site/platform-design-diff/changes.json || [ -s _site/platform-design-diff/changes.json ]
+  # The same for the organisation (biz42).
+  npx --yes "$BIZ42" --dir docs/biz42 build --single-file --diff "$range" --out _site/about-diff
+  npx --yes "$BIZ42" --dir docs/biz42 diff "$range" --format json > _site/about-diff/changes.json || [ -s _site/about-diff/changes.json ]
 fi
 
 npx --yes "$MARKED" --gfm -i docs/vision.md -o _site/vision/content.html
