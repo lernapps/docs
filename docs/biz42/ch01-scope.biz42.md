@@ -1,6 +1,6 @@
 # Chapter 1: Scope
 
-lernapps.net is a free, non-profit platform that gets small learning apps into use. People who build apps for their own class or child list them in minutes; teachers and parents find one that fits in an acute moment and can use it without doubt; a thank-you after use is what keeps the platform alive. Its market is German schools and families, and the people who build apps for them. How it works as a platform is designed in the [platform design](https://lernapps.net/docs/platform-design/); this model describes the business around it.
+lernapps.net is a free, non-profit platform that gets small learning apps into use. People who build apps for their own class or child list them in minutes; teachers and parents find one that fits in an acute moment and can use it without doubt; a thank-you after use is what keeps the platform alive. Its market is German schools and families, and the people who build apps for them. This model describes lernapps.net as an organisation: what it is accountable for, its objectives, risks and capabilities. The product itself, with its roles, what they exchange, the experiences and the MVP, is described in the [platform design](/docs/platform-design/) (pdt42).
 
 ```biz42
 :::scope
