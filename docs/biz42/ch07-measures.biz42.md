@@ -40,12 +40,12 @@ target: At least 3 teachers from the forwarded wave in the first draft; at least
 
 ## Fitness checked
 
-Counted from the entries whose fitness for use was checked by the automatic check (lernapps/tooling#1).
+Counted from the entries whose fitness for use was checked by the agent-based check: clicking through the app with the network recorded, and reviewing its source code (lernapps/tooling#1).
 
 ```biz42
 :::measure
 id: measure-fitness-checked
-title: Share of listed apps whose fitness for use was checked automatically
+title: Share of listed apps whose fitness for use was checked by an agent
 target: 100% of listed apps before the real MVP
 :::
 ```
