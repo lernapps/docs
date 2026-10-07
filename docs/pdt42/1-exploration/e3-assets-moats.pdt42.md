@@ -32,9 +32,9 @@ relates-to: e-creators, e-ai-assistants
 
 ### Frontend-only architecture
 
-The platform and the apps it recommends run in the browser only: no server, no database, no installation, no sign-up. This removes the main doubts about fitness for use, as no personal data leaves the device, and it causes no operating costs.
+The platform and the apps it recommends run in the browser only: no server, no database, no installation, no sign-up. This removes the main doubts about fitness for use, and it causes no operating costs. Having no server is necessary for data protection, not sufficient: scripts, fonts or embedded content from third parties can still send data, so what an app loads has to be checked.
 
-Valuable, because it answers exactly the question adults ask before bringing an app to students. Not rare: many small AI-built apps are static anyway. The advantage only arises once the property is made visible.
+Valuable, because it answers exactly the question adults ask before bringing an app to students. Not rare: many small AI-built apps are static anyway. The advantage only arises once the property is checked and made visible.
 
 ```pdt42
 :::ignore H002 No asset is inimitable; the assets are supporting on purpose (KD-04) :::

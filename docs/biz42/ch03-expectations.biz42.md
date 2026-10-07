@@ -1,79 +1,42 @@
 # Chapter 3: Expectations
 
-## Contributors build for themselves, and stay for recognition
+The interested parties follow the roles of the platform design (D1, D2): adults who bring apps into use, people who build apps, and learners.
 
-Creators of educational software — teachers, developers, and media educators — build their apps as personal software for their own class or child, with or without a platform. That others find, trust and build on their work is a nice-to-have, not their reason to start. Once their apps are used, though, most engaged creators are strongly motivated by praise and use; their work should then not disappear after a tweet or a barcamp session.
+## Adults in an acute moment
 
-```biz42
-:::expectation
-id: exp-contributor
-title: Contributors build for themselves; once their work is used, recognition motivates them strongly
-source: Contributor (builder — teacher, developer, media educator)
-surfaces: risk-invisibility, risk-weak-supply, opp-ai-creation
-:::
-```
-
-## Adopters need safe, active-learning tools
-
-Time-constrained classroom teachers need fast, reliable answers about whether a digital tool is DSGVO-compliant and whether it promotes active rather than passive learning, so they can adopt it without personal or school-level risk.
+Teachers minutes before a lesson and parents the evening before a test need one app for one topic and one grade, now, and need to see at a glance that it may be used. What they feel when it works is relief, not excitement. Anything asked afterwards must take a single click.
 
 ```biz42
 :::expectation
 id: exp-adopter
-title: Adopters need safe, active-learning tools they can trust immediately
-source: Adopter (classroom teacher)
-surfaces: risk-dsgvo, risk-unsafe-adoption
+title: Adults need a fitting app in minutes, usable without doubt
+source: Adults who bring apps into use (teachers, parents)
+surfaces: risk-unsafe-adoption, risk-reach, opp-fitness-signal
 :::
 ```
 
-## Navigators need defensible decisions without research overhead
+## People who build apps
 
-School coordinators and digital leads are accountable for their school's digital strategy but cannot spend weeks researching every tool. They need enough structured, reliable information to make and justify decisions to colleagues and parents — without doing all the evaluation work themselves.
+They build for their own class or child anyway; reach is a nice-to-have, not a reason to start. Listing must cost almost nothing. Once their app is used elsewhere, hearing about it, through thanks and feedback, motivates them strongly. They do not expect money.
 
 ```biz42
 :::expectation
-id: exp-navigator
-title: Navigators need to make defensible digital strategy decisions with low research overhead
-source: Navigator (school coordinator / digital lead)
-surfaces: risk-invisibility, opp-pisa-window
+id: exp-contributor
+title: Creators want listing to cost minutes, and to hear when their app helped
+source: People who build apps (teachers, parents, developers)
+surfaces: risk-weak-supply, risk-no-thanks, opp-ai-creation
 :::
 ```
 
-## Signal readers need open data on community activity
+## Learners
 
-Education researchers and policy advisors need a real-time, machine-readable picture of what teachers and builders are actually making and using — to track capability map evolution and inform evidence-based policy.
-
-```biz42
-:::expectation
-id: exp-signal-reader
-title: Signal readers need real-time, open data on community tool activity
-source: Signal Reader (researcher / policy-adjacent)
-surfaces: opp-pisa-window
-:::
-```
-
-## Platform maintainers need validated contribution workflows
-
-Platform maintainers need schema-validated contributions, low-friction CI pipelines, and clear data format documentation so reviewing pull requests stays manageable as the community grows.
+Learners want to try things out themselves, not only watch, without an account and without anyone knowing who they are. They usually get to know an app through an adult.
 
 ```biz42
 :::expectation
-id: exp-maintainer
-title: Platform maintainers need validated, low-friction contribution workflows
-source: Platform Maintainer
-surfaces: risk-island
-:::
-```
-
-## OSS contributors need forkable architecture
-
-Open-source contributors building on or forking the platform need documented architecture, clear building-block responsibilities, and zero-cost forkability so they can extend the ecosystem without starting from scratch.
-
-```biz42
-:::expectation
-id: exp-oss-contributor
-title: OSS contributors need documented, forkable architecture
-source: Open-source Contributor
-surfaces: opp-ai-creation
+id: exp-learner
+title: Learners want to try things out themselves, without account or being known
+source: Learners (students)
+surfaces: risk-dsgvo
 :::
 ```

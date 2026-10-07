@@ -1,66 +1,71 @@
 # Chapter 9: Capabilities
 
-## Strategic communication
+## Communication in plain language
 
-The ability to articulate what lernapps.net is and is not — in plain language that resonates with teachers, builders, researchers, and policy audiences — across the landing page, documentation, and community channels.
+Telling what lernapps.net is and is not, in plain German (ISO 24495-1), so that it explains itself: on the home page, on every app page, and right where a thank-you is asked for.
 
 ```biz42
 :::capability
 id: cap-communication
-title: Strategic communication — narrative and positioning
+title: Communication in plain language
 status: exists
-enables: prod-landing-page
+enables: prod-home, prod-apps
+owner: owner-platform
 :::
 ```
 
-## Capability mapping
+## Listing and checking entries
 
-The ability to maintain a living map of educational capabilities aligned to the KMK Kompetenzrahmen — tracking what exists, what is missing, and what is partially covered — and to keep that map current as the community evolves.
+Turning a few fields into a listing: one entry per app, checked against a schema that encodes the conditions for listing, published automatically (lernapps/apps).
 
 ```biz42
 :::capability
-id: cap-capability-mapping
-title: Capability mapping against KMK Kompetenzrahmen
+id: cap-listing
+title: Listing apps from a few fields, checked against a schema
+status: exists
+enables: prod-apps
+owner: owner-platform
+:::
+```
+
+## Receiving thanks and feedback
+
+Receiving thanks and structured feedback, counting them, and passing thanks on to creators. For now by prepared e-mail; later one click, counted openly as a total.
+
+```biz42
+:::capability
+id: cap-thanks
+title: Receiving, counting and passing on thanks and feedback
+status: exists
+enables: prod-apps
+owner: owner-platform
+:::
+```
+
+## Checking fitness for use
+
+Checking automatically what an app loads, so that "no requests to third parties before a click" is verified rather than declared (lernapps/tooling#1).
+
+```biz42
+:::capability
+id: cap-fitness-check
+title: Automatic check of what an app loads
 status: planned
-enables: prod-capability-map
+enables: prod-apps
+owner: owner-platform
 :::
 ```
 
-## Registry operations
+## Guidance for AI assistants
 
-The ability to accept, validate, and publish community tool submissions via a GitHub PR workflow with schema validation, CI checks, and clear contribution documentation.
+Guidance and a starting point that creators' AI assistants can follow: how to build an app that runs in the browser, needs no account, collects nothing, and can be listed (lernapps/tooling, lernapps/app-template).
 
 ```biz42
 :::capability
-id: cap-registry-ops
-title: Registry operations — contribution workflow and schema validation
+id: cap-guidance
+title: Guidance and templates for creators' AI assistants
 status: planned
-enables: prod-registry
-:::
-```
-
-## Curation and trust signalling
-
-The ability to assess submissions against the active/passive taxonomy and DSGVO signal framework, assign initial evidence levels, and surface community validation signals as the registry matures.
-
-```biz42
-:::capability
-id: cap-curation
-title: Curation — active/passive taxonomy and DSGVO trust signal assignment
-status: planned
-enables: prod-registry
-:::
-```
-
-## Scaffolding and agent guidance
-
-The ability to publish architecture guidelines, starter templates, and AI-assisted creation flows that allow contributors to build ecosystem-connected tools starting from a capability map gap rather than a blank page.
-
-```biz42
-:::capability
-id: cap-scaffolding
-title: Scaffolding — architecture guidelines and AI-assisted creation flow
-status: gap
-enables: prod-scaffolding
+enables: prod-guidance
+owner: owner-platform
 :::
 ```

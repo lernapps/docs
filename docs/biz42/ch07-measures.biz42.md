@@ -1,61 +1,63 @@
 # Chapter 7: Measures
 
-## Landing page engagement
+There is no hidden data collection (KD-18): only explicit clicks or e-mails are counted, so most rates cannot be measured. The measures are small absolute numbers, taken from the platform design's MVP (D8), and conversations with creators are the main source.
 
-The landing page is the first test of whether the narrative lands. Engagement signals — unique visitors, time on page, and newsletter or community sign-ups — indicate whether the story resonates with the target audience during the PISA political window.
+## Apps listed
+
+Counted from the entries in lernapps/apps that come from invited creators (pdt42 D8 `a-creators-list`).
 
 ```biz42
 :::measure
-id: measure-landing-engagement
-title: Landing page engagement and community sign-ups
-target: 500 unique visitors and 100 sign-ups within 60 days of launch
+id: measure-apps-listed
+title: Creators who list an app after a personal invitation
+target: At least 5 creators list an app within 2 weeks
 :::
 ```
 
-## Capability map coverage
+## Thanks received
 
-The capability map must cover all six KMK Kompetenzrahmen domains with at least one capability node per domain, and surface genuine gaps as explicit build opportunities. Coverage breadth and the number of `needed` nodes published as open contributions are the leading indicators.
+Counted from the thank-you e-mails per app, later from the open totals (pdt42 D8 `a-thanks-arrive-unexplained`). The test can only say whether thanks arrive at all, not how often per use.
 
 ```biz42
 :::measure
-id: measure-capability-coverage
-title: KMK capability map coverage — domains covered and gap nodes published
-target: All 6 KMK domains covered with at least 3 capability nodes each; at least 10 gap nodes marked as build opportunities
+id: measure-thanks
+title: Listed apps that receive at least one thank-you
+target: Thanks arrive for at least 3 listed apps within 4 weeks
 :::
 ```
 
-## Registry entry count and quality
+## Use in class through referral
 
-The registry must reach a critical mass of high-quality, DSGVO-safe, active-learning-focused entries to be useful as a discovery tool. Both quantity and quality signals (DSGVO status, active/passive classification populated) are tracked.
+Counted from use reports that carry the code of a referral wave; the code is one per wave, never per person (pdt42 D8 `a-platform-convinces`, `a-teachers-reached`).
 
 ```biz42
 :::measure
-id: measure-registry-entries
-title: Number of registry entries with DSGVO and active/passive signals populated
-target: 20 entries at launch, all with DSGVO status and active/passive level populated
+id: measure-teacher-use
+title: Teachers from a referral wave who report using an app in class
+target: At least 3 teachers from the forwarded wave in the first draft; at least 10 teachers in the real MVP
 :::
 ```
 
-## Scaffolding and agent guidance usage
+## Fitness checked
 
-Once the scaffolding layer is published, uptake by contributors — measured as new tool submissions that cite lernapps.net architecture or use starter templates — indicates whether the guidance is actually reducing friction.
+Counted from the entries whose fitness for use was checked by the automatic check (lernapps/tooling#1).
 
 ```biz42
 :::measure
-id: measure-scaffold-usage
-title: New tool submissions using lernapps.net scaffolding or referencing capability map gaps
-target: 5 submissions citing capability map gap within 90 days of scaffolding layer launch
+id: measure-fitness-checked
+title: Share of listed apps whose fitness for use was checked automatically
+target: 100% of listed apps before the real MVP
 :::
 ```
 
-## Trust signal adoption
+## Guidance used
 
-The progressive trust model is effective only if community members actually provide "I tried this" feedback and if DSGVO signals are populated. The share of entries with at least `community-validated` evidence level is the key quality signal.
+Taken from the talks with creators: what they name as reason enough to contribute without payment (pdt42 D8 `a-creators-unpaid`).
 
 ```biz42
 :::measure
-id: measure-trust-signals
-title: Share of registry entries with community-validated or higher evidence level
-target: 30% of registry entries reach community-validated within 6 months of launch
+id: measure-guidance-use
+title: Creators who built or improved an app with the guidance
+target: Most creators in the first draft name the guidance or the thanks as reason enough to contribute
 :::
 ```
