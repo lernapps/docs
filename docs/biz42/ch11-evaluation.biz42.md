@@ -1,37 +1,29 @@
 # Chapter 11: Evaluation
 
-## Monthly landing page review
+Users are not accompanied or observed: people who know they are watched behave differently, above all when saying thanks. Evaluation rests on what arrives by itself and on conversations with creators (pdt42 D8).
 
-The founding team reviews landing page engagement metrics monthly to determine whether the narrative is resonating and whether the PISA political window is being used effectively. Findings feed directly into narrative and positioning adjustments.
+## Talks with creators
+
+With 5 to 10 creators, conversations are the main source. They also tell whether the thanks reached the creator and what it meant.
 
 ```biz42
 :::evaluation
-id: eval-landing-review
-title: Monthly landing page and community growth review
-evaluates: measure-landing-engagement
+id: eval-creator-talks
+title: Talk to each creator after listing and again after four weeks
+method: Personal conversation with each creator of the first draft: was listing easy, did thanks arrive, is it reason enough to contribute without payment
+evaluates: measure-apps-listed, measure-thanks, measure-guidance-use
 :::
 ```
 
-## Quarterly capability map and registry review
+## Review of the first draft
 
-Every quarter the founding team reviews capability map coverage and registry entry quality — checking whether KMK domains are covered, whether gap nodes are being claimed, and whether new entries meet the DSGVO and active/passive quality bar.
-
-```biz42
-:::evaluation
-id: eval-registry-review
-title: Quarterly capability map coverage and registry quality review
-evaluates: measure-capability-coverage, measure-registry-entries, measure-trust-signals
-:::
-```
-
-## Quarterly scaffolding uptake review
-
-Once the scaffolding layer is live, the team reviews whether new contributions are being made from capability map gaps and whether the AI-assisted creation flow reduces friction. This evaluation triggers improvements to the scaffolding documentation and templates.
+After four weeks, the owner checks the first draft's assumptions against their criteria and decides about the next stage.
 
 ```biz42
 :::evaluation
-id: eval-scaffold-review
-title: Quarterly scaffolding uptake and contributor friction review
-evaluates: measure-scaffold-usage
+id: eval-first-draft
+title: Review of the first draft's assumptions after four weeks
+method: The owner compares what arrived (listings, thanks e-mails, use reports per referral wave, results of the fitness check) with the criteria of the platform design's MVP and decides whether to start the real MVP
+evaluates: measure-apps-listed, measure-thanks, measure-teacher-use, measure-fitness-checked
 :::
 ```

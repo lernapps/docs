@@ -1,40 +1,35 @@
 # Business Evidence
 
+The model was rewritten on 2026-10-07 from the [platform design](../pdt42/) (pdt42), which the owner worked out step by step; the earlier model described the edugo approach (capability map, registry) and was replaced as a whole. Facts are cited with the platform design chapter they come from.
+
 | Source | Derived fact | Used in (chapter/id) | Confidence | OPEN? |
 | ------ | ------------ | -------------------- | ---------- | ----- |
-| docs/vision.md | Mission: "infrastructure layer that turns isolated educational micro-innovations into a coherent, trustworthy ecosystem" | ch01 scope-lernapps | high | |
-| README.md | Organisation is non-profit | ch01 scope-lernapps | high | |
-| docs/vision.md | Scope: Germany, school-age learners (KMK Kompetenzrahmen) | ch01 scope-lernapps | high | |
-| user answer | Explicitly NOT passive content distribution | ch01 scope-lernapps | high | |
-| lernapps/map: docs/arc42/01-introduction-and-goals.arc42.md | Germany's PISA 2026 scores at historic low | ch02 sig-pisa | high | |
-| user answer + tum.de link | PISA 2026: german students not well prepared | ch02 sig-pisa | high | |
-| docs/vision.md | Many governmental programmes but low adoption in schools | ch02 sig-gov-programs | high | |
-| docs/vision.md | Teachers use unsafe software / resources on private accounts | ch02 sig-unsafe-tools | high | |
-| docs/vision.md | AI-assisted development dropped cost of edu-app prototype to a weekend | ch02 sig-ai-dev | high | |
-| docs/vision.md | Digitalpakt funded hardware but not software ecosystem | ch02 sig-digitalpakt | high | |
-| lernapps/map: docs/arc42/03-system-scope-and-context.arc42.md | Stakeholder: Contributor (builder) | ch03 exp-contributor | high | |
-| lernapps/map: docs/arc42/03-system-scope-and-context.arc42.md | Stakeholder: Adopter (classroom teacher) | ch03 exp-adopter | high | |
-| lernapps/map: docs/arc42/03-system-scope-and-context.arc42.md | Stakeholder: Navigator (school coordinator) | ch03 exp-navigator | high | |
-| lernapps/map: docs/arc42/03-system-scope-and-context.arc42.md | Stakeholder: Signal Reader (researcher/policy) | ch03 exp-signal-reader | high | |
-| lernapps/map: docs/arc42/03-system-scope-and-context.arc42.md | Stakeholder: Platform Maintainer | ch03 exp-maintainer | high | |
-| lernapps/map: docs/arc42/03-system-scope-and-context.arc42.md | Stakeholder: Open-source Contributor | ch03 exp-oss-contributor | high | |
-| docs/vision.md | Island proliferation risk: many isolated tools with no coordination | ch04 risk-island | high | |
-| docs/vision.md | DSGVO compliance barrier blocks good community tools from schools | ch04 risk-dsgvo | high | |
-| docs/vision.md | Tools are invisible: shared on Twitter or Barcamps then disappear | ch04 risk-invisibility | high | |
-| user answer | Teachers ignore digitalisation OR use unsafe tools on private accounts | ch04 risk-unsafe-adoption | high | |
-| agent inference | Reputational risk: lernapps.net endorses a tool that later proves harmful | ch04 risk-endorsement | low | OPEN: confirm this is a real concern |
-| docs/vision.md | PISA political moment creates window for ecosystem coordination | ch05 opp-pisa-window | high | |
-| docs/vision.md | AI-assisted dev enables rapid community-built tool creation | ch05 opp-ai-creation | high | |
-| docs/vision.md | Frontend-only tools are structurally DSGVO-safe — untapped framing | ch05 opp-dsgvo-framing | high | |
-| user answer | Communicate the value-add and what it's not | ch06 obj-narrative | high | |
-| user answer | Provide a basic capabilities inventory | ch06 obj-capability-map | high | |
-| user answer | Provide a high quality set of first apps | ch06 obj-first-apps | high | |
-| user answer | Provide agent guidance for rapid development | ch06 obj-agent-guidance | high | |
-| lernapps/map: docs/arc42/04-solution-strategy.arc42.md | Phase 0: landing page first ("vaporware first") | ch12 imp-landing | high | |
-| lernapps/map: docs/arc42/04-solution-strategy.arc42.md | Phase 1: static registry with capability map | ch12 imp-registry | high | |
-| lernapps/map: docs/arc42/04-solution-strategy.arc42.md | Phase 2: scaffolding layer + AI-assisted creation | ch12 imp-scaffolding | high | |
-| lernapps/.github GOVERNANCE.md | Owners: the two org owners, equal rights on all common repos | ch08 | high | OPEN: Oliver Jägle is the sole owner since 2026-10-06, GOVERNANCE.md not yet updated |
-| user answer (2026-10-06) | No money is to be earned; first see whether the need exists; if it takes off, possibly a registered association (Verein) | ch08 owner-platform | high | Confirmed 2026-10-06 |
-| user answer (pdt42 D4) | Creators build personal software anyway; use by others is a nice-to-have, so supply does not come by itself | ch04 risk-weak-supply | high | Confirmed 2026-09-30 |
-| user answer (pdt42 D4) | Once their apps are used, most engaged creators are strongly motivated by praise and use | ch03 exp-contributor, ch04 risk-weak-supply | high | Confirmed 2026-09-30 |
-| user answer (Ralf D. Müller, relayed by Oliver Jägle) | Ralf focuses on the apps (Mathe-Karte), not on the platform; Oliver alone is accountable for the platform | ch08 owner-platform | high | Confirmed 2026-09-30 |
+| pdt42 D1 `platform-lernapps` (narrative), docs/vision.md | Free to use, kept alive by thanks; adults find an app they can use right away; creators list in minutes and hear when it helped | ch01 scope-lernapps | high | |
+| user answer (2026-10-06), pdt42 E3 `as-non-profit` | Non-profit, no money is earned; possibly a registered association (Verein) later | ch01 scope-lernapps, ch08 owner-platform | high | Confirmed 2026-10-06 |
+| pdt42 E3, KD-18 | Excluded: hidden data collection, advertising, paid offers; the app stays its creator's | ch01 scope-lernapps | high | |
+| pdt42 E2 scan, docs/vision.md | AI assistants reduce building a learning app to a weekend | ch02 sig-ai-dev, ch05 opp-ai-creation | high | |
+| pdt42 E2/E4 (job "Adults confirm an app may be used") | Checking whether a tool may be used takes too long; unchecked tools are used | ch02 sig-unsafe-tools | high | |
+| earlier model (user answer) | Digitalpakt funded hardware, not software | ch02 sig-digitalpakt | high | |
+| user answer + tum.de link (earlier model) | PISA 2026: German students at a historic low | ch02 sig-pisa, ch05 opp-pisa-window | high | |
+| pdt42 D8 `a-school-filters` | School networks often filter unknown services | ch02 sig-school-filters, ch04 risk-no-thanks | medium | Test in the first draft |
+| pdt42 D1, D2, D7 `x-app-in-minutes`, `x-practice-tonight` | Adults in an acute moment need one fitting app now, usable without doubt; relief, not excitement | ch03 exp-adopter | high | |
+| user answer (pdt42 D4, 2026-09-30) | Creators build personal software anyway; use by others is a nice-to-have; once used, praise motivates them strongly | ch03 exp-contributor, ch04 risk-weak-supply | high | Confirmed 2026-09-30 |
+| pdt42 D2, D6 | Learners try things out themselves, without account; usually through an adult | ch03 exp-learner | high | |
+| pdt42 D8 `a-thanks-arrive-unexplained`, KD-17 | Thanks is the currency; it must arrive without being explained | ch04 risk-no-thanks, ch06 obj-thanks, ch07 measure-thanks | high | |
+| pdt42 D8 `a-teachers-reached`, `a-platform-convinces` | Teachers are reached through referral waves; the platform itself is the pitch | ch04 risk-reach, ch06 obj-teacher-use, ch07 measure-teacher-use | high | |
+| lernapps/docs#11 (Ralf D. Müller in lernapps/docs#3) | No server is necessary, not sufficient for data protection; what an app loads must be checked | ch04 risk-dsgvo, ch06 obj-trust, ch09 cap-fitness-check | high | |
+| pdt42 D5 `ch-fitness-signal` | Fitness for use visible on every listing | ch05 opp-fitness-signal, ch04 risk-unsafe-adoption | high | |
+| pdt42 D6 | Guidance for creators' AI assistants as a benefit independent of reach | ch05 opp-ai-creation, ch06 obj-agent-guidance | high | |
+| pdt42 D8 `a-creators-list` | At least 5 creators list an app within 2 weeks | ch07 measure-apps-listed | high | |
+| pdt42 D8 `a-thanks-arrive-unexplained` | Thanks arrive for at least 3 listed apps within 4 weeks | ch07 measure-thanks | high | |
+| pdt42 D8 `a-platform-convinces`, `a-teachers-reached` | At least 3 teachers from the forwarded wave; about 10 in the real MVP | ch07 measure-teacher-use | high | |
+| agent inference | All listed apps checked automatically before the real MVP | ch06 obj-trust, ch07 measure-fitness-checked | low | OPEN: confirm target and timing |
+| pdt42 D8 `a-creators-unpaid` | Most creators name the guidance or the thanks as reason enough | ch07 measure-guidance-use | high | |
+| agent inference | Objectives dated relative to the start of the first draft (October 2026); guidance before the real MVP | ch06 | low | OPEN: confirm dates |
+| user answer (2026-10-06) | Oliver Jägle alone is accountable for the platform; Ralf D. Müller focuses on the Mathe-Karte | ch08 owner-platform | high | Confirmed 2026-10-06 |
+| lernapps/.github GOVERNANCE.md | Still describes two owners with equal rights | ch08 | high | OPEN: GOVERNANCE.md not yet updated |
+| lernapps/apps (2026-10-07) | Listing from a few fields, checked against a schema; thanks and feedback by prepared e-mail | ch09 cap-listing, cap-thanks, ch10 prod-apps | high | |
+| user answer (2026-10-07) | Thanks by e-mail for the MVP, to test whether it works; counted with one click later | ch09 cap-thanks, ch12 imp-counting | high | Confirmed 2026-10-07 |
+| pdt42 D8 (users not observed; conversations as main source) | Evaluation by what arrives and by talks with creators | ch11 | high | |
+| H006 | imp-first-draft has no triggering evaluation: it is the start | ch12 imp-first-draft | – | accepted |
+| H005 | risk-reach follows from the MVP, not from an external signal | ch04 risk-reach | – | accepted |
