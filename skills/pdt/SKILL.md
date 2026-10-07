@@ -5,7 +5,7 @@ description: Use when work in a lernapps repository depends on how the lernapps.
 
 # The lernapps.net platform design
 
-lernapps.net is designed as a platform in the sense of the Platform Design Toolkit (PDT, Boundaryless). The design is a pdt42 model in the repo [lernapps/docs](https://github.com/lernapps/docs), folder `docs/pdt42/`; rendered at <https://lernapps.github.io/docs/platform-design/>.
+lernapps.net is designed as a platform in the sense of the Platform Design Toolkit (PDT, Boundaryless). The design is a pdt42 model in the repo [lernapps/docs](https://github.com/lernapps/docs), folder `docs/pdt42/`; rendered at <https://lernapps.net/docs/platform-design/>.
 
 ## Read it
 
