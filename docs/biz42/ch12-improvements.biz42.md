@@ -2,7 +2,7 @@
 
 ## First draft: first apps
 
-Listing, overview, referral links and the thank-you, built for real in their simplest form, with the creators the owner knows (pdt42 D8 `mvp-first-draft`).
+Listing, overview, referral links and the thank-you, built for real in their simplest form, with the creators the owner knows ([pdt42 D8 `mvp-first-draft`](/docs/platform-design/#2-design/d8-mvp.pdt42.md:el-mvp-first-draft)).
 
 ```biz42
 :::ignore H006 imp-first-draft is the start of the platform, not the result of an evaluation — accepted
@@ -60,7 +60,7 @@ addresses: cap-guidance, prod-guidance, obj-agent-guidance
 
 ## First apps, first thanks
 
-The real MVP, once the first draft holds: about 10 teachers reached through referral waves, all three experiences (pdt42 D8 `mvp-first-thanks`).
+The real MVP, once the first draft holds: about 10 teachers reached through referral waves, all three experiences ([pdt42 D8 `mvp-first-thanks`](/docs/platform-design/#2-design/d8-mvp.pdt42.md:el-mvp-first-thanks)).
 
 ```biz42
 :::improvement

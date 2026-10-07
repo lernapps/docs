@@ -307,7 +307,7 @@ of: e-ai-assistants
 
 ### Platform owner
 
-Oliver Jägle owns and shapes the platform strategy. Creators who bring their own best practices into the guidance can grow into co-owners (D6). Ralf D. Müller, the second owner of the GitHub organisation, builds apps and appears among the app creators.
+Oliver Jägle owns and shapes the platform strategy. Creators who bring their own best practices into the guidance can grow into co-owners (D6). Ralf D. Müller builds apps (the Mathe-Karte) and appears among the app creators. What the platform owner is accountable for as an organisation, with its objectives, risks and capabilities, is described in the [business model](/docs/about/#ch08-owners.biz42.md:el-owner-platform) (biz42).
 
 ```pdt42
 :::entity

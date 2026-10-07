@@ -1,5 +1,7 @@
 # Map the ecosystem
 
+*The platform design describes the product: who takes part, what they exchange, and the experiences. The organisation that runs it, with its objectives, risks and capabilities, is described in the [business model](/docs/about/) (biz42).*
+
 ```pdt42
 :::canvas
 id: cv-ecosystem

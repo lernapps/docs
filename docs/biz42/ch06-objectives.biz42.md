@@ -1,6 +1,6 @@
 # Chapter 6: Objectives
 
-The objectives follow the two stages of the platform design's MVP (D8): a first draft with the creators the owner knows, then the real MVP with teachers who still have to be won. Dates are relative to the start of the first draft (October 2026).
+The objectives follow the two stages of the platform design's [MVP](/docs/platform-design/#2-design/d8-mvp.pdt42.md) (D8): a first draft with the creators the owner knows, then the real MVP with teachers who still have to be won. Dates are relative to the start of the first draft (October 2026).
 
 ## First apps listed
 

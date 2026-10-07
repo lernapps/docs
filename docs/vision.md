@@ -2,7 +2,7 @@
 
 > Small learning apps that work, found in minutes, used without doubt, kept alive by thanks.
 
-This is the short why. The [platform design](../platform-design/) works it out in detail: roles, what they exchange, the experiences and the MVP. Where the two differ, the platform design applies.
+This is the short why. The [platform design](../platform-design/) works out the product in detail: roles, what they exchange, the experiences and the MVP. The [organisation](../about/) behind it, with its objectives, risks and capabilities, is described in the business model. Where they differ from this vision, they apply.
 
 ## The problem: good apps exist, they just don't arrive
 
