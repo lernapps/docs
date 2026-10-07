@@ -1,0 +1,3149 @@
+{
+  "version": 1,
+  "base": {
+    "label": "01168f619a15b795a06944073fde7ead18dcc431",
+    "commit": "01168f619a15b795a06944073fde7ead18dcc431"
+  },
+  "head": {
+    "label": "c7b753c9c0d0060582043afa757f7566b3d963f5"
+  },
+  "acceptanceBase": "01168f619a15b795a06944073fde7ead18dcc431",
+  "untracked": [],
+  "accepted": false,
+  "hasBlockingFindings": false,
+  "findings": [],
+  "model": {
+    "elements": [
+      {
+        "id": "scope-lernapps",
+        "kind": "scope",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "excluded",
+            "before": "|",
+            "after": "Hosting, owning or changing apps: the app stays its creator's; Learning management, class management or student records; Certification or procurement on behalf of schools; Hidden data collection, advertising or paid offers; Passive content (videos, articles, worksheets) as the main offer"
+          },
+          {
+            "name": "included",
+            "before": "|",
+            "after": "Small active-learning apps that run in the browser, without account or installation; Finding apps by topic and grade, with a visible signal of fitness for use; Listing apps with almost no effort, checked automatically; Thanks and feedback from users back to the people who built the app; Guidance for the AI assistants of people who build apps; German schools and families (teachers, parents, learners)"
+          },
+          {
+            "name": "title",
+            "before": "lernapps.net — Community EdTech Coordination Layer",
+            "after": "lernapps.net — small learning apps into use, kept alive by thanks"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch01-scope.biz42.md",
+          "line": 6
+        },
+        "head": {
+          "file": "docs/biz42/ch01-scope.biz42.md",
+          "line": 6
+        },
+        "section": {
+          "file": "docs/biz42/ch01-scope.biz42.md",
+          "headingPath": [
+            "Chapter 1: Scope"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "sig-ai-dev",
+        "kind": "signal",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "surfaces",
+            "before": [
+              "risk-island",
+              "opp-ai-creation"
+            ],
+            "after": [
+              "opp-ai-creation",
+              "risk-invisibility"
+            ]
+          },
+          {
+            "name": "title",
+            "before": "AI-assisted dev reduces tool-building cost to a weekend",
+            "after": "AI assistants reduce building a learning app to a weekend"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "line": 60
+        },
+        "head": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "line": 8
+        },
+        "section": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "headingPath": [
+            "Chapter 2: Signals",
+            "AI assistants make building cheap"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "sig-unsafe-tools",
+        "kind": "signal",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "surfaces",
+            "before": [
+              "risk-dsgvo",
+              "risk-unsafe-adoption",
+              "opp-dsgvo-framing"
+            ],
+            "after": [
+              "risk-unsafe-adoption",
+              "risk-dsgvo",
+              "opp-fitness-signal"
+            ]
+          },
+          {
+            "name": "title",
+            "before": "Teachers using unsafe or unreviewed tools on private accounts",
+            "after": "Teachers use unchecked tools because checking takes too long"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "line": 47
+        },
+        "head": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "line": 21
+        },
+        "section": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "headingPath": [
+            "Chapter 2: Signals",
+            "Unsafe tools in class"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "sig-digitalpakt",
+        "kind": "signal",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "surfaces",
+            "before": [
+              "risk-island",
+              "opp-pisa-window"
+            ],
+            "after": [
+              "risk-unsafe-adoption",
+              "opp-pisa-window"
+            ]
+          },
+          {
+            "name": "title",
+            "before": "Digitalpakt funded hardware, not software ecosystem",
+            "after": "Digitalpakt funded hardware, not fitting software"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "line": 21
+        },
+        "head": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "line": 34
+        },
+        "section": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "headingPath": [
+            "Chapter 2: Signals",
+            "Hardware without fitting software"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "sig-gov-programs",
+        "kind": "signal",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "line": 34
+        },
+        "section": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "headingPath": [
+            "Chapter 2: Signals",
+            "Low adoption of government digital programmes"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "sig-pisa",
+        "kind": "signal",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "surfaces",
+            "before": [
+              "risk-invisibility",
+              "risk-unsafe-adoption",
+              "opp-pisa-window"
+            ],
+            "after": [
+              "opp-pisa-window"
+            ]
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "line": 8
+        },
+        "head": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "line": 47
+        },
+        "section": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "headingPath": [
+            "Chapter 2: Signals",
+            "PISA 2026"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "sig-school-filters",
+        "kind": "signal",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "line": 60
+        },
+        "section": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "headingPath": [
+            "Chapter 2: Signals",
+            "School networks filter"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "sig-kmk-strategy",
+        "kind": "signal",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "line": 73
+        },
+        "section": {
+          "file": "docs/biz42/ch02-signals.biz42.md",
+          "headingPath": [
+            "Chapter 2: Signals",
+            "KMK Strategie \"Bildung in der digitalen Welt\""
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "exp-adopter",
+        "kind": "expectation",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "source",
+            "before": "Adopter (classroom teacher)",
+            "after": "Adults who bring apps into use (teachers, parents)"
+          },
+          {
+            "name": "surfaces",
+            "before": [
+              "risk-dsgvo",
+              "risk-unsafe-adoption"
+            ],
+            "after": [
+              "risk-unsafe-adoption",
+              "risk-reach",
+              "opp-fitness-signal"
+            ]
+          },
+          {
+            "name": "title",
+            "before": "Adopters need safe, active-learning tools they can trust immediately",
+            "after": "Adults need a fitting app in minutes, usable without doubt"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "line": 21
+        },
+        "head": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "line": 10
+        },
+        "section": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "headingPath": [
+            "Chapter 3: Expectations",
+            "Adults in an acute moment"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "exp-contributor",
+        "kind": "expectation",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "source",
+            "before": "Contributor (builder — teacher, developer, media educator)",
+            "after": "People who build apps (teachers, parents, developers)"
+          },
+          {
+            "name": "surfaces",
+            "before": [
+              "risk-invisibility",
+              "risk-weak-supply",
+              "opp-ai-creation"
+            ],
+            "after": [
+              "risk-weak-supply",
+              "risk-no-thanks",
+              "opp-ai-creation"
+            ]
+          },
+          {
+            "name": "title",
+            "before": "Contributors build for themselves; once their work is used, recognition motivates them strongly",
+            "after": "Creators want listing to cost minutes, and to hear when their app helped"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "line": 8
+        },
+        "head": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "line": 23
+        },
+        "section": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "headingPath": [
+            "Chapter 3: Expectations",
+            "People who build apps"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "exp-navigator",
+        "kind": "expectation",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "line": 34
+        },
+        "section": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "headingPath": [
+            "Chapter 3: Expectations",
+            "Navigators need defensible decisions without research overhead"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "exp-learner",
+        "kind": "expectation",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "line": 36
+        },
+        "section": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "headingPath": [
+            "Chapter 3: Expectations",
+            "Learners"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "exp-signal-reader",
+        "kind": "expectation",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "line": 47
+        },
+        "section": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "headingPath": [
+            "Chapter 3: Expectations",
+            "Signal readers need open data on community activity"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "exp-maintainer",
+        "kind": "expectation",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "line": 60
+        },
+        "section": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "headingPath": [
+            "Chapter 3: Expectations",
+            "Platform maintainers need validated contribution workflows"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "exp-oss-contributor",
+        "kind": "expectation",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "line": 73
+        },
+        "section": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "headingPath": [
+            "Chapter 3: Expectations",
+            "OSS contributors need forkable architecture"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "risk-island",
+        "kind": "risk",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "line": 8
+        },
+        "section": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "headingPath": [
+            "Chapter 4: Risks",
+            "Island proliferation"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "risk-no-thanks",
+        "kind": "risk",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "line": 21
+        },
+        "section": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "headingPath": [
+            "Chapter 4: Risks",
+            "Thanks do not arrive"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "risk-reach",
+        "kind": "risk",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "line": 37
+        },
+        "section": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "headingPath": [
+            "Chapter 4: Risks",
+            "Teachers are not reached"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "risk-invisibility",
+        "kind": "risk",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "mitigation",
+            "before": "solution registry with PR-based contributions gives every tool a permanent, findable, linkable entry",
+            "after": "one place to find apps by topic and grade, with deep links to single topics and a page per app that can be passed on"
+          },
+          {
+            "name": "title",
+            "before": "Community-built tools are structurally invisible and unrecoverable",
+            "after": "Small learning apps stay invisible beyond where they were made"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "line": 34
+        },
+        "head": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "line": 50
+        },
+        "section": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "headingPath": [
+            "Chapter 4: Risks",
+            "Apps stay invisible"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "risk-dsgvo",
+        "kind": "risk",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "mitigation",
+            "before": "frontend-only badge provides structural DSGVO guarantee; trust signal taxonomy makes compliance status visible at a glance",
+            "after": "list only apps without account, installation and requests to third parties before a click; check this automatically instead of trusting what an entry declares (lernapps/tooling#1)"
+          },
+          {
+            "name": "title",
+            "before": "DSGVO non-compliance blocks or dangerously bypasses school adoption",
+            "after": "Data protection blocks good apps, or apps that leak data are used anyway"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "line": 21
+        },
+        "head": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "line": 63
+        },
+        "section": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "headingPath": [
+            "Chapter 4: Risks",
+            "Data protection blocks or is bypassed"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "risk-unsafe-adoption",
+        "kind": "risk",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "mitigation",
+            "before": "solution registry with active/passive taxonomy and DSGVO signals gives teachers a fast, trustworthy alternative discovery path",
+            "after": "a fitness signal on every listing, so an app can be used without checking it yourself; only apps where learners do something themselves"
+          },
+          {
+            "name": "title",
+            "before": "Teachers adopt unsafe or pedagogically passive tools by default",
+            "after": "Adults fall back on unsafe or passive tools for lack of a quick alternative"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "line": 47
+        },
+        "head": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "line": 76
+        },
+        "section": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "headingPath": [
+            "Chapter 4: Risks",
+            "Unsafe or passive tools by default"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "risk-endorsement",
+        "kind": "risk",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "mitigation",
+            "before": "progressive trust model (anecdotal → community-validated → research-backed) distributes responsibility; no single authority endorses tools",
+            "after": "clear conditions for listing, checked automatically where possible; the listing says what was declared and what was checked; lernapps.net makes properties visible and does not certify apps"
+          },
+          {
+            "name": "title",
+            "before": "Reputational risk from endorsing a tool that later proves harmful",
+            "after": "Reputational risk from listing an app that later proves harmful"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "line": 63
+        },
+        "head": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "line": 89
+        },
+        "section": {
+          "file": "docs/biz42/ch04-risks.biz42.md",
+          "headingPath": [
+            "Chapter 4: Risks",
+            "Reputation if a listed app proves harmful"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "opp-ai-creation",
+        "kind": "opportunity",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "title",
+            "before": "AI-assisted dev enables rapid community tool creation at scale",
+            "after": "AI-assisted building, guided so that apps work for others too"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch05-opportunities.biz42.md",
+          "line": 19
+        },
+        "head": {
+          "file": "docs/biz42/ch05-opportunities.biz42.md",
+          "line": 8
+        },
+        "section": {
+          "file": "docs/biz42/ch05-opportunities.biz42.md",
+          "headingPath": [
+            "Chapter 5: Opportunities",
+            "Cheap building, with guidance"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "opp-fitness-signal",
+        "kind": "opportunity",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch05-opportunities.biz42.md",
+          "line": 19
+        },
+        "section": {
+          "file": "docs/biz42/ch05-opportunities.biz42.md",
+          "headingPath": [
+            "Chapter 5: Opportunities",
+            "Fitness for use at a glance"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "opp-pisa-window",
+        "kind": "opportunity",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "title",
+            "before": "PISA 2026 political moment creates demand for ecosystem coordination",
+            "after": "PISA 2026 creates attention for active learning with digital tools"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch05-opportunities.biz42.md",
+          "line": 8
+        },
+        "head": {
+          "file": "docs/biz42/ch05-opportunities.biz42.md",
+          "line": 30
+        },
+        "section": {
+          "file": "docs/biz42/ch05-opportunities.biz42.md",
+          "headingPath": [
+            "Chapter 5: Opportunities",
+            "PISA window"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "opp-dsgvo-framing",
+        "kind": "opportunity",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch05-opportunities.biz42.md",
+          "line": 30
+        },
+        "section": {
+          "file": "docs/biz42/ch05-opportunities.biz42.md",
+          "headingPath": [
+            "Chapter 5: Opportunities",
+            "Frontend-only DSGVO framing"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "obj-narrative",
+        "kind": "objective",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "line": 8
+        },
+        "section": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "headingPath": [
+            "Chapter 6: Objectives",
+            "Establish the narrative and positioning"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "obj-first-apps",
+        "kind": "objective",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "addresses",
+            "before": [
+              "risk-dsgvo",
+              "risk-unsafe-adoption",
+              "opp-dsgvo-framing"
+            ],
+            "after": [
+              "risk-weak-supply",
+              "risk-invisibility"
+            ]
+          },
+          {
+            "name": "measured-by",
+            "before": [
+              "measure-registry-entries"
+            ],
+            "after": [
+              "measure-apps-listed"
+            ]
+          },
+          {
+            "name": "requires",
+            "before": [
+              "cap-curation",
+              "cap-registry-ops"
+            ],
+            "after": [
+              "cap-listing",
+              "cap-communication"
+            ]
+          },
+          {
+            "name": "title",
+            "before": "Curate a high-quality initial set of registry entries",
+            "after": "First apps listed by the owner's creators, by mid-November 2026"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "line": 38
+        },
+        "head": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "line": 10
+        },
+        "section": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "headingPath": [
+            "Chapter 6: Objectives",
+            "First apps listed"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "obj-capability-map",
+        "kind": "objective",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "line": 23
+        },
+        "section": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "headingPath": [
+            "Chapter 6: Objectives",
+            "Publish a live capability inventory"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "obj-thanks",
+        "kind": "objective",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "line": 25
+        },
+        "section": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "headingPath": [
+            "Chapter 6: Objectives",
+            "Thanks arrive"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "obj-teacher-use",
+        "kind": "objective",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "line": 40
+        },
+        "section": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "headingPath": [
+            "Chapter 6: Objectives",
+            "Apps used in class through the platform alone"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "obj-trust",
+        "kind": "objective",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "line": 55
+        },
+        "section": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "headingPath": [
+            "Chapter 6: Objectives",
+            "Trust built in"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "obj-trust-model",
+        "kind": "objective",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "line": 68
+        },
+        "section": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "headingPath": [
+            "Chapter 6: Objectives",
+            "Protect platform credibility through progressive trust"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "obj-agent-guidance",
+        "kind": "objective",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "addresses",
+            "before": [
+              "risk-island",
+              "risk-weak-supply",
+              "opp-ai-creation"
+            ],
+            "after": [
+              "risk-weak-supply",
+              "opp-ai-creation"
+            ]
+          },
+          {
+            "name": "measured-by",
+            "before": [
+              "measure-scaffold-usage"
+            ],
+            "after": [
+              "measure-guidance-use"
+            ]
+          },
+          {
+            "name": "requires",
+            "before": [
+              "cap-scaffolding",
+              "cap-capability-mapping"
+            ],
+            "after": [
+              "cap-guidance"
+            ]
+          },
+          {
+            "name": "title",
+            "before": "Provide scaffolding and agent guidance for ecosystem-connected tool creation",
+            "after": "Guidance for creators' AI assistants published, before the real MVP"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "line": 53
+        },
+        "head": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "line": 70
+        },
+        "section": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "headingPath": [
+            "Chapter 6: Objectives",
+            "Guidance for building"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "measure-landing-engagement",
+        "kind": "measure",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "line": 8
+        },
+        "section": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "headingPath": [
+            "Chapter 7: Measures",
+            "Landing page engagement"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "measure-apps-listed",
+        "kind": "measure",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "line": 10
+        },
+        "section": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "headingPath": [
+            "Chapter 7: Measures",
+            "Apps listed"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "measure-capability-coverage",
+        "kind": "measure",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "line": 20
+        },
+        "section": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "headingPath": [
+            "Chapter 7: Measures",
+            "Capability map coverage"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "measure-thanks",
+        "kind": "measure",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "line": 22
+        },
+        "section": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "headingPath": [
+            "Chapter 7: Measures",
+            "Thanks received"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "measure-registry-entries",
+        "kind": "measure",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "line": 32
+        },
+        "section": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "headingPath": [
+            "Chapter 7: Measures",
+            "Registry entry count and quality"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "measure-teacher-use",
+        "kind": "measure",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "line": 34
+        },
+        "section": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "headingPath": [
+            "Chapter 7: Measures",
+            "Use in class through referral"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "measure-scaffold-usage",
+        "kind": "measure",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "line": 44
+        },
+        "section": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "headingPath": [
+            "Chapter 7: Measures",
+            "Scaffolding and agent guidance usage"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "measure-fitness-checked",
+        "kind": "measure",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "line": 46
+        },
+        "section": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "headingPath": [
+            "Chapter 7: Measures",
+            "Fitness checked"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "measure-trust-signals",
+        "kind": "measure",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "line": 56
+        },
+        "section": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "headingPath": [
+            "Chapter 7: Measures",
+            "Trust signal adoption"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "measure-guidance-use",
+        "kind": "measure",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "line": 58
+        },
+        "section": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "headingPath": [
+            "Chapter 7: Measures",
+            "Guidance used"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "cap-communication",
+        "kind": "capability",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "enables",
+            "before": [
+              "prod-landing-page"
+            ],
+            "after": [
+              "prod-home",
+              "prod-apps"
+            ]
+          },
+          {
+            "name": "owner",
+            "after": "owner-platform"
+          },
+          {
+            "name": "title",
+            "before": "Strategic communication — narrative and positioning",
+            "after": "Communication in plain language"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "line": 8
+        },
+        "head": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "line": 8
+        },
+        "section": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "headingPath": [
+            "Chapter 9: Capabilities",
+            "Communication in plain language"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "cap-capability-mapping",
+        "kind": "capability",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "line": 21
+        },
+        "section": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "headingPath": [
+            "Chapter 9: Capabilities",
+            "Capability mapping"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "cap-listing",
+        "kind": "capability",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "line": 22
+        },
+        "section": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "headingPath": [
+            "Chapter 9: Capabilities",
+            "Listing and checking entries"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "cap-registry-ops",
+        "kind": "capability",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "line": 34
+        },
+        "section": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "headingPath": [
+            "Chapter 9: Capabilities",
+            "Registry operations"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "cap-thanks",
+        "kind": "capability",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "line": 36
+        },
+        "section": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "headingPath": [
+            "Chapter 9: Capabilities",
+            "Receiving thanks and feedback"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "cap-curation",
+        "kind": "capability",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "line": 47
+        },
+        "section": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "headingPath": [
+            "Chapter 9: Capabilities",
+            "Curation and trust signalling"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "cap-fitness-check",
+        "kind": "capability",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "line": 50
+        },
+        "section": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "headingPath": [
+            "Chapter 9: Capabilities",
+            "Checking fitness for use"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "cap-scaffolding",
+        "kind": "capability",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "line": 60
+        },
+        "section": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "headingPath": [
+            "Chapter 9: Capabilities",
+            "Scaffolding and agent guidance"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "cap-guidance",
+        "kind": "capability",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "line": 64
+        },
+        "section": {
+          "file": "docs/biz42/ch09-capabilities.biz42.md",
+          "headingPath": [
+            "Chapter 9: Capabilities",
+            "Guidance for AI assistants"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "prod-home",
+        "kind": "product",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "line": 8
+        },
+        "section": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "headingPath": [
+            "Chapter 10: Products and Services",
+            "Home page"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "prod-landing-page",
+        "kind": "product",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "line": 8
+        },
+        "section": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "headingPath": [
+            "Chapter 10: Products and Services",
+            "Landing page"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "prod-apps",
+        "kind": "product",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "line": 21
+        },
+        "section": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "headingPath": [
+            "Chapter 10: Products and Services",
+            "App overview"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "prod-capability-map",
+        "kind": "product",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "line": 21
+        },
+        "section": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "headingPath": [
+            "Chapter 10: Products and Services",
+            "Capability map"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "prod-guidance",
+        "kind": "product",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "line": 34
+        },
+        "section": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "headingPath": [
+            "Chapter 10: Products and Services",
+            "Guidance for building"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "prod-registry",
+        "kind": "product",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "line": 34
+        },
+        "section": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "headingPath": [
+            "Chapter 10: Products and Services",
+            "Solution registry"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "prod-scaffolding",
+        "kind": "product",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "line": 47
+        },
+        "section": {
+          "file": "docs/biz42/ch10-products.biz42.md",
+          "headingPath": [
+            "Chapter 10: Products and Services",
+            "Scaffolding layer"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "eval-landing-review",
+        "kind": "evaluation",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "line": 8
+        },
+        "section": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "headingPath": [
+            "Chapter 11: Evaluation",
+            "Monthly landing page review"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "eval-creator-talks",
+        "kind": "evaluation",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "line": 10
+        },
+        "section": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "headingPath": [
+            "Chapter 11: Evaluation",
+            "Talks with creators"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "eval-registry-review",
+        "kind": "evaluation",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "line": 20
+        },
+        "section": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "headingPath": [
+            "Chapter 11: Evaluation",
+            "Quarterly capability map and registry review"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "eval-first-draft",
+        "kind": "evaluation",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "line": 23
+        },
+        "section": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "headingPath": [
+            "Chapter 11: Evaluation",
+            "Review of the first draft"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "eval-scaffold-review",
+        "kind": "evaluation",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "line": 32
+        },
+        "section": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "headingPath": [
+            "Chapter 11: Evaluation",
+            "Quarterly scaffolding uptake review"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "imp-landing",
+        "kind": "improvement",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "line": 8
+        },
+        "section": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "headingPath": [
+            "Chapter 12: Improvements",
+            "Phase 0 — Launch landing page"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "impr-first-draft",
+        "kind": "improvement",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "line": 11
+        },
+        "section": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "headingPath": [
+            "Chapter 12: Improvements",
+            "First draft: first apps"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "imp-registry",
+        "kind": "improvement",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "line": 22
+        },
+        "section": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "headingPath": [
+            "Chapter 12: Improvements",
+            "Phase 1 — Launch static capability map and registry"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "impr-counting",
+        "kind": "improvement",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "line": 24
+        },
+        "section": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "headingPath": [
+            "Chapter 12: Improvements",
+            "Count clicks instead of e-mails"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "imp-scaffolding",
+        "kind": "improvement",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "line": 36
+        },
+        "section": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "headingPath": [
+            "Chapter 12: Improvements",
+            "Phase 2 — Launch scaffolding and agent guidance layer"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "impr-fitness-check",
+        "kind": "improvement",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "line": 38
+        },
+        "section": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "headingPath": [
+            "Chapter 12: Improvements",
+            "Check fitness automatically"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "impr-guidance",
+        "kind": "improvement",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "line": 52
+        },
+        "section": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "headingPath": [
+            "Chapter 12: Improvements",
+            "Guidance for building"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "impr-real-mvp",
+        "kind": "improvement",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "line": 66
+        },
+        "section": {
+          "file": "docs/biz42/ch12-improvements.biz42.md",
+          "headingPath": [
+            "Chapter 12: Improvements",
+            "First apps, first thanks"
+          ],
+          "occurrence": 1
+        }
+      }
+    ],
+    "diagrams": [],
+    "edges": [
+      {
+        "status": "removed",
+        "edge": {
+          "from": "cap-capability-mapping",
+          "to": "prod-capability-map",
+          "relation": "enables"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "cap-communication",
+          "to": "prod-apps",
+          "relation": "enables"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "cap-communication",
+          "to": "prod-home",
+          "relation": "enables"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "cap-communication",
+          "to": "prod-landing-page",
+          "relation": "enables"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "cap-communication",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "cap-curation",
+          "to": "prod-registry",
+          "relation": "enables"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "cap-fitness-check",
+          "to": "prod-apps",
+          "relation": "enables"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "cap-fitness-check",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "cap-guidance",
+          "to": "prod-guidance",
+          "relation": "enables"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "cap-guidance",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "cap-listing",
+          "to": "prod-apps",
+          "relation": "enables"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "cap-listing",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "cap-registry-ops",
+          "to": "prod-registry",
+          "relation": "enables"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "cap-scaffolding",
+          "to": "prod-scaffolding",
+          "relation": "enables"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "cap-thanks",
+          "to": "prod-apps",
+          "relation": "enables"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "cap-thanks",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "eval-creator-talks",
+          "to": "measure-apps-listed",
+          "relation": "evaluates"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "eval-creator-talks",
+          "to": "measure-guidance-use",
+          "relation": "evaluates"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "eval-creator-talks",
+          "to": "measure-thanks",
+          "relation": "evaluates"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "eval-first-draft",
+          "to": "measure-apps-listed",
+          "relation": "evaluates"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "eval-first-draft",
+          "to": "measure-fitness-checked",
+          "relation": "evaluates"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "eval-first-draft",
+          "to": "measure-teacher-use",
+          "relation": "evaluates"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "eval-first-draft",
+          "to": "measure-thanks",
+          "relation": "evaluates"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "eval-landing-review",
+          "to": "measure-landing-engagement",
+          "relation": "evaluates"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "eval-registry-review",
+          "to": "measure-capability-coverage",
+          "relation": "evaluates"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "eval-registry-review",
+          "to": "measure-registry-entries",
+          "relation": "evaluates"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "eval-registry-review",
+          "to": "measure-trust-signals",
+          "relation": "evaluates"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "eval-scaffold-review",
+          "to": "measure-scaffold-usage",
+          "relation": "evaluates"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "exp-adopter",
+          "to": "opp-fitness-signal",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "exp-adopter",
+          "to": "risk-dsgvo",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "exp-adopter",
+          "to": "risk-reach",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "exp-contributor",
+          "to": "risk-invisibility",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "exp-contributor",
+          "to": "risk-no-thanks",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "exp-learner",
+          "to": "risk-dsgvo",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "exp-maintainer",
+          "to": "risk-island",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "exp-navigator",
+          "to": "opp-pisa-window",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "exp-navigator",
+          "to": "risk-invisibility",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "exp-oss-contributor",
+          "to": "opp-ai-creation",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "exp-signal-reader",
+          "to": "opp-pisa-window",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "imp-landing",
+          "to": "obj-narrative",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "imp-landing",
+          "to": "eval-landing-review",
+          "relation": "triggered-by"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "imp-registry",
+          "to": "obj-capability-map",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "imp-registry",
+          "to": "obj-first-apps",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "imp-registry",
+          "to": "obj-trust-model",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "imp-registry",
+          "to": "eval-registry-review",
+          "relation": "triggered-by"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "imp-scaffolding",
+          "to": "obj-agent-guidance",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "imp-scaffolding",
+          "to": "eval-scaffold-review",
+          "relation": "triggered-by"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-counting",
+          "to": "cap-thanks",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-counting",
+          "to": "obj-thanks",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-counting",
+          "to": "eval-first-draft",
+          "relation": "triggered-by"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-first-draft",
+          "to": "obj-first-apps",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-first-draft",
+          "to": "obj-teacher-use",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-first-draft",
+          "to": "obj-thanks",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-first-draft",
+          "to": "prod-apps",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-fitness-check",
+          "to": "cap-fitness-check",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-fitness-check",
+          "to": "obj-trust",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-fitness-check",
+          "to": "eval-first-draft",
+          "relation": "triggered-by"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-guidance",
+          "to": "cap-guidance",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-guidance",
+          "to": "obj-agent-guidance",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-guidance",
+          "to": "prod-guidance",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-guidance",
+          "to": "eval-creator-talks",
+          "relation": "triggered-by"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-real-mvp",
+          "to": "obj-teacher-use",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-real-mvp",
+          "to": "obj-thanks",
+          "relation": "improvement-addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "impr-real-mvp",
+          "to": "eval-first-draft",
+          "relation": "triggered-by"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-agent-guidance",
+          "to": "risk-island",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-agent-guidance",
+          "to": "measure-guidance-use",
+          "relation": "measured-by"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-agent-guidance",
+          "to": "measure-scaffold-usage",
+          "relation": "measured-by"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-agent-guidance",
+          "to": "cap-capability-mapping",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-agent-guidance",
+          "to": "cap-guidance",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-agent-guidance",
+          "to": "cap-scaffolding",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-capability-map",
+          "to": "opp-pisa-window",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-capability-map",
+          "to": "risk-invisibility",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-capability-map",
+          "to": "risk-island",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-capability-map",
+          "to": "measure-capability-coverage",
+          "relation": "measured-by"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-capability-map",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-capability-map",
+          "to": "cap-capability-mapping",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-capability-map",
+          "to": "cap-registry-ops",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-first-apps",
+          "to": "opp-dsgvo-framing",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-first-apps",
+          "to": "risk-dsgvo",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-first-apps",
+          "to": "risk-invisibility",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-first-apps",
+          "to": "risk-unsafe-adoption",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-first-apps",
+          "to": "risk-weak-supply",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-first-apps",
+          "to": "measure-apps-listed",
+          "relation": "measured-by"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-first-apps",
+          "to": "measure-registry-entries",
+          "relation": "measured-by"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-first-apps",
+          "to": "cap-communication",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-first-apps",
+          "to": "cap-curation",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-first-apps",
+          "to": "cap-listing",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-first-apps",
+          "to": "cap-registry-ops",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-narrative",
+          "to": "opp-pisa-window",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-narrative",
+          "to": "risk-invisibility",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-narrative",
+          "to": "risk-unsafe-adoption",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-narrative",
+          "to": "measure-landing-engagement",
+          "relation": "measured-by"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-narrative",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-narrative",
+          "to": "cap-communication",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-teacher-use",
+          "to": "opp-pisa-window",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-teacher-use",
+          "to": "risk-reach",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-teacher-use",
+          "to": "risk-unsafe-adoption",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-teacher-use",
+          "to": "measure-teacher-use",
+          "relation": "measured-by"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-teacher-use",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-teacher-use",
+          "to": "cap-communication",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-teacher-use",
+          "to": "cap-listing",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-thanks",
+          "to": "risk-no-thanks",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-thanks",
+          "to": "risk-weak-supply",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-thanks",
+          "to": "measure-thanks",
+          "relation": "measured-by"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-thanks",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-thanks",
+          "to": "cap-thanks",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-trust",
+          "to": "opp-fitness-signal",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-trust",
+          "to": "risk-dsgvo",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-trust",
+          "to": "risk-endorsement",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-trust",
+          "to": "measure-fitness-checked",
+          "relation": "measured-by"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-trust",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "obj-trust",
+          "to": "cap-fitness-check",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-trust-model",
+          "to": "risk-dsgvo",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-trust-model",
+          "to": "risk-endorsement",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-trust-model",
+          "to": "measure-trust-signals",
+          "relation": "measured-by"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-trust-model",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-trust-model",
+          "to": "cap-curation",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "obj-trust-model",
+          "to": "cap-registry-ops",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "prod-apps",
+          "to": "exp-adopter",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "prod-apps",
+          "to": "exp-contributor",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "prod-apps",
+          "to": "exp-learner",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "prod-apps",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-capability-map",
+          "to": "exp-contributor",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-capability-map",
+          "to": "exp-navigator",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-capability-map",
+          "to": "exp-signal-reader",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-capability-map",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "prod-guidance",
+          "to": "exp-contributor",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "prod-guidance",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "prod-home",
+          "to": "exp-adopter",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "prod-home",
+          "to": "exp-contributor",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "prod-home",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-landing-page",
+          "to": "exp-adopter",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-landing-page",
+          "to": "exp-contributor",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-landing-page",
+          "to": "exp-navigator",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-landing-page",
+          "to": "exp-signal-reader",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-landing-page",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-registry",
+          "to": "exp-adopter",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-registry",
+          "to": "exp-contributor",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-registry",
+          "to": "exp-maintainer",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-registry",
+          "to": "exp-navigator",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-registry",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-scaffolding",
+          "to": "exp-contributor",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-scaffolding",
+          "to": "exp-oss-contributor",
+          "relation": "fulfills"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "prod-scaffolding",
+          "to": "owner-platform",
+          "relation": "owner"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "sig-ai-dev",
+          "to": "risk-invisibility",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "sig-ai-dev",
+          "to": "risk-island",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "sig-digitalpakt",
+          "to": "risk-island",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "sig-digitalpakt",
+          "to": "risk-unsafe-adoption",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "sig-gov-programs",
+          "to": "opp-pisa-window",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "sig-gov-programs",
+          "to": "risk-unsafe-adoption",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "sig-kmk-strategy",
+          "to": "opp-pisa-window",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "sig-kmk-strategy",
+          "to": "risk-unsafe-adoption",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "sig-pisa",
+          "to": "risk-invisibility",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "sig-pisa",
+          "to": "risk-unsafe-adoption",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "sig-school-filters",
+          "to": "risk-no-thanks",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "sig-unsafe-tools",
+          "to": "opp-dsgvo-framing",
+          "relation": "surfaces"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "sig-unsafe-tools",
+          "to": "opp-fitness-signal",
+          "relation": "surfaces"
+        }
+      }
+    ],
+    "proseSections": [
+      {
+        "status": "modified",
+        "section": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "headingPath": [
+            "Chapter 3: Expectations"
+          ],
+          "occurrence": 1
+        },
+        "base": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "line": 1
+        },
+        "head": {
+          "file": "docs/biz42/ch03-expectations.biz42.md",
+          "line": 1
+        }
+      },
+      {
+        "status": "modified",
+        "section": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "headingPath": [
+            "Chapter 6: Objectives"
+          ],
+          "occurrence": 1
+        },
+        "base": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "line": 1
+        },
+        "head": {
+          "file": "docs/biz42/ch06-objectives.biz42.md",
+          "line": 1
+        }
+      },
+      {
+        "status": "modified",
+        "section": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "headingPath": [
+            "Chapter 7: Measures"
+          ],
+          "occurrence": 1
+        },
+        "base": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "line": 1
+        },
+        "head": {
+          "file": "docs/biz42/ch07-measures.biz42.md",
+          "line": 1
+        }
+      },
+      {
+        "status": "modified",
+        "section": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "headingPath": [
+            "Chapter 11: Evaluation"
+          ],
+          "occurrence": 1
+        },
+        "base": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "line": 1
+        },
+        "head": {
+          "file": "docs/biz42/ch11-evaluation.biz42.md",
+          "line": 1
+        }
+      }
+    ],
+    "documents": [
+      {
+        "file": "docs/biz42/ch01-scope.biz42.md",
+        "added": 0,
+        "modified": 1,
+        "removed": 0
+      },
+      {
+        "file": "docs/biz42/ch02-signals.biz42.md",
+        "added": 1,
+        "modified": 4,
+        "removed": 2
+      },
+      {
+        "file": "docs/biz42/ch03-expectations.biz42.md",
+        "added": 1,
+        "modified": 3,
+        "removed": 4
+      },
+      {
+        "file": "docs/biz42/ch04-risks.biz42.md",
+        "added": 2,
+        "modified": 4,
+        "removed": 1
+      },
+      {
+        "file": "docs/biz42/ch05-opportunities.biz42.md",
+        "added": 1,
+        "modified": 2,
+        "removed": 1
+      },
+      {
+        "file": "docs/biz42/ch06-objectives.biz42.md",
+        "added": 3,
+        "modified": 3,
+        "removed": 3
+      },
+      {
+        "file": "docs/biz42/ch07-measures.biz42.md",
+        "added": 5,
+        "modified": 1,
+        "removed": 5
+      },
+      {
+        "file": "docs/biz42/ch09-capabilities.biz42.md",
+        "added": 4,
+        "modified": 1,
+        "removed": 4
+      },
+      {
+        "file": "docs/biz42/ch10-products.biz42.md",
+        "added": 3,
+        "modified": 0,
+        "removed": 4
+      },
+      {
+        "file": "docs/biz42/ch11-evaluation.biz42.md",
+        "added": 2,
+        "modified": 1,
+        "removed": 3
+      },
+      {
+        "file": "docs/biz42/ch12-improvements.biz42.md",
+        "added": 5,
+        "modified": 0,
+        "removed": 3
+      }
+    ]
+  }
+}
