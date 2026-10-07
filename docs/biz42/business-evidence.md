@@ -23,13 +23,13 @@ The model was rewritten on 2026-10-07 from the [platform design](../pdt42/) (pdt
 | pdt42 D8 `a-creators-list` | At least 5 creators list an app within 2 weeks | ch07 measure-apps-listed | high | |
 | pdt42 D8 `a-thanks-arrive-unexplained` | Thanks arrive for at least 3 listed apps within 4 weeks | ch07 measure-thanks | high | |
 | pdt42 D8 `a-platform-convinces`, `a-teachers-reached` | At least 3 teachers from the forwarded wave; about 10 in the real MVP | ch07 measure-teacher-use | high | |
-| user answer (2026-10-07) | Before the real MVP, every listed app is checked by an agent: click through with the network recorded, and review the source code | ch06 obj-trust, ch07 measure-fitness-checked, ch09 cap-fitness-check, ch12 imp-fitness-check | high | Confirmed 2026-10-07 |
+| user answer (2026-10-07) | Before the real MVP, every listed app is checked by an agent: click through with the network recorded, and review the source code | ch06 obj-trust, ch07 measure-fitness-checked, ch09 cap-fitness-check, ch12 impr-fitness-check | high | Confirmed 2026-10-07 |
 | pdt42 D8 `a-creators-unpaid` | Most creators name the guidance or the thanks as reason enough | ch07 measure-guidance-use | high | |
 | user answer (2026-10-07) | The first draft starts at the end of October 2026; listing by mid-November, thanks and first referral wave by the end of November follow from its time frames (pdt42 D8) | ch06 obj-first-apps, obj-thanks, obj-teacher-use | high | Confirmed 2026-10-07 |
 | user answer (2026-10-06) | Oliver Jägle alone is accountable for the platform; Ralf D. Müller focuses on the Mathe-Karte | ch08 owner-platform | high | Confirmed 2026-10-06 |
 | lernapps/.github GOVERNANCE.md | Still describes two owners with equal rights | ch08 | high | OPEN: GOVERNANCE.md not yet updated |
 | lernapps/apps (2026-10-07) | Listing from a few fields, checked against a schema; thanks and feedback by prepared e-mail | ch09 cap-listing, cap-thanks, ch10 prod-apps | high | |
-| user answer (2026-10-07) | Thanks by e-mail for the MVP, to test whether it works; counted with one click later | ch09 cap-thanks, ch12 imp-counting | high | Confirmed 2026-10-07 |
+| user answer (2026-10-07) | Thanks by e-mail for the MVP, to test whether it works; counted with one click later | ch09 cap-thanks, ch12 impr-counting | high | Confirmed 2026-10-07 |
 | pdt42 D8 (users not observed; conversations as main source) | Evaluation by what arrives and by talks with creators | ch11 | high | |
-| H006 | imp-first-draft has no triggering evaluation: it is the start | ch12 imp-first-draft | – | accepted |
+| H006 | impr-first-draft has no triggering evaluation: it is the start | ch12 impr-first-draft | – | accepted |
 | H005 | risk-reach follows from the MVP, not from an external signal | ch04 risk-reach | – | accepted |

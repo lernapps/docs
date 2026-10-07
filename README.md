@@ -25,9 +25,17 @@ Planned: cross-repo decisions as ADRs (manifest protocol, license, naming, reser
 python3 -m http.server -d _site 8000   # preview; links assume the /docs/ prefix
 ```
 
-No npm dependencies: the biz42 and pdt42 CLIs and `marked` run via `npx` with pinned versions.
+No npm dependencies: the biz42 and pdt42 CLIs and `marked` run via `npx` with the versions pinned in `scripts/versions.sh`.
 
-GitHub Pages serves the `gh-pages` branch: `pages.yml` publishes `main` at its root. Every pull request gets a preview at `https://lernapps.net/docs/pr-preview/pr-<number>/` (`pr-preview.yml`), built with `SITE_PATH_PREFIX` and `SITE_PREVIEW` (banner and `noindex` on the static pages) and with `PDT42_DIFF_BASE` set to the base branch, so it also contains `platform-design-diff/`: the platform design's changes since the merge base, as one page, plus `changes.json`. One comment on the pull request, updated on every push, links the preview and the change page and lists the changed elements. The preview is removed when the pull request closes. Locally: `PDT42_DIFF_BASE=origin/main ./scripts/build.sh` (compares commits, not the working tree).
+Before a commit that touches a model, `.githooks/pre-commit` validates it and checks that blocks and the prose explaining them change together (`pdt42 diff --staged`, `biz42 diff --staged`). Activate it once per clone:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+After reviewing a finding, accept it for one commit with `PDT42_CONSISTENT=<commit>` or `BIZ42_CONSISTENT=<commit>` (the command prints the value).
+
+GitHub Pages serves the `gh-pages` branch: `pages.yml` publishes `main` at its root. Every pull request gets a preview at `https://lernapps.net/docs/pr-preview/pr-<number>/` (`pr-preview.yml`), built with `SITE_PATH_PREFIX` and `SITE_PREVIEW` (banner and `noindex` on the static pages) and with `PDT42_DIFF_BASE` set to the base branch, so it also contains `platform-design-diff/` and `about-diff/`: the changes of the platform design (pdt42) and of the organisation (biz42) since the merge base, each as one page, plus `changes.json`. One comment on the pull request, updated on every push, links the preview and the change pages and lists the changed elements (`scripts/docs-review-summary.mjs`). The preview is removed when the pull request closes. Locally: `PDT42_DIFF_BASE=origin/main ./scripts/build.sh` (compares commits, not the working tree).
 
 ## License
 
