@@ -44,12 +44,12 @@ owner: owner-platform
 
 ## Checking fitness for use
 
-Checking automatically what an app loads, so that "no requests to third parties before a click" is verified rather than declared (lernapps/tooling#1).
+Checking what an app does, so that "no requests to third parties before a click" is verified rather than declared: an agent clicks through the app while the network is recorded, and reviews the source code (lernapps/tooling#1).
 
 ```biz42
 :::capability
 id: cap-fitness-check
-title: Automatic check of what an app loads
+title: Agent-based check of what an app loads and sends
 status: planned
 enables: prod-apps
 owner: owner-platform

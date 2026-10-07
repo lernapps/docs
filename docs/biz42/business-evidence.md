@@ -23,7 +23,7 @@ The model was rewritten on 2026-10-07 from the [platform design](../pdt42/) (pdt
 | pdt42 D8 `a-creators-list` | At least 5 creators list an app within 2 weeks | ch07 measure-apps-listed | high | |
 | pdt42 D8 `a-thanks-arrive-unexplained` | Thanks arrive for at least 3 listed apps within 4 weeks | ch07 measure-thanks | high | |
 | pdt42 D8 `a-platform-convinces`, `a-teachers-reached` | At least 3 teachers from the forwarded wave; about 10 in the real MVP | ch07 measure-teacher-use | high | |
-| agent inference | All listed apps checked automatically before the real MVP | ch06 obj-trust, ch07 measure-fitness-checked | low | OPEN: confirm target and timing |
+| user answer (2026-10-07) | Before the real MVP, every listed app is checked by an agent: click through with the network recorded, and review the source code | ch06 obj-trust, ch07 measure-fitness-checked, ch09 cap-fitness-check, ch12 imp-fitness-check | high | Confirmed 2026-10-07 |
 | pdt42 D8 `a-creators-unpaid` | Most creators name the guidance or the thanks as reason enough | ch07 measure-guidance-use | high | |
 | user answer (2026-10-07) | The first draft starts at the end of October 2026; listing by mid-November, thanks and first referral wave by the end of November follow from its time frames (pdt42 D8) | ch06 obj-first-apps, obj-thanks, obj-teacher-use | high | Confirmed 2026-10-07 |
 | user answer (2026-10-06) | Oliver Jägle alone is accountable for the platform; Ralf D. Müller focuses on the Mathe-Karte | ch08 owner-platform | high | Confirmed 2026-10-06 |
