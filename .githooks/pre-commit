@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# Before a commit that touches a model: validate it, and check that blocks and the prose explaining them
+# change together (`diff --staged`: the index against HEAD). The same checks run in CI.
+# Activate once per clone:  git config core.hooksPath .githooks
+# Accept reviewed findings: PDT42_CONSISTENT=<commit> / BIZ42_CONSISTENT=<commit> git commit …
+set -euo pipefail
+cd "$(git rev-parse --show-toplevel)"
+source scripts/versions.sh
+
+staged="$(git diff --cached --name-only)"
+
+if grep -q '^docs/pdt42/' <<<"$staged"; then
+  echo "pre-commit: platform design (pdt42)"
+  npx --yes "$PDT42" --dir docs/pdt42 validate
+  npx --yes "$PDT42" --dir docs/pdt42 diff --staged
+fi
+
+if grep -q '^docs/biz42/' <<<"$staged"; then
+  echo "pre-commit: organisation (biz42)"
+  npx --yes "$BIZ42" --dir docs/biz42 validate
+  npx --yes "$BIZ42" --dir docs/biz42 diff --staged
+fi

@@ -5,11 +5,11 @@
 Listing, overview, referral links and the thank-you, built for real in their simplest form, with the creators the owner knows ([pdt42 D8 `mvp-first-draft`](../platform-design/#2-design/d8-mvp.pdt42.md:el-mvp-first-draft)).
 
 ```biz42
-:::ignore H006 imp-first-draft is the start of the platform, not the result of an evaluation — accepted
+:::ignore H006 impr-first-draft is the start of the platform, not the result of an evaluation — accepted
 :::
 
 :::improvement
-id: imp-first-draft
+id: impr-first-draft
 title: Run the first draft with the owner's creators and one referral wave
 type: innovative
 addresses: obj-first-apps, obj-thanks, obj-teacher-use, prod-apps
@@ -22,7 +22,7 @@ Once the first draft shows that thanks arrive, replace the prepared e-mail with 
 
 ```biz42
 :::improvement
-id: imp-counting
+id: impr-counting
 title: Count thanks and feedback with one click instead of e-mail
 type: proactive
 triggered-by: eval-first-draft
@@ -36,7 +36,7 @@ Until the check runs, every listing says that its fitness is declared, not check
 
 ```biz42
 :::improvement
-id: imp-fitness-check
+id: impr-fitness-check
 title: Check every listed app with an agent: click through, record the network, review the source
 type: proactive
 triggered-by: eval-first-draft
@@ -50,7 +50,7 @@ Guidance is the benefit for creators that does not depend on reach. The talks wi
 
 ```biz42
 :::improvement
-id: imp-guidance
+id: impr-guidance
 title: Publish guidance and a template for creators' AI assistants
 type: innovative
 triggered-by: eval-creator-talks
@@ -64,7 +64,7 @@ The real MVP, once the first draft holds: about 10 teachers reached through refe
 
 ```biz42
 :::improvement
-id: imp-real-mvp
+id: impr-real-mvp
 title: Start the real MVP with about 10 teachers reached by referral
 type: innovative
 triggered-by: eval-first-draft
