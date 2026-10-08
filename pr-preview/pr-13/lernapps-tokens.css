@@ -1,5 +1,5 @@
 /* Design tokens of lernapps.net, shared by every site on the origin (home, apps, docs, apps of creators).
-   Source: lernapps/lernapps.github.io, chrome/. Change them here only; the sites get them with Renovate. */
+   Source: lernapps/lernapps.github.io, site-frame/. Change them here only; the sites get them with Renovate. */
 :root {
   /* Brand: the mark is white on dark slate with blue points (README, "Brand mark"). */
   --la-ink: #0f172a;          /* slate-900: header, footer, dark sections */

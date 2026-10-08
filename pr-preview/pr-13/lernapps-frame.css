@@ -1,4 +1,4 @@
-/* Header, footer, skip link and preview banner of every lernapps.net site (chrome.js renders the HTML).
+/* Header, footer, skip link and preview banner of every lernapps.net site (frame.js renders the HTML).
    Plain CSS on the tokens (tokens.css, linked before this file), so that sites without a CSS framework
    (docs) look the same. Prefix: la-. */
 
