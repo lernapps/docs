@@ -2,8 +2,8 @@
 # Builds the docs site into _site/ for https://lernapps.net/docs/.
 # A pull request preview (pr-preview.yml) sets SITE_PATH_PREFIX=/docs/pr-preview/pr-<number>/ and
 # SITE_PREVIEW=1: the biz42 app gets that base.
-# The tools (biz42, pdt42, marked, the shared chrome) are pinned in package.json: run `npm ci` first.
-# The shared chrome (@lernapps/site) adds the header and footer of all lernapps.net sites to every page,
+# The tools (biz42, pdt42, marked, the shared site frame) are pinned in package.json: run `npm ci` first.
+# The shared site frame (@lernapps/site) adds the header and footer of all lernapps.net sites to every page,
 # and the preview banner and noindex in a preview.
 set -euo pipefail
 cd "$(dirname "$0")/.."
@@ -42,7 +42,7 @@ open("_site/vision/index.html", "w", encoding="utf-8").write(template.replace("<
 PY
 rm _site/vision/content.html
 
-lernapps-chrome --site /docs/ --source https://github.com/lernapps/docs --out _site
+lernapps-frame --site /docs/ --source https://github.com/lernapps/docs --out _site
 # The biz42 and pdt42 apps: keep their fixed menu button off the shared header (site/spa.css).
 for app in _site/about _site/platform-design; do
   cp site/spa.css "$app/"
