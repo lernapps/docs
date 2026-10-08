@@ -12,7 +12,7 @@ This repo holds documents about **the platform as a whole and how the repos rela
 | `docs/biz42/` | The organisation: what it is accountable for, objectives, risks, capabilities, products ([biz42](https://github.com/mrsimpson/biz42)); cross-references the platform design | `/docs/about/` |
 | `docs/pdt42/` | The product: platform design in the [pdt42](https://github.com/mrsimpson/pdt42) DSL (Platform Design Toolkit); cross-references the organisation | `/docs/platform-design/` |
 | `skills/pdt/` | Agent skill for other repos: where the platform design lives and how to read it with the pdt42 CLI | – |
-| `site/` | Index page, style, template for the vision page | `/docs/` |
+| `site/` | Index page, style, template for the vision page; `spa.css` fits the biz42 and pdt42 apps under the shared header | `/docs/` |
 | `.vibe/` | Planning log of the platform design (not published) | – |
 | `.agents/skills/` | Agent skills for authoring biz42 and arc42 | – |
 
@@ -21,11 +21,13 @@ Planned: cross-repo decisions as ADRs (manifest protocol, license, naming, reser
 ## Build
 
 ```bash
-./scripts/build.sh      # validates biz42 and pdt42, builds everything into _site/
+npm ci                  # the biz42 and pdt42 CLIs, marked and the shared chrome, pinned in package.json
+npm run build           # scripts/build.sh: validates biz42 and pdt42, builds everything into _site/
+npm run check           # lernapps-check: no external resources, links resolve, privacy notice and imprint linked
 python3 -m http.server -d _site 8000   # preview; links assume the /docs/ prefix
 ```
 
-No npm dependencies: the biz42 and pdt42 CLIs and `marked` run via `npx` with the versions pinned in `scripts/versions.sh`.
+Every page gets the header and footer of all lernapps.net sites (`lernapps-chrome` from `@lernapps/site`, the shared chrome in [lernapps.github.io](https://github.com/lernapps/lernapps.github.io/tree/main/chrome)), so the docs look and navigate like the home page and the app overview. Renovate keeps the CLIs and the chrome current.
 
 Before a commit that touches a model, `.githooks/pre-commit` validates it and checks that blocks and the prose explaining them change together (`pdt42 diff --staged`, `biz42 diff --staged`). Activate it once per clone:
 
@@ -35,7 +37,7 @@ git config core.hooksPath .githooks
 
 After reviewing a finding, accept it for one commit with `PDT42_CONSISTENT=<commit>` or `BIZ42_CONSISTENT=<commit>` (the command prints the value).
 
-GitHub Pages serves the `gh-pages` branch: `pages.yml` publishes `main` at its root. Every pull request gets a preview at `https://lernapps.net/docs/pr-preview/pr-<number>/` (`pr-preview.yml`), built with `SITE_PATH_PREFIX` and `SITE_PREVIEW` (banner and `noindex` on the static pages) and with `PDT42_DIFF_BASE` set to the base branch, so it also contains `platform-design-diff/` and `about-diff/`: the changes of the platform design (pdt42) and of the organisation (biz42) since the merge base, each as one page, plus `changes.json`. One comment on the pull request, updated on every push, links the preview and the change pages and lists the changed elements (`scripts/docs-review-summary.mjs`). The preview is removed when the pull request closes. Locally: `PDT42_DIFF_BASE=origin/main ./scripts/build.sh` (compares commits, not the working tree).
+GitHub Pages serves the `gh-pages` branch: `pages.yml` publishes `main` at its root, with the shared site actions of [lernapps/tooling](https://github.com/lernapps/tooling), the same for every site. Every pull request gets a preview at `https://lernapps.net/docs/pr-preview/pr-<number>/` (`pr-preview.yml`), built with `SITE_PATH_PREFIX` and `SITE_PREVIEW` (banner and `noindex`) and with `PDT42_DIFF_BASE` set to the base branch, so it also contains `platform-design-diff/` and `about-diff/`: the changes of the platform design (pdt42) and of the organisation (biz42) since the merge base, each as one page, plus `changes.json`. One comment on the pull request, updated on every push, links the preview and the change pages and lists the changed elements (`scripts/docs-review-summary.mjs`). The preview is removed when the pull request closes. Locally: `PDT42_DIFF_BASE=origin/main npm run build` (compares commits, not the working tree).
 
 ## License
 

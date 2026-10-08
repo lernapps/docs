@@ -9,10 +9,7 @@
   <link rel="stylesheet" href="stil.css">
 </head>
 <body>
-  <header>
-    <p class="marke"><a href="/">lernapps.net</a></p>
-  </header>
-  <main id="inhalt">
+  <main id="main-content" tabindex="-1">
     <h1>Dokumentation</h1>
     <p>Warum es lernapps.net gibt, wie die Plattform aufgebaut ist und wohin sie sich entwickelt.</p>
     <ul>
@@ -23,13 +20,18 @@
       <li><a href="https://github.com/lernapps/.github/blob/main/ORGANIZATION.md">Aufbau der Organisation</a>:
         Repositories, Regeln, Fahrplan</li>
     </ul>
-    <h2>Architektur der einzelnen Teile</h2>
-    <ul>
-      <li><a href="/mathe-karte/docs/">Mathe-Karte</a> (arc42)</li>
-    </ul>
+    <h2>Die Teile von lernapps.net</h2>
+    <p>Jedes Teil hat ein eigenes Repository auf GitHub und dient einem Teil des Plattform-Designs.</p>
+    <table>
+      <thead><tr><th>Teil</th><th>Wofür (Plattform-Design)</th><th>Repository</th></tr></thead>
+      <tbody>
+        <tr><td><a href="/">Startseite</a></td><td>Die Geschichte der Plattform für alle Rollen (D1), Datenschutz und Impressum</td><td><a href="https://github.com/lernapps/lernapps.github.io">lernapps.github.io</a></td></tr>
+        <tr><td><a href="/apps/">App-Übersicht</a></td><td>Apps finden, prüfen, in die Klasse bringen, Danke sagen; Apps eintragen (D5, D7, MVP D8)</td><td><a href="https://github.com/lernapps/apps">apps</a></td></tr>
+        <tr><td>Dokumentation</td><td>Vision, Organisation und Plattform-Design selbst</td><td><a href="https://github.com/lernapps/docs">docs</a></td></tr>
+        <tr><td>Werkzeuge</td><td>Anleitung zum Bauen von Apps, gemeinsame Abläufe auf GitHub (D6 <code>s-building-guidance</code>)</td><td><a href="https://github.com/lernapps/tooling">tooling</a>, <a href="https://github.com/lernapps/app-template">app-template</a></td></tr>
+        <tr><td><a href="/mathe-karte/">Mathe-Karte</a></td><td>Die erste App (MVP D8), mit eigener <a href="/mathe-karte/docs/">Architektur-Doku</a> (arc42)</td><td><a href="https://github.com/lernapps/mathe-karte">mathe-karte</a></td></tr>
+      </tbody>
+    </table>
   </main>
-  <footer>
-    <p><a href="https://github.com/lernapps/docs">Quellcode</a></p>
-  </footer>
 </body>
 </html>

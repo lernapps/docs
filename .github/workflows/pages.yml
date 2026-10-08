@@ -1,10 +1,9 @@
 name: Pages
 
-# Builds the docs (biz42, pdt42, vision, index) on every push and PR, and on main publishes them to the
-# gh-pages branch. GitHub Pages serves that branch (Settings → Pages → Deploy from a branch → gh-pages,
-# / (root)) at https://lernapps.net/docs/. main lives at the root; pr-preview.yml puts each pull request's
-# preview under pr-preview/pr-<number>/, which this deployment leaves alone (clean-exclude).
-# Actions are pinned to full commit SHAs; Renovate bumps them (renovate.json).
+# Builds the site into _site/, checks it, and on main publishes it to the gh-pages branch, which GitHub Pages
+# serves at https://lernapps.net/docs/. The same for every lernapps.net site: the steps are the shared
+# actions in lernapps/tooling (npm ci, npm run build, npm run check; deploy to gh-pages without touching
+# the previews). Renovate bumps the pinned commits.
 on:
   push:
     branches: [main]
@@ -16,39 +15,19 @@ permissions:
 
 concurrency:
   group: pages-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
-  build:
+  check: # required status check
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
-        with:
-          node-version: 22
-      - run: ./scripts/build.sh
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
-        if: github.ref == 'refs/heads/main'
-        with:
-          name: site
-          path: _site
-          include-hidden-files: true
+      - uses: lernapps/tooling/actions/site-check@3a97735bef1e524a766b6517037bbb8ceaeaee87 # main
 
   deploy:
     if: github.ref == 'refs/heads/main'
-    needs: build
+    needs: check
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4.3.0
-        with:
-          name: site
-          path: _site
-      - uses: JamesIves/github-pages-deploy-action@fa24774553152dd7873cd16ebd8d959b010c5445 # v4.9.0
-        with:
-          branch: gh-pages
-          folder: _site
-          clean-exclude: pr-preview/
-          force: false
+      - uses: lernapps/tooling/actions/site-deploy@3a97735bef1e524a766b6517037bbb8ceaeaee87 # main
