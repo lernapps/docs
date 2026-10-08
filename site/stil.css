@@ -1,5 +1,5 @@
 /* The static pages of the docs (index, vision, 404). Colours and font are the design tokens of all
-   lernapps.net sites (lernapps-tokens.css, added with header and footer by lernapps-chrome). */
+   lernapps.net sites (lernapps-tokens.css, added with header and footer by lernapps-frame). */
 :root {
   --text: var(--la-text);
   --grau: var(--la-muted);
