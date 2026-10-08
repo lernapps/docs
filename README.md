@@ -21,13 +21,13 @@ Planned: cross-repo decisions as ADRs (manifest protocol, license, naming, reser
 ## Build
 
 ```bash
-npm ci                  # the biz42 and pdt42 CLIs, marked and the shared chrome, pinned in package.json
+npm ci                  # the biz42 and pdt42 CLIs, marked and the shared site frame, pinned in package.json
 npm run build           # scripts/build.sh: validates biz42 and pdt42, builds everything into _site/
 npm run check           # lernapps-check: no external resources, links resolve, privacy notice and imprint linked
 python3 -m http.server -d _site 8000   # preview; links assume the /docs/ prefix
 ```
 
-Every page gets the header and footer of all lernapps.net sites (`lernapps-chrome` from `@lernapps/site`, the shared chrome in [lernapps.github.io](https://github.com/lernapps/lernapps.github.io/tree/main/chrome)), so the docs look and navigate like the home page and the app overview. Renovate keeps the CLIs and the chrome current.
+Every page gets the header and footer of all lernapps.net sites (`lernapps-frame` from `@lernapps/site`, the shared site frame in [lernapps.github.io](https://github.com/lernapps/lernapps.github.io/tree/main/site-frame)), so the docs look and navigate like the home page and the app overview. Renovate keeps the CLIs and the site frame current.
 
 Before a commit that touches a model, `.githooks/pre-commit` validates it and checks that blocks and the prose explaining them change together (`pdt42 diff --staged`, `biz42 diff --staged`). Activate it once per clone:
 
