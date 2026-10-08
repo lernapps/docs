@@ -12,11 +12,12 @@ lernapps.net is designed as a platform in the sense of the Platform Design Toolk
 ```sh
 git clone --depth 1 https://github.com/lernapps/docs /tmp/lernapps-docs
 cd /tmp/lernapps-docs
-npx @pdt42/cli@0.6.2 --dir docs/pdt42 get --type <type>   # list the elements of a type
-npx @pdt42/cli@0.6.2 --dir docs/pdt42 get <id>            # one element, with what references it
+npm ci                                     # the pdt42 CLI, pinned in package.json
+npx pdt42 --dir docs/pdt42 get --type <type>   # list the elements of a type
+npx pdt42 --dir docs/pdt42 get <id>            # one element, with what references it
 ```
 
-Use the version pinned in `scripts/build.sh`. Each chapter is Markdown: prose explains why, `pdt42` blocks hold the model.
+The version is pinned in `package.json`. Each chapter is Markdown: prose explains why, `pdt42` blocks hold the model.
 
 ## Where to find what
 

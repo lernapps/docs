@@ -1,6 +1,6 @@
 # Business Evidence
 
-The model was rewritten on 2026-10-07 from the [platform design](../pdt42/) (pdt42), which the owner worked out step by step; the earlier model described the edugo approach (capability map, registry) and was replaced as a whole. Facts are cited with the platform design chapter they come from.
+The model was rewritten on 2026-10-07 from the [platform design](../pdt42/) (pdt42), which the owner worked out step by step; the earlier model described a capability map with an app registry and was replaced as a whole. Facts are cited with the platform design chapter they come from.
 
 | Source | Derived fact | Used in (chapter/id) | Confidence | OPEN? |
 | ------ | ------------ | -------------------- | ---------- | ----- |
