@@ -1,0 +1,22 @@
+/* Design tokens of lernapps.net, shared by every site on the origin (home, apps, docs, apps of creators).
+   Source: lernapps/lernapps.github.io, chrome/. Change them here only; the sites get them with Renovate. */
+:root {
+  /* Brand: the mark is white on dark slate with blue points (README, "Brand mark"). */
+  --la-ink: #0f172a;          /* slate-900: header, footer, dark sections */
+  --la-ink-soft: #1e293b;     /* slate-800 */
+  --la-accent: #60a5fa;       /* blue-400: the points of the mark, ".net", accents on dark */
+  --la-link: #1d4ed8;         /* blue-700: links on light backgrounds (AA on white and on --la-surface) */
+  --la-text: #1e293b;         /* slate-800: body text */
+  --la-muted: #475569;        /* slate-600: secondary text (AA on white) */
+  --la-on-ink: #ffffff;
+  --la-on-ink-muted: #cbd5e1; /* slate-300: links on dark (AA on --la-ink) */
+  --la-surface: #f8fafc;      /* slate-50: page background */
+  --la-border: #e2e8f0;       /* slate-200 */
+  --la-preview: #fcd34d;      /* amber-300: banner of a pull request preview */
+
+  --la-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* system fonts only: no requests */
+  --la-width: 56rem;          /* content width of header and footer */
+  --la-gutter: 1rem;          /* side padding, 16px at 360px */
+  --la-radius: 0.5rem;
+  --la-focus: 3px solid var(--la-accent);
+}
