@@ -1,8 +1,0 @@
-/* For the biz42 and pdt42 apps (about/, platform-design/), which come with the shared header above them:
-   on a phone their fixed "Contents" button would cover the header, so it moves to the bottom. */
-@media (width <= 700px) {
-  [class*="_menuButton_"] {
-    top: auto !important;
-    bottom: 1rem;
-  }
-}
