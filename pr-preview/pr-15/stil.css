@@ -1,0 +1,46 @@
+/* The static pages of the docs (index, vision, 404). Colours and font are the design tokens of all
+   lernapps.net sites (lernapps-tokens.css, added with header and footer by lernapps-frame). */
+:root {
+  --text: var(--la-text);
+  --grau: var(--la-muted);
+  --link: var(--la-link);
+  --flaeche: var(--la-surface);
+  font-family: var(--la-font);
+  line-height: 1.6;
+  color: var(--text);
+}
+
+body {
+  margin: 0;
+}
+
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1rem var(--la-gutter);
+  outline: none;
+}
+
+h1 {
+  font-size: 1.75rem;
+  line-height: 1.25;
+}
+
+a {
+  color: var(--link);
+}
+
+a:focus-visible {
+  outline: 3px solid var(--link);
+  outline-offset: 2px;
+}
+
+.hinweis {
+  background: var(--flaeche);
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+}
+
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+th, td { border: 1px solid #d1d5db; padding: 0.35rem 0.5rem; text-align: left; vertical-align: top; }
+blockquote { border-left: 4px solid #d1d5db; margin: 1rem 0; padding: 0 1rem; color: var(--grau); }
