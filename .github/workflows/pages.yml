@@ -18,14 +18,14 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  check: # required status check
+  site: # required status check (builds and checks the site)
     runs-on: ubuntu-latest
     steps:
       - uses: lernapps/tooling/actions/site-check@7df62b2acd3297f0d3798fde24ffd2d87a440bc4 # main
 
   deploy:
     if: github.ref == 'refs/heads/main'
-    needs: check
+    needs: site
     runs-on: ubuntu-latest
     permissions:
       contents: write
