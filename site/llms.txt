@@ -1,38 +1,46 @@
-# lernapps.net
+# lernapps.net docs
 
-> lernapps.net is a home for small, free learning apps for school. Every app runs in the browser, needs no account
-> and no installation, and collects nothing. Teachers, parents and students build such apps with their AI assistant;
-> lernapps.net gives them the guidance and the checks, and lists the apps in a catalog for teachers and parents.
+> The platform-level documentation of lernapps.net: the vision, the organisation behind it (a biz42 model) and the
+> platform design (a pdt42 model). This file says where each part is and how to read the two models with their CLIs.
 
-There are three paths: build an app, list an app in the catalog, check an app. Each section below lists what you
-need, in the order you need it. The workflow itself is in the plan template; follow it exactly.
+The docs are built from the repo [lernapps/docs](https://github.com/lernapps/docs). Each model is a folder of
+Markdown chapters: the prose explains why, the fenced blocks hold the model's elements. Where the organisation or
+the platform design differs from the vision, they apply.
 
-## Build an app
+## Read the docs
 
-- [Plan template](https://raw.githubusercontent.com/lernapps/tooling/main/guidance/plan-template.md): the workflow, from the first question to the listing, with the creator's checkpoints. Save it as `.vibe/plan.md` in an empty folder and follow it.
-- [Skill lernapps-app](https://raw.githubusercontent.com/lernapps/tooling/main/skills/lernapps-app/SKILL.md): the rules every app follows. Install it with `npx skills add lernapps/tooling`.
-- [AGENTS.md](https://raw.githubusercontent.com/lernapps/tooling/main/guidance/AGENTS.md): what always holds in an app repo. The generator writes it into the app.
-- [Create the app](https://github.com/lernapps/tooling#the-generator), after the creator has confirmed the plan: `npx --yes github:lernapps/tooling#main create --archetype <archetype>`, then `git init` if needed and `npm install`. It needs github.com, codeload.github.com and the npm registry.
-- [Rule catalog](https://lernapps.net/tooling/rules/): every rule by id. Check messages link here.
+- [Vision](https://lernapps.net/docs/vision/): why lernapps.net exists: the problem, what it does, its principles, what it is not. Source: `docs/vision.md`.
+- [Organisation](https://lernapps.net/docs/about/): who carries lernapps.net and what for: scope, risks, objectives, measures, owners, capabilities, products. A biz42 model in `docs/biz42/`.
+- [Platform design](https://lernapps.net/docs/platform-design/): how lernapps.net works as a platform: roles, what they give each other, transactions, services, experiences, the MVP. A pdt42 model (Platform Design Toolkit) in `docs/pdt42/`.
 
-## List an app in the catalog
+## Query the models with their CLIs
 
-- [Listing guide](https://lernapps.net/apps/llms.txt): the conditions, the entry and the pull request to lernapps/apps.
-- [Entry schema](https://lernapps.net/apps/schemas/entry.v1.schema.json): what the entry holds; its descriptions say what each field needs.
-- [Rule catalog](https://lernapps.net/tooling/rules/): the rules of scope `listing` are the conditions for a listing.
-- [Check the entry against the app](https://github.com/lernapps/tooling#the-package-lernappstooling): `npx --yes github:lernapps/tooling#main check --entry <file>`.
-- [Plan template](https://raw.githubusercontent.com/lernapps/tooling/main/guidance/plan-template.md): for an app built with it, its Commit phase holds the listing steps.
+The CLIs `@pdt42/cli` and `@biz42/cli` are pinned in `package.json`. Clone the repo and install them once:
 
-## Check an app
+```sh
+git clone --depth 1 https://github.com/lernapps/docs lernapps-docs
+cd lernapps-docs
+npm ci
+```
 
-- [Check command](https://github.com/lernapps/tooling#the-package-lernappstooling): `npx lernapps check` in an app from the generator, the same as its git hooks and CI. For an app built any other way: `npx --yes github:lernapps/tooling#main check <dir|url>`.
-- [Rule catalog](https://lernapps.net/tooling/rules/): what each finding means and how to fix it.
-- [Validation report schema](https://lernapps.net/tooling/schemas/validation-report.v1.schema.json): what the check reports, in YAML.
-- [Skill lernapps-app](https://raw.githubusercontent.com/lernapps/tooling/main/skills/lernapps-app/SKILL.md): the rules no program checks.
+- `npx pdt42 --dir docs/pdt42 get`: every element of the platform design, grouped by type. Add `--type <type>` for one type, e.g. `entity` (the roles), `transaction`, `experience`, `mvp`.
+- `npx pdt42 --dir docs/pdt42 get <id>`: one element, e.g. `e-creators`: its file and line, its attributes and the prose. The ids in its attributes are what it references; "referenced by" lists what references it. Follow a reference with `get` on that id, e.g. `t-list-app`.
+- `npx pdt42 --dir docs/pdt42 explain [<type>]`: the block types, or one type's attributes and the chapter it lives in.
+- `npx biz42 --dir docs/biz42 get`: every element of the organisation, grouped by type. Add `--type <type>` for one type, e.g. `objective`, `risk`, `capability`.
+- `npx biz42 --dir docs/biz42 get <id>`: one element, e.g. `obj-first-apps`: what it references (→) and what references it (←). Follow a reference with `get` on that id.
+- `npx biz42 --dir docs/biz42 explain [<type>]`: the block types, or one type's fields.
+- Add `--format json` to any `get` for machine-readable output.
+
+## Skill for other repos
+
+- [Skill pdt](https://raw.githubusercontent.com/lernapps/docs/main/skills/pdt/SKILL.md): where the platform design lives, how to read it with the pdt42 CLI, and which chapter holds which type. Install it with `npx skills add lernapps/docs`.
+
+## Other llms.txt
+
+- [lernapps.net](https://lernapps.net/llms.txt): the vision in short, the overview and the paths: find, build and list an app.
+- [Tooling](https://lernapps.net/tooling/llms.txt): build and check an app: the quick path, commands, skills, rules, schemas.
+- [Apps](https://lernapps.net/apps/llms.txt): every listed app, and how to list one.
 
 ## Optional
 
-- [Tooling for AI assistants](https://lernapps.net/tooling/llms.txt): all commands, skills, schemas, the review procedure and the archetypes.
-- [The catalog](https://lernapps.net/apps/): all listed apps.
-- [Platform design](https://lernapps.net/docs/platform-design/): how lernapps.net works as a platform.
-- [Vision](https://lernapps.net/docs/vision/): why lernapps.net exists.
+- [Source and README](https://github.com/lernapps/docs): how the docs are built, checked and previewed.
