@@ -1,0 +1,38 @@
+# lernapps.net
+
+> lernapps.net is a home for small, free learning apps for school. Every app runs in the browser, needs no account
+> and no installation, and collects nothing. Teachers, parents and students build such apps with their AI assistant;
+> lernapps.net gives them the guidance and the checks, and lists the apps in a catalog for teachers and parents.
+
+There are three paths: build an app, list an app in the catalog, check an app. Each section below lists what you
+need, in the order you need it. The workflow itself is in the plan template; follow it exactly.
+
+## Build an app
+
+- [Plan template](https://raw.githubusercontent.com/lernapps/tooling/main/guidance/plan-template.md): the workflow, from the first question to the listing, with the creator's checkpoints. Save it as `.vibe/plan.md` in an empty folder and follow it.
+- [Skill lernapps-app](https://raw.githubusercontent.com/lernapps/tooling/main/skills/lernapps-app/SKILL.md): the rules every app follows. Install it with `npx skills add lernapps/tooling`.
+- [AGENTS.md](https://raw.githubusercontent.com/lernapps/tooling/main/guidance/AGENTS.md): what always holds in an app repo. The generator writes it into the app.
+- [Create the app](https://github.com/lernapps/tooling#the-generator), after the creator has confirmed the plan: `npx --yes github:lernapps/tooling#main create --archetype <archetype>`, then `git init` if needed and `npm install`. It needs github.com, codeload.github.com and the npm registry.
+- [Rule catalog](https://lernapps.net/tooling/rules/): every rule by id. Check messages link here.
+
+## List an app in the catalog
+
+- [Listing guide](https://lernapps.net/apps/llms.txt): the conditions, the entry and the pull request to lernapps/apps.
+- [Entry schema](https://lernapps.net/apps/schemas/entry.v1.schema.json): what the entry holds; its descriptions say what each field needs.
+- [Rule catalog](https://lernapps.net/tooling/rules/): the rules of scope `listing` are the conditions for a listing.
+- [Check the entry against the app](https://github.com/lernapps/tooling#the-package-lernappstooling): `npx --yes github:lernapps/tooling#main check --entry <file>`.
+- [Plan template](https://raw.githubusercontent.com/lernapps/tooling/main/guidance/plan-template.md): for an app built with it, its Commit phase holds the listing steps.
+
+## Check an app
+
+- [Check command](https://github.com/lernapps/tooling#the-package-lernappstooling): `npx lernapps check` in an app from the generator, the same as its git hooks and CI. For an app built any other way: `npx --yes github:lernapps/tooling#main check <dir|url>`.
+- [Rule catalog](https://lernapps.net/tooling/rules/): what each finding means and how to fix it.
+- [Validation report schema](https://lernapps.net/tooling/schemas/validation-report.v1.schema.json): what the check reports, in YAML.
+- [Skill lernapps-app](https://raw.githubusercontent.com/lernapps/tooling/main/skills/lernapps-app/SKILL.md): the rules no program checks.
+
+## Optional
+
+- [Tooling for AI assistants](https://lernapps.net/tooling/llms.txt): all commands, skills, schemas, the review procedure and the archetypes.
+- [The catalog](https://lernapps.net/apps/): all listed apps.
+- [Platform design](https://lernapps.net/docs/platform-design/): how lernapps.net works as a platform.
+- [Vision](https://lernapps.net/docs/vision/): why lernapps.net exists.
