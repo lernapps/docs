@@ -13,7 +13,7 @@ This repo holds documents about **the platform as a whole and how the repos rela
 | `docs/pdt42/` | The product: platform design in the [pdt42](https://github.com/mrsimpson/pdt42) DSL (Platform Design Toolkit); cross-references the organisation | `/docs/platform-design/` |
 | `skills/pdt/` | Agent skill for other repos: where the platform design lives and how to read it with the pdt42 CLI | – |
 | `site/` | Index page, style, template for the vision page; `spa.css` fits the biz42 and pdt42 apps under the shared header | `/docs/` |
-| `site/llms.txt` | For AI assistants: what lernapps.net is, and the links to build, list and check an app ([llms.txt](https://llmstxt.org/)) | `/docs/llms.txt` |
+| `site/llms.txt` | For AI assistants: how to navigate the docs and read biz42 and pdt42 with their CLIs; links the llms.txt of lernapps.net, tooling and apps ([llms.txt](https://llmstxt.org/)) | `/docs/llms.txt` |
 | `.vibe/` | Planning log of the platform design (not published) | – |
 | `.agents/skills/` | Agent skills for authoring biz42 and arc42 | – |
 
