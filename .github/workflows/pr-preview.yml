@@ -26,7 +26,7 @@ jobs:
       PDT42_DIFF_BASE: origin/${{ github.base_ref }} # the build renders the changes since the merge base
     steps:
       - id: preview
-        uses: lernapps/tooling/actions/site-preview@9b9a34c25af4fa397b64f5e01b1640245a1d3726 # main
+        uses: lernapps/tooling/actions/site-preview@24c58f1841e62501d068c60dc78055dbf7a9ae46 # main
         with:
           site: /docs/
           fetch-depth: 0 # the diff needs the base branch
