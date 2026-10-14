@@ -32,7 +32,7 @@ jobs:
     if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: lernapps/tooling/actions/site-check@c4aa91bef77eef12ea318db5cc6222beb8c422fe # main
+      - uses: lernapps/tooling/actions/site-check@9b9a34c25af4fa397b64f5e01b1640245a1d3726 # main
 
   deploy:
     if: github.ref == 'refs/heads/main' && needs.changes.outputs.site == 'true'
@@ -41,7 +41,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lernapps/tooling/actions/site-deploy@c4aa91bef77eef12ea318db5cc6222beb8c422fe # main
+      - uses: lernapps/tooling/actions/site-deploy@9b9a34c25af4fa397b64f5e01b1640245a1d3726 # main
 
   site: # required status check: always runs, fails when a job above failed or was cancelled
     needs: [changes, build, deploy]
