@@ -4,6 +4,10 @@ name: Pages
 # serves at https://lernapps.net/docs/. The same for every lernapps.net site: the steps are the shared
 # actions in lernapps/tooling (npm ci, npm run build, npm run check; deploy to gh-pages without touching
 # the previews). Renovate bumps the pinned commits.
+#
+# The change scope (lernapps/tooling changes.yml) gates the jobs: a change of only the plan (.vibe/**) runs nothing;
+# docs (docs/**/*.md) and anything else build, check and deploy the site. The job `site` always runs and reports the
+# result: the required check, which never stays "Pending".
 on:
   push:
     branches: [main]
@@ -18,16 +22,34 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  site: # required status check (builds and checks the site)
+  changes:
+    uses: lernapps/tooling/.github/workflows/changes.yml@9b9a34c25af4fa397b64f5e01b1640245a1d3726 # main
+    with:
+      tooling-ref: 9b9a34c25af4fa397b64f5e01b1640245a1d3726 # the classifier of the same commit
+
+  build: # builds and checks the site
+    needs: changes
+    if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: lernapps/tooling/actions/site-check@7df62b2acd3297f0d3798fde24ffd2d87a440bc4 # main
 
   deploy:
-    if: github.ref == 'refs/heads/main'
-    needs: site
+    if: github.ref == 'refs/heads/main' && needs.changes.outputs.site == 'true'
+    needs: [changes, build]
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: lernapps/tooling/actions/site-deploy@7df62b2acd3297f0d3798fde24ffd2d87a440bc4 # main
+
+  site: # required status check: always runs, fails when a job above failed or was cancelled
+    needs: [changes, build, deploy]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
+        run: |
+          echo "the jobs ended: $RESULTS"
+          case " $RESULTS " in *" failure "* | *" cancelled "*) exit 1 ;; esac
