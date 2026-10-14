@@ -5,6 +5,9 @@ name: Preview
 # It contains the changes of the platform design (platform-design-diff/) and of the organisation
 # (about-diff/) since the merge base, each as one page. One comment on the pull request, updated in place,
 # links them and lists the changed elements (scripts/docs-review-summary.mjs).
+# The change scope (lernapps/tooling changes.yml) gates it: no preview for a change of only the plan (.vibe/**);
+# closing a pull request always removes its preview. The job `preview` always runs and reports the result, the
+# check that never stays "Pending".
 on:
   pull_request:
     types: [opened, reopened, synchronize, closed]
@@ -18,10 +21,20 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  preview:
+  changes:
+    uses: lernapps/tooling/.github/workflows/changes.yml@141ca8b78c27b78d8c2cddc06d0bfe25daad811f # main
+    with:
+      tooling-ref: 141ca8b78c27b78d8c2cddc06d0bfe25daad811f # the classifier of the same commit
+    permissions:
+      contents: read
+
+  build:
+    needs: changes
     runs-on: ubuntu-latest
     # Pull requests from forks get a read-only token and cannot push to gh-pages.
-    if: github.event.pull_request.head.repo.full_name == github.repository
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      (github.event.action == 'closed' || needs.changes.outputs.site == 'true')
     env:
       PDT42_DIFF_BASE: origin/${{ github.base_ref }} # the build renders the changes since the merge base
     steps:
@@ -53,3 +66,14 @@ jobs:
             const existing = comments.find((c) => c.user?.type === "Bot" && c.body?.includes(marker));
             if (existing) await github.rest.issues.updateComment({ owner, repo, comment_id: existing.id, body });
             else await github.rest.issues.createComment({ owner, repo, issue_number, body });
+
+  preview: # always runs, fails when a job above failed or was cancelled
+    needs: [changes, build]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - env:
+          RESULTS: ${{ join(needs.*.result, ' ') }}
+        run: |
+          echo "the jobs ended: $RESULTS"
+          case " $RESULTS " in *" failure "* | *" cancelled "*) exit 1 ;; esac
