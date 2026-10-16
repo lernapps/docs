@@ -9,7 +9,7 @@
   },
   "devDependencies": {
     "@biz42/cli": "0.11.2",
-    "@lernapps/site": "github:lernapps/lernapps.github.io#22deffbcbb3a535766dcad7c2f9033f61149648c",
+    "@lernapps/site": "github:lernapps/lernapps.github.io#a5f343a3cb1fad1b1976bedf3c475cbc34658c0e",
     "@pdt42/cli": "0.6.2",
     "marked": "18.0.14"
   },
