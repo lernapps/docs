@@ -1,0 +1,141 @@
+/* Header, footer, skip link and preview banner of every lernapps.net site (frame.js renders the HTML).
+   Plain CSS on the tokens (tokens.css, linked before this file), so that sites without a CSS framework
+   (docs) look the same. Prefix: la-. */
+
+.la-skip {
+  position: absolute;
+  left: -9999px;
+}
+.la-skip:focus {
+  position: fixed;
+  top: 0.5rem;
+  left: 0.5rem;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  background: #fff;
+  color: var(--la-link);
+  font: 600 1rem var(--la-font);
+  border-radius: var(--la-radius);
+  box-shadow: 0 2px 8px rgb(0 0 0 / 0.25);
+}
+
+.la-preview {
+  margin: 0;
+  padding: 0.5rem var(--la-gutter);
+  background: var(--la-preview);
+  color: var(--la-ink);
+  font: 0.875rem/1.4 var(--la-font);
+  text-align: center;
+}
+.la-preview a {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.la-header,
+.la-footer {
+  background: var(--la-ink);
+  color: var(--la-on-ink);
+  font-family: var(--la-font);
+  line-height: 1.5;
+}
+.la-header__inner,
+.la-footer__inner {
+  box-sizing: border-box;
+  max-width: var(--la-width);
+  margin: 0 auto;
+  padding: 0 var(--la-gutter);
+}
+.la-header__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: 2rem;
+}
+.la-brand {
+  display: flex;
+  align-items: flex-end;
+  gap: 14px;
+  padding: 1rem 0;
+  color: var(--la-on-ink);
+  font-size: 1.125rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  text-decoration: none;
+}
+.la-brand img {
+  height: 1.25em;
+  margin-bottom: -0.12em;
+}
+.la-brand__tld {
+  color: var(--la-accent);
+}
+.la-nav ul,
+.la-footer ul {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.la-nav ul {
+  column-gap: 1.5rem;
+  row-gap: 0.25rem;
+  font-size: 0.875rem;
+}
+.la-nav a {
+  display: inline-block;
+  padding: 0.5rem 0;
+  color: var(--la-on-ink-muted);
+  text-decoration: none;
+}
+.la-nav a:hover,
+.la-nav a[aria-current] {
+  color: var(--la-on-ink);
+}
+.la-nav a[aria-current] {
+  font-weight: 600;
+}
+@media (max-width: 40rem) {
+  .la-nav {
+    width: 100%;
+    padding-bottom: 0.75rem;
+  }
+}
+
+.la-footer {
+  margin-top: 4rem;
+  color: var(--la-on-ink-muted);
+  font-size: 0.875rem;
+}
+.la-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+.la-footer p {
+  margin: 0;
+}
+.la-footer ul {
+  column-gap: 1.5rem;
+  row-gap: 0.5rem;
+}
+.la-footer a {
+  color: var(--la-on-ink-muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+.la-footer a:hover {
+  color: var(--la-on-ink);
+}
+
+.la-header a:focus-visible,
+.la-footer a:focus-visible,
+.la-preview a:focus-visible {
+  outline: var(--la-focus);
+  outline-offset: 2px;
+}
