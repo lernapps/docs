@@ -22,7 +22,7 @@ Six entity-roles stand in the peer spectrum, one more than PDT recommends. They 
 
 ### App creators
 
-Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves. Ralf D. Müller, co-owner of the GitHub organisation lernapps, is one of them: he builds the Mathe-Karte and does not take part in the platform.
+Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves. Ralf D. Müller, co-owner of the GitHub organisation lernapps, is one of them: he builds apps and does not take part in the platform.
 
 Portrait (D2): the lack of feedback, the wish for recognition and knowing the app helped are assumptions of the platform owner, still to be validated with creators. Creators build their apps as personal software anyway; reaching other classrooms is a nice-to-have for them, not what drives them to start. Once their apps are used, though, most engaged creators are strongly motivated by praise and use (D4).
 
@@ -307,7 +307,7 @@ of: e-ai-assistants
 
 ### Platform owner
 
-Oliver Jägle owns and shapes the platform strategy. Creators who bring their own best practices into the guidance can grow into co-owners (D6). Ralf D. Müller builds apps (the Mathe-Karte) and appears among the app creators. What the platform owner is accountable for as an organisation, with its objectives, risks and capabilities, is described in the [business model](../about/#ch08-owners.biz42.md:el-owner-platform) (biz42).
+Oliver Jägle owns and shapes the platform strategy. Creators who bring their own best practices into the guidance can grow into co-owners (D6). Ralf D. Müller builds apps and appears among the app creators. What the platform owner is accountable for as an organisation, with its objectives, risks and capabilities, is described in the [business model](../about/#ch08-owners.biz42.md:el-owner-platform) (biz42).
 
 ```pdt42
 :::entity

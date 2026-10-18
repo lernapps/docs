@@ -24,7 +24,7 @@ experiences: x-list-and-hear-back, x-app-in-minutes
 base:
   - 5 to 10 potential creators from the platform owner's network
   - Teachers reached through the owner's contacts, who forward a referral link
-  - The Mathe-Karte as a first app
+  - The first apps in the [app catalogue](https://lernapps.net/apps/)
   - The docs site and the GitHub organisation lernapps with its workflows
 implementation: Concierge: the owner invites the creators personally and helps with the first listing; listing, overview, referral links and the anonymous thanks are built for real, in their simplest form; the thanks is explained to no one, the platform has to make it self-evident
 status: planned
