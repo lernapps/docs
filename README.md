@@ -2,7 +2,7 @@
 
 Platform-level documentation of lernapps.net, served at <https://lernapps.net/docs/>.
 
-This repo holds documents about **the platform as a whole and how the repos relate**. A document about a single repo lives in that repo, e.g. the app overview in [lernapps/apps](https://github.com/lernapps/apps) and the architecture of the Mathe-Karte in [lernapps/mathe-karte](https://github.com/lernapps/mathe-karte) ([ORGANIZATION.md §3.1](https://github.com/lernapps/.github/blob/main/ORGANIZATION.md#where-to-find-what)).
+This repo holds documents about **the platform as a whole and how the repos relate**. A document about a single repo lives in that repo, e.g. the app overview in [lernapps/apps](https://github.com/lernapps/apps) ([ORGANIZATION.md §3.1](https://github.com/lernapps/.github/blob/main/ORGANIZATION.md#where-to-find-what)).
 
 ## Contents
 

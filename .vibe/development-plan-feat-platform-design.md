@@ -42,7 +42,7 @@ Scenarios from the Pattern Cards E3 (niches meet), E8 (apps that work in class r
 - **Decision**: Platformization space is "Getting apps into use", with the core relationship app creators ↔ adopting adults; students are ancillary. Standardise listing, passing on by link or QR code, and the signal of fitness for use.
 
 ### KD-09: Oliver Jägle alone owns the platform (2026-09-30)
-Ralf D. Müller focuses on the apps themselves (Mathe-Karte) and does not take part in the platform.
+Ralf D. Müller focuses on the apps themselves and does not take part in the platform.
 - **Decision**: The platform owner is Oliver Jägle alone (biz42 `owner-platform`, formerly `owner-vorstand`). Ralf appears as an app creator, not as an owner. In D1, the owner entity-role holds only Oliver.
 - **Open**: GOVERNANCE.md in lernapps/.github still describes two owners with equal rights on all common repositories.
 
