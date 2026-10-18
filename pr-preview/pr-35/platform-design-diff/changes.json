@@ -1,0 +1,133 @@
+{
+  "version": 1,
+  "base": {
+    "label": "44aaae5dda70ca458336613326e9f7f7aafe841d",
+    "commit": "44aaae5dda70ca458336613326e9f7f7aafe841d"
+  },
+  "head": {
+    "label": "c78569a78fe99c0393d7616430dbc860f50b684b"
+  },
+  "acceptanceBase": "44aaae5dda70ca458336613326e9f7f7aafe841d",
+  "untracked": [],
+  "accepted": false,
+  "findings": [
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "2-design/d8-mvp.pdt42.md",
+      "line": 20,
+      "elementId": "mvp-first-draft",
+      "message": "Block 'mvp-first-draft' changed without changing its section prose."
+    }
+  ],
+  "model": {
+    "elements": [
+      {
+        "id": "e-creators",
+        "kind": "entity",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "line": 30
+        },
+        "head": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "line": 30
+        },
+        "section": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "headingPath": [
+            "Scan the ecosystem",
+            "Entities",
+            "App creators"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "e-platform-owner",
+        "kind": "entity",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "line": 313
+        },
+        "head": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "line": 313
+        },
+        "section": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "headingPath": [
+            "Scan the ecosystem",
+            "Entities",
+            "Platform owner"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "mvp-first-draft",
+        "kind": "mvp",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "base",
+            "before": [
+              "5 to 10 potential creators from the platform owner's network",
+              "Teachers reached through the owner's contacts, who forward a referral link",
+              "The Mathe-Karte as a first app",
+              "The docs site and the GitHub organisation lernapps with its workflows"
+            ],
+            "after": [
+              "5 to 10 potential creators from the platform owner's network",
+              "Teachers reached through the owner's contacts, who forward a referral link",
+              "The first apps in the [app catalogue](https://lernapps.net/apps/)",
+              "The docs site and the GitHub organisation lernapps with its workflows"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 20
+        },
+        "head": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 20
+        },
+        "section": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "headingPath": [
+            "Set up the Minimum Viable Platform",
+            "First draft: first apps"
+          ],
+          "occurrence": 1
+        }
+      }
+    ],
+    "diagrams": [],
+    "edges": [],
+    "proseSections": [],
+    "documents": [
+      {
+        "file": "1-exploration/e2-scan.pdt42.md",
+        "added": 0,
+        "modified": 2,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d8-mvp.pdt42.md",
+        "added": 0,
+        "modified": 1,
+        "removed": 0
+      }
+    ]
+  }
+}
