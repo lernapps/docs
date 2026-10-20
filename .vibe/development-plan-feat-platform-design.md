@@ -98,6 +98,14 @@ The platform owner does this idealistically: complaining about poor digitalisati
 - **Decision**: If lernapps.net takes off, it could become a registered association (Verein), so that it belongs to those who fill it with life (see the creators' path to co-ownership, D6). Recorded in biz42 chapter 8.
 - **Decision**: The home page (lernapps.github.io) tells the platform's story in plain German (ISO 24495-1): portraits for teachers, parents, people who build apps and learners; the principles; why it is free with a personal word; an honest answer for sceptics linking to the rendered design. The older vision (docs/vision.md) carries a note that the platform design refines it.
 
+### KD-21: lernapps.net serves a copy of every listed app (lernapps/apps#58, 2026-10-20)
+"The app stays its creator's, at their own address" does not hold together with data protection: for an app at another address, the provider at that address is responsible, and a school's data protection officer asks exactly that. Links to creators' addresses also break when an app moves, and an address like `name.github.io` reads as a private account.
+- **Decision**: When an app is listed, a copy of its built bundle is published under lernapps.net, and the overview links to that copy. Every listed app falls under one privacy notice, one provider and one address that keeps working. This is part of the first draft, not later: the copies are in place before the first referral wave.
+- **Decision**: Authorship and serving are separated. The creator stays the author, keeps the licence, the repository and their own address, and decides on new versions (the copy follows the creator's releases); delisting removes the copy. The platform takes over serving the app to schools, and with it the data protection questions. A licence that allows the copy (MIT or Apache 2.0 for code, CC BY 4.0 for content) is a condition for listing.
+- **Decision**: All copies share the origin lernapps.net with each other and with the platform. An app must therefore access only its own data in the browser (storage, cookies); this is a listing rule, checked rather than declared.
+- **Tested by**: `a-creators-accept-copy` in the first draft (riskiest): no invited creator declines because of the copy or the licence.
+- **Changed**: D1 infrastructure, E3 frontend-only asset and data protection moat, D5 "List an app", "Effortless listing", "Visible fitness for use", D7 all three experiences, D8 first draft; biz42 scope, risks and capabilities; docs/vision.md.
+
 ---
 
 ## Notes

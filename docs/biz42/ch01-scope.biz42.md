@@ -1,12 +1,12 @@
 # Chapter 1: Scope
 
-lernapps.net is a free, non-profit platform that gets small learning apps into use. People who build apps for their own class or child list them in minutes; teachers and parents find one that fits in an acute moment and can use it without doubt; a thank-you after use is what keeps the platform alive. Its market is German schools and families, and the people who build apps for them. This model describes lernapps.net as an organisation: what it is accountable for, its objectives, risks and capabilities. The product itself, with its roles, what they exchange, the experiences and the MVP, is described in the [platform design](../platform-design/) (pdt42).
+lernapps.net is a free, non-profit platform that gets small learning apps into use. People who build apps for their own class or child list them in minutes; teachers and parents find one that fits in an acute moment and can use it without doubt; a thank-you after use is what keeps the platform alive. lernapps.net serves a copy of every listed app under its own address and privacy notice, so schools deal with one provider; the creator stays the author and keeps the licence. Its market is German schools and families, and the people who build apps for them. This model describes lernapps.net as an organisation: what it is accountable for, its objectives, risks and capabilities. The product itself, with its roles, what they exchange, the experiences and the MVP, is described in the [platform design](../platform-design/) (pdt42).
 
 ```biz42
 :::scope
 id: scope-lernapps
 title: lernapps.net — small learning apps into use, kept alive by thanks
-included: Small active-learning apps that run in the browser, without account or installation; Finding apps by topic and grade, with a visible signal of fitness for use; Listing apps with almost no effort, checked automatically; Thanks and feedback from users back to the people who built the app; Guidance for the AI assistants of people who build apps; German schools and families (teachers, parents, learners)
-excluded: Hosting, owning or changing apps: the app stays its creator's; Learning management, class management or student records; Certification or procurement on behalf of schools; Hidden data collection, advertising or paid offers; Passive content (videos, articles, worksheets) as the main offer
+included: Small active-learning apps that run in the browser, without account or installation; Finding apps by topic and grade, with a visible signal of fitness for use; Listing apps with almost no effort, checked automatically; Serving a copy of every listed app under lernapps.net, under one privacy notice; Thanks and feedback from users back to the people who built the app; Guidance for the AI assistants of people who build apps; German schools and families (teachers, parents, learners)
+excluded: Owning or changing apps: the creator stays the author and keeps the licence; Learning management, class management or student records; Certification or procurement on behalf of schools; Hidden data collection, advertising or paid offers; Passive content (videos, articles, worksheets) as the main offer
 :::
 ```

@@ -15,6 +15,8 @@ canvas: ecosystem
 
 The platform for the ecosystem of small, active-learning educational apps. The owner runs its infrastructure on GitHub, the platform's means of production: the website with the app overview, the agent guidance and starter templates, and the issue templates and GitHub Actions workflows contributions go through. Its core entity, chosen in D4, is the adopting adults.
 
+The platform also serves every listed app itself: when an app is listed, a copy of its built bundle is published under lernapps.net and the overview links to that copy (KD-21). The creator stays the author, keeps the licence, the repository and their own address, and decides on new versions; the platform takes over delivering the app to schools, under one privacy notice and one address that keeps working.
+
 The platform is free to use, and it lives on thanks. Every adult, student and creator should understand that a thank-you is how they keep it alive: it is what keeps creators contributing, and it costs nothing. The guidance through the platform makes this clear without being pushy.
 
 ```pdt42
@@ -29,6 +31,7 @@ narrative: Free to use, kept alive by thanks. Adults and students find an active
 infrastructure:
   - Website with the app overview
   - Agent guidance and starter templates
+  - A copy of every listed app, served under lernapps.net
   - GitHub as the means of production: issue templates, GitHub Actions workflows, apps with their labels
 :::
 ```

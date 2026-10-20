@@ -4,7 +4,7 @@ The objectives follow the two stages of the platform design's [MVP](../platform-
 
 ## First apps listed
 
-Creators list an app when it costs minutes. Without apps there is nothing to find and nothing to thank for. Target: within two weeks of inviting them at the end of October, so by mid-November 2026.
+Creators list an app when it costs minutes. Without apps there is nothing to find and nothing to thank for. Every listed app is served as a copy under lernapps.net from the start (pdt42 KD-21), so the copies are in place before the first referral wave. Target: within two weeks of inviting them at the end of October, so by mid-November 2026.
 
 ```biz42
 :::objective
@@ -13,7 +13,7 @@ title: First apps listed by the owner's creators, by mid-November 2026
 owner: owner-platform
 addresses: risk-weak-supply, risk-invisibility
 measured-by: measure-apps-listed
-requires: cap-listing, cap-communication
+requires: cap-listing, cap-hosting, cap-communication
 :::
 ```
 

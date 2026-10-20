@@ -16,7 +16,7 @@ of: r-creators-adults
 
 ### List an app
 
-A creator makes an app available to others. It happens today, but on each creator's own website, GitHub or social media, and in no comparable form.
+A creator makes an app available to others. It happens today, but on each creator's own website, GitHub or social media, and in no comparable form. With lernapps.net, the listing comes with a copy of the app served under lernapps.net (KD-21): adults reach every app at one address, under one privacy notice, and the link keeps working when the creator moves or renames their app. The creator stays the author; the app needs a licence that allows the copy.
 
 ```pdt42
 :::transaction
@@ -26,7 +26,7 @@ relationship: r-creators-adults
 from: e-creators
 to: e-adopters
 direction: one-way
-value-unit: An app listing: what it teaches, for whom, a link
+value-unit: An app listing: what it teaches, for whom, and the app itself, served under lernapps.net
 happening: yes
 channel: ch-listing
 kind: goods
@@ -304,7 +304,7 @@ The channels the platform would need, described by what they make easier, not by
 
 ### Effortless listing
 
-Creators describe their app in a few fields and the platform turns it into a listing. The first contribution has to cost almost nothing, because reach is only a nice-to-have for creators (D4).
+Creators describe their app in a few fields and the platform turns it into a listing and publishes a copy of the app under lernapps.net, updated when the creator releases a new version. Creators no longer have to answer to schools for data protection themselves. The first contribution has to cost almost nothing, because reach is only a nice-to-have for creators (D4).
 
 ```pdt42
 :::channel
@@ -314,8 +314,9 @@ medium: digital
 components:
   - A few fields: what the app teaches, for whom, where to find it
   - Automatic check and publication
+  - A copy of the app served under lernapps.net, following the creator's releases
   - Help from the creator's AI assistant
-improvement: Contributing an app takes minutes, without an own website or post
+improvement: Contributing an app takes minutes, without an own website, post or privacy notice
 :::
 ```
 
@@ -339,7 +340,7 @@ improvement: Finding an app no longer depends on word of mouth or luck
 
 ### Visible fitness for use
 
-Every listing answers the question adults ask before using an app. Having no server is not enough for that: what an app sends to third parties is checked, not taken from what its entry declares (lernapps/docs#11).
+Every listing answers the question adults ask before using an app. Having no server is not enough for that: what an app sends to third parties is checked, not taken from what its entry declares (lernapps/docs#11). As all listed apps share the origin lernapps.net (KD-21), it is also checked that an app accesses only its own data in the browser.
 
 ```pdt42
 :::channel
@@ -348,6 +349,7 @@ title: Visible fitness for use
 medium: digital
 components:
   - Whether the app sends anything to third parties, checked rather than declared
+  - Whether the app accesses only its own data in the browser, checked
   - Whether installation or sign-up is needed
 improvement: Adults no longer judge fitness for use alone or wait for a gatekeeper
 :::
