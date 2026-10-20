@@ -12,7 +12,7 @@ PREFIX="${SITE_PATH_PREFIX:-/docs/}"
 
 rm -rf _site
 mkdir -p _site/vision _site/en
-cp site/index.html site/404.html site/stil.css site/llms.txt _site/
+cp site/index.html site/404.html site/stil.css site/start.css site/llms.txt _site/
 cp site/en/index.html _site/en/
 
 biz42 --dir docs/biz42 validate
