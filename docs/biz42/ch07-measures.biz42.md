@@ -1,6 +1,6 @@
 # Chapter 7: Measures
 
-There is no hidden data collection (KD-18): only explicit clicks or e-mails are counted, so most rates cannot be measured. The measures are small absolute numbers, taken from the platform design's MVP (D8), and conversations with creators are the main source.
+There is no hidden data collection (KD-18): only explicit clicks, e-mails and visits to the platform's own pages are counted, as totals and never inside an app, so most rates cannot be measured. The measures are small absolute numbers, taken from the platform design's MVP (D8), and conversations with creators are the main source.
 
 ## Apps listed
 

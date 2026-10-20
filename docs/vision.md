@@ -28,7 +28,7 @@ lernapps.net brings the two sides together.
 |---|---|
 | Free | No fees, no ads, no premium tier. The platform and the apps run in the browser, so there are almost no running costs. |
 | Thanks keeps it alive | A thank-you after use is the currency. It shows creators that their app helps, and it shows that lernapps.net is worth keeping. |
-| No hidden data collection | Nothing is collected without people knowing. Only explicit clicks are counted, openly and as totals; no cookies, no profiles, no tracking. |
+| No hidden data collection | Nothing is collected without people knowing. The apps can be used entirely without tracking. On the platform's own pages we only count visits, as totals, to know whether anyone uses it; no cookies, no profiles, no tracking. |
 | Trust is built in | Only apps that run without an account and installation, and that send nothing to third parties without a click, are listed. Having no server is necessary for that, not sufficient: what an app loads is checked, not taken on trust. |
 | Active learning | Learners do something themselves: try out, practise, decide. |
 | The app stays its creator's | lernapps.net lists and links. It does not host, own or change apps. |
