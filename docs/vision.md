@@ -31,7 +31,7 @@ lernapps.net brings the two sides together.
 | No hidden data collection | Nothing is collected without people knowing. The apps can be used entirely without tracking. On the platform's own pages we only count visits, as totals, to know whether anyone uses it; no cookies, no profiles, no tracking. |
 | Trust is built in | Only apps that run without an account and installation, and that send nothing to third parties without a click, are listed. Having no server is necessary for that, not sufficient: what an app loads is checked, not taken on trust. |
 | Active learning | Learners do something themselves: try out, practise, decide. |
-| The app stays its creator's | lernapps.net lists and links. It does not host, own or change apps. |
+| The creator stays the author | The creator keeps the authorship, the licence and their own repository, and decides on new versions. lernapps.net serves a copy of every listed app under its own address and privacy notice, so schools deal with one provider. It does not own or change apps. |
 | Open | Everything is built in the open on GitHub and can be read, checked and copied. |
 
 ## What lernapps.net is not

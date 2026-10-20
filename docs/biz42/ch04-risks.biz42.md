@@ -2,14 +2,14 @@
 
 ## Creators have little reason to contribute
 
-Creators build their apps as personal software for their own class or child, with or without lernapps.net. That others use their app is only a nice-to-have for them. So the supply of apps does not come by itself: if contributing costs effort, few creators will do it, and adults find too little to come back. Once an app is used, however, praise and use motivate most engaged creators strongly; the hurdle is the first contribution. Identified in the platform design (pdt42 D4, 2026-09-30).
+Creators build their apps as personal software for their own class or child, with or without lernapps.net. That others use their app is only a nice-to-have for them. So the supply of apps does not come by itself: if contributing costs effort, few creators will do it, and adults find too little to come back. Once an app is used, however, praise and use motivate most engaged creators strongly; the hurdle is the first contribution. Serving a copy of every listed app under lernapps.net adds a condition, a licence that allows the copy, and takes a burden off creators: they no longer answer to schools for data protection themselves (pdt42 KD-21). Identified in the platform design (pdt42 D4, 2026-09-30).
 
 ```biz42
 :::risk
 id: risk-weak-supply
 title: Creators have little reason to contribute their apps
 severity: high
-mitigation: make listing an app almost effortless, offer creators a benefit independent of reach such as better guidance when building, and make use and praise visible to creators once their app is used
+mitigation: make listing an app almost effortless, take data protection questions off creators by serving their app under lernapps.net, offer creators a benefit independent of reach such as better guidance when building, and make use and praise visible to creators once their app is used
 :::
 ```
 
@@ -57,14 +57,14 @@ mitigation: one place to find apps by topic and grade, with deep links to single
 
 ## Data protection blocks or is bypassed
 
-Apps that send data to third parties cannot be used in class, and teachers who need something now may use them anyway. Having no server is necessary for data protection, not sufficient: scripts, fonts, embedded content or calls to external APIs can still send data (lernapps/docs#11). Likelihood is medium; impact is high, for learners and for the platform's credibility.
+Apps that send data to third parties cannot be used in class, and teachers who need something now may use them anyway. Having no server is necessary for data protection, not sufficient: scripts, fonts, embedded content or calls to external APIs can still send data (lernapps/docs#11). Serving every listed app under lernapps.net puts all apps under one privacy notice, but also in one browser origin, where an app could read the data of others or of the platform. Likelihood is medium; impact is high, for learners and for the platform's credibility.
 
 ```biz42
 :::risk
 id: risk-dsgvo
 title: Data protection blocks good apps, or apps that leak data are used anyway
 severity: high
-mitigation: list only apps without account, installation and requests to third parties before a click; check this automatically instead of trusting what an entry declares (lernapps/tooling#1)
+mitigation: serve every listed app under lernapps.net and its privacy notice; list only apps without account, installation and requests to third parties before a click, that access only their own data in the browser; check this automatically instead of trusting what an entry declares (lernapps/tooling#1)
 :::
 ```
 
@@ -83,7 +83,7 @@ mitigation: a fitness signal on every listing, so an app can be used without che
 
 ## Reputation if a listed app proves harmful
 
-If lernapps.net lists an app that later proves harmful to learners' data or learning, it is associated with the failure. Likelihood is low in the short term; impact is medium.
+If lernapps.net lists an app that later proves harmful to learners' data or learning, it is associated with the failure. As lernapps.net serves a copy of every listed app, it is not only associated with the app but its provider. Likelihood is low in the short term; impact is medium.
 
 ```biz42
 :::risk
