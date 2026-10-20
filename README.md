@@ -12,8 +12,8 @@ This repo holds documents about **the platform as a whole and how the repos rela
 | `docs/biz42/` | The organisation: what it is accountable for, objectives, risks, capabilities, products ([biz42](https://github.com/mrsimpson/biz42)); cross-references the platform design | `/docs/about/` |
 | `docs/pdt42/` | The product: platform design in the [pdt42](https://github.com/mrsimpson/pdt42) DSL (Platform Design Toolkit); cross-references the organisation | `/docs/platform-design/` |
 | `skills/pdt/` | Agent skill for other repos: where the platform design lives and how to read it with the pdt42 CLI | – |
-| `site/en/index.html` | English index page | `/docs/en/` |
-| `site/` | Index page, style, template for the vision page; `spa.css` fits the biz42 and pdt42 apps under the shared header | `/docs/` |
+| `site/en/index.html` | English start page (Concepts) | `/docs/en/` |
+| `site/` | Start page (Konzepte: the vision as the big card, platform, organisation, agents; `start.css` for both languages), style, template for the vision page; `spa.css` fits the biz42 and pdt42 apps under the shared header | `/docs/` |
 | `site/llms.txt` | For AI assistants: how to navigate the docs and read biz42 and pdt42 with their CLIs; links the llms.txt of lernapps.net, tooling and apps ([llms.txt](https://llmstxt.org/)) | `/docs/llms.txt` |
 | `.vibe/` | Planning log of the platform design (not published) | – |
 | `.agents/skills/` | Agent skills for authoring biz42 and arc42 | – |
