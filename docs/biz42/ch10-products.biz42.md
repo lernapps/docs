@@ -2,7 +2,7 @@
 
 ## Home page
 
-The story of lernapps.net for teachers, parents, people who build apps and learners: the problem, what the platform does for each of them, its principles, why it is free, and an honest answer for sceptics. Served at <https://lernapps.net/>; it tells the platform's [narrative](../platform-design/#2-design/d1-ecosystem.pdt42.md:el-platform-lernapps).
+The story of lernapps.net, solution first: learning apps with no strings attached, made by parents and teachers; apps from the catalog, with links by grade and subject; what teachers and parents get, with privacy as a feature; then, for the people who build apps, a solid foundation for makers, why another platform (it belongs to no company) and how to join; and a short word from the founder. Three more pages hold the details: Features (what the apps can do, what developers get, what makes the platform unique, with its principles), Mitmachen (one block per role, each with a prompt for the AI assistant) and Über uns (the founder's story and an honest answer for sceptics). Served at <https://lernapps.net/>, <https://lernapps.net/features/>, <https://lernapps.net/join/> and <https://lernapps.net/about/>; it tells the platform's [narrative](../platform-design/#2-design/d1-ecosystem.pdt42.md:el-platform-lernapps).
 
 ```biz42
 :::product
