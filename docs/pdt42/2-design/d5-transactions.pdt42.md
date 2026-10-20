@@ -374,7 +374,7 @@ improvement: Several apps reach a class in one step
 
 Makes use, feedback, recommendations and thanks visible to the creator, so the reputation flow keeps them (D4). Thanks is the currency of the free platform: every user should understand that a thank-you is how they keep it alive, without the platform being pushy about it.
 
-There is no hidden data collection. Single interactions are counted openly, to learn whether valuable use happens: only explicit clicks, only totals, no cookies or browser storage, no personal data kept, and explained right where the click happens. Thanks and feedback are anonymous and structured (no free text), and they never identify a student. The apps themselves collect nothing. Creators can include the same thanks in their app; where it cannot be reached, it quietly steps aside.
+There is no hidden data collection. Single interactions are counted openly, to learn whether valuable use happens: only explicit clicks and, on the platform's own pages, visits, only totals, no cookies or browser storage, no personal data kept, and explained right where the click happens. Thanks and feedback are anonymous and structured (no free text), and they never identify a student. The apps themselves collect nothing. Creators can include the same thanks in their app; where it cannot be reached, it quietly steps aside.
 
 ```pdt42
 :::channel
