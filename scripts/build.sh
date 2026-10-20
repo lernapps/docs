@@ -44,6 +44,12 @@ PY
 rm _site/vision/content.html
 
 lernapps-frame --site /docs/ --source https://github.com/lernapps/docs --out _site
+# The usage counter of the platform sites (/lernapps-count.js, served by lernapps.github.io, see "Usage counter" in
+# its README): this site's pages count their visits, never in a preview. Not part of the site frame: apps use the
+# frame too, and apps are never counted.
+if [ -z "${SITE_PREVIEW:-}" ]; then
+  find _site -name '*.html' -exec sed -i '0,/<\/head>/s||<script src="/lernapps-count.js" defer></script>\n</head>|' {} +
+fi
 # The biz42 and pdt42 apps: keep their fixed menu button off the shared header (site/spa.css).
 for app in _site/about _site/platform-design; do
   cp site/spa.css "$app/"
