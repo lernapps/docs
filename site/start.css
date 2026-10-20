@@ -71,7 +71,7 @@ main .cards a { color: var(--lc-text); }
 .cards .cta { font-size: 0.92rem; }
 
 /* The parts of lernapps.net: one tile per site, with its repository. */
-.tiles { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
 .tiles li { padding: 1rem 1.1rem; border-radius: 1rem; border: 1px solid var(--lc-border); background: var(--lc-tint); }
 .tiles h3 { font-size: 1.05rem; margin: 0 0 0.25rem; }
 .tiles p { margin: 0 0 0.4rem; color: var(--lc-muted); font-size: 0.93rem; }
