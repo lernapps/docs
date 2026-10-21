@@ -29,7 +29,7 @@ npm run check           # lernapps-check: no external resources, links resolve, 
 python3 -m http.server -d _site 8000   # preview; links assume the /docs/ prefix
 ```
 
-Every page gets the header and footer of all lernapps.net sites (`lernapps-frame` from `@lernapps/site`, the shared site frame in [lernapps.github.io](https://github.com/lernapps/lernapps.github.io/tree/main/site-frame)), so the docs look and navigate like the home page and the app overview. Renovate keeps the CLIs and the site frame current.
+Every page gets the header and footer of all lernapps.net sites (`lernapps-frame` from `@lernapps/site`, the shared site frame in [lernapps.github.io](https://github.com/lernapps/lernapps.github.io/tree/main/site-frame)), so the docs look and navigate like the home page and the app overview. The vision, the organisation and the platform design are English only: `lernapps-frame` also serves them below `/docs/en/`, so the header and footer stay in the language the reader chose. Renovate keeps the CLIs and the site frame current.
 
 Before a commit that touches a model, `.githooks/pre-commit` validates it and checks that blocks and the prose explaining them change together (`pdt42 diff --staged`, `biz42 diff --staged`). Activate it once per clone:
 
