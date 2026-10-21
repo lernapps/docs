@@ -32,7 +32,7 @@ relates-to: e-creators, e-ai-assistants
 
 ### Frontend-only architecture
 
-The platform and the apps it recommends run in the browser only: no server, no database, no installation, no sign-up. This removes the main doubts about fitness for use, and it causes no operating costs. Having no server is necessary for data protection, not sufficient: scripts, fonts or embedded content from third parties can still send data, so what an app loads has to be checked.
+The platform and the apps it recommends run in the browser only: no server, no database, no installation, no sign-up. This removes the main doubts about fitness for use, and it causes no operating costs. Having no server is necessary for data protection, not sufficient: scripts, fonts or embedded content from third parties can still send data, so what an app loads has to be checked. Since every listed app is served under lernapps.net (KD-21), the apps share one browser origin with each other and with the platform; an app must therefore touch only its own data in the browser, which is checked as well.
 
 Valuable, because it answers exactly the question adults ask before bringing an app to students. Not rare: many small AI-built apps are static anyway. The advantage only arises once the property is checked and made visible.
 
@@ -72,7 +72,7 @@ Only one position in the ecosystem cannot be bypassed. The candidates from the s
 
 ### Data protection law and terms of use
 
-The GDPR (DSGVO) and terms of use can completely prevent an app from being used in class; there is no alternative route around them. As the tips suggest, lernapps.net does not try to replace this position. Instead it makes the interaction with it easier, for example through the frontend-only architecture. No holder is recorded: the regulation has no actor in the model.
+The GDPR (DSGVO) and terms of use can completely prevent an app from being used in class; there is no alternative route around them. As the tips suggest, lernapps.net does not try to replace this position. Instead it makes the interaction with it easier, for example through the frontend-only architecture, and by serving every listed app itself (KD-21): a data protection officer then deals with one provider and one privacy notice, not with each creator. No holder is recorded: the regulation has no actor in the model.
 
 ```pdt42
 :::moat
