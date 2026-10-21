@@ -6,7 +6,7 @@ Two constraints shape every test. There is no hidden data collection (KD-18): on
 
 ## First draft: first apps
 
-Starts now, with the creators the platform owner knows. It tests the supply side, whether the anonymous thanks works at all, also from school networks, and whether the platform convinces teachers on its own. For the last, the owner's contacts forward a referral link to colleagues the owner does not know: the platform itself is the pitch. The thanks is part of the first draft too, and nobody is told about it: if thanks arrive, the platform made them self-evident.
+Starts now, with the creators the platform owner knows. It tests the supply side, whether the anonymous thanks works at all, also from school networks, and whether the platform convinces teachers on its own. It also tests whether creators accept that the platform serves a copy of their app (KD-21); the copies are in place before the first referral wave, so teachers already meet every app under lernapps.net. For the last, the owner's contacts forward a referral link to colleagues the owner does not know: the platform itself is the pitch. The thanks is part of the first draft too, and nobody is told about it: if thanks arrive, the platform made them self-evident.
 
 ```pdt42
 :::canvas
@@ -24,9 +24,9 @@ experiences: x-list-and-hear-back, x-app-in-minutes
 base:
   - 5 to 10 potential creators from the platform owner's network
   - Teachers reached through the owner's contacts, who forward a referral link
-  - The first apps in the [app catalogue](https://lernapps.net/apps/)
+  - The first apps in the [app catalogue](https://lernapps.net/apps/), each served as a copy under lernapps.net
   - The docs site and the GitHub organisation lernapps with its workflows
-implementation: Concierge: the owner invites the creators personally and helps with the first listing; listing, overview, referral links and the anonymous thanks are built for real, in their simplest form; the thanks is explained to no one, the platform has to make it self-evident
+implementation: Concierge: the owner invites the creators personally and helps with the first listing; listing, the copy of each listed app under lernapps.net, overview, referral links and the anonymous thanks are built for real, in their simplest form; the thanks is explained to no one, the platform has to make it self-evident
 status: planned
 :::
 ```
@@ -50,9 +50,26 @@ status: open
 :::
 ```
 
+#### Creators accept that the platform serves a copy of their app
+
+Serving every listed app under lernapps.net (KD-21) changes what creators were told so far: their app no longer lives only at their own address. They stay the author and keep the licence, the repository and their address, and they no longer answer to schools for data protection; in return the app needs a licence that allows the copy. If creators decline because of the copy or the licence, the listing loses its supply. The conversation at the first listing asks about it directly, so a creator who does not list says why.
+
+```pdt42
+:::assumption
+id: a-creators-accept-copy
+title: Creators accept that the platform serves a copy of their app
+mvp: mvp-first-draft
+kind: attraction
+riskiest: yes
+test: Explain the copy and the licence it needs in the personal conversation at the first listing, and ask what the creator thinks of it
+criteria: No invited creator declines to list because of the copy or the licence
+status: open
+:::
+```
+
 #### The platform convinces teachers on its own
 
-Trust is tested at the moment of decision: does the platform's own address convince a teacher to use an app? Warm contacts would say yes for the owner's sake, so the owner's contacts forward a referral link to subject-matching colleagues the owner does not know. Only an action counts, not a promise. The referral code is one per wave, never per person: with numbers this small, totals per person would reveal individual behaviour.
+Trust is tested at the moment of decision: does the platform's own address convince a teacher to use an app? Since every listed app is served under lernapps.net (KD-21), the app itself is at that address too. Warm contacts would say yes for the owner's sake, so the owner's contacts forward a referral link to subject-matching colleagues the owner does not know. Only an action counts, not a promise. The referral code is one per wave, never per person: with numbers this small, totals per person would reveal individual behaviour.
 
 ```pdt42
 :::assumption
@@ -199,7 +216,7 @@ status: open
 
 #### Teachers use an app without checking it themselves
 
-Trust is built in rather than checked (KD-17): only apps that meet the fitness criteria are listed. The structured feedback after use carries the question, so no one is observed.
+Trust is built in rather than checked (KD-17): only apps that meet the fitness criteria are listed, and the platform serves each of them itself, under its privacy notice (KD-21). The structured feedback after use carries the question, so no one is observed.
 
 ```pdt42
 :::assumption

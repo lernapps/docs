@@ -6,7 +6,7 @@ The model was rewritten on 2026-10-07 from the [platform design](../pdt42/) (pdt
 | ------ | ------------ | -------------------- | ---------- | ----- |
 | pdt42 D1 `platform-lernapps` (narrative), docs/vision.md | Free to use, kept alive by thanks; adults find an app they can use right away; creators list in minutes and hear when it helped | ch01 scope-lernapps | high | |
 | user answer (2026-10-06), pdt42 E3 `as-non-profit` | Non-profit, no money is earned; possibly a registered association (Verein) later | ch01 scope-lernapps, ch08 owner-platform | high | Confirmed 2026-10-06 |
-| pdt42 E3, KD-18 | Excluded: hidden data collection, advertising, paid offers; the app stays its creator's | ch01 scope-lernapps | high | |
+| pdt42 E3, KD-18, KD-21 | Excluded: hidden data collection, advertising, paid offers; owning or changing apps (the creator stays the author). Included: serving a copy of every listed app | ch01 scope-lernapps | high | |
 | pdt42 E2 scan, docs/vision.md | AI assistants reduce building a learning app to a weekend | ch02 sig-ai-dev, ch05 opp-ai-creation | high | |
 | pdt42 E2/E4 (job "Adults confirm an app may be used") | Checking whether a tool may be used takes too long; unchecked tools are used | ch02 sig-unsafe-tools | high | |
 | earlier model (user answer) | Digitalpakt funded hardware, not software | ch02 sig-digitalpakt | high | |

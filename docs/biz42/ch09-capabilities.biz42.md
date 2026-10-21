@@ -28,6 +28,20 @@ owner: owner-platform
 :::
 ```
 
+## Serving listed apps
+
+Publishing a copy of every listed app's built bundle under lernapps.net, updating it when the creator releases a new version, and removing it when the app is delisted (pdt42 KD-21, lernapps/apps#58).
+
+```biz42
+:::capability
+id: cap-hosting
+title: Serving a copy of every listed app under lernapps.net
+status: planned
+enables: prod-apps
+owner: owner-platform
+:::
+```
+
 ## Receiving thanks and feedback
 
 Receiving thanks and structured feedback, counting them, and passing thanks on to creators. For now by prepared e-mail; later one click, counted openly as a total.
@@ -44,7 +58,7 @@ owner: owner-platform
 
 ## Checking fitness for use
 
-Checking what an app does, so that "no requests to third parties before a click" is verified rather than declared: an agent clicks through the app while the network is recorded, and reviews the source code (lernapps/tooling#1).
+Checking what an app does, so that "no requests to third parties before a click" and "accesses only its own data in the browser" are verified rather than declared: an agent clicks through the app while the network is recorded, and reviews the source code (lernapps/tooling#1).
 
 ```biz42
 :::capability
