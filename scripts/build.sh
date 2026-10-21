@@ -43,6 +43,11 @@ open("_site/vision/index.html", "w", encoding="utf-8").write(template.replace("<
 PY
 rm _site/vision/content.html
 
+# The biz42 and pdt42 apps: keep their fixed menu button off the shared header (site/spa.css).
+for app in _site/about _site/platform-design; do
+  cp site/spa.css "$app/"
+  sed -i 's|</head>|<link rel="stylesheet" href="spa.css">\n</head>|' "$app/index.html"
+done
 lernapps-frame --site /docs/ --source https://github.com/lernapps/docs --out _site
 # The usage counter of the platform sites (/lernapps-count.js, served by lernapps.github.io, see "Usage counter" in
 # its README): this site's pages count their visits, never in a preview. Not part of the site frame: apps use the
@@ -50,11 +55,6 @@ lernapps-frame --site /docs/ --source https://github.com/lernapps/docs --out _si
 if [ -z "${SITE_PREVIEW:-}" ]; then
   find _site -name '*.html' -exec sed -i '0,/<\/head>/s||<script src="/lernapps-count.js" defer></script>\n</head>|' {} +
 fi
-# The biz42 and pdt42 apps: keep their fixed menu button off the shared header (site/spa.css).
-for app in _site/about _site/platform-design; do
-  cp site/spa.css "$app/"
-  sed -i 's|</head>|<link rel="stylesheet" href="spa.css">\n</head>|' "$app/index.html"
-done
 
 touch _site/.nojekyll
 echo "built _site/"
