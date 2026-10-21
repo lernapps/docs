@@ -13,6 +13,7 @@
   --la-surface: #f8fafc;      /* slate-50: page background */
   --la-border: #e2e8f0;       /* slate-200 */
   --la-preview: #fcd34d;      /* amber-300: banner of a pull request preview */
+  --la-fallback: #dbeafe;     /* blue-100: line above a page shown in another language than the frame */
 
   --la-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* system fonts only: no requests */
   --la-width: 56rem;          /* content width of header and footer */

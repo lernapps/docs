@@ -32,6 +32,16 @@
   text-decoration: underline;
 }
 
+/* A page shown in another language than the frame's: one line above the content. */
+.la-fallback {
+  margin: 0;
+  padding: 0.5rem var(--la-gutter);
+  background: var(--la-fallback);
+  color: var(--la-ink);
+  font: 0.875rem/1.4 var(--la-font);
+  text-align: center;
+}
+
 .la-header,
 .la-footer {
   background: var(--la-ink);
