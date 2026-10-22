@@ -1,28 +1,20 @@
 ---
 name: commit
-description: Use whenever creating a git commit in this repository. Defines the required commit message format.
+description: "Always apply this skill when committing to git"
 ---
 
-# Commit messages
+Create a conventional commit message with the following body:
 
-Use [Conventional Commits](https://www.conventionalcommits.org/) for the subject:
-`<type>(<optional scope>): <imperative summary>`, e.g. `feat(core): add workspace diff`.
-Types: `feat`, `fix`, `refactor`, `test`, `docs`, `chore`, `ci`, `perf`, `build`.
-
-The body always has these three sections:
-
-```
+```markdown
 ## Intent
 
-Why this change exists — the problem, not the diff.
+<!-- Describe the intent of the commit. What problem does it solve? What was the motivation to introduce this change? -->
 
-## Key decisions
+## Key changes
 
-- Choices made and alternatives rejected, with the reason.
+<!-- High level *conceptual* overview of the intended changes. Describe how the system behaves differently now. Do *not* list files -->
 
-## Side effects
+## Dependencies and side effects
 
-- Behaviour changes, renamed/removed APIs, test adjustments, follow-ups.
+<!-- only if applicable: Describe any effects this commit has on other parts of the system -->
 ```
-
-Write "None." under a section that has nothing to say — never drop it.
