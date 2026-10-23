@@ -5,7 +5,7 @@
     "commit": "af891b42fc88d60ade75b184b5a4fe20cdf97bb7"
   },
   "head": {
-    "label": "37813a18a638c38ed5e6c4ccaf5a161e9b1a085d"
+    "label": "e75eaf43e6889fa9b0fab8e0c74b3ab2a3ce074a"
   },
   "acceptanceBase": "af891b42fc88d60ade75b184b5a4fe20cdf97bb7",
   "untracked": [],
@@ -684,7 +684,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 90
+          "line": 89
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -703,7 +703,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 107
+          "line": 106
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -723,7 +723,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 121
+          "line": 120
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -743,7 +743,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 136
+          "line": 135
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -763,7 +763,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 151
+          "line": 150
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -783,7 +783,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 168
+          "line": 167
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -802,7 +802,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 184
+          "line": 183
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -822,7 +822,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 199
+          "line": 198
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -842,7 +842,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 213
+          "line": 212
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -862,7 +862,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 229
+          "line": 228
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -881,7 +881,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 244
+          "line": 243
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -901,7 +901,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 258
+          "line": 257
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -920,7 +920,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 274
+          "line": 273
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -940,7 +940,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 290
+          "line": 289
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -959,7 +959,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 306
+          "line": 305
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
