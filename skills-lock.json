@@ -4,8 +4,8 @@
     "arc42-language": {
       "source": "doctoolchain/arc42-language",
       "sourceType": "github",
-      "skillPath": "packages/skill/SKILL.md",
-      "computedHash": "acce98733ddf788c42e5f50cff53564888366ded9d9520aae0b1f037f37d2b8d"
+      "skillPath": "skills/arc42-language/SKILL.md",
+      "computedHash": "6df48c184bfc81bb2113369f908663616369a6afa3d573fd79a86044e16b6997"
     },
     "biz42": {
       "source": "mrsimpson/biz42",

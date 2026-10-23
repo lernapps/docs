@@ -1,0 +1,20 @@
+# Paths outside the model of the overall architecture (arc42 validate, hint H021).
+# This repository is the building block bb-docs: its models are in docs/, its pages are built from site/.
+# The rest is how the repository is worked on, not a part of the system.
+.agents
+.arc42ignore
+.claude
+.githooks
+.github
+.gitignore
+.vibe
+AGENTS.md
+CLAUDE.md
+LICENSE
+README.md
+package.json
+package-lock.json
+renovate.json
+scripts
+skills
+skills-lock.json

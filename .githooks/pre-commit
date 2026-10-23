@@ -15,6 +15,11 @@ if grep -q '^docs/pdt42/' <<<"$staged"; then
   pdt42 --dir docs/pdt42 diff --staged
 fi
 
+if grep -qE '^(docs/arc42/|\.arc42ignore$)' <<<"$staged"; then
+  echo "pre-commit: architecture (arc42)"
+  arc42 --dir docs/arc42 validate --strict
+fi
+
 if grep -q '^docs/biz42/' <<<"$staged"; then
   echo "pre-commit: organisation (biz42)"
   biz42 --dir docs/biz42 validate

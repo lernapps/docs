@@ -12,10 +12,11 @@ the platform design differs from the vision, they apply.
 - [Vision](https://lernapps.net/docs/vision/): why lernapps.net exists: the problem, what it does, its principles, what it is not. Source: `docs/vision.md`.
 - [Organisation](https://lernapps.net/docs/about/): who carries lernapps.net and what for: scope, risks, objectives, measures, owners, capabilities, products. A biz42 model in `docs/biz42/`.
 - [Platform design](https://lernapps.net/docs/platform-design/): how lernapps.net works as a platform: roles, what they give each other, transactions, services, experiences, the MVP. A pdt42 model (Platform Design Toolkit) in `docs/pdt42/`.
+- [Architecture](https://lernapps.net/docs/architecture/): the technical architecture of lernapps.net as a whole: quality goals, constraints, building blocks (one per repository), runtime, deployment, decisions, risks. An arc42 model in `docs/arc42/`.
 
 ## Query the models with their CLIs
 
-The CLIs `@pdt42/cli` and `@biz42/cli` are pinned in `package.json`. Clone the repo and install them once:
+The CLIs `@pdt42/cli`, `@biz42/cli` and `@doctc/arc42` are pinned in `package.json`. Clone the repo and install them once:
 
 ```sh
 git clone --depth 1 https://github.com/lernapps/docs lernapps-docs
@@ -29,6 +30,8 @@ npm ci
 - `npx biz42 --dir docs/biz42 get`: every element of the organisation, grouped by type. Add `--type <type>` for one type, e.g. `objective`, `risk`, `capability`.
 - `npx biz42 --dir docs/biz42 get <id>`: one element, e.g. `obj-first-apps`: what it references (→) and what references it (←). Follow a reference with `get` on that id.
 - `npx biz42 --dir docs/biz42 explain [<type>]`: the block types, or one type's fields.
+- `npx arc42 --dir docs/arc42 get`: every element of the architecture, grouped by type. Add `--type <type>` for one type, e.g. `building-block`, `decision`, `risk`; `get <id>` for one element, e.g. `bb-catalog`.
+- `npx arc42 --dir docs/arc42 explain [<type>]`: the block types, or one type's fields.
 - Add `--format json` to any `get` for machine-readable output.
 
 ## Skill for other repos
