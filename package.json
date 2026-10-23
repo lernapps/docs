@@ -5,10 +5,11 @@
   "description": "Platform-level documentation of lernapps.net: vision, organisation (biz42), platform design (pdt42)",
   "scripts": {
     "build": "./scripts/build.sh",
-    "check": "lernapps-check --site /docs/"
+    "check": "site-check --site /docs/"
   },
   "devDependencies": {
     "@biz42/cli": "0.11.2",
+    "@doctc/arc42": "0.38.0",
     "@lernapps/site": "github:lernapps/lernapps.github.io#6e4978f22a4296425cb73365c1de55328bfa9dd7",
     "@pdt42/cli": "0.6.2",
     "marked": "18.1.1"

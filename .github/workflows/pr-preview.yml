@@ -2,8 +2,8 @@ name: Preview
 
 # A preview of the docs for every pull request, at https://lernapps.net/docs/pr-preview/pr-<number>/,
 # updated on every push and removed when the pull request is closed (shared action in lernapps/tooling).
-# It contains the changes of the platform design (platform-design-diff/) and of the organisation
-# (about-diff/) since the merge base, each as one page. One comment on the pull request, updated in place,
+# It contains the changes of the platform design (platform-design-diff/), the organisation (about-diff/) and
+# the architecture (architecture-diff/) since the merge base, each as one page. One comment on the pull request, updated in place,
 # links them and lists the changed elements (scripts/docs-review-summary.mjs).
 # The change scope (lernapps/tooling changes.yml) gates it: no preview for a change of only the plan (.vibe/**);
 # closing a pull request always removes its preview. The job `preview` always runs and reports the result, the
