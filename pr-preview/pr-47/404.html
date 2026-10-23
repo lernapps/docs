@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="noindex">
+  <title>Seite nicht gefunden – lernapps.net</title>
+  <link rel="stylesheet" href="/docs/stil.css">
+<!-- lernapps-frame -->
+<meta name="robots" content="noindex">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/docs/pr-preview/pr-47/lernapps-tokens.css">
+<link rel="stylesheet" href="/docs/pr-preview/pr-47/lernapps-frame.css">
+<link rel="alternate" hreflang="de" href="/docs/pr-preview/pr-47/">
+<link rel="alternate" hreflang="en" href="/docs/pr-preview/pr-47/en/">
+<script>(() => {
+  const key = "lernapps-lang", here = "de", pages = {"en":"/docs/pr-preview/pr-47/en/"};
+  const known = ["de","en"];
+  const browser = (navigator.languages || [navigator.language]).map((l) => String(l).slice(0, 2).toLowerCase()).find((l) => known.includes(l));
+  let chosen = null;
+  try { chosen = localStorage.getItem(key); } catch {}
+  const wanted = known.includes(chosen) ? chosen : browser;
+  if (wanted && wanted !== here && pages[wanted] && !/bot|crawl|spider|slurp/i.test(navigator.userAgent)) {
+    location.replace(pages[wanted] + location.search + location.hash);
+    return;
+  }
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest("a[data-la-lang]");
+    if (!a) return;
+    try { a.dataset.laLang === browser ? localStorage.removeItem(key) : localStorage.setItem(key, a.dataset.laLang); } catch {}
+  });
+})();</script>
+</head>
+<body>
+<a class="la-skip" href="#main-content" lang="de">Zum Inhalt springen</a>
+<p class="la-preview" lang="de">Vorschau einer Änderung. Die echte Seite: <a href="https://lernapps.net/docs/">lernapps.net/docs/</a></p><header class="la-header" lang="de">
+  <div class="la-header__inner">
+    <a class="la-brand" href="/" aria-label="lernapps.net – Startseite"><img src="/brand/mark-plain.svg" alt=""><span>lernapps<span class="la-brand__tld">.net</span></span></a>
+    <nav class="la-nav" aria-label="Hauptnavigation"><ul><li><a href="/apps/">Apps finden</a></li><li><a href="/apps/build/">App bauen</a></li><li><a href="/tooling/">Tooling</a></li><li><a href="/features/">Features</a></li><li><a href="/docs/pr-preview/pr-47/" aria-current="page">Darum!</a></li><li><a href="/join/">Mitmachen</a></li><li class="la-lang"><a href="/docs/pr-preview/pr-47/en/" hreflang="en" lang="en" data-la-lang="en" aria-label="Language: English">English</a></li></ul></nav>
+  </div>
+</header>
+  <main id="main-content" tabindex="-1">
+    <h1>Seite nicht gefunden</h1>
+    <p>Diese Seite gibt es nicht (mehr). <a href="/docs/">Zur Dokumentation</a></p>
+    <p lang="en">This page does not exist (any more). <a href="/docs/en/">To the documentation</a></p>
+  </main>
+<footer class="la-footer" lang="de">
+  <div class="la-footer__inner">
+    <p>lernapps.net ist kostenlos und ohne Werbung. Es lebt von deinem Danke.</p>
+    <nav aria-label="Fußzeile"><ul><li><a href="/privacy/">Datenschutz</a></li><li><a href="/imprint/">Impressum</a></li><li><a href="/docs/pr-preview/pr-47/platform-design/">Plattform-Design</a></li><li><a href="https://github.com/lernapps/docs">Quellcode</a></li></ul></nav>
+  </div>
+</footer>
+</body>
+</html>
