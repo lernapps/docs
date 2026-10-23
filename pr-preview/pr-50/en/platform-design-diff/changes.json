@@ -1,0 +1,611 @@
+{
+  "version": 1,
+  "base": {
+    "label": "53992c1dfef56e78c2f7de15fe7b8464a45a1b46",
+    "commit": "53992c1dfef56e78c2f7de15fe7b8464a45a1b46"
+  },
+  "head": {
+    "label": "38c9391e711b5cc637681b4ec010f5cceb9070a0"
+  },
+  "acceptanceBase": "53992c1dfef56e78c2f7de15fe7b8464a45a1b46",
+  "untracked": [],
+  "accepted": false,
+  "findings": [
+    {
+      "kind": "prose-without-block-change",
+      "severity": "warning",
+      "file": "1-exploration/e2-scan.pdt42.md",
+      "line": 81,
+      "elementId": "e-adopters",
+      "message": "Section prose changed without changing block 'e-adopters' — it names 'Teachers', 'Parents'."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "2-design/d1-ecosystem.pdt42.md",
+      "line": 23,
+      "elementId": "platform-lernapps",
+      "message": "Block 'platform-lernapps' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "2-design/d5-transactions.pdt42.md",
+      "line": 310,
+      "elementId": "ch-listing",
+      "message": "Block 'ch-listing' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "2-design/d7-experiences.pdt42.md",
+      "line": 22,
+      "elementId": "x-app-in-minutes",
+      "message": "Block 'x-app-in-minutes' changed without changing its section prose."
+    }
+  ],
+  "model": {
+    "elements": [
+      {
+        "id": "e-adopters",
+        "kind": "entity",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [
+          {
+            "term": "Teachers",
+            "element": "e-adopters",
+            "source": "fact"
+          },
+          {
+            "term": "Parents",
+            "element": "e-adopters",
+            "source": "fact"
+          }
+        ],
+        "base": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "line": 81
+        },
+        "head": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "line": 81
+        },
+        "section": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "headingPath": [
+            "Scan the ecosystem",
+            "Entities",
+            "Adopting adults"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "platform-lernapps",
+        "kind": "platform",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "narrative",
+            "before": "Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, without doubt about whether it may be used; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive.",
+            "after": "Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive."
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "2-design/d1-ecosystem.pdt42.md",
+          "line": 23
+        },
+        "head": {
+          "file": "2-design/d1-ecosystem.pdt42.md",
+          "line": 23
+        },
+        "section": {
+          "file": "2-design/d1-ecosystem.pdt42.md",
+          "headingPath": [
+            "Map the ecosystem",
+            "lernapps.net"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "t-bring-app",
+        "kind": "transaction",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "channel",
+            "before": "ch-collections",
+            "after": "ch-direct-start"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 174
+        },
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 174
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Transactions Board: Adults and students",
+            "Bring an app to students"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "ch-listing",
+        "kind": "channel",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "improvement",
+            "before": "Contributing an app takes minutes, without an own website, post or privacy notice",
+            "after": "Contributing an app takes minutes, without a website, post or privacy notice of one's own"
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 310
+        },
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 310
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Channels",
+            "Effortless listing"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "ch-direct-start",
+        "kind": "channel",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 363
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Channels",
+            "Starting an app from a link"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "ch-guidance",
+        "kind": "channel",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 417
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Channels",
+            "Guidance an AI assistant can follow"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "s-building-guidance",
+        "kind": "service",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "channel",
+            "after": "ch-guidance"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 89
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 89
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Services",
+            "Guidance for building apps"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "s-use-insight",
+        "kind": "service",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "supports",
+            "before": [
+              "t-use-in-class",
+              "t-give-feedback",
+              "t-recommend-app"
+            ],
+            "after": [
+              "t-use-in-class",
+              "t-thank-creator-adult",
+              "t-give-feedback",
+              "t-recommend-app"
+            ]
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 119
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 120
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Services",
+            "Insight into use and feedback"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "s-start-right-away",
+        "kind": "service",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "channel",
+            "before": "ch-collections",
+            "after": "ch-direct-start"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 179
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 180
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Services",
+            "Starting an app right away"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "s-fitness-clarity",
+        "kind": "service",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 211
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 212
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Services",
+            "Clarity on fitness for use"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "s-adapt-apps",
+        "kind": "service",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 259
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 260
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Services",
+            "From using to adapting apps"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "x-app-in-minutes",
+        "kind": "experience",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "steps",
+            "before": [
+              "s-finding",
+              "t-find-app",
+              "s-fitness-clarity",
+              "t-confirm-fitness",
+              "t-bring-app",
+              "t-use-in-class",
+              "s-giving-back",
+              "t-thank-creator-adult",
+              "t-give-feedback"
+            ],
+            "after": [
+              "s-finding",
+              "t-find-app",
+              "s-fitness-clarity",
+              "t-confirm-fitness",
+              "s-start-right-away",
+              "t-bring-app",
+              "t-use-in-class",
+              "s-giving-back",
+              "t-thank-creator-adult",
+              "t-give-feedback"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 22
+        },
+        "head": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 22
+        },
+        "section": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "headingPath": [
+            "Assemble the platform experiences",
+            "An app in class within minutes"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "x-practice-tonight",
+        "kind": "experience",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "steps",
+            "before": [
+              "s-finding",
+              "t-find-app",
+              "t-bring-app",
+              "s-start-right-away",
+              "t-learn-with-app",
+              "s-giving-back",
+              "t-thank-creator-adult"
+            ],
+            "after": [
+              "s-finding",
+              "t-find-app",
+              "s-fitness-clarity",
+              "t-confirm-fitness",
+              "t-bring-app",
+              "s-start-right-away",
+              "t-learn-with-app",
+              "s-student-finding",
+              "t-return-to-app",
+              "s-giving-back",
+              "t-thank-creator-adult"
+            ]
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 59
+        },
+        "head": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 59
+        },
+        "section": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "headingPath": [
+            "Assemble the platform experiences",
+            "Practice tonight, before the test"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "x-list-and-hear-back",
+        "kind": "experience",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 95
+        },
+        "head": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 95
+        },
+        "section": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "headingPath": [
+            "Assemble the platform experiences",
+            "List an app and hear it is used"
+          ],
+          "occurrence": 1
+        }
+      }
+    ],
+    "diagrams": [],
+    "edges": [
+      {
+        "status": "added",
+        "edge": {
+          "from": "s-building-guidance",
+          "to": "ch-guidance",
+          "relation": "channel"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "s-start-right-away",
+          "to": "ch-collections",
+          "relation": "channel"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "s-start-right-away",
+          "to": "ch-direct-start",
+          "relation": "channel"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "s-use-insight",
+          "to": "t-thank-creator-adult",
+          "relation": "supports"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "t-bring-app",
+          "to": "ch-collections",
+          "relation": "channel"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "t-bring-app",
+          "to": "ch-direct-start",
+          "relation": "channel"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-app-in-minutes",
+          "to": "s-start-right-away",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "s-fitness-clarity",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "s-student-finding",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "t-confirm-fitness",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "t-return-to-app",
+          "relation": "steps"
+        }
+      }
+    ],
+    "proseSections": [],
+    "documents": [
+      {
+        "file": "1-exploration/e2-scan.pdt42.md",
+        "added": 0,
+        "modified": 1,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d1-ecosystem.pdt42.md",
+        "added": 0,
+        "modified": 1,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d5-transactions.pdt42.md",
+        "added": 2,
+        "modified": 2,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d6-learning-engine.pdt42.md",
+        "added": 0,
+        "modified": 5,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d7-experiences.pdt42.md",
+        "added": 0,
+        "modified": 3,
+        "removed": 0
+      }
+    ]
+  }
+}
