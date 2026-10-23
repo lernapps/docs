@@ -28,14 +28,16 @@ flowchart TB
     bb-docs -->|"if-site-frame"| bb-website
     bb-catalog -->|"if-tooling-cli"| bb-tooling
     bb-tooling -->|"if-archetypes"| bb-app-templates
+    bb-website -->|"if-site-actions"| bb-tooling
+    bb-catalog -->|"if-site-actions"| bb-tooling
+    bb-docs -->|"if-site-actions"| bb-tooling
 ```
 
 ## Website
 
 The website at lernapps.net: the home page that tells the platform's story in plain language ([KD-20](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-20-idealistic-free-possibly-a-verein-later)), the privacy
 notice and the imprint that cover every served app ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)), and the entry point for AI assistants. It provides the
-shared frame every site of the platform is built with. It serves the experiences' first contact
-([class within minutes](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-app-in-minutes), [practice tonight](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-practice-tonight), [list and hear back](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back)).
+shared frame every site of the platform is built with.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/lernapps.github.io: https://github.com/lernapps/lernapps.github.io :::
@@ -45,6 +47,7 @@ implements: concept-one-origin, concept-privacy-by-construction, concept-checked
 title: Website
 technology: Eleventy, GitHub Pages
 x-repo: lernapps/lernapps.github.io
+requires: if-site-actions
 :::
 ```
 
@@ -60,6 +63,7 @@ id: if-home-pages
 title: Home pages
 provider: bb-website
 protocol: HTTPS pages and llms.txt under lernapps.net
+x-realises: ch-guidance, ch-fitness-signal
 :::
 ```
 
@@ -75,13 +79,15 @@ id: if-site-frame
 title: Site frame
 provider: bb-website
 protocol: npm package @lernapps/site from git, pinned to a commit
+x-realises: ch-feedback
+x-missing: Visits to an app's page in the catalog are counted as totals, but only the platform owner sees them, not the app's creator.
 :::
 ```
 
 ## Catalog
 
 The catalog is the core of the platform: it makes [apps findable by topic and grade](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-finding), [takes entries
-from creators](https://lernapps.net/docs/platform-design/#2-design/d5-transactions.pdt42.md:el-t-list-app) and [helps them list](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-listing-help), [checks each entry and runs the review agent when an app is listed](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-fitness-clarity), serves a copy of every listed app under lernapps.net and keeps it current ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)), and takes
+from creators](https://lernapps.net/docs/platform-design/#2-design/d5-transactions.pdt42.md:el-t-list-app) and [helps them list](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-listing-help), [checks each entry and, on request, runs the review agent](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-fitness-clarity), serves a copy of every listed app under lernapps.net and keeps it current ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)), and takes
 [the thanks of adults and students](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-giving-back).
 
 ```arc42
@@ -91,7 +97,7 @@ id: bb-catalog
 implements: concept-one-origin, concept-privacy-by-construction, concept-checked-not-declared, concept-assistants-as-readers, concept-plain-language, concept-pinned-and-pulled, concept-change-scope, concept-why-in-history
 title: Catalog
 technology: Eleventy, GitHub Actions, GitHub Pages
-requires: if-site-frame, if-tooling-cli
+requires: if-site-frame, if-tooling-cli, if-site-actions
 x-repo: lernapps/apps
 :::
 ```
@@ -108,6 +114,7 @@ id: if-catalog-pages
 title: Catalog pages
 provider: bb-catalog
 protocol: HTTPS pages under lernapps.net/apps/
+x-realises: ch-app-overview, ch-fitness-signal
 :::
 ```
 
@@ -122,13 +129,14 @@ id: if-served-apps
 title: Served apps
 provider: bb-catalog
 protocol: HTTPS under lernapps.net/apps/start/<id>/
+x-realises: ch-direct-start
 :::
 ```
 
 ### Listing
 
-How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically and, on
-request, by the review agent, with the result as a comment on the pull request.
+How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically, including that its licence allows the copy, and, at the
+owner's request, by the review agent, with the result as a comment on the pull request.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
@@ -137,13 +145,14 @@ id: if-listing
 title: Listing
 provider: bb-catalog
 protocol: GitHub pull request with an entry file; results comment
+x-realises: ch-listing, ch-fitness-signal
 :::
 ```
 
 ### Thanks
 
-A thank-you and feedback in one click from the catalog or an app. Today it is realised as a prepared form in the
-catalog that sends an e-mail; the interface stays the same when the realisation changes.
+A thank-you and feedback in one click from the catalog or an app. Today it is realised as a prepared e-mail to the
+platform owner; the interface stays the same when the realisation changes.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
@@ -152,6 +161,8 @@ id: if-thanks
 title: Thanks
 provider: bb-catalog
 protocol: link from the catalog or an app; today a prepared e-mail
+x-realises: ch-feedback
+x-missing: Thanks are not counted, and they reach the creator only if the platform owner passes them on.
 :::
 ```
 
@@ -159,8 +170,9 @@ protocol: link from the catalog or an app; today a prepared e-mail
 
 Everything a creator's AI assistant needs to [build an app that meets the platform's rules](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-building-guidance):
 the guidance by phase and the skills, the CLI that creates an app and checks it, and the workflows an app's
-repository runs. It also holds the actions every platform site is checked and deployed with. Its own architecture
-refines this block: [tooling, chapter 5](https://github.com/lernapps/tooling/blob/main/docs/arc42/05-building-blocks.arc42.md).
+repository runs. It also holds the actions every platform site is checked and deployed with.
+
+Its own architecture refines this block: [tooling, chapter 5](https://github.com/lernapps/tooling/blob/main/docs/arc42/05-building-blocks.arc42.md).
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/tooling: https://github.com/lernapps/tooling :::
@@ -185,6 +197,7 @@ id: if-guidance
 title: Guidance
 provider: bb-tooling
 protocol: Markdown skills and pages, llms.txt under lernapps.net/tooling/
+x-realises: ch-guidance
 :::
 ```
 
@@ -200,6 +213,22 @@ id: if-tooling-cli
 title: Tooling CLI
 provider: bb-tooling
 protocol: npm package @lernapps/tooling from git, pinned to a commit
+x-realises: ch-guidance
+:::
+```
+
+### Site actions
+
+The actions every platform site is built, checked and deployed with, and the previews of its pull requests: the
+website, the catalog, the docs and the tooling's own pages.
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/tooling: https://github.com/lernapps/tooling :::
+:::interface
+id: if-site-actions
+title: Site actions
+provider: bb-tooling
+protocol: GitHub actions, pinned to a commit
 :::
 ```
 
@@ -220,7 +249,9 @@ protocol: GitHub reusable workflows and actions, pinned to a commit
 ## App templates
 
 The templates and runtimes of the three archetypes: quiz, explainer and interactive app. They carry the rules every
-app has to meet into the code, so a creator does not have to know them. Its own architecture refines this block:
+app has to meet into the code, so a creator does not have to know them.
+
+Its own architecture refines this block:
 [app-templates, chapter 5](https://github.com/lernapps/app-templates/blob/main/docs/arc42/05-building-blocks.arc42.md).
 
 ```arc42
@@ -245,13 +276,14 @@ id: if-archetypes
 title: Archetypes
 provider: bb-app-templates
 protocol: git repository at a pinned commit
+x-realises: ch-guidance
 :::
 ```
 
 ## Docs
 
 The models of the platform in structured languages: the platform design (pdt42), the business model (biz42) and
-this architecture (arc42), rendered as pages, and the skill to work with the platform design.
+the architecture of the whole system (arc42), rendered as pages, and the skill to work with the platform design.
 
 ```arc42
 :::building-block
@@ -259,7 +291,7 @@ id: bb-docs
 implements: concept-one-origin, concept-assistants-as-readers, concept-plain-language, concept-pinned-and-pulled, concept-change-scope, concept-why-in-history
 title: Docs
 technology: pdt42, biz42 and arc42 CLIs, GitHub Pages
-requires: if-site-frame
+requires: if-site-frame, if-site-actions
 x-repo: lernapps/docs
 path: docs
 :::

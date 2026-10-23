@@ -1,0 +1,61 @@
+# Generation metadata of the overview (scripts/overview.mjs, served at /docs/overview/). Everything the page says
+# about the platform and the system comes from the models: the platform design (pdt42) and the architecture
+# (arc42). This file holds only the frame around it: the page's headings and the short texts that lead into each
+# part. It names no element of a model, so it cannot contradict one.
+
+title: How lernapps.net works
+eyebrow: lernapps.net · Overview
+lead: >-
+  What people get from the platform, journey by journey, which part of the system delivers it, and how far it is
+  built. Every line comes from the platform design and the architecture; follow a link for the details.
+
+narrativeLabel: "The idea, in the platform design's words:"
+
+gaps:
+  heading: Not there yet.
+  intro: What the three journeys need but the system delivers only in part today.
+  affects: "Affects:"
+
+roles:
+  heading: Who takes part
+  intro: The roles of the platform design. The first three take part in the journeys below; the others are around them.
+
+experiences:
+  heading: The three journeys
+  intro: >-
+    The platform is designed around three journeys. Each is a sequence of steps between two roles. Where the
+    platform helps with a step, it offers a service; the service reaches people through a channel, such as a page,
+    a link or a template, and a part of the system delivers that channel. A step without a service of its own names
+    its channel, or says that it happens inside the app. Next to each step, in small print: who gives and who
+    receives in it.
+  startsFrom: "Before the first step: what the platform offers up front"
+  seeAbove: (See above.)
+  consistsOf: "It consists of:"
+  insideApp: happens inside the app, without the platform
+
+others:
+  heading: Services beyond the three journeys
+  wouldSupport: "Would support:"
+  intro: >-
+    Planned extensions: the platform design names these services too, but none of the three journeys runs through
+    them yet, and none is built. Each names the step it would support.
+
+blocks:
+  heading: The parts of the system
+  intro: >-
+    One part per repository. Each is described as a whole in the architecture and in detail in its own repository.
+    The creators' own app repositories are outside the system; they use the tooling.
+  delivering: Parts that deliver the channels
+  supporting: Parts that support the others
+  supportingIntro: These parts deliver no channel themselves; the platform is designed, decided and kept consistent with them.
+
+status:
+  built: Built
+  partial: Partly built
+  missing: Not built yet
+
+sources:
+  heading: Where this comes from
+  text: >-
+    Generated when the docs are built, from the platform design and the architecture. The build fails when a part of
+    one names something the other does not have, so this page cannot drift from the two models.

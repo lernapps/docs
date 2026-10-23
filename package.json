@@ -12,7 +12,8 @@
     "@doctc/arc42": "0.38.0",
     "@lernapps/site": "github:lernapps/lernapps.github.io#6e4978f22a4296425cb73365c1de55328bfa9dd7",
     "@pdt42/cli": "0.6.2",
-    "marked": "18.1.1"
+    "marked": "18.1.1",
+    "yaml": "2.8.1"
   },
   "license": "CC-BY-SA-4.0"
 }

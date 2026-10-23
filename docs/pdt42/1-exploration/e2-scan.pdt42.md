@@ -73,7 +73,7 @@ of: e-creators
 
 ### Adopting adults
 
-Adults who come across apps built by others, browse them and show them to their students. Engineers belong here too, as they also look for existing apps to re-use.
+Adults who come across apps built by others, browse them and bring them to their students or their own children: teachers and parents. Engineers belong here too, as they also look for existing apps to re-use.
 
 Portrait (D2): recommending apps to colleagues and the next test as a pressure are assumptions of the platform owner, still to be validated with teachers and parents.
 

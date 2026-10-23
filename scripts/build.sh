@@ -12,7 +12,7 @@ PREFIX="${SITE_PATH_PREFIX:-/docs/}"
 
 rm -rf _site
 mkdir -p _site/vision _site/en
-cp site/index.html site/404.html site/stil.css site/start.css site/llms.txt _site/
+cp site/index.html site/404.html site/stil.css site/start.css site/overview.css site/llms.txt _site/
 cp site/en/index.html _site/en/
 
 biz42 --dir docs/biz42 validate
@@ -23,6 +23,10 @@ pdt42 --dir docs/pdt42 build --out _site/platform-design
 
 arc42 --dir docs/arc42 validate --strict
 arc42 --dir docs/arc42 build --out _site/architecture --base "${PREFIX}architecture/"
+
+# The overview: the platform design and the architecture joined where they meet (scripts/overview.mjs). It fails
+# when the two do not fit together.
+node scripts/overview.mjs _site/overview
 
 # Review builds: with PDT42_DIFF_BASE set (e.g. origin/main in a pull request),
 # also render the platform design's, the organisation's and the architecture's changes since the merge base with that ref as

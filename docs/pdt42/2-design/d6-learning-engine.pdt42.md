@@ -83,7 +83,7 @@ evolves-to: e-creators
 
 ### Guidance for building apps
 
-Helps creators build apps with their AI assistant that are easy to use and fit the platform. It is the benefit that does not depend on reach (D4), and the same guidance lets adults start building.
+Helps creators build apps with their AI assistant that are easy to use and fit the platform. Creators get it even if nobody else uses their app (D4).
 
 ```pdt42
 :::service
@@ -92,6 +92,7 @@ title: Guidance for building apps
 for: e-creators
 stage: onboarding
 kind: empowering
+channel: ch-guidance
 :::
 ```
 
@@ -113,7 +114,7 @@ channel: ch-listing
 
 ### Insight into use and feedback
 
-Shows creators that and how their app is used, with feedback and thanks. This is the reputation flow that keeps them (D4).
+Shows creators whether and how their app is used, with feedback and thanks. This is the reputation flow that keeps them (D4).
 
 ```pdt42
 :::service
@@ -122,7 +123,7 @@ title: Insight into use and feedback
 for: e-creators
 stage: getting-better
 kind: empowering
-supports: t-use-in-class, t-give-feedback, t-recommend-app
+supports: t-use-in-class, t-thank-creator-adult, t-give-feedback, t-recommend-app
 channel: ch-feedback
 :::
 ```
@@ -173,7 +174,7 @@ channel: ch-app-overview
 
 ### Starting an app right away
 
-Students open an app an adult brought to them and start right away, without installation or sign-up.
+Students open an app an adult brought to them and start right away, without installation or sign-up: a link or QR code is enough.
 
 ```pdt42
 :::service
@@ -183,7 +184,7 @@ for: e-students
 stage: onboarding
 kind: other
 supports: t-bring-app
-channel: ch-collections
+channel: ch-direct-start
 :::
 ```
 
@@ -205,7 +206,7 @@ channel: ch-app-overview
 
 ### Clarity on fitness for use
 
-Answers whether an app may be used, before an adult brings it to class.
+Answers whether an app may be used, before an adult passes it on to a learner.
 
 ```pdt42
 :::service
@@ -253,7 +254,7 @@ channel: ch-feedback
 
 ### From using to adapting apps
 
-Opens the path from the consumption to the production side: adults and students adapt an app or build their own, using the guidance for building apps.
+Opens the path from using apps to making them: adults and students adapt an app or build their own, using the guidance for building apps.
 
 ```pdt42
 :::service

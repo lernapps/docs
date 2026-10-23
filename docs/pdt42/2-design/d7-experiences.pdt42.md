@@ -26,7 +26,7 @@ core-entity: e-adopters
 roles: e-creators, e-students
 relationship: r-creators-adults
 value-proposition: The right active-learning app for this topic and grade, running in class within minutes, safe to use without checking it yourself
-steps: s-finding, t-find-app, s-fitness-clarity, t-confirm-fitness, t-bring-app, t-use-in-class, s-giving-back, t-thank-creator-adult, t-give-feedback
+steps: s-finding, t-find-app, s-fitness-clarity, t-confirm-fitness, s-start-right-away, t-bring-app, t-use-in-class, s-giving-back, t-thank-creator-adult, t-give-feedback
 activities:
   - Keeping listings comparable and current
   - Listing only apps that meet the fitness criteria, so trust is built in
@@ -45,7 +45,7 @@ revenues:
 
 ## Practice tonight, before the test
 
-The journey of a parent the evening before a test: find an app the child can start right away for the topic of tomorrow's test, let the child practise, and say thanks afterwards. The setting is the kitchen table, not the classroom, and the goal is the next test, like the students' own. The app starts from lernapps.net like every listed app (KD-21), so parents do not have to judge a stranger's address.
+The journey of a parent the evening before a test: find an app the child can start right away for the topic of tomorrow's test, let the child practise, and say thanks afterwards; the child can come back to the app or find the next one alone. The setting is the kitchen table, not the classroom, and the goal is the same as the child's: the next test. The app starts from lernapps.net like every listed app (KD-21), so parents do not have to judge a stranger's address.
 
 ```pdt42
 :::canvas
@@ -63,7 +63,7 @@ core-entity: e-adopters
 roles: e-students, e-creators
 relationship: r-adults-students
 value-proposition: Tonight, before tomorrow's test: an app your child can start right away
-steps: s-finding, t-find-app, t-bring-app, s-start-right-away, t-learn-with-app, s-giving-back, t-thank-creator-adult
+steps: s-finding, t-find-app, s-fitness-clarity, t-confirm-fitness, t-bring-app, s-start-right-away, t-learn-with-app, s-student-finding, t-return-to-app, s-giving-back, t-thank-creator-adult
 activities:
   - Keeping listings findable by topic and grade
   - Keeping apps startable without installation or sign-up
@@ -81,7 +81,7 @@ revenues:
 
 ## List an app and hear it is used
 
-The journey of the supply side: a creator who built an app for their own class lists it with almost no effort and then hears that and how it helped elsewhere. Reach is no reason to start, but use and praise keep creators (D4). The thanks they receive is the same click every user is asked for. The platform serves a copy of the app under lernapps.net (KD-21), so the creator stays the author but no longer answers to schools for data protection; in return the app needs a licence that allows the copy.
+The journey of the supply side: a creator who built an app for their own class lists it with almost no effort and then hears whether and how it helped elsewhere. Creators do not start for the reach, but use and praise keep them going (D4). The thanks they receive come from the one click every user is asked for. The platform serves a copy of the app under lernapps.net (KD-21), so the creator stays the author but no longer answers to schools for data protection; in return the app needs a licence that allows the copy.
 
 ```pdt42
 :::canvas

@@ -187,10 +187,10 @@ x-source: pdt42 KD-18; owner decision 2026-10-23
 from school networks ([KD-19](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-19-two-stages-before-the-platform-is-tested-with-teachers-d8-draft)).
 
 **Decision.** Thanks is an interface of the catalog (`if-thanks`) that the catalog and the apps link to. Its
-realisation can change behind it: today it is a prepared form in the catalog that sends an e-mail.
+realisation can change behind it: today it is a prepared e-mail to the platform owner.
 
 **Consequences.** Apps and pages do not depend on how thanks are realised. The e-mail realisation does not count
-thanks and does not reach the creator yet.
+thanks, and they reach the creator only if the platform owner passes them on.
 
 ```arc42
 :::decision

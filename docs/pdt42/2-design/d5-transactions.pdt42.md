@@ -168,7 +168,7 @@ of: r-adults-students
 
 ### Bring an app to students
 
-An adult gets an app in front of students. Today adults use every available channel: links, QR codes, the projector, school tablets.
+An adult gets an app in front of students. Today adults use every available channel: links, QR codes, the projector, school tablets. With lernapps.net, a link or QR code to the copy served under lernapps.net is enough.
 
 ```pdt42
 :::transaction
@@ -180,7 +180,7 @@ to: e-students
 direction: one-way
 value-unit: Access to one app or a collection
 happening: yes
-channel: ch-collections
+channel: ch-direct-start
 kind: access
 motivation: m-adopters-students
 job: j-bring-to-students
@@ -316,7 +316,7 @@ components:
   - Automatic check and publication
   - A copy of the app served under lernapps.net, following the creator's releases
   - Help from the creator's AI assistant
-improvement: Contributing an app takes minutes, without an own website, post or privacy notice
+improvement: Contributing an app takes minutes, without a website, post or privacy notice of one's own
 :::
 ```
 
@@ -355,6 +355,23 @@ improvement: Adults no longer judge fitness for use alone or wait for a gatekeep
 :::
 ```
 
+### Starting an app from a link
+
+An adult passes an app on with a link or a QR code, and it starts at once: from lernapps.net, in the browser, on the devices a class or a family already has (KD-21).
+
+```pdt42
+:::channel
+id: ch-direct-start
+title: Starting an app from a link
+medium: digital
+components:
+  - A link or QR code to the app, or to one topic in it
+  - Served from lernapps.net, under one address that keeps working
+  - No installation and no accounts for students
+improvement: An app reaches a class or a child in seconds, without installing anything or signing up
+:::
+```
+
 ### Passing apps on to a class
 
 Adults bring one app or several to their class in one step.
@@ -389,5 +406,23 @@ components:
   - Counted openly: only explicit clicks and totals, no accounts or free text
   - Steps aside quietly when it cannot be reached
 improvement: Use and praise reach the creator instead of staying invisible, and every user knows that thanking keeps the free platform alive
+:::
+```
+
+### Guidance an AI assistant can follow
+
+Creators build through their AI assistant (KD-10, KD-11), so the guidance for building apps is written for the assistant, not only for people (KD-16). The assistant reads it phase by phase, starts from a template that already keeps the platform's rules, and checks the app before it is listed; the creator decides at a few points.
+
+```pdt42
+:::channel
+id: ch-guidance
+title: Guidance an AI assistant can follow
+medium: digital
+components:
+  - Guidance by phase, from the first question to the listing
+  - Skills that carry the rules every app has to keep
+  - Templates for three kinds of app that already keep those rules
+  - A command that creates an app and checks it
+improvement: Building an app that keeps the platform's rules no longer needs expert knowledge, only the creator's idea and their assistant
 :::
 ```
