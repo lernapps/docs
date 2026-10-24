@@ -123,7 +123,7 @@ title: Insight into use and feedback
 for: e-creators
 stage: getting-better
 kind: empowering
-supports: t-use-in-class, t-thank-creator-adult, t-give-feedback, t-recommend-app
+supports: t-use-in-class, t-thank-creator-adult, t-thank-creator-student, t-give-feedback, t-recommend-app
 channel: ch-creator-insight
 :::
 ```

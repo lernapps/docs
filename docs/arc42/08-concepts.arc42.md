@@ -52,7 +52,7 @@ category: quality
 ## Pinned and pulled forward
 
 A repository uses another one by a pinned commit: packages from git, actions by commit, the archetypes by commit.
-When a pinned block improves, Renovate passes the improvement on as a pull request, to listed apps as well;
+When a pinned block gets a new version, Renovate passes it on as a pull request, to listed apps as well;
 merging is the only manual step (`dec-pinned-by-commit`).
 
 ```arc42

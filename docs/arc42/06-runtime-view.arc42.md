@@ -1,6 +1,6 @@
 # Runtime View
 
-The [experiences](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md) of the platform model as they run through the system, and the flows behind them that no user sees: how a listed app gets a new version, how the platform passes on its improvements and how a platform site is published.
+The [experiences](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md) of the platform model as they run through the system, and the flows behind them that no user sees: how a listed app gets a new version, how the platform passes on its updates and how a platform site is published.
 They stop at the building blocks' boundaries; what happens inside the tooling or the app templates is in their own
 runtime views, for example how a change of the guidance is measured by the evals
 ([tooling, chapter 6](https://github.com/lernapps/tooling/blob/main/docs/arc42/06-runtime-view.arc42.md)).
@@ -120,7 +120,7 @@ sequenceDiagram
     participant tooling as Tooling
     participant templates as App templates
     participant org as Organisation
-    participant appactions as App repo Actions
+    participant appactions as App repositories
     participant owner as Owner
     participant github as GitHub
     creator->>catalog: find me an app for my class
@@ -165,7 +165,7 @@ aliases: appactions=actor-app-repo-actions, catalog=bb-catalog, tooling=bb-tooli
 
 ```mermaid
 sequenceDiagram
-    participant appactions as App repo Actions
+    participant appactions as App repositories
     participant catalog as Catalog
     participant tooling as Tooling
     participant github as GitHub
@@ -179,7 +179,7 @@ sequenceDiagram
 
 ## The platform passes on its updates
 
-When the site frame, the tooling or the app templates improve, the platform passes the improvement on to every
+When the site frame, the tooling or the app templates get a new version, the platform passes it on to every
 repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each
 one, and it is merged when the checks pass. An improvement of the guidance has been measured before it is passed on.
 
@@ -187,7 +187,7 @@ one, and it is merged when the checks pass. An improvement of the guidance has b
 :::runtime-scenario
 id: rs-block-update
 title: The platform passes on its updates
-trigger: The site frame, the tooling or the app templates improve
+trigger: The site frame, the tooling or the app templates get a new version
 involves: bb-website, bb-tooling, bb-app-templates, bb-catalog, bb-docs
 :::
 ```

@@ -144,9 +144,9 @@ potential:
 goals:
   - Understand the subject to get good grades
 pressures:
-  - The next test
+  - A topic they struggle with, often noticed before a test
 convenience-gains:
-  - Help with exactly the topic they struggle with
+  - Start right away, without an account or installation
 reach-gains:
   - An app for exactly the topic they struggle with
 value-gains:
@@ -376,14 +376,14 @@ job-step: execute
 :::
 ```
 
-### Students find an app to prepare for the next test
+### Students find an app for a topic they struggle with
 
 Students look for apps with a different motivation than adults: to understand a topic they struggle with, often before a test. They usually know an app because an adult showed it to them. That they also search via social media and AI assistants is an assumption, not an observation — to be validated.
 
 ```pdt42
 :::job
 id: j-students-find
-title: Students find an app to prepare for the next test
+title: Students find an app for a topic they struggle with
 arena: ar-into-use
 entities: e-students, e-adopters, e-creators, e-social-media, e-ai-assistants
 job-step: locate
