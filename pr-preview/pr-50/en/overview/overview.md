@@ -2,9 +2,9 @@
 
 What people get from the platform, which part of the system delivers it, and how far it is built. Follow a link for the details.
 
-> The idea, in the platform design's words: Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive.
+> The goal, in the platform design's words: Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used under data protection law; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive: running it costs almost nothing, and thanks are what keep creators building.
 
-Today, 6 of the 8 services the three journeys need are built, and 2 only in part: “Giving feedback and thanks” and “Insight into use and feedback”. What is missing is described right after the journeys.
+Today, 6 of the 8 services the three journeys need are built; the other 2 only in part: “Giving feedback and thanks” and “Insight into use and feedback”. What is missing is described after the journeys.
 
 ## Who takes part
 
@@ -13,13 +13,22 @@ Today, 6 of the 8 services the three journeys need are built, and 2 only in part
 - **[Students](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-students):** The learners the apps are built for.
 - **[Platform owner](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-platform-owner):** Oliver Jägle owns and shapes the platform strategy.
 
-Around them: [School gatekeepers](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-gatekeepers), [Teacher platforms (commercial or non-profit)](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-teacher-platforms), [Social media](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-social-media), [GitHub](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-github), [AI assistants](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-ai-assistants).
+## The system in six parts
+
+The platform is built from one part per repository. The journeys and flows below name them where they help; a fuller description of each follows at the end.
+
+- **[Website](../architecture/#05-building-blocks.arc42.md:el-bb-website):** Gives the platform its face at lernapps.net, the privacy notice that covers every served app, and the shared header, footer and checks every platform site is built with.
+- **[Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog):** Lets adults and students find, trust and start apps, and lets creators list them; it serves a copy of every listed app under lernapps.net.
+- **[Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling):** Gives a creator's AI assistant the guidance, the commands and the workflows to build an app that keeps the platform's rules.
+- **[App templates](../architecture/#05-building-blocks.arc42.md:el-bb-app-templates):** Provides the three kinds of app (quiz, explainer and interactive app) as templates that already keep the platform's rules.
+- **[Docs](../architecture/#05-building-blocks.arc42.md:el-bb-docs):** Holds the models of the platform: why it exists, who carries it and how the system is built.
+- **[Organisation](../architecture/#05-building-blocks.arc42.md:el-bb-org):** Holds the rules and decisions that every repository of the platform follows.
 
 ## How to read a journey
 
-A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service. The service reaches people through a channel, such as a page, a link or a template. A part of the system delivers the channel through one of its interfaces.
+A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service, and a part of the system provides it through one of its interfaces: the pages, links, templates or commands people actually use. The way a service reaches people is called its channel; the gaps further down are listed by channel.
 
-For example: in the step "Find an app for a topic and grade", the platform offers the service "Finding apps by topic and grade". It reaches people through the channel "One place to find apps", which the interface "Catalog pages" of the part "Catalog" delivers.
+For example: in the step "Find an app for a topic and grade", the platform offers the service "Finding apps by topic and grade", which the interface "Catalog pages" of the part "Catalog" provides.
 
 ## The three journeys
 
@@ -34,28 +43,24 @@ Mainly for [Adopting adults](../platform-design/#1-exploration/e2-scan.pdt42.md:
 1. [Find an app for a topic and grade](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-find-app)
    - **[Finding apps by topic and grade](../platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-finding)** — Built
      - For [Adopting adults](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-adopters): Helps adults find a fitting app in one place.
-     - Channel: [One place to find apps](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-app-overview).
      - Delivered by: [Catalog pages (Catalog)](../architecture/#05-building-blocks.arc42.md:el-if-catalog-pages).
 1. [Confirm an app may be used](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-confirm-fitness)
    - **[Clarity on fitness for use](../platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-fitness-clarity)** — Built
-     - For [Adopting adults](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-adopters): Answers whether an app may be used, before an adult passes it on to a learner.
-     - Channel: [Visible fitness for use](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-fitness-signal).
+     - For [Adopting adults](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-adopters): Answers whether an app may be used, before an adult passes it on to a learner: it sends nothing to third parties, keeps only its own data in the browser and needs no installation or sign-up.
      - Delivered by: [Catalog pages (Catalog)](../architecture/#05-building-blocks.arc42.md:el-if-catalog-pages), [Home pages (Website)](../architecture/#05-building-blocks.arc42.md:el-if-home-pages), [Listing (Catalog)](../architecture/#05-building-blocks.arc42.md:el-if-listing).
 1. [Bring an app to students](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-bring-app)
    - **[Starting an app right away](../platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-start-right-away)** — Built
      - For [Students](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-students): Students open an app an adult brought to them and start right away, without installation or sign-up: a link or QR code is enough.
-     - Channel: [Starting an app from a link](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-direct-start).
      - Delivered by: [Served apps (Catalog)](../architecture/#05-building-blocks.arc42.md:el-if-served-apps).
 1. [Use an app in class](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-use-in-class)
 1. [Thank the creator](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-thank-creator-adult) · [Give feedback from classroom use](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-give-feedback)
    - **[Giving feedback and thanks](../platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-giving-back)** — Partly built
      - For [Adopting adults](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-adopters), [Students](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-students): Makes it easy for adults and students to give feedback, recommendations and thanks, without accounts and without identifying students. It explains, without being pushy, that a thank-you is what keeps the free platform alive.
-     - Channel: [Returning use and praise to creators](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-feedback).
      - Delivered by: [Thanks (Catalog)](../architecture/#05-building-blocks.arc42.md:el-if-thanks).
 
 ### [Practice tonight, before the test](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-practice-tonight)
 
-The journey of a parent the evening before a test: find an app the child can start right away for the topic of tomorrow's test, let the child practise, and say thanks afterwards; the child can come back to the app or find the next one alone. The setting is the kitchen table, not the classroom, and the goal is the same as the child's: the next test. The app starts from lernapps.net like every listed app, so parents do not have to judge a stranger's address.
+The journey of a parent the evening before a test: find an app the child can start right away for the topic of tomorrow's test, let the child practise, and say thanks afterwards; the child can come back to the app or find the next one alone. The setting is the kitchen table, not the classroom, and parent and child share one goal: tomorrow's test. The app starts from lernapps.net like every listed app, so parents do not have to judge a stranger's address.
 
 Mainly for [Adopting adults](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-adopters); also involves [Students](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-students), [App creators](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-creators). What they get: Tonight, before tomorrow's test: an app your child can start right away.
 
@@ -65,7 +70,6 @@ Mainly for [Adopting adults](../platform-design/#1-exploration/e2-scan.pdt42.md:
 1. [Return to an app](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-return-to-app)
    - **[Finding apps before a test](../platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-student-finding)** — Built
      - For [Students](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-students): Helps students return to apps and find new ones for their topic on their own, for instance before a test.
-     - Channel: [One place to find apps](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-app-overview) (See above.)
      - Delivered by: [Catalog pages (Catalog)](../architecture/#05-building-blocks.arc42.md:el-if-catalog-pages).
 1. As in the journey “An app in class within minutes”: [Thank the creator](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-thank-creator-adult).
 
@@ -78,22 +82,28 @@ Mainly for [App creators](../platform-design/#1-exploration/e2-scan.pdt42.md:el-
 1. Building the app:
    - **[Guidance for building apps](../platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-building-guidance)** — Built
      - For [App creators](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-creators): Helps creators build apps with their AI assistant that are easy to use and fit the platform. Creators get it even if nobody else uses their app.
-     - Channel: [Guidance an AI assistant can follow](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-guidance).
      - Delivered by: [Archetypes (App templates)](../architecture/#05-building-blocks.arc42.md:el-if-archetypes), [Guidance (Tooling)](../architecture/#05-building-blocks.arc42.md:el-if-guidance), [Home pages (Website)](../architecture/#05-building-blocks.arc42.md:el-if-home-pages), [Tooling CLI (Tooling)](../architecture/#05-building-blocks.arc42.md:el-if-tooling-cli).
 1. [List an app](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-list-app)
    - **[Help to list an app](../platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-listing-help)** — Built
      - For [App creators](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-creators): Takes the effort out of the first listing, the hurdle for creators.
-     - Channel: [Effortless listing](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-listing).
      - Delivered by: [Listing (Catalog)](../architecture/#05-building-blocks.arc42.md:el-if-listing).
 1. [Use an app in class](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-use-in-class) · [Thank the creator](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-thank-creator-adult) · [Give feedback from classroom use](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-give-feedback) · [Recommend an app](../platform-design/#2-design/d5-transactions.pdt42.md:el-t-recommend-app)
    - **[Insight into use and feedback](../platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-use-insight)** — Partly built
      - For [App creators](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-creators): Shows creators whether and how their app is used, with feedback and thanks. This is the reputation flow that keeps them.
-     - Channel: [Use and praise made visible to the creator](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-creator-insight).
      - Delivered by: [Site frame (Website)](../architecture/#05-building-blocks.arc42.md:el-if-site-frame), [Thanks (Catalog)](../architecture/#05-building-blocks.arc42.md:el-if-thanks).
+
+## How the parts work together
+
+Behind the journeys: how a creator's app gets into the catalog, and how the system keeps itself current. The architecture describes these flows step by step.
+
+- **[Build and list an app](../architecture/#06-runtime-view.arc42.md:el-rs-build-and-list).** A creator finds no fitting app and decides to build one. Their AI assistant follows the tooling's guidance, creates the app from one of the app templates and checks it; the app's repository runs the tooling's actions. The assistant opens the listing pull request; the catalog checks the entry and, at the platform owner's request, has a review agent look at the app; the owner approves; the catalog publishes a copy. Parts involved: [Website](../architecture/#05-building-blocks.arc42.md:el-bb-website), [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog), [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling), [App templates](../architecture/#05-building-blocks.arc42.md:el-bb-app-templates), [Organisation](../architecture/#05-building-blocks.arc42.md:el-bb-org).
+- **[A listed app gets a new version](../architecture/#06-runtime-view.arc42.md:el-rs-app-update).** The creator releases a new version. The catalog builds a copy from that release and replaces the served copy; the address stays the same and serves a copy at every moment. Parts involved: [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog), [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling).
+- **[A building block gets a new commit](../architecture/#06-runtime-view.arc42.md:el-rs-block-update).** The site frame, the tooling or the app templates get a new commit on their main line. Renovate, an update service, opens a pull request in every repository that uses the block at a fixed version; it is merged when the checks pass. Inside the tooling, a change of the guidance has been measured by its evaluations before this point. Parts involved: [Website](../architecture/#05-building-blocks.arc42.md:el-bb-website), [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling), [App templates](../architecture/#05-building-blocks.arc42.md:el-bb-app-templates), [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog), [Docs](../architecture/#05-building-blocks.arc42.md:el-bb-docs).
+- **[A platform site is published](../architecture/#06-runtime-view.arc42.md:el-rs-site-published).** A change is merged to a site's main line: the website, the catalog, the docs or the tooling's pages. The tooling's site actions build the site, run site-check from the site frame on the built pages, and deploy them to GitHub Pages under lernapps.net. A failing check stops the deploy. Parts involved: [Docs](../architecture/#05-building-blocks.arc42.md:el-bb-docs), [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling), [Website](../architecture/#05-building-blocks.arc42.md:el-bb-website).
 
 ## What is missing
 
-The journeys hold up to the point where use and praise should flow back to the creator. These channels are delivered only in part: what the interfaces that deliver them do not do yet, and which services that affects.
+The journeys hold up to the point where use and praise should flow back to the creator. Below, for each of the two ways back that are only partly built, what the parts do not do yet and which services that affects.
 
 ### [Returning use and praise to creators](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-feedback)
 
@@ -105,6 +115,8 @@ The journeys hold up to the point where use and praise should flow back to the c
 - [Site frame (Website)](../architecture/#05-building-blocks.arc42.md:el-if-site-frame): Only visits to an app's page in the catalog are counted, not the use of the app itself, and only the platform owner sees the totals.
 - [Thanks (Catalog)](../architecture/#05-building-blocks.arc42.md:el-if-thanks): Thanks reach the creator only if the platform owner passes them on.
 - Affects: [Insight into use and feedback](../platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-use-insight).
+
+Back to the idea at the top: until “Giving feedback and thanks” and “Insight into use and feedback” are complete, the platform cannot yet live on thanks.
 
 ## Planned services
 
@@ -121,33 +133,32 @@ The platform design names these services too. The three journeys do not require 
 - **[From using to adapting apps](../platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-adapt-apps)** — Not built yet
   - For [Adopting adults](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-adopters), [Students](../platform-design/#1-exploration/e2-scan.pdt42.md:el-e-students): Opens the path from using apps to making them: adults and students adapt an app or build their own, using the guidance for building apps.
 
-## Where this leaves the platform
-
-6 of the 8 services the journeys need are in place. Open are “Giving feedback and thanks” and “Insight into use and feedback”. Back to the idea at the top: these decide whether the platform can live on thanks.
-
 ## For reference: the parts of the system
 
 One part per repository. Each is described as a whole in the architecture and in detail in its own repository. The creators' own app repositories are outside the system; they use the tooling.
 
 The parts work with these systems outside the system:
 
+- [Creator's AI assistant](../architecture/#03-system-context.arc42.md:el-actor-ai-assistant): the AI tool a creator builds and lists an app with; it reads the guidance and runs the CLI
 - [Renovate](../architecture/#03-system-context.arc42.md:el-actor-renovate): dependency update service that keeps the versions the repositories use up to date
-- [Creator's AI assistant](../architecture/#03-system-context.arc42.md:el-actor-ai-assistant): AI assistants, a partner the platform designs for
+- [GoatCounter](../architecture/#03-system-context.arc42.md:el-actor-goatcounter): hosted counting service for the platform's own pages
 - [GitHub](../architecture/#03-system-context.arc42.md:el-actor-github): repositories, issues, pull requests, Actions and Pages
 - [E-mail](../architecture/#03-system-context.arc42.md:el-actor-email): mail system that carries thanks and feedback today
 - [GitHub Actions of the app repositories](../architecture/#03-system-context.arc42.md:el-actor-app-repo-actions): workflows in creators' app repositories that use the tooling's actions
-- [GoatCounter](../architecture/#03-system-context.arc42.md:el-actor-goatcounter): hosted counting service for the platform's own pages
 
 ### Parts that deliver the channels
 
-#### [App templates](../architecture/#05-building-blocks.arc42.md:el-bb-app-templates) ([lernapps/app-templates](https://github.com/lernapps/app-templates))
+#### [Website](../architecture/#05-building-blocks.arc42.md:el-bb-website) ([lernapps/lernapps.github.io](https://github.com/lernapps/lernapps.github.io))
 
-The templates and runtimes of the three archetypes: quiz, explainer and interactive app. They carry the rules every app has to meet into the code, so a creator does not have to know them.
+The website at lernapps.net: the home page that tells the platform's story in plain language, the privacy notice and the imprint that cover every served app, and the entry point for AI assistants. It provides the shared frame every site of the platform is built with.
 
-- **[Archetypes](../architecture/#05-building-blocks.arc42.md:el-if-archetypes):** The template and runtime of each archetype, which the tooling creates apps from and apps build with.
-  - Delivers the channel: [Guidance an AI assistant can follow](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-guidance)
-  - Used by: [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling)
-  - Works with, outside the system: [Renovate](../architecture/#03-system-context.arc42.md:el-actor-renovate)
+- **[Home pages](../architecture/#05-building-blocks.arc42.md:el-if-home-pages):** The home page, the privacy notice and the imprint, and the root llms.txt that leads AI assistants to the other parts of the platform.
+  - Delivers the channel: [Guidance and templates an AI assistant can follow](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-guidance), [Visible fitness for use](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-fitness-signal)
+  - Works with, outside the system: [Creator's AI assistant](../architecture/#03-system-context.arc42.md:el-actor-ai-assistant)
+- **[Site frame](../architecture/#05-building-blocks.arc42.md:el-if-site-frame):** The shared header, footer, styles and counting snippet of every platform site, and site-check, the check every site runs on its built pages before it is deployed.
+  - Delivers the channel: [Use and praise made visible to the creator](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-creator-insight)
+  - Used by: [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog), [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling), [Docs](../architecture/#05-building-blocks.arc42.md:el-bb-docs)
+  - Works with, outside the system: [Renovate](../architecture/#03-system-context.arc42.md:el-actor-renovate), [GoatCounter](../architecture/#03-system-context.arc42.md:el-actor-goatcounter)
 
 #### [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog) ([lernapps/apps](https://github.com/lernapps/apps))
 
@@ -171,26 +182,23 @@ Everything a creator's AI assistant needs to build an app that meets the platfor
 - **[App actions](../architecture/#05-building-blocks.arc42.md:el-if-app-actions):** The reusable workflows and actions an app's repository runs to check and build the app and to publish the creator's own release, at the creator's address.
   - Works with, outside the system: [GitHub Actions of the app repositories](../architecture/#03-system-context.arc42.md:el-actor-app-repo-actions), [GitHub](../architecture/#03-system-context.arc42.md:el-actor-github)
 - **[Guidance](../architecture/#05-building-blocks.arc42.md:el-if-guidance):** The guidance by phase, the skills and the documentation that AI assistants read to build and list an app.
-  - Delivers the channel: [Guidance an AI assistant can follow](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-guidance)
+  - Delivers the channel: [Guidance and templates an AI assistant can follow](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-guidance)
   - Works with, outside the system: [Creator's AI assistant](../architecture/#03-system-context.arc42.md:el-actor-ai-assistant)
 - **[Site actions](../architecture/#05-building-blocks.arc42.md:el-if-site-actions):** The actions every platform site is built, checked and deployed with, and the previews of its pull requests: the website, the catalog, the docs and the tooling's own pages.
   - Used by: [Website](../architecture/#05-building-blocks.arc42.md:el-bb-website), [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog), [Docs](../architecture/#05-building-blocks.arc42.md:el-bb-docs)
 - **[Tooling CLI](../architecture/#05-building-blocks.arc42.md:el-if-tooling-cli):** The command line an assistant and the workflows run: create an app from an archetype, check it against the rules, update it.
-  - Delivers the channel: [Guidance an AI assistant can follow](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-guidance)
+  - Delivers the channel: [Guidance and templates an AI assistant can follow](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-guidance)
   - Used by: [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog)
   - Works with, outside the system: [Creator's AI assistant](../architecture/#03-system-context.arc42.md:el-actor-ai-assistant), [GitHub Actions of the app repositories](../architecture/#03-system-context.arc42.md:el-actor-app-repo-actions), [Renovate](../architecture/#03-system-context.arc42.md:el-actor-renovate)
 
-#### [Website](../architecture/#05-building-blocks.arc42.md:el-bb-website) ([lernapps/lernapps.github.io](https://github.com/lernapps/lernapps.github.io))
+#### [App templates](../architecture/#05-building-blocks.arc42.md:el-bb-app-templates) ([lernapps/app-templates](https://github.com/lernapps/app-templates))
 
-The website at lernapps.net: the home page that tells the platform's story in plain language, the privacy notice and the imprint that cover every served app, and the entry point for AI assistants. It provides the shared frame every site of the platform is built with.
+The templates and runtimes of the three archetypes: quiz, explainer and interactive app. They carry the rules every app has to meet into the code, so a creator does not have to know them.
 
-- **[Home pages](../architecture/#05-building-blocks.arc42.md:el-if-home-pages):** The home page, the privacy notice and the imprint, and the root `llms.txt` that leads AI assistants to the other parts of the platform.
-  - Delivers the channel: [Guidance an AI assistant can follow](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-guidance), [Visible fitness for use](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-fitness-signal)
-  - Works with, outside the system: [Creator's AI assistant](../architecture/#03-system-context.arc42.md:el-actor-ai-assistant)
-- **[Site frame](../architecture/#05-building-blocks.arc42.md:el-if-site-frame):** The shared header, footer, styles and counting snippet of every platform site, and `site-check`, the check every site runs on its built pages before it is deployed.
-  - Delivers the channel: [Use and praise made visible to the creator](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-creator-insight)
-  - Used by: [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog), [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling), [Docs](../architecture/#05-building-blocks.arc42.md:el-bb-docs)
-  - Works with, outside the system: [Renovate](../architecture/#03-system-context.arc42.md:el-actor-renovate), [GoatCounter](../architecture/#03-system-context.arc42.md:el-actor-goatcounter)
+- **[Archetypes](../architecture/#05-building-blocks.arc42.md:el-if-archetypes):** The template and runtime of each archetype, which the tooling creates apps from and apps build with.
+  - Delivers the channel: [Guidance and templates an AI assistant can follow](../platform-design/#2-design/d5-transactions.pdt42.md:el-ch-guidance)
+  - Used by: [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling)
+  - Works with, outside the system: [Renovate](../architecture/#03-system-context.arc42.md:el-actor-renovate)
 
 ### Parts that support the others
 

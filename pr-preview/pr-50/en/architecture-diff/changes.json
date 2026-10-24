@@ -5,13 +5,21 @@
     "commit": "a479584cc9c04ff6a7d11c822ebf96c271346a81"
   },
   "head": {
-    "label": "fcf791649740ba8d93593e78131b38670bece881"
+    "label": "a91915b81ffe3e5a50e7a38b42a2404a90ed4a82"
   },
   "acceptanceBase": "a479584cc9c04ff6a7d11c822ebf96c271346a81",
   "untracked": [],
   "accepted": false,
   "hasBlockingFindings": true,
   "findings": [
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/03-system-context.arc42.md",
+      "line": 102,
+      "elementId": "actor-ai-assistant",
+      "message": "Block 'actor-ai-assistant' changed without changing its section prose."
+    },
     {
       "kind": "block-without-prose-change",
       "severity": "warning",
@@ -24,7 +32,7 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 61,
+      "line": 62,
       "elementId": "if-home-pages",
       "message": "Block 'if-home-pages' changed without changing its section prose."
     },
@@ -32,7 +40,7 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 77,
+      "line": 78,
       "elementId": "if-site-frame",
       "message": "Block 'if-site-frame' changed without changing its section prose."
     },
@@ -40,7 +48,7 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 112,
+      "line": 114,
       "elementId": "if-catalog-pages",
       "message": "Block 'if-catalog-pages' changed without changing its section prose."
     },
@@ -48,7 +56,15 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 197,
+      "line": 183,
+      "elementId": "bb-tooling",
+      "message": "Block 'bb-tooling' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/05-building-blocks.arc42.md",
+      "line": 200,
       "elementId": "if-guidance",
       "message": "Block 'if-guidance' changed without changing its section prose."
     },
@@ -56,7 +72,7 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 213,
+      "line": 216,
       "elementId": "if-tooling-cli",
       "message": "Block 'if-tooling-cli' changed without changing its section prose."
     },
@@ -64,7 +80,7 @@
       "kind": "prose-without-block-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 244,
+      "line": 247,
       "elementId": "if-app-actions",
       "message": "Section prose changed without changing block 'if-app-actions' — it names 'Creator'."
     },
@@ -72,9 +88,25 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 277,
+      "line": 265,
+      "elementId": "bb-app-templates",
+      "message": "Block 'bb-app-templates' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/05-building-blocks.arc42.md",
+      "line": 281,
       "elementId": "if-archetypes",
       "message": "Block 'if-archetypes' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/05-building-blocks.arc42.md",
+      "line": 330,
+      "elementId": "bb-org",
+      "message": "Block 'bb-org' changed without changing its section prose."
     },
     {
       "kind": "implementation-path",
@@ -123,6 +155,14 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/03-system-context.arc42.md",
+        "line": 102,
+        "elementId": "actor-ai-assistant",
+        "message": "Block 'actor-ai-assistant' changed without changing its section prose."
+      },
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
+        "file": "docs/arc42/03-system-context.arc42.md",
         "line": 178,
         "elementId": "actor-renovate",
         "message": "Block 'actor-renovate' changed without changing its section prose."
@@ -131,7 +171,7 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 61,
+        "line": 62,
         "elementId": "if-home-pages",
         "message": "Block 'if-home-pages' changed without changing its section prose."
       },
@@ -139,7 +179,7 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 77,
+        "line": 78,
         "elementId": "if-site-frame",
         "message": "Block 'if-site-frame' changed without changing its section prose."
       },
@@ -147,7 +187,7 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 112,
+        "line": 114,
         "elementId": "if-catalog-pages",
         "message": "Block 'if-catalog-pages' changed without changing its section prose."
       },
@@ -155,7 +195,15 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 197,
+        "line": 183,
+        "elementId": "bb-tooling",
+        "message": "Block 'bb-tooling' changed without changing its section prose."
+      },
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
+        "file": "docs/arc42/05-building-blocks.arc42.md",
+        "line": 200,
         "elementId": "if-guidance",
         "message": "Block 'if-guidance' changed without changing its section prose."
       },
@@ -163,7 +211,7 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 213,
+        "line": 216,
         "elementId": "if-tooling-cli",
         "message": "Block 'if-tooling-cli' changed without changing its section prose."
       },
@@ -171,7 +219,7 @@
         "kind": "prose-without-block-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 244,
+        "line": 247,
         "elementId": "if-app-actions",
         "message": "Section prose changed without changing block 'if-app-actions' — it names 'Creator'."
       },
@@ -179,9 +227,25 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 277,
+        "line": 265,
+        "elementId": "bb-app-templates",
+        "message": "Block 'bb-app-templates' changed without changing its section prose."
+      },
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
+        "file": "docs/arc42/05-building-blocks.arc42.md",
+        "line": 281,
         "elementId": "if-archetypes",
         "message": "Block 'if-archetypes' changed without changing its section prose."
+      },
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
+        "file": "docs/arc42/05-building-blocks.arc42.md",
+        "line": 330,
+        "elementId": "bb-org",
+        "message": "Block 'bb-org' changed without changing its section prose."
       }
     ],
     "untouched": [],
@@ -201,6 +265,35 @@
   },
   "architecture": {
     "elements": [
+      {
+        "id": "actor-ai-assistant",
+        "kind": "actor",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "description",
+            "before": "AI assistants (pdt42 e-ai-assistants), a partner the platform designs for",
+            "after": "The AI tool a creator builds and lists an app with; it reads the guidance and runs the CLI (pdt42 e-ai-assistants)"
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 102
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 102
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "Creator's AI assistant"
+          ],
+          "occurrence": 1
+        }
+      },
       {
         "id": "actor-renovate",
         "kind": "actor",
@@ -235,6 +328,16 @@
         "kind": "building-block",
         "status": "modified",
         "attributes": [
+          {
+            "name": "extensions",
+            "before": {
+              "repo": "lernapps/lernapps.github.io"
+            },
+            "after": {
+              "repo": "lernapps/lernapps.github.io",
+              "job": "Gives the platform its face at lernapps.net, the privacy notice that covers every served app, and the shared header, footer and checks every platform site is built with."
+            }
+          },
           {
             "name": "requires",
             "before": [],
@@ -280,7 +383,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 61
+          "line": 62
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -312,7 +415,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 77
+          "line": 78
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -329,6 +432,16 @@
         "kind": "building-block",
         "status": "modified",
         "attributes": [
+          {
+            "name": "extensions",
+            "before": {
+              "repo": "lernapps/apps"
+            },
+            "after": {
+              "repo": "lernapps/apps",
+              "job": "Lets adults and students find, trust and start apps, and lets creators list them; it serves a copy of every listed app under lernapps.net."
+            }
+          },
           {
             "name": "requires",
             "before": [
@@ -349,7 +462,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 95
+          "line": 96
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -379,7 +492,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 112
+          "line": 114
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -410,7 +523,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 128
+          "line": 130
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -441,7 +554,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 144
+          "line": 146
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -474,7 +587,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 160
+          "line": 162
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -482,6 +595,40 @@
             "Building Blocks",
             "Catalog",
             "Thanks"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "bb-tooling",
+        "kind": "building-block",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "extensions",
+            "before": {
+              "repo": "lernapps/tooling"
+            },
+            "after": {
+              "repo": "lernapps/tooling",
+              "job": "Gives a creator's AI assistant the guidance, the commands and the workflows to build an app that keeps the platform's rules."
+            }
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 167
+        },
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 183
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "Tooling"
           ],
           "occurrence": 1
         }
@@ -505,7 +652,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 197
+          "line": 200
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -536,7 +683,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 213
+          "line": 216
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -556,7 +703,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 229
+          "line": 232
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -587,7 +734,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 244
+          "line": 247
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -595,6 +742,40 @@
             "Building Blocks",
             "Tooling",
             "App actions"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "bb-app-templates",
+        "kind": "building-block",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "extensions",
+            "before": {
+              "repo": "lernapps/app-templates"
+            },
+            "after": {
+              "repo": "lernapps/app-templates",
+              "job": "Provides the three kinds of app (quiz, explainer and interactive app) as templates that already keep the platform's rules."
+            }
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 228
+        },
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 265
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "App templates"
           ],
           "occurrence": 1
         }
@@ -618,7 +799,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 277
+          "line": 281
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -635,6 +816,16 @@
         "kind": "building-block",
         "status": "modified",
         "attributes": [
+          {
+            "name": "extensions",
+            "before": {
+              "repo": "lernapps/docs"
+            },
+            "after": {
+              "repo": "lernapps/docs",
+              "job": "Holds the models of the platform: why it exists, who carries it and how the system is built."
+            }
+          },
           {
             "name": "requires",
             "before": [
@@ -653,7 +844,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 292
+          "line": 296
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -677,7 +868,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 309
+          "line": 314
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -685,6 +876,88 @@
             "Building Blocks",
             "Docs",
             "Models"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "bb-org",
+        "kind": "building-block",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "extensions",
+            "before": {
+              "repo": "lernapps/.github"
+            },
+            "after": {
+              "repo": "lernapps/.github",
+              "job": "Holds the rules and decisions that every repository of the platform follows."
+            }
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 289
+        },
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 330
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "Organisation"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "rs-build-and-list",
+        "kind": "runtime-scenario",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 94
+        },
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 94
+        },
+        "section": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "headingPath": [
+            "Runtime View",
+            "Build and list an app"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "rs-block-update",
+        "kind": "runtime-scenario",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 182
+        },
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 182
+        },
+        "section": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "headingPath": [
+            "Runtime View",
+            "A building block gets a new commit"
           ],
           "occurrence": 1
         }
@@ -803,13 +1076,19 @@
       {
         "file": "docs/arc42/03-system-context.arc42.md",
         "added": 0,
-        "modified": 1,
+        "modified": 2,
         "removed": 0
       },
       {
         "file": "docs/arc42/05-building-blocks.arc42.md",
         "added": 1,
-        "modified": 15,
+        "modified": 18,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/06-runtime-view.arc42.md",
+        "added": 0,
+        "modified": 2,
         "removed": 0
       },
       {

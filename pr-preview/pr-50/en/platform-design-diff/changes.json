@@ -5,7 +5,7 @@
     "commit": "a479584cc9c04ff6a7d11c822ebf96c271346a81"
   },
   "head": {
-    "label": "fcf791649740ba8d93593e78131b38670bece881"
+    "label": "a91915b81ffe3e5a50e7a38b42a2404a90ed4a82"
   },
   "acceptanceBase": "a479584cc9c04ff6a7d11c822ebf96c271346a81",
   "untracked": [],
@@ -106,7 +106,7 @@
           {
             "name": "narrative",
             "before": "Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, without doubt about whether it may be used; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive.",
-            "after": "Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive."
+            "after": "Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used under data protection law; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive: running it costs almost nothing, and thanks are what keep creators building."
           }
         ],
         "proseChanged": false,
@@ -376,7 +376,7 @@
           "headingPath": [
             "Identify the elementary transactions and channels",
             "Channels",
-            "Guidance an AI assistant can follow"
+            "Guidance and templates an AI assistant can follow"
           ],
           "occurrence": 1
         }
