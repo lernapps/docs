@@ -44,7 +44,7 @@ sequenceDiagram
     student->>catalog: serve me the app
     catalog-->>student: the app, from lernapps.net
     teacher->>catalog: pass on my thanks (one click)
-    catalog->>mail: carry the thanks to the platform owner
+    catalog->>mail: carry the thanks to the creator
 ```
 
 ## Help where a child struggles
@@ -82,15 +82,16 @@ sequenceDiagram
     student->>catalog: serve me the app
     catalog-->>student: the app, no sign-up, no installation
     parent->>catalog: pass on my thanks (one click)
-    catalog->>mail: carry the thanks to the platform owner
+    catalog->>mail: carry the thanks to the creator
 ```
 
 ## Build and list an app
 
 [A creator finds no fitting app and decides to build one](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back). Their AI assistant follows the
 tooling's guidance, creates the app from one of the app templates and checks it; the app's repository runs the
-tooling's actions. The assistant opens the listing pull request; the catalog checks the entry and, at the platform owner's
-request, has a review agent look at the app; the owner approves; the catalog publishes a copy.
+tooling's actions. The assistant opens the listing pull request; the catalog checks the entry, has a review agent look at the app and,
+once the checks pass, publishes a copy under lernapps.net. The creator's own release stays at the creator's address;
+the copy is what lernapps.net serves.
 
 ```arc42
 :::runtime-scenario
@@ -107,7 +108,7 @@ x-experience: x-list-and-hear-back
 id: rs-build-and-list-sequence
 scenario: rs-build-and-list
 notation: mermaid-sequence
-aliases: creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, owner=actor-platform-owner, github=actor-github
+aliases: creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, github=actor-github
 :::
 ```
 
@@ -121,7 +122,6 @@ sequenceDiagram
     participant templates as App templates
     participant org as Organisation
     participant appactions as App repositories
-    participant owner as Owner
     participant github as GitHub
     creator->>catalog: find me an app for my class
     catalog-->>creator: no fitting app
@@ -136,7 +136,7 @@ sequenceDiagram
     assistant->>catalog: list this app (pull request with the entry)
     catalog->>tooling: check the entry and the app
     catalog-->>assistant: the results, as a comment
-    owner->>catalog: have the app reviewed if needed, then publish it
+    catalog->>catalog: have a review agent look at the app
     catalog->>github: build and publish a copy under lernapps.net
 ```
 
@@ -197,7 +197,7 @@ involves: bb-website, bb-tooling, bb-app-templates, bb-catalog, bb-docs
 id: rs-block-update-sequence
 scenario: rs-block-update
 notation: mermaid-sequence
-aliases: website=bb-website, tooling=bb-tooling, templates=bb-app-templates, catalog=bb-catalog, docs=bb-docs, renovate=actor-renovate, owner=actor-platform-owner, apps=actor-app-repo-actions
+aliases: website=bb-website, tooling=bb-tooling, templates=bb-app-templates, catalog=bb-catalog, docs=bb-docs, renovate=actor-renovate, apps=actor-app-repo-actions
 :::
 ```
 
@@ -210,7 +210,6 @@ sequenceDiagram
     participant docs as Docs
     participant renovate as Renovate
     participant apps as App repositories
-    participant owner as Owner
     renovate->>website: report changes of the site frame
     renovate->>templates: report changes of the archetypes
     renovate->>tooling: report changes of the tooling
@@ -218,7 +217,6 @@ sequenceDiagram
     renovate->>docs: take the new site frame (pull request)
     renovate->>tooling: take the changes (pull request)
     renovate->>apps: take the changes (pull request)
-    owner->>catalog: merge it, if not merged automatically
 ```
 
 ## A platform site is published

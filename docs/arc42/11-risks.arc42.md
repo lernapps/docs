@@ -22,8 +22,9 @@ x-source: pdt42 KD-14, KD-19; biz42 risk-weak-supply
 
 ## One owner
 
-One person owns and runs the platform (`con-one-owner`). If they are not available, nobody approves listings,
-merges updates or answers thanks, and the platform stands still.
+One person owns and runs the platform (`con-one-owner`). In the target state nothing waits on them: listings are
+published, updates merged and thanks passed on by the system. Until the interfaces deliver that (`if-listing`,
+`if-thanks`), these steps rest on the owner, and the platform stands still when they are not available.
 
 ```arc42
 :::risk

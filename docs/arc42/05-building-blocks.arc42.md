@@ -55,7 +55,8 @@ requires: if-site-actions
 ### Home pages
 
 The home page, the privacy notice and the imprint, and the root `llms.txt` that leads AI assistants to the other
-parts of the platform.
+parts of the platform. The privacy notice is part of the signal that an app may be used: it covers every app served
+under lernapps.net.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/lernapps.github.io: https://github.com/lernapps/lernapps.github.io :::
@@ -71,7 +72,8 @@ x-realises: ch-guidance, ch-fitness-signal
 ### Site frame
 
 The shared header, footer, styles and counting snippet of every platform site, and `site-check`, the check every
-site runs on its built pages before it is deployed.
+site runs on its built pages before it is deployed. The counting snippet reports visits to GoatCounter; this is
+where a creator's insight into the use of their app begins.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/lernapps.github.io: https://github.com/lernapps/lernapps.github.io :::
@@ -89,7 +91,7 @@ x-missing-ch-creator-insight: Only visits to an app's page in the catalog are co
 
 Lets adults and students find, trust and start apps, and lets creators list them; it is the core of the platform. For adults and students, it makes [apps findable by topic and grade](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-finding), serves a copy of
 every listed app under lernapps.net and keeps it current ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)), and takes [the thanks of adults and students](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-giving-back). For creators, it
-[takes their entries](https://lernapps.net/docs/platform-design/#2-design/d5-transactions.pdt42.md:el-t-list-app) and [helps them list](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-listing-help); it [checks each entry and, at the platform owner's request, has a review agent look at the app](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-fitness-clarity).
+[takes their entries](https://lernapps.net/docs/platform-design/#2-design/d5-transactions.pdt42.md:el-t-list-app) and [helps them list](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-listing-help); it [checks each entry and has a review agent look at the app](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-fitness-clarity), and publishes the copy once the checks pass.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
@@ -138,7 +140,7 @@ x-realises: ch-direct-start
 ### Listing
 
 How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether
-its links and topics hold, and that its licence allows the copy) and, at the platform owner's request, by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request.
+its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published. Nothing waits on a person; where it still does, that is the risk of one owner (`risk-one-owner`).
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
@@ -148,13 +150,16 @@ title: Listing
 provider: bb-catalog
 protocol: GitHub pull request with an entry file; results comment
 x-realises: ch-listing, ch-fitness-signal
+x-missing-ch-listing: A listing is published only after the platform owner approves the pull request, and the review agent runs only at their request.
+x-risk: risk-one-owner
 :::
 ```
 
 ### Thanks
 
 A thank-you and feedback in one click from the catalog or an app, counted openly and passed on to the creator. The
-interface stays the same when its realisation changes.
+interface stays the same when its realisation changes. Nothing waits on a person; where it still does, that is the
+risk of one owner (`risk-one-owner`).
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
@@ -166,6 +171,7 @@ protocol: link from the catalog or an app; realised as a prepared e-mail
 x-realises: ch-feedback, ch-creator-insight
 x-missing-ch-feedback: A click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.
 x-missing-ch-creator-insight: Thanks reach the creator only if the platform owner passes them on.
+x-risk: risk-one-owner
 :::
 ```
 

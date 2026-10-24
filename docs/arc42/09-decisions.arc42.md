@@ -189,8 +189,8 @@ from school networks ([KD-19](https://github.com/lernapps/docs/blob/main/.vibe/d
 **Decision.** Thanks is an interface of the catalog (`if-thanks`) that the catalog and the apps link to. Its
 realisation can change behind it; it is realised as a prepared e-mail to the platform owner.
 
-**Consequences.** Apps and pages do not depend on how thanks are realised. The e-mail realisation does not count
-thanks, and they reach the creator only if the platform owner passes them on.
+**Consequences.** Apps and pages do not depend on how thanks are realised. What the e-mail realisation does not
+deliver yet is recorded at the interface (`if-thanks`); until then it rests on the owner (`risk-one-owner`).
 
 ```arc42
 :::decision

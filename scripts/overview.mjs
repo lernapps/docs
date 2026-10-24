@@ -12,6 +12,10 @@
 // that no interface realises, or a flow names a part its sequence diagram does not show (or the other way round).
 // The flows are drawn from their sequence diagrams in the architecture: every arrow carries the order to the part
 // it points at.
+// Rules of this script that the models do not show: the people on the page are the roles of the journeys; a part's
+// addresses are the deployment nodes under lernapps.net that host it; the trailing steps of a journey that flow
+// back to its main role are shown as what that role gets back; a block's first sentence is its job; an interface's
+// `x-risk` names the risk that holds while it does not deliver.
 //
 //   node scripts/overview.mjs <out-dir>   (writes <out-dir>/index.html and <out-dir>/overview.md, the same content)
 import { execFile, execFileSync } from "node:child_process";
@@ -67,6 +71,7 @@ for (const x of experiences) {
     else if (s.kind === "service" && !realisedBy.has(s.channel)) errors.push(`${s.id} (step of ${x.id}): no interface realises its channel '${s.channel}'`);
   }
 }
+for (const i of interfaces) if (i.extensions?.risk && arcById.get(i.extensions.risk)?.kind !== "risk") errors.push(`${i.id}: x-risk names '${i.extensions.risk}', which is no risk of the architecture`);
 if (errors.length) {
   console.error(`overview: the platform design and the architecture do not fit together:\n- ${errors.join("\n- ")}`);
   process.exit(1);
@@ -97,7 +102,6 @@ const sentence = (text) => (text ? text.charAt(0).toUpperCase() + text.slice(1) 
 const lower = (text) => (/^[A-Z]{2}/.test(text) ? text : text.charAt(0).toLowerCase() + text.slice(1)); // keeps "AI …"
 const fill = (template, values) => template.replace(/\{(\w+)\}/g, (_, k) => values[k] ?? "");
 const job = (bb) => firstSentence(prose(bb)); // a block's first sentence is its job
-const afterJob = (bb) => prose(bb).slice(job(bb).length).trim(); // the rest, where the job is already shown
 const pdtUrl = (e) => `../platform-design/#${e.loc.file}:el-${e.id}`;
 const arcUrl = (e) => `../architecture/#${basename(e.loc.file)}:el-${e.id}`;
 
@@ -159,7 +163,7 @@ const shownJourneys = (() => {
 })();
 const ideas = pdtOf("service").filter((s) => !inExperience.has(s.id)).map(serviceOf);
 const platform = pdtOf("platform")[0];
-const roles = [...new Set([...journeys.flatMap((j) => [j.core, ...j.roles]), ...list(platform.owners).map((id) => pdtById.get(id))])];
+const roles = [...new Set(journeys.flatMap((j) => [j.core, ...j.roles]))];
 const usersOf = (ifaceId) =>
   [...new Set(arc.edges.filter((e) => e.relation === "requires" && e.to === ifaceId).map((e) => e.from))].map((id) => arcById.get(id)).filter(Boolean);
 const blocks = arc.elements
@@ -175,6 +179,7 @@ const blocks = arc.elements
           channels: list(i.extensions?.realises).map((id) => pdtById.get(id)),
           services: pdtOf("service").filter((sv) => list(i.extensions?.realises).includes(sv.channel)),
           notYet: list(i.extensions?.realises).map((ch) => missingOf(i, ch)).filter((m, k, all) => m && all.indexOf(m) === k),
+          risk: i.extensions?.risk ? arcById.get(i.extensions.risk) : null,
           parts: users.filter((u) => u.kind === "building-block"),
           outside: users.filter((u) => u.kind === "actor" && u.type === "system"),
         };
@@ -271,6 +276,8 @@ const makeService = () => {
     if (done.length) lines.push({ parts: [`${meta.reading.deliveredBy} ${done.map(({ iface, block }) => `${iface.title} (${block.title})`).join(", ")}.`] });
     for (const { iface, block, missing } of v.delivery.filter((d) => d.missing))
       lines.push({ notYet: true, parts: [`${meta.notYet.label} ${iface.title} (${block.title}): ${sentence(missing)}`] });
+    const risks = [...new Map(v.delivery.filter((d) => d.missing && d.iface.extensions?.risk).map((d) => [d.iface.extensions.risk, arcById.get(d.iface.extensions.risk)])).values()];
+    if (risks.length) lines.push({ parts: [`${meta.notYet.risk} `, ...join2(risks.map((r) => L(r.title, arcUrl(r)))), "."] });
     if (idea) {
       if (list(v.s.supports).length) lines.push({ parts: [`${meta.ideas.wouldSupport} ${list(v.s.supports).map(title).join(", ")}.`] });
       const issues = issuesOf(v.s);
@@ -401,11 +408,12 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
   ]) {
     M.push(`### ${heading}`, "", ...(intro ? [intro, ""] : []));
     for (const { bb, offers } of group) {
-      M.push(`#### ${md([L(bb.title, arcUrl(bb))])}${bb.extensions?.repo ? ` (${md([L(bb.extensions.repo, `https://github.com/${bb.extensions.repo}`)])})` : ""}`, "", afterJob(bb), "");
-      for (const { i, services, notYet, parts, outside } of offers) {
+      M.push(`#### ${md([L(bb.title, arcUrl(bb))])}${bb.extensions?.repo ? ` (${md([L(bb.extensions.repo, `https://github.com/${bb.extensions.repo}`)])})` : ""}`, "");
+      for (const { i, services, notYet, risk, parts, outside } of offers) {
         M.push(`- **${i.title}:** ${prose(i)}`);
         if (services.length) M.push(`  - ${meta.blocks.delivers} ${names(services)}`);
         for (const m of notYet) M.push(`  - ┆ ${meta.notYet.label} ${sentence(m)}`);
+        if (risk) M.push(`  - ${meta.notYet.risk} ${md([L(risk.title, arcUrl(risk))])}.`);
         if (parts.length) M.push(`  - ${meta.blocks.usedBy} ${names(parts)}`);
         if (outside.length) M.push(`  - ${meta.blocks.outside} ${names(outside)}`);
       }
@@ -451,11 +459,10 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
           <li class="block">
             <h4><a href="${esc(arcUrl(bb))}">${esc(bb.title)}</a></h4>
             ${bb.extensions?.repo ? `<p class="repo"><a href="https://github.com/${esc(bb.extensions.repo)}">${esc(bb.extensions.repo)}</a></p>` : ""}
-            <p>${esc(afterJob(bb))}</p>
             <ul class="offers">${offers
               .map(
-                ({ i, services, notYet, parts, outside }) =>
-                  `<li><strong>${esc(i.title)}</strong>: ${esc(prose(i))}${services.length ? `<span class="meta"> ${esc(meta.blocks.delivers)} ${esc(names(services))}.</span>` : ""}${notYet.map((m) => `<span class="not-yet">${esc(meta.notYet.label)} ${esc(sentence(m))}</span>`).join("")}${parts.length ? `<span class="meta"> ${esc(meta.blocks.usedBy)} ${esc(names(parts))}.</span>` : ""}${outside.length ? `<span class="meta"> ${esc(meta.blocks.outside)} ${esc(names(outside))}.</span>` : ""}</li>`,
+                ({ i, services, notYet, risk, parts, outside }) =>
+                  `<li><strong>${esc(i.title)}</strong>: ${esc(prose(i))}${services.length ? `<span class="meta"> ${esc(meta.blocks.delivers)} ${esc(names(services))}.</span>` : ""}${notYet.map((m) => `<span class="not-yet">${esc(meta.notYet.label)} ${esc(sentence(m))}</span>`).join("")}${risk ? `<span class="meta"> ${esc(meta.notYet.risk)} <a href="${esc(arcUrl(risk))}">${esc(risk.title)}</a>.</span>` : ""}${parts.length ? `<span class="meta"> ${esc(meta.blocks.usedBy)} ${esc(names(parts))}.</span>` : ""}${outside.length ? `<span class="meta"> ${esc(meta.blocks.outside)} ${esc(names(outside))}.</span>` : ""}</li>`,
               )
               .join("")}</ul>
           </li>`;

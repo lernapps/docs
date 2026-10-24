@@ -41,7 +41,7 @@ flowchart LR
     actor-creator -->|"decides to build an app"| system
     actor-ai-assistant -->|"builds and lists an app"| system
     actor-gatekeeper -->|"reads privacy notice and imprint"| system
-    actor-platform-owner -->|"decides, merges, approves entries"| system
+    actor-platform-owner -->|"decides and keeps the models"| system
     actor-app-repo-actions -->|"checks, builds and publishes an app"| system
     actor-github -->|"hosts, runs and carries every contribution"| system
     actor-renovate -->|"moves the pins between repositories"| system
@@ -125,8 +125,9 @@ requires: if-home-pages
 
 ## Platform owner
 
-Oliver Jägle, who [owns and runs the platform](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-platform-owner) alone today ([KD-09](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-09-oliver-jägle-alone-owns-the-platform-2026-09-30)). He decides, merges and approves
-entries, and keeps the models of the platform.
+Oliver Jägle, who [owns and runs the platform](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-platform-owner) alone today ([KD-09](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-09-oliver-jägle-alone-owns-the-platform-2026-09-30)). He decides and keeps the models of the
+platform; nothing in the system waits on him, and where it still does, that is the risk of one owner
+(`risk-one-owner`).
 
 ```arc42
 :::actor

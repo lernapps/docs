@@ -55,7 +55,8 @@ reading:
 
 notYet:
   label: "Not yet:"
-  explained: A dashed block marks where a part does not yet deliver what the journey needs, and says what is missing.
+  explained: A dashed block marks where a part does not yet deliver what the journey needs, and says what is missing; where that leaves a step to a person, the risk it carries is named.
+  risk: "Risk until then:"
 
 experiences:
   heading: The journeys
