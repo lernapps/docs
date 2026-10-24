@@ -191,10 +191,14 @@ const blocks = arc.elements
 const addressesOf = (bb) =>
   arc.elements.filter((e) => e.kind === "deployment-node" && e.parent && arcById.get(e.parent)?.type === "environment" && /lernapps\.net/.test(e.title) && list(e.hosts).includes(bb.id)).map((e) => e.title);
 // The tools people bring themselves: the systems outside the platform that a person addresses directly in a journey.
-const broughtTools = () => [
+// A person actor names its role in its description, "(pdt42 <role id>)".
+const broughtBy = (role) => [
   ...new Set(
     [...behind.values()].flatMap(({ seq }) =>
-      seq.messages.filter((m) => arcById.get(m.from.id)?.type === "person" && arcById.get(m.to.id)?.kind === "actor" && arcById.get(m.to.id)?.type === "system").map((m) => arcById.get(m.to.id)),
+      seq.messages
+        .filter((m) => arcById.get(m.from.id)?.type === "person" && (arcById.get(m.from.id)?.description ?? "").includes(`pdt42 ${role.id})`))
+        .filter((m) => arcById.get(m.to.id)?.kind === "actor" && arcById.get(m.to.id)?.type === "system")
+        .map((m) => arcById.get(m.to.id)),
     ),
   ),
 ];
@@ -257,7 +261,6 @@ const guide = [
   ["roles-h", meta.roles],
   ["parts-h", meta.parts],
   ["experiences-h", meta.experiences],
-  ["together-h", meta.together],
   ["building-h", meta.building],
   ["ideas-h", meta.ideas],
   ["blocks-h", meta.blocks],
@@ -315,8 +318,7 @@ const stepLabel = (st) =>
       ? [st.ts.map((t) => t.title).join(" · ")]
       : [meta.reading.startsFrom];
 const title = (id) => pdtById.get(id)?.title ?? id;
-const outsideLine = (u) => `${u.title}: ${lower(u.description?.replace(/\s*\(pdt42[^)]*\)/, "") ?? "")}`;
-const tools = broughtTools();
+const descOf = (u) => lower(u.description?.replace(/\s*\(pdt42[^)]*\)/, "") ?? "");
 // How the platform helps build an app: the interfaces that realise the channels of the step before any transaction
 // ("Building the app"), and everything else the outside systems that use them in a journey require, grouped by the
 // part that provides them.
@@ -405,8 +407,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
   M.push(`# ${v.claim[0]} ${v.claim[1]}`, "", v.text, "", `[${v.link}](vision/)`, "", `## ${meta.title}`, "", meta.lead, "", `> ${meta.narrativeLabel} ${platform.narrative}`, "", meta.guide.heading, "");
   for (const [, head, why] of guide) M.push(`- **${head}:** ${why}`);
   M.push("", `## ${meta.roles.heading}`, "", meta.roles.intro, "");
-  for (const r of roles) M.push(`- **${r.title}:** ${firstSentence(prose(r))}`);
-  if (tools.length) M.push("", meta.roles.toolsIntro, "", ...tools.map((u) => `- ${outsideLine(u)}`));
+  for (const r of roles) M.push(`- **${r.title}:** ${firstSentence(prose(r))}${broughtBy(r).map((u) => ` ${meta.roles.brings} ${descOf(u)}.`).join("")}`);
   M.push("", `## ${meta.parts.heading}`, "", intro.parts, "");
   for (const { bb } of blocks) {
     const { addresses, repo } = siteOf(bb);
@@ -435,17 +436,17 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
     for (const l of sequenceLines(behind.get(j.x.id))) M.push(l.startsWith("*") ? `\n${l}\n` : `1. ${l}`);
     M.push("");
   }
-  M.push(`## ${meta.together.heading}`, "", meta.together.intro, "");
-  for (const f of scenarios) {
-    M.push(`### ${md([L(f.sc.title, arcUrl(f.sc))])}`, "", prose(f.sc), "");
-    for (const l of sequenceLines(f)) M.push(l.startsWith("*") ? `\n${l}\n` : `1. ${l}`);
-    M.push("");
-  }
   M.push(`## ${meta.building.heading}`, "", meta.building.intro, "");
   for (const { bb, offers } of building) {
     const where = addressesOf(bb);
     M.push(`### ${md([L(bb.title, arcUrl(bb))])}${where.length ? ` (${where.map((a) => `[${a}](https://${a}/)`).join(", ")})` : ""}`, "");
     for (const { i, by } of offers) M.push(`- **${i.title}:** ${prose(i)} ${meta.building.usedBy} ${names(by)}.`);
+    M.push("");
+  }
+  M.push(`### ${meta.building.flows}`, "", meta.building.flowsIntro, "");
+  for (const f of scenarios) {
+    M.push(`#### ${md([L(f.sc.title, arcUrl(f.sc))])}`, "", prose(f.sc), "");
+    for (const l of sequenceLines(f)) M.push(l.startsWith("*") ? `\n${l}\n` : `1. ${l}`);
     M.push("");
   }
   M.push("", `## ${meta.ideas.heading}`, "", meta.ideas.intro, "");
@@ -560,9 +561,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
       <section aria-labelledby="roles-h">
         <h2 class="section" id="roles-h">${esc(meta.roles.heading)}</h2>
         <p class="lead">${esc(meta.roles.intro)}</p>
-        <ul class="roles">${roles.map((r) => `<li><strong>${esc(r.title)}</strong><span>${esc(firstSentence(prose(r)))}</span></li>`).join("")}</ul>
-        ${tools.length ? `<p class="lead around">${esc(meta.roles.toolsIntro)}</p>
-        <ul class="outside">${tools.map((u) => `<li>${esc(outsideLine(u))}</li>`).join("")}</ul>` : ""}
+        <ul class="roles">${roles.map((r) => `<li><strong>${esc(r.title)}</strong><span>${esc(firstSentence(prose(r)))}</span>${broughtBy(r).map((u) => `<span class="brings">${esc(meta.roles.brings)} ${esc(descOf(u))}.</span>`).join("")}</li>`).join("")}</ul>
       </section>
       <section aria-labelledby="parts-h">
         <h2 class="section" id="parts-h">${esc(meta.parts.heading)}</h2>
@@ -585,13 +584,6 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
           <p class="not-yet">${esc(meta.notYet.explained)}</p>
         </div>${journeysHtml}
       </section>
-      <section aria-labelledby="together-h">
-        <h2 class="section" id="together-h">${esc(meta.together.heading)}</h2>
-        <p class="lead">${esc(meta.together.intro)}</p>
-        <ul class="together">${scenarios
-          .map((f) => `<li><h3><a href="${esc(arcUrl(f.sc))}">${esc(f.sc.title)}</a></h3><p>${esc(prose(f.sc))}</p>${sequenceSvg(f)}</li>`)
-          .join("")}</ul>
-      </section>
       <section aria-labelledby="building-h">
         <h2 class="section" id="building-h">${esc(meta.building.heading)}</h2>
         <p class="lead">${esc(meta.building.intro)}</p>
@@ -600,6 +592,11 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
             const where = addressesOf(bb);
             return `<li style="--c:${colourOf(bb.id)}"><h3><a href="${esc(arcUrl(bb))}">${esc(bb.title)}</a>${where.map((a) => ` <a class="where" href="https://${esc(a)}/">${esc(a)}</a>`).join("")}</h3><ul>${offers.map(({ i, by }) => `<li><strong>${esc(i.title)}:</strong> ${esc(prose(i))} <span class="meta">${esc(meta.building.usedBy)} ${esc(names(by))}.</span></li>`).join("")}</ul></li>`;
           })
+          .join("")}</ul>
+        <h3 class="group" id="flows-h">${esc(meta.building.flows)}</h3>
+        <p class="lead">${esc(meta.building.flowsIntro)}</p>
+        <ul class="together">${scenarios
+          .map((f) => `<li><h3><a href="${esc(arcUrl(f.sc))}">${esc(f.sc.title)}</a></h3><p>${esc(prose(f.sc))}</p>${sequenceSvg(f)}</li>`)
           .join("")}</ul>
       </section>
       <section aria-labelledby="ideas-h">

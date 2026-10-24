@@ -43,11 +43,10 @@ de:
   guide:
     heading: "Auf dieser Seite:"
   why:
-    roles-h: "die Menschen, für die es die Plattform gibt, und was sie selbst mitbringen; die Journeys sind aus ihrer Sicht erzählt."
+    roles-h: "die Menschen, für die es die Plattform gibt; die Journeys sind aus ihrer Sicht erzählt."
     parts-h: "die Sitemap: Adresse, Repository und Aufgabe jedes Teils; der Rest der Seite nennt sie."
     experiences-h: "die Plattform aus Sicht ihrer Nutzer, Schritt für Schritt, mit dem Teil, der hilft, und dem Zusammenspiel dahinter; vorneweg, wie man eine Journey liest."
-    together-h: "die Abläufe hinter den Journeys, die kein Nutzer sieht; für alle, die das System betreiben oder ändern."
-    building-h: "wie lernapps.net beim Bauen einer App hilft: was der Assistent eines Creators und das Repository seiner App nutzen."
+    building-h: "wie lernapps.net beim Bauen und Pflegen einer App hilft: was der Assistent des Creators und das Repository der App nutzen, und die Abläufe, die Apps und Plattform aktuell halten."
     ideas-h: "Services, die die Plattform später anbieten könnte, jeweils mit einem Issue zur Diskussion."
     blocks-h: "jeder Teil mit seinen Schnittstellen, zum Nachschlagen."
     read-on-h: "die Dokumente, aus denen diese Seite entsteht."
@@ -59,11 +58,11 @@ narrativeLabel: "The goal, in the platform design's words:"
 
 roles:
   heading: Who takes part
-  why: "the people the platform is for and what they bring themselves; the journeys are told from their views."
+  why: "the people the platform is for; the journeys are told from their views."
   intro: >-
     The platform exists for these people. The journeys below are told from their views, so knowing them tells you
     whose problem a part solves.
-  toolsIntro: "What they bring themselves:"
+  brings: "Brings:"
 
 parts:
   heading: The parts and where they live
@@ -104,21 +103,18 @@ experiences:
   intro: >-
     This is why the parts exist: each journey shows a person with a problem and the parts that help them solve it.
 
-together:
-  heading: How the parts work together
-  why: "the flows behind the journeys that no user sees, for those who run or change the system."
-  intro: >-
-    The journeys show what users see. Behind them the parts pass work to each other in flows that no user sees.
-    Read this if you run or change the system.
-
 building:
-  heading: How lernapps.net helps build an app
-  why: "what a creator's assistant and the app's repository use to build and list an app, in detail."
+  heading: How lernapps.net helps build and maintain an app
+  why: "what a creator's assistant and the app's repository use, and the flows that keep apps and the platform current."
   intro: >-
-    The journeys and flows above show that creators build with an AI assistant of their own. This is what the
-    platform gives that assistant and the app's repository to work with. Read this if you build an app or change how
-    the platform supports building.
+    The creator's journey shows that creators build with an AI assistant of their own. This is what the platform
+    gives that assistant and the app's repository to work with. Read this if you build an app or change how the
+    platform supports building.
   usedBy: "Used by:"
+  flows: How apps and the platform stay current
+  flowsIntro: >-
+    Once an app is listed, these flows keep it and the platform current. No user sees them; read them if you run or
+    change the system.
 
 ideas:
   heading: Ideas
