@@ -5,7 +5,7 @@
     "commit": "c3f2baf586b494e603639a652f9fdbe80b21ff69"
   },
   "head": {
-    "label": "644eed73ec7fb4dd6efd782d77d165fc1aabf958"
+    "label": "8657cb9d9cf502e0c4fec9101065ce23149e8438"
   },
   "acceptanceBase": "c3f2baf586b494e603639a652f9fdbe80b21ff69",
   "untracked": [],
@@ -162,7 +162,16 @@
               "Quick help right before the test"
             ],
             "after": [
-              "Help with exactly the topic they struggle with"
+              "Start right away, without an account or installation"
+            ]
+          },
+          {
+            "name": "pressures",
+            "before": [
+              "The next test"
+            ],
+            "after": [
+              "A topic they struggle with, often noticed before a test"
             ]
           }
         ],
@@ -188,10 +197,15 @@
       {
         "id": "j-students-find",
         "kind": "job",
-        "status": "unchanged",
-        "attributes": [],
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "title",
+            "before": "Students find an app to prepare for the next test",
+            "after": "Students find an app for a topic they struggle with"
+          }
+        ],
         "proseChanged": true,
-        "proseMentions": [],
         "base": {
           "file": "1-exploration/e2-scan.pdt42.md",
           "line": 384
@@ -205,7 +219,7 @@
           "headingPath": [
             "Scan the ecosystem",
             "Jobs in \"Getting apps into use\"",
-            "Students find an app to prepare for the next test"
+            "Students find an app for a topic they struggle with"
           ],
           "occurrence": 1
         }
@@ -658,6 +672,7 @@
             "after": [
               "t-use-in-class",
               "t-thank-creator-adult",
+              "t-thank-creator-student",
               "t-give-feedback",
               "t-recommend-app"
             ]
@@ -1166,6 +1181,14 @@
         "edge": {
           "from": "s-use-insight",
           "to": "t-thank-creator-adult",
+          "relation": "supports"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "s-use-insight",
+          "to": "t-thank-creator-student",
           "relation": "supports"
         }
       },

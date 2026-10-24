@@ -170,7 +170,7 @@ The creator releases a new version. The catalog builds a copy from that release 
 
 ### [The platform passes on its updates](../architecture/#06-runtime-view.arc42.md:el-rs-block-update)
 
-When the site frame, the tooling or the app templates improve, the platform passes the improvement on to every repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each one, and it is merged when the checks pass. An improvement of the guidance has been measured before it is passed on.
+When the site frame, the tooling or the app templates get a new version, the platform passes it on to every repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each one, and it is merged when the checks pass. An improvement of the guidance has been measured before it is passed on.
 
 1. Renovate → Website: report new versions of the site frame
 1. Renovate → App templates: report new versions of the archetypes

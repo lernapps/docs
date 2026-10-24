@@ -5,7 +5,7 @@
     "commit": "c3f2baf586b494e603639a652f9fdbe80b21ff69"
   },
   "head": {
-    "label": "644eed73ec7fb4dd6efd782d77d165fc1aabf958"
+    "label": "8657cb9d9cf502e0c4fec9101065ce23149e8438"
   },
   "acceptanceBase": "c3f2baf586b494e603639a652f9fdbe80b21ff69",
   "untracked": [],
@@ -1087,7 +1087,7 @@
           {
             "name": "trigger",
             "before": "A merge to the main line of the website, the tooling or the app templates",
-            "after": "The site frame, the tooling or the app templates improve"
+            "after": "The site frame, the tooling or the app templates get a new version"
           }
         ],
         "proseChanged": true,
@@ -1441,7 +1441,7 @@
           {
             "name": "source",
             "before": "sequenceDiagram\n    participant creator as Creator\n    participant assistant as AI assistant\n    participant website as Website\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant templates as App templates\n    participant org as Organisation\n    participant appactions as App repo Actions\n    participant owner as Owner\n    creator->>catalog: no fitting app found\n    creator->>assistant: build an app for my class\n    assistant->>website: llms.txt, the way in\n    assistant->>tooling: guidance by phase, skills\n    assistant->>tooling: create the app\n    tooling->>templates: the archetype's template\n    assistant->>tooling: check the app\n    appactions->>tooling: check, build and publish in the app's repository\n    assistant->>catalog: listing pull request with the entry\n    catalog->>org: pull request template and rules\n    catalog->>tooling: check the entry and the app\n    catalog-->>assistant: results comment\n    owner->>catalog: review on request, approve, merge\n    catalog->>catalog: publish a copy under lernapps.net",
-            "after": "sequenceDiagram\n    participant creator as Creator\n    participant assistant as AI assistant\n    participant website as Website\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant templates as App templates\n    participant org as Organisation\n    participant appactions as App repo Actions\n    participant owner as Owner\n    participant github as GitHub\n    creator->>catalog: find me an app for my class\n    catalog-->>creator: no fitting app\n    creator->>assistant: build an app for my class\n    assistant->>website: show me the way in (llms.txt)\n    assistant->>tooling: give me the guidance for this phase\n    assistant->>tooling: create the app\n    tooling->>templates: provide the archetype's template\n    assistant->>tooling: check the app\n    appactions->>tooling: check, build and publish the app\n    assistant->>org: give me the pull request template and the rules\n    assistant->>catalog: list this app (pull request with the entry)\n    catalog->>tooling: check the entry and the app\n    catalog-->>assistant: the results, as a comment\n    owner->>catalog: have the app reviewed if needed, then publish it\n    catalog->>github: build and publish a copy under lernapps.net"
+            "after": "sequenceDiagram\n    participant creator as Creator\n    participant assistant as AI assistant\n    participant website as Website\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant templates as App templates\n    participant org as Organisation\n    participant appactions as App repositories\n    participant owner as Owner\n    participant github as GitHub\n    creator->>catalog: find me an app for my class\n    catalog-->>creator: no fitting app\n    creator->>assistant: build an app for my class\n    assistant->>website: show me the way in (llms.txt)\n    assistant->>tooling: give me the guidance for this phase\n    assistant->>tooling: create the app\n    tooling->>templates: provide the archetype's template\n    assistant->>tooling: check the app\n    appactions->>tooling: check, build and publish the app\n    assistant->>org: give me the pull request template and the rules\n    assistant->>catalog: list this app (pull request with the entry)\n    catalog->>tooling: check the entry and the app\n    catalog-->>assistant: the results, as a comment\n    owner->>catalog: have the app reviewed if needed, then publish it\n    catalog->>github: build and publish a copy under lernapps.net"
           }
         ],
         "base": {
@@ -1460,7 +1460,7 @@
           {
             "name": "source",
             "before": "sequenceDiagram\n    participant appactions as App repo Actions\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant github as GitHub\n    appactions->>tooling: build and publish the release in the app's repository\n    catalog->>appactions: notice the new release\n    catalog->>tooling: check the new version\n    catalog->>github: update pull request for the entry, merged by policy\n    catalog->>github: build and publish the new copy\n    github-->>catalog: the same address serves the new copy",
-            "after": "sequenceDiagram\n    participant appactions as App repo Actions\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant github as GitHub\n    appactions->>tooling: build and publish the release\n    catalog->>appactions: report new releases\n    catalog->>tooling: check the new version\n    catalog->>github: open and merge the entry's update pull request\n    catalog->>github: build and publish the new copy\n    github-->>catalog: the same address serves the new copy"
+            "after": "sequenceDiagram\n    participant appactions as App repositories\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant github as GitHub\n    appactions->>tooling: build and publish the release\n    catalog->>appactions: report new releases\n    catalog->>tooling: check the new version\n    catalog->>github: open and merge the entry's update pull request\n    catalog->>github: build and publish the new copy\n    github-->>catalog: the same address serves the new copy"
           }
         ],
         "base": {
