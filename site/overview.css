@@ -123,8 +123,8 @@ a.status { text-decoration: none; }
   :root:not([data-theme="light"]) .sequence .head.part text, :root:not([data-theme="light"]) .sequence g[style] .num-t { fill: color-mix(in srgb, var(--c) 55%, white); }
 }
 :root[data-theme="dark"] .sequence .head.part text, :root[data-theme="dark"] .sequence g[style] .num-t { fill: color-mix(in srgb, var(--c) 55%, white); }
-.behind { margin: 0.9rem 0 0; }
-.behind > summary { cursor: pointer; font-weight: 600; font-size: 0.95rem; color: var(--lc-muted); }
+.behind { margin: 1.2rem 0 0; padding-top: 1rem; border-top: 1px solid var(--lc-border); }
+.behind h4 { margin: 0; font-size: 0.95rem; font-weight: 600; color: var(--lc-muted); }
 /* Read on: the documents this page is generated from, and the vision. */
 .documents { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
 .documents li { padding: 0.9rem 1rem; border-radius: 0.85rem; border: 1px solid var(--lc-border); background: var(--lc-card); }

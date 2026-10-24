@@ -480,7 +480,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
             })
             .join("")}
           </ol>
-          <details class="behind"><summary>${esc(meta.experiences.behind)}</summary>${sequenceSvg(behind.get(j.x.id))}</details>
+          <div class="behind"><h4>${esc(meta.experiences.behind)}</h4>${sequenceSvg(behind.get(j.x.id))}</div>
         </article>`,
     )
     .join("");
