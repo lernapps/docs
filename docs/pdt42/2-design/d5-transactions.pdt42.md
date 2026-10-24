@@ -68,7 +68,7 @@ relationship: r-creators-adults
 from: e-creators
 to: e-adopters
 direction: one-way
-value-unit: A signal of fitness for use: frontend-only, no installation, no sign-up
+value-unit: A signal of fitness for use: sends nothing to third parties, accesses only its own data in the browser, needs no installation or sign-up
 happening: no
 channel: ch-fitness-signal
 kind: knowledge
@@ -78,7 +78,7 @@ job: j-confirm-use
 
 ### Use an app in class
 
-An adult puts the app into use. This is the attention creators get today, but it stays invisible to them.
+An adult puts the app into use. This is the attention creators get today, but it stays invisible to them. With lernapps.net, creators see it as totals.
 
 ```pdt42
 :::transaction
@@ -90,7 +90,7 @@ to: e-creators
 direction: one-way
 value-unit: One use of the app in a class
 happening: yes
-channel: ch-feedback
+channel: ch-creator-insight
 kind: attention
 motivation: m-adopters-creators-attention
 :::
@@ -108,7 +108,7 @@ relationship: r-creators-adults
 from: e-adopters
 to: e-creators
 direction: one-way
-value-unit: A short feedback note from one class
+value-unit: Structured feedback from one class
 happening: no
 channel: ch-feedback
 kind: feedback
@@ -168,7 +168,7 @@ of: r-adults-students
 
 ### Bring an app to students
 
-An adult gets an app in front of students. Today adults use every available channel: links, QR codes, the projector, school tablets.
+An adult gets an app in front of students. Today adults use every available channel: links, QR codes, the projector, school tablets. With lernapps.net, a link or QR code to the copy served under lernapps.net is enough.
 
 ```pdt42
 :::transaction
@@ -178,9 +178,9 @@ relationship: r-adults-students
 from: e-adopters
 to: e-students
 direction: one-way
-value-unit: Access to one app or a collection
+value-unit: Access to one app
 happening: yes
-channel: ch-collections
+channel: ch-direct-start
 kind: access
 motivation: m-adopters-students
 job: j-bring-to-students
@@ -259,7 +259,7 @@ motivation: m-creators-students
 
 ### Return to an app
 
-Students come back to an app on their own, for instance before the next test.
+Students come back to an app on their own, as often as they need to practise a topic.
 
 ```pdt42
 :::transaction
@@ -269,7 +269,7 @@ relationship: r-creators-students
 from: e-students
 to: e-creators
 direction: one-way
-value-unit: A return visit before a test
+value-unit: A return visit to keep practising
 happening: yes
 channel: ch-app-overview
 kind: attention
@@ -316,7 +316,7 @@ components:
   - Automatic check and publication
   - A copy of the app served under lernapps.net, following the creator's releases
   - Help from the creator's AI assistant
-improvement: Contributing an app takes minutes, without an own website, post or privacy notice
+improvement: Contributing an app takes minutes, without a website, post or privacy notice of one's own
 :::
 ```
 
@@ -351,7 +351,25 @@ components:
   - Whether the app sends anything to third parties, checked rather than declared
   - Whether the app accesses only its own data in the browser, checked
   - Whether installation or sign-up is needed
+  - Served under lernapps.net, under one privacy notice that covers every listed app
 improvement: Adults no longer judge fitness for use alone or wait for a gatekeeper
+:::
+```
+
+### Starting an app from a link
+
+An adult passes an app on with a link or a QR code, and it starts at once: from lernapps.net, in the browser, on the devices a class or a family already has (KD-21).
+
+```pdt42
+:::channel
+id: ch-direct-start
+title: Starting an app from a link
+medium: digital
+components:
+  - A link or QR code to the app, or to one topic in it
+  - Served from lernapps.net, under one address that keeps working
+  - No installation and no accounts for students
+improvement: An app reaches a class or a child in seconds, without installing anything or signing up
 :::
 ```
 
@@ -389,5 +407,40 @@ components:
   - Counted openly: only explicit clicks and totals, no accounts or free text
   - Steps aside quietly when it cannot be reached
 improvement: Use and praise reach the creator instead of staying invisible, and every user knows that thanking keeps the free platform alive
+:::
+```
+
+### Use and praise made visible to the creator
+
+The other side of returning use and praise: the creator sees how often their app is used and receives the feedback and thanks it earned, without anyone being identified (D4, KD-17).
+
+```pdt42
+:::channel
+id: ch-creator-insight
+title: Use and praise made visible to the creator
+medium: digital
+components:
+  - How often the app is used, as totals
+  - The feedback and thanks it received
+  - Nothing that identifies a teacher, parent or student
+improvement: Creators learn that and how their app helped, which is what keeps them contributing
+:::
+```
+
+### Guidance and templates an AI assistant can follow
+
+Creators build through their AI assistant (KD-10, KD-11), so the guidance for building apps is written for the assistant, not only for people (KD-16). The assistant reads it phase by phase, starts from a template that already keeps the platform's rules, and checks the app before it is listed; the creator decides at a few points.
+
+```pdt42
+:::channel
+id: ch-guidance
+title: Guidance and templates an AI assistant can follow
+medium: digital
+components:
+  - Guidance by phase, from the first question to the listing
+  - Skills that carry the rules every app has to keep
+  - Templates for three kinds of app that already keep those rules
+  - A command that creates an app and checks it
+improvement: Building an app that keeps the platform's rules no longer needs expert knowledge, only the creator's idea and their assistant
 :::
 ```

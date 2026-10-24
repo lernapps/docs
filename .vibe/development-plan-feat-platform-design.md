@@ -76,7 +76,7 @@ Adults and students can evolve into creators; creators can grow into co-owners b
 - **Open**: How a creator becomes co-owner (rights, procedure) belongs in GOVERNANCE.md in lernapps/.github, which still describes two owners with equal rights.
 
 ### KD-17: Acute moments, and thanks as the currency (D7)
-Adults look for apps in an acute moment: teachers right before a lesson, parents the evening before a test. They feel relief, not excitement. Three experiences: "An app in class within minutes" (teachers), "Practice tonight, before the test" (parents), "List an app and hear it is used" (creators).
+Adults look for apps in an acute moment: teachers who have to take over a class at short notice, parents who notice that their child struggles with something they cannot help with. They feel relief, not excitement. Three experiences: "An app in class within minutes" (teachers), "Help where a child struggles" (parents), "List an app and hear it is used" (creators).
 - **Decision**: Trust is built in rather than checked (only apps that meet the fitness criteria are listed); one app counts more than a collection; anything asked afterwards takes one click.
 - **Decision**: The platform is free and lives on thanks. Every user should understand that a thank-you keeps it alive, without the platform being pushy. This is the platform's narrative (D1) and a step of its own in every experience.
 

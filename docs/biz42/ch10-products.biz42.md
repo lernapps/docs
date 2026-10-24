@@ -15,7 +15,7 @@ owner: owner-platform
 
 ## App overview
 
-Finding apps by topic and grade, a page per app with the fitness signal, link and QR code to bring it to class, deep links to single topics, and the thank-you after use; listing an app in minutes. Served at <https://lernapps.net/apps/>. It implements the experiences [An app in class within minutes](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-app-in-minutes), [Practice tonight](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-practice-tonight) and [List an app and hear it is used](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back).
+Finding apps by topic and grade, a page per app with the fitness signal, link and QR code to bring it to class, deep links to single topics, and the thank-you after use; listing an app in minutes. Served at <https://lernapps.net/apps/>. It implements the experiences [An app in class within minutes](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-app-in-minutes), [Help where a child struggles](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-child-struggles) and [List an app and hear it is used](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back).
 
 ```biz42
 :::product

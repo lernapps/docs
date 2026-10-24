@@ -1,13 +1,13 @@
 # Runtime View
 
-Six scenarios: the three [experiences](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md) of the platform model, and the three flows that keep the system current.
+The [experiences](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md) of the platform model as they run through the system, and the flows behind them that no user sees: how a listed app gets a new version, how the platform passes on its updates and how a platform site is published.
 They stop at the building blocks' boundaries; what happens inside the tooling or the app templates is in their own
 runtime views, for example how a change of the guidance is measured by the evals
 ([tooling, chapter 6](https://github.com/lernapps/tooling/blob/main/docs/arc42/06-runtime-view.arc42.md)).
 
 ## An app in class within minutes
 
-[A teacher has a few minutes before a lesson](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-app-in-minutes). They find an app for the topic and grade, see
+[A teacher has to take over a class at short notice](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-app-in-minutes). They find an app for the topic and grade, see
 that it may be used, put it on the projector or pass its link or QR code to the class, and say thanks
 afterwards. Everything the class opens is served from lernapps.net.
 
@@ -15,8 +15,9 @@ afterwards. Everything the class opens is served from lernapps.net.
 :::runtime-scenario
 id: rs-app-in-minutes
 title: An app in class within minutes
-trigger: A teacher looks for an app right before a lesson
+trigger: A teacher has to take over a class at short notice
 involves: bb-catalog, bb-website
+x-experience: x-app-in-minutes
 :::
 ```
 
@@ -36,34 +37,39 @@ sequenceDiagram
     participant website as Website
     participant catalog as Catalog
     participant mail as E-mail
-    teacher->>catalog: find an app by topic and grade
+    Note over teacher,catalog: Find an app for a topic and grade
+    teacher->>catalog: find me an app for this topic and grade
     catalog-->>teacher: listed apps with their measured fitness
-    teacher->>website: privacy notice, if asked
-    teacher->>student: link or QR code to the served app
-    student->>catalog: open the served app
+    Note over teacher,catalog: Confirm an app may be used
+    teacher->>website: show me the privacy notice, if asked
+    Note over teacher,catalog: Bring an app to students
+    teacher->>student: open this app (link or QR code)
+    student->>catalog: serve me the app
     catalog-->>student: the app, from lernapps.net
-    teacher->>catalog: thanks, one click
-    catalog->>mail: thanks, today as a prepared e-mail
+    Note over teacher,mail: Thank the creator
+    teacher->>catalog: pass on my thanks, my feedback and my recommendation (one click each)
+    catalog->>mail: carry them to the creator
 ```
 
-## Practice tonight, before the test
+## Help where a child struggles
 
-[A parent, the evening before a test, looks for an app the child can start right away](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-practice-tonight), or a
+[A parent whose child struggles with a topic looks for an app the child can start right away](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-child-struggles), or a
 student looks for one alone. The flow is the same as in class, without passing the app on.
 
 ```arc42
 :::runtime-scenario
-id: rs-practice-tonight
-title: Practice tonight, before the test
-trigger: A parent or a student looks for an app the evening before a test
+id: rs-child-struggles
+title: Help where a child struggles
+trigger: A parent or a student notices a topic the student struggles with
 involves: bb-catalog
+x-experience: x-child-struggles
 :::
 ```
 
 ```arc42
 :::diagram
-id: rs-practice-tonight-sequence
-scenario: rs-practice-tonight
+id: rs-child-struggles-sequence
+scenario: rs-child-struggles
 notation: mermaid-sequence
 aliases: parent=actor-adopting-adult, student=actor-student, catalog=bb-catalog, mail=actor-email
 :::
@@ -75,27 +81,38 @@ sequenceDiagram
     participant student as Student
     participant catalog as Catalog
     participant mail as E-mail
-    parent->>catalog: find an app for tomorrow's topic
-    catalog-->>parent: listed apps
-    student->>catalog: open the served app
+    Note over parent,catalog: Find an app for a topic and grade
+    parent->>catalog: find me an app for the topic my child struggles with
+    Note over parent,catalog: Confirm an app may be used
+    catalog-->>parent: listed apps, each with its measured fitness
+    Note over parent,catalog: Bring an app to students
+    parent->>student: open this app (link or QR code)
+    student->>catalog: serve me the app
     catalog-->>student: the app, no sign-up, no installation
-    parent->>catalog: thanks, one click
-    catalog->>mail: thanks, today as a prepared e-mail
+    Note over student,catalog: Return to an app
+    student->>catalog: show me apps for the topic I struggle with
+    catalog-->>student: the app I used, and others for the topic
+    Note over parent,mail: Thank the creator
+    parent->>catalog: pass on my thanks (one click)
+    catalog->>mail: carry them to the creator
 ```
 
-## Build and list an app
+## List an app and hear it is used
 
 [A creator finds no fitting app and decides to build one](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back). Their AI assistant follows the
-tooling's guidance, creates the app from an archetype and checks it; the app's repository runs the tooling's
-actions. The assistant opens the listing pull request; the catalog checks the entry and, on request, runs the review
-agent; the owner approves; the catalog publishes a copy.
+tooling's guidance, creates the app from one of the app templates and checks it; the app's repository runs the
+tooling's actions. The assistant opens the listing pull request; the catalog checks the entry, has a review agent look at the app and,
+once the checks pass, publishes a copy under lernapps.net. The creator's own release stays at the creator's address;
+the copy is what lernapps.net serves. Then the app is used: every use is counted, thanks, feedback and
+recommendations reach the creator, and the creator sees how their app is used.
 
 ```arc42
 :::runtime-scenario
 id: rs-build-and-list
-title: Build and list an app
+title: List an app and hear it is used
 trigger: A creator finds no fitting app in the catalog
 involves: bb-website, bb-catalog, bb-tooling, bb-app-templates, bb-org
+x-experience: x-list-and-hear-back
 :::
 ```
 
@@ -104,7 +121,7 @@ involves: bb-website, bb-catalog, bb-tooling, bb-app-templates, bb-org
 id: rs-build-and-list-sequence
 scenario: rs-build-and-list
 notation: mermaid-sequence
-aliases: creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, owner=actor-platform-owner
+aliases: creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, github=actor-github, adult=actor-adopting-adult, counter=actor-goatcounter, mail=actor-email
 :::
 ```
 
@@ -117,28 +134,42 @@ sequenceDiagram
     participant tooling as Tooling
     participant templates as App templates
     participant org as Organisation
-    participant appactions as App repo Actions
-    participant owner as Owner
-    creator->>catalog: no fitting app found
+    participant appactions as App repositories
+    participant github as GitHub
+    participant adult as Adopting adult
+    participant counter as GoatCounter
+    participant mail as E-mail
+    Note over creator,templates: Guidance for building apps
+    creator->>catalog: find me an app for my class
+    catalog-->>creator: no fitting app
     creator->>assistant: build an app for my class
-    assistant->>website: llms.txt, the way in
-    assistant->>tooling: guidance by phase, skills
+    assistant->>website: show me the way in (llms.txt)
+    assistant->>tooling: give me the guidance for this phase
     assistant->>tooling: create the app
-    tooling->>templates: the archetype's template
+    tooling->>templates: provide the archetype's template
     assistant->>tooling: check the app
-    appactions->>tooling: check, build and publish in the app's repository
-    assistant->>catalog: listing pull request with the entry
-    catalog->>org: pull request template and rules
+    appactions->>tooling: check, build and publish the app
+    Note over assistant,github: List an app
+    assistant->>org: give me the pull request template and the rules
+    assistant->>catalog: list this app (pull request with the entry)
     catalog->>tooling: check the entry and the app
-    catalog-->>assistant: results comment
-    owner->>catalog: review on request, approve, merge
-    catalog->>catalog: publish a copy under lernapps.net
+    catalog-->>assistant: the results, as a comment
+    catalog->>catalog: have the review agent (an AI) check the app
+    catalog->>github: build and publish a copy under lernapps.net
+    Note over adult,mail: Use an app in class
+    adult->>catalog: serve the app to my class
+    website->>counter: count this use of the app
+    Note over adult,mail: Thank the creator
+    adult->>catalog: pass on my thanks, my feedback and my recommendation
+    catalog->>mail: carry them to the creator
+    creator->>catalog: show me how my app is used
+    catalog-->>creator: its uses, thanks and feedback, as totals
 ```
 
 ## A listed app gets a new version
 
-The creator releases a new version. The catalog builds a copy from that release and replaces the served copy; the
-address stays the same and serves a copy at every moment (`qs-update-without-gap`).
+The creator releases a new version. The catalog builds a copy from that release and replaces the served copy; the address stays the
+same and never stops working (`qs-update-without-gap`).
 
 ```arc42
 :::runtime-scenario
@@ -160,29 +191,29 @@ aliases: appactions=actor-app-repo-actions, catalog=bb-catalog, tooling=bb-tooli
 
 ```mermaid
 sequenceDiagram
-    participant appactions as App repo Actions
+    participant appactions as App repositories
     participant catalog as Catalog
     participant tooling as Tooling
     participant github as GitHub
-    appactions->>tooling: build and publish the release in the app's repository
-    catalog->>appactions: notice the new release
+    appactions->>tooling: build and publish the release
+    catalog->>appactions: show me your new releases
     catalog->>tooling: check the new version
-    catalog->>github: update pull request for the entry, merged by policy
+    catalog->>github: open the entry's update pull request, merged by policy
     catalog->>github: build and publish the new copy
     github-->>catalog: the same address serves the new copy
 ```
 
-## A building block gets a new commit
+## The platform passes on its updates
 
-The site frame, the tooling or the app templates get a new commit on their main line. Renovate opens a pull request
-in every repository that pins the block; it is merged when the checks pass. Inside the tooling, a change of the
-guidance has been measured by the evals before this point.
+When the site frame, the tooling or the app templates change, the platform passes the change on to every
+repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each
+one, and it is merged when the checks pass. Every change of the guidance has been measured by the evals before it is passed on.
 
 ```arc42
 :::runtime-scenario
 id: rs-block-update
-title: A building block gets a new commit
-trigger: A merge to the main line of the website, the tooling or the app templates
+title: The platform passes on its updates
+trigger: The site frame, the tooling or the app templates change
 involves: bb-website, bb-tooling, bb-app-templates, bb-catalog, bb-docs
 :::
 ```
@@ -192,7 +223,7 @@ involves: bb-website, bb-tooling, bb-app-templates, bb-catalog, bb-docs
 id: rs-block-update-sequence
 scenario: rs-block-update
 notation: mermaid-sequence
-aliases: website=bb-website, tooling=bb-tooling, templates=bb-app-templates, catalog=bb-catalog, docs=bb-docs, renovate=actor-renovate, owner=actor-platform-owner
+aliases: website=bb-website, tooling=bb-tooling, templates=bb-app-templates, catalog=bb-catalog, docs=bb-docs, renovate=actor-renovate, apps=actor-app-repo-actions
 :::
 ```
 
@@ -204,20 +235,20 @@ sequenceDiagram
     participant catalog as Catalog
     participant docs as Docs
     participant renovate as Renovate
-    participant owner as Owner
-    website-->>renovate: new commit of the site frame
-    templates-->>renovate: new commit of the archetypes
-    tooling-->>renovate: new commit of the tooling
-    renovate->>catalog: pull request: new pins
-    renovate->>docs: pull request: new pin of the site frame
-    renovate->>tooling: pull request: new pins
-    owner->>catalog: merge, if not merged automatically
+    participant apps as App repositories
+    renovate->>website: show me your changes
+    renovate->>templates: show me your changes
+    renovate->>tooling: show me your changes
+    renovate->>catalog: take the changes (pull request)
+    renovate->>docs: take the new site frame (pull request)
+    renovate->>tooling: take the changes (pull request)
+    renovate->>apps: take the changes (pull request)
 ```
 
 ## A platform site is published
 
-A change is merged to a site's main line: the website, the catalog, the docs or the tooling's pages. The tooling's
-site actions build the site, run `site-check` from the site frame on the built pages, and deploy them to GitHub
+A change is merged to a site's main line: the website, the catalog, the docs or the tooling's pages; the diagram
+shows the docs as the example. The tooling's site actions build the site, run `site-check` from the site frame on the built pages, and deploy them to GitHub
 Pages under lernapps.net. A failing check stops the deploy.
 
 ```arc42
@@ -245,9 +276,9 @@ sequenceDiagram
     participant website as Website
     participant github as GitHub
     participant counter as GoatCounter
-    docs->>tooling: site action: build the site
-    tooling->>website: site-check of the site frame on the built pages
-    website-->>tooling: passed, or the deploy stops
-    tooling->>github: deploy to GitHub Pages under lernapps.net
-    github-->>counter: open counts from the published pages
+    docs->>tooling: build the site (site action)
+    tooling->>website: check the built pages (site-check)
+    website-->>tooling: passed, or stop the deploy
+    tooling->>github: publish the pages under lernapps.net
+    github->>counter: count the visits to the published pages
 ```

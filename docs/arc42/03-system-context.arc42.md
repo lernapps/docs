@@ -23,7 +23,7 @@ flowchart LR
     actor-ai-assistant["Creator's AI assistant"]
     actor-gatekeeper["School gatekeeper"]
     actor-platform-owner["Platform owner"]
-    actor-app-repo-actions["GitHub Actions of the app repositories"]
+    actor-app-repo-actions["Creators' app repositories"]
     actor-github["GitHub"]
     actor-renovate["Renovate"]
     actor-goatcounter["GoatCounter"]
@@ -41,17 +41,17 @@ flowchart LR
     actor-creator -->|"decides to build an app"| system
     actor-ai-assistant -->|"builds and lists an app"| system
     actor-gatekeeper -->|"reads privacy notice and imprint"| system
-    actor-platform-owner -->|"decides, merges, approves entries"| system
+    actor-platform-owner -->|"decides and keeps the models"| system
     actor-app-repo-actions -->|"checks, builds and publishes an app"| system
     actor-github -->|"hosts, runs and carries every contribution"| system
     actor-renovate -->|"moves the pins between repositories"| system
     actor-goatcounter -->|"counts the platform's open counts"| system
-    actor-email -->|"carries thanks today"| system
+    actor-email -->|"carries thanks"| system
 ```
 
 ## Adopting adult
 
-A teacher before a lesson or a parent the evening before a test, the platform's [core entity](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-adopters) ([KD-13](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-13-core-triangle-adopting-adults-first-d4)).
+A teacher who takes over a class at short notice, or a parent whose child struggles with a topic, the platform's [core entity](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-adopters) ([KD-13](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-13-core-triangle-adopting-adults-first-d4)).
 They find an app for a topic and grade, pass it on by link or QR code, and say thanks.
 
 ```arc42
@@ -66,7 +66,7 @@ requires: if-catalog-pages, if-served-apps, if-thanks, if-home-pages
 
 ## Student
 
-[A learner](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-students) who opens an app from a link or QR code, or finds one before a test. Students never sign up.
+[A learner](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-students) who opens an app from a link or QR code, or finds one for a topic they struggle with. Students never sign up.
 
 ```arc42
 :::actor
@@ -103,7 +103,7 @@ tooling, and opens the listing pull request.
 id: actor-ai-assistant
 title: Creator's AI assistant
 type: system
-description: AI assistants (pdt42 e-ai-assistants), a partner the platform designs for
+description: The AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI (pdt42 e-ai-assistants)
 requires: if-guidance, if-tooling-cli, if-listing, if-home-pages
 :::
 ```
@@ -125,8 +125,9 @@ requires: if-home-pages
 
 ## Platform owner
 
-Oliver Jägle, who [owns and runs the platform](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-platform-owner) alone today ([KD-09](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-09-oliver-jägle-alone-owns-the-platform-2026-09-30)). He decides, merges and approves
-entries, and keeps the models of the platform.
+Oliver Jägle, who [owns and runs the platform](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-platform-owner) alone today ([KD-09](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-09-oliver-jägle-alone-owns-the-platform-2026-09-30)). He decides and keeps the models of the
+platform. The system itself needs no step of his; what still waits on him is recorded as a gap at the interface
+concerned, with the risk it carries (`risk-one-owner`).
 
 ```arc42
 :::actor
@@ -138,18 +139,19 @@ requires: if-listing, if-org-rules, if-models
 :::
 ```
 
-## GitHub Actions of the app repositories
+## Creators' app repositories
 
 Every learning app lives in a repository of its own, which belongs to its creator and is outside the system. Their GitHub Actions run the tooling's
-workflows to check, build and publish an app; this is where the system meets them. If this boundary needs more
+workflows to check, build and publish an app, and the platform passes its changes on to them as pull requests;
+this is where the system meets them. If this boundary needs more
 detail, it is refined in the tooling's architecture, not here.
 
 ```arc42
 :::actor
 id: actor-app-repo-actions
-title: GitHub Actions of the app repositories
+title: Creators' app repositories
 type: system
-description: Workflows in creators' app repositories that use the tooling's actions
+description: The creators' own app repositories, whose workflows use the tooling's actions
 requires: if-app-actions, if-tooling-cli
 :::
 ```
@@ -171,15 +173,15 @@ requires: if-listing, if-app-actions, if-org-rules
 
 ## Renovate
 
-Renovate keeps the pins between the repositories current: it opens pull requests when the site frame, the tooling or
-the archetypes get a new commit.
+Renovate keeps the pins between the repositories current: when the site frame, the tooling or
+the archetypes change, it passes the change on as a pull request in every repository that uses them.
 
 ```arc42
 :::actor
 id: actor-renovate
 title: Renovate
 type: system
-description: Dependency update service that moves the pinned commits
+description: Dependency update service that keeps the versions the repositories use up to date
 requires: if-site-frame, if-tooling-cli, if-archetypes
 :::
 ```
@@ -201,7 +203,7 @@ requires: if-site-frame
 
 ## E-mail
 
-Today's realisation of the thanks: the catalog's form prepares an e-mail. The interface `if-thanks` stays when the
+The realisation of the thanks behind `if-thanks`: the catalog prepares an e-mail. The interface stays when the
 realisation changes.
 
 ```arc42
@@ -209,7 +211,7 @@ realisation changes.
 id: actor-email
 title: E-mail
 type: system
-description: Mail system that carries thanks and feedback today
+description: Mail system that carries thanks and feedback
 requires: if-thanks
 :::
 ```

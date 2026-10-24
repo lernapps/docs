@@ -8,7 +8,7 @@ give way when they conflict with the first five.
 
 ## Fast loading
 
-Adults look for an app in an acute moment, right before a lesson or the evening before a test ([KD-17](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-17-acute-moments-and-thanks-as-the-currency-d7)); a slow page
+Adults look for an app in an acute moment, when a teacher takes over a class at short notice or a parent sees their child struggle ([KD-17](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-17-acute-moments-and-thanks-as-the-currency-d7)); a slow page
 loses them. The core of the platform, the app catalog, and the apps it serves for the quiz and explainer archetypes
 load in under a second. Interactive apps are free in their form and have no target here.
 
@@ -18,7 +18,7 @@ id: qg-fast-loading
 title: Fast loading
 priority: high
 x-iso25010: performance efficiency, time behaviour
-x-derived-from: KD-17, x-app-in-minutes, x-practice-tonight
+x-derived-from: KD-17, x-app-in-minutes, x-child-struggles
 :::
 ```
 
@@ -265,7 +265,6 @@ quality: qg-learnable-for-creators
 stimulus: A creator who does not know the rules asks an AI assistant to build an app with the platform's guidance
 response: The assistant builds an app that passes lernapps check and can be listed
 metric: lernapps check passes in the eval runs of each archetype; at most two questions to the creator per turn
-x-status: thresholds proposed, to be confirmed
 :::
 ```
 
@@ -296,7 +295,6 @@ quality: qg-understandable
 stimulus: A teacher who does not know lernapps.net opens the catalog for a topic and grade
 response: The teacher can say whether there is a fitting app, and if not, how to get one built
 metric: 4 of 5 teachers who do not know lernapps.net decide within one minute; observed once before the real MVP (KD-19)
-x-status: not measured yet
 :::
 ```
 

@@ -60,7 +60,7 @@ evolves-to: e-creators
 
 ### Students
 
-Students arrive through an adult. They get better at using apps on their own, for instance before a test. Some can become creators themselves, building an app for a topic they struggled with.
+Students arrive through an adult. They get better at using apps on their own, for the topics they struggle with. Some can become creators themselves, building an app for a topic they struggled with.
 
 ```pdt42
 :::learning-engine
@@ -71,7 +71,7 @@ entry:
 onboarding:
   - Start an app without installation or sign-up
 getting-better:
-  - Return to apps and find new ones for their topic before a test
+  - Return to apps and find new ones for the topics they struggle with
   - Thank the creator
 new-opportunity:
   - Build their own app
@@ -83,7 +83,7 @@ evolves-to: e-creators
 
 ### Guidance for building apps
 
-Helps creators build apps with their AI assistant that are easy to use and fit the platform. It is the benefit that does not depend on reach (D4), and the same guidance lets adults start building.
+Helps creators build apps with their AI assistant that are easy to use and fit the platform. Creators get it even if nobody else uses their app (D4).
 
 ```pdt42
 :::service
@@ -92,12 +92,13 @@ title: Guidance for building apps
 for: e-creators
 stage: onboarding
 kind: empowering
+channel: ch-guidance
 :::
 ```
 
 ### Help to list an app
 
-Takes the effort out of the first listing, the hurdle for creators (D4).
+The first listing is the biggest hurdle for creators; this service takes the effort out of it (D4).
 
 ```pdt42
 :::service
@@ -113,7 +114,7 @@ channel: ch-listing
 
 ### Insight into use and feedback
 
-Shows creators that and how their app is used, with feedback and thanks. This is the reputation flow that keeps them (D4).
+Shows creators whether and how their app is used, with feedback and thanks. Seeing this is what keeps creators building (D4).
 
 ```pdt42
 :::service
@@ -122,14 +123,16 @@ title: Insight into use and feedback
 for: e-creators
 stage: getting-better
 kind: empowering
-supports: t-use-in-class, t-give-feedback, t-recommend-app
-channel: ch-feedback
+supports: t-use-in-class, t-thank-creator-adult, t-thank-creator-student, t-give-feedback, t-recommend-app
+channel: ch-creator-insight
 :::
 ```
 
 ### Building on existing apps
 
 Lets creators start from an existing app instead of from scratch, and lets others build on theirs.
+
+An idea, tracked in [lernapps/docs#52](https://github.com/lernapps/docs/issues/52).
 
 ```pdt42
 :::service
@@ -144,6 +147,8 @@ kind: empowering
 ### Contributing best practices to the guidance
 
 Lets experienced creators bring their own best practices into the guidance for building apps. Whoever shapes the guidance shapes the platform, so this is the path from creator to co-owner.
+
+An idea, tracked in [lernapps/docs#53](https://github.com/lernapps/docs/issues/53).
 
 ```pdt42
 :::service
@@ -173,7 +178,7 @@ channel: ch-app-overview
 
 ### Starting an app right away
 
-Students open an app an adult brought to them and start right away, without installation or sign-up.
+Students open an app an adult brought to them and start right away, without installation or sign-up: a link or QR code is enough.
 
 ```pdt42
 :::service
@@ -183,18 +188,18 @@ for: e-students
 stage: onboarding
 kind: other
 supports: t-bring-app
-channel: ch-collections
+channel: ch-direct-start
 :::
 ```
 
-### Finding apps before a test
+### Finding apps for a topic one struggles with
 
-Helps students return to apps and find new ones for their topic on their own, for instance before a test.
+Helps students return to apps and find new ones on their own, for the topic they struggle with.
 
 ```pdt42
 :::service
 id: s-student-finding
-title: Finding apps before a test
+title: Finding apps for a topic one struggles with
 for: e-students
 stage: getting-better
 kind: other
@@ -205,7 +210,7 @@ channel: ch-app-overview
 
 ### Clarity on fitness for use
 
-Answers whether an app may be used, before an adult brings it to class.
+Answers whether an app may be used, before an adult passes it on to a learner: it sends nothing to third parties, accesses only its own data in the browser and needs no installation or sign-up.
 
 ```pdt42
 :::service
@@ -222,6 +227,8 @@ channel: ch-fitness-signal
 ### Assembling apps for a class
 
 Lets adults bundle apps for one class and bring them to students in one step, so students start without installation or sign-up.
+
+An idea, tracked in [lernapps/docs#54](https://github.com/lernapps/docs/issues/54).
 
 ```pdt42
 :::service
@@ -253,7 +260,9 @@ channel: ch-feedback
 
 ### From using to adapting apps
 
-Opens the path from the consumption to the production side: adults and students adapt an app or build their own, using the guidance for building apps.
+Opens the path from using apps to making them: adults and students adapt an app or build their own, using the guidance for building apps.
+
+An idea, tracked in [lernapps/docs#55](https://github.com/lernapps/docs/issues/55).
 
 ```pdt42
 :::service

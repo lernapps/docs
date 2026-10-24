@@ -73,9 +73,9 @@ of: e-creators
 
 ### Adopting adults
 
-Adults who come across apps built by others, browse them and show them to their students. Engineers belong here too, as they also look for existing apps to re-use.
+Adults who come across apps built by others, browse them and bring them to their students or their own children: teachers and parents. Engineers belong here too, as they also look for existing apps to re-use.
 
-Portrait (D2): recommending apps to colleagues and the next test as a pressure are assumptions of the platform owner, still to be validated with teachers and parents.
+Portrait (D2): recommending apps to colleagues, and the pressures of a class taken over at short notice or of a child who struggles, are assumptions of the platform owner, still to be validated with teachers and parents.
 
 ```pdt42
 :::entity
@@ -99,11 +99,11 @@ potential:
   - Recommend apps to colleagues
 goals:
   - Teachers: gain free time by keeping students busy, for individual support or preparation
-  - Parents: support their children's learning with little time
+  - Parents: support their child where they cannot help themselves, for lack of time or of knowledge
 pressures:
   - Lack of time
   - Responsibility for data protection
-  - The next test
+  - A class taken over at short notice; a child who struggles where they cannot help
 convenience-gains:
   - An app usable next week, without installation or sign-up
 reach-gains:
@@ -144,9 +144,9 @@ potential:
 goals:
   - Understand the subject to get good grades
 pressures:
-  - The next test
+  - A topic they struggle with, often noticed before a test
 convenience-gains:
-  - Quick help right before the test
+  - Start right away, without an account or installation
 reach-gains:
   - An app for exactly the topic they struggle with
 value-gains:
@@ -376,14 +376,14 @@ job-step: execute
 :::
 ```
 
-### Students find an app to prepare for the next test
+### Students find an app for a topic they struggle with
 
-Students look for apps with a different motivation than adults: to survive the next test. They usually know an app because an adult showed it to them. That they also search via social media and AI assistants is an assumption, not an observation — to be validated.
+Students look for apps with a different motivation than adults: to understand a topic they struggle with, often before a test. They usually know an app because an adult showed it to them. That they also search via social media and AI assistants is an assumption, not an observation — to be validated.
 
 ```pdt42
 :::job
 id: j-students-find
-title: Students find an app to prepare for the next test
+title: Students find an app for a topic they struggle with
 arena: ar-into-use
 entities: e-students, e-adopters, e-creators, e-social-media, e-ai-assistants
 job-step: locate

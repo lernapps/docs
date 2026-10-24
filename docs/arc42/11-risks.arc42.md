@@ -22,8 +22,9 @@ x-source: pdt42 KD-14, KD-19; biz42 risk-weak-supply
 
 ## One owner
 
-One person owns and runs the platform (`con-one-owner`). If they are not available, nobody approves listings,
-merges updates or answers thanks, and the platform stands still.
+One person owns and runs the platform (`con-one-owner`). In the target state nothing waits on them: listings are
+published, updates merged and thanks passed on by the system. Until the interfaces deliver that (`if-listing`,
+`if-thanks`), these steps rest on the owner, and the platform stands still when they are not available.
 
 ```arc42
 :::risk
@@ -69,15 +70,16 @@ x-source: apps src/_data/catalog.js header; pdt42 KD-21
 :::
 ```
 
-## Thanks are not counted and do not reach the creator
+## Creators do not hear when their app helped
 
-Thanks are the currency that keeps creators contributing ([KD-17](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-17-acute-moments-and-thanks-as-the-currency-d7)). Today the thanks interface is a prepared form
-that sends an e-mail (`dec-thanks-interface`): thanks are not counted, and they do not reach the creator yet.
+Thanks are the currency that keeps creators contributing ([KD-17](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-17-acute-moments-and-thanks-as-the-currency-d7)). What the thanks interface does not yet
+deliver is described at the interface itself (`if-thanks`, chapter 5). The risk: as long as that holds, creators do not
+hear when their app helped, and stop building.
 
 ```arc42
 :::risk
 id: risk-thanks-not-delivered
-title: Thanks are not counted and do not reach the creator
+title: Creators do not hear when their app helped
 severity: medium
 mitigation: The interface stays when its realisation changes (dec-thanks-interface). OPEN: how thanks will be counted and passed on to the creator.
 x-source: pdt42 KD-17, KD-18; dec-thanks-interface

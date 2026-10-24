@@ -11,9 +11,8 @@ export PATH="$PWD/node_modules/.bin:$PATH"
 PREFIX="${SITE_PATH_PREFIX:-/docs/}"
 
 rm -rf _site
-mkdir -p _site/vision _site/en
-cp site/index.html site/404.html site/stil.css site/start.css site/llms.txt _site/
-cp site/en/index.html _site/en/
+mkdir -p _site/vision
+cp site/404.html site/stil.css site/start.css site/overview.css site/llms.txt _site/
 
 biz42 --dir docs/biz42 validate
 biz42 --dir docs/biz42 build --out _site/about --base "${PREFIX}about/"
@@ -23,6 +22,11 @@ pdt42 --dir docs/pdt42 build --out _site/platform-design
 
 arc42 --dir docs/arc42 validate --strict
 arc42 --dir docs/arc42 build --out _site/architecture --base "${PREFIX}architecture/"
+
+# The start page is the overview: the platform design and the architecture joined where they meet
+# (scripts/overview.mjs). It fails
+# when the two do not fit together.
+node scripts/overview.mjs _site
 
 # Review builds: with PDT42_DIFF_BASE set (e.g. origin/main in a pull request),
 # also render the platform design's, the organisation's and the architecture's changes since the merge base with that ref as
@@ -56,6 +60,9 @@ for app in _site/about _site/platform-design _site/architecture _site/architectu
   sed -i '0,/<\/head>/s||<link rel="stylesheet" href="spa.css">\n</head>|' "$app/index.html"
 done
 lernapps-frame --site /docs/ --source https://github.com/lernapps/docs --out _site
+# The frame copies the start page's folder into the other language, 404.html included; 404.html acts only at the
+# root of the origin, so the copy is dropped.
+rm -f _site/en/404.html
 # The usage counter of the platform sites (/lernapps-count.js, served by lernapps.github.io, see "Usage counter" in
 # its README): this site's pages count their visits, never in a preview. Not part of the site frame: apps use the
 # frame too, and apps are never counted.

@@ -37,5 +37,5 @@ platform's open counts and, for now, e-mail for thanks.
 ## Operational approach
 
 GitHub is the means of production: Actions build, check and publish; Pages serves; Renovate keeps the pins current.
-The owner's routine work is merging pull requests. Nothing runs that costs money or needs looking after
+Pull requests merge by policy once their checks pass; the owner decides, and nothing waits on them. Nothing runs that costs money or needs looking after
 (`qg-operable-by-one`).

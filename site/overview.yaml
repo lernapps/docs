@@ -1,0 +1,155 @@
+# Generation metadata of the overview (scripts/overview.mjs, served at /docs/overview/). Everything the page says
+# about the platform and the system comes from the models: the platform design (pdt42) and the architecture
+# (arc42). This file holds only the frame around it: headings and the texts that lead into each part, with
+# placeholders in braces that the script fills from the models. It names no element of a model, so it cannot
+# contradict one, and like the models it describes the target state, without counts or progress.
+
+title: How lernapps.net works
+eyebrow: lernapps.net · Docs
+lead: >-
+  For engineers and tech leads who work on the platform or want to understand it before they read its two models. The
+  platform design says who takes part and what they give each other; the architecture says how the system is
+  built.
+
+guide:
+  heading: "On this page:"
+
+# The vision on top: a short claim in two colours, a paragraph and the link. It sums up docs/vision.md.
+vision:
+  de:
+    label: Die Vision
+    claim: ["Viele kleine Lösungen.", "Eine große Veränderung."]
+    text: >-
+      KI macht es leicht, genau die Lern-App zu bauen, die gerade gebraucht wird. Meist bleibt sie dort, wo sie
+      entstanden ist. lernapps.net macht aus diesen Einzelstücken eine Veränderung für viele: auffindbar, frei nutzbar
+      und so gebaut, dass sich niemand Sorgen machen muss.
+    link: Zur Vision (Englisch)
+  en:
+    label: The vision
+    claim: ["Many small solutions.", "One real change."]
+    text: >-
+      AI makes it easy to build exactly the learning app that is needed right now. Mostly it stays where it was made.
+      lernapps.net turns these one-offs into a change for many: easy to find, free to use and built so that no one
+      has to worry.
+    link: To the vision
+
+# The German frame: the preamble in German, then a cut; the rest of the page comes from the English models.
+de:
+  title: So funktioniert lernapps.net
+  lead: >-
+    Für Engineers und Tech Leads, die an der Plattform arbeiten oder sie verstehen wollen, bevor sie ihre
+    beiden Modelle lesen. Das Plattform-Design sagt, wer mitmacht und was sie einander geben; die Architektur sagt,
+    wie das System gebaut ist.
+  guide:
+    heading: "Auf dieser Seite:"
+  why:
+    roles-h: "die Menschen, für die es die Plattform gibt; die Journeys sind aus ihrer Sicht erzählt."
+    parts-h: "die Sitemap: Adresse, Repository und Aufgabe jedes Teils; der Rest der Seite nennt sie."
+    experiences-h: "die Plattform aus Sicht ihrer Nutzer, Schritt für Schritt, mit dem Teil, der hilft, und dem Zusammenspiel dahinter; vorneweg, wie man eine Journey liest."
+    building-h: "wie lernapps.net beim Bauen und Pflegen einer App hilft: was der Assistent des Creators und das Repository der App nutzen, und die Abläufe, die Apps und Plattform aktuell halten."
+    ideas-h: "Services, die die Plattform später anbieten könnte, jeweils mit einem Issue zur Diskussion."
+    blocks-h: "jeder Teil mit seinen Schnittstellen, zum Nachschlagen."
+    read-on-h: "die Dokumente, aus denen diese Seite entsteht."
+  cut: >-
+    Ab hier auf Englisch: Der Rest dieser Seite wird aus dem Plattform-Design und der Architektur erzeugt, und die
+    sind auf Englisch geschrieben.
+
+narrativeLabel: "The goal, in the platform design's words:"
+
+roles:
+  heading: Who takes part
+  why: "the people the platform is for; the journeys are told from their views."
+  intro: >-
+    The platform exists for these people. The journeys below are told from their views, so knowing them tells you
+    whose problem a part solves.
+  brings: "Brings:"
+
+parts:
+  heading: The parts and where they live
+  why: "the site map: each part's address, repository and job; the rest of the page names them."
+  intro: >-
+    This page calls them parts. Below is the site map: where you find each part and the job it does. The journeys and flows below name these
+    parts, so this is the list to come back to.
+  address: "Address:"
+  repo: "Repository:"
+  noAddress: No page of its own; it lives in its repository.
+
+reading:
+  heading: How to read a journey
+  intro: >-
+    A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service, and a
+    part of the system provides it through one of its interfaces: the pages, links, templates or commands people
+    actually use. Below each journey, a diagram shows how the parts work together behind it; every arrow carries the
+    order to the part it points at.
+  example: >-
+    For example: in the step "{step}", the platform offers the service "{service}", which the interface "{iface}" of
+    the part "{part}" provides.
+  deliveredBy: "Delivered by:"
+  seeAbove: (See above.)
+  startsFrom: "Building the app:"
+  asIn: "As in the journey “{journey}”:"
+  insideApp: Happens inside the app, without the platform.
+  getsBack: "What {role} get back from the other journeys:"
+
+notYet:
+  label: "Not yet:"
+  explained: A dashed block marks where a part does not yet deliver what the journey needs, and says what is missing; where that leaves a step to a person, the risk it carries is named.
+  risk: "Risk until then:"
+
+experiences:
+  heading: The journeys
+  why: "the platform from its users' view, step by step, with the part that helps at each step and the parts working together behind it; it starts with how to read a journey."
+  behind: "Behind this journey: how the parts work together"
+  intro: >-
+    This is why the parts exist: each journey shows a person with a problem and the parts that help them solve it.
+
+building:
+  heading: How lernapps.net helps build and maintain an app
+  why: "what a creator's assistant and the app's repository use, and the flows that keep apps and the platform current."
+  intro: >-
+    The creator's journey shows that creators build with an AI assistant of their own. This is what the platform
+    gives that assistant and the app's repository to work with. Read this if you build an app or change how the
+    platform supports building.
+  usedBy: "Used by:"
+  flows: How apps and the platform stay current
+  flowsIntro: >-
+    Once an app is listed, these flows keep it and the platform current. No user sees them; read them if you run or
+    change the system.
+
+ideas:
+  heading: Ideas
+  why: "services the platform could offer later, each with an issue to discuss it."
+  intro: >-
+    Services the platform design names but no journey needs. They show where the platform could grow; each is
+    discussed in its own issue, which is the place to take part.
+  wouldSupport: "Would support:"
+  issue: "Issue:"
+
+blocks:
+  heading: "For reference: the parts of the system"
+  why: "every part with its interfaces, for looking something up."
+  intro: >-
+    Each part with the interfaces it offers, the services they serve and the parts that use them. Look things up
+    here; each part is described as a whole in the architecture and in detail in its own repository.
+  delivering: Parts that deliver what the journeys need
+  supporting: Parts that support the others
+  supportingIntro: These parts provide no service to a journey, but they take part in the flows behind them.
+  delivers: "Serves:"
+  usedBy: "Used by:"
+  outside: "Works with, outside the system:"
+
+readOn:
+  heading: Read on
+  why: "the documents this page is generated from."
+  intro: >-
+    This page is the way in. Everything on it comes from the documents below; follow them for the full picture, in
+    the depth each one has.
+  items:
+    - { title: Organisation, href: about/, text: "Who carries lernapps.net and what for: objectives, risks, capabilities and products of an undertaking no one earns money with, as a biz42 model." }
+    - { title: Platform design, href: platform-design/, text: "Who takes part and what they give each other: roles, transactions, services, journeys and the MVP, as a pdt42 model." }
+    - { title: Architecture, href: architecture/, text: "How the system is built: quality goals, building blocks, flows, deployment, decisions and risks, as an arc42 model." }
+
+sources:
+  text: >-
+    Generated when the docs are built, from the platform design and the architecture. The build fails when a part of
+    one names something the other does not have, so this page cannot drift from the two models.
