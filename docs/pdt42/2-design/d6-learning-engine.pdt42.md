@@ -124,7 +124,7 @@ for: e-creators
 stage: getting-better
 kind: empowering
 supports: t-use-in-class, t-thank-creator-adult, t-give-feedback, t-recommend-app
-channel: ch-feedback
+channel: ch-creator-insight
 :::
 ```
 

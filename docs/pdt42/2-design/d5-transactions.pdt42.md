@@ -68,7 +68,7 @@ relationship: r-creators-adults
 from: e-creators
 to: e-adopters
 direction: one-way
-value-unit: A signal of fitness for use: frontend-only, no installation, no sign-up
+value-unit: A signal of fitness for use: sends nothing to third parties, runs in the browser only, needs no installation or sign-up
 happening: no
 channel: ch-fitness-signal
 kind: knowledge
@@ -78,7 +78,7 @@ job: j-confirm-use
 
 ### Use an app in class
 
-An adult puts the app into use. This is the attention creators get today, but it stays invisible to them.
+An adult puts the app into use. This is the attention creators get today, but it stays invisible to them. With lernapps.net, creators see it as totals.
 
 ```pdt42
 :::transaction
@@ -90,7 +90,7 @@ to: e-creators
 direction: one-way
 value-unit: One use of the app in a class
 happening: yes
-channel: ch-feedback
+channel: ch-creator-insight
 kind: attention
 motivation: m-adopters-creators-attention
 :::
@@ -108,7 +108,7 @@ relationship: r-creators-adults
 from: e-adopters
 to: e-creators
 direction: one-way
-value-unit: A short feedback note from one class
+value-unit: Structured feedback from one class
 happening: no
 channel: ch-feedback
 kind: feedback
@@ -178,7 +178,7 @@ relationship: r-adults-students
 from: e-adopters
 to: e-students
 direction: one-way
-value-unit: Access to one app or a collection
+value-unit: Access to one app
 happening: yes
 channel: ch-direct-start
 kind: access
@@ -351,6 +351,7 @@ components:
   - Whether the app sends anything to third parties, checked rather than declared
   - Whether the app accesses only its own data in the browser, checked
   - Whether installation or sign-up is needed
+  - Served under lernapps.net, under one privacy notice that covers every listed app
 improvement: Adults no longer judge fitness for use alone or wait for a gatekeeper
 :::
 ```
@@ -406,6 +407,23 @@ components:
   - Counted openly: only explicit clicks and totals, no accounts or free text
   - Steps aside quietly when it cannot be reached
 improvement: Use and praise reach the creator instead of staying invisible, and every user knows that thanking keeps the free platform alive
+:::
+```
+
+### Use and praise made visible to the creator
+
+The other side of returning use and praise: the creator sees how often their app is used and receives the feedback and thanks it earned, without anyone being identified (D4, KD-17).
+
+```pdt42
+:::channel
+id: ch-creator-insight
+title: Use and praise made visible to the creator
+medium: digital
+components:
+  - How often the app is used, as totals
+  - The feedback and thanks it received
+  - Nothing that identifies a teacher, parent or student
+improvement: Creators learn that and how their app helped, which is what keeps them contributing
 :::
 ```
 

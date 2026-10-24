@@ -8,7 +8,7 @@ In every journey, the thank-you after use is a step of its own. The platform is 
 
 ## An app in class within minutes
 
-The journey of a teacher a few minutes before a lesson: find an app for this topic and grade, see at a glance that it may be used, put it on the projector or the class's devices, and say thanks afterwards. It may be used because the platform lists only apps that meet the fitness criteria and serves each one itself, under lernapps.net and its privacy notice (KD-21).
+The journey of a teacher a few minutes before a lesson: find an app for this topic and grade, see at a glance that it may be used, put it on the projector or the class's devices, and say thanks afterwards. It may be used because the platform lists only apps that pass its checks of fitness for use and serves each one itself, under lernapps.net and its privacy notice (KD-21).
 
 ```pdt42
 :::canvas

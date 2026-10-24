@@ -1,58 +1,86 @@
 # Generation metadata of the overview (scripts/overview.mjs, served at /docs/overview/). Everything the page says
 # about the platform and the system comes from the models: the platform design (pdt42) and the architecture
-# (arc42). This file holds only the frame around it: the page's headings and the short texts that lead into each
-# part. It names no element of a model, so it cannot contradict one.
+# (arc42). This file holds only the frame around it: headings and the texts that lead into each part, with
+# placeholders in braces that the script fills from the models. It names no element of a model, so it cannot
+# contradict one.
 
 title: How lernapps.net works
 eyebrow: lernapps.net · Overview
 lead: >-
-  What people get from the platform, journey by journey, which part of the system delivers it, and how far it is
-  built. Every line comes from the platform design and the architecture; follow a link for the details.
+  What people get from the platform, which part of the system delivers it, and how far it is built. Follow a link
+  for the details.
 
 narrativeLabel: "The idea, in the platform design's words:"
 
-gaps:
-  heading: Not there yet.
-  intro: What the three journeys need but the system delivers only in part today.
-  affects: "Affects:"
+status:
+  line: >-
+    Today, {built} of the {total} services the three journeys need are built, and {partialCount} only in part:
+    {partial}. What is missing is described right after the journeys.
+  built: Built
+  partial: Partly built
+  missing: Not built yet
 
 roles:
   heading: Who takes part
-  intro: The roles of the platform design. The first three take part in the journeys below; the others are around them.
+  around: "Around them:"
+
+reading:
+  heading: How to read a journey
+  intro: >-
+    A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service. The
+    service reaches people through a channel, such as a page, a link or a template. A part of the system delivers
+    the channel through one of its interfaces.
+  example: >-
+    For example: in the step "{step}", the platform offers the service "{service}". It reaches people through the
+    channel "{channel}", which the interface "{iface}" of the part "{part}" delivers.
+  gets: "What {role} get:"
+  channel: "Channel:"
+  consistsOf: "It consists of:"
+  deliveredBy: "Delivered by:"
+  partialPointer: Partly built; what is missing is described after the journeys.
+  seeAbove: (See above.)
+  startsFrom: "Building the app:"
+  noService: "No service of its own; it reaches {role} through the channel"
+  asIn: "As in the journey “{journey}”:"
+  insideApp: Happens inside the app, without the platform.
 
 experiences:
   heading: The three journeys
   intro: >-
-    The platform is designed around three journeys. Each is a sequence of steps between two roles. Where the
-    platform helps with a step, it offers a service; the service reaches people through a channel, such as a page,
-    a link or a template, and a part of the system delivers that channel. A step without a service of its own names
-    its channel, or says that it happens inside the app. Next to each step, in small print: who gives and who
-    receives in it.
-  startsFrom: "Before the first step: what the platform offers up front"
-  seeAbove: (See above.)
-  consistsOf: "It consists of:"
-  insideApp: happens inside the app, without the platform
+    The first two journeys bring an app to learners, in class and at home. The third is the creator's: building an
+    app, listing it and hearing that it helped.
+
+gaps:
+  heading: What is missing
+  intro: >-
+    The journeys hold up to the point where use and praise should flow back to the creator. These channels are
+    delivered only in part: what the interfaces that deliver them do not do yet, and which services that affects.
+  affects: "Affects:"
 
 others:
-  heading: Services beyond the three journeys
+  heading: Planned services
   wouldSupport: "Would support:"
   intro: >-
-    Planned extensions: the platform design names these services too, but none of the three journeys runs through
-    them yet, and none is built. Each names the step it would support.
+    The platform design names these services too. The three journeys do not require them, and none is built yet.
 
 blocks:
-  heading: The parts of the system
+  heading: "For reference: the parts of the system"
+  outsideIntro: "The parts work with these systems outside the system:"
   intro: >-
     One part per repository. Each is described as a whole in the architecture and in detail in its own repository.
     The creators' own app repositories are outside the system; they use the tooling.
   delivering: Parts that deliver the channels
   supporting: Parts that support the others
   supportingIntro: These parts deliver no channel themselves; the platform is designed, decided and kept consistent with them.
+  delivers: "Delivers the channel:"
+  usedBy: "Used by:"
+  outside: "Works with, outside the system:"
 
-status:
-  built: Built
-  partial: Partly built
-  missing: Not built yet
+closing:
+  heading: Where this leaves the platform
+  text: >-
+    {built} of the {total} services the journeys need are in place. Open are {partial}. Back to the idea at the top:
+    these decide whether the platform can live on thanks.
 
 sources:
   heading: Where this comes from

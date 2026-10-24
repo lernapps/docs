@@ -79,16 +79,16 @@ id: if-site-frame
 title: Site frame
 provider: bb-website
 protocol: npm package @lernapps/site from git, pinned to a commit
-x-realises: ch-feedback
-x-missing: Visits to an app's page in the catalog are counted as totals, but only the platform owner sees them, not the app's creator.
+x-realises: ch-creator-insight
+x-missing-ch-creator-insight: Only visits to an app's page in the catalog are counted, not the use of the app itself, and only the platform owner sees the totals.
 :::
 ```
 
 ## Catalog
 
-The catalog is the core of the platform: it makes [apps findable by topic and grade](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-finding), [takes entries
-from creators](https://lernapps.net/docs/platform-design/#2-design/d5-transactions.pdt42.md:el-t-list-app) and [helps them list](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-listing-help), [checks each entry and, on request, runs the review agent](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-fitness-clarity), serves a copy of every listed app under lernapps.net and keeps it current ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)), and takes
-[the thanks of adults and students](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-giving-back).
+The catalog is the core of the platform. For adults and students, it makes [apps findable by topic and grade](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-finding), serves a copy of
+every listed app under lernapps.net and keeps it current ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)), and takes [the thanks of adults and students](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-giving-back). For creators, it
+[takes their entries](https://lernapps.net/docs/platform-design/#2-design/d5-transactions.pdt42.md:el-t-list-app) and [helps them list](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-listing-help); it [checks each entry and, at the platform owner's request, has a review agent look at the app](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-fitness-clarity).
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
@@ -120,7 +120,8 @@ x-realises: ch-app-overview, ch-fitness-signal
 
 ### Served apps
 
-The copy of every listed app, built from the creator's release and served under one address that keeps working.
+The copy of every listed app that lernapps.net serves and links: built from the release the creator publishes at
+their own address, and served under one address that keeps working.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
@@ -135,8 +136,8 @@ x-realises: ch-direct-start
 
 ### Listing
 
-How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically, including that its licence allows the copy, and, at the
-owner's request, by the review agent, with the result as a comment on the pull request.
+How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether
+its links and topics hold, and that its licence allows the copy) and, at the platform owner's request, by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
@@ -161,8 +162,9 @@ id: if-thanks
 title: Thanks
 provider: bb-catalog
 protocol: link from the catalog or an app; today a prepared e-mail
-x-realises: ch-feedback
-x-missing: Thanks are not counted, and they reach the creator only if the platform owner passes them on.
+x-realises: ch-feedback, ch-creator-insight
+x-missing-ch-feedback: Today a click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.
+x-missing-ch-creator-insight: Thanks reach the creator only if the platform owner passes them on.
 :::
 ```
 
@@ -234,7 +236,8 @@ protocol: GitHub actions, pinned to a commit
 
 ### App actions
 
-The reusable workflows and actions an app's repository runs to check, build and publish the app.
+The reusable workflows and actions an app's repository runs to check and build the app and to publish the
+creator's own release, at the creator's address.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/tooling: https://github.com/lernapps/tooling :::
@@ -282,8 +285,8 @@ x-realises: ch-guidance
 
 ## Docs
 
-The models of the platform in structured languages: the platform design (pdt42), the business model (biz42) and
-the architecture of the whole system (arc42), rendered as pages, and the skill to work with the platform design.
+The models of the platform: the platform design, the business model and the architecture of the whole system,
+each in a modelling language that people and AI assistants can read and check, rendered as pages.
 
 ```arc42
 :::building-block
@@ -299,7 +302,8 @@ path: docs
 
 ### Models
 
-The platform design, the business model and the architecture as pages under lernapps.net/docs/, and the `pdt` skill.
+The platform design, the business model and the architecture as pages under lernapps.net/docs/, and a skill that
+lets an AI assistant work with the platform design.
 
 ```arc42
 :::interface

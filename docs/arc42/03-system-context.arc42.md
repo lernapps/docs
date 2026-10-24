@@ -179,7 +179,7 @@ the archetypes get a new commit.
 id: actor-renovate
 title: Renovate
 type: system
-description: Dependency update service that moves the pinned commits
+description: Dependency update service that keeps the versions the repositories use up to date
 requires: if-site-frame, if-tooling-cli, if-archetypes
 :::
 ```
