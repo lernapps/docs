@@ -135,3 +135,14 @@ a.status { text-decoration: none; }
 .hero .vision-link { display: inline-block; margin-top: 1.1rem; color: #e2e8f0; }
 /* The cut in the German page: from here on the page comes from the English models. */
 .cut { margin: 2.2rem 0 0; padding: 0.7rem 1rem; border-top: 2px dashed var(--lc-border); border-bottom: 2px dashed var(--lc-border); color: var(--lc-muted); font-size: 0.95rem; max-width: 44rem; }
+/* How to read a journey, inside the journeys. */
+.reading { margin: 0 0 1.4rem; }
+.reading h3 { font-size: 1.05rem; margin: 0 0 0.3rem; }
+.reading > p { max-width: 44rem; }
+/* How the platform helps build an app: one card per part, its interfaces below. */
+.building { display: grid; gap: 0.8rem; }
+.building > li { padding: 1rem 1.15rem; border-radius: 1rem; border: 1px solid var(--lc-border); border-top: 3px solid var(--c, var(--lc-border)); background: var(--lc-card); }
+.building h3 { font-size: 1.1rem; margin: 0 0 0.4rem; }
+.building h3 .where { margin-left: 0.5rem; font-size: 0.85rem; font-weight: 400; }
+.building ul { display: grid; gap: 0.35rem; font-size: 0.94rem; }
+.building .meta { color: var(--lc-muted); }

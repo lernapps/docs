@@ -6,17 +6,17 @@ AI makes it easy to build exactly the learning app that is needed right now. Mos
 
 ## How lernapps.net works
 
-Why the platform exists, which parts it is built from, what job each part does, and how people use them. For engineers and tech leads who work on the platform or want to understand it before they read its two models. The platform design says who takes part and what they give each other; the architecture says how the system is built.
+For engineers and tech leads who work on the platform or want to understand it before they read its two models. The platform design says who takes part and what they give each other; the architecture says how the system is built.
 
 > The goal, in the platform design's words: Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used under data protection law; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive: running it costs almost nothing, and thanks are what keep creators building.
 
 On this page:
 
-- **Who takes part:** the people the platform is for and the systems it relies on; the journeys are told from their views.
+- **Who takes part:** the people the platform is for and what they bring themselves; the journeys are told from their views.
 - **The parts and where they live:** the site map: each part's address, repository and job; the rest of the page names them.
-- **How to read a journey:** how a step, a service and a part connect; read this once before the journeys.
-- **The journeys:** the platform from its users' view, step by step, with the part that helps at each step and the parts working together behind it.
+- **The journeys:** the platform from its users' view, step by step, with the part that helps at each step and the parts working together behind it; it starts with how to read a journey.
 - **How the parts work together:** the flows behind the journeys that no user sees, for those who run or change the system.
+- **How lernapps.net helps build an app:** what a creator's assistant and the app's repository use to build and list an app, in detail.
 - **Ideas:** services the platform could offer later, each with an issue to discuss it.
 - **For reference: the parts of the system:** every part with its interfaces, for looking something up.
 - **Read on:** the documents this page is generated from.
@@ -44,17 +44,17 @@ The platform is built from one building block per repository of the organisation
 - **[Docs](architecture/#05-building-blocks.arc42.md:el-bb-docs):** Holds the models of the platform: why it exists, who carries it and how the system is built. Address: [lernapps.net/docs](https://lernapps.net/docs/) · Repository: [lernapps/docs](https://github.com/lernapps/docs)
 - **[Organisation](architecture/#05-building-blocks.arc42.md:el-bb-org):** Holds the rules and decisions that every repository of the platform follows: the profile, the governance, the templates for issues and pull requests, and the decision issues. No page of its own; it lives in its repository. · Repository: [lernapps/.github](https://github.com/lernapps/.github)
 
-## How to read a journey
+## The journeys
 
-The journeys connect the people above to the parts above. A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service, and a part of the system provides it through one of its interfaces: the pages, links, templates or commands people actually use. Below each journey, a diagram shows how the parts work together behind it; every arrow carries the order to the part it points at.
+This is why the parts exist: each journey shows a person with a problem and the parts that help them solve it. Adults in an acute moment and creators each have their journey: teachers who have to take over a class at short notice, parents who notice that their child struggles with something they cannot help with, and creators, because supply does not come by itself.
+
+### How to read a journey
+
+A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service, and a part of the system provides it through one of its interfaces: the pages, links, templates or commands people actually use. Below each journey, a diagram shows how the parts work together behind it; every arrow carries the order to the part it points at.
 
 For example: in the step "Find an app for a topic and grade", the platform offers the service "Finding apps by topic and grade", which the interface "Catalog pages" of the part "Catalog" provides.
 
 A dashed block marks where a part does not yet deliver what the journey needs, and says what is missing; where that leaves a step to a person, the risk it carries is named.
-
-## The journeys
-
-This is why the parts exist: each journey shows a person with a problem and the parts that help them solve it. Adults in an acute moment and creators each have their journey: teachers who have to take over a class at short notice, parents who notice that their child struggles with something they cannot help with, and creators, because supply does not come by itself.
 
 ### [An app in class within minutes](platform-design/#2-design/d7-experiences.pdt42.md:el-x-app-in-minutes)
 
@@ -194,6 +194,28 @@ A change is merged to a site's main line: the website, the catalog, the docs or 
 1. Tooling → GitHub: publish the pages under lernapps.net
 1. GitHub → GoatCounter: count the visits to the published pages
 
+## How lernapps.net helps build an app
+
+The journeys and flows above show that creators build with an AI assistant of their own. This is what the platform gives that assistant and the app's repository to work with. Read this if you build an app or change how the platform supports building.
+
+### [Website](architecture/#05-building-blocks.arc42.md:el-bb-website) ([lernapps.net](https://lernapps.net/))
+
+- **Home pages:** The home page, the privacy notice and the imprint, and the root llms.txt that leads AI assistants to the other parts of the platform. The privacy notice is part of the signal that an app may be used: it covers every app served under lernapps.net. Used by: Creator's AI assistant.
+
+### [Catalog](architecture/#05-building-blocks.arc42.md:el-bb-catalog) ([lernapps.net/apps](https://lernapps.net/apps/))
+
+- **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap of this interface, with the risk it carries. Used by: Creator's AI assistant.
+
+### [Tooling](architecture/#05-building-blocks.arc42.md:el-bb-tooling) ([lernapps.net/tooling](https://lernapps.net/tooling/))
+
+- **App actions:** The reusable workflows and actions an app's repository runs to check and build the app and to publish the creator's own release, at the creator's address. Used by: Creators' app repositories.
+- **Guidance:** The guidance by phase, the skills and the documentation that AI assistants read to build and list an app. Used by: Creator's AI assistant.
+- **Tooling CLI:** The command line an assistant and the workflows run: create an app from an archetype, check it against the rules, update it. Used by: Creator's AI assistant, Creators' app repositories, Catalog.
+
+### [App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates)
+
+- **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with. Used by: Tooling.
+
 ## Ideas
 
 Services the platform design names but no journey needs. They show where the platform could grow; each is discussed in its own issue, which is the place to take part.
@@ -233,14 +255,14 @@ Each part with the interfaces it offers, the services they serve and the parts t
 
 - **Catalog pages:** The pages where adults and students find an app for a topic and grade, see its fitness for use, and find the way to build an app when none fits.
   - Serves: Finding apps by topic and grade, Finding apps for a topic one struggles with, Clarity on fitness for use
-- **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap below, with the risk it carries.
+- **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap of this interface, with the risk it carries.
   - Serves: Help to list an app, Clarity on fitness for use
   - ┆ Not yet: A listing is published only after the platform owner approves the pull request, and the review agent runs only at their request.
   - Risk until then: [One owner](architecture/#11-risks.arc42.md:el-risk-one-owner).
   - Works with, outside the system: Creator's AI assistant, GitHub
 - **Served apps:** The copy of every listed app that lernapps.net serves and links: built from the release the creator publishes at their own address, and served under one address that keeps working.
   - Serves: Starting an app right away
-- **Thanks:** A thank-you and feedback in one click from the catalog or an app, counted openly and passed on to the creator. The interface stays the same when its realisation changes. No person has to act for thanks to arrive. What still waits on the platform owner is recorded as a gap below, with the risk it carries.
+- **Thanks:** A thank-you and feedback in one click from the catalog or an app, counted openly and passed on to the creator. The interface stays the same when its realisation changes. No person has to act for thanks to arrive. What still waits on the platform owner is recorded as a gap of this interface, with the risk it carries.
   - Serves: Insight into use and feedback, Giving feedback and thanks
   - ┆ Not yet: A click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.
   - ┆ Not yet: Thanks reach the creator only if the platform owner passes them on.
@@ -285,11 +307,9 @@ These parts provide no service to a journey, but they take part in the flows beh
 
 This page is the way in. Everything on it comes from the documents below; follow them for the full picture, in the depth each one has.
 
-- **[Vision](vision/):** Why lernapps.net exists: the problem, what it does, its principles and what it is not.
-- **[Platform design](platform-design/):** Who takes part and what they give each other: roles, transactions, services, journeys and the MVP, as a pdt42 model.
 - **[Organisation](about/):** Who carries lernapps.net and what for: objectives, risks, capabilities and products of an undertaking no one earns money with, as a biz42 model.
+- **[Platform design](platform-design/):** Who takes part and what they give each other: roles, transactions, services, journeys and the MVP, as a pdt42 model.
 - **[Architecture](architecture/):** How the system is built: quality goals, building blocks, flows, deployment, decisions and risks, as an arc42 model.
-- **[llms.txt](llms.txt):** For AI assistants: where everything is and how to read the models with their CLIs, element by element.
 
 ---
 
