@@ -5,7 +5,7 @@
     "commit": "c3f2baf586b494e603639a652f9fdbe80b21ff69"
   },
   "head": {
-    "label": "8657cb9d9cf502e0c4fec9101065ce23149e8438"
+    "label": "e27fe3d11adc4218f74ca320ca1a0b5390a4e337"
   },
   "acceptanceBase": "c3f2baf586b494e603639a652f9fdbe80b21ff69",
   "untracked": [],
@@ -286,7 +286,7 @@
           {
             "name": "value-unit",
             "before": "A signal of fitness for use: frontend-only, no installation, no sign-up",
-            "after": "A signal of fitness for use: sends nothing to third parties, runs in the browser only, needs no installation or sign-up"
+            "after": "A signal of fitness for use: sends nothing to third parties, accesses only its own data in the browser, needs no installation or sign-up"
           }
         ],
         "proseChanged": false,

@@ -67,7 +67,7 @@ Mainly for adopting adults; also involves app creators, students. What they get:
      - Delivered by: Catalog pages (Catalog).
 1. Confirm an app may be used
    - **Clarity on fitness for use**
-     - For adopting adults: Answers whether an app may be used, before an adult passes it on to a learner: it sends nothing to third parties, keeps only its own data in the browser and needs no installation or sign-up.
+     - For adopting adults: Answers whether an app may be used, before an adult passes it on to a learner: it sends nothing to third parties, accesses only its own data in the browser and needs no installation or sign-up.
      - Delivered by: Catalog pages (Catalog), Home pages (Website), Listing (Catalog).
 1. Bring an app to students
    - **Starting an app right away**
@@ -164,21 +164,21 @@ The creator releases a new version. The catalog builds a copy from that release 
 1. Creators' app repositories → Tooling: build and publish the release
 1. Catalog → Creators' app repositories: report new releases
 1. Catalog → Tooling: check the new version
-1. Catalog → GitHub: open and merge the entry's update pull request
+1. Catalog → GitHub: open the entry's update pull request, merged by policy
 1. Catalog → GitHub: build and publish the new copy
 1. GitHub ⇢ Catalog: the same address serves the new copy
 
 ### [The platform passes on its updates](../architecture/#06-runtime-view.arc42.md:el-rs-block-update)
 
-When the site frame, the tooling or the app templates get a new version, the platform passes it on to every repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each one, and it is merged when the checks pass. An improvement of the guidance has been measured before it is passed on.
+When the site frame, the tooling or the app templates change, the platform passes the change on to every repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each one, and it is merged when the checks pass. Every change of the guidance has been measured by the evals before it is passed on.
 
-1. Renovate → Website: report new versions of the site frame
-1. Renovate → App templates: report new versions of the archetypes
-1. Renovate → Tooling: report new versions of the tooling
-1. Renovate → Catalog: take the new versions (pull request)
+1. Renovate → Website: report changes of the site frame
+1. Renovate → App templates: report changes of the archetypes
+1. Renovate → Tooling: report changes of the tooling
+1. Renovate → Catalog: take the changes (pull request)
 1. Renovate → Docs: take the new site frame (pull request)
-1. Renovate → Tooling: take the new versions (pull request)
-1. Renovate → Creators' app repositories: take the new versions (pull request)
+1. Renovate → Tooling: take the changes (pull request)
+1. Renovate → Creators' app repositories: take the changes (pull request)
 1. Platform owner → Catalog: merge it, if not merged automatically
 
 ### [A platform site is published](../architecture/#06-runtime-view.arc42.md:el-rs-site-published)

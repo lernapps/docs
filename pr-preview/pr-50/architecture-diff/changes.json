@@ -5,7 +5,7 @@
     "commit": "c3f2baf586b494e603639a652f9fdbe80b21ff69"
   },
   "head": {
-    "label": "8657cb9d9cf502e0c4fec9101065ce23149e8438"
+    "label": "e27fe3d11adc4218f74ca320ca1a0b5390a4e337"
   },
   "acceptanceBase": "c3f2baf586b494e603639a652f9fdbe80b21ff69",
   "untracked": [],
@@ -1087,7 +1087,7 @@
           {
             "name": "trigger",
             "before": "A merge to the main line of the website, the tooling or the app templates",
-            "after": "The site frame, the tooling or the app templates get a new version"
+            "after": "The site frame, the tooling or the app templates change"
           }
         ],
         "proseChanged": true,
@@ -1460,7 +1460,7 @@
           {
             "name": "source",
             "before": "sequenceDiagram\n    participant appactions as App repo Actions\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant github as GitHub\n    appactions->>tooling: build and publish the release in the app's repository\n    catalog->>appactions: notice the new release\n    catalog->>tooling: check the new version\n    catalog->>github: update pull request for the entry, merged by policy\n    catalog->>github: build and publish the new copy\n    github-->>catalog: the same address serves the new copy",
-            "after": "sequenceDiagram\n    participant appactions as App repositories\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant github as GitHub\n    appactions->>tooling: build and publish the release\n    catalog->>appactions: report new releases\n    catalog->>tooling: check the new version\n    catalog->>github: open and merge the entry's update pull request\n    catalog->>github: build and publish the new copy\n    github-->>catalog: the same address serves the new copy"
+            "after": "sequenceDiagram\n    participant appactions as App repositories\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant github as GitHub\n    appactions->>tooling: build and publish the release\n    catalog->>appactions: report new releases\n    catalog->>tooling: check the new version\n    catalog->>github: open the entry's update pull request, merged by policy\n    catalog->>github: build and publish the new copy\n    github-->>catalog: the same address serves the new copy"
           }
         ],
         "base": {
@@ -1484,7 +1484,7 @@
           {
             "name": "source",
             "before": "sequenceDiagram\n    participant website as Website\n    participant tooling as Tooling\n    participant templates as App templates\n    participant catalog as Catalog\n    participant docs as Docs\n    participant renovate as Renovate\n    participant owner as Owner\n    website-->>renovate: new commit of the site frame\n    templates-->>renovate: new commit of the archetypes\n    tooling-->>renovate: new commit of the tooling\n    renovate->>catalog: pull request: new pins\n    renovate->>docs: pull request: new pin of the site frame\n    renovate->>tooling: pull request: new pins\n    owner->>catalog: merge, if not merged automatically",
-            "after": "sequenceDiagram\n    participant website as Website\n    participant tooling as Tooling\n    participant templates as App templates\n    participant catalog as Catalog\n    participant docs as Docs\n    participant renovate as Renovate\n    participant apps as App repositories\n    participant owner as Owner\n    renovate->>website: report new versions of the site frame\n    renovate->>templates: report new versions of the archetypes\n    renovate->>tooling: report new versions of the tooling\n    renovate->>catalog: take the new versions (pull request)\n    renovate->>docs: take the new site frame (pull request)\n    renovate->>tooling: take the new versions (pull request)\n    renovate->>apps: take the new versions (pull request)\n    owner->>catalog: merge it, if not merged automatically"
+            "after": "sequenceDiagram\n    participant website as Website\n    participant tooling as Tooling\n    participant templates as App templates\n    participant catalog as Catalog\n    participant docs as Docs\n    participant renovate as Renovate\n    participant apps as App repositories\n    participant owner as Owner\n    renovate->>website: report changes of the site frame\n    renovate->>templates: report changes of the archetypes\n    renovate->>tooling: report changes of the tooling\n    renovate->>catalog: take the changes (pull request)\n    renovate->>docs: take the new site frame (pull request)\n    renovate->>tooling: take the changes (pull request)\n    renovate->>apps: take the changes (pull request)\n    owner->>catalog: merge it, if not merged automatically"
           }
         ],
         "base": {
