@@ -48,6 +48,7 @@ title: Website
 technology: Eleventy, GitHub Pages
 x-repo: lernapps/lernapps.github.io
 requires: if-site-actions
+x-job: Gives the platform its face at lernapps.net, the privacy notice that covers every served app, and the shared header, footer and checks every platform site is built with.
 :::
 ```
 
@@ -99,6 +100,7 @@ title: Catalog
 technology: Eleventy, GitHub Actions, GitHub Pages
 requires: if-site-frame, if-tooling-cli, if-site-actions
 x-repo: lernapps/apps
+x-job: Lets adults and students find, trust and start apps, and lets creators list them; it serves a copy of every listed app under lernapps.net.
 :::
 ```
 
@@ -185,6 +187,7 @@ title: Tooling
 technology: TypeScript, Node.js, GitHub Actions
 requires: if-site-frame, if-archetypes
 x-repo: lernapps/tooling
+x-job: Gives a creator's AI assistant the guidance, the commands and the workflows to build an app that keeps the platform's rules.
 :::
 ```
 
@@ -265,6 +268,7 @@ implements: concept-privacy-by-construction, concept-checked-not-declared, conce
 title: App templates
 technology: TypeScript, Vite, Vue
 x-repo: lernapps/app-templates
+x-job: Provides the three kinds of app (quiz, explainer and interactive app) as templates that already keep the platform's rules.
 :::
 ```
 
@@ -297,6 +301,7 @@ technology: pdt42, biz42 and arc42 CLIs, GitHub Pages
 requires: if-site-frame, if-site-actions
 x-repo: lernapps/docs
 path: docs
+x-job: Holds the models of the platform: why it exists, who carries it and how the system is built.
 :::
 ```
 
@@ -328,6 +333,7 @@ implements: concept-plain-language, concept-why-in-history
 title: Organisation
 technology: GitHub organisation repository
 x-repo: lernapps/.github
+x-job: Holds the rules and decisions that every repository of the platform follows.
 :::
 ```
 

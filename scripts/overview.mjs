@@ -83,6 +83,8 @@ const prose = (e) =>
     .split(/\n\s*\n/)[0]
     .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
     .replace(/\s*\((?:(?:KD-\d+|PP\d|[DEG]\d)(?:,\s*)?)+\)/g, "")
+    .replace(/\s*\(`[a-z]+-[a-z0-9-]+`\)/g, "") // (`qs-…`): an id of the model, not text
+    .replace(/`([^`]+)`/g, "$1")
     .replace(/\s+/g, " ")
     .trim();
 const firstSentence = (text) => (text.match(/^.+?[.!?](?=\s|$)/) ?? [text])[0];
@@ -90,6 +92,7 @@ const sentence = (text) => (text ? text.charAt(0).toUpperCase() + text.slice(1) 
 const lower = (text) => (/^[A-Z]{2}/.test(text) ? text : text.charAt(0).toLowerCase() + text.slice(1)); // keeps "AI …"
 const andList = (items) => (items.length < 2 ? items.join("") : `${items.slice(0, -1).join(", ")} and ${items.at(-1)}`);
 const fill = (template, values) => template.replace(/\{(\w+)\}/g, (_, k) => values[k] ?? "");
+const job = (bb) => bb.extensions?.job ?? firstSentence(prose(bb)); // x-job: the part's task in one sentence
 const pdtUrl = (e) => `../platform-design/#${e.loc.file}:el-${e.id}`;
 const arcUrl = (e) => `../architecture/#${basename(e.loc.file)}:el-${e.id}`;
 
@@ -137,6 +140,7 @@ const usersOf = (ifaceId) =>
   [...new Set(arc.edges.filter((e) => e.relation === "requires" && e.to === ifaceId).map((e) => e.from))].map((id) => arcById.get(id)).filter(Boolean);
 const blocks = arc.elements
   .filter((e) => e.kind === "building-block")
+  .sort((a, b) => a.loc.line - b.loc.line) // as chapter 5 orders them
   .map((bb) => {
     const offers = interfaces
       .filter((i) => i.provider === bb.id)
@@ -151,6 +155,12 @@ const blocks = arc.elements
       });
     return { bb, offers, delivers: offers.some((o) => o.channels.length) };
   });
+// How the parts work together: the runtime scenarios of the architecture that involve at least two parts.
+const scenarios = arc.elements
+  .filter((e) => e.kind === "runtime-scenario" && list(e.involves).filter((id) => arcById.get(id)?.kind === "building-block").length >= 2)
+  .filter((e) => !pdtOf("experience").some((x) => x.title === e.title)) // the journey itself tells it
+  .sort((a, b) => a.loc.line - b.loc.line)
+  .map((sc) => ({ sc, parts: list(sc.involves).map((id) => arcById.get(id)).filter((e) => e?.kind === "building-block") }));
 const builtTitles = journeyServices.filter((v) => v.status === "built").map((v) => `“${v.s.title}”`);
 const partialTitles = journeyServices.filter((v) => v.status === "partial").map((v) => `“${v.s.title}”`);
 const statusLine = fill(meta.status.line, { built: builtTitles.length, total: journeyServices.length, partialCount: partialTitles.length, partial: andList(partialTitles) });
@@ -181,13 +191,7 @@ const makeService = () => {
     seenServices.add(v.s.id);
     const forWhom = list(v.s.for).map((id) => pdtById.get(id)).filter(Boolean);
     const lines = [[...(forWhom.length ? ["For ", ...linksTo(forWhom, pdtUrl), ": "] : []), prose(v.s)]];
-    if (v.channel) {
-      if (seenChannels.has(v.channel.id)) lines.push([`${meta.reading.channel} `, L(v.channel.title, pdtUrl(v.channel)), ` ${meta.reading.seeAbove}`]);
-      else {
-        seenChannels.add(v.channel.id);
-        lines.push([`${meta.reading.channel} `, L(v.channel.title, pdtUrl(v.channel)), "."]);
-      }
-    }
+    if (v.channel && v.status === "missing") lines.push([`${meta.reading.channel} `, L(v.channel.title, pdtUrl(v.channel)), "."]);
     if (v.delivery.length) lines.push([`${meta.reading.deliveredBy} `, ...join2(v.delivery.map(({ iface, block }) => L(`${iface.title} (${block.title})`, arcUrl(iface)))), "."]);
     if (v.status === "missing" && list(v.s.supports).length) lines.push([`${meta.others.wouldSupport} `, ...join2(list(v.s.supports).map((id) => L(title(id), pdtUrl(pdtById.get(id))))), "."]);
     return { head, status: v.status, lines };
@@ -233,7 +237,9 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
   M.push(`# ${meta.title}`, "", meta.lead, "", `> ${meta.narrativeLabel} ${platform.narrative}`, "", statusLine, "");
   M.push(`## ${meta.roles.heading}`, "");
   for (const r of coreRoles) M.push(`- **${md([L(r.title, pdtUrl(r))])}:** ${firstSentence(prose(r))}`);
-  M.push("", `${meta.roles.around} ${md(linksTo(aroundRoles, pdtUrl))}.`, "");
+  M.push("", `## ${meta.parts.heading}`, "", meta.parts.intro, "");
+  for (const { bb } of blocks) M.push(`- **${md([L(bb.title, arcUrl(bb))])}:** ${job(bb)}`);
+  M.push("");
   M.push(`## ${meta.reading.heading}`, "", meta.reading.intro, "", example, "");
   M.push(`## ${meta.experiences.heading}`, "", meta.experiences.intro, "");
   for (const j of shownJourneys) {
@@ -251,16 +257,19 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
     }
     M.push("");
   }
+  M.push(`## ${meta.together.heading}`, "", meta.together.intro, "");
+  for (const { sc, parts } of scenarios) M.push(`- **${md([L(sc.title, arcUrl(sc))])}.** ${prose(sc)} ${meta.together.parts} ${md(linksTo(parts, arcUrl))}.`);
+  M.push("");
   M.push(`## ${meta.gaps.heading}`, "", meta.gaps.intro, "");
   for (const g of gaps.values()) {
     M.push(`### ${md([L(g.channel.title, pdtUrl(g.channel))])}`, "");
     for (const l of gapLines(g)) M.push(`- ${md(l)}`);
     M.push("");
   }
+  M.push(closingText, "");
   M.push(`## ${meta.others.heading}`, "", meta.others.intro, "");
   for (const v of others) mdService(v, "");
   M.push("");
-  M.push(`## ${meta.closing.heading}`, "", closingText, "");
   M.push(`## ${meta.blocks.heading}`, "", meta.blocks.intro, "", `${meta.blocks.outsideIntro}`, "");
   for (const u of outsideSystems) M.push(`- ${md([L(u.title, arcUrl(u))])}: ${lower(u.description?.replace(/\s*\(pdt42[^)]*\)/, "") ?? "")}`);
   M.push("");
@@ -288,7 +297,10 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
 // --- HTML -----------------------------------------------------------------------------------------------------------
 {
   const service = makeService();
-  const badge = (status) => `<span class="status status-${status}">${esc(meta.status[status])}</span>`;
+  const badge = (status) =>
+    status === "partial"
+      ? `<a class="status status-${status}" href="#gaps-h">${esc(meta.status[status])}</a>`
+      : `<span class="status status-${status}">${esc(meta.status[status])}</span>`;
   const htmlService = (v) => {
     const p = service(v);
     return `<li class="service"><div class="service-head"><strong>${ht(p.head)}</strong> ${badge(p.status)}</div>${p.lines.map((l) => `<p>${ht(l)}</p>`).join("")}</li>`;
@@ -357,7 +369,11 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
       <section aria-labelledby="roles-h">
         <h2 class="section" id="roles-h">${esc(meta.roles.heading)}</h2>
         <ul class="roles">${coreRoles.map((r) => `<li><a href="${esc(pdtUrl(r))}"><strong>${esc(r.title)}</strong></a><span>${esc(firstSentence(prose(r)))}</span></li>`).join("")}</ul>
-        <p class="lead around">${esc(meta.roles.around)} ${ht(linksTo(aroundRoles, pdtUrl))}.</p>
+      </section>
+      <section aria-labelledby="parts-h">
+        <h2 class="section" id="parts-h">${esc(meta.parts.heading)}</h2>
+        <p class="lead">${esc(meta.parts.intro)}</p>
+        <ul class="parts">${blocks.map(({ bb }) => `<li><a href="${esc(arcUrl(bb))}"><strong>${esc(bb.title)}</strong></a><span>${esc(job(bb))}</span></li>`).join("")}</ul>
       </section>
       <section aria-labelledby="reading-h" class="reading">
         <h2 class="section" id="reading-h">${esc(meta.reading.heading)}</h2>
@@ -368,19 +384,23 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
         <h2 class="section" id="experiences-h">${esc(meta.experiences.heading)}</h2>
         <p class="lead">${esc(meta.experiences.intro)}</p>${journeysHtml}
       </section>
+      <section aria-labelledby="together-h">
+        <h2 class="section" id="together-h">${esc(meta.together.heading)}</h2>
+        <p class="lead">${esc(meta.together.intro)}</p>
+        <ul class="together">${scenarios
+          .map(({ sc, parts }) => `<li><a href="${esc(arcUrl(sc))}"><strong>${esc(sc.title)}</strong></a><p>${esc(prose(sc))}</p><p class="meta">${esc(meta.together.parts)} ${ht(linksTo(parts, arcUrl))}.</p></li>`)
+          .join("")}</ul>
+      </section>
       <section aria-labelledby="gaps-h">
         <h2 class="section" id="gaps-h">${esc(meta.gaps.heading)}</h2>
         <p class="lead">${esc(meta.gaps.intro)}</p>
         <ul class="gaps">${gapsHtml}</ul>
+        <p class="closing">${esc(closingText)}</p>
       </section>
       <section aria-labelledby="others-h">
         <h2 class="section" id="others-h">${esc(meta.others.heading)}</h2>
         <p class="lead">${esc(meta.others.intro)}</p>
         <ul class="services">${othersHtml}</ul>
-      </section>
-      <section aria-labelledby="closing-h" class="closing">
-        <h2 class="section" id="closing-h">${esc(meta.closing.heading)}</h2>
-        <p>${esc(closingText)}</p>
       </section>
       <details class="reference">
         <summary><h2 class="section" id="blocks-h">${esc(meta.blocks.heading)}</h2></summary>

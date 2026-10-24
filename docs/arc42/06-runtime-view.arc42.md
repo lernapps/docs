@@ -86,9 +86,9 @@ sequenceDiagram
 ## Build and list an app
 
 [A creator finds no fitting app and decides to build one](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back). Their AI assistant follows the
-tooling's guidance, creates the app from an archetype and checks it; the app's repository runs the tooling's
-actions. The assistant opens the listing pull request; the catalog checks the entry and, on request, runs the review
-agent; the owner approves; the catalog publishes a copy.
+tooling's guidance, creates the app from one of the app templates and checks it; the app's repository runs the
+tooling's actions. The assistant opens the listing pull request; the catalog checks the entry and, at the platform owner's
+request, has a review agent look at the app; the owner approves; the catalog publishes a copy.
 
 ```arc42
 :::runtime-scenario
@@ -174,9 +174,9 @@ sequenceDiagram
 
 ## A building block gets a new commit
 
-The site frame, the tooling or the app templates get a new commit on their main line. Renovate opens a pull request
-in every repository that pins the block; it is merged when the checks pass. Inside the tooling, a change of the
-guidance has been measured by the evals before this point.
+The site frame, the tooling or the app templates get a new commit on their main line. Renovate, an update service, opens a
+pull request in every repository that uses the block at a fixed version; it is merged when the checks pass. Inside the tooling, a change of the
+guidance has been measured by its evaluations before this point.
 
 ```arc42
 :::runtime-scenario

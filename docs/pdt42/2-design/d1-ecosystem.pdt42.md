@@ -27,7 +27,7 @@ ecosystem: eco-edu-apps
 brief: br-attention
 owners: e-platform-owner
 core-entity: e-adopters
-narrative: Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive.
+narrative: Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used under data protection law; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive: running it costs almost nothing, and thanks are what keep creators building.
 infrastructure:
   - Website with the app overview
   - Agent guidance and starter templates

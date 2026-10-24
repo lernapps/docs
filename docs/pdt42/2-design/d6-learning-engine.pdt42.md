@@ -206,7 +206,7 @@ channel: ch-app-overview
 
 ### Clarity on fitness for use
 
-Answers whether an app may be used, before an adult passes it on to a learner.
+Answers whether an app may be used, before an adult passes it on to a learner: it sends nothing to third parties, keeps only its own data in the browser and needs no installation or sign-up.
 
 ```pdt42
 :::service

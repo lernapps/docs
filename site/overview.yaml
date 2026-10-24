@@ -10,29 +10,41 @@ lead: >-
   What people get from the platform, which part of the system delivers it, and how far it is built. Follow a link
   for the details.
 
-narrativeLabel: "The idea, in the platform design's words:"
+narrativeLabel: "The goal, in the platform design's words:"
 
 status:
   line: >-
-    Today, {built} of the {total} services the three journeys need are built, and {partialCount} only in part:
-    {partial}. What is missing is described right after the journeys.
+    Today, {built} of the {total} services the three journeys need are built; the other {partialCount} only in part:
+    {partial}. What is missing is described after the journeys.
   built: Built
   partial: Partly built
   missing: Not built yet
 
 roles:
   heading: Who takes part
-  around: "Around them:"
+parts:
+  heading: The system in six parts
+  intro: >-
+    The platform is built from one part per repository. The journeys and flows below name them where they help; a
+    fuller description of each follows at the end.
+
+together:
+  heading: How the parts work together
+  intro: >-
+    Behind the journeys: how a creator's app gets into the catalog, and how the system keeps itself current. The
+    architecture describes these flows step by step.
+  parts: "Parts involved:"
 
 reading:
   heading: How to read a journey
   intro: >-
-    A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service. The
-    service reaches people through a channel, such as a page, a link or a template. A part of the system delivers
-    the channel through one of its interfaces.
+    A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service, and a
+    part of the system provides it through one of its interfaces: the pages, links, templates or commands people
+    actually use. The way a service reaches people is called its channel; the gaps further down are listed by
+    channel.
   example: >-
-    For example: in the step "{step}", the platform offers the service "{service}". It reaches people through the
-    channel "{channel}", which the interface "{iface}" of the part "{part}" delivers.
+    For example: in the step "{step}", the platform offers the service "{service}", which the interface "{iface}" of
+    the part "{part}" provides.
   gets: "What {role} get:"
   channel: "Channel:"
   consistsOf: "It consists of:"
@@ -40,9 +52,9 @@ reading:
   partialPointer: Partly built; what is missing is described after the journeys.
   seeAbove: (See above.)
   startsFrom: "Building the app:"
-  noService: "No service of its own; it reaches {role} through the channel"
   asIn: "As in the journey “{journey}”:"
   insideApp: Happens inside the app, without the platform.
+  noService: No service of the platform at this step.
 
 experiences:
   heading: The three journeys
@@ -53,8 +65,8 @@ experiences:
 gaps:
   heading: What is missing
   intro: >-
-    The journeys hold up to the point where use and praise should flow back to the creator. These channels are
-    delivered only in part: what the interfaces that deliver them do not do yet, and which services that affects.
+    The journeys hold up to the point where use and praise should flow back to the creator. Below, for each of the
+    two ways back that are only partly built, what the parts do not do yet and which services that affects.
   affects: "Affects:"
 
 others:
@@ -79,8 +91,7 @@ blocks:
 closing:
   heading: Where this leaves the platform
   text: >-
-    {built} of the {total} services the journeys need are in place. Open are {partial}. Back to the idea at the top:
-    these decide whether the platform can live on thanks.
+    Back to the idea at the top: until {partial} are complete, the platform cannot yet live on thanks.
 
 sources:
   heading: Where this comes from

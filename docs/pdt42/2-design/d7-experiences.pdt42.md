@@ -45,7 +45,7 @@ revenues:
 
 ## Practice tonight, before the test
 
-The journey of a parent the evening before a test: find an app the child can start right away for the topic of tomorrow's test, let the child practise, and say thanks afterwards; the child can come back to the app or find the next one alone. The setting is the kitchen table, not the classroom, and the goal is the same as the child's: the next test. The app starts from lernapps.net like every listed app (KD-21), so parents do not have to judge a stranger's address.
+The journey of a parent the evening before a test: find an app the child can start right away for the topic of tomorrow's test, let the child practise, and say thanks afterwards; the child can come back to the app or find the next one alone. The setting is the kitchen table, not the classroom, and parent and child share one goal: tomorrow's test. The app starts from lernapps.net like every listed app (KD-21), so parents do not have to judge a stranger's address.
 
 ```pdt42
 :::canvas

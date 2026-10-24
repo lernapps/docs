@@ -427,14 +427,14 @@ improvement: Creators learn that and how their app helped, which is what keeps t
 :::
 ```
 
-### Guidance an AI assistant can follow
+### Guidance and templates an AI assistant can follow
 
 Creators build through their AI assistant (KD-10, KD-11), so the guidance for building apps is written for the assistant, not only for people (KD-16). The assistant reads it phase by phase, starts from a template that already keeps the platform's rules, and checks the app before it is listed; the creator decides at a few points.
 
 ```pdt42
 :::channel
 id: ch-guidance
-title: Guidance an AI assistant can follow
+title: Guidance and templates an AI assistant can follow
 medium: digital
 components:
   - Guidance by phase, from the first question to the listing
