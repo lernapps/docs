@@ -12,11 +12,10 @@ For engineers and tech leads who work on the platform or want to understand it b
 
 On this page:
 
-- **Who takes part:** the people the platform is for and what they bring themselves; the journeys are told from their views.
+- **Who takes part:** the people the platform is for; the journeys are told from their views.
 - **The parts and where they live:** the site map: each part's address, repository and job; the rest of the page names them.
 - **The journeys:** the platform from its users' view, step by step, with the part that helps at each step and the parts working together behind it; it starts with how to read a journey.
-- **How the parts work together:** the flows behind the journeys that no user sees, for those who run or change the system.
-- **How lernapps.net helps build an app:** what a creator's assistant and the app's repository use to build and list an app, in detail.
+- **How lernapps.net helps build and maintain an app:** what a creator's assistant and the app's repository use, and the flows that keep apps and the platform current.
 - **Ideas:** services the platform could offer later, each with an issue to discuss it.
 - **For reference: the parts of the system:** every part with its interfaces, for looking something up.
 - **Read on:** the documents this page is generated from.
@@ -26,12 +25,8 @@ On this page:
 The platform exists for these people. The journeys below are told from their views, so knowing them tells you whose problem a part solves.
 
 - **Adopting adults:** Adults who come across apps built by others, browse them and bring them to their students or their own children: teachers and parents.
-- **App creators:** Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves.
+- **App creators:** Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves. Brings: the AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI.
 - **Students:** The learners the apps are built for.
-
-What they bring themselves:
-
-- Creator's AI assistant: the AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI
 
 ## The parts and where they live
 
@@ -202,46 +197,9 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 1. Creator → Catalog: show me how my app is used
 1. Catalog ⇢ Creator: its uses, thanks and feedback, as totals
 
-## How the parts work together
+## How lernapps.net helps build and maintain an app
 
-The journeys show what users see. Behind them the parts pass work to each other in flows that no user sees. Read this if you run or change the system.
-
-### [A listed app gets a new version](architecture/#06-runtime-view.arc42.md:el-rs-app-update)
-
-The creator releases a new version. The catalog builds a copy from that release and replaces the served copy; the address stays the same and never stops working.
-
-1. Creators' app repositories → Tooling: build and publish the release
-1. Catalog → Creators' app repositories: show me your new releases
-1. Catalog → Tooling: check the new version
-1. Catalog → GitHub: open the entry's update pull request, merged by policy
-1. Catalog → GitHub: build and publish the new copy
-1. GitHub ⇢ Catalog: the same address serves the new copy
-
-### [The platform passes on its updates](architecture/#06-runtime-view.arc42.md:el-rs-block-update)
-
-When the site frame, the tooling or the app templates change, the platform passes the change on to every repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each one, and it is merged when the checks pass. Every change of the guidance has been measured by the evals before it is passed on.
-
-1. Renovate → Website: show me your changes
-1. Renovate → App templates: show me your changes
-1. Renovate → Tooling: show me your changes
-1. Renovate → Catalog: take the changes (pull request)
-1. Renovate → Docs: take the new site frame (pull request)
-1. Renovate → Tooling: take the changes (pull request)
-1. Renovate → Creators' app repositories: take the changes (pull request)
-
-### [A platform site is published](architecture/#06-runtime-view.arc42.md:el-rs-site-published)
-
-A change is merged to a site's main line: the website, the catalog, the docs or the tooling's pages; the diagram shows the docs as the example. The tooling's site actions build the site, run site-check from the site frame on the built pages, and deploy them to GitHub Pages under lernapps.net. A failing check stops the deploy.
-
-1. Docs → Tooling: build the site (site action)
-1. Tooling → Website: check the built pages (site-check)
-1. Website ⇢ Tooling: passed, or stop the deploy
-1. Tooling → GitHub: publish the pages under lernapps.net
-1. GitHub → GoatCounter: count the visits to the published pages
-
-## How lernapps.net helps build an app
-
-The journeys and flows above show that creators build with an AI assistant of their own. This is what the platform gives that assistant and the app's repository to work with. Read this if you build an app or change how the platform supports building.
+The creator's journey shows that creators build with an AI assistant of their own. This is what the platform gives that assistant and the app's repository to work with. Read this if you build an app or change how the platform supports building.
 
 ### [Website](architecture/#05-building-blocks.arc42.md:el-bb-website) ([lernapps.net](https://lernapps.net/))
 
@@ -260,6 +218,43 @@ The journeys and flows above show that creators build with an AI assistant of th
 ### [App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates)
 
 - **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with. Used by: Tooling.
+
+### How apps and the platform stay current
+
+Once an app is listed, these flows keep it and the platform current. No user sees them; read them if you run or change the system.
+
+#### [A listed app gets a new version](architecture/#06-runtime-view.arc42.md:el-rs-app-update)
+
+The creator releases a new version. The catalog builds a copy from that release and replaces the served copy; the address stays the same and never stops working.
+
+1. Creators' app repositories → Tooling: build and publish the release
+1. Catalog → Creators' app repositories: show me your new releases
+1. Catalog → Tooling: check the new version
+1. Catalog → GitHub: open the entry's update pull request, merged by policy
+1. Catalog → GitHub: build and publish the new copy
+1. GitHub ⇢ Catalog: the same address serves the new copy
+
+#### [The platform passes on its updates](architecture/#06-runtime-view.arc42.md:el-rs-block-update)
+
+When the site frame, the tooling or the app templates change, the platform passes the change on to every repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each one, and it is merged when the checks pass. Every change of the guidance has been measured by the evals before it is passed on.
+
+1. Renovate → Website: show me your changes
+1. Renovate → App templates: show me your changes
+1. Renovate → Tooling: show me your changes
+1. Renovate → Catalog: take the changes (pull request)
+1. Renovate → Docs: take the new site frame (pull request)
+1. Renovate → Tooling: take the changes (pull request)
+1. Renovate → Creators' app repositories: take the changes (pull request)
+
+#### [A platform site is published](architecture/#06-runtime-view.arc42.md:el-rs-site-published)
+
+A change is merged to a site's main line: the website, the catalog, the docs or the tooling's pages; the diagram shows the docs as the example. The tooling's site actions build the site, run site-check from the site frame on the built pages, and deploy them to GitHub Pages under lernapps.net. A failing check stops the deploy.
+
+1. Docs → Tooling: build the site (site action)
+1. Tooling → Website: check the built pages (site-check)
+1. Website ⇢ Tooling: passed, or stop the deploy
+1. Tooling → GitHub: publish the pages under lernapps.net
+1. GitHub → GoatCounter: count the visits to the published pages
 
 ## Ideas
 

@@ -149,3 +149,5 @@ a.status { text-decoration: none; }
 /* A section of a journey's diagram: one step of the journey. */
 .sequence .section-row line { stroke: var(--lc-border); stroke-width: 1.5; }
 .sequence .section-row text { fill: var(--lc-muted); font-weight: 700; font-size: 11px; letter-spacing: 0.04em; paint-order: stroke; stroke: var(--lc-card); stroke-width: 4px; }
+.roles .brings { margin-top: 0.4rem; font-size: 0.88rem; }
+.overview .group#flows-h { margin-top: 1.8rem; }
