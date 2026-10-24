@@ -7,8 +7,7 @@
 title: How lernapps.net works
 eyebrow: lernapps.net · Docs
 lead: >-
-  Why the platform exists, which parts it is built from, what job each part does, and how people use them. For
-  engineers and tech leads who work on the platform or want to understand it before they read its two models. The
+  For engineers and tech leads who work on the platform or want to understand it before they read its two models. The
   platform design says who takes part and what they give each other; the architecture says how the system is
   built.
 
@@ -38,18 +37,17 @@ vision:
 de:
   title: So funktioniert lernapps.net
   lead: >-
-    Warum es die Plattform gibt, aus welchen Teilen sie besteht, welche Aufgabe jeder Teil hat und wie Menschen sie
-    nutzen. Für Engineers und Tech Leads, die an der Plattform arbeiten oder sie verstehen wollen, bevor sie ihre
+    Für Engineers und Tech Leads, die an der Plattform arbeiten oder sie verstehen wollen, bevor sie ihre
     beiden Modelle lesen. Das Plattform-Design sagt, wer mitmacht und was sie einander geben; die Architektur sagt,
     wie das System gebaut ist.
   guide:
     heading: "Auf dieser Seite:"
   why:
-    roles-h: "die Menschen, für die es die Plattform gibt; die Journeys sind aus ihrer Sicht erzählt."
+    roles-h: "die Menschen, für die es die Plattform gibt, und was sie selbst mitbringen; die Journeys sind aus ihrer Sicht erzählt."
     parts-h: "die Sitemap: Adresse, Repository und Aufgabe jedes Teils; der Rest der Seite nennt sie."
-    reading-h: "wie Schritt, Service und Teil zusammenhängen; einmal lesen vor den Journeys."
-    experiences-h: "die Plattform aus Sicht ihrer Nutzer, Schritt für Schritt, mit dem Teil, der hilft, und dem Zusammenspiel dahinter."
+    experiences-h: "die Plattform aus Sicht ihrer Nutzer, Schritt für Schritt, mit dem Teil, der hilft, und dem Zusammenspiel dahinter; vorneweg, wie man eine Journey liest."
     together-h: "die Abläufe hinter den Journeys, die kein Nutzer sieht; für alle, die das System betreiben oder ändern."
+    building-h: "wie lernapps.net beim Bauen einer App hilft: was der Assistent eines Creators und das Repository seiner App nutzen."
     ideas-h: "Services, die die Plattform später anbieten könnte, jeweils mit einem Issue zur Diskussion."
     blocks-h: "jeder Teil mit seinen Schnittstellen, zum Nachschlagen."
     read-on-h: "die Dokumente, aus denen diese Seite entsteht."
@@ -61,7 +59,7 @@ narrativeLabel: "The goal, in the platform design's words:"
 
 roles:
   heading: Who takes part
-  why: "the people the platform is for and the systems it relies on; the journeys are told from their views."
+  why: "the people the platform is for and what they bring themselves; the journeys are told from their views."
   intro: >-
     The platform exists for these people. The journeys below are told from their views, so knowing them tells you
     whose problem a part solves.
@@ -79,9 +77,8 @@ parts:
 
 reading:
   heading: How to read a journey
-  why: "how a step, a service and a part connect; read this once before the journeys."
   intro: >-
-    The journeys connect the people above to the parts above. A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service, and a
+    A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service, and a
     part of the system provides it through one of its interfaces: the pages, links, templates or commands people
     actually use. Below each journey, a diagram shows how the parts work together behind it; every arrow carries the
     order to the part it points at.
@@ -102,7 +99,7 @@ notYet:
 
 experiences:
   heading: The journeys
-  why: "the platform from its users' view, step by step, with the part that helps at each step and the parts working together behind it."
+  why: "the platform from its users' view, step by step, with the part that helps at each step and the parts working together behind it; it starts with how to read a journey."
   behind: "Behind this journey: how the parts work together"
   intro: >-
     This is why the parts exist: each journey shows a person with a problem and the parts that help them solve it.
@@ -113,6 +110,15 @@ together:
   intro: >-
     The journeys show what users see. Behind them the parts pass work to each other in flows that no user sees.
     Read this if you run or change the system.
+
+building:
+  heading: How lernapps.net helps build an app
+  why: "what a creator's assistant and the app's repository use to build and list an app, in detail."
+  intro: >-
+    The journeys and flows above show that creators build with an AI assistant of their own. This is what the
+    platform gives that assistant and the app's repository to work with. Read this if you build an app or change how
+    the platform supports building.
+  usedBy: "Used by:"
 
 ideas:
   heading: Ideas
@@ -143,11 +149,9 @@ readOn:
     This page is the way in. Everything on it comes from the documents below; follow them for the full picture, in
     the depth each one has.
   items:
-    - { title: Vision, href: vision/, text: "Why lernapps.net exists: the problem, what it does, its principles and what it is not." }
-    - { title: Platform design, href: platform-design/, text: "Who takes part and what they give each other: roles, transactions, services, journeys and the MVP, as a pdt42 model." }
     - { title: Organisation, href: about/, text: "Who carries lernapps.net and what for: objectives, risks, capabilities and products of an undertaking no one earns money with, as a biz42 model." }
+    - { title: Platform design, href: platform-design/, text: "Who takes part and what they give each other: roles, transactions, services, journeys and the MVP, as a pdt42 model." }
     - { title: Architecture, href: architecture/, text: "How the system is built: quality goals, building blocks, flows, deployment, decisions and risks, as an arc42 model." }
-    - { title: llms.txt, href: llms.txt, text: "For AI assistants: where everything is and how to read the models with their CLIs, element by element." }
 
 sources:
   text: >-

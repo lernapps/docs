@@ -243,9 +243,9 @@ const scenarios = allScenarios.filter((f) => !f.sc.extensions?.experience);
 const guide = [
   ["roles-h", meta.roles],
   ["parts-h", meta.parts],
-  ["reading-h", meta.reading],
   ["experiences-h", meta.experiences],
   ["together-h", meta.together],
+  ["building-h", meta.building],
   ["ideas-h", meta.ideas],
   ["blocks-h", meta.blocks],
   ["read-on-h", meta.readOn],
@@ -304,6 +304,17 @@ const stepLabel = (st) =>
 const title = (id) => pdtById.get(id)?.title ?? id;
 const outsideLine = (u) => `${u.title}: ${lower(u.description?.replace(/\s*\(pdt42[^)]*\)/, "") ?? "")}`;
 const tools = broughtTools();
+// How the platform helps build an app: the interfaces that realise the channels of the step before any transaction
+// ("Building the app"), and everything else the outside systems that use them in a journey require, grouped by the
+// part that provides them.
+const buildChannels = new Set(journeys.flatMap((j) => j.steps.filter((st) => !st.ts.length).flatMap((st) => st.services.map((v) => v.s.channel))));
+const buildIfaces = new Set(interfaces.filter((i) => list(i.extensions?.realises).some((ch) => buildChannels.has(ch))).map((i) => i.id));
+const inJourneys = new Set([...behind.values()].flatMap(({ seq }) => seq.participants.map((p) => p.id)));
+const builders = arc.elements.filter((e) => e.kind === "actor" && e.type === "system" && inJourneys.has(e.id) && list(e.requires).some((id) => buildIfaces.has(id)));
+for (const u of builders) for (const id of list(u.requires)) buildIfaces.add(id);
+const building = blocks
+  .map(({ bb, offers }) => ({ bb, offers: offers.filter(({ i }) => buildIfaces.has(i.id)).map((o) => ({ ...o, by: [...builders.filter((u) => list(u.requires).includes(o.i.id)), ...o.parts] })) }))
+  .filter((b) => b.offers.length);
 const siteOf = (bb) => ({ addresses: addressesOf(bb), repo: bb.extensions?.repo });
 // Each part keeps one colour on the whole page: in the site map and in the flows.
 const PALETTE = ["#2563eb", "#0d9488", "#9333ea", "#ea580c", "#db2777", "#65a30d"];
@@ -384,8 +395,8 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
     ].filter(Boolean);
     M.push(`- **${md([L(bb.title, arcUrl(bb))])}:** ${job(bb)} ${where.join(" · ")}`);
   }
-  M.push("", `## ${meta.reading.heading}`, "", meta.reading.intro, "", example, "", meta.notYet.explained, "");
-  M.push(`## ${meta.experiences.heading}`, "", intro.experiences, "");
+  M.push("", `## ${meta.experiences.heading}`, "", intro.experiences, "");
+  M.push(`### ${meta.reading.heading}`, "", meta.reading.intro, "", example, "", meta.notYet.explained, "");
   for (const j of shownJourneys) {
     M.push(`### ${md([L(j.x.title, pdtUrl(j.x))])}`, "", prose(j.x), "");
     M.push(`Mainly for ${lower(j.core.title)}; also involves ${names(j.roles.map((r) => ({ title: lower(r.title) })))}. What they get: ${sentence(j.x["value-proposition"])}`, "");
@@ -407,6 +418,13 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
   for (const f of scenarios) {
     M.push(`### ${md([L(f.sc.title, arcUrl(f.sc))])}`, "", prose(f.sc), "");
     for (const l of sequenceLines(f)) M.push(`1. ${l}`);
+    M.push("");
+  }
+  M.push(`## ${meta.building.heading}`, "", meta.building.intro, "");
+  for (const { bb, offers } of building) {
+    const where = addressesOf(bb);
+    M.push(`### ${md([L(bb.title, arcUrl(bb))])}${where.length ? ` (${where.map((a) => `[${a}](https://${a}/)`).join(", ")})` : ""}`, "");
+    for (const { i, by } of offers) M.push(`- **${i.title}:** ${prose(i)} ${meta.building.usedBy} ${names(by)}.`);
     M.push("");
   }
   M.push("", `## ${meta.ideas.heading}`, "", meta.ideas.intro, "");
@@ -536,21 +554,31 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
           })
           .join("")}</ul>
       </section>
-      <section aria-labelledby="reading-h" class="reading">
-        <h2 class="section" id="reading-h">${esc(meta.reading.heading)}</h2>
-        <p class="lead">${esc(meta.reading.intro)}</p>
-        <p class="example">${esc(example)}</p>
-        <p class="not-yet">${esc(meta.notYet.explained)}</p>
-      </section>
       <section aria-labelledby="experiences-h">
         <h2 class="section" id="experiences-h">${esc(meta.experiences.heading)}</h2>
-        <p class="lead">${esc(intro.experiences)}</p>${journeysHtml}
+        <p class="lead">${esc(intro.experiences)}</p>
+        <div class="reading">
+          <h3 id="reading-h">${esc(meta.reading.heading)}</h3>
+          <p>${esc(meta.reading.intro)}</p>
+          <p class="example">${esc(example)}</p>
+          <p class="not-yet">${esc(meta.notYet.explained)}</p>
+        </div>${journeysHtml}
       </section>
       <section aria-labelledby="together-h">
         <h2 class="section" id="together-h">${esc(meta.together.heading)}</h2>
         <p class="lead">${esc(meta.together.intro)}</p>
         <ul class="together">${scenarios
           .map((f) => `<li><h3><a href="${esc(arcUrl(f.sc))}">${esc(f.sc.title)}</a></h3><p>${esc(prose(f.sc))}</p>${sequenceSvg(f)}</li>`)
+          .join("")}</ul>
+      </section>
+      <section aria-labelledby="building-h">
+        <h2 class="section" id="building-h">${esc(meta.building.heading)}</h2>
+        <p class="lead">${esc(meta.building.intro)}</p>
+        <ul class="building">${building
+          .map(({ bb, offers }) => {
+            const where = addressesOf(bb);
+            return `<li style="--c:${colourOf(bb.id)}"><h3><a href="${esc(arcUrl(bb))}">${esc(bb.title)}</a>${where.map((a) => ` <a class="where" href="https://${esc(a)}/">${esc(a)}</a>`).join("")}</h3><ul>${offers.map(({ i, by }) => `<li><strong>${esc(i.title)}:</strong> ${esc(prose(i))} <span class="meta">${esc(meta.building.usedBy)} ${esc(names(by))}.</span></li>`).join("")}</ul></li>`;
+          })
           .join("")}</ul>
       </section>
       <section aria-labelledby="ideas-h">

@@ -140,7 +140,7 @@ x-realises: ch-direct-start
 ### Listing
 
 How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether
-its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap below, with the risk it carries (`risk-one-owner`).
+its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap of this interface, with the risk it carries (`risk-one-owner`).
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
@@ -159,7 +159,7 @@ x-risk: risk-one-owner
 
 A thank-you and feedback in one click from the catalog or an app, counted openly and passed on to the creator. The
 interface stays the same when its realisation changes. No person has to act for thanks to arrive. What still waits
-on the platform owner is recorded as a gap below, with the risk it carries (`risk-one-owner`).
+on the platform owner is recorded as a gap of this interface, with the risk it carries (`risk-one-owner`).
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
