@@ -1,8 +1,8 @@
 /* The overview (/docs/overview/, scripts/overview.mjs), on top of start.css: one card per experience with its steps,
    each service with its status and the parts of the system that deliver it, then the parts themselves. */
-.hero .narrative { margin: 1.4rem 0 0; padding: 0.9rem 1.1rem; max-width: 40rem; border-left: 3px solid #93c5fd; background: rgb(255 255 255 / 0.06); border-radius: 0 0.75rem 0.75rem 0; }
-.hero .narrative a { color: #e2e8f0; text-decoration: none; }
-.hero .narrative a:hover { text-decoration: underline; }
+.narrative { margin: 2rem 0 0; padding: 0.9rem 1.1rem; max-width: 44rem; border-left: 3px solid var(--lc-accent); background: var(--lc-tint); border-radius: 0 0.75rem 0.75rem 0; }
+.narrative a { color: var(--lc-text); text-decoration: none; }
+.narrative a:hover { text-decoration: underline; }
 
 .overview section { padding: 3rem 0 0; }
 .overview p { line-height: 1.5; }
@@ -61,7 +61,7 @@
 .roles li { padding: 0.8rem 0.95rem; border-radius: 0.85rem; background: var(--lc-tint); }
 .roles span { display: block; margin-top: 0.25rem; font-size: 0.92rem; color: var(--lc-muted); }
 @media (max-width: 48rem) { .roles { grid-template-columns: 1fr; } }
-.hero .narrative span { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #93c5fd; margin-bottom: 0.3rem; }
+.narrative span { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lc-accent); margin-bottom: 0.3rem; }
 .hero .status-line { margin-top: 1rem; font-size: 1rem; color: #e2e8f0; }
 .gets, .how { margin: 0.15rem 0 0; font-size: 0.9rem; color: var(--lc-muted); }
 .reading .example { padding: 0.8rem 1rem; border-radius: 0.85rem; background: var(--lc-tint); max-width: 44rem; }
@@ -93,10 +93,10 @@ a.status { text-decoration: none; }
 .service.idea { background: transparent; border: 1.5px dashed var(--lc-muted); border-left-width: 1.5px; }
 .offers .not-yet { display: block; }
 /* The page guide in the hero and the site map in the parts. */
-.hero .guide { margin: 1.2rem 0 0; max-width: 44rem; font-size: 0.95rem; color: #cbd5e1; }
-.hero .guide span { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #93c5fd; margin-bottom: 0.3rem; }
-.hero .guide ul { display: grid; gap: 0.2rem; }
-.hero .guide a { color: #e2e8f0; font-weight: 600; }
+.guide { margin: 1rem 0 0; max-width: 44rem; font-size: 0.95rem; color: var(--lc-muted); }
+.guide span { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lc-accent); margin-bottom: 0.3rem; }
+.guide ul { display: grid; gap: 0.2rem; }
+.guide a { color: var(--lc-text); font-weight: 600; }
 .parts .where { font-size: 0.85rem; }
 /* The flows: sequence diagrams drawn by the generator. Each part keeps its colour (--c) from the site map. */
 .parts li { border-top: 3px solid var(--c, var(--lc-border)); }
@@ -130,3 +130,8 @@ a.status { text-decoration: none; }
 .documents li { padding: 0.9rem 1rem; border-radius: 0.85rem; border: 1px solid var(--lc-border); background: var(--lc-card); }
 .documents span { display: block; margin-top: 0.25rem; font-size: 0.92rem; color: var(--lc-muted); }
 @media (max-width: 48rem) { .documents { grid-template-columns: 1fr; } }
+/* The vision on top: the claim in two colours, a paragraph, the link. */
+.hero h1 .second { color: #93c5fd; }
+.hero .vision-link { display: inline-block; margin-top: 1.1rem; color: #e2e8f0; }
+/* The cut in the German page: from here on the page comes from the English models. */
+.cut { margin: 2.2rem 0 0; padding: 0.7rem 1rem; border-top: 2px dashed var(--lc-border); border-bottom: 2px dashed var(--lc-border); color: var(--lc-muted); font-size: 0.95rem; max-width: 44rem; }

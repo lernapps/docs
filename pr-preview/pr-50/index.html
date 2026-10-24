@@ -1,12 +1,12 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="light dark">
-  <title>How lernapps.net works – lernapps.net</title>
-  <meta name="description" content="Why the platform exists, which parts it is built from, what job each part does, and how people use them. For engineers and tech leads who work on the platform or want to understand it before they read its two models. The platform design says who takes part and what they give each other; the architecture says how the system is built.">
+  <title>So funktioniert lernapps.net – lernapps.net</title>
+  <meta name="description" content="Warum es die Plattform gibt, aus welchen Teilen sie besteht, welche Aufgabe jeder Teil hat und wie Menschen sie nutzen. Für Engineers und Tech Leads, die an der Plattform arbeiten oder sie verstehen wollen, bevor sie ihre beiden Modelle lesen. Das Plattform-Design sagt, wer mitmacht und was sie einander geben; die Architektur sagt, wie das System gebaut ist.">
   <link rel="canonical" href="https://lernapps.net/docs/">
   <link rel="stylesheet" href="stil.css">
   <link rel="stylesheet" href="start.css">
@@ -46,24 +46,30 @@
     <nav class="la-nav" aria-label="Hauptnavigation"><ul><li><a href="/apps/">Apps finden</a></li><li><a href="/apps/build/">App bauen</a></li><li><a href="/tooling/">Tooling</a></li><li><a href="/features/">Features</a></li><li><a href="/docs/pr-preview/pr-50/" aria-current="page">Darum!</a></li><li><a href="/join/">Mitmachen</a></li><li class="la-lang"><a href="/docs/pr-preview/pr-50/en/" hreflang="en" lang="en" data-la-lang="en" aria-label="Language: English">English</a></li></ul></nav>
   </div>
 </header>
-<p class="la-fallback" lang="de">Diese Seite gibt es nicht auf Deutsch.</p>
   <main id="main-content" tabindex="-1">
     <header class="hero">
       <div class="wrap">
-        <div class="eyebrow">lernapps.net · Docs</div>
-        <h1>How lernapps.net works</h1>
-        <p>Why the platform exists, which parts it is built from, what job each part does, and how people use them. For engineers and tech leads who work on the platform or want to understand it before they read its two models. The platform design says who takes part and what they give each other; the architecture says how the system is built.</p>
-        <blockquote class="narrative"><span>The goal, in the platform design's words:</span> <a href="platform-design/#2-design/d1-ecosystem.pdt42.md:el-platform-lernapps">Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used under data protection law; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive: running it costs almost nothing, and thanks are what keep creators building.</a></blockquote>
-        <nav class="guide" aria-label="On this page:"><span>On this page:</span><ul><li><a href="#roles-h">Who takes part</a> – the people the platform is for and the systems it relies on; the journeys are told from their views.</li><li><a href="#parts-h">The parts and where they live</a> – the site map: each part's address, repository and job; the rest of the page names them.</li><li><a href="#reading-h">How to read a journey</a> – how a step, a service and a part connect; read this once before the journeys.</li><li><a href="#experiences-h">The journeys</a> – the platform from its users' view, step by step, with the part that helps at each step and the parts working together behind it.</li><li><a href="#together-h">How the parts work together</a> – the flows behind the journeys that no user sees, for those who run or change the system.</li><li><a href="#ideas-h">Ideas</a> – services the platform could offer later, each with an issue to discuss it.</li><li><a href="#blocks-h">For reference: the parts of the system</a> – every part with its interfaces, for looking something up.</li></ul></nav>
+        <div class="eyebrow">Die Vision</div>
+        <h1><span>Viele kleine Lösungen.</span> <span class="second">Eine große Veränderung.</span></h1>
+        <p>KI macht es leicht, genau die Lern-App zu bauen, die gerade gebraucht wird. Meist bleibt sie dort, wo sie entstanden ist. lernapps.net macht aus diesen Einzelstücken eine Veränderung für viele: auffindbar, frei nutzbar und so gebaut, dass sich niemand Sorgen machen muss.</p>
+        <a class="cta vision-link" href="vision/">Zur Vision (Englisch) →</a>
       </div>
     </header>
     <div class="wrap overview">
+      <section aria-labelledby="intro-h" class="intro">
+        <h2 class="section" id="intro-h">So funktioniert lernapps.net</h2>
+        <p class="lead">Warum es die Plattform gibt, aus welchen Teilen sie besteht, welche Aufgabe jeder Teil hat und wie Menschen sie nutzen. Für Engineers und Tech Leads, die an der Plattform arbeiten oder sie verstehen wollen, bevor sie ihre beiden Modelle lesen. Das Plattform-Design sagt, wer mitmacht und was sie einander geben; die Architektur sagt, wie das System gebaut ist.</p>
+        <nav class="guide" aria-label="Auf dieser Seite:"><span>Auf dieser Seite:</span><ul><li><a href="#roles-h">Who takes part</a> – die Menschen, für die es die Plattform gibt; die Journeys sind aus ihrer Sicht erzählt.</li><li><a href="#parts-h">The parts and where they live</a> – die Sitemap: Adresse, Repository und Aufgabe jedes Teils; der Rest der Seite nennt sie.</li><li><a href="#reading-h">How to read a journey</a> – wie Schritt, Service und Teil zusammenhängen; einmal lesen vor den Journeys.</li><li><a href="#experiences-h">The journeys</a> – die Plattform aus Sicht ihrer Nutzer, Schritt für Schritt, mit dem Teil, der hilft, und dem Zusammenspiel dahinter.</li><li><a href="#together-h">How the parts work together</a> – die Abläufe hinter den Journeys, die kein Nutzer sieht; für alle, die das System betreiben oder ändern.</li><li><a href="#ideas-h">Ideas</a> – Services, die die Plattform später anbieten könnte, jeweils mit einem Issue zur Diskussion.</li><li><a href="#blocks-h">For reference: the parts of the system</a> – jeder Teil mit seinen Schnittstellen, zum Nachschlagen.</li><li><a href="#read-on-h">Read on</a> – die Dokumente, aus denen diese Seite entsteht.</li></ul></nav>
+      </section>
+      <p class="cut">Ab hier auf Englisch: Der Rest dieser Seite wird aus dem Plattform-Design und der Architektur erzeugt, und die sind auf Englisch geschrieben.</p>
+      <div lang="en">
+      <blockquote class="narrative"><span>The goal, in the platform design's words:</span> <a href="platform-design/#2-design/d1-ecosystem.pdt42.md:el-platform-lernapps">Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used under data protection law; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive: running it costs almost nothing, and thanks are what keep creators building.</a></blockquote>
       <section aria-labelledby="roles-h">
         <h2 class="section" id="roles-h">Who takes part</h2>
         <p class="lead">The platform exists for these people. The journeys below are told from their views, so knowing them tells you whose problem a part solves.</p>
         <ul class="roles"><li><strong>Adopting adults</strong><span>Adults who come across apps built by others, browse them and bring them to their students or their own children: teachers and parents.</span></li><li><strong>App creators</strong><span>Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves.</span></li><li><strong>Students</strong><span>The learners the apps are built for.</span></li></ul>
-        <p class="lead around">The system relies on these systems outside it:</p>
-        <ul class="outside"><li>Creator's AI assistant: the AI tool a creator builds and lists an app with; it reads the guidance and runs the CLI</li><li>Renovate: dependency update service that keeps the versions the repositories use up to date</li><li>GoatCounter: hosted counting service for the platform's own pages</li><li>GitHub: repositories, issues, pull requests, Actions and Pages</li><li>E-mail: mail system that carries thanks and feedback</li><li>Creators' app repositories: the creators' own app repositories, whose workflows use the tooling's actions</li></ul>
+        <p class="lead around">What they bring themselves:</p>
+        <ul class="outside"><li>Creator's AI assistant: the AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI</li></ul>
       </section>
       <section aria-labelledby="parts-h">
         <h2 class="section" id="parts-h">The parts and where they live</h2>
@@ -175,6 +181,7 @@
       <footer class="sources">
         <p>Generated when the docs are built, from the platform design and the architecture. The build fails when a part of one names something the other does not have, so this page cannot drift from the two models. <a href="overview.md">This page as text</a></p>
       </footer>
+      </div>
     </div>
   </main>
 <footer class="la-footer" lang="de">

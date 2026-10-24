@@ -7,10 +7,10 @@
   <meta name="color-scheme" content="light dark">
   <title>How lernapps.net works – lernapps.net</title>
   <meta name="description" content="Why the platform exists, which parts it is built from, what job each part does, and how people use them. For engineers and tech leads who work on the platform or want to understand it before they read its two models. The platform design says who takes part and what they give each other; the architecture says how the system is built.">
-  <link rel="canonical" href="https://lernapps.net/docs/">
-  <link rel="stylesheet" href="stil.css">
-  <link rel="stylesheet" href="start.css">
-  <link rel="stylesheet" href="overview.css">
+  <link rel="canonical" href="https://lernapps.net/docs/en/">
+  <link rel="stylesheet" href="../stil.css">
+  <link rel="stylesheet" href="../start.css">
+  <link rel="stylesheet" href="../overview.css">
 <!-- lernapps-frame -->
 <meta name="robots" content="noindex">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
@@ -49,20 +49,25 @@
   <main id="main-content" tabindex="-1">
     <header class="hero">
       <div class="wrap">
-        <div class="eyebrow">lernapps.net · Docs</div>
-        <h1>How lernapps.net works</h1>
-        <p>Why the platform exists, which parts it is built from, what job each part does, and how people use them. For engineers and tech leads who work on the platform or want to understand it before they read its two models. The platform design says who takes part and what they give each other; the architecture says how the system is built.</p>
-        <blockquote class="narrative"><span>The goal, in the platform design's words:</span> <a href="platform-design/#2-design/d1-ecosystem.pdt42.md:el-platform-lernapps">Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used under data protection law; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive: running it costs almost nothing, and thanks are what keep creators building.</a></blockquote>
-        <nav class="guide" aria-label="On this page:"><span>On this page:</span><ul><li><a href="#roles-h">Who takes part</a> – the people the platform is for and the systems it relies on; the journeys are told from their views.</li><li><a href="#parts-h">The parts and where they live</a> – the site map: each part's address, repository and job; the rest of the page names them.</li><li><a href="#reading-h">How to read a journey</a> – how a step, a service and a part connect; read this once before the journeys.</li><li><a href="#experiences-h">The journeys</a> – the platform from its users' view, step by step, with the part that helps at each step and the parts working together behind it.</li><li><a href="#together-h">How the parts work together</a> – the flows behind the journeys that no user sees, for those who run or change the system.</li><li><a href="#ideas-h">Ideas</a> – services the platform could offer later, each with an issue to discuss it.</li><li><a href="#blocks-h">For reference: the parts of the system</a> – every part with its interfaces, for looking something up.</li></ul></nav>
+        <div class="eyebrow">The vision</div>
+        <h1><span>Many small solutions.</span> <span class="second">One real change.</span></h1>
+        <p>AI makes it easy to build exactly the learning app that is needed right now. Mostly it stays where it was made. lernapps.net turns these one-offs into a change for many: easy to find, free to use and built so that no one has to worry.</p>
+        <a class="cta vision-link" href="vision/">To the vision →</a>
       </div>
     </header>
     <div class="wrap overview">
+      <section aria-labelledby="intro-h" class="intro">
+        <h2 class="section" id="intro-h">How lernapps.net works</h2>
+        <p class="lead">Why the platform exists, which parts it is built from, what job each part does, and how people use them. For engineers and tech leads who work on the platform or want to understand it before they read its two models. The platform design says who takes part and what they give each other; the architecture says how the system is built.</p>
+        <nav class="guide" aria-label="On this page:"><span>On this page:</span><ul><li><a href="#roles-h">Who takes part</a> – the people the platform is for and the systems it relies on; the journeys are told from their views.</li><li><a href="#parts-h">The parts and where they live</a> – the site map: each part's address, repository and job; the rest of the page names them.</li><li><a href="#reading-h">How to read a journey</a> – how a step, a service and a part connect; read this once before the journeys.</li><li><a href="#experiences-h">The journeys</a> – the platform from its users' view, step by step, with the part that helps at each step and the parts working together behind it.</li><li><a href="#together-h">How the parts work together</a> – the flows behind the journeys that no user sees, for those who run or change the system.</li><li><a href="#ideas-h">Ideas</a> – services the platform could offer later, each with an issue to discuss it.</li><li><a href="#blocks-h">For reference: the parts of the system</a> – every part with its interfaces, for looking something up.</li><li><a href="#read-on-h">Read on</a> – the documents this page is generated from.</li></ul></nav>
+      </section>
+      <blockquote class="narrative"><span>The goal, in the platform design's words:</span> <a href="platform-design/#2-design/d1-ecosystem.pdt42.md:el-platform-lernapps">Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used under data protection law; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive: running it costs almost nothing, and thanks are what keep creators building.</a></blockquote>
       <section aria-labelledby="roles-h">
         <h2 class="section" id="roles-h">Who takes part</h2>
         <p class="lead">The platform exists for these people. The journeys below are told from their views, so knowing them tells you whose problem a part solves.</p>
         <ul class="roles"><li><strong>Adopting adults</strong><span>Adults who come across apps built by others, browse them and bring them to their students or their own children: teachers and parents.</span></li><li><strong>App creators</strong><span>Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves.</span></li><li><strong>Students</strong><span>The learners the apps are built for.</span></li></ul>
-        <p class="lead around">The system relies on these systems outside it:</p>
-        <ul class="outside"><li>Creator's AI assistant: the AI tool a creator builds and lists an app with; it reads the guidance and runs the CLI</li><li>Renovate: dependency update service that keeps the versions the repositories use up to date</li><li>GoatCounter: hosted counting service for the platform's own pages</li><li>GitHub: repositories, issues, pull requests, Actions and Pages</li><li>E-mail: mail system that carries thanks and feedback</li><li>Creators' app repositories: the creators' own app repositories, whose workflows use the tooling's actions</li></ul>
+        <p class="lead around">What they bring themselves:</p>
+        <ul class="outside"><li>Creator's AI assistant: the AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI</li></ul>
       </section>
       <section aria-labelledby="parts-h">
         <h2 class="section" id="parts-h">The parts and where they live</h2>
@@ -169,10 +174,10 @@
       <section aria-labelledby="read-on-h" class="read-on">
         <h2 class="section" id="read-on-h">Read on</h2>
         <p class="lead">This page is the way in. Everything on it comes from the documents below; follow them for the full picture, in the depth each one has.</p>
-        <ul class="documents"><li><a href="vision/"><strong>Vision</strong></a><span>Why lernapps.net exists: the problem, what it does, its principles and what it is not.</span></li><li><a href="platform-design/"><strong>Platform design</strong></a><span>Who takes part and what they give each other: roles, transactions, services, journeys and the MVP, as a pdt42 model.</span></li><li><a href="about/"><strong>Organisation</strong></a><span>Who carries lernapps.net and what for: objectives, risks, capabilities and products of an undertaking no one earns money with, as a biz42 model.</span></li><li><a href="architecture/"><strong>Architecture</strong></a><span>How the system is built: quality goals, building blocks, flows, deployment, decisions and risks, as an arc42 model.</span></li><li><a href="llms.txt"><strong>llms.txt</strong></a><span>For AI assistants: where everything is and how to read the models with their CLIs, element by element.</span></li></ul>
+        <ul class="documents"><li><a href="vision/"><strong>Vision</strong></a><span>Why lernapps.net exists: the problem, what it does, its principles and what it is not.</span></li><li><a href="platform-design/"><strong>Platform design</strong></a><span>Who takes part and what they give each other: roles, transactions, services, journeys and the MVP, as a pdt42 model.</span></li><li><a href="about/"><strong>Organisation</strong></a><span>Who carries lernapps.net and what for: objectives, risks, capabilities and products of an undertaking no one earns money with, as a biz42 model.</span></li><li><a href="architecture/"><strong>Architecture</strong></a><span>How the system is built: quality goals, building blocks, flows, deployment, decisions and risks, as an arc42 model.</span></li><li><a href="../llms.txt"><strong>llms.txt</strong></a><span>For AI assistants: where everything is and how to read the models with their CLIs, element by element.</span></li></ul>
       </section>
       <footer class="sources">
-        <p>Generated when the docs are built, from the platform design and the architecture. The build fails when a part of one names something the other does not have, so this page cannot drift from the two models. <a href="overview.md">This page as text</a></p>
+        <p>Generated when the docs are built, from the platform design and the architecture. The build fails when a part of one names something the other does not have, so this page cannot drift from the two models. <a href="../overview.md">This page as text</a></p>
       </footer>
     </div>
   </main>

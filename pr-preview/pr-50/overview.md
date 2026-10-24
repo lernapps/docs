@@ -1,4 +1,10 @@
-# How lernapps.net works
+# Many small solutions. One real change.
+
+AI makes it easy to build exactly the learning app that is needed right now. Mostly it stays where it was made. lernapps.net turns these one-offs into a change for many: easy to find, free to use and built so that no one has to worry.
+
+[To the vision](vision/)
+
+## How lernapps.net works
 
 Why the platform exists, which parts it is built from, what job each part does, and how people use them. For engineers and tech leads who work on the platform or want to understand it before they read its two models. The platform design says who takes part and what they give each other; the architecture says how the system is built.
 
@@ -13,6 +19,7 @@ On this page:
 - **How the parts work together:** the flows behind the journeys that no user sees, for those who run or change the system.
 - **Ideas:** services the platform could offer later, each with an issue to discuss it.
 - **For reference: the parts of the system:** every part with its interfaces, for looking something up.
+- **Read on:** the documents this page is generated from.
 
 ## Who takes part
 
@@ -22,14 +29,9 @@ The platform exists for these people. The journeys below are told from their vie
 - **App creators:** Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves.
 - **Students:** The learners the apps are built for.
 
-The system relies on these systems outside it:
+What they bring themselves:
 
-- Creator's AI assistant: the AI tool a creator builds and lists an app with; it reads the guidance and runs the CLI
-- Renovate: dependency update service that keeps the versions the repositories use up to date
-- GoatCounter: hosted counting service for the platform's own pages
-- GitHub: repositories, issues, pull requests, Actions and Pages
-- E-mail: mail system that carries thanks and feedback
-- Creators' app repositories: the creators' own app repositories, whose workflows use the tooling's actions
+- Creator's AI assistant: the AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI
 
 ## The parts and where they live
 
