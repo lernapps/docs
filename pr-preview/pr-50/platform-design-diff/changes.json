@@ -1,13 +1,13 @@
 {
   "version": 1,
   "base": {
-    "label": "53992c1dfef56e78c2f7de15fe7b8464a45a1b46",
-    "commit": "53992c1dfef56e78c2f7de15fe7b8464a45a1b46"
+    "label": "a479584cc9c04ff6a7d11c822ebf96c271346a81",
+    "commit": "a479584cc9c04ff6a7d11c822ebf96c271346a81"
   },
   "head": {
-    "label": "38c9391e711b5cc637681b4ec010f5cceb9070a0"
+    "label": "fcf791649740ba8d93593e78131b38670bece881"
   },
-  "acceptanceBase": "53992c1dfef56e78c2f7de15fe7b8464a45a1b46",
+  "acceptanceBase": "a479584cc9c04ff6a7d11c822ebf96c271346a81",
   "untracked": [],
   "accepted": false,
   "findings": [
@@ -31,6 +31,22 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "2-design/d5-transactions.pdt42.md",
+      "line": 64,
+      "elementId": "t-confirm-fitness",
+      "message": "Block 't-confirm-fitness' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "2-design/d5-transactions.pdt42.md",
+      "line": 104,
+      "elementId": "t-give-feedback",
+      "message": "Block 't-give-feedback' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "2-design/d5-transactions.pdt42.md",
       "line": 310,
       "elementId": "ch-listing",
       "message": "Block 'ch-listing' changed without changing its section prose."
@@ -38,10 +54,10 @@
     {
       "kind": "block-without-prose-change",
       "severity": "warning",
-      "file": "2-design/d7-experiences.pdt42.md",
-      "line": 22,
-      "elementId": "x-app-in-minutes",
-      "message": "Block 'x-app-in-minutes' changed without changing its section prose."
+      "file": "2-design/d5-transactions.pdt42.md",
+      "line": 346,
+      "elementId": "ch-fitness-signal",
+      "message": "Block 'ch-fitness-signal' changed without changing its section prose."
     }
   ],
   "model": {
@@ -112,6 +128,96 @@
         }
       },
       {
+        "id": "t-confirm-fitness",
+        "kind": "transaction",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "value-unit",
+            "before": "A signal of fitness for use: frontend-only, no installation, no sign-up",
+            "after": "A signal of fitness for use: sends nothing to third parties, runs in the browser only, needs no installation or sign-up"
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 64
+        },
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 64
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Transactions Board: Creators and adults",
+            "Confirm an app may be used"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "t-use-in-class",
+        "kind": "transaction",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "channel",
+            "before": "ch-feedback",
+            "after": "ch-creator-insight"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 84
+        },
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 84
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Transactions Board: Creators and adults",
+            "Use an app in class"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "t-give-feedback",
+        "kind": "transaction",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "value-unit",
+            "before": "A short feedback note from one class",
+            "after": "Structured feedback from one class"
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 104
+        },
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 104
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Transactions Board: Creators and adults",
+            "Give feedback from classroom use"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "t-bring-app",
         "kind": "transaction",
         "status": "modified",
@@ -120,6 +226,11 @@
             "name": "channel",
             "before": "ch-collections",
             "after": "ch-direct-start"
+          },
+          {
+            "name": "value-unit",
+            "before": "Access to one app or a collection",
+            "after": "Access to one app"
           }
         ],
         "proseChanged": true,
@@ -172,6 +283,45 @@
         }
       },
       {
+        "id": "ch-fitness-signal",
+        "kind": "channel",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "components",
+            "before": [
+              "Whether the app sends anything to third parties, checked rather than declared",
+              "Whether the app accesses only its own data in the browser, checked",
+              "Whether installation or sign-up is needed"
+            ],
+            "after": [
+              "Whether the app sends anything to third parties, checked rather than declared",
+              "Whether the app accesses only its own data in the browser, checked",
+              "Whether installation or sign-up is needed",
+              "Served under lernapps.net, under one privacy notice that covers every listed app"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 346
+        },
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 346
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Channels",
+            "Visible fitness for use"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "ch-direct-start",
         "kind": "channel",
         "status": "added",
@@ -179,7 +329,7 @@
         "proseChanged": true,
         "head": {
           "file": "2-design/d5-transactions.pdt42.md",
-          "line": 363
+          "line": 364
         },
         "section": {
           "file": "2-design/d5-transactions.pdt42.md",
@@ -192,6 +342,26 @@
         }
       },
       {
+        "id": "ch-creator-insight",
+        "kind": "channel",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 418
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Channels",
+            "Use and praise made visible to the creator"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "ch-guidance",
         "kind": "channel",
         "status": "added",
@@ -199,7 +369,7 @@
         "proseChanged": true,
         "head": {
           "file": "2-design/d5-transactions.pdt42.md",
-          "line": 417
+          "line": 435
         },
         "section": {
           "file": "2-design/d5-transactions.pdt42.md",
@@ -245,6 +415,11 @@
         "kind": "service",
         "status": "modified",
         "attributes": [
+          {
+            "name": "channel",
+            "before": "ch-feedback",
+            "after": "ch-creator-insight"
+          },
           {
             "name": "supports",
             "before": [
@@ -391,7 +566,7 @@
             ]
           }
         ],
-        "proseChanged": false,
+        "proseChanged": true,
         "base": {
           "file": "2-design/d7-experiences.pdt42.md",
           "line": 22
@@ -513,6 +688,22 @@
         "status": "added",
         "edge": {
           "from": "s-use-insight",
+          "to": "ch-creator-insight",
+          "relation": "channel"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "s-use-insight",
+          "to": "ch-feedback",
+          "relation": "channel"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "s-use-insight",
           "to": "t-thank-creator-adult",
           "relation": "supports"
         }
@@ -530,6 +721,22 @@
         "edge": {
           "from": "t-bring-app",
           "to": "ch-direct-start",
+          "relation": "channel"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "t-use-in-class",
+          "to": "ch-creator-insight",
+          "relation": "channel"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "t-use-in-class",
+          "to": "ch-feedback",
           "relation": "channel"
         }
       },
@@ -590,8 +797,8 @@
       },
       {
         "file": "2-design/d5-transactions.pdt42.md",
-        "added": 2,
-        "modified": 2,
+        "added": 3,
+        "modified": 6,
         "removed": 0
       },
       {

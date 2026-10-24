@@ -1,17 +1,25 @@
 {
   "version": 1,
   "base": {
-    "label": "53992c1dfef56e78c2f7de15fe7b8464a45a1b46",
-    "commit": "53992c1dfef56e78c2f7de15fe7b8464a45a1b46"
+    "label": "a479584cc9c04ff6a7d11c822ebf96c271346a81",
+    "commit": "a479584cc9c04ff6a7d11c822ebf96c271346a81"
   },
   "head": {
-    "label": "38c9391e711b5cc637681b4ec010f5cceb9070a0"
+    "label": "fcf791649740ba8d93593e78131b38670bece881"
   },
-  "acceptanceBase": "53992c1dfef56e78c2f7de15fe7b8464a45a1b46",
+  "acceptanceBase": "a479584cc9c04ff6a7d11c822ebf96c271346a81",
   "untracked": [],
   "accepted": false,
   "hasBlockingFindings": true,
   "findings": [
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/03-system-context.arc42.md",
+      "line": 178,
+      "elementId": "actor-renovate",
+      "message": "Block 'actor-renovate' changed without changing its section prose."
+    },
     {
       "kind": "block-without-prose-change",
       "severity": "warning",
@@ -40,15 +48,7 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 127,
-      "elementId": "if-served-apps",
-      "message": "Block 'if-served-apps' changed without changing its section prose."
-    },
-    {
-      "kind": "block-without-prose-change",
-      "severity": "warning",
-      "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 195,
+      "line": 197,
       "elementId": "if-guidance",
       "message": "Block 'if-guidance' changed without changing its section prose."
     },
@@ -56,15 +56,23 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 211,
+      "line": 213,
       "elementId": "if-tooling-cli",
       "message": "Block 'if-tooling-cli' changed without changing its section prose."
+    },
+    {
+      "kind": "prose-without-block-change",
+      "severity": "warning",
+      "file": "docs/arc42/05-building-blocks.arc42.md",
+      "line": 244,
+      "elementId": "if-app-actions",
+      "message": "Section prose changed without changing block 'if-app-actions' — it names 'Creator'."
     },
     {
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 274,
+      "line": 277,
       "elementId": "if-archetypes",
       "message": "Block 'if-archetypes' changed without changing its section prose."
     },
@@ -114,6 +122,14 @@
       {
         "kind": "block-without-prose-change",
         "severity": "warning",
+        "file": "docs/arc42/03-system-context.arc42.md",
+        "line": 178,
+        "elementId": "actor-renovate",
+        "message": "Block 'actor-renovate' changed without changing its section prose."
+      },
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
         "line": 61,
         "elementId": "if-home-pages",
@@ -139,15 +155,7 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 127,
-        "elementId": "if-served-apps",
-        "message": "Block 'if-served-apps' changed without changing its section prose."
-      },
-      {
-        "kind": "block-without-prose-change",
-        "severity": "warning",
-        "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 195,
+        "line": 197,
         "elementId": "if-guidance",
         "message": "Block 'if-guidance' changed without changing its section prose."
       },
@@ -155,20 +163,29 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 211,
+        "line": 213,
         "elementId": "if-tooling-cli",
         "message": "Block 'if-tooling-cli' changed without changing its section prose."
+      },
+      {
+        "kind": "prose-without-block-change",
+        "severity": "warning",
+        "file": "docs/arc42/05-building-blocks.arc42.md",
+        "line": 244,
+        "elementId": "if-app-actions",
+        "message": "Section prose changed without changing block 'if-app-actions' — it names 'Creator'."
       },
       {
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 274,
+        "line": 277,
         "elementId": "if-archetypes",
         "message": "Block 'if-archetypes' changed without changing its section prose."
       }
     ],
-    "untouched": [
+    "untouched": [],
+    "updated": [
       {
         "elementId": "if-models",
         "files": [
@@ -180,11 +197,39 @@
         ]
       }
     ],
-    "updated": [],
     "uncovered": []
   },
   "architecture": {
     "elements": [
+      {
+        "id": "actor-renovate",
+        "kind": "actor",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "description",
+            "before": "Dependency update service that moves the pinned commits",
+            "after": "Dependency update service that keeps the versions the repositories use up to date"
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 178
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 178
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "Renovate"
+          ],
+          "occurrence": 1
+        }
+      },
       {
         "id": "bb-website",
         "kind": "building-block",
@@ -255,8 +300,8 @@
           {
             "name": "extensions",
             "after": {
-              "realises": "ch-feedback",
-              "missing": "Visits to an app's page in the catalog are counted as totals, but only the platform owner sees them, not the app's creator."
+              "realises": "ch-creator-insight",
+              "missing-ch-creator-insight": "Only visits to an app's page in the catalog are counted, not the use of the app itself, and only the platform owner sees the totals."
             }
           }
         ],
@@ -358,14 +403,14 @@
             }
           }
         ],
-        "proseChanged": false,
+        "proseChanged": true,
         "base": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
           "line": 120
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 127
+          "line": 128
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -396,7 +441,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 143
+          "line": 144
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -416,8 +461,9 @@
           {
             "name": "extensions",
             "after": {
-              "realises": "ch-feedback",
-              "missing": "Thanks are not counted, and they reach the creator only if the platform owner passes them on."
+              "realises": "ch-feedback, ch-creator-insight",
+              "missing-ch-feedback": "Today a click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.",
+              "missing-ch-creator-insight": "Thanks reach the creator only if the platform owner passes them on."
             }
           }
         ],
@@ -428,7 +474,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 159
+          "line": 160
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -459,7 +505,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 195
+          "line": 197
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -490,7 +536,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 211
+          "line": 213
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -510,7 +556,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 227
+          "line": 229
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -518,6 +564,37 @@
             "Building Blocks",
             "Tooling",
             "Site actions"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "if-app-actions",
+        "kind": "interface",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [
+          {
+            "term": "Creator",
+            "element": "actor-creator",
+            "source": "element"
+          }
+        ],
+        "base": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 212
+        },
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 244
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "Tooling",
+            "App actions"
           ],
           "occurrence": 1
         }
@@ -541,7 +618,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 274
+          "line": 277
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -576,13 +653,38 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 289
+          "line": 292
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
           "headingPath": [
             "Building Blocks",
             "Docs"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "if-models",
+        "kind": "interface",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 273
+        },
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 309
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "Docs",
+            "Models"
           ],
           "occurrence": 1
         }
@@ -699,9 +801,15 @@
     "proseSections": [],
     "documents": [
       {
+        "file": "docs/arc42/03-system-context.arc42.md",
+        "added": 0,
+        "modified": 1,
+        "removed": 0
+      },
+      {
         "file": "docs/arc42/05-building-blocks.arc42.md",
         "added": 1,
-        "modified": 13,
+        "modified": 15,
         "removed": 0
       },
       {

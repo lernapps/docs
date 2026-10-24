@@ -62,3 +62,20 @@
 .roles span { display: block; margin-top: 0.25rem; font-size: 0.92rem; color: var(--lc-muted); }
 @media (max-width: 48rem) { .roles { grid-template-columns: 1fr; } }
 .hero .narrative span { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #93c5fd; margin-bottom: 0.3rem; }
+.hero .status-line { margin-top: 1rem; font-size: 1rem; color: #e2e8f0; }
+.gets, .how { margin: 0.15rem 0 0; font-size: 0.9rem; color: var(--lc-muted); }
+.reading .example { padding: 0.8rem 1rem; border-radius: 0.85rem; background: var(--lc-tint); max-width: 44rem; }
+.around { margin-top: 0.8rem; }
+.gaps .gap { padding: 0.9rem 1.1rem; border-radius: 1rem; border: 1px solid var(--lc-border); background: var(--lc-card); margin-bottom: 0.7rem; }
+.gaps .gap h3 { font-size: 1.05rem; margin: 0 0 0.3rem; }
+.gaps .gap p { margin: 0.25rem 0 0; font-size: 0.95rem; }
+.offers .meta { color: var(--lc-muted); }
+.closing p { max-width: 44rem; }
+.outside { display: grid; gap: 0.25rem; margin: 0 0 1rem; font-size: 0.92rem; color: var(--lc-muted); }
+.reference { padding: 3rem 0 0; }
+.reference > summary { cursor: pointer; list-style: none; }
+.reference > summary::-webkit-details-marker { display: none; }
+.reference > summary h2 { display: inline; }
+.reference > summary::after { content: " ▸"; color: var(--lc-muted); }
+.reference[open] > summary::after { content: " ▾"; }
+footer.sources { padding: 2.5rem 0 1rem; font-size: 0.88rem; }
