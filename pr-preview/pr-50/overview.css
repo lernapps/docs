@@ -92,3 +92,9 @@ a.status { text-decoration: none; }
 .reading .not-yet { max-width: 44rem; }
 .service.idea { background: transparent; border: 1.5px dashed var(--lc-muted); border-left-width: 1.5px; }
 .offers .not-yet { display: block; }
+/* The page guide in the hero and the site map in the parts. */
+.hero .guide { margin: 1.2rem 0 0; max-width: 44rem; font-size: 0.95rem; color: #cbd5e1; }
+.hero .guide span { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #93c5fd; margin-bottom: 0.3rem; }
+.hero .guide ul { display: grid; gap: 0.2rem; }
+.hero .guide a { color: #e2e8f0; font-weight: 600; }
+.parts .where { font-size: 0.85rem; }

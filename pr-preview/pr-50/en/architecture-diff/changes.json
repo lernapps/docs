@@ -5,7 +5,7 @@
     "commit": "a479584cc9c04ff6a7d11c822ebf96c271346a81"
   },
   "head": {
-    "label": "9bc6aeadfb8ca9f12d15aa3b4d570370d834df41"
+    "label": "bdad734b655b36af6fe3969fc0a9184178e8501f"
   },
   "acceptanceBase": "a479584cc9c04ff6a7d11c822ebf96c271346a81",
   "untracked": [],
@@ -19,14 +19,6 @@
       "line": 102,
       "elementId": "actor-ai-assistant",
       "message": "Block 'actor-ai-assistant' changed without changing its section prose."
-    },
-    {
-      "kind": "block-without-prose-change",
-      "severity": "warning",
-      "file": "docs/arc42/03-system-context.arc42.md",
-      "line": 178,
-      "elementId": "actor-renovate",
-      "message": "Block 'actor-renovate' changed without changing its section prose."
     },
     {
       "kind": "block-without-prose-change",
@@ -174,14 +166,6 @@
         "line": 102,
         "elementId": "actor-ai-assistant",
         "message": "Block 'actor-ai-assistant' changed without changing its section prose."
-      },
-      {
-        "kind": "block-without-prose-change",
-        "severity": "warning",
-        "file": "docs/arc42/03-system-context.arc42.md",
-        "line": 178,
-        "elementId": "actor-renovate",
-        "message": "Block 'actor-renovate' changed without changing its section prose."
       },
       {
         "kind": "block-without-prose-change",
@@ -385,7 +369,7 @@
             "after": "Dependency update service that keeps the versions the repositories use up to date"
           }
         ],
-        "proseChanged": false,
+        "proseChanged": true,
         "base": {
           "file": "docs/arc42/03-system-context.arc42.md",
           "line": 178
@@ -1146,10 +1130,20 @@
       {
         "id": "rs-block-update",
         "kind": "runtime-scenario",
-        "status": "unchanged",
-        "attributes": [],
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "title",
+            "before": "A building block gets a new commit",
+            "after": "The platform passes on its updates"
+          },
+          {
+            "name": "trigger",
+            "before": "A merge to the main line of the website, the tooling or the app templates",
+            "after": "The site frame, the tooling or the app templates improve"
+          }
+        ],
         "proseChanged": true,
-        "proseMentions": [],
         "base": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
           "line": 182
@@ -1162,7 +1156,31 @@
           "file": "docs/arc42/06-runtime-view.arc42.md",
           "headingPath": [
             "Runtime View",
-            "A building block gets a new commit"
+            "The platform passes on its updates"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "concept-pinned-and-pulled",
+        "kind": "concept",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "docs/arc42/08-concepts.arc42.md",
+          "line": 59
+        },
+        "head": {
+          "file": "docs/arc42/08-concepts.arc42.md",
+          "line": 59
+        },
+        "section": {
+          "file": "docs/arc42/08-concepts.arc42.md",
+          "headingPath": [
+            "Cross-cutting Concepts",
+            "Pinned and pulled forward"
           ],
           "occurrence": 1
         }
@@ -1187,6 +1205,30 @@
           "headingPath": [
             "Architecture Decisions",
             "Serve a copy of every listed app"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "dec-pinned-by-commit",
+        "kind": "decision",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "docs/arc42/09-decisions.arc42.md",
+          "line": 111
+        },
+        "head": {
+          "file": "docs/arc42/09-decisions.arc42.md",
+          "line": 111
+        },
+        "section": {
+          "file": "docs/arc42/09-decisions.arc42.md",
+          "headingPath": [
+            "Architecture Decisions",
+            "Building blocks pinned by commit, kept current by Renovate"
           ],
           "occurrence": 1
         }
@@ -1415,6 +1457,25 @@
           "file": "docs/arc42/06-runtime-view.arc42.md",
           "line": 64
         }
+      },
+      {
+        "id": "rs-block-update-sequence",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "source",
+            "before": "sequenceDiagram\n    participant website as Website\n    participant tooling as Tooling\n    participant templates as App templates\n    participant catalog as Catalog\n    participant docs as Docs\n    participant renovate as Renovate\n    participant owner as Owner\n    website-->>renovate: new commit of the site frame\n    templates-->>renovate: new commit of the archetypes\n    tooling-->>renovate: new commit of the tooling\n    renovate->>catalog: pull request: new pins\n    renovate->>docs: pull request: new pin of the site frame\n    renovate->>tooling: pull request: new pins\n    owner->>catalog: merge, if not merged automatically",
+            "after": "sequenceDiagram\n    participant website as Website\n    participant tooling as Tooling\n    participant templates as App templates\n    participant catalog as Catalog\n    participant docs as Docs\n    participant renovate as Renovate\n    participant owner as Owner\n    website-->>renovate: the site frame improves\n    templates-->>renovate: the archetypes improve\n    tooling-->>renovate: the tooling improves\n    renovate->>catalog: pull request: new pins\n    renovate->>docs: pull request: new pin of the site frame\n    renovate->>tooling: pull request: new pins\n    owner->>catalog: merge, if not merged automatically"
+          }
+        ],
+        "base": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 191
+        },
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 191
+        }
       }
     ],
     "edges": [
@@ -1510,13 +1571,19 @@
       {
         "file": "docs/arc42/06-runtime-view.arc42.md",
         "added": 2,
-        "modified": 5,
+        "modified": 6,
         "removed": 2
+      },
+      {
+        "file": "docs/arc42/08-concepts.arc42.md",
+        "added": 0,
+        "modified": 1,
+        "removed": 0
       },
       {
         "file": "docs/arc42/09-decisions.arc42.md",
         "added": 0,
-        "modified": 2,
+        "modified": 3,
         "removed": 0
       },
       {
