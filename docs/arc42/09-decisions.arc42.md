@@ -101,8 +101,8 @@ x-source: lernapps/tooling and lernapps/app-templates architectures
 **Context.** The repositories use each other: the site frame, the tooling CLI and the archetypes. One owner cannot
 update every repository by hand.
 
-**Decision.** A repository uses another by a pinned commit (packages from git, actions by commit). Renovate opens a
-pull request in every repository when a pinned block gets a new commit.
+**Decision.** A repository uses another by a pinned commit (packages from git, actions by commit). When a pinned
+block improves, Renovate passes the improvement on as a pull request in every repository that uses it.
 
 **Consequences.** Every repository builds reproducibly, and updates arrive as pull requests that only need a merge.
 Rejected: published npm versions, which would need a release process.

@@ -171,8 +171,8 @@ requires: if-listing, if-app-actions, if-org-rules
 
 ## Renovate
 
-Renovate keeps the pins between the repositories current: it opens pull requests when the site frame, the tooling or
-the archetypes get a new commit.
+Renovate keeps the pins between the repositories current: when the site frame, the tooling or
+the archetypes improve, it passes the improvement on as a pull request in every repository that uses them.
 
 ```arc42
 :::actor

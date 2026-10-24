@@ -172,17 +172,17 @@ sequenceDiagram
     github-->>catalog: the same address serves the new copy
 ```
 
-## A building block gets a new commit
+## The platform passes on its updates
 
-The site frame, the tooling or the app templates get a new commit on their main line. Renovate, an update service, opens a
-pull request in every repository that uses the block at a fixed version; it is merged when the checks pass. Inside the tooling, a change of the
-guidance has been measured by its evaluations before this point.
+When the site frame, the tooling or the app templates improve, the platform passes the improvement on to every
+repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each
+one, and it is merged when the checks pass. An improvement of the guidance has been measured before it is passed on.
 
 ```arc42
 :::runtime-scenario
 id: rs-block-update
-title: A building block gets a new commit
-trigger: A merge to the main line of the website, the tooling or the app templates
+title: The platform passes on its updates
+trigger: The site frame, the tooling or the app templates improve
 involves: bb-website, bb-tooling, bb-app-templates, bb-catalog, bb-docs
 :::
 ```
@@ -205,9 +205,9 @@ sequenceDiagram
     participant docs as Docs
     participant renovate as Renovate
     participant owner as Owner
-    website-->>renovate: new commit of the site frame
-    templates-->>renovate: new commit of the archetypes
-    tooling-->>renovate: new commit of the tooling
+    website-->>renovate: the site frame improves
+    templates-->>renovate: the archetypes improve
+    tooling-->>renovate: the tooling improves
     renovate->>catalog: pull request: new pins
     renovate->>docs: pull request: new pin of the site frame
     renovate->>tooling: pull request: new pins

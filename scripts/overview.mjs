@@ -118,7 +118,17 @@ const stepsOf = (x) => {
   const loose = services.filter((s) => !placed.has(s.id)).map(serviceOf);
   return loose.length ? [{ ts: [], services: loose }, ...steps] : steps;
 };
-const journeys = experiences.map((x) => ({ x, core: pdtById.get(x["core-entity"]), roles: list(x.roles).map((id) => pdtById.get(id)), steps: stepsOf(x) }));
+// The trailing steps that the journey's own role receives (the "hear back" of a journey) are one entry from that
+// role's point of view: what it gets back.
+const getsBack = (x, steps) => {
+  let k = steps.length;
+  while (k > 0 && steps[k - 1].ts.length && steps[k - 1].ts.every((t) => t.to === x["core-entity"])) k--;
+  if (k === steps.length) return steps;
+  const back = steps.slice(k);
+  const services = [...new Map(back.flatMap((st) => st.services).map((v) => [v.s.id, v])).values()];
+  return [...steps.slice(0, k), { back: true, ts: back.flatMap((st) => st.ts), services }];
+};
+const journeys = experiences.map((x) => ({ x, core: pdtById.get(x["core-entity"]), roles: list(x.roles).map((id) => pdtById.get(id)), steps: getsBack(x, stepsOf(x)) }));
 // Steps an earlier journey already showed, with the same services, are one line that points back to it.
 const shownJourneys = (() => {
   const shown = new Map(); // transaction id → journey
@@ -126,7 +136,7 @@ const shownJourneys = (() => {
   return journeys.map((j) => {
     const steps = [];
     for (const st of j.steps) {
-      const earlier = st.ts.length && st.ts.every((t) => shown.has(t.id)) ? shown.get(st.ts[0].id) : null;
+      const earlier = !st.back && st.ts.length && st.ts.every((t) => shown.has(t.id)) ? shown.get(st.ts[0].id) : null;
       const prev = steps.at(-1);
       if (earlier && st.services.every((v) => seenServices.has(v.s.id))) {
         if (prev?.asIn === earlier) prev.ts.push(...st.ts);
@@ -162,6 +172,9 @@ const blocks = arc.elements
       });
     return { bb, offers, delivers: offers.some((o) => o.channels.length) };
   });
+// Where each part can be found: its addresses under lernapps.net (deployment view) and its repository.
+const addressesOf = (bb) =>
+  arc.elements.filter((e) => e.kind === "deployment-node" && e.parent && arcById.get(e.parent)?.type === "environment" && /lernapps\.net/.test(e.title) && list(e.hosts).includes(bb.id)).map((e) => e.title);
 const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) => o.outside)))];
 // How the parts work together: the runtime scenarios of the architecture that involve at least two parts; a
 // scenario named like a journey is left out, the journey itself tells it.
@@ -185,33 +198,41 @@ const md = (parts) => parts.map((p) => (typeof p === "string" ? p : `[${p.text}]
 const ht = (parts) => parts.map((p) => (typeof p === "string" ? esc(p) : `<a href="${esc(p.url)}">${esc(p.text)}</a>`)).join("");
 const join2 = (items, sep = ", ") => items.flatMap((it, k) => (k ? [sep, it] : [it]));
 const linksTo = (els, url) => join2(els.map((e) => L(e.title, url(e))));
+const names = (els) => els.map((e) => e.title).join(", "); // inside the journeys: names, not links
 
 // A service as a head and its lines; the second time a service appears, only a short form. An interface that does
 // not deliver its part yet becomes a dashed line.
 const makeService = () => {
   const seen = new Set();
   return (v, { idea = false } = {}) => {
-    const head = [L(v.s.title, pdtUrl(v.s))];
+    const head = [v.s.title];
     if (seen.has(v.s.id)) return { head, lines: [{ parts: [sentence(lower(firstSentence(prose(v.s)))), " ", meta.reading.seeAbove] }] };
     seen.add(v.s.id);
     const forWhom = list(v.s.for).map((id) => pdtById.get(id)).filter(Boolean);
-    const lines = [{ parts: [...(forWhom.length ? ["For ", ...linksTo(forWhom, pdtUrl), ": "] : []), prose(v.s)] }];
+    const lines = [{ parts: [...(forWhom.length ? [`For ${forWhom.map((r) => lower(r.title)).join(", ")}: `] : []), prose(v.s)] }];
     const done = v.delivery.filter((d) => !d.missing);
-    if (done.length) lines.push({ parts: [`${meta.reading.deliveredBy} `, ...join2(done.map(({ iface, block }) => L(`${iface.title} (${block.title})`, arcUrl(iface)))), "."] });
+    if (done.length) lines.push({ parts: [`${meta.reading.deliveredBy} ${done.map(({ iface, block }) => `${iface.title} (${block.title})`).join(", ")}.`] });
     for (const { iface, block, missing } of v.delivery.filter((d) => d.missing))
-      lines.push({ notYet: true, parts: [`${meta.notYet.label} `, L(`${iface.title} (${block.title})`, arcUrl(iface)), `: ${sentence(missing)}`] });
+      lines.push({ notYet: true, parts: [`${meta.notYet.label} ${iface.title} (${block.title}): ${sentence(missing)}`] });
     if (idea) {
-      if (v.channel) lines.push({ parts: [`${meta.ideas.channel} `, L(v.channel.title, pdtUrl(v.channel)), "."] });
-      if (list(v.s.supports).length) lines.push({ parts: [`${meta.ideas.wouldSupport} `, ...join2(list(v.s.supports).map((id) => L(pdtById.get(id)?.title ?? id, pdtUrl(pdtById.get(id))))), "."] });
+      if (list(v.s.supports).length) lines.push({ parts: [`${meta.ideas.wouldSupport} ${list(v.s.supports).map(title).join(", ")}.`] });
       const issues = issuesOf(v.s);
       if (issues.length) lines.push({ parts: [`${meta.ideas.issue} `, ...join2(issues.map((i) => L(i.text, i.url))), "."] });
     }
     return { head, lines };
   };
 };
-const stepLabel = (st) => (st.ts.length ? join2(st.ts.map((t) => [L(t.title, pdtUrl(t))]), [" · "]).flat() : [meta.reading.startsFrom]);
+const stepLabel = (st) =>
+  st.back
+    ? [`${fill(meta.reading.getsBack, { role: lower(title(st.ts[0].to)) })} ${[...new Set(st.ts.map((t) => lower(t["value-unit"] ?? t.title)))].join("; ")}.`]
+    : st.ts.length
+      ? [st.ts.map((t) => t.title).join(" · ")]
+      : [meta.reading.startsFrom];
+const title = (id) => pdtById.get(id)?.title ?? id;
+const outsideLine = (u) => `${u.title}: ${lower(u.description?.replace(/\s*\(pdt42[^)]*\)/, "") ?? "")}`;
+const siteOf = (bb) => ({ addresses: addressesOf(bb), repo: bb.extensions?.repo });
 const stepHow = (st) => (st.services.length || !st.ts.length || st.channel ? null : [meta.reading.insideApp]);
-const asInLine = (st) => [fill(meta.reading.asIn, { journey: st.asIn.title }), " ", ...join2(st.ts.map((t) => L(t.title, pdtUrl(t))), " · "), "."];
+const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })} ${st.ts.map((t) => t.title).join(" · ")}.`];
 
 // --- Markdown -------------------------------------------------------------------------------------------------------
 {
@@ -222,16 +243,26 @@ const asInLine = (st) => [fill(meta.reading.asIn, { journey: st.asIn.title }), "
     M.push(`${indent}- **${md(p.head)}**`);
     for (const l of p.lines) M.push(`${indent}  - ${l.notYet ? "┆ " : ""}${md(l.parts)}`);
   };
-  M.push(`# ${meta.title}`, "", meta.lead, "", `> ${meta.narrativeLabel} ${platform.narrative}`, "");
-  M.push(`## ${meta.roles.heading}`, "");
-  for (const r of roles) M.push(`- **${md([L(r.title, pdtUrl(r))])}:** ${firstSentence(prose(r))}`);
+  M.push(`# ${meta.title}`, "", meta.lead, "", `> ${meta.narrativeLabel} ${platform.narrative}`, "", meta.guide.heading, "");
+  for (const [, head, why] of meta.guide.items) M.push(`- **${head}:** ${why}`);
+  M.push("", `## ${meta.roles.heading}`, "", meta.roles.intro, "");
+  for (const r of roles) M.push(`- **${r.title}:** ${firstSentence(prose(r))}`);
+  M.push("", meta.roles.outsideIntro, "");
+  for (const u of outsideSystems) M.push(`- ${outsideLine(u)}`);
   M.push("", `## ${meta.parts.heading}`, "", meta.parts.intro, "");
-  for (const { bb } of blocks) M.push(`- **${md([L(bb.title, arcUrl(bb))])}:** ${job(bb)}`);
+  for (const { bb } of blocks) {
+    const { addresses, repo } = siteOf(bb);
+    const where = [
+      addresses.length ? `${meta.parts.address} ${addresses.map((a) => `[${a}](https://${a}/)`).join(", ")}` : meta.parts.noAddress,
+      repo ? `${meta.parts.repo} [${repo}](https://github.com/${repo})` : null,
+    ].filter(Boolean);
+    M.push(`- **${md([L(bb.title, arcUrl(bb))])}:** ${job(bb)} ${where.join(" · ")}`);
+  }
   M.push("", `## ${meta.reading.heading}`, "", meta.reading.intro, "", example, "", meta.notYet.explained, "");
   M.push(`## ${meta.experiences.heading}`, "", meta.experiences.intro, "");
   for (const j of shownJourneys) {
     M.push(`### ${md([L(j.x.title, pdtUrl(j.x))])}`, "", prose(j.x), "");
-    M.push(`Mainly for ${md([L(j.core.title, pdtUrl(j.core))])}; also involves ${md(linksTo(j.roles, pdtUrl))}. What they get: ${sentence(j.x["value-proposition"])}`, "");
+    M.push(`Mainly for ${lower(j.core.title)}; also involves ${names(j.roles.map((r) => ({ title: lower(r.title) })))}. What they get: ${sentence(j.x["value-proposition"])}`, "");
     for (const st of j.steps) {
       if (st.asIn) {
         M.push(`1. ${md(asInLine(st))}`);
@@ -248,9 +279,7 @@ const asInLine = (st) => [fill(meta.reading.asIn, { journey: st.asIn.title }), "
   for (const { sc, parts } of scenarios) M.push(`- **${md([L(sc.title, arcUrl(sc))])}.** ${prose(sc)} ${meta.together.parts} ${md(linksTo(parts, arcUrl))}.`);
   M.push("", `## ${meta.ideas.heading}`, "", meta.ideas.intro, "");
   for (const v of ideas) mdService(v, "", { idea: true });
-  M.push("", `## ${meta.blocks.heading}`, "", meta.blocks.intro, "", meta.blocks.outsideIntro, "");
-  for (const u of outsideSystems) M.push(`- ${md([L(u.title, arcUrl(u))])}: ${lower(u.description?.replace(/\s*\(pdt42[^)]*\)/, "") ?? "")}`);
-  M.push("");
+  M.push("", `## ${meta.blocks.heading}`, "", meta.blocks.intro, "");
   for (const [heading, intro, group] of [
     [meta.blocks.delivering, null, blocks.filter((b) => b.delivers)],
     [meta.blocks.supporting, meta.blocks.supportingIntro, blocks.filter((b) => !b.delivers)],
@@ -259,11 +288,11 @@ const asInLine = (st) => [fill(meta.reading.asIn, { journey: st.asIn.title }), "
     for (const { bb, offers } of group) {
       M.push(`#### ${md([L(bb.title, arcUrl(bb))])}${bb.extensions?.repo ? ` (${md([L(bb.extensions.repo, `https://github.com/${bb.extensions.repo}`)])})` : ""}`, "", prose(bb), "");
       for (const { i, services, notYet, parts, outside } of offers) {
-        M.push(`- **${md([L(i.title, arcUrl(i))])}:** ${prose(i)}`);
-        if (services.length) M.push(`  - ${meta.blocks.delivers} ${md(linksTo(services, pdtUrl))}`);
+        M.push(`- **${i.title}:** ${prose(i)}`);
+        if (services.length) M.push(`  - ${meta.blocks.delivers} ${names(services)}`);
         for (const m of notYet) M.push(`  - ┆ ${meta.notYet.label} ${sentence(m)}`);
-        if (parts.length) M.push(`  - ${meta.blocks.usedBy} ${md(linksTo(parts, arcUrl))}`);
-        if (outside.length) M.push(`  - ${meta.blocks.outside} ${md(linksTo(outside, arcUrl))}`);
+        if (parts.length) M.push(`  - ${meta.blocks.usedBy} ${names(parts)}`);
+        if (outside.length) M.push(`  - ${meta.blocks.outside} ${names(outside)}`);
       }
       M.push("");
     }
@@ -288,7 +317,7 @@ const asInLine = (st) => [fill(meta.reading.asIn, { journey: st.asIn.title }), "
         <article class="experience" aria-labelledby="${j.x.id}-h">
           <h3 id="${j.x.id}-h"><a href="${esc(pdtUrl(j.x))}">${esc(j.x.title)}</a></h3>
           <p>${esc(prose(j.x))}</p>
-          <p class="who">Mainly for ${ht([L(j.core.title, pdtUrl(j.core))])}; also involves ${ht(linksTo(j.roles, pdtUrl))}. <span>What they get: ${esc(sentence(j.x["value-proposition"]))}</span></p>
+          <p class="who">Mainly for ${esc(lower(j.core.title))}; also involves ${esc(names(j.roles.map((r) => ({ title: lower(r.title) }))))}. <span>What they get: ${esc(sentence(j.x["value-proposition"]))}</span></p>
           <ol class="steps">${j.steps
             .map((st) => {
               if (st.asIn) return `\n            <li class="step as-in">${ht(asInLine(st))}</li>`;
@@ -310,7 +339,7 @@ const asInLine = (st) => [fill(meta.reading.asIn, { journey: st.asIn.title }), "
             <ul class="offers">${offers
               .map(
                 ({ i, services, notYet, parts, outside }) =>
-                  `<li><a href="${esc(arcUrl(i))}"><strong>${esc(i.title)}</strong></a>: ${esc(prose(i))}${services.length ? `<span class="meta"> ${esc(meta.blocks.delivers)} ${ht(linksTo(services, pdtUrl))}.</span>` : ""}${notYet.map((m) => `<span class="not-yet">${esc(meta.notYet.label)} ${esc(sentence(m))}</span>`).join("")}${parts.length ? `<span class="meta"> ${esc(meta.blocks.usedBy)} ${ht(linksTo(parts, arcUrl))}.</span>` : ""}${outside.length ? `<span class="meta"> ${esc(meta.blocks.outside)} ${ht(linksTo(outside, arcUrl))}.</span>` : ""}</li>`,
+                  `<li><strong>${esc(i.title)}</strong>: ${esc(prose(i))}${services.length ? `<span class="meta"> ${esc(meta.blocks.delivers)} ${esc(names(services))}.</span>` : ""}${notYet.map((m) => `<span class="not-yet">${esc(meta.notYet.label)} ${esc(sentence(m))}</span>`).join("")}${parts.length ? `<span class="meta"> ${esc(meta.blocks.usedBy)} ${esc(names(parts))}.</span>` : ""}${outside.length ? `<span class="meta"> ${esc(meta.blocks.outside)} ${esc(names(outside))}.</span>` : ""}</li>`,
               )
               .join("")}</ul>
           </li>`;
@@ -336,17 +365,27 @@ const asInLine = (st) => [fill(meta.reading.asIn, { journey: st.asIn.title }), "
         <h1>${esc(meta.title)}</h1>
         <p>${esc(meta.lead)}</p>
         <blockquote class="narrative"><span>${esc(meta.narrativeLabel)}</span> <a href="${esc(pdtUrl(platform))}">${esc(platform.narrative)}</a></blockquote>
+        <nav class="guide" aria-label="${esc(meta.guide.heading)}"><span>${esc(meta.guide.heading)}</span><ul>${meta.guide.items.map(([id, head, why]) => `<li><a href="#${id}">${esc(head)}</a> – ${esc(why)}</li>`).join("")}</ul></nav>
       </div>
     </header>
     <div class="wrap overview">
       <section aria-labelledby="roles-h">
         <h2 class="section" id="roles-h">${esc(meta.roles.heading)}</h2>
-        <ul class="roles">${roles.map((r) => `<li><a href="${esc(pdtUrl(r))}"><strong>${esc(r.title)}</strong></a><span>${esc(firstSentence(prose(r)))}</span></li>`).join("")}</ul>
+        <p class="lead">${esc(meta.roles.intro)}</p>
+        <ul class="roles">${roles.map((r) => `<li><strong>${esc(r.title)}</strong><span>${esc(firstSentence(prose(r)))}</span></li>`).join("")}</ul>
+        <p class="lead around">${esc(meta.roles.outsideIntro)}</p>
+        <ul class="outside">${outsideSystems.map((u) => `<li>${esc(outsideLine(u))}</li>`).join("")}</ul>
       </section>
       <section aria-labelledby="parts-h">
         <h2 class="section" id="parts-h">${esc(meta.parts.heading)}</h2>
         <p class="lead">${esc(meta.parts.intro)}</p>
-        <ul class="parts">${blocks.map(({ bb }) => `<li><a href="${esc(arcUrl(bb))}"><strong>${esc(bb.title)}</strong></a><span>${esc(job(bb))}</span></li>`).join("")}</ul>
+        <ul class="parts">${blocks
+          .map(({ bb }) => {
+            const { addresses, repo } = siteOf(bb);
+            const where = addresses.length ? `${esc(meta.parts.address)} ${addresses.map((a) => `<a href="https://${esc(a)}/">${esc(a)}</a>`).join(", ")}` : esc(meta.parts.noAddress);
+            return `<li><a href="${esc(arcUrl(bb))}"><strong>${esc(bb.title)}</strong></a><span>${esc(job(bb))}</span><span class="where">${where}</span>${repo ? `<span class="where">${esc(meta.parts.repo)} <a href="https://github.com/${esc(repo)}">${esc(repo)}</a></span>` : ""}</li>`;
+          })
+          .join("")}</ul>
       </section>
       <section aria-labelledby="reading-h" class="reading">
         <h2 class="section" id="reading-h">${esc(meta.reading.heading)}</h2>
@@ -373,8 +412,6 @@ const asInLine = (st) => [fill(meta.reading.asIn, { journey: st.asIn.title }), "
       <details class="reference">
         <summary><h2 class="section" id="blocks-h">${esc(meta.blocks.heading)}</h2></summary>
         <p class="lead">${esc(meta.blocks.intro)}</p>
-        <p class="lead">${esc(meta.blocks.outsideIntro)}</p>
-        <ul class="outside">${outsideSystems.map((u) => `<li><a href="${esc(arcUrl(u))}">${esc(u.title)}</a>: ${esc(lower(u.description?.replace(/\s*\(pdt42[^)]*\)/, "") ?? ""))}</li>`).join("")}</ul>
         <h3 class="group">${esc(meta.blocks.delivering)}</h3>
         <ul class="blocks">${blocks.filter((b) => b.delivers).map(blockHtml).join("")}
         </ul>

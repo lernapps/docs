@@ -7,24 +7,43 @@
 title: How lernapps.net works
 eyebrow: lernapps.net · Overview
 lead: >-
-  Why the platform exists, what people get from it and which part of the system delivers it. Follow a link for the
-  details.
+  Why the platform exists, which parts it is built from, what job each part does, and how people use them. For
+  engineers and tech leads who work on the platform or want to understand it before they read the platform design
+  or the architecture.
+
+guide:
+  heading: "On this page:"
+  items:
+    - [roles-h, "Who takes part", "the people the platform is for and the systems it relies on; the journeys are told from their views."]
+    - [parts-h, "The parts and where they live", "the site map: each part's address, repository and job; the rest of the page names them."]
+    - [reading-h, "How to read a journey", "how a step, a service and a part connect; read this once before the journeys."]
+    - [experiences-h, "The journeys", "the platform from its users' view, step by step, with the part that helps at each step."]
+    - [together-h, "How the parts work together", "the flows behind the journeys that no user sees, for those who run or change the system."]
+    - [ideas-h, "Ideas", "services the platform could offer later, each with an issue to discuss it."]
+    - [blocks-h, "For reference", "every part with its interfaces, for looking something up."]
 
 narrativeLabel: "The goal, in the platform design's words:"
 
 roles:
   heading: Who takes part
+  intro: >-
+    The platform exists for these people. The journeys below are told from their views, so knowing them tells you
+    whose problem a part solves.
+  outsideIntro: "The system relies on these systems outside it:"
 
 parts:
-  heading: The parts of the system
+  heading: The parts and where they live
   intro: >-
-    The platform is built from one part per repository. The journeys and flows below name them where they help; a
-    fuller description of each follows at the end.
+    The platform is built from one part per repository. This is the site map: where you find each part and the job
+    it does. The journeys and flows below name these parts, so this is the list to come back to.
+  address: "Address:"
+  repo: "Repository:"
+  noAddress: No page of its own; it lives in its repository.
 
 reading:
   heading: How to read a journey
   intro: >-
-    A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service, and a
+    The journeys connect the people above to the parts above. A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service, and a
     part of the system provides it through one of its interfaces: the pages, links, templates or commands people
     actually use.
   example: >-
@@ -35,6 +54,7 @@ reading:
   startsFrom: "Building the app:"
   asIn: "As in the journey “{journey}”:"
   insideApp: Happens inside the app, without the platform.
+  getsBack: "What {role} get back from the other journeys:"
 
 notYet:
   label: "Not yet:"
@@ -43,30 +63,31 @@ notYet:
 experiences:
   heading: The journeys
   intro: >-
-    Teachers and parents bring an app to learners, in class and at home; creators build an app, list it and hear
-    that it helped.
+    This is why the parts exist: each journey shows a person with a problem and the parts that help them solve it.
+    Teachers and parents bring an app to learners, in class and at home; creators build an app, list it and get back
+    what it did for others.
 
 together:
   heading: How the parts work together
   intro: >-
-    Behind the journeys: how a creator's app gets into the catalog, and how the system keeps itself current. The
-    architecture describes these flows step by step.
+    The journeys show what users see. Behind them the parts pass work to each other: how a creator's app gets into
+    the catalog, and how the platform keeps itself and the creators' apps current. Read this if you run or change
+    the system; the architecture describes each flow step by step.
   parts: "Parts involved:"
 
 ideas:
   heading: Ideas
   intro: >-
-    Services the platform design names but no journey needs yet. Each is discussed in its own issue.
-  channel: "Channel:"
+    Services the platform design names but no journey needs. They show where the platform could grow; each is
+    discussed in its own issue, which is the place to take part.
   wouldSupport: "Would support:"
   issue: "Issue:"
 
 blocks:
   heading: "For reference: the parts of the system"
-  outsideIntro: "The parts work with these systems outside the system:"
   intro: >-
-    One part per repository. Each is described as a whole in the architecture and in detail in its own repository.
-    The creators' own app repositories are outside the system; they use the tooling.
+    Each part with the interfaces it offers, the services they serve and the parts that use them. Look things up
+    here; each part is described as a whole in the architecture and in detail in its own repository.
   delivering: Parts that deliver what the journeys need
   supporting: Parts that support the others
   supportingIntro: These parts deliver nothing to the journeys themselves; the platform is designed, decided and kept consistent with them.
