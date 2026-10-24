@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Builds the overview (/docs/overview/): the platform as it is meant to be, what people get from it and which part
+// Builds the start page of the docs (/docs/), the overview: the platform as it is meant to be, what people get from it and which part
 // of the system delivers it. Everything comes from the two models, joined where they meet:
 //   platform design (pdt42): experience → steps (transactions, and the services that support them) → channel
 //   architecture (arc42):    interface with `x-realises: <channels>` → building block; what an interface does not
@@ -17,14 +17,14 @@
 // back to its main role are shown as what that role gets back; a block's first sentence is its job; an interface's
 // `x-risk` names the risk that holds while it does not deliver.
 //
-//   node scripts/overview.mjs <out-dir>   (writes <out-dir>/index.html and <out-dir>/overview.md, the same content)
+//   node scripts/overview.mjs <site-dir>   (writes <site-dir>/index.html and <site-dir>/overview.md, the same content)
 import { execFile, execFileSync } from "node:child_process";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, isAbsolute, join } from "node:path";
 import { promisify } from "node:util";
 import { parse } from "yaml";
 
-const out = process.argv[2] ?? "_site/overview";
+const out = process.argv[2] ?? "_site";
 const meta = parse(readFileSync("site/overview.yaml", "utf8"));
 const run = promisify(execFile);
 
@@ -102,8 +102,8 @@ const sentence = (text) => (text ? text.charAt(0).toUpperCase() + text.slice(1) 
 const lower = (text) => (/^[A-Z]{2}/.test(text) ? text : text.charAt(0).toLowerCase() + text.slice(1)); // keeps "AI …"
 const fill = (template, values) => template.replace(/\{(\w+)\}/g, (_, k) => values[k] ?? "");
 const job = (bb) => firstSentence(prose(bb)); // a block's first sentence is its job
-const pdtUrl = (e) => `../platform-design/#${e.loc.file}:el-${e.id}`;
-const arcUrl = (e) => `../architecture/#${basename(e.loc.file)}:el-${e.id}`;
+const pdtUrl = (e) => `platform-design/#${e.loc.file}:el-${e.id}`; // the page is the root of the docs site
+const arcUrl = (e) => `architecture/#${basename(e.loc.file)}:el-${e.id}`;
 
 // --- the page as data ----------------------------------------------------------------------------------------------
 const serviceOf = (s) => {
@@ -420,7 +420,9 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
       M.push("");
     }
   }
-  M.push("---", "", meta.sources.text, "");
+  M.push(`## ${meta.readOn.heading}`, "", meta.readOn.intro, "");
+  for (const d of meta.readOn.items) M.push(`- **[${d.title}](${d.href}):** ${d.text}`);
+  M.push("", "---", "", meta.sources.text, "");
   mkdirSync(out, { recursive: true });
   writeFileSync(join(out, "overview.md"), `${M.join("\n").replace(/\n{3,}/g, "\n\n")}\n`);
 }
@@ -475,10 +477,10 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
   <meta name="color-scheme" content="light dark">
   <title>${esc(meta.title)} – lernapps.net</title>
   <meta name="description" content="${esc(meta.lead)}">
-  <link rel="canonical" href="https://lernapps.net/docs/overview/">
-  <link rel="stylesheet" href="../stil.css">
-  <link rel="stylesheet" href="../start.css">
-  <link rel="stylesheet" href="../overview.css">
+  <link rel="canonical" href="https://lernapps.net/docs/">
+  <link rel="stylesheet" href="stil.css">
+  <link rel="stylesheet" href="start.css">
+  <link rel="stylesheet" href="overview.css">
 </head>
 <body>
   <main id="main-content" tabindex="-1">
@@ -543,8 +545,13 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
         <ul class="blocks">${blocks.filter((b) => !b.delivers).map(blockHtml).join("")}
         </ul>
       </details>
+      <section aria-labelledby="read-on-h" class="read-on">
+        <h2 class="section" id="read-on-h">${esc(meta.readOn.heading)}</h2>
+        <p class="lead">${esc(meta.readOn.intro)}</p>
+        <ul class="documents">${meta.readOn.items.map((d) => `<li><a href="${esc(d.href)}"><strong>${esc(d.title)}</strong></a><span>${esc(d.text)}</span></li>`).join("")}</ul>
+      </section>
       <footer class="sources">
-        <p>${esc(meta.sources.text)} <a href="../platform-design/">Platform design</a> · <a href="../architecture/">Architecture</a> · <a href="overview.md">This page as text</a></p>
+        <p>${esc(meta.sources.text)} <a href="overview.md">This page as text</a></p>
       </footer>
     </div>
   </main>

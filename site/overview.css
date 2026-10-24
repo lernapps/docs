@@ -125,3 +125,8 @@ a.status { text-decoration: none; }
 :root[data-theme="dark"] .sequence .head.part text, :root[data-theme="dark"] .sequence g[style] .num-t { fill: color-mix(in srgb, var(--c) 55%, white); }
 .behind { margin: 0.9rem 0 0; }
 .behind > summary { cursor: pointer; font-weight: 600; font-size: 0.95rem; color: var(--lc-muted); }
+/* Read on: the documents this page is generated from, and the vision. */
+.documents { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+.documents li { padding: 0.9rem 1rem; border-radius: 0.85rem; border: 1px solid var(--lc-border); background: var(--lc-card); }
+.documents span { display: block; margin-top: 0.25rem; font-size: 0.92rem; color: var(--lc-muted); }
+@media (max-width: 48rem) { .documents { grid-template-columns: 1fr; } }

@@ -5,7 +5,7 @@
 # contradict one, and like the models it describes the target state, without counts or progress.
 
 title: How lernapps.net works
-eyebrow: lernapps.net · Overview
+eyebrow: lernapps.net · Docs
 lead: >-
   Why the platform exists, which parts it is built from, what job each part does, and how people use them. For
   engineers and tech leads who work on the platform or want to understand it before they read its two models. The
@@ -93,6 +93,18 @@ blocks:
   delivers: "Serves:"
   usedBy: "Used by:"
   outside: "Works with, outside the system:"
+
+readOn:
+  heading: Read on
+  intro: >-
+    This page is the way in. Everything on it comes from the documents below; follow them for the full picture, in
+    the depth each one has.
+  items:
+    - { title: Vision, href: vision/, text: "Why lernapps.net exists: the problem, what it does, its principles and what it is not." }
+    - { title: Platform design, href: platform-design/, text: "Who takes part and what they give each other: roles, transactions, services, journeys and the MVP, as a pdt42 model." }
+    - { title: Organisation, href: about/, text: "Who carries lernapps.net and what for: objectives, risks, capabilities and products of an undertaking no one earns money with, as a biz42 model." }
+    - { title: Architecture, href: architecture/, text: "How the system is built: quality goals, building blocks, flows, deployment, decisions and risks, as an arc42 model." }
+    - { title: llms.txt, href: llms.txt, text: "For AI assistants: where everything is and how to read the models with their CLIs, element by element." }
 
 sources:
   text: >-

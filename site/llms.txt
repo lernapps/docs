@@ -10,7 +10,7 @@ the platform design differs from the vision, they apply.
 ## Read the docs
 
 - [Vision](https://lernapps.net/docs/vision/): why lernapps.net exists: the problem, what it does, its principles, what it is not. Source: `docs/vision.md`.
-- [Overview](https://lernapps.net/docs/overview/overview.md): what each role gets from the platform, which part of the system delivers it, and how far it is built, generated from the platform design and the architecture.
+- [Overview](https://lernapps.net/docs/overview.md): the start page as text: why the platform exists, its parts and their jobs, the journeys and the flows behind them, generated from the platform design and the architecture.
 - [Organisation](https://lernapps.net/docs/about/): who carries lernapps.net and what for: scope, risks, objectives, measures, owners, capabilities, products. A biz42 model in `docs/biz42/`.
 - [Platform design](https://lernapps.net/docs/platform-design/): how lernapps.net works as a platform: roles, what they give each other, transactions, services, experiences, the MVP. A pdt42 model (Platform Design Toolkit) in `docs/pdt42/`.
 - [Architecture](https://lernapps.net/docs/architecture/): the technical architecture of lernapps.net as a whole: quality goals, constraints, building blocks (one per repository), runtime, deployment, decisions, risks. An arc42 model in `docs/arc42/`.
