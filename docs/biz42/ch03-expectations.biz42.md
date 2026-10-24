@@ -4,7 +4,7 @@ The interested parties follow the roles of the platform design: adults who bring
 
 ## Adults in an acute moment
 
-Teachers minutes before a lesson and parents the evening before a test need one app for one topic and one grade, now, and need to see at a glance that it may be used. What they feel when it works is relief, not excitement. Anything asked afterwards must take a single click.
+Teachers who take over a class at short notice and parents whose child struggles with a topic need one app for one topic and one grade, now, and need to see at a glance that it may be used. What they feel when it works is relief, not excitement. Anything asked afterwards must take a single click.
 
 ```biz42
 :::expectation

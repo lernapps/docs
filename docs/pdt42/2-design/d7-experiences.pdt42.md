@@ -1,6 +1,6 @@
 # Assemble the platform experiences
 
-*Each experience takes one role's point of view in one core relationship (D4) and orders transactions (D5) and services (D6) into a journey. Two are the core entity's, adults in an acute moment: teachers right before a lesson, parents the evening before a test. The third is the creators', because supply does not come by itself (D4).*
+*Each experience takes one role's point of view in one core relationship (D4) and orders transactions (D5) and services (D6) into a journey. Two are the core entity's, adults in an acute moment: teachers who have to take over a class at short notice, parents who notice that their child struggles with something they cannot help with. The third is the creators', because supply does not come by itself (D4).*
 
 Adults rarely plan ahead: they look for an app when they need it now. What they feel is relief, not excitement: "it fits and it runs right away". This shapes every step: trust has to be built in rather than checked, one app counts more than a collection, and anything asked afterwards must take a single click.
 
@@ -8,7 +8,7 @@ In every journey, the thank-you after use is a step of its own. The platform is 
 
 ## An app in class within minutes
 
-The journey of a teacher a few minutes before a lesson: find an app for this topic and grade, see at a glance that it may be used, put it on the projector or the class's devices, and say thanks afterwards. It may be used because the platform lists only apps that pass its checks of fitness for use and serves each one itself, under lernapps.net and its privacy notice (KD-21).
+The journey of a teacher who has to take over a class at short notice, for a colleague and perhaps outside their own subject: find an app for this topic and grade, see at a glance that it may be used, put it on the projector or the class's devices, and say thanks afterwards. It may be used because the platform lists only apps that pass its checks of fitness for use and serves each one itself, under lernapps.net and its privacy notice (KD-21).
 
 ```pdt42
 :::canvas
@@ -25,7 +25,7 @@ title: An app in class within minutes
 core-entity: e-adopters
 roles: e-creators, e-students
 relationship: r-creators-adults
-value-proposition: The right active-learning app for this topic and grade, running in class within minutes, safe to use without checking it yourself
+value-proposition: The right active-learning app for this topic and grade, even outside your subject, running in class within minutes, safe to use without checking it yourself
 steps: s-finding, t-find-app, s-fitness-clarity, t-confirm-fitness, s-start-right-away, t-bring-app, t-use-in-class, s-giving-back, t-thank-creator-adult, t-give-feedback
 activities:
   - Keeping listings comparable and current
@@ -43,26 +43,26 @@ revenues:
 :::
 ```
 
-## Practice tonight, before the test
+## Help where a child struggles
 
-The journey of a parent the evening before a test: find an app the child can start right away for the topic of tomorrow's test, let the child practise, and say thanks afterwards; the child can come back to the app or find the next one alone. The setting is the kitchen table, not the classroom, and parent and child share one goal: tomorrow's test. The app starts from lernapps.net like every listed app (KD-21), so parents do not have to judge a stranger's address.
+The journey of a parent who notices that their child struggles with a topic and cannot help, for lack of time or because they do not know the subject well enough: find an app for exactly that topic, let the child start right away and practise, and say thanks afterwards. The child keeps coming back to the app, or finds the next one alone, for as long as it needs; the child may also be the one who notices the gap. The app starts from lernapps.net like every listed app (KD-21), so parents do not have to judge a stranger's address.
 
 ```pdt42
 :::canvas
-id: cv-x-practice-tonight
+id: cv-x-child-struggles
 canvas: platform-experience
-of: x-practice-tonight
+of: x-child-struggles
 :::
 ```
 
 ```pdt42
 :::experience
-id: x-practice-tonight
-title: Practice tonight, before the test
+id: x-child-struggles
+title: Help where a child struggles
 core-entity: e-adopters
 roles: e-students, e-creators
 relationship: r-adults-students
-value-proposition: Tonight, before tomorrow's test: an app your child can start right away
+value-proposition: When your child struggles and you cannot help: an app for exactly that topic, to start right away and come back to
 steps: s-finding, t-find-app, s-fitness-clarity, t-confirm-fitness, t-bring-app, s-start-right-away, t-learn-with-app, s-student-finding, t-return-to-app, s-giving-back, t-thank-creator-adult
 activities:
   - Keeping listings findable by topic and grade

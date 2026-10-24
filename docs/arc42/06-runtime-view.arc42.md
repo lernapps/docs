@@ -7,7 +7,7 @@ runtime views, for example how a change of the guidance is measured by the evals
 
 ## An app in class within minutes
 
-[A teacher has a few minutes before a lesson](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-app-in-minutes). They find an app for the topic and grade, see
+[A teacher has to take over a class at short notice](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-app-in-minutes). They find an app for the topic and grade, see
 that it may be used, put it on the projector or pass its link or QR code to the class, and say thanks
 afterwards. Everything the class opens is served from lernapps.net.
 
@@ -15,7 +15,7 @@ afterwards. Everything the class opens is served from lernapps.net.
 :::runtime-scenario
 id: rs-app-in-minutes
 title: An app in class within minutes
-trigger: A teacher looks for an app right before a lesson
+trigger: A teacher has to take over a class at short notice
 involves: bb-catalog, bb-website
 :::
 ```
@@ -43,27 +43,27 @@ sequenceDiagram
     student->>catalog: open the served app
     catalog-->>student: the app, from lernapps.net
     teacher->>catalog: thanks, one click
-    catalog->>mail: thanks, today as a prepared e-mail
+    catalog->>mail: thanks, as a prepared e-mail
 ```
 
-## Practice tonight, before the test
+## Help where a child struggles
 
-[A parent, the evening before a test, looks for an app the child can start right away](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-practice-tonight), or a
+[A parent whose child struggles with a topic looks for an app the child can start right away](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-child-struggles), or a
 student looks for one alone. The flow is the same as in class, without passing the app on.
 
 ```arc42
 :::runtime-scenario
-id: rs-practice-tonight
-title: Practice tonight, before the test
-trigger: A parent or a student looks for an app the evening before a test
+id: rs-child-struggles
+title: Help where a child struggles
+trigger: A parent or a student notices a topic the student struggles with
 involves: bb-catalog
 :::
 ```
 
 ```arc42
 :::diagram
-id: rs-practice-tonight-sequence
-scenario: rs-practice-tonight
+id: rs-child-struggles-sequence
+scenario: rs-child-struggles
 notation: mermaid-sequence
 aliases: parent=actor-adopting-adult, student=actor-student, catalog=bb-catalog, mail=actor-email
 :::
@@ -75,12 +75,12 @@ sequenceDiagram
     participant student as Student
     participant catalog as Catalog
     participant mail as E-mail
-    parent->>catalog: find an app for tomorrow's topic
+    parent->>catalog: find an app for the topic the child struggles with
     catalog-->>parent: listed apps
     student->>catalog: open the served app
     catalog-->>student: the app, no sign-up, no installation
     parent->>catalog: thanks, one click
-    catalog->>mail: thanks, today as a prepared e-mail
+    catalog->>mail: thanks, as a prepared e-mail
 ```
 
 ## Build and list an app
@@ -137,8 +137,8 @@ sequenceDiagram
 
 ## A listed app gets a new version
 
-The creator releases a new version. The catalog builds a copy from that release and replaces the served copy; the
-address stays the same and serves a copy at every moment (`qs-update-without-gap`).
+The creator releases a new version. The catalog builds a copy from that release and replaces the served copy; the address stays the
+same and never stops working (`qs-update-without-gap`).
 
 ```arc42
 :::runtime-scenario

@@ -16,7 +16,7 @@ There is not one user need but three, one per group that wants an app to be used
 
 ### Students understand the subject to get good grades
 
-Students want to understand the subject well so that they write good grades. This matches their job "find an app to prepare for the next test".
+Students want to understand the subject well so that they write good grades. This matches their job "find an app to prepare for the next test", which is often when they notice a topic they struggle with.
 
 ```pdt42
 :::component

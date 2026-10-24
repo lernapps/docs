@@ -259,7 +259,7 @@ motivation: m-creators-students
 
 ### Return to an app
 
-Students come back to an app on their own, for instance before the next test.
+Students come back to an app on their own, as often as they need to practise a topic.
 
 ```pdt42
 :::transaction
@@ -269,7 +269,7 @@ relationship: r-creators-students
 from: e-students
 to: e-creators
 direction: one-way
-value-unit: A return visit before a test
+value-unit: A return visit to keep practising
 happening: yes
 channel: ch-app-overview
 kind: attention

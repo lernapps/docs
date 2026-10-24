@@ -154,8 +154,8 @@ x-realises: ch-listing, ch-fitness-signal
 
 ### Thanks
 
-A thank-you and feedback in one click from the catalog or an app. Today it is realised as a prepared e-mail to the
-platform owner; the interface stays the same when the realisation changes.
+A thank-you and feedback in one click from the catalog or an app, counted openly and passed on to the creator. The
+interface stays the same when its realisation changes.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
@@ -163,9 +163,9 @@ platform owner; the interface stays the same when the realisation changes.
 id: if-thanks
 title: Thanks
 provider: bb-catalog
-protocol: link from the catalog or an app; today a prepared e-mail
+protocol: link from the catalog or an app; realised as a prepared e-mail
 x-realises: ch-feedback, ch-creator-insight
-x-missing-ch-feedback: Today a click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.
+x-missing-ch-feedback: A click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.
 x-missing-ch-creator-insight: Thanks reach the creator only if the platform owner passes them on.
 :::
 ```

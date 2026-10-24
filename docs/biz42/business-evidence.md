@@ -12,7 +12,7 @@ The model was rewritten on 2026-10-07 from the [platform design](../pdt42/) (pdt
 | earlier model (user answer) | Digitalpakt funded hardware, not software | ch02 sig-digitalpakt | high | |
 | user answer + tum.de link (earlier model) | PISA 2026: German students at a historic low | ch02 sig-pisa, ch05 opp-pisa-window | high | |
 | pdt42 D8 `a-school-filters` | School networks often filter unknown services | ch02 sig-school-filters, ch04 risk-no-thanks | medium | Test in the first draft |
-| pdt42 D1, D2, D7 `x-app-in-minutes`, `x-practice-tonight` | Adults in an acute moment need one fitting app now, usable without doubt; relief, not excitement | ch03 exp-adopter | high | |
+| pdt42 D1, D2, D7 `x-app-in-minutes`, `x-child-struggles` | Adults in an acute moment need one fitting app now, usable without doubt; relief, not excitement | ch03 exp-adopter | high | |
 | user answer (pdt42 D4, 2026-09-30) | Creators build personal software anyway; use by others is a nice-to-have; once used, praise motivates them strongly | ch03 exp-contributor, ch04 risk-weak-supply | high | Confirmed 2026-09-30 |
 | pdt42 D2, D6 | Learners try things out themselves, without account; usually through an adult | ch03 exp-learner | high | |
 | pdt42 D8 `a-thanks-arrive-unexplained`, KD-17 | Thanks is the currency; it must arrive without being explained | ch04 risk-no-thanks, ch06 obj-thanks, ch07 measure-thanks | high | |

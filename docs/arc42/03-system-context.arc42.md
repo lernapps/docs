@@ -46,12 +46,12 @@ flowchart LR
     actor-github -->|"hosts, runs and carries every contribution"| system
     actor-renovate -->|"moves the pins between repositories"| system
     actor-goatcounter -->|"counts the platform's open counts"| system
-    actor-email -->|"carries thanks today"| system
+    actor-email -->|"carries thanks"| system
 ```
 
 ## Adopting adult
 
-A teacher before a lesson or a parent the evening before a test, the platform's [core entity](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-adopters) ([KD-13](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-13-core-triangle-adopting-adults-first-d4)).
+A teacher who takes over a class at short notice, or a parent whose child struggles with a topic, the platform's [core entity](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-adopters) ([KD-13](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-13-core-triangle-adopting-adults-first-d4)).
 They find an app for a topic and grade, pass it on by link or QR code, and say thanks.
 
 ```arc42
@@ -66,7 +66,7 @@ requires: if-catalog-pages, if-served-apps, if-thanks, if-home-pages
 
 ## Student
 
-[A learner](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-students) who opens an app from a link or QR code, or finds one before a test. Students never sign up.
+[A learner](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-students) who opens an app from a link or QR code, or finds one for a topic they struggle with. Students never sign up.
 
 ```arc42
 :::actor
@@ -201,7 +201,7 @@ requires: if-site-frame
 
 ## E-mail
 
-Today's realisation of the thanks: the catalog's form prepares an e-mail. The interface `if-thanks` stays when the
+The realisation of the thanks behind `if-thanks`: the catalog prepares an e-mail. The interface stays when the
 realisation changes.
 
 ```arc42
@@ -209,7 +209,7 @@ realisation changes.
 id: actor-email
 title: E-mail
 type: system
-description: Mail system that carries thanks and feedback today
+description: Mail system that carries thanks and feedback
 requires: if-thanks
 :::
 ```

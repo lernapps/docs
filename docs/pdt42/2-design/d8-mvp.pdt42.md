@@ -52,7 +52,7 @@ status: open
 
 #### Creators accept that the platform serves a copy of their app
 
-Serving every listed app under lernapps.net (KD-21) changes what creators were told so far: their app no longer lives only at their own address. They stay the author and keep the licence, the repository and their address, and they no longer answer to schools for data protection; in return the app needs a licence that allows the copy. If creators decline because of the copy or the licence, the listing loses its supply. The conversation at the first listing asks about it directly, so a creator who does not list says why.
+Serving every listed app under lernapps.net (KD-21) means that a creator's app lives not only at their own address. They stay the author and keep the licence, the repository and their address, and they no longer answer to schools for data protection; in return the app needs a licence that allows the copy. If creators decline because of the copy or the licence, the listing loses its supply. The conversation at the first listing asks about it directly, so a creator who does not list says why.
 
 ```pdt42
 :::assumption
@@ -151,7 +151,7 @@ of: mvp-first-thanks
 :::mvp
 id: mvp-first-thanks
 title: First apps, first thanks
-experiences: x-app-in-minutes, x-practice-tonight, x-list-and-hear-back
+experiences: x-app-in-minutes, x-child-struggles, x-list-and-hear-back
 base:
   - The apps listed in the first draft
   - Referral links and a short letter for the owner's contacts to forward
@@ -248,7 +248,7 @@ status: open
 :::
 ```
 
-#### Parents find the platform the evening before a test
+#### Parents find the platform when their child struggles
 
 Parents are not in the base yet. This is tested on purpose only once the riskiest assumptions hold, so it has no test yet.
 
@@ -256,7 +256,7 @@ Parents are not in the base yet. This is tested on purpose only once the riskies
 :::ignore H115 Tested only after the riskiest assumptions hold, once parents are reached (KD-19) :::
 :::assumption
 id: a-parents-find
-title: Parents find the platform the evening before a test
+title: Parents find the platform when their child struggles
 mvp: mvp-first-thanks
 kind: attraction
 riskiest: no

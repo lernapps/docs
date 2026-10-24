@@ -5,9 +5,9 @@ concern only one repository are recorded in that repository's architecture and l
 
 ## Serve a copy of every listed app
 
-**Context.** At first, the catalog linked each app at its creator's own address. For an app at another address, the
-provider of that address is responsible for data protection, and a school's data protection officer asks exactly
-that; links also break when an app moves, and an address like `name.github.io` reads as a private account ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)).
+**Context.** If the catalog only linked each app at its creator's own address, the provider of that address would be
+responsible for data protection, and a school's data protection officer would ask exactly
+that; links would also break when an app moves, and an address like `name.github.io` reads as a private account ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)).
 
 **Decision.** When an app is listed, the catalog publishes a copy of its built release under lernapps.net and links
 that copy. Authorship and serving are separated: the creator keeps the app, the licence, the repository and their own
@@ -187,7 +187,7 @@ x-source: pdt42 KD-18; owner decision 2026-10-23
 from school networks ([KD-19](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-19-two-stages-before-the-platform-is-tested-with-teachers-d8-draft)).
 
 **Decision.** Thanks is an interface of the catalog (`if-thanks`) that the catalog and the apps link to. Its
-realisation can change behind it: today it is a prepared e-mail to the platform owner.
+realisation can change behind it; it is realised as a prepared e-mail to the platform owner.
 
 **Consequences.** Apps and pages do not depend on how thanks are realised. The e-mail realisation does not count
 thanks, and they reach the creator only if the platform owner passes them on.

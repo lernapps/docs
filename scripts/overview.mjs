@@ -1,9 +1,11 @@
 #!/usr/bin/env node
-// Builds the overview (/docs/overview/): what people get from the platform, which part of the system delivers it,
-// and how far it is built. Everything comes from the two models, joined where they meet:
+// Builds the overview (/docs/overview/): the platform as it is meant to be, what people get from it and which part
+// of the system delivers it. Everything comes from the two models, joined where they meet:
 //   platform design (pdt42): experience → steps (transactions, and the services that support them) → channel
 //   architecture (arc42):    interface with `x-realises: <channels>` → building block; what an interface does not
 //                            deliver yet: `x-missing-<channel>: <text>` for one channel, `x-missing: <text>` for all
+// Where an interface does not deliver yet, the page marks it in place, as a dashed block. Services no journey uses
+// are ideas, listed at the end with the issue their prose links to.
 // site/overview.yaml holds only headings and the texts that lead into each part, with placeholders the script fills
 // from the models; it names no element of a model. The script fails when the models do not fit together, so the
 // page cannot drift from them: an interface names a channel that does not exist, or an experience needs a service
@@ -37,7 +39,6 @@ const pdtById = new Map(
 );
 const pdtOf = (kind) => [...pdtById.values()].filter((e) => e.kind === kind);
 const list = (v) => (Array.isArray(v) ? v : typeof v === "string" ? v.split(",").map((s) => s.trim()) : []).filter(Boolean);
-const title = (id) => pdtById.get(id)?.title ?? arcById.get(id)?.title ?? id;
 
 // --- the join: channel → interfaces → building blocks ------------------------------------------------------------
 const errors = [];
@@ -54,11 +55,6 @@ for (const i of interfaces) {
     if (key === "missing" ? !realises.length : !realises.includes(key.slice("missing-".length))) errors.push(`${i.id}: x-${key} for a channel it does not realise`);
   }
 }
-const statusOf = (channelId) => {
-  const ifs = realisedBy.get(channelId) ?? [];
-  if (ifs.length === 0) return "missing";
-  return ifs.some((i) => missingOf(i, channelId)) ? "partial" : "built";
-};
 const experiences = pdtOf("experience");
 const inExperience = new Set(experiences.flatMap((x) => list(x.steps)));
 for (const x of experiences) {
@@ -66,7 +62,7 @@ for (const x of experiences) {
     const s = pdtById.get(id);
     if (!s) errors.push(`${x.id}: step '${id}' does not exist`);
     else if (s.kind === "service" && !s.channel) errors.push(`${s.id} (step of ${x.id}) has no channel`);
-    else if (s.kind === "service" && statusOf(s.channel) === "missing") errors.push(`${s.id} (step of ${x.id}): no interface realises its channel '${s.channel}'`);
+    else if (s.kind === "service" && !realisedBy.has(s.channel)) errors.push(`${s.id} (step of ${x.id}): no interface realises its channel '${s.channel}'`);
   }
 }
 if (errors.length) {
@@ -76,21 +72,21 @@ if (errors.length) {
 
 // --- text from the models --------------------------------------------------------------------------------------------
 // Prose as a reader without the models needs it: the first paragraph, links as their text, without the models'
-// cross-references such as (KD-21) or (D4).
+// cross-references such as (KD-21), (D4) or (`qs-…`).
 const prose = (e) =>
   (e?.loc?.prose ?? "")
     .trim()
     .split(/\n\s*\n/)[0]
     .replace(/\[([^\]]+)\]\([^)]*\)/g, "$1")
     .replace(/\s*\((?:(?:KD-\d+|PP\d|[DEG]\d)(?:,\s*)?)+\)/g, "")
-    .replace(/\s*\(`[a-z]+-[a-z0-9-]+`\)/g, "") // (`qs-…`): an id of the model, not text
+    .replace(/\s*\(`[a-z]+-[a-z0-9-]+`\)/g, "")
     .replace(/`([^`]+)`/g, "$1")
     .replace(/\s+/g, " ")
     .trim();
+const issuesOf = (e) => [...(e?.loc?.prose ?? "").matchAll(/\[([^\]]+)\]\((https:\/\/github\.com\/[^)]+\/issues\/\d+)\)/g)].map((m) => ({ text: m[1], url: m[2] }));
 const firstSentence = (text) => (text.match(/^.+?[.!?](?=\s|$)/) ?? [text])[0];
 const sentence = (text) => (text ? text.charAt(0).toUpperCase() + text.slice(1) + (/[.!?]$/.test(text) ? "" : ".") : "");
 const lower = (text) => (/^[A-Z]{2}/.test(text) ? text : text.charAt(0).toLowerCase() + text.slice(1)); // keeps "AI …"
-const andList = (items) => (items.length < 2 ? items.join("") : `${items.slice(0, -1).join(", ")} and ${items.at(-1)}`);
 const fill = (template, values) => template.replace(/\{(\w+)\}/g, (_, k) => values[k] ?? "");
 const job = (bb) => bb.extensions?.job ?? firstSentence(prose(bb)); // x-job: the part's task in one sentence
 const pdtUrl = (e) => `../platform-design/#${e.loc.file}:el-${e.id}`;
@@ -100,7 +96,7 @@ const arcUrl = (e) => `../architecture/#${basename(e.loc.file)}:el-${e.id}`;
 const serviceOf = (s) => {
   const channel = s.channel ? pdtById.get(s.channel) : null;
   const delivery = channel ? (realisedBy.get(channel.id) ?? []).map((i) => ({ iface: i, block: arcById.get(i.provider), missing: missingOf(i, channel.id) })) : [];
-  return { s, channel, status: channel ? statusOf(channel.id) : "missing", delivery };
+  return { s, channel, delivery };
 };
 // The steps of an experience in their order; each transaction carries the services of the experience that support it.
 // Consecutive steps that the same services support are one entry.
@@ -123,19 +119,28 @@ const stepsOf = (x) => {
   return loose.length ? [{ ts: [], services: loose }, ...steps] : steps;
 };
 const journeys = experiences.map((x) => ({ x, core: pdtById.get(x["core-entity"]), roles: list(x.roles).map((id) => pdtById.get(id)), steps: stepsOf(x) }));
-const journeyServices = [...new Map(journeys.flatMap((j) => j.steps.flatMap((st) => st.services)).map((v) => [v.s.id, v])).values()];
-
-// What the journeys need but the system delivers only in part: per channel, the interfaces that fall short.
-const gaps = new Map(); // channel id → { channel, shortfalls: [{ iface, block, missing }], services }
-for (const v of journeyServices.filter((v) => v.status === "partial")) {
-  const g = gaps.get(v.channel.id) ?? { channel: v.channel, shortfalls: v.delivery.filter((d) => d.missing), services: [] };
-  g.services.push(v.s);
-  gaps.set(v.channel.id, g);
-}
-const others = pdtOf("service").filter((s) => !inExperience.has(s.id)).map(serviceOf);
+// Steps an earlier journey already showed, with the same services, are one line that points back to it.
+const shownJourneys = (() => {
+  const shown = new Map(); // transaction id → journey
+  const seenServices = new Set();
+  return journeys.map((j) => {
+    const steps = [];
+    for (const st of j.steps) {
+      const earlier = st.ts.length && st.ts.every((t) => shown.has(t.id)) ? shown.get(st.ts[0].id) : null;
+      const prev = steps.at(-1);
+      if (earlier && st.services.every((v) => seenServices.has(v.s.id))) {
+        if (prev?.asIn === earlier) prev.ts.push(...st.ts);
+        else steps.push({ asIn: earlier, ts: [...st.ts] });
+      } else steps.push(st);
+      st.ts.forEach((t) => shown.has(t.id) || shown.set(t.id, j.x));
+      st.services.forEach((v) => seenServices.add(v.s.id));
+    }
+    return { ...j, steps };
+  });
+})();
+const ideas = pdtOf("service").filter((s) => !inExperience.has(s.id)).map(serviceOf);
 const platform = pdtOf("platform")[0];
-const coreRoles = [...new Set([...journeys.flatMap((j) => [j.core, ...j.roles]), ...list(platform.owners).map((id) => pdtById.get(id))])];
-const aroundRoles = pdtOf("entity").filter((e) => !coreRoles.includes(e));
+const roles = [...new Set([...journeys.flatMap((j) => [j.core, ...j.roles]), ...list(platform.owners).map((id) => pdtById.get(id))])];
 const usersOf = (ifaceId) =>
   [...new Set(arc.edges.filter((e) => e.relation === "requires" && e.to === ifaceId).map((e) => e.from))].map((id) => arcById.get(id)).filter(Boolean);
 const blocks = arc.elements
@@ -149,31 +154,31 @@ const blocks = arc.elements
         return {
           i,
           channels: list(i.extensions?.realises).map((id) => pdtById.get(id)),
+          services: pdtOf("service").filter((sv) => list(i.extensions?.realises).includes(sv.channel)),
+          notYet: list(i.extensions?.realises).map((ch) => missingOf(i, ch)).filter((m, k, all) => m && all.indexOf(m) === k),
           parts: users.filter((u) => u.kind === "building-block"),
           outside: users.filter((u) => u.kind === "actor" && u.type === "system"),
         };
       });
     return { bb, offers, delivers: offers.some((o) => o.channels.length) };
   });
-// How the parts work together: the runtime scenarios of the architecture that involve at least two parts.
+const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) => o.outside)))];
+// How the parts work together: the runtime scenarios of the architecture that involve at least two parts; a
+// scenario named like a journey is left out, the journey itself tells it.
 const scenarios = arc.elements
   .filter((e) => e.kind === "runtime-scenario" && list(e.involves).filter((id) => arcById.get(id)?.kind === "building-block").length >= 2)
-  .filter((e) => !pdtOf("experience").some((x) => x.title === e.title)) // the journey itself tells it
+  .filter((e) => !experiences.some((x) => x.title === e.title))
   .sort((a, b) => a.loc.line - b.loc.line)
   .map((sc) => ({ sc, parts: list(sc.involves).map((id) => arcById.get(id)).filter((e) => e?.kind === "building-block") }));
-const builtTitles = journeyServices.filter((v) => v.status === "built").map((v) => `“${v.s.title}”`);
-const partialTitles = journeyServices.filter((v) => v.status === "partial").map((v) => `“${v.s.title}”`);
-const statusLine = fill(meta.status.line, { built: builtTitles.length, total: journeyServices.length, partialCount: partialTitles.length, partial: andList(partialTitles) });
-const closingText = fill(meta.closing.text, { built: builtTitles.length, total: journeyServices.length, partial: andList(partialTitles) });
 const example = (() => {
   const st = journeys[0].steps.find((s) => s.ts.length && s.services.length);
   const v = st.services[0];
   const d = v.delivery[0];
-  return fill(meta.reading.example, { step: st.ts[0].title, service: v.s.title, channel: v.channel.title, iface: d.iface.title, part: d.block.title });
+  return fill(meta.reading.example, { step: st.ts[0].title, service: v.s.title, iface: d.iface.title, part: d.block.title });
 })();
 
 // --- one renderer, two outputs ---------------------------------------------------------------------------------------
-// A line is a list of parts: strings, and links { text, url }. md() renders Markdown, ht() HTML.
+// A line is a list of parts: strings, and links { text, url }; a line with { notYet: true } is a dashed block.
 const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const L = (text, url) => ({ text, url });
 const md = (parts) => parts.map((p) => (typeof p === "string" ? p : `[${p.text}](${p.url})`)).join("");
@@ -181,66 +186,48 @@ const ht = (parts) => parts.map((p) => (typeof p === "string" ? esc(p) : `<a hre
 const join2 = (items, sep = ", ") => items.flatMap((it, k) => (k ? [sep, it] : [it]));
 const linksTo = (els, url) => join2(els.map((e) => L(e.title, url(e))));
 
-// A service as a head and its lines; the second time a service or a channel appears, only a short form.
+// A service as a head and its lines; the second time a service appears, only a short form. An interface that does
+// not deliver its part yet becomes a dashed line.
 const makeService = () => {
-  const seenServices = new Set();
-  const seenChannels = new Set();
-  return (v) => {
+  const seen = new Set();
+  return (v, { idea = false } = {}) => {
     const head = [L(v.s.title, pdtUrl(v.s))];
-    if (seenServices.has(v.s.id)) return { head, status: v.status, lines: [[sentence(lower(firstSentence(prose(v.s)))), " ", meta.reading.seeAbove]] };
-    seenServices.add(v.s.id);
+    if (seen.has(v.s.id)) return { head, lines: [{ parts: [sentence(lower(firstSentence(prose(v.s)))), " ", meta.reading.seeAbove] }] };
+    seen.add(v.s.id);
     const forWhom = list(v.s.for).map((id) => pdtById.get(id)).filter(Boolean);
-    const lines = [[...(forWhom.length ? ["For ", ...linksTo(forWhom, pdtUrl), ": "] : []), prose(v.s)]];
-    if (v.channel && v.status === "missing") lines.push([`${meta.reading.channel} `, L(v.channel.title, pdtUrl(v.channel)), "."]);
-    if (v.delivery.length) lines.push([`${meta.reading.deliveredBy} `, ...join2(v.delivery.map(({ iface, block }) => L(`${iface.title} (${block.title})`, arcUrl(iface)))), "."]);
-    if (v.status === "missing" && list(v.s.supports).length) lines.push([`${meta.others.wouldSupport} `, ...join2(list(v.s.supports).map((id) => L(title(id), pdtUrl(pdtById.get(id))))), "."]);
-    return { head, status: v.status, lines };
+    const lines = [{ parts: [...(forWhom.length ? ["For ", ...linksTo(forWhom, pdtUrl), ": "] : []), prose(v.s)] }];
+    const done = v.delivery.filter((d) => !d.missing);
+    if (done.length) lines.push({ parts: [`${meta.reading.deliveredBy} `, ...join2(done.map(({ iface, block }) => L(`${iface.title} (${block.title})`, arcUrl(iface)))), "."] });
+    for (const { iface, block, missing } of v.delivery.filter((d) => d.missing))
+      lines.push({ notYet: true, parts: [`${meta.notYet.label} `, L(`${iface.title} (${block.title})`, arcUrl(iface)), `: ${sentence(missing)}`] });
+    if (idea) {
+      if (v.channel) lines.push({ parts: [`${meta.ideas.channel} `, L(v.channel.title, pdtUrl(v.channel)), "."] });
+      if (list(v.s.supports).length) lines.push({ parts: [`${meta.ideas.wouldSupport} `, ...join2(list(v.s.supports).map((id) => L(pdtById.get(id)?.title ?? id, pdtUrl(pdtById.get(id))))), "."] });
+      const issues = issuesOf(v.s);
+      if (issues.length) lines.push({ parts: [`${meta.ideas.issue} `, ...join2(issues.map((i) => L(i.text, i.url))), "."] });
+    }
+    return { head, lines };
   };
 };
 const stepLabel = (st) => (st.ts.length ? join2(st.ts.map((t) => [L(t.title, pdtUrl(t))]), [" · "]).flat() : [meta.reading.startsFrom]);
 const stepHow = (st) => (st.services.length || !st.ts.length || st.channel ? null : [meta.reading.insideApp]);
-// Steps an earlier journey already showed, with the same services, are one line that points back to it.
-const condense = (journeys) => {
-  const shown = new Map(); // transaction id → journey
-  return journeys.map((j) => {
-    const steps = [];
-    for (const st of j.steps) {
-      const earlier = st.ts.length && st.ts.every((t) => shown.has(t.id)) ? shown.get(st.ts[0].id) : null;
-      const prev = steps.at(-1);
-      if (earlier && st.services.every((v) => shown.has(`s:${v.s.id}`))) {
-        if (prev?.asIn === earlier) prev.ts.push(...st.ts);
-        else steps.push({ asIn: earlier, ts: [...st.ts] });
-      } else steps.push(st);
-      st.ts.forEach((t) => shown.has(t.id) || shown.set(t.id, j.x));
-      st.services.forEach((v) => shown.set(`s:${v.s.id}`, true));
-    }
-    return { ...j, steps };
-  });
-};
-const shownJourneys = condense(journeys);
 const asInLine = (st) => [fill(meta.reading.asIn, { journey: st.asIn.title }), " ", ...join2(st.ts.map((t) => L(t.title, pdtUrl(t))), " · "), "."];
-const gapLines = (g) => [
-  ...g.shortfalls.map(({ iface, block, missing }) => [L(`${iface.title} (${block.title})`, arcUrl(iface)), `: ${sentence(missing)}`]),
-  [`${meta.gaps.affects} `, ...linksTo(g.services, pdtUrl), "."],
-];
-const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) => o.outside)))];
 
 // --- Markdown -------------------------------------------------------------------------------------------------------
 {
   const M = [];
   const service = makeService();
-  const mdService = (v, indent) => {
-    const p = service(v);
-    M.push(`${indent}- **${md(p.head)}** — ${meta.status[p.status]}`);
-    for (const l of p.lines) M.push(`${indent}  - ${md(l)}`);
+  const mdService = (v, indent, opts) => {
+    const p = service(v, opts);
+    M.push(`${indent}- **${md(p.head)}**`);
+    for (const l of p.lines) M.push(`${indent}  - ${l.notYet ? "┆ " : ""}${md(l.parts)}`);
   };
-  M.push(`# ${meta.title}`, "", meta.lead, "", `> ${meta.narrativeLabel} ${platform.narrative}`, "", statusLine, "");
+  M.push(`# ${meta.title}`, "", meta.lead, "", `> ${meta.narrativeLabel} ${platform.narrative}`, "");
   M.push(`## ${meta.roles.heading}`, "");
-  for (const r of coreRoles) M.push(`- **${md([L(r.title, pdtUrl(r))])}:** ${firstSentence(prose(r))}`);
+  for (const r of roles) M.push(`- **${md([L(r.title, pdtUrl(r))])}:** ${firstSentence(prose(r))}`);
   M.push("", `## ${meta.parts.heading}`, "", meta.parts.intro, "");
   for (const { bb } of blocks) M.push(`- **${md([L(bb.title, arcUrl(bb))])}:** ${job(bb)}`);
-  M.push("");
-  M.push(`## ${meta.reading.heading}`, "", meta.reading.intro, "", example, "");
+  M.push("", `## ${meta.reading.heading}`, "", meta.reading.intro, "", example, "", meta.notYet.explained, "");
   M.push(`## ${meta.experiences.heading}`, "", meta.experiences.intro, "");
   for (const j of shownJourneys) {
     M.push(`### ${md([L(j.x.title, pdtUrl(j.x))])}`, "", prose(j.x), "");
@@ -259,18 +246,9 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
   }
   M.push(`## ${meta.together.heading}`, "", meta.together.intro, "");
   for (const { sc, parts } of scenarios) M.push(`- **${md([L(sc.title, arcUrl(sc))])}.** ${prose(sc)} ${meta.together.parts} ${md(linksTo(parts, arcUrl))}.`);
-  M.push("");
-  M.push(`## ${meta.gaps.heading}`, "", meta.gaps.intro, "");
-  for (const g of gaps.values()) {
-    M.push(`### ${md([L(g.channel.title, pdtUrl(g.channel))])}`, "");
-    for (const l of gapLines(g)) M.push(`- ${md(l)}`);
-    M.push("");
-  }
-  M.push(closingText, "");
-  M.push(`## ${meta.others.heading}`, "", meta.others.intro, "");
-  for (const v of others) mdService(v, "");
-  M.push("");
-  M.push(`## ${meta.blocks.heading}`, "", meta.blocks.intro, "", `${meta.blocks.outsideIntro}`, "");
+  M.push("", `## ${meta.ideas.heading}`, "", meta.ideas.intro, "");
+  for (const v of ideas) mdService(v, "", { idea: true });
+  M.push("", `## ${meta.blocks.heading}`, "", meta.blocks.intro, "", meta.blocks.outsideIntro, "");
   for (const u of outsideSystems) M.push(`- ${md([L(u.title, arcUrl(u))])}: ${lower(u.description?.replace(/\s*\(pdt42[^)]*\)/, "") ?? "")}`);
   M.push("");
   for (const [heading, intro, group] of [
@@ -280,9 +258,10 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
     M.push(`### ${heading}`, "", ...(intro ? [intro, ""] : []));
     for (const { bb, offers } of group) {
       M.push(`#### ${md([L(bb.title, arcUrl(bb))])}${bb.extensions?.repo ? ` (${md([L(bb.extensions.repo, `https://github.com/${bb.extensions.repo}`)])})` : ""}`, "", prose(bb), "");
-      for (const { i, channels, parts, outside } of offers) {
+      for (const { i, services, notYet, parts, outside } of offers) {
         M.push(`- **${md([L(i.title, arcUrl(i))])}:** ${prose(i)}`);
-        if (channels.length) M.push(`  - ${meta.blocks.delivers} ${md(linksTo(channels, pdtUrl))}`);
+        if (services.length) M.push(`  - ${meta.blocks.delivers} ${md(linksTo(services, pdtUrl))}`);
+        for (const m of notYet) M.push(`  - ┆ ${meta.notYet.label} ${sentence(m)}`);
         if (parts.length) M.push(`  - ${meta.blocks.usedBy} ${md(linksTo(parts, arcUrl))}`);
         if (outside.length) M.push(`  - ${meta.blocks.outside} ${md(linksTo(outside, arcUrl))}`);
       }
@@ -297,13 +276,11 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
 // --- HTML -----------------------------------------------------------------------------------------------------------
 {
   const service = makeService();
-  const badge = (status) =>
-    status === "partial"
-      ? `<a class="status status-${status}" href="#gaps-h">${esc(meta.status[status])}</a>`
-      : `<span class="status status-${status}">${esc(meta.status[status])}</span>`;
-  const htmlService = (v) => {
-    const p = service(v);
-    return `<li class="service"><div class="service-head"><strong>${ht(p.head)}</strong> ${badge(p.status)}</div>${p.lines.map((l) => `<p>${ht(l)}</p>`).join("")}</li>`;
+  const htmlService = (v, opts) => {
+    const p = service(v, opts);
+    return `<li class="service${opts?.idea ? " idea" : ""}"><div class="service-head"><strong>${ht(p.head)}</strong></div>${p.lines
+      .map((l) => (l.notYet ? `<p class="not-yet">${ht(l.parts)}</p>` : `<p>${ht(l.parts)}</p>`))
+      .join("")}</li>`;
   };
   const journeysHtml = shownJourneys
     .map(
@@ -317,17 +294,14 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
               if (st.asIn) return `\n            <li class="step as-in">${ht(asInLine(st))}</li>`;
               const how = stepHow(st);
               return `
-            <li class="step"><div class="step-label">${ht(stepLabel(st))}</div>${how ? `<p class="how">${ht(how)}</p>` : ""}${st.services.length ? `<ul class="services">${st.services.map(htmlService).join("")}</ul>` : ""}</li>`;
+            <li class="step"><div class="step-label">${ht(stepLabel(st))}</div>${how ? `<p class="how">${ht(how)}</p>` : ""}${st.services.length ? `<ul class="services">${st.services.map((v) => htmlService(v)).join("")}</ul>` : ""}</li>`;
             })
             .join("")}
           </ol>
         </article>`,
     )
     .join("");
-  const gapsHtml = [...gaps.values()]
-    .map((g) => `<li class="gap"><h3><a href="${esc(pdtUrl(g.channel))}">${esc(g.channel.title)}</a></h3>${gapLines(g).map((l) => `<p>${ht(l)}</p>`).join("")}</li>`)
-    .join("");
-  const othersHtml = others.map(htmlService).join("");
+  const ideasHtml = ideas.map((v) => htmlService(v, { idea: true })).join("");
   const blockHtml = ({ bb, offers }) => `
           <li class="block">
             <h4><a href="${esc(arcUrl(bb))}">${esc(bb.title)}</a></h4>
@@ -335,8 +309,8 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
             <p>${esc(prose(bb))}</p>
             <ul class="offers">${offers
               .map(
-                ({ i, channels, parts, outside }) =>
-                  `<li><a href="${esc(arcUrl(i))}"><strong>${esc(i.title)}</strong></a>: ${esc(prose(i))}${channels.length ? `<span class="meta"> ${esc(meta.blocks.delivers)} ${ht(linksTo(channels, pdtUrl))}.</span>` : ""}${parts.length ? `<span class="meta"> ${esc(meta.blocks.usedBy)} ${ht(linksTo(parts, arcUrl))}.</span>` : ""}${outside.length ? `<span class="meta"> ${esc(meta.blocks.outside)} ${ht(linksTo(outside, arcUrl))}.</span>` : ""}</li>`,
+                ({ i, services, notYet, parts, outside }) =>
+                  `<li><a href="${esc(arcUrl(i))}"><strong>${esc(i.title)}</strong></a>: ${esc(prose(i))}${services.length ? `<span class="meta"> ${esc(meta.blocks.delivers)} ${ht(linksTo(services, pdtUrl))}.</span>` : ""}${notYet.map((m) => `<span class="not-yet">${esc(meta.notYet.label)} ${esc(sentence(m))}</span>`).join("")}${parts.length ? `<span class="meta"> ${esc(meta.blocks.usedBy)} ${ht(linksTo(parts, arcUrl))}.</span>` : ""}${outside.length ? `<span class="meta"> ${esc(meta.blocks.outside)} ${ht(linksTo(outside, arcUrl))}.</span>` : ""}</li>`,
               )
               .join("")}</ul>
           </li>`;
@@ -362,13 +336,12 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
         <h1>${esc(meta.title)}</h1>
         <p>${esc(meta.lead)}</p>
         <blockquote class="narrative"><span>${esc(meta.narrativeLabel)}</span> <a href="${esc(pdtUrl(platform))}">${esc(platform.narrative)}</a></blockquote>
-        <p class="status-line">${esc(statusLine)}</p>
       </div>
     </header>
     <div class="wrap overview">
       <section aria-labelledby="roles-h">
         <h2 class="section" id="roles-h">${esc(meta.roles.heading)}</h2>
-        <ul class="roles">${coreRoles.map((r) => `<li><a href="${esc(pdtUrl(r))}"><strong>${esc(r.title)}</strong></a><span>${esc(firstSentence(prose(r)))}</span></li>`).join("")}</ul>
+        <ul class="roles">${roles.map((r) => `<li><a href="${esc(pdtUrl(r))}"><strong>${esc(r.title)}</strong></a><span>${esc(firstSentence(prose(r)))}</span></li>`).join("")}</ul>
       </section>
       <section aria-labelledby="parts-h">
         <h2 class="section" id="parts-h">${esc(meta.parts.heading)}</h2>
@@ -379,6 +352,7 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
         <h2 class="section" id="reading-h">${esc(meta.reading.heading)}</h2>
         <p class="lead">${esc(meta.reading.intro)}</p>
         <p class="example">${esc(example)}</p>
+        <p class="not-yet">${esc(meta.notYet.explained)}</p>
       </section>
       <section aria-labelledby="experiences-h">
         <h2 class="section" id="experiences-h">${esc(meta.experiences.heading)}</h2>
@@ -391,16 +365,10 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
           .map(({ sc, parts }) => `<li><a href="${esc(arcUrl(sc))}"><strong>${esc(sc.title)}</strong></a><p>${esc(prose(sc))}</p><p class="meta">${esc(meta.together.parts)} ${ht(linksTo(parts, arcUrl))}.</p></li>`)
           .join("")}</ul>
       </section>
-      <section aria-labelledby="gaps-h">
-        <h2 class="section" id="gaps-h">${esc(meta.gaps.heading)}</h2>
-        <p class="lead">${esc(meta.gaps.intro)}</p>
-        <ul class="gaps">${gapsHtml}</ul>
-        <p class="closing">${esc(closingText)}</p>
-      </section>
-      <section aria-labelledby="others-h">
-        <h2 class="section" id="others-h">${esc(meta.others.heading)}</h2>
-        <p class="lead">${esc(meta.others.intro)}</p>
-        <ul class="services">${othersHtml}</ul>
+      <section aria-labelledby="ideas-h">
+        <h2 class="section" id="ideas-h">${esc(meta.ideas.heading)}</h2>
+        <p class="lead">${esc(meta.ideas.intro)}</p>
+        <ul class="services ideas">${ideasHtml}</ul>
       </section>
       <details class="reference">
         <summary><h2 class="section" id="blocks-h">${esc(meta.blocks.heading)}</h2></summary>
@@ -425,4 +393,4 @@ const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) =>
 `;
   writeFileSync(join(out, "index.html"), html);
 }
-console.log(`overview: ${journeys.length} experiences, ${others.length} further services, ${blocks.length} building blocks, ${gaps.size} gaps → ${out}/`);
+console.log(`overview: ${journeys.length} experiences, ${ideas.length} ideas, ${blocks.length} building blocks → ${out}/`);
