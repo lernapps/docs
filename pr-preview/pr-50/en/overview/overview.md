@@ -118,10 +118,58 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 
 The journeys show what users see. Behind them the parts pass work to each other: how a creator's app gets into the catalog, and how the platform keeps itself and the creators' apps current. Read this if you run or change the system; the architecture describes each flow step by step.
 
-- **[Build and list an app](../architecture/#06-runtime-view.arc42.md:el-rs-build-and-list).** A creator finds no fitting app and decides to build one. Their AI assistant follows the tooling's guidance, creates the app from one of the app templates and checks it; the app's repository runs the tooling's actions. The assistant opens the listing pull request; the catalog checks the entry and, at the platform owner's request, has a review agent look at the app; the owner approves; the catalog publishes a copy. Parts involved: [Website](../architecture/#05-building-blocks.arc42.md:el-bb-website), [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog), [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling), [App templates](../architecture/#05-building-blocks.arc42.md:el-bb-app-templates), [Organisation](../architecture/#05-building-blocks.arc42.md:el-bb-org).
-- **[A listed app gets a new version](../architecture/#06-runtime-view.arc42.md:el-rs-app-update).** The creator releases a new version. The catalog builds a copy from that release and replaces the served copy; the address stays the same and never stops working. Parts involved: [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog), [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling).
-- **[The platform passes on its updates](../architecture/#06-runtime-view.arc42.md:el-rs-block-update).** When the site frame, the tooling or the app templates improve, the platform passes the improvement on to every repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each one, and it is merged when the checks pass. An improvement of the guidance has been measured before it is passed on. Parts involved: [Website](../architecture/#05-building-blocks.arc42.md:el-bb-website), [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling), [App templates](../architecture/#05-building-blocks.arc42.md:el-bb-app-templates), [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog), [Docs](../architecture/#05-building-blocks.arc42.md:el-bb-docs).
-- **[A platform site is published](../architecture/#06-runtime-view.arc42.md:el-rs-site-published).** A change is merged to a site's main line: the website, the catalog, the docs or the tooling's pages. The tooling's site actions build the site, run site-check from the site frame on the built pages, and deploy them to GitHub Pages under lernapps.net. A failing check stops the deploy. Parts involved: [Docs](../architecture/#05-building-blocks.arc42.md:el-bb-docs), [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling), [Website](../architecture/#05-building-blocks.arc42.md:el-bb-website).
+### [Build and list an app](../architecture/#06-runtime-view.arc42.md:el-rs-build-and-list)
+
+A creator finds no fitting app and decides to build one. Their AI assistant follows the tooling's guidance, creates the app from one of the app templates and checks it; the app's repository runs the tooling's actions. The assistant opens the listing pull request; the catalog checks the entry and, at the platform owner's request, has a review agent look at the app; the owner approves; the catalog publishes a copy.
+
+1. Creator → Catalog: find me an app for my class
+1. Catalog ⇢ Creator: no fitting app
+1. Creator → AI assistant: build an app for my class
+1. AI assistant → Website: show me the way in (llms.txt)
+1. AI assistant → Tooling: give me the guidance for this phase
+1. AI assistant → Tooling: create the app
+1. Tooling → App templates: provide the archetype's template
+1. AI assistant → Tooling: check the app
+1. App repo Actions → Tooling: check, build and publish the app
+1. AI assistant → Catalog: list this app (pull request with the entry)
+1. Catalog → Organisation: provide the pull request template and the rules
+1. Catalog → Tooling: check the entry and the app
+1. Catalog ⇢ AI assistant: the results, as a comment
+1. Owner → Catalog: have the app reviewed if needed, then publish it
+1. Catalog → Catalog: publish a copy under lernapps.net
+
+### [A listed app gets a new version](../architecture/#06-runtime-view.arc42.md:el-rs-app-update)
+
+The creator releases a new version. The catalog builds a copy from that release and replaces the served copy; the address stays the same and never stops working.
+
+1. App repo Actions → Tooling: build and publish the release
+1. Catalog → App repo Actions: report new releases
+1. Catalog → Tooling: check the new version
+1. Catalog → GitHub: open and merge the entry's update pull request
+1. Catalog → GitHub: build and publish the new copy
+1. GitHub ⇢ Catalog: the same address serves the new copy
+
+### [The platform passes on its updates](../architecture/#06-runtime-view.arc42.md:el-rs-block-update)
+
+When the site frame, the tooling or the app templates improve, the platform passes the improvement on to every repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each one, and it is merged when the checks pass. An improvement of the guidance has been measured before it is passed on.
+
+1. Website → Renovate: pass on the improved site frame
+1. App templates → Renovate: pass on the improved archetypes
+1. Tooling → Renovate: pass on the improved tooling
+1. Renovate → Catalog: take the new versions (pull request)
+1. Renovate → Docs: take the new site frame (pull request)
+1. Renovate → Tooling: take the new versions (pull request)
+1. Owner → Catalog: merge it, if not merged automatically
+
+### [A platform site is published](../architecture/#06-runtime-view.arc42.md:el-rs-site-published)
+
+A change is merged to a site's main line: the website, the catalog, the docs or the tooling's pages. The tooling's site actions build the site, run site-check from the site frame on the built pages, and deploy them to GitHub Pages under lernapps.net. A failing check stops the deploy.
+
+1. A platform site → Tooling: build the site (site action)
+1. Tooling → Website: check the built pages (site-check)
+1. Website ⇢ Tooling: passed, or stop the deploy
+1. Tooling → GitHub: publish the pages under lernapps.net
+1. GitHub → GoatCounter: count the visits to the published pages
 
 ## Ideas
 

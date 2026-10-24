@@ -98,3 +98,28 @@ a.status { text-decoration: none; }
 .hero .guide ul { display: grid; gap: 0.2rem; }
 .hero .guide a { color: #e2e8f0; font-weight: 600; }
 .parts .where { font-size: 0.85rem; }
+/* The flows: sequence diagrams drawn by the generator. Each part keeps its colour (--c) from the site map. */
+.parts li { border-top: 3px solid var(--c, var(--lc-border)); }
+.together h3 { font-size: 1.1rem; margin: 0; }
+.sequence { margin: 0.9rem 0 0.2rem; overflow-x: auto; }
+.sequence svg { display: block; font: 12px/1 var(--lc-font, system-ui, sans-serif); }
+.sequence .head rect { fill: var(--lc-card); stroke: var(--lc-border); }
+.sequence .head text { fill: var(--lc-muted); font-weight: 600; }
+.sequence .head.part rect { fill: color-mix(in srgb, var(--c) 12%, var(--lc-card)); stroke: color-mix(in srgb, var(--c) 45%, transparent); }
+.sequence .head.part text { fill: var(--c); font-weight: 800; }
+.sequence .life { stroke: var(--lc-border); stroke-dasharray: 3 4; }
+.sequence .head.part .life { stroke: color-mix(in srgb, var(--c) 40%, transparent); stroke-dasharray: none; stroke-width: 2; }
+.sequence .arrow { fill: none; stroke: var(--lc-muted); stroke-width: 1.5; }
+.sequence .arrow.part { stroke: var(--c); }
+.sequence .arrow.reply { stroke-dasharray: 5 4; }
+.sequence .tip { fill: context-stroke; }
+.sequence .lbl { fill: var(--lc-text); }
+.sequence .num { fill: var(--lc-card); stroke: var(--lc-muted); }
+.sequence g[style] .num { stroke: var(--c); }
+.sequence .num-t { fill: var(--lc-muted); font-size: 10px; font-weight: 700; }
+.sequence g[style] .num-t { fill: var(--c); }
+.together li { min-width: 0; border-left: none; padding: 1rem 1.1rem; border: 1px solid var(--lc-border); border-radius: 1rem; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .sequence .head.part text, :root:not([data-theme="light"]) .sequence g[style] .num-t { fill: color-mix(in srgb, var(--c) 55%, white); }
+}
+:root[data-theme="dark"] .sequence .head.part text, :root[data-theme="dark"] .sequence g[style] .num-t { fill: color-mix(in srgb, var(--c) 55%, white); }
