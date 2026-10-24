@@ -87,3 +87,8 @@ footer.sources { padding: 2.5rem 0 1rem; font-size: 0.88rem; }
 .overview .closing { margin-top: 1rem; font-weight: 600; max-width: 44rem; }
 a.status { text-decoration: none; }
 .together { display: grid; gap: 0.7rem; } .together li { padding: 0.8rem 1rem; border-left: 3px solid var(--lc-accent); background: var(--lc-card); border-radius: 0 0.85rem 0.85rem 0; } .together p { margin: 0.3rem 0 0; font-size: 0.94rem; } .together .meta { color: var(--lc-muted); font-size: 0.88rem; }
+/* Not yet delivered: a dashed block in place, and the ideas at the end. */
+.not-yet { margin: 0.4rem 0 0; padding: 0.45rem 0.7rem; border: 1.5px dashed var(--lc-muted); border-radius: 0.6rem; color: var(--lc-muted); font-size: 0.92rem; }
+.reading .not-yet { max-width: 44rem; }
+.service.idea { background: transparent; border: 1.5px dashed var(--lc-muted); border-left-width: 1.5px; }
+.offers .not-yet { display: block; }

@@ -5,7 +5,7 @@
     "commit": "a479584cc9c04ff6a7d11c822ebf96c271346a81"
   },
   "head": {
-    "label": "a91915b81ffe3e5a50e7a38b42a2404a90ed4a82"
+    "label": "9bc6aeadfb8ca9f12d15aa3b4d570370d834df41"
   },
   "acceptanceBase": "a479584cc9c04ff6a7d11c822ebf96c271346a81",
   "untracked": [],
@@ -107,6 +107,22 @@
       "line": 330,
       "elementId": "bb-org",
       "message": "Block 'bb-org' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/10-quality-requirements.arc42.md",
+      "line": 261,
+      "elementId": "qs-creator-gets-listable-app",
+      "message": "Block 'qs-creator-gets-listable-app' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/10-quality-requirements.arc42.md",
+      "line": 291,
+      "elementId": "qs-decide-in-a-minute",
+      "message": "Block 'qs-decide-in-a-minute' changed without changing its section prose."
     },
     {
       "kind": "implementation-path",
@@ -246,6 +262,22 @@
         "line": 330,
         "elementId": "bb-org",
         "message": "Block 'bb-org' changed without changing its section prose."
+      },
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
+        "file": "docs/arc42/10-quality-requirements.arc42.md",
+        "line": 261,
+        "elementId": "qs-creator-gets-listable-app",
+        "message": "Block 'qs-creator-gets-listable-app' changed without changing its section prose."
+      },
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
+        "file": "docs/arc42/10-quality-requirements.arc42.md",
+        "line": 291,
+        "elementId": "qs-decide-in-a-minute",
+        "message": "Block 'qs-decide-in-a-minute' changed without changing its section prose."
       }
     ],
     "untouched": [],
@@ -265,6 +297,54 @@
   },
   "architecture": {
     "elements": [
+      {
+        "id": "actor-adopting-adult",
+        "kind": "actor",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 58
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 58
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "Adopting adult"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "actor-student",
+        "kind": "actor",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 72
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 72
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "Student"
+          ],
+          "occurrence": 1
+        }
+      },
       {
         "id": "actor-ai-assistant",
         "kind": "actor",
@@ -319,6 +399,35 @@
           "headingPath": [
             "System Scope and Context",
             "Renovate"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "actor-email",
+        "kind": "actor",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "description",
+            "before": "Mail system that carries thanks and feedback today",
+            "after": "Mail system that carries thanks and feedback"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 208
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 208
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "E-mail"
           ],
           "occurrence": 1
         }
@@ -575,9 +684,14 @@
             "name": "extensions",
             "after": {
               "realises": "ch-feedback, ch-creator-insight",
-              "missing-ch-feedback": "Today a click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.",
+              "missing-ch-feedback": "A click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.",
               "missing-ch-creator-insight": "Thanks reach the creator only if the platform owner passes them on."
             }
+          },
+          {
+            "name": "protocol",
+            "before": "link from the catalog or an app; today a prepared e-mail",
+            "after": "link from the catalog or an app; realised as a prepared e-mail"
           }
         ],
         "proseChanged": true,
@@ -915,6 +1029,73 @@
         }
       },
       {
+        "id": "rs-app-in-minutes",
+        "kind": "runtime-scenario",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "trigger",
+            "before": "A teacher looks for an app right before a lesson",
+            "after": "A teacher has to take over a class at short notice"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 15
+        },
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 15
+        },
+        "section": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "headingPath": [
+            "Runtime View",
+            "An app in class within minutes"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "rs-child-struggles",
+        "kind": "runtime-scenario",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 55
+        },
+        "section": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "headingPath": [
+            "Runtime View",
+            "Help where a child struggles"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "rs-practice-tonight",
+        "kind": "runtime-scenario",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 55
+        },
+        "section": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "headingPath": [
+            "Runtime View",
+            "Practice tonight, before the test"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "rs-build-and-list",
         "kind": "runtime-scenario",
         "status": "unchanged",
@@ -934,6 +1115,30 @@
           "headingPath": [
             "Runtime View",
             "Build and list an app"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "rs-app-update",
+        "kind": "runtime-scenario",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 144
+        },
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 144
+        },
+        "section": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "headingPath": [
+            "Runtime View",
+            "A listed app gets a new version"
           ],
           "occurrence": 1
         }
@@ -963,6 +1168,30 @@
         }
       },
       {
+        "id": "dec-serve-copies",
+        "kind": "decision",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "docs/arc42/09-decisions.arc42.md",
+          "line": 21
+        },
+        "head": {
+          "file": "docs/arc42/09-decisions.arc42.md",
+          "line": 21
+        },
+        "section": {
+          "file": "docs/arc42/09-decisions.arc42.md",
+          "headingPath": [
+            "Architecture Decisions",
+            "Serve a copy of every listed app"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "dec-thanks-interface",
         "kind": "decision",
         "status": "unchanged",
@@ -982,6 +1211,101 @@
           "headingPath": [
             "Architecture Decisions",
             "Thanks as an interface of the catalog"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "qg-fast-loading",
+        "kind": "quality-goal",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "extensions",
+            "before": {
+              "iso25010": "performance efficiency, time behaviour",
+              "derived-from": "KD-17, x-app-in-minutes, x-practice-tonight"
+            },
+            "after": {
+              "iso25010": "performance efficiency, time behaviour",
+              "derived-from": "KD-17, x-app-in-minutes, x-child-struggles"
+            }
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/arc42/10-quality-requirements.arc42.md",
+          "line": 16
+        },
+        "head": {
+          "file": "docs/arc42/10-quality-requirements.arc42.md",
+          "line": 16
+        },
+        "section": {
+          "file": "docs/arc42/10-quality-requirements.arc42.md",
+          "headingPath": [
+            "Quality Requirements",
+            "Fast loading"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "qs-creator-gets-listable-app",
+        "kind": "quality-scenario",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "extensions",
+            "before": {
+              "status": "thresholds proposed, to be confirmed"
+            }
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/10-quality-requirements.arc42.md",
+          "line": 261
+        },
+        "head": {
+          "file": "docs/arc42/10-quality-requirements.arc42.md",
+          "line": 261
+        },
+        "section": {
+          "file": "docs/arc42/10-quality-requirements.arc42.md",
+          "headingPath": [
+            "Quality Requirements",
+            "A creator gets to a listable app"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "qs-decide-in-a-minute",
+        "kind": "quality-scenario",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "extensions",
+            "before": {
+              "status": "not measured yet"
+            }
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/10-quality-requirements.arc42.md",
+          "line": 292
+        },
+        "head": {
+          "file": "docs/arc42/10-quality-requirements.arc42.md",
+          "line": 291
+        },
+        "section": {
+          "file": "docs/arc42/10-quality-requirements.arc42.md",
+          "headingPath": [
+            "Quality Requirements",
+            "Decide in a minute"
           ],
           "occurrence": 1
         }
@@ -1018,6 +1342,25 @@
     ],
     "diagrams": [
       {
+        "id": "context-overall",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "source",
+            "before": "flowchart LR\n    actor-adopting-adult[\"Adopting adult\"]\n    actor-student[\"Student\"]\n    actor-creator[\"Creator\"]\n    actor-ai-assistant[\"Creator's AI assistant\"]\n    actor-gatekeeper[\"School gatekeeper\"]\n    actor-platform-owner[\"Platform owner\"]\n    actor-app-repo-actions[\"GitHub Actions of the app repositories\"]\n    actor-github[\"GitHub\"]\n    actor-renovate[\"Renovate\"]\n    actor-goatcounter[\"GoatCounter\"]\n    actor-email[\"E-mail\"]\n    subgraph system[\"lernapps.net\"]\n        bb-website[\"Website\"]\n        bb-catalog[\"Catalog\"]\n        bb-tooling[\"Tooling\"]\n        bb-app-templates[\"App templates\"]\n        bb-docs[\"Docs\"]\n        bb-org[\"Organisation\"]\n    end\n    actor-adopting-adult -->|\"finds, passes on and thanks\"| system\n    actor-student -->|\"uses an app and thanks\"| system\n    actor-creator -->|\"decides to build an app\"| system\n    actor-ai-assistant -->|\"builds and lists an app\"| system\n    actor-gatekeeper -->|\"reads privacy notice and imprint\"| system\n    actor-platform-owner -->|\"decides, merges, approves entries\"| system\n    actor-app-repo-actions -->|\"checks, builds and publishes an app\"| system\n    actor-github -->|\"hosts, runs and carries every contribution\"| system\n    actor-renovate -->|\"moves the pins between repositories\"| system\n    actor-goatcounter -->|\"counts the platform's open counts\"| system\n    actor-email -->|\"carries thanks today\"| system",
+            "after": "flowchart LR\n    actor-adopting-adult[\"Adopting adult\"]\n    actor-student[\"Student\"]\n    actor-creator[\"Creator\"]\n    actor-ai-assistant[\"Creator's AI assistant\"]\n    actor-gatekeeper[\"School gatekeeper\"]\n    actor-platform-owner[\"Platform owner\"]\n    actor-app-repo-actions[\"GitHub Actions of the app repositories\"]\n    actor-github[\"GitHub\"]\n    actor-renovate[\"Renovate\"]\n    actor-goatcounter[\"GoatCounter\"]\n    actor-email[\"E-mail\"]\n    subgraph system[\"lernapps.net\"]\n        bb-website[\"Website\"]\n        bb-catalog[\"Catalog\"]\n        bb-tooling[\"Tooling\"]\n        bb-app-templates[\"App templates\"]\n        bb-docs[\"Docs\"]\n        bb-org[\"Organisation\"]\n    end\n    actor-adopting-adult -->|\"finds, passes on and thanks\"| system\n    actor-student -->|\"uses an app and thanks\"| system\n    actor-creator -->|\"decides to build an app\"| system\n    actor-ai-assistant -->|\"builds and lists an app\"| system\n    actor-gatekeeper -->|\"reads privacy notice and imprint\"| system\n    actor-platform-owner -->|\"decides, merges, approves entries\"| system\n    actor-app-repo-actions -->|\"checks, builds and publishes an app\"| system\n    actor-github -->|\"hosts, runs and carries every contribution\"| system\n    actor-renovate -->|\"moves the pins between repositories\"| system\n    actor-goatcounter -->|\"counts the platform's open counts\"| system\n    actor-email -->|\"carries thanks\"| system"
+          }
+        ],
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 11
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 11
+        }
+      },
+      {
         "id": "building-blocks-level-1",
         "status": "modified",
         "attributes": [
@@ -1034,6 +1377,43 @@
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
           "line": 11
+        }
+      },
+      {
+        "id": "rs-app-in-minutes-sequence",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "source",
+            "before": "sequenceDiagram\n    participant teacher as Teacher\n    participant student as Students\n    participant website as Website\n    participant catalog as Catalog\n    participant mail as E-mail\n    teacher->>catalog: find an app by topic and grade\n    catalog-->>teacher: listed apps with their measured fitness\n    teacher->>website: privacy notice, if asked\n    teacher->>student: link or QR code to the served app\n    student->>catalog: open the served app\n    catalog-->>student: the app, from lernapps.net\n    teacher->>catalog: thanks, one click\n    catalog->>mail: thanks, today as a prepared e-mail",
+            "after": "sequenceDiagram\n    participant teacher as Teacher\n    participant student as Students\n    participant website as Website\n    participant catalog as Catalog\n    participant mail as E-mail\n    teacher->>catalog: find an app by topic and grade\n    catalog-->>teacher: listed apps with their measured fitness\n    teacher->>website: privacy notice, if asked\n    teacher->>student: link or QR code to the served app\n    student->>catalog: open the served app\n    catalog-->>student: the app, from lernapps.net\n    teacher->>catalog: thanks, one click\n    catalog->>mail: thanks, as a prepared e-mail"
+          }
+        ],
+        "base": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 24
+        },
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 24
+        }
+      },
+      {
+        "id": "rs-child-struggles-sequence",
+        "status": "added",
+        "attributes": [],
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 64
+        }
+      },
+      {
+        "id": "rs-practice-tonight-sequence",
+        "status": "removed",
+        "attributes": [],
+        "base": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 64
         }
       }
     ],
@@ -1069,14 +1449,56 @@
           "to": "if-site-actions",
           "relation": "requires"
         }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "rs-child-struggles",
+          "to": "bb-catalog",
+          "relation": "involves"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "rs-practice-tonight",
+          "to": "bb-catalog",
+          "relation": "involves"
+        }
       }
     ],
-    "proseSections": [],
+    "proseSections": [
+      {
+        "status": "modified",
+        "section": {
+          "file": "docs/arc42/01-introduction-and-goals.arc42.md",
+          "headingPath": [
+            "Introduction and Goals",
+            "1.1 Requirements Overview"
+          ],
+          "occurrence": 1
+        },
+        "base": {
+          "file": "docs/arc42/01-introduction-and-goals.arc42.md",
+          "line": 12
+        },
+        "head": {
+          "file": "docs/arc42/01-introduction-and-goals.arc42.md",
+          "line": 12
+        }
+      }
+    ],
     "documents": [
+      {
+        "file": "docs/arc42/01-introduction-and-goals.arc42.md",
+        "added": 0,
+        "modified": 1,
+        "removed": 0
+      },
       {
         "file": "docs/arc42/03-system-context.arc42.md",
         "added": 0,
-        "modified": 2,
+        "modified": 6,
         "removed": 0
       },
       {
@@ -1087,14 +1509,20 @@
       },
       {
         "file": "docs/arc42/06-runtime-view.arc42.md",
+        "added": 2,
+        "modified": 5,
+        "removed": 2
+      },
+      {
+        "file": "docs/arc42/09-decisions.arc42.md",
         "added": 0,
         "modified": 2,
         "removed": 0
       },
       {
-        "file": "docs/arc42/09-decisions.arc42.md",
+        "file": "docs/arc42/10-quality-requirements.arc42.md",
         "added": 0,
-        "modified": 1,
+        "modified": 3,
         "removed": 0
       },
       {

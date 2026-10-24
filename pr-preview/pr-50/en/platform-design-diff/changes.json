@@ -5,19 +5,19 @@
     "commit": "a479584cc9c04ff6a7d11c822ebf96c271346a81"
   },
   "head": {
-    "label": "a91915b81ffe3e5a50e7a38b42a2404a90ed4a82"
+    "label": "9bc6aeadfb8ca9f12d15aa3b4d570370d834df41"
   },
   "acceptanceBase": "a479584cc9c04ff6a7d11c822ebf96c271346a81",
   "untracked": [],
   "accepted": false,
   "findings": [
     {
-      "kind": "prose-without-block-change",
+      "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "1-exploration/e2-scan.pdt42.md",
-      "line": 81,
-      "elementId": "e-adopters",
-      "message": "Section prose changed without changing block 'e-adopters' — it names 'Teachers', 'Parents'."
+      "line": 132,
+      "elementId": "e-students",
+      "message": "Block 'e-students' changed without changing its section prose."
     },
     {
       "kind": "block-without-prose-change",
@@ -58,6 +58,46 @@
       "line": 346,
       "elementId": "ch-fitness-signal",
       "message": "Block 'ch-fitness-signal' changed without changing its section prose."
+    },
+    {
+      "kind": "prose-without-block-change",
+      "severity": "warning",
+      "file": "2-design/d6-learning-engine.pdt42.md",
+      "line": 138,
+      "elementId": "s-build-on-apps",
+      "message": "Section prose changed without changing block 's-build-on-apps' — it names 'GitHub'."
+    },
+    {
+      "kind": "prose-without-block-change",
+      "severity": "warning",
+      "file": "2-design/d6-learning-engine.pdt42.md",
+      "line": 154,
+      "elementId": "s-contribute-practices",
+      "message": "Section prose changed without changing block 's-contribute-practices' — it names 'GitHub'."
+    },
+    {
+      "kind": "prose-without-block-change",
+      "severity": "warning",
+      "file": "2-design/d6-learning-engine.pdt42.md",
+      "line": 234,
+      "elementId": "s-class-sets",
+      "message": "Section prose changed without changing block 's-class-sets' — it names 'GitHub'."
+    },
+    {
+      "kind": "prose-without-block-change",
+      "severity": "warning",
+      "file": "2-design/d6-learning-engine.pdt42.md",
+      "line": 268,
+      "elementId": "s-adapt-apps",
+      "message": "Section prose changed without changing block 's-adapt-apps' — it names 'GitHub'."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "2-design/d8-mvp.pdt42.md",
+      "line": 151,
+      "elementId": "mvp-first-thanks",
+      "message": "Block 'mvp-first-thanks' changed without changing its section prose."
     }
   ],
   "model": {
@@ -65,21 +105,34 @@
       {
         "id": "e-adopters",
         "kind": "entity",
-        "status": "unchanged",
-        "attributes": [],
-        "proseChanged": true,
-        "proseMentions": [
+        "status": "modified",
+        "attributes": [
           {
-            "term": "Teachers",
-            "element": "e-adopters",
-            "source": "fact"
+            "name": "goals",
+            "before": [
+              "Teachers: gain free time by keeping students busy, for individual support or preparation",
+              "Parents: support their children's learning with little time"
+            ],
+            "after": [
+              "Teachers: gain free time by keeping students busy, for individual support or preparation",
+              "Parents: support their child where they cannot help themselves, for lack of time or of knowledge"
+            ]
           },
           {
-            "term": "Parents",
-            "element": "e-adopters",
-            "source": "fact"
+            "name": "pressures",
+            "before": [
+              "Lack of time",
+              "Responsibility for data protection",
+              "The next test"
+            ],
+            "after": [
+              "Lack of time",
+              "Responsibility for data protection",
+              "A class taken over at short notice; a child who struggles where they cannot help"
+            ]
           }
         ],
+        "proseChanged": true,
         "base": {
           "file": "1-exploration/e2-scan.pdt42.md",
           "line": 81
@@ -94,6 +147,90 @@
             "Scan the ecosystem",
             "Entities",
             "Adopting adults"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "e-students",
+        "kind": "entity",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "convenience-gains",
+            "before": [
+              "Quick help right before the test"
+            ],
+            "after": [
+              "Help with exactly the topic they struggle with"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "line": 132
+        },
+        "head": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "line": 132
+        },
+        "section": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "headingPath": [
+            "Scan the ecosystem",
+            "Entities",
+            "Students"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "j-students-find",
+        "kind": "job",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "line": 384
+        },
+        "head": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "line": 384
+        },
+        "section": {
+          "file": "1-exploration/e2-scan.pdt42.md",
+          "headingPath": [
+            "Scan the ecosystem",
+            "Jobs in \"Getting apps into use\"",
+            "Students find an app to prepare for the next test"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "c-need-students",
+        "kind": "component",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "1-exploration/e5-value-chain.pdt42.md",
+          "line": 22
+        },
+        "head": {
+          "file": "1-exploration/e5-value-chain.pdt42.md",
+          "line": 22
+        },
+        "section": {
+          "file": "1-exploration/e5-value-chain.pdt42.md",
+          "headingPath": [
+            "Map the value chain",
+            "User needs",
+            "Students understand the subject to get good grades"
           ],
           "occurrence": 1
         }
@@ -253,6 +390,36 @@
         }
       },
       {
+        "id": "t-return-to-app",
+        "kind": "transaction",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "value-unit",
+            "before": "A return visit before a test",
+            "after": "A return visit to keep practising"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 265
+        },
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 265
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Transactions Board: Creators and students",
+            "Return to an app"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "ch-listing",
         "kind": "channel",
         "status": "modified",
@@ -382,6 +549,42 @@
         }
       },
       {
+        "id": "le-students",
+        "kind": "learning-engine",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "getting-better",
+            "before": [
+              "Return to apps and find new ones for their topic before a test",
+              "Thank the creator"
+            ],
+            "after": [
+              "Return to apps and find new ones for the topics they struggle with",
+              "Thank the creator"
+            ]
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 66
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 66
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Learning engine",
+            "Students"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "s-building-guidance",
         "kind": "service",
         "status": "modified",
@@ -406,6 +609,31 @@
             "Design the learning engine",
             "Services",
             "Guidance for building apps"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "s-listing-help",
+        "kind": "service",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 103
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 104
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Services",
+            "Help to list an app"
           ],
           "occurrence": 1
         }
@@ -455,6 +683,68 @@
         }
       },
       {
+        "id": "s-build-on-apps",
+        "kind": "service",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [
+          {
+            "term": "GitHub",
+            "element": "e-github",
+            "source": "element"
+          }
+        ],
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 135
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 138
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Services",
+            "Building on existing apps"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "s-contribute-practices",
+        "kind": "service",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [
+          {
+            "term": "GitHub",
+            "element": "e-github",
+            "source": "element"
+          }
+        ],
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 149
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 154
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Services",
+            "Contributing best practices to the guidance"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "s-start-right-away",
         "kind": "service",
         "status": "modified",
@@ -472,7 +762,7 @@
         },
         "head": {
           "file": "2-design/d6-learning-engine.pdt42.md",
-          "line": 180
+          "line": 184
         },
         "section": {
           "file": "2-design/d6-learning-engine.pdt42.md",
@@ -480,6 +770,36 @@
             "Design the learning engine",
             "Services",
             "Starting an app right away"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "s-student-finding",
+        "kind": "service",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "title",
+            "before": "Finding apps before a test",
+            "after": "Finding apps for a topic one struggles with"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 195
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 200
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Services",
+            "Finding apps for a topic one struggles with"
           ],
           "occurrence": 1
         }
@@ -497,7 +817,7 @@
         },
         "head": {
           "file": "2-design/d6-learning-engine.pdt42.md",
-          "line": 212
+          "line": 216
         },
         "section": {
           "file": "2-design/d6-learning-engine.pdt42.md",
@@ -510,19 +830,56 @@
         }
       },
       {
+        "id": "s-class-sets",
+        "kind": "service",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [
+          {
+            "term": "GitHub",
+            "element": "e-github",
+            "source": "element"
+          }
+        ],
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 227
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 234
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Services",
+            "Assembling apps for a class"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "s-adapt-apps",
         "kind": "service",
         "status": "unchanged",
         "attributes": [],
         "proseChanged": true,
-        "proseMentions": [],
+        "proseMentions": [
+          {
+            "term": "GitHub",
+            "element": "e-github",
+            "source": "element"
+          }
+        ],
         "base": {
           "file": "2-design/d6-learning-engine.pdt42.md",
           "line": 259
         },
         "head": {
           "file": "2-design/d6-learning-engine.pdt42.md",
-          "line": 260
+          "line": 268
         },
         "section": {
           "file": "2-design/d6-learning-engine.pdt42.md",
@@ -564,6 +921,11 @@
               "t-thank-creator-adult",
               "t-give-feedback"
             ]
+          },
+          {
+            "name": "value-proposition",
+            "before": "The right active-learning app for this topic and grade, running in class within minutes, safe to use without checking it yourself",
+            "after": "The right active-learning app for this topic and grade, even outside your subject, running in class within minutes, safe to use without checking it yourself"
           }
         ],
         "proseChanged": true,
@@ -585,42 +947,31 @@
         }
       },
       {
-        "id": "x-practice-tonight",
+        "id": "x-child-struggles",
         "kind": "experience",
-        "status": "modified",
-        "attributes": [
-          {
-            "name": "steps",
-            "before": [
-              "s-finding",
-              "t-find-app",
-              "t-bring-app",
-              "s-start-right-away",
-              "t-learn-with-app",
-              "s-giving-back",
-              "t-thank-creator-adult"
-            ],
-            "after": [
-              "s-finding",
-              "t-find-app",
-              "s-fitness-clarity",
-              "t-confirm-fitness",
-              "t-bring-app",
-              "s-start-right-away",
-              "t-learn-with-app",
-              "s-student-finding",
-              "t-return-to-app",
-              "s-giving-back",
-              "t-thank-creator-adult"
-            ]
-          }
-        ],
+        "status": "added",
+        "attributes": [],
         "proseChanged": true,
-        "base": {
+        "head": {
           "file": "2-design/d7-experiences.pdt42.md",
           "line": 59
         },
-        "head": {
+        "section": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "headingPath": [
+            "Assemble the platform experiences",
+            "Help where a child struggles"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "x-practice-tonight",
+        "kind": "experience",
+        "status": "removed",
+        "attributes": [],
+        "proseChanged": true,
+        "base": {
           "file": "2-design/d7-experiences.pdt42.md",
           "line": 59
         },
@@ -656,10 +1007,120 @@
           ],
           "occurrence": 1
         }
+      },
+      {
+        "id": "a-creators-accept-copy",
+        "kind": "assumption",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 58
+        },
+        "head": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 58
+        },
+        "section": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "headingPath": [
+            "Set up the Minimum Viable Platform",
+            "First draft: first apps",
+            "Assumptions",
+            "Creators accept that the platform serves a copy of their app"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "mvp-first-thanks",
+        "kind": "mvp",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "experiences",
+            "before": [
+              "x-app-in-minutes",
+              "x-practice-tonight",
+              "x-list-and-hear-back"
+            ],
+            "after": [
+              "x-app-in-minutes",
+              "x-child-struggles",
+              "x-list-and-hear-back"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 151
+        },
+        "head": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 151
+        },
+        "section": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "headingPath": [
+            "Set up the Minimum Viable Platform",
+            "First apps, first thanks"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "a-parents-find",
+        "kind": "assumption",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "title",
+            "before": "Parents find the platform the evening before a test",
+            "after": "Parents find the platform when their child struggles"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 257
+        },
+        "head": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 257
+        },
+        "section": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "headingPath": [
+            "Set up the Minimum Viable Platform",
+            "First apps, first thanks",
+            "Assumptions",
+            "Parents find the platform when their child struggles"
+          ],
+          "occurrence": 1
+        }
       }
     ],
     "diagrams": [],
     "edges": [
+      {
+        "status": "added",
+        "edge": {
+          "from": "mvp-first-thanks",
+          "to": "x-child-struggles",
+          "relation": "experiences"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "mvp-first-thanks",
+          "to": "x-practice-tonight",
+          "relation": "experiences"
+        }
+      },
       {
         "status": "added",
         "edge": {
@@ -751,7 +1212,47 @@
       {
         "status": "added",
         "edge": {
-          "from": "x-practice-tonight",
+          "from": "x-child-struggles",
+          "to": "e-adopters",
+          "relation": "core-entity"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-child-struggles",
+          "to": "r-adults-students",
+          "relation": "relationship"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-child-struggles",
+          "to": "e-creators",
+          "relation": "roles"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-child-struggles",
+          "to": "e-students",
+          "relation": "roles"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-child-struggles",
+          "to": "s-finding",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-child-struggles",
           "to": "s-fitness-clarity",
           "relation": "steps"
         }
@@ -759,7 +1260,23 @@
       {
         "status": "added",
         "edge": {
-          "from": "x-practice-tonight",
+          "from": "x-child-struggles",
+          "to": "s-giving-back",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-child-struggles",
+          "to": "s-start-right-away",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-child-struggles",
           "to": "s-student-finding",
           "relation": "steps"
         }
@@ -767,7 +1284,15 @@
       {
         "status": "added",
         "edge": {
-          "from": "x-practice-tonight",
+          "from": "x-child-struggles",
+          "to": "t-bring-app",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-child-struggles",
           "to": "t-confirm-fitness",
           "relation": "steps"
         }
@@ -775,16 +1300,153 @@
       {
         "status": "added",
         "edge": {
-          "from": "x-practice-tonight",
+          "from": "x-child-struggles",
+          "to": "t-find-app",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-child-struggles",
+          "to": "t-learn-with-app",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-child-struggles",
           "to": "t-return-to-app",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-child-struggles",
+          "to": "t-thank-creator-adult",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "e-adopters",
+          "relation": "core-entity"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "r-adults-students",
+          "relation": "relationship"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "e-creators",
+          "relation": "roles"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "e-students",
+          "relation": "roles"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "s-finding",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "s-giving-back",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "s-start-right-away",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "t-bring-app",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "t-find-app",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "t-learn-with-app",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "removed",
+        "edge": {
+          "from": "x-practice-tonight",
+          "to": "t-thank-creator-adult",
           "relation": "steps"
         }
       }
     ],
-    "proseSections": [],
+    "proseSections": [
+      {
+        "status": "modified",
+        "section": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "headingPath": [
+            "Assemble the platform experiences"
+          ],
+          "occurrence": 1
+        },
+        "base": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 1
+        },
+        "head": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 1
+        }
+      }
+    ],
     "documents": [
       {
         "file": "1-exploration/e2-scan.pdt42.md",
+        "added": 0,
+        "modified": 3,
+        "removed": 0
+      },
+      {
+        "file": "1-exploration/e5-value-chain.pdt42.md",
         "added": 0,
         "modified": 1,
         "removed": 0
@@ -798,17 +1460,23 @@
       {
         "file": "2-design/d5-transactions.pdt42.md",
         "added": 3,
-        "modified": 6,
+        "modified": 7,
         "removed": 0
       },
       {
         "file": "2-design/d6-learning-engine.pdt42.md",
         "added": 0,
-        "modified": 5,
+        "modified": 11,
         "removed": 0
       },
       {
         "file": "2-design/d7-experiences.pdt42.md",
+        "added": 1,
+        "modified": 3,
+        "removed": 1
+      },
+      {
+        "file": "2-design/d8-mvp.pdt42.md",
         "added": 0,
         "modified": 3,
         "removed": 0
