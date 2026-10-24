@@ -1,6 +1,6 @@
 ---
 name: pdt
-description: Use when work in a lernapps repository depends on how the lernapps.net platform is meant to work — its roles, what they exchange, its principles (free, thanks, no hidden data collection) or the MVP being built. Explains where the platform design lives and how to read it with the pdt42 CLI.
+description: Use when work in a lernapps repository depends on how the lernapps.net platform is meant to work — its roles, what they exchange, its principles (free, thanks, no hidden data collection), the MVP being built, or how the system is built. Explains where the platform design and the architecture live and how to read them with the pdt42 and arc42 CLIs.
 ---
 
 # The lernapps.net platform design
@@ -34,4 +34,16 @@ The version is pinned in `package.json`. Each chapter is Markdown: prose explain
 
 Decisions behind the design are summarised in `.vibe/development-plan-feat-platform-design.md` (key decisions KD-xx), e.g. KD-17 (thanks as the currency) and KD-18 (no hidden data collection; the apps collect nothing).
 
-Read the design; change it only in lernapps/docs.
+## The architecture
+
+The architecture of the whole system is an arc42 model in the same repo, folder `docs/arc42/`; rendered at <https://lernapps.net/docs/architecture/>. One building block per repository; its interfaces name the pdt42 channels they realise (`x-realises`) and what they do not deliver yet (`x-missing-<channel>`).
+
+```sh
+npx arc42 --dir docs/arc42 get --type building-block   # the parts, one per repository
+npx arc42 --dir docs/arc42 get --type interface        # what each part offers, and which channels it realises
+npx arc42 --dir docs/arc42 get <id>                    # one element, e.g. bb-catalog
+```
+
+How to write arc42 is in the skill [arc42-language](https://github.com/doctoolchain/arc42-language).
+
+Read the design and the architecture; change them only in lernapps/docs.
