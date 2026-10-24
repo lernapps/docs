@@ -15,6 +15,48 @@ lead: >-
 guide:
   heading: "On this page:"
 
+# The vision on top: a short claim in two colours, a paragraph and the link. It sums up docs/vision.md.
+vision:
+  de:
+    label: Die Vision
+    claim: ["Viele kleine Lösungen.", "Eine große Veränderung."]
+    text: >-
+      KI macht es leicht, genau die Lern-App zu bauen, die gerade gebraucht wird. Meist bleibt sie dort, wo sie
+      entstanden ist. lernapps.net macht aus diesen Einzelstücken eine Veränderung für viele: auffindbar, frei nutzbar
+      und so gebaut, dass sich niemand Sorgen machen muss.
+    link: Zur Vision (Englisch)
+  en:
+    label: The vision
+    claim: ["Many small solutions.", "One real change."]
+    text: >-
+      AI makes it easy to build exactly the learning app that is needed right now. Mostly it stays where it was made.
+      lernapps.net turns these one-offs into a change for many: easy to find, free to use and built so that no one
+      has to worry.
+    link: To the vision
+
+# The German frame: the preamble in German, then a cut; the rest of the page comes from the English models.
+de:
+  title: So funktioniert lernapps.net
+  lead: >-
+    Warum es die Plattform gibt, aus welchen Teilen sie besteht, welche Aufgabe jeder Teil hat und wie Menschen sie
+    nutzen. Für Engineers und Tech Leads, die an der Plattform arbeiten oder sie verstehen wollen, bevor sie ihre
+    beiden Modelle lesen. Das Plattform-Design sagt, wer mitmacht und was sie einander geben; die Architektur sagt,
+    wie das System gebaut ist.
+  guide:
+    heading: "Auf dieser Seite:"
+  why:
+    roles-h: "die Menschen, für die es die Plattform gibt; die Journeys sind aus ihrer Sicht erzählt."
+    parts-h: "die Sitemap: Adresse, Repository und Aufgabe jedes Teils; der Rest der Seite nennt sie."
+    reading-h: "wie Schritt, Service und Teil zusammenhängen; einmal lesen vor den Journeys."
+    experiences-h: "die Plattform aus Sicht ihrer Nutzer, Schritt für Schritt, mit dem Teil, der hilft, und dem Zusammenspiel dahinter."
+    together-h: "die Abläufe hinter den Journeys, die kein Nutzer sieht; für alle, die das System betreiben oder ändern."
+    ideas-h: "Services, die die Plattform später anbieten könnte, jeweils mit einem Issue zur Diskussion."
+    blocks-h: "jeder Teil mit seinen Schnittstellen, zum Nachschlagen."
+    read-on-h: "die Dokumente, aus denen diese Seite entsteht."
+  cut: >-
+    Ab hier auf Englisch: Der Rest dieser Seite wird aus dem Plattform-Design und der Architektur erzeugt, und die
+    sind auf Englisch geschrieben.
+
 narrativeLabel: "The goal, in the platform design's words:"
 
 roles:
@@ -23,7 +65,7 @@ roles:
   intro: >-
     The platform exists for these people. The journeys below are told from their views, so knowing them tells you
     whose problem a part solves.
-  outsideIntro: "The system relies on these systems outside it:"
+  toolsIntro: "What they bring themselves:"
 
 parts:
   heading: The parts and where they live
@@ -96,6 +138,7 @@ blocks:
 
 readOn:
   heading: Read on
+  why: "the documents this page is generated from."
   intro: >-
     This page is the way in. Everything on it comes from the documents below; follow them for the full picture, in
     the depth each one has.

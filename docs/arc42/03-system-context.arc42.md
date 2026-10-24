@@ -103,7 +103,7 @@ tooling, and opens the listing pull request.
 id: actor-ai-assistant
 title: Creator's AI assistant
 type: system
-description: The AI tool a creator builds and lists an app with; it reads the guidance and runs the CLI (pdt42 e-ai-assistants)
+description: The AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI (pdt42 e-ai-assistants)
 requires: if-guidance, if-tooling-cli, if-listing, if-home-pages
 :::
 ```

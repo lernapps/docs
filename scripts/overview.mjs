@@ -17,7 +17,8 @@
 // back to its main role are shown as what that role gets back; a block's first sentence is its job; an interface's
 // `x-risk` names the risk that holds while it does not deliver.
 //
-//   node scripts/overview.mjs <site-dir>   (writes <site-dir>/index.html and <site-dir>/overview.md, the same content)
+//   node scripts/overview.mjs <site-dir>   (writes <site-dir>/index.html (German frame), <site-dir>/en/index.html and
+//                                           <site-dir>/overview.md, the same content)
 import { execFile, execFileSync } from "node:child_process";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { basename, isAbsolute, join } from "node:path";
@@ -189,7 +190,14 @@ const blocks = arc.elements
 // Where each part can be found: its addresses under lernapps.net (deployment view) and its repository.
 const addressesOf = (bb) =>
   arc.elements.filter((e) => e.kind === "deployment-node" && e.parent && arcById.get(e.parent)?.type === "environment" && /lernapps\.net/.test(e.title) && list(e.hosts).includes(bb.id)).map((e) => e.title);
-const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) => o.outside)))];
+// The tools people bring themselves: the systems outside the platform that a person addresses directly in a journey.
+const broughtTools = () => [
+  ...new Set(
+    [...behind.values()].flatMap(({ seq }) =>
+      seq.messages.filter((m) => arcById.get(m.from.id)?.type === "person" && arcById.get(m.to.id)?.kind === "actor" && arcById.get(m.to.id)?.type === "system").map((m) => arcById.get(m.to.id)),
+    ),
+  ),
+];
 // How the parts work together: the runtime scenarios of the architecture that involve at least two parts; a
 // The sequence diagram of a runtime scenario, read from its chapter: the `:::diagram` block with `scenario: <id>`
 // and its aliases (name in the diagram = element id), then the Mermaid sequence that follows it.
@@ -240,6 +248,7 @@ const guide = [
   ["together-h", meta.together],
   ["ideas-h", meta.ideas],
   ["blocks-h", meta.blocks],
+  ["read-on-h", meta.readOn],
 ].map(([id, m]) => [id, m.heading, m.why]);
 const intro = {
   parts: `${leadOf(blocks[0].bb)} ${meta.parts.intro}`,
@@ -294,6 +303,7 @@ const stepLabel = (st) =>
       : [meta.reading.startsFrom];
 const title = (id) => pdtById.get(id)?.title ?? id;
 const outsideLine = (u) => `${u.title}: ${lower(u.description?.replace(/\s*\(pdt42[^)]*\)/, "") ?? "")}`;
+const tools = broughtTools();
 const siteOf = (bb) => ({ addresses: addressesOf(bb), repo: bb.extensions?.repo });
 // Each part keeps one colour on the whole page: in the site map and in the flows.
 const PALETTE = ["#2563eb", "#0d9488", "#9333ea", "#ea580c", "#db2777", "#65a30d"];
@@ -359,12 +369,12 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
     M.push(`${indent}- **${md(p.head)}**`);
     for (const l of p.lines) M.push(`${indent}  - ${l.notYet ? "┆ " : ""}${md(l.parts)}`);
   };
-  M.push(`# ${meta.title}`, "", meta.lead, "", `> ${meta.narrativeLabel} ${platform.narrative}`, "", meta.guide.heading, "");
+  const v = meta.vision.en;
+  M.push(`# ${v.claim[0]} ${v.claim[1]}`, "", v.text, "", `[${v.link}](vision/)`, "", `## ${meta.title}`, "", meta.lead, "", `> ${meta.narrativeLabel} ${platform.narrative}`, "", meta.guide.heading, "");
   for (const [, head, why] of guide) M.push(`- **${head}:** ${why}`);
   M.push("", `## ${meta.roles.heading}`, "", meta.roles.intro, "");
   for (const r of roles) M.push(`- **${r.title}:** ${firstSentence(prose(r))}`);
-  M.push("", meta.roles.outsideIntro, "");
-  for (const u of outsideSystems) M.push(`- ${outsideLine(u)}`);
+  if (tools.length) M.push("", meta.roles.toolsIntro, "", ...tools.map((u) => `- ${outsideLine(u)}`));
   M.push("", `## ${meta.parts.heading}`, "", intro.parts, "");
   for (const { bb } of blocks) {
     const { addresses, repo } = siteOf(bb);
@@ -468,38 +478,52 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
               )
               .join("")}</ul>
           </li>`;
-  const html = `<!doctype html>
-<html lang="en">
+  // The page in each language: the vision and the preamble in that language; in German, a cut, then the rest in
+  // English, because it comes from the English models. Asset links climb out of the language folder.
+  const page = (lang) => {
+    const t = lang === "de" ? meta.de : meta;
+    const v = meta.vision[lang];
+    const up = lang === "de" ? "" : "../";
+    const href = (h) => (h.endsWith("/") ? h : up + h);
+    return `<!doctype html>
+<html lang="${lang}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="color-scheme" content="light dark">
-  <title>${esc(meta.title)} – lernapps.net</title>
-  <meta name="description" content="${esc(meta.lead)}">
-  <link rel="canonical" href="https://lernapps.net/docs/">
-  <link rel="stylesheet" href="stil.css">
-  <link rel="stylesheet" href="start.css">
-  <link rel="stylesheet" href="overview.css">
+  <title>${esc(t.title)} – lernapps.net</title>
+  <meta name="description" content="${esc(t.lead)}">
+  <link rel="canonical" href="https://lernapps.net/docs/${lang === "de" ? "" : "en/"}">
+  <link rel="stylesheet" href="${up}stil.css">
+  <link rel="stylesheet" href="${up}start.css">
+  <link rel="stylesheet" href="${up}overview.css">
 </head>
 <body>
   <main id="main-content" tabindex="-1">
     <header class="hero">
       <div class="wrap">
-        <div class="eyebrow">${esc(meta.eyebrow)}</div>
-        <h1>${esc(meta.title)}</h1>
-        <p>${esc(meta.lead)}</p>
-        <blockquote class="narrative"><span>${esc(meta.narrativeLabel)}</span> <a href="${esc(pdtUrl(platform))}">${esc(platform.narrative)}</a></blockquote>
-        <nav class="guide" aria-label="${esc(meta.guide.heading)}"><span>${esc(meta.guide.heading)}</span><ul>${guide.map(([id, head, why]) => `<li><a href="#${id}">${esc(head)}</a> – ${esc(why)}</li>`).join("")}</ul></nav>
+        <div class="eyebrow">${esc(v.label)}</div>
+        <h1><span>${esc(v.claim[0])}</span> <span class="second">${esc(v.claim[1])}</span></h1>
+        <p>${esc(v.text)}</p>
+        <a class="cta vision-link" href="vision/">${esc(v.link)} →</a>
       </div>
     </header>
     <div class="wrap overview">
+      <section aria-labelledby="intro-h" class="intro">
+        <h2 class="section" id="intro-h">${esc(t.title)}</h2>
+        <p class="lead">${esc(t.lead)}</p>
+        <nav class="guide" aria-label="${esc(t.guide.heading)}"><span>${esc(t.guide.heading)}</span><ul>${guide.map(([id, head, why]) => `<li><a href="#${id}">${esc(head)}</a> – ${esc(lang === "de" ? meta.de.why[id] : why)}</li>`).join("")}</ul></nav>
+      </section>${lang === "de" ? `
+      <p class="cut">${esc(meta.de.cut)}</p>
+      <div lang="en">` : ""}
+      <blockquote class="narrative"><span>${esc(meta.narrativeLabel)}</span> <a href="${esc(pdtUrl(platform))}">${esc(platform.narrative)}</a></blockquote>
       <section aria-labelledby="roles-h">
         <h2 class="section" id="roles-h">${esc(meta.roles.heading)}</h2>
         <p class="lead">${esc(meta.roles.intro)}</p>
         <ul class="roles">${roles.map((r) => `<li><strong>${esc(r.title)}</strong><span>${esc(firstSentence(prose(r)))}</span></li>`).join("")}</ul>
-        <p class="lead around">${esc(meta.roles.outsideIntro)}</p>
-        <ul class="outside">${outsideSystems.map((u) => `<li>${esc(outsideLine(u))}</li>`).join("")}</ul>
+        ${tools.length ? `<p class="lead around">${esc(meta.roles.toolsIntro)}</p>
+        <ul class="outside">${tools.map((u) => `<li>${esc(outsideLine(u))}</li>`).join("")}</ul>` : ""}
       </section>
       <section aria-labelledby="parts-h">
         <h2 class="section" id="parts-h">${esc(meta.parts.heading)}</h2>
@@ -548,16 +572,20 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
       <section aria-labelledby="read-on-h" class="read-on">
         <h2 class="section" id="read-on-h">${esc(meta.readOn.heading)}</h2>
         <p class="lead">${esc(meta.readOn.intro)}</p>
-        <ul class="documents">${meta.readOn.items.map((d) => `<li><a href="${esc(d.href)}"><strong>${esc(d.title)}</strong></a><span>${esc(d.text)}</span></li>`).join("")}</ul>
+        <ul class="documents">${meta.readOn.items.map((d) => `<li><a href="${esc(href(d.href))}"><strong>${esc(d.title)}</strong></a><span>${esc(d.text)}</span></li>`).join("")}</ul>
       </section>
       <footer class="sources">
-        <p>${esc(meta.sources.text)} <a href="overview.md">This page as text</a></p>
-      </footer>
+        <p>${esc(meta.sources.text)} <a href="${up}overview.md">This page as text</a></p>
+      </footer>${lang === "de" ? `
+      </div>` : ""}
     </div>
   </main>
 </body>
 </html>
 `;
-  writeFileSync(join(out, "index.html"), html);
+  };
+  writeFileSync(join(out, "index.html"), page("de"));
+  mkdirSync(join(out, "en"), { recursive: true });
+  writeFileSync(join(out, "en", "index.html"), page("en"));
 }
 console.log(`overview: ${journeys.length} experiences, ${ideas.length} ideas, ${blocks.length} building blocks → ${out}/`);

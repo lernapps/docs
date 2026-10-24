@@ -10,7 +10,7 @@ Germany's schools have a digitalisation problem, and it is not about Wi-Fi or ta
 
 Fitting solutions exist. People build small learning apps for their own class or their own child, often in a weekend with an AI assistant: an app to try out fractions, to practise percentages, to play with probability. These apps help where they were made. Then they stay there. Nobody else finds them, and their makers never learn whether they helped anywhere else.
 
-On the other side, a teacher looks for something minutes before a lesson, a parent the evening before a test. They need one app for one topic and one grade, now. What they find wants an account, shows ads, or sends data to servers they cannot judge. Is it allowed in class? Checking that alone takes longer than the lesson. So they take the worksheet again.
+On the other side, a teacher has to take over a class at short notice, perhaps outside their subject; a parent sees their child struggle with a topic they cannot help with. They need one app for one topic and one grade, now. What they find wants an account, shows ads, or sends data to servers they cannot judge. Is it allowed in class? Checking that alone takes longer than the lesson. So they take the worksheet again.
 
 Building got cheap. Getting an app into use did not.
 
