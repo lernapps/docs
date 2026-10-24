@@ -5,7 +5,7 @@
     "commit": "c3f2baf586b494e603639a652f9fdbe80b21ff69"
   },
   "head": {
-    "label": "e27fe3d11adc4218f74ca320ca1a0b5390a4e337"
+    "label": "92fdda952b5ed8b3f969c50acbafeb7df25aa5e9"
   },
   "acceptanceBase": "c3f2baf586b494e603639a652f9fdbe80b21ff69",
   "untracked": [],
@@ -24,23 +24,7 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 62,
-      "elementId": "if-home-pages",
-      "message": "Block 'if-home-pages' changed without changing its section prose."
-    },
-    {
-      "kind": "block-without-prose-change",
-      "severity": "warning",
-      "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 78,
-      "elementId": "if-site-frame",
-      "message": "Block 'if-site-frame' changed without changing its section prose."
-    },
-    {
-      "kind": "block-without-prose-change",
-      "severity": "warning",
-      "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 113,
+      "line": 115,
       "elementId": "if-catalog-pages",
       "message": "Block 'if-catalog-pages' changed without changing its section prose."
     },
@@ -48,7 +32,7 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 198,
+      "line": 204,
       "elementId": "if-guidance",
       "message": "Block 'if-guidance' changed without changing its section prose."
     },
@@ -56,7 +40,7 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 214,
+      "line": 220,
       "elementId": "if-tooling-cli",
       "message": "Block 'if-tooling-cli' changed without changing its section prose."
     },
@@ -64,7 +48,7 @@
       "kind": "prose-without-block-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 245,
+      "line": 251,
       "elementId": "if-app-actions",
       "message": "Section prose changed without changing block 'if-app-actions' — it names 'Creator'."
     },
@@ -72,9 +56,17 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/05-building-blocks.arc42.md",
-      "line": 278,
+      "line": 284,
       "elementId": "if-archetypes",
       "message": "Block 'if-archetypes' changed without changing its section prose."
+    },
+    {
+      "kind": "prose-without-block-change",
+      "severity": "warning",
+      "file": "docs/arc42/09-decisions.arc42.md",
+      "line": 196,
+      "elementId": "dec-thanks-interface",
+      "message": "Section prose changed without changing block 'dec-thanks-interface' — it names 'risk-one-owner'."
     },
     {
       "kind": "block-without-prose-change",
@@ -155,23 +147,7 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 62,
-        "elementId": "if-home-pages",
-        "message": "Block 'if-home-pages' changed without changing its section prose."
-      },
-      {
-        "kind": "block-without-prose-change",
-        "severity": "warning",
-        "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 78,
-        "elementId": "if-site-frame",
-        "message": "Block 'if-site-frame' changed without changing its section prose."
-      },
-      {
-        "kind": "block-without-prose-change",
-        "severity": "warning",
-        "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 113,
+        "line": 115,
         "elementId": "if-catalog-pages",
         "message": "Block 'if-catalog-pages' changed without changing its section prose."
       },
@@ -179,7 +155,7 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 198,
+        "line": 204,
         "elementId": "if-guidance",
         "message": "Block 'if-guidance' changed without changing its section prose."
       },
@@ -187,7 +163,7 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 214,
+        "line": 220,
         "elementId": "if-tooling-cli",
         "message": "Block 'if-tooling-cli' changed without changing its section prose."
       },
@@ -195,7 +171,7 @@
         "kind": "prose-without-block-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 245,
+        "line": 251,
         "elementId": "if-app-actions",
         "message": "Section prose changed without changing block 'if-app-actions' — it names 'Creator'."
       },
@@ -203,9 +179,17 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/05-building-blocks.arc42.md",
-        "line": 278,
+        "line": 284,
         "elementId": "if-archetypes",
         "message": "Block 'if-archetypes' changed without changing its section prose."
+      },
+      {
+        "kind": "prose-without-block-change",
+        "severity": "warning",
+        "file": "docs/arc42/09-decisions.arc42.md",
+        "line": 196,
+        "elementId": "dec-thanks-interface",
+        "message": "Section prose changed without changing block 'dec-thanks-interface' — it names 'risk-one-owner'."
       },
       {
         "kind": "block-without-prose-change",
@@ -320,6 +304,30 @@
         }
       },
       {
+        "id": "actor-platform-owner",
+        "kind": "actor",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 132
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 133
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "Platform owner"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "actor-app-repo-actions",
         "kind": "actor",
         "status": "modified",
@@ -342,7 +350,7 @@
         },
         "head": {
           "file": "docs/arc42/03-system-context.arc42.md",
-          "line": 149
+          "line": 150
         },
         "section": {
           "file": "docs/arc42/03-system-context.arc42.md",
@@ -371,7 +379,7 @@
         },
         "head": {
           "file": "docs/arc42/03-system-context.arc42.md",
-          "line": 179
+          "line": 180
         },
         "section": {
           "file": "docs/arc42/03-system-context.arc42.md",
@@ -400,7 +408,7 @@
         },
         "head": {
           "file": "docs/arc42/03-system-context.arc42.md",
-          "line": 209
+          "line": 210
         },
         "section": {
           "file": "docs/arc42/03-system-context.arc42.md",
@@ -454,14 +462,14 @@
             }
           }
         ],
-        "proseChanged": false,
+        "proseChanged": true,
         "base": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
           "line": 58
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 62
+          "line": 63
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -486,14 +494,14 @@
             }
           }
         ],
-        "proseChanged": false,
+        "proseChanged": true,
         "base": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
           "line": 73
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 78
+          "line": 80
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -530,7 +538,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 96
+          "line": 98
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -560,7 +568,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 113
+          "line": 115
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -591,7 +599,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 129
+          "line": 131
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -611,7 +619,9 @@
           {
             "name": "extensions",
             "after": {
-              "realises": "ch-listing, ch-fitness-signal"
+              "realises": "ch-listing, ch-fitness-signal",
+              "missing-ch-listing": "A listing is published only after the platform owner approves the pull request, and the review agent runs only at their request.",
+              "risk": "risk-one-owner"
             }
           }
         ],
@@ -622,7 +632,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 145
+          "line": 147
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -644,7 +654,8 @@
             "after": {
               "realises": "ch-feedback, ch-creator-insight",
               "missing-ch-feedback": "A click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.",
-              "missing-ch-creator-insight": "Thanks reach the creator only if the platform owner passes them on."
+              "missing-ch-creator-insight": "Thanks reach the creator only if the platform owner passes them on.",
+              "risk": "risk-one-owner"
             }
           },
           {
@@ -660,7 +671,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 161
+          "line": 166
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -685,7 +696,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 182
+          "line": 188
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -715,7 +726,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 198
+          "line": 204
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -746,7 +757,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 214
+          "line": 220
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -766,7 +777,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 230
+          "line": 236
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -797,7 +808,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 245
+          "line": 251
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -822,7 +833,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 263
+          "line": 269
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -852,7 +863,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 278
+          "line": 284
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -887,7 +898,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 294
+          "line": 300
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -911,7 +922,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 311
+          "line": 317
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -936,7 +947,7 @@
         },
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 327
+          "line": 333
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -1039,7 +1050,7 @@
         },
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 96
+          "line": 97
         },
         "section": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
@@ -1121,7 +1132,7 @@
         },
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 231
+          "line": 229
         },
         "section": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
@@ -1210,7 +1221,13 @@
         "status": "unchanged",
         "attributes": [],
         "proseChanged": true,
-        "proseMentions": [],
+        "proseMentions": [
+          {
+            "term": "risk-one-owner",
+            "element": "risk-one-owner",
+            "source": "element"
+          }
+        ],
         "base": {
           "file": "docs/arc42/09-decisions.arc42.md",
           "line": 196
@@ -1324,6 +1341,30 @@
         }
       },
       {
+        "id": "risk-one-owner",
+        "kind": "risk",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "docs/arc42/11-risks.arc42.md",
+          "line": 29
+        },
+        "head": {
+          "file": "docs/arc42/11-risks.arc42.md",
+          "line": 30
+        },
+        "section": {
+          "file": "docs/arc42/11-risks.arc42.md",
+          "headingPath": [
+            "Risks and Technical Debt",
+            "One owner"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "risk-thanks-not-delivered",
         "kind": "risk",
         "status": "modified",
@@ -1341,7 +1382,7 @@
         },
         "head": {
           "file": "docs/arc42/11-risks.arc42.md",
-          "line": 79
+          "line": 80
         },
         "section": {
           "file": "docs/arc42/11-risks.arc42.md",
@@ -1361,7 +1402,7 @@
           {
             "name": "source",
             "before": "flowchart LR\n    actor-adopting-adult[\"Adopting adult\"]\n    actor-student[\"Student\"]\n    actor-creator[\"Creator\"]\n    actor-ai-assistant[\"Creator's AI assistant\"]\n    actor-gatekeeper[\"School gatekeeper\"]\n    actor-platform-owner[\"Platform owner\"]\n    actor-app-repo-actions[\"GitHub Actions of the app repositories\"]\n    actor-github[\"GitHub\"]\n    actor-renovate[\"Renovate\"]\n    actor-goatcounter[\"GoatCounter\"]\n    actor-email[\"E-mail\"]\n    subgraph system[\"lernapps.net\"]\n        bb-website[\"Website\"]\n        bb-catalog[\"Catalog\"]\n        bb-tooling[\"Tooling\"]\n        bb-app-templates[\"App templates\"]\n        bb-docs[\"Docs\"]\n        bb-org[\"Organisation\"]\n    end\n    actor-adopting-adult -->|\"finds, passes on and thanks\"| system\n    actor-student -->|\"uses an app and thanks\"| system\n    actor-creator -->|\"decides to build an app\"| system\n    actor-ai-assistant -->|\"builds and lists an app\"| system\n    actor-gatekeeper -->|\"reads privacy notice and imprint\"| system\n    actor-platform-owner -->|\"decides, merges, approves entries\"| system\n    actor-app-repo-actions -->|\"checks, builds and publishes an app\"| system\n    actor-github -->|\"hosts, runs and carries every contribution\"| system\n    actor-renovate -->|\"moves the pins between repositories\"| system\n    actor-goatcounter -->|\"counts the platform's open counts\"| system\n    actor-email -->|\"carries thanks today\"| system",
-            "after": "flowchart LR\n    actor-adopting-adult[\"Adopting adult\"]\n    actor-student[\"Student\"]\n    actor-creator[\"Creator\"]\n    actor-ai-assistant[\"Creator's AI assistant\"]\n    actor-gatekeeper[\"School gatekeeper\"]\n    actor-platform-owner[\"Platform owner\"]\n    actor-app-repo-actions[\"Creators' app repositories\"]\n    actor-github[\"GitHub\"]\n    actor-renovate[\"Renovate\"]\n    actor-goatcounter[\"GoatCounter\"]\n    actor-email[\"E-mail\"]\n    subgraph system[\"lernapps.net\"]\n        bb-website[\"Website\"]\n        bb-catalog[\"Catalog\"]\n        bb-tooling[\"Tooling\"]\n        bb-app-templates[\"App templates\"]\n        bb-docs[\"Docs\"]\n        bb-org[\"Organisation\"]\n    end\n    actor-adopting-adult -->|\"finds, passes on and thanks\"| system\n    actor-student -->|\"uses an app and thanks\"| system\n    actor-creator -->|\"decides to build an app\"| system\n    actor-ai-assistant -->|\"builds and lists an app\"| system\n    actor-gatekeeper -->|\"reads privacy notice and imprint\"| system\n    actor-platform-owner -->|\"decides, merges, approves entries\"| system\n    actor-app-repo-actions -->|\"checks, builds and publishes an app\"| system\n    actor-github -->|\"hosts, runs and carries every contribution\"| system\n    actor-renovate -->|\"moves the pins between repositories\"| system\n    actor-goatcounter -->|\"counts the platform's open counts\"| system\n    actor-email -->|\"carries thanks\"| system"
+            "after": "flowchart LR\n    actor-adopting-adult[\"Adopting adult\"]\n    actor-student[\"Student\"]\n    actor-creator[\"Creator\"]\n    actor-ai-assistant[\"Creator's AI assistant\"]\n    actor-gatekeeper[\"School gatekeeper\"]\n    actor-platform-owner[\"Platform owner\"]\n    actor-app-repo-actions[\"Creators' app repositories\"]\n    actor-github[\"GitHub\"]\n    actor-renovate[\"Renovate\"]\n    actor-goatcounter[\"GoatCounter\"]\n    actor-email[\"E-mail\"]\n    subgraph system[\"lernapps.net\"]\n        bb-website[\"Website\"]\n        bb-catalog[\"Catalog\"]\n        bb-tooling[\"Tooling\"]\n        bb-app-templates[\"App templates\"]\n        bb-docs[\"Docs\"]\n        bb-org[\"Organisation\"]\n    end\n    actor-adopting-adult -->|\"finds, passes on and thanks\"| system\n    actor-student -->|\"uses an app and thanks\"| system\n    actor-creator -->|\"decides to build an app\"| system\n    actor-ai-assistant -->|\"builds and lists an app\"| system\n    actor-gatekeeper -->|\"reads privacy notice and imprint\"| system\n    actor-platform-owner -->|\"decides and keeps the models\"| system\n    actor-app-repo-actions -->|\"checks, builds and publishes an app\"| system\n    actor-github -->|\"hosts, runs and carries every contribution\"| system\n    actor-renovate -->|\"moves the pins between repositories\"| system\n    actor-goatcounter -->|\"counts the platform's open counts\"| system\n    actor-email -->|\"carries thanks\"| system"
           }
         ],
         "base": {
@@ -1399,7 +1440,7 @@
           {
             "name": "source",
             "before": "sequenceDiagram\n    participant teacher as Teacher\n    participant student as Students\n    participant website as Website\n    participant catalog as Catalog\n    participant mail as E-mail\n    teacher->>catalog: find an app by topic and grade\n    catalog-->>teacher: listed apps with their measured fitness\n    teacher->>website: privacy notice, if asked\n    teacher->>student: link or QR code to the served app\n    student->>catalog: open the served app\n    catalog-->>student: the app, from lernapps.net\n    teacher->>catalog: thanks, one click\n    catalog->>mail: thanks, today as a prepared e-mail",
-            "after": "sequenceDiagram\n    participant teacher as Teacher\n    participant student as Students\n    participant website as Website\n    participant catalog as Catalog\n    participant mail as E-mail\n    teacher->>catalog: find me an app for this topic and grade\n    catalog-->>teacher: listed apps with their measured fitness\n    teacher->>website: show me the privacy notice, if asked\n    teacher->>student: open this app (link or QR code)\n    student->>catalog: serve me the app\n    catalog-->>student: the app, from lernapps.net\n    teacher->>catalog: pass on my thanks (one click)\n    catalog->>mail: carry the thanks to the platform owner"
+            "after": "sequenceDiagram\n    participant teacher as Teacher\n    participant student as Students\n    participant website as Website\n    participant catalog as Catalog\n    participant mail as E-mail\n    teacher->>catalog: find me an app for this topic and grade\n    catalog-->>teacher: listed apps with their measured fitness\n    teacher->>website: show me the privacy notice, if asked\n    teacher->>student: open this app (link or QR code)\n    student->>catalog: serve me the app\n    catalog-->>student: the app, from lernapps.net\n    teacher->>catalog: pass on my thanks (one click)\n    catalog->>mail: carry the thanks to the creator"
           }
         ],
         "base": {
@@ -1436,12 +1477,12 @@
           {
             "name": "aliases",
             "before": "creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, owner=actor-platform-owner",
-            "after": "creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, owner=actor-platform-owner, github=actor-github"
+            "after": "creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, github=actor-github"
           },
           {
             "name": "source",
             "before": "sequenceDiagram\n    participant creator as Creator\n    participant assistant as AI assistant\n    participant website as Website\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant templates as App templates\n    participant org as Organisation\n    participant appactions as App repo Actions\n    participant owner as Owner\n    creator->>catalog: no fitting app found\n    creator->>assistant: build an app for my class\n    assistant->>website: llms.txt, the way in\n    assistant->>tooling: guidance by phase, skills\n    assistant->>tooling: create the app\n    tooling->>templates: the archetype's template\n    assistant->>tooling: check the app\n    appactions->>tooling: check, build and publish in the app's repository\n    assistant->>catalog: listing pull request with the entry\n    catalog->>org: pull request template and rules\n    catalog->>tooling: check the entry and the app\n    catalog-->>assistant: results comment\n    owner->>catalog: review on request, approve, merge\n    catalog->>catalog: publish a copy under lernapps.net",
-            "after": "sequenceDiagram\n    participant creator as Creator\n    participant assistant as AI assistant\n    participant website as Website\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant templates as App templates\n    participant org as Organisation\n    participant appactions as App repositories\n    participant owner as Owner\n    participant github as GitHub\n    creator->>catalog: find me an app for my class\n    catalog-->>creator: no fitting app\n    creator->>assistant: build an app for my class\n    assistant->>website: show me the way in (llms.txt)\n    assistant->>tooling: give me the guidance for this phase\n    assistant->>tooling: create the app\n    tooling->>templates: provide the archetype's template\n    assistant->>tooling: check the app\n    appactions->>tooling: check, build and publish the app\n    assistant->>org: give me the pull request template and the rules\n    assistant->>catalog: list this app (pull request with the entry)\n    catalog->>tooling: check the entry and the app\n    catalog-->>assistant: the results, as a comment\n    owner->>catalog: have the app reviewed if needed, then publish it\n    catalog->>github: build and publish a copy under lernapps.net"
+            "after": "sequenceDiagram\n    participant creator as Creator\n    participant assistant as AI assistant\n    participant website as Website\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant templates as App templates\n    participant org as Organisation\n    participant appactions as App repositories\n    participant github as GitHub\n    creator->>catalog: find me an app for my class\n    catalog-->>creator: no fitting app\n    creator->>assistant: build an app for my class\n    assistant->>website: show me the way in (llms.txt)\n    assistant->>tooling: give me the guidance for this phase\n    assistant->>tooling: create the app\n    tooling->>templates: provide the archetype's template\n    assistant->>tooling: check the app\n    appactions->>tooling: check, build and publish the app\n    assistant->>org: give me the pull request template and the rules\n    assistant->>catalog: list this app (pull request with the entry)\n    catalog->>tooling: check the entry and the app\n    catalog-->>assistant: the results, as a comment\n    catalog->>catalog: have a review agent look at the app\n    catalog->>github: build and publish a copy under lernapps.net"
           }
         ],
         "base": {
@@ -1450,7 +1491,7 @@
         },
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 106
+          "line": 107
         }
       },
       {
@@ -1479,12 +1520,12 @@
           {
             "name": "aliases",
             "before": "website=bb-website, tooling=bb-tooling, templates=bb-app-templates, catalog=bb-catalog, docs=bb-docs, renovate=actor-renovate, owner=actor-platform-owner",
-            "after": "website=bb-website, tooling=bb-tooling, templates=bb-app-templates, catalog=bb-catalog, docs=bb-docs, renovate=actor-renovate, owner=actor-platform-owner, apps=actor-app-repo-actions"
+            "after": "website=bb-website, tooling=bb-tooling, templates=bb-app-templates, catalog=bb-catalog, docs=bb-docs, renovate=actor-renovate, apps=actor-app-repo-actions"
           },
           {
             "name": "source",
             "before": "sequenceDiagram\n    participant website as Website\n    participant tooling as Tooling\n    participant templates as App templates\n    participant catalog as Catalog\n    participant docs as Docs\n    participant renovate as Renovate\n    participant owner as Owner\n    website-->>renovate: new commit of the site frame\n    templates-->>renovate: new commit of the archetypes\n    tooling-->>renovate: new commit of the tooling\n    renovate->>catalog: pull request: new pins\n    renovate->>docs: pull request: new pin of the site frame\n    renovate->>tooling: pull request: new pins\n    owner->>catalog: merge, if not merged automatically",
-            "after": "sequenceDiagram\n    participant website as Website\n    participant tooling as Tooling\n    participant templates as App templates\n    participant catalog as Catalog\n    participant docs as Docs\n    participant renovate as Renovate\n    participant apps as App repositories\n    participant owner as Owner\n    renovate->>website: report changes of the site frame\n    renovate->>templates: report changes of the archetypes\n    renovate->>tooling: report changes of the tooling\n    renovate->>catalog: take the changes (pull request)\n    renovate->>docs: take the new site frame (pull request)\n    renovate->>tooling: take the changes (pull request)\n    renovate->>apps: take the changes (pull request)\n    owner->>catalog: merge it, if not merged automatically"
+            "after": "sequenceDiagram\n    participant website as Website\n    participant tooling as Tooling\n    participant templates as App templates\n    participant catalog as Catalog\n    participant docs as Docs\n    participant renovate as Renovate\n    participant apps as App repositories\n    renovate->>website: report changes of the site frame\n    renovate->>templates: report changes of the archetypes\n    renovate->>tooling: report changes of the tooling\n    renovate->>catalog: take the changes (pull request)\n    renovate->>docs: take the new site frame (pull request)\n    renovate->>tooling: take the changes (pull request)\n    renovate->>apps: take the changes (pull request)"
           }
         ],
         "base": {
@@ -1512,7 +1553,7 @@
         },
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 240
+          "line": 238
         }
       }
     ],
@@ -1589,6 +1630,25 @@
       {
         "status": "modified",
         "section": {
+          "file": "docs/arc42/04-solution-strategy.arc42.md",
+          "headingPath": [
+            "Solution Strategy",
+            "Operational approach"
+          ],
+          "occurrence": 1
+        },
+        "base": {
+          "file": "docs/arc42/04-solution-strategy.arc42.md",
+          "line": 37
+        },
+        "head": {
+          "file": "docs/arc42/04-solution-strategy.arc42.md",
+          "line": 37
+        }
+      },
+      {
+        "status": "modified",
+        "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
           "headingPath": [
             "Building Blocks"
@@ -1633,7 +1693,13 @@
       {
         "file": "docs/arc42/03-system-context.arc42.md",
         "added": 0,
-        "modified": 7,
+        "modified": 8,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/04-solution-strategy.arc42.md",
+        "added": 0,
+        "modified": 1,
         "removed": 0
       },
       {
@@ -1669,7 +1735,7 @@
       {
         "file": "docs/arc42/11-risks.arc42.md",
         "added": 0,
-        "modified": 1,
+        "modified": 2,
         "removed": 0
       }
     ]

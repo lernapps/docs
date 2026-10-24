@@ -21,7 +21,6 @@ The platform exists for these people. The journeys below are told from their vie
 - **Adopting adults:** Adults who come across apps built by others, browse them and bring them to their students or their own children: teachers and parents.
 - **App creators:** Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves.
 - **Students:** The learners the apps are built for.
-- **Platform owner:** Oliver Jägle owns and shapes the platform strategy.
 
 The system relies on these systems outside it:
 
@@ -49,7 +48,7 @@ The journeys connect the people above to the parts above. A journey is a sequenc
 
 For example: in the step "Find an app for a topic and grade", the platform offers the service "Finding apps by topic and grade", which the interface "Catalog pages" of the part "Catalog" provides.
 
-A dashed block marks where a part does not yet deliver what the journey needs, and says what is missing.
+A dashed block marks where a part does not yet deliver what the journey needs, and says what is missing; where that leaves a step to a person, the risk it carries is named.
 
 ## The journeys
 
@@ -79,6 +78,7 @@ Mainly for adopting adults; also involves app creators, students. What they get:
    - **Giving feedback and thanks**
      - For adopting adults, students: Makes it easy for adults and students to give feedback, recommendations and thanks, without accounts and without identifying students. It explains, without being pushy, that a thank-you is what keeps the free platform alive.
      - ┆ Not yet: Thanks (Catalog): A click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.
+     - Risk until then: [One owner](../architecture/#11-risks.arc42.md:el-risk-one-owner).
 
 **Behind this journey: how the parts work together**
 
@@ -89,7 +89,7 @@ Mainly for adopting adults; also involves app creators, students. What they get:
 1. Student → Catalog: serve me the app
 1. Catalog ⇢ Student: the app, from lernapps.net
 1. Adopting adult → Catalog: pass on my thanks (one click)
-1. Catalog → E-mail: carry the thanks to the platform owner
+1. Catalog → E-mail: carry the thanks to the creator
 
 ### [Help where a child struggles](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-child-struggles)
 
@@ -113,7 +113,7 @@ Mainly for adopting adults; also involves students, app creators. What they get:
 1. Student → Catalog: serve me the app
 1. Catalog ⇢ Student: the app, no sign-up, no installation
 1. Adopting adult → Catalog: pass on my thanks (one click)
-1. Catalog → E-mail: carry the thanks to the platform owner
+1. Catalog → E-mail: carry the thanks to the creator
 
 ### [List an app and hear it is used](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back)
 
@@ -128,12 +128,14 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 1. List an app
    - **Help to list an app**
      - For app creators: The first listing is the biggest hurdle for creators; this service takes the effort out of it.
-     - Delivered by: Listing (Catalog).
+     - ┆ Not yet: Listing (Catalog): A listing is published only after the platform owner approves the pull request, and the review agent runs only at their request.
+     - Risk until then: [One owner](../architecture/#11-risks.arc42.md:el-risk-one-owner).
 1. What app creators get back from the other journeys: one use of the app in a class; a thank-you to the creator; structured feedback from one class; a recommendation credited to the creator.
    - **Insight into use and feedback**
      - For app creators: Shows creators whether and how their app is used, with feedback and thanks. Seeing this is what keeps creators building.
      - ┆ Not yet: Site frame (Website): Only visits to an app's page in the catalog are counted, not the use of the app itself, and only the platform owner sees the totals.
      - ┆ Not yet: Thanks (Catalog): Thanks reach the creator only if the platform owner passes them on.
+     - Risk until then: [One owner](../architecture/#11-risks.arc42.md:el-risk-one-owner).
 
 **Behind this journey: how the parts work together**
 
@@ -150,7 +152,7 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 1. Creator's AI assistant → Catalog: list this app (pull request with the entry)
 1. Catalog → Tooling: check the entry and the app
 1. Catalog ⇢ Creator's AI assistant: the results, as a comment
-1. Platform owner → Catalog: have the app reviewed if needed, then publish it
+1. Catalog → Catalog: have a review agent look at the app
 1. Catalog → GitHub: build and publish a copy under lernapps.net
 
 ## How the parts work together
@@ -179,7 +181,6 @@ When the site frame, the tooling or the app templates change, the platform passe
 1. Renovate → Docs: take the new site frame (pull request)
 1. Renovate → Tooling: take the changes (pull request)
 1. Renovate → Creators' app repositories: take the changes (pull request)
-1. Platform owner → Catalog: merge it, if not merged automatically
 
 ### [A platform site is published](../architecture/#06-runtime-view.arc42.md:el-rs-site-published)
 
@@ -217,12 +218,10 @@ Each part with the interfaces it offers, the services they serve and the parts t
 
 #### [Website](../architecture/#05-building-blocks.arc42.md:el-bb-website) ([lernapps/lernapps.github.io](https://github.com/lernapps/lernapps.github.io))
 
-The home page tells the platform's story in plain language; the privacy notice and the imprint cover every served app; llms.txt is the entry point for AI assistants. The frame is the shared header and footer and site-check, the checks every site has to pass before it is published.
-
-- **Home pages:** The home page, the privacy notice and the imprint, and the root llms.txt that leads AI assistants to the other parts of the platform.
+- **Home pages:** The home page, the privacy notice and the imprint, and the root llms.txt that leads AI assistants to the other parts of the platform. The privacy notice is part of the signal that an app may be used: it covers every app served under lernapps.net.
   - Serves: Guidance for building apps, Clarity on fitness for use
   - Works with, outside the system: Creator's AI assistant
-- **Site frame:** The shared header, footer, styles and counting snippet of every platform site, and site-check, the check every site runs on its built pages before it is deployed.
+- **Site frame:** The shared header, footer, styles and counting snippet of every platform site, and site-check, the check every site runs on its built pages before it is deployed. The counting snippet reports visits to GoatCounter; this is where a creator's insight into the use of their app begins.
   - Serves: Insight into use and feedback
   - ┆ Not yet: Only visits to an app's page in the catalog are counted, not the use of the app itself, and only the platform owner sees the totals.
   - Used by: Catalog, Tooling, Docs
@@ -230,24 +229,23 @@ The home page tells the platform's story in plain language; the privacy notice a
 
 #### [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog) ([lernapps/apps](https://github.com/lernapps/apps))
 
-For adults and students, it makes apps findable by topic and grade, serves a copy of every listed app under lernapps.net and keeps it current, and takes the thanks of adults and students. For creators, it takes their entries and helps them list; it checks each entry and, at the platform owner's request, has a review agent look at the app.
-
 - **Catalog pages:** The pages where adults and students find an app for a topic and grade, see its fitness for use, and find the way to build an app when none fits.
   - Serves: Finding apps by topic and grade, Finding apps for a topic one struggles with, Clarity on fitness for use
-- **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and, at the platform owner's request, by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request.
+- **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published. Nothing waits on a person; where it still does, that is the risk of one owner.
   - Serves: Help to list an app, Clarity on fitness for use
+  - ┆ Not yet: A listing is published only after the platform owner approves the pull request, and the review agent runs only at their request.
+  - Risk until then: [One owner](../architecture/#11-risks.arc42.md:el-risk-one-owner).
   - Works with, outside the system: Creator's AI assistant, GitHub
 - **Served apps:** The copy of every listed app that lernapps.net serves and links: built from the release the creator publishes at their own address, and served under one address that keeps working.
   - Serves: Starting an app right away
-- **Thanks:** A thank-you and feedback in one click from the catalog or an app, counted openly and passed on to the creator. The interface stays the same when its realisation changes.
+- **Thanks:** A thank-you and feedback in one click from the catalog or an app, counted openly and passed on to the creator. The interface stays the same when its realisation changes. Nothing waits on a person; where it still does, that is the risk of one owner.
   - Serves: Insight into use and feedback, Giving feedback and thanks
   - ┆ Not yet: A click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.
   - ┆ Not yet: Thanks reach the creator only if the platform owner passes them on.
+  - Risk until then: [One owner](../architecture/#11-risks.arc42.md:el-risk-one-owner).
   - Works with, outside the system: E-mail
 
 #### [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling) ([lernapps/tooling](https://github.com/lernapps/tooling))
-
-It also holds the actions that build every platform site and publish it once site-check has passed.
 
 - **App actions:** The reusable workflows and actions an app's repository runs to check and build the app and to publish the creator's own release, at the creator's address.
   - Works with, outside the system: Creators' app repositories, GitHub
@@ -263,8 +261,6 @@ It also holds the actions that build every platform site and publish it once sit
 
 #### [App templates](../architecture/#05-building-blocks.arc42.md:el-bb-app-templates) ([lernapps/app-templates](https://github.com/lernapps/app-templates))
 
-They carry the rules into the code, so a creator does not have to know them.
-
 - **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with.
   - Serves: Guidance for building apps
   - Used by: Tooling
@@ -275,8 +271,6 @@ They carry the rules into the code, so a creator does not have to know them.
 These parts provide no service to a journey, but they take part in the flows behind them.
 
 #### [Docs](../architecture/#05-building-blocks.arc42.md:el-bb-docs) ([lernapps/docs](https://github.com/lernapps/docs))
-
-They are the platform design, the business model and the architecture of the whole system, each in a modelling language that people and AI assistants can read and check, rendered as pages.
 
 - **Models:** The platform design, the business model and the architecture as pages under lernapps.net/docs/, and a skill that lets an AI assistant work with the platform design.
 
