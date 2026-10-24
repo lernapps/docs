@@ -5,7 +5,7 @@
     "commit": "c3f2baf586b494e603639a652f9fdbe80b21ff69"
   },
   "head": {
-    "label": "2aeff48cf167d2f4ffb74ee967001f4b9683709a"
+    "label": "ccedbe985844e682d1e83481a260d56e0585b121"
   },
   "acceptanceBase": "c3f2baf586b494e603639a652f9fdbe80b21ff69",
   "untracked": [],
@@ -1020,7 +1020,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 56
+          "line": 60
         },
         "section": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
@@ -1041,6 +1041,11 @@
             "after": {
               "experience": "x-list-and-hear-back"
             }
+          },
+          {
+            "name": "title",
+            "before": "Build and list an app",
+            "after": "List an app and hear it is used"
           }
         ],
         "proseChanged": true,
@@ -1050,13 +1055,13 @@
         },
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 97
+          "line": 110
         },
         "section": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
           "headingPath": [
             "Runtime View",
-            "Build and list an app"
+            "List an app and hear it is used"
           ],
           "occurrence": 1
         }
@@ -1074,7 +1079,7 @@
         },
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 149
+          "line": 175
         },
         "section": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
@@ -1108,7 +1113,7 @@
         },
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 187
+          "line": 213
         },
         "section": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
@@ -1132,7 +1137,7 @@
         },
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 229
+          "line": 255
         },
         "section": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
@@ -1440,7 +1445,7 @@
           {
             "name": "source",
             "before": "sequenceDiagram\n    participant teacher as Teacher\n    participant student as Students\n    participant website as Website\n    participant catalog as Catalog\n    participant mail as E-mail\n    teacher->>catalog: find an app by topic and grade\n    catalog-->>teacher: listed apps with their measured fitness\n    teacher->>website: privacy notice, if asked\n    teacher->>student: link or QR code to the served app\n    student->>catalog: open the served app\n    catalog-->>student: the app, from lernapps.net\n    teacher->>catalog: thanks, one click\n    catalog->>mail: thanks, today as a prepared e-mail",
-            "after": "sequenceDiagram\n    participant teacher as Teacher\n    participant student as Students\n    participant website as Website\n    participant catalog as Catalog\n    participant mail as E-mail\n    teacher->>catalog: find me an app for this topic and grade\n    catalog-->>teacher: listed apps with their measured fitness\n    teacher->>website: show me the privacy notice, if asked\n    teacher->>student: open this app (link or QR code)\n    student->>catalog: serve me the app\n    catalog-->>student: the app, from lernapps.net\n    teacher->>catalog: pass on my thanks, my feedback and my recommendation (one click each)\n    catalog->>mail: carry them to the creator"
+            "after": "sequenceDiagram\n    participant teacher as Teacher\n    participant student as Students\n    participant website as Website\n    participant catalog as Catalog\n    participant mail as E-mail\n    Note over teacher,catalog: Find an app for a topic and grade\n    teacher->>catalog: find me an app for this topic and grade\n    catalog-->>teacher: listed apps with their measured fitness\n    Note over teacher,catalog: Confirm an app may be used\n    teacher->>website: show me the privacy notice, if asked\n    Note over teacher,catalog: Bring an app to students\n    teacher->>student: open this app (link or QR code)\n    student->>catalog: serve me the app\n    catalog-->>student: the app, from lernapps.net\n    Note over teacher,mail: Thank the creator\n    teacher->>catalog: pass on my thanks, my feedback and my recommendation (one click each)\n    catalog->>mail: carry them to the creator"
           }
         ],
         "base": {
@@ -1467,7 +1472,7 @@
         "attributes": [],
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 66
+          "line": 70
         }
       },
       {
@@ -1477,12 +1482,12 @@
           {
             "name": "aliases",
             "before": "creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, owner=actor-platform-owner",
-            "after": "creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, github=actor-github"
+            "after": "creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, github=actor-github, adult=actor-adopting-adult, counter=actor-goatcounter, mail=actor-email"
           },
           {
             "name": "source",
             "before": "sequenceDiagram\n    participant creator as Creator\n    participant assistant as AI assistant\n    participant website as Website\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant templates as App templates\n    participant org as Organisation\n    participant appactions as App repo Actions\n    participant owner as Owner\n    creator->>catalog: no fitting app found\n    creator->>assistant: build an app for my class\n    assistant->>website: llms.txt, the way in\n    assistant->>tooling: guidance by phase, skills\n    assistant->>tooling: create the app\n    tooling->>templates: the archetype's template\n    assistant->>tooling: check the app\n    appactions->>tooling: check, build and publish in the app's repository\n    assistant->>catalog: listing pull request with the entry\n    catalog->>org: pull request template and rules\n    catalog->>tooling: check the entry and the app\n    catalog-->>assistant: results comment\n    owner->>catalog: review on request, approve, merge\n    catalog->>catalog: publish a copy under lernapps.net",
-            "after": "sequenceDiagram\n    participant creator as Creator\n    participant assistant as AI assistant\n    participant website as Website\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant templates as App templates\n    participant org as Organisation\n    participant appactions as App repositories\n    participant github as GitHub\n    creator->>catalog: find me an app for my class\n    catalog-->>creator: no fitting app\n    creator->>assistant: build an app for my class\n    assistant->>website: show me the way in (llms.txt)\n    assistant->>tooling: give me the guidance for this phase\n    assistant->>tooling: create the app\n    tooling->>templates: provide the archetype's template\n    assistant->>tooling: check the app\n    appactions->>tooling: check, build and publish the app\n    assistant->>org: give me the pull request template and the rules\n    assistant->>catalog: list this app (pull request with the entry)\n    catalog->>tooling: check the entry and the app\n    catalog-->>assistant: the results, as a comment\n    catalog->>catalog: have the review agent, an AI with a checklist, look at the app\n    catalog->>github: build and publish a copy under lernapps.net"
+            "after": "sequenceDiagram\n    participant creator as Creator\n    participant assistant as AI assistant\n    participant website as Website\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant templates as App templates\n    participant org as Organisation\n    participant appactions as App repositories\n    participant github as GitHub\n    participant adult as Adopting adult\n    participant counter as GoatCounter\n    participant mail as E-mail\n    Note over creator,templates: Guidance for building apps\n    creator->>catalog: find me an app for my class\n    catalog-->>creator: no fitting app\n    creator->>assistant: build an app for my class\n    assistant->>website: show me the way in (llms.txt)\n    assistant->>tooling: give me the guidance for this phase\n    assistant->>tooling: create the app\n    tooling->>templates: provide the archetype's template\n    assistant->>tooling: check the app\n    appactions->>tooling: check, build and publish the app\n    Note over assistant,github: List an app\n    assistant->>org: give me the pull request template and the rules\n    assistant->>catalog: list this app (pull request with the entry)\n    catalog->>tooling: check the entry and the app\n    catalog-->>assistant: the results, as a comment\n    catalog->>catalog: have the review agent (an AI) check the app\n    catalog->>github: build and publish a copy under lernapps.net\n    Note over adult,mail: Use an app in class\n    adult->>catalog: serve the app to my class\n    website->>counter: count this use of the app\n    Note over adult,mail: Thank the creator\n    adult->>catalog: pass on my thanks, my feedback and my recommendation\n    catalog->>mail: carry them to the creator\n    creator->>catalog: show me how my app is used\n    catalog-->>creator: its uses, thanks and feedback, as totals"
           }
         ],
         "base": {
@@ -1491,7 +1496,7 @@
         },
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 107
+          "line": 120
         }
       },
       {
@@ -1510,7 +1515,7 @@
         },
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 158
+          "line": 184
         }
       },
       {
@@ -1534,7 +1539,7 @@
         },
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 196
+          "line": 222
         }
       },
       {
@@ -1553,7 +1558,7 @@
         },
         "head": {
           "file": "docs/arc42/06-runtime-view.arc42.md",
-          "line": 238
+          "line": 264
         }
       }
     ],

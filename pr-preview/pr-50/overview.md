@@ -84,12 +84,23 @@ Mainly for adopting adults; also involves app creators, students. What they get:
 
 **Behind this journey: how the parts work together**
 
+*Find an app for a topic and grade*
+
 1. Adopting adult → Catalog: find me an app for this topic and grade
 1. Catalog ⇢ Adopting adult: listed apps with their measured fitness
+
+*Confirm an app may be used*
+
 1. Adopting adult → Website: show me the privacy notice, if asked
+
+*Bring an app to students*
+
 1. Adopting adult → Student: open this app (link or QR code)
 1. Student → Catalog: serve me the app
 1. Catalog ⇢ Student: the app, from lernapps.net
+
+*Thank the creator*
+
 1. Adopting adult → Catalog: pass on my thanks, my feedback and my recommendation (one click each)
 1. Catalog → E-mail: carry them to the creator
 
@@ -110,10 +121,27 @@ Mainly for adopting adults; also involves students, app creators. What they get:
 
 **Behind this journey: how the parts work together**
 
+*Find an app for a topic and grade*
+
 1. Adopting adult → Catalog: find me an app for the topic my child struggles with
-1. Catalog ⇢ Adopting adult: listed apps
+
+*Confirm an app may be used*
+
+1. Catalog ⇢ Adopting adult: listed apps, each with its measured fitness
+
+*Bring an app to students*
+
+1. Adopting adult → Student: open this app (link or QR code)
 1. Student → Catalog: serve me the app
 1. Catalog ⇢ Student: the app, no sign-up, no installation
+
+*Return to an app*
+
+1. Student → Catalog: show me apps for the topic I struggle with
+1. Catalog ⇢ Student: the app I used, and others for the topic
+
+*Thank the creator*
+
 1. Adopting adult → Catalog: pass on my thanks (one click)
 1. Catalog → E-mail: carry them to the creator
 
@@ -141,6 +169,8 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 
 **Behind this journey: how the parts work together**
 
+*Guidance for building apps*
+
 1. Creator → Catalog: find me an app for my class
 1. Catalog ⇢ Creator: no fitting app
 1. Creator → Creator's AI assistant: build an app for my class
@@ -150,12 +180,27 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 1. Tooling → App templates: provide the archetype's template
 1. Creator's AI assistant → Tooling: check the app
 1. Creators' app repositories → Tooling: check, build and publish the app
+
+*List an app*
+
 1. Creator's AI assistant → Organisation: give me the pull request template and the rules
 1. Creator's AI assistant → Catalog: list this app (pull request with the entry)
 1. Catalog → Tooling: check the entry and the app
 1. Catalog ⇢ Creator's AI assistant: the results, as a comment
-1. Catalog → Catalog: have the review agent, an AI with a checklist, look at the app
+1. Catalog → Catalog: have the review agent (an AI) check the app
 1. Catalog → GitHub: build and publish a copy under lernapps.net
+
+*Use an app in class*
+
+1. Adopting adult → Catalog: serve the app to my class
+1. Website → GoatCounter: count this use of the app
+
+*Thank the creator*
+
+1. Adopting adult → Catalog: pass on my thanks, my feedback and my recommendation
+1. Catalog → E-mail: carry them to the creator
+1. Creator → Catalog: show me how my app is used
+1. Catalog ⇢ Creator: its uses, thanks and feedback, as totals
 
 ## How the parts work together
 
