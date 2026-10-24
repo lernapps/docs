@@ -37,12 +37,16 @@ sequenceDiagram
     participant website as Website
     participant catalog as Catalog
     participant mail as E-mail
+    Note over teacher,catalog: Find an app for a topic and grade
     teacher->>catalog: find me an app for this topic and grade
     catalog-->>teacher: listed apps with their measured fitness
+    Note over teacher,catalog: Confirm an app may be used
     teacher->>website: show me the privacy notice, if asked
+    Note over teacher,catalog: Bring an app to students
     teacher->>student: open this app (link or QR code)
     student->>catalog: serve me the app
     catalog-->>student: the app, from lernapps.net
+    Note over teacher,mail: Thank the creator
     teacher->>catalog: pass on my thanks, my feedback and my recommendation (one click each)
     catalog->>mail: carry them to the creator
 ```
@@ -77,26 +81,35 @@ sequenceDiagram
     participant student as Student
     participant catalog as Catalog
     participant mail as E-mail
+    Note over parent,catalog: Find an app for a topic and grade
     parent->>catalog: find me an app for the topic my child struggles with
-    catalog-->>parent: listed apps
+    Note over parent,catalog: Confirm an app may be used
+    catalog-->>parent: listed apps, each with its measured fitness
+    Note over parent,catalog: Bring an app to students
+    parent->>student: open this app (link or QR code)
     student->>catalog: serve me the app
     catalog-->>student: the app, no sign-up, no installation
+    Note over student,catalog: Return to an app
+    student->>catalog: show me apps for the topic I struggle with
+    catalog-->>student: the app I used, and others for the topic
+    Note over parent,mail: Thank the creator
     parent->>catalog: pass on my thanks (one click)
     catalog->>mail: carry them to the creator
 ```
 
-## Build and list an app
+## List an app and hear it is used
 
 [A creator finds no fitting app and decides to build one](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back). Their AI assistant follows the
 tooling's guidance, creates the app from one of the app templates and checks it; the app's repository runs the
 tooling's actions. The assistant opens the listing pull request; the catalog checks the entry, has a review agent look at the app and,
 once the checks pass, publishes a copy under lernapps.net. The creator's own release stays at the creator's address;
-the copy is what lernapps.net serves.
+the copy is what lernapps.net serves. Then the app is used: every use is counted, thanks, feedback and
+recommendations reach the creator, and the creator sees how their app is used.
 
 ```arc42
 :::runtime-scenario
 id: rs-build-and-list
-title: Build and list an app
+title: List an app and hear it is used
 trigger: A creator finds no fitting app in the catalog
 involves: bb-website, bb-catalog, bb-tooling, bb-app-templates, bb-org
 x-experience: x-list-and-hear-back
@@ -108,7 +121,7 @@ x-experience: x-list-and-hear-back
 id: rs-build-and-list-sequence
 scenario: rs-build-and-list
 notation: mermaid-sequence
-aliases: creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, github=actor-github
+aliases: creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, github=actor-github, adult=actor-adopting-adult, counter=actor-goatcounter, mail=actor-email
 :::
 ```
 
@@ -123,6 +136,10 @@ sequenceDiagram
     participant org as Organisation
     participant appactions as App repositories
     participant github as GitHub
+    participant adult as Adopting adult
+    participant counter as GoatCounter
+    participant mail as E-mail
+    Note over creator,templates: Guidance for building apps
     creator->>catalog: find me an app for my class
     catalog-->>creator: no fitting app
     creator->>assistant: build an app for my class
@@ -132,12 +149,21 @@ sequenceDiagram
     tooling->>templates: provide the archetype's template
     assistant->>tooling: check the app
     appactions->>tooling: check, build and publish the app
+    Note over assistant,github: List an app
     assistant->>org: give me the pull request template and the rules
     assistant->>catalog: list this app (pull request with the entry)
     catalog->>tooling: check the entry and the app
     catalog-->>assistant: the results, as a comment
-    catalog->>catalog: have the review agent, an AI with a checklist, look at the app
+    catalog->>catalog: have the review agent (an AI) check the app
     catalog->>github: build and publish a copy under lernapps.net
+    Note over adult,mail: Use an app in class
+    adult->>catalog: serve the app to my class
+    website->>counter: count this use of the app
+    Note over adult,mail: Thank the creator
+    adult->>catalog: pass on my thanks, my feedback and my recommendation
+    catalog->>mail: carry them to the creator
+    creator->>catalog: show me how my app is used
+    catalog-->>creator: its uses, thanks and feedback, as totals
 ```
 
 ## A listed app gets a new version

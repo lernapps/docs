@@ -209,8 +209,11 @@ const sequenceOf = (sc) => {
   const body = text.slice(block.index).match(/```mermaid\n([\s\S]*?)```/)?.[1] ?? "";
   const participants = [...body.matchAll(/^\s*participant (\w+) as (.+)$/gm)].map(([, key, name]) => ({ key, id: alias[key] ?? key, name: arcById.get(alias[key])?.title ?? name.trim() })); // named as in the model
   const byKey = new Map(participants.map((p) => [p.key, p]));
-  const messages = [...body.matchAll(/^\s*(\w+)\s*(-->>|->>)\s*(\w+)\s*:\s*(.+)$/gm)].map(([, from, arrow, to, label]) => ({ from: byKey.get(from), to: byKey.get(to), label: label.trim(), reply: arrow === "-->>" }));
-  return { participants, messages };
+  // In order: the arrows, and the notes that open a section (`Note over a,b: <step>`).
+  const items = [...body.matchAll(/^\s*(?:Note over [\w,]+\s*:\s*(.+)|(\w+)\s*(-->>|->>)\s*(\w+)\s*:\s*(.+))$/gm)].map(([, note, from, arrow, to, label]) =>
+    note ? { note: note.trim() } : { from: byKey.get(from), to: byKey.get(to), label: label.trim(), reply: arrow === "-->>" },
+  );
+  return { participants, items, messages: items.filter((i) => !i.note), notes: items.filter((i) => i.note).map((i) => i.note) };
 };
 // A scenario that tells a journey names it (`x-experience`) and is drawn inside that journey; the others are the
 // flows behind the journeys.
@@ -224,6 +227,16 @@ const scenarios = allScenarios.filter((f) => !f.sc.extensions?.experience);
   const wrong = [
     ...[...behind.keys()].filter((id) => !experiences.some((x) => x.id === id)).map((id) => `${behind.get(id).sc.id}: x-experience names '${id}', which is no experience of the platform design`),
     ...experiences.filter((x) => !behind.has(x.id)).map((x) => `${x.id}: no runtime scenario tells this experience (x-experience)`),
+    // The diagram of a journey covers all of it: every step the platform helps with opens a section, a note named
+    // after one of the step's transactions, or after its service where it has none.
+    ...journeys.flatMap((j) => {
+      const notes = new Set(behind.get(j.x.id)?.seq?.notes ?? []);
+      return j.steps
+        .filter((st) => st.services.length)
+        .map((st) => (st.ts.length ? st.ts.map((t) => t.title) : st.services.map((v) => v.s.title)))
+        .filter((titles) => !titles.some((t) => notes.has(t)))
+        .map((titles) => `${behind.get(j.x.id)?.sc.id}: no section of its sequence diagram for the step '${titles.join(" · ")}' of ${j.x.id}`);
+    }),
   ];
   wrong.push(...allScenarios.flatMap(({ sc, parts, seq }) => {
     if (!seq) return [`${sc.id}: no sequence diagram`];
@@ -327,7 +340,7 @@ const colourOf = (id) => {
 const sequenceSvg = ({ sc, seq }) => {
   const ps = seq.participants.filter((p) => seq.messages.some((m) => m.from === p || m.to === p));
   // Drawn at its natural size, never scaled: the columns share the width of the page, down to a minimum.
-  const COL = Math.max(84, Math.min(150, Math.floor(840 / ps.length))), HEAD = 46, LINE = 15, CH = 6.4;
+  const COL = Math.max(72, Math.min(150, Math.floor(860 / ps.length))), HEAD = 46, LINE = 15, CH = 6.4;
   const x = (p) => COL / 2 + ps.indexOf(p) * COL;
   const wrap = (text, width) => {
     const lines = [""];
@@ -335,10 +348,18 @@ const sequenceSvg = ({ sc, seq }) => {
     return lines;
   };
   let y = HEAD + 16;
-  const rows = seq.messages.map((m, k) => {
+  let k = 0;
+  const rows = seq.items.map((m) => {
+    if (m.note) {
+      // A section: a line across the diagram, the step's title on it.
+      const row = `<g class="section-row"><line x1="4" y1="${y + 10}" x2="${ps.length * COL - 4}" y2="${y + 10}"/><text x="8" y="${y + 6}">${esc(m.note)}</text></g>`;
+      y += 26;
+      return row;
+    }
+    k += 1;
     const self = m.from === m.to;
     const x1 = x(m.from), x2 = x(m.to);
-    const width = self ? COL - 30 : Math.max(Math.abs(x2 - x1) - 24, 2 * COL - 40); // a short arrow's label may reach past its ends
+    const width = self ? 2 * COL - 30 : Math.max(Math.abs(x2 - x1) - 24, 2 * COL - 40); // a short arrow's label may reach past its ends
     const lines = wrap(m.label, width);
     const top = y + lines.length * LINE + 6; // the arrow below its label
     const colour = colourOf(m.to.id);
@@ -349,7 +370,7 @@ const sequenceSvg = ({ sc, seq }) => {
       ? `<path class="arrow${colour ? " part" : ""}" d="M${x1} ${top} h14 v14 h-10" marker-end="url(#${sc.id}-head)"/>`
       : `<line class="arrow${m.reply ? " reply" : ""}${colour ? " part" : ""}" x1="${x1}" y1="${top}" x2="${x2 + (x2 > x1 ? -4 : 4)}" y2="${top}" marker-end="url(#${sc.id}-head)"/>`;
     const nx = self ? x1 : x1 + (x2 > x1 ? 12 : -12);
-    const row = `<g${style}>${text}${arrow}<circle class="num" cx="${nx}" cy="${top}" r="8"/><text class="num-t" x="${nx}" y="${top + 3.5}" text-anchor="middle">${k + 1}</text></g>`;
+    const row = `<g${style}>${text}${arrow}<circle class="num" cx="${nx}" cy="${top}" r="8"/><text class="num-t" x="${nx}" y="${top + 3.5}" text-anchor="middle">${k}</text></g>`;
     y = top + (self ? 30 : 18);
     return row;
   });
@@ -367,7 +388,7 @@ const sequenceSvg = ({ sc, seq }) => {
   return `<div class="sequence"><svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(sc.title)}"><defs><marker id="${sc.id}-head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tip"/></marker></defs>${heads}${rows.join("")}</svg></div>`;
 };
 // The same as text: one numbered line per arrow.
-const sequenceLines = ({ seq }) => seq.messages.map((m) => `${m.from.name} ${m.reply ? "⇢" : "→"} ${m.to.name}: ${m.label}`);
+const sequenceLines = ({ seq }) => seq.items.map((m) => (m.note ? `*${m.note}*` : `${m.from.name} ${m.reply ? "⇢" : "→"} ${m.to.name}: ${m.label}`));
 const stepHow = (st) => (st.services.length || !st.ts.length ? null : [meta.reading.insideApp]);
 const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })} ${st.ts.map((t) => t.title).join(" · ")}.`];
 
@@ -411,13 +432,13 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
       for (const v of st.services) mdService(v, "   ");
     }
     M.push("", `**${meta.experiences.behind}**`, "");
-    for (const l of sequenceLines(behind.get(j.x.id))) M.push(`1. ${l}`);
+    for (const l of sequenceLines(behind.get(j.x.id))) M.push(l.startsWith("*") ? `\n${l}\n` : `1. ${l}`);
     M.push("");
   }
   M.push(`## ${meta.together.heading}`, "", meta.together.intro, "");
   for (const f of scenarios) {
     M.push(`### ${md([L(f.sc.title, arcUrl(f.sc))])}`, "", prose(f.sc), "");
-    for (const l of sequenceLines(f)) M.push(`1. ${l}`);
+    for (const l of sequenceLines(f)) M.push(l.startsWith("*") ? `\n${l}\n` : `1. ${l}`);
     M.push("");
   }
   M.push(`## ${meta.building.heading}`, "", meta.building.intro, "");

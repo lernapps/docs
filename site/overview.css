@@ -146,3 +146,6 @@ a.status { text-decoration: none; }
 .building h3 .where { margin-left: 0.5rem; font-size: 0.85rem; font-weight: 400; }
 .building ul { display: grid; gap: 0.35rem; font-size: 0.94rem; }
 .building .meta { color: var(--lc-muted); }
+/* A section of a journey's diagram: one step of the journey. */
+.sequence .section-row line { stroke: var(--lc-border); stroke-width: 1.5; }
+.sequence .section-row text { fill: var(--lc-muted); font-weight: 700; font-size: 11px; letter-spacing: 0.04em; paint-order: stroke; stroke: var(--lc-card); stroke-width: 4px; }
