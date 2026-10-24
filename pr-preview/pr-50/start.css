@@ -57,7 +57,7 @@ main a.feature { color: var(--lc-text); }
 .points strong { display: block; font-size: 1.02rem; }
 .points span { display: block; margin-top: 0.2rem; font-size: 0.9rem; color: var(--lc-muted); }
 
-section.more, section.parts, section.ref { padding: 3rem 0 0; }
+section.more { padding: 3rem 0 0; }
 section h2.section { font-size: 1.4rem; letter-spacing: -0.02em; margin: 0 0 0.4rem; }
 section .lead { margin: 0 0 1rem; color: var(--lc-muted); max-width: 40rem; }
 .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.9rem; }
@@ -69,20 +69,15 @@ main .cards a { color: var(--lc-text); }
 .cards h3 { font-size: 1.15rem; margin: 0.2rem 0 0.35rem; }
 .cards p { margin: 0 0 0.9rem; color: var(--lc-muted); font-size: 0.95rem; flex: 1; }
 .cards .cta { font-size: 0.92rem; }
+/* The overview is the main way behind the vision. */
+.cards .wide { grid-column: span 2; }
+.cards .wide a { border-color: var(--lc-accent); }
 
 /* The parts of lernapps.net: one tile per site, with its repository. */
-.tiles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
-.tiles li { padding: 1rem 1.1rem; border-radius: 1rem; border: 1px solid var(--lc-border); background: var(--lc-tint); }
-.tiles h3 { font-size: 1.05rem; margin: 0 0 0.25rem; }
-.tiles p { margin: 0 0 0.4rem; color: var(--lc-muted); font-size: 0.93rem; }
-.tiles .repo { font-size: 0.85rem; }
-.tiles code { font-size: 0.85em; }
 
-.ref p { margin: 0; color: var(--lc-muted); max-width: 40rem; }
-.ref a { font-weight: 600; }
 
 @media (max-width: 48rem) {
-  .points, .cards, .tiles { grid-template-columns: 1fr; }
+  .points, .cards,   .cards .wide { grid-column: auto; }
   .feature { padding: 1.2rem 1.1rem 1.1rem; }
 }
 @media (prefers-reduced-motion: reduce) { .cards a, .cta svg, .feature { transition: none; } }

@@ -1,6 +1,6 @@
 # How lernapps.net works
 
-Why the platform exists, which parts it is built from, what job each part does, and how people use them. For engineers and tech leads who work on the platform or want to understand it before they read the platform design or the architecture.
+Why the platform exists, which parts it is built from, what job each part does, and how people use them. For engineers and tech leads who work on the platform or want to understand it before they read its two models. The platform design says who takes part and what they give each other; the architecture says how the system is built.
 
 > The goal, in the platform design's words: Free to use, kept alive by thanks. Adults and students find an active-learning app they can use right away, confident that it may be used under data protection law; creators list theirs with almost no effort and hear when it helped. A thank-you, free and anonymous, is what keeps the platform alive: running it costs almost nothing, and thanks are what keep creators building.
 
@@ -9,10 +9,10 @@ On this page:
 - **Who takes part:** the people the platform is for and the systems it relies on; the journeys are told from their views.
 - **The parts and where they live:** the site map: each part's address, repository and job; the rest of the page names them.
 - **How to read a journey:** how a step, a service and a part connect; read this once before the journeys.
-- **The journeys:** the platform from its users' view, step by step, with the part that helps at each step.
+- **The journeys:** the platform from its users' view, step by step, with the part that helps at each step and the parts working together behind it.
 - **How the parts work together:** the flows behind the journeys that no user sees, for those who run or change the system.
 - **Ideas:** services the platform could offer later, each with an issue to discuss it.
-- **For reference:** every part with its interfaces, for looking something up.
+- **For reference: the parts of the system:** every part with its interfaces, for looking something up.
 
 ## Who takes part
 
@@ -30,22 +30,22 @@ The system relies on these systems outside it:
 - GoatCounter: hosted counting service for the platform's own pages
 - GitHub: repositories, issues, pull requests, Actions and Pages
 - E-mail: mail system that carries thanks and feedback
-- GitHub Actions of the app repositories: workflows in creators' app repositories that use the tooling's actions
+- Creators' app repositories: the creators' own app repositories, whose workflows use the tooling's actions
 
 ## The parts and where they live
 
-The platform is built from one part per repository. This is the site map: where you find each part and the job it does. The journeys and flows below name these parts, so this is the list to come back to.
+The platform is built from one building block per repository of the organisation, each with a job of its own. This page calls them parts. Below is the site map: where you find each part and the job it does. The journeys and flows below name these parts, so this is the list to come back to.
 
-- **[Website](../architecture/#05-building-blocks.arc42.md:el-bb-website):** Gives the platform its face at lernapps.net, the privacy notice that covers every served app, and the shared header, footer and checks every platform site is built with. Address: [lernapps.net](https://lernapps.net/) · Repository: [lernapps/lernapps.github.io](https://github.com/lernapps/lernapps.github.io)
-- **[Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog):** Lets adults and students find, trust and start apps, and lets creators list them; it serves a copy of every listed app under lernapps.net. Address: [lernapps.net/apps](https://lernapps.net/apps/) · Repository: [lernapps/apps](https://github.com/lernapps/apps)
-- **[Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling):** Gives a creator's AI assistant the guidance, the commands and the workflows to build an app that keeps the platform's rules. Address: [lernapps.net/tooling](https://lernapps.net/tooling/) · Repository: [lernapps/tooling](https://github.com/lernapps/tooling)
-- **[App templates](../architecture/#05-building-blocks.arc42.md:el-bb-app-templates):** Provides the three kinds of app (quiz, explainer and interactive app) as templates that already keep the platform's rules. No page of its own; it lives in its repository. · Repository: [lernapps/app-templates](https://github.com/lernapps/app-templates)
+- **[Website](../architecture/#05-building-blocks.arc42.md:el-bb-website):** Gives the platform its face at lernapps.net and the frame every platform site is built with. Address: [lernapps.net](https://lernapps.net/) · Repository: [lernapps/lernapps.github.io](https://github.com/lernapps/lernapps.github.io)
+- **[Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog):** Lets adults and students find, trust and start apps, and lets creators list them; it is the core of the platform. Address: [lernapps.net/apps](https://lernapps.net/apps/) · Repository: [lernapps/apps](https://github.com/lernapps/apps)
+- **[Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling):** Gives a creator's AI assistant everything it needs to build an app that meets the platform's rules: the guidance by phase and the skills, the CLI that creates an app and checks it, and the workflows an app's repository runs. Address: [lernapps.net/tooling](https://lernapps.net/tooling/) · Repository: [lernapps/tooling](https://github.com/lernapps/tooling)
+- **[App templates](../architecture/#05-building-blocks.arc42.md:el-bb-app-templates):** Provides the three kinds of app, quiz, explainer and interactive app, as templates and runtimes that already keep the platform's rules. No page of its own; it lives in its repository. · Repository: [lernapps/app-templates](https://github.com/lernapps/app-templates)
 - **[Docs](../architecture/#05-building-blocks.arc42.md:el-bb-docs):** Holds the models of the platform: why it exists, who carries it and how the system is built. Address: [lernapps.net/docs](https://lernapps.net/docs/) · Repository: [lernapps/docs](https://github.com/lernapps/docs)
-- **[Organisation](../architecture/#05-building-blocks.arc42.md:el-bb-org):** Holds the rules and decisions that every repository of the platform follows. No page of its own; it lives in its repository. · Repository: [lernapps/.github](https://github.com/lernapps/.github)
+- **[Organisation](../architecture/#05-building-blocks.arc42.md:el-bb-org):** Holds the rules and decisions that every repository of the platform follows: the profile, the governance, the templates for issues and pull requests, and the decision issues. No page of its own; it lives in its repository. · Repository: [lernapps/.github](https://github.com/lernapps/.github)
 
 ## How to read a journey
 
-The journeys connect the people above to the parts above. A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service, and a part of the system provides it through one of its interfaces: the pages, links, templates or commands people actually use.
+The journeys connect the people above to the parts above. A journey is a sequence of steps people take. Where the platform helps with a step, it offers a service, and a part of the system provides it through one of its interfaces: the pages, links, templates or commands people actually use. Below each journey, a diagram shows how the parts work together behind it; every arrow carries the order to the part it points at.
 
 For example: in the step "Find an app for a topic and grade", the platform offers the service "Finding apps by topic and grade", which the interface "Catalog pages" of the part "Catalog" provides.
 
@@ -53,7 +53,7 @@ A dashed block marks where a part does not yet deliver what the journey needs, a
 
 ## The journeys
 
-This is why the parts exist: each journey shows a person with a problem and the parts that help them solve it. Teachers and parents bring an app to learners, in class and at home; creators build an app, list it and get back what it did for others.
+This is why the parts exist: each journey shows a person with a problem and the parts that help them solve it. Adults in an acute moment and creators each have their journey: teachers who have to take over a class at short notice, parents who notice that their child struggles with something they cannot help with, and creators, because supply does not come by itself.
 
 ### [An app in class within minutes](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-app-in-minutes)
 
@@ -74,10 +74,22 @@ Mainly for adopting adults; also involves app creators, students. What they get:
      - For students: Students open an app an adult brought to them and start right away, without installation or sign-up: a link or QR code is enough.
      - Delivered by: Served apps (Catalog).
 1. Use an app in class
+   - Happens inside the app, without the platform.
 1. Thank the creator · Give feedback from classroom use
    - **Giving feedback and thanks**
      - For adopting adults, students: Makes it easy for adults and students to give feedback, recommendations and thanks, without accounts and without identifying students. It explains, without being pushy, that a thank-you is what keeps the free platform alive.
      - ┆ Not yet: Thanks (Catalog): A click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.
+
+**Behind this journey: how the parts work together**
+
+1. Adopting adult → Catalog: find me an app for this topic and grade
+1. Catalog ⇢ Adopting adult: listed apps with their measured fitness
+1. Adopting adult → Website: show me the privacy notice, if asked
+1. Adopting adult → Student: open this app (link or QR code)
+1. Student → Catalog: serve me the app
+1. Catalog ⇢ Student: the app, from lernapps.net
+1. Adopting adult → Catalog: pass on my thanks (one click)
+1. Catalog → E-mail: carry the thanks to the platform owner
 
 ### [Help where a child struggles](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-child-struggles)
 
@@ -93,6 +105,15 @@ Mainly for adopting adults; also involves students, app creators. What they get:
      - For students: Helps students return to apps and find new ones on their own, for the topic they struggle with.
      - Delivered by: Catalog pages (Catalog).
 1. As in the journey “An app in class within minutes”: Thank the creator.
+
+**Behind this journey: how the parts work together**
+
+1. Adopting adult → Catalog: find me an app for the topic my child struggles with
+1. Catalog ⇢ Adopting adult: listed apps
+1. Student → Catalog: serve me the app
+1. Catalog ⇢ Student: the app, no sign-up, no installation
+1. Adopting adult → Catalog: pass on my thanks (one click)
+1. Catalog → E-mail: carry the thanks to the platform owner
 
 ### [List an app and hear it is used](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back)
 
@@ -114,36 +135,34 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
      - ┆ Not yet: Site frame (Website): Only visits to an app's page in the catalog are counted, not the use of the app itself, and only the platform owner sees the totals.
      - ┆ Not yet: Thanks (Catalog): Thanks reach the creator only if the platform owner passes them on.
 
-## How the parts work together
-
-The journeys show what users see. Behind them the parts pass work to each other: how a creator's app gets into the catalog, and how the platform keeps itself and the creators' apps current. Read this if you run or change the system; the architecture describes each flow step by step.
-
-### [Build and list an app](../architecture/#06-runtime-view.arc42.md:el-rs-build-and-list)
-
-A creator finds no fitting app and decides to build one. Their AI assistant follows the tooling's guidance, creates the app from one of the app templates and checks it; the app's repository runs the tooling's actions. The assistant opens the listing pull request; the catalog checks the entry and, at the platform owner's request, has a review agent look at the app; the owner approves; the catalog publishes a copy.
+**Behind this journey: how the parts work together**
 
 1. Creator → Catalog: find me an app for my class
 1. Catalog ⇢ Creator: no fitting app
-1. Creator → AI assistant: build an app for my class
-1. AI assistant → Website: show me the way in (llms.txt)
-1. AI assistant → Tooling: give me the guidance for this phase
-1. AI assistant → Tooling: create the app
+1. Creator → Creator's AI assistant: build an app for my class
+1. Creator's AI assistant → Website: show me the way in (llms.txt)
+1. Creator's AI assistant → Tooling: give me the guidance for this phase
+1. Creator's AI assistant → Tooling: create the app
 1. Tooling → App templates: provide the archetype's template
-1. AI assistant → Tooling: check the app
-1. App repo Actions → Tooling: check, build and publish the app
-1. AI assistant → Catalog: list this app (pull request with the entry)
-1. Catalog → Organisation: provide the pull request template and the rules
+1. Creator's AI assistant → Tooling: check the app
+1. Creators' app repositories → Tooling: check, build and publish the app
+1. Creator's AI assistant → Organisation: give me the pull request template and the rules
+1. Creator's AI assistant → Catalog: list this app (pull request with the entry)
 1. Catalog → Tooling: check the entry and the app
-1. Catalog ⇢ AI assistant: the results, as a comment
-1. Owner → Catalog: have the app reviewed if needed, then publish it
-1. Catalog → Catalog: publish a copy under lernapps.net
+1. Catalog ⇢ Creator's AI assistant: the results, as a comment
+1. Platform owner → Catalog: have the app reviewed if needed, then publish it
+1. Catalog → GitHub: build and publish a copy under lernapps.net
+
+## How the parts work together
+
+The journeys show what users see. Behind them the parts pass work to each other in flows that no user sees. Read this if you run or change the system.
 
 ### [A listed app gets a new version](../architecture/#06-runtime-view.arc42.md:el-rs-app-update)
 
 The creator releases a new version. The catalog builds a copy from that release and replaces the served copy; the address stays the same and never stops working.
 
-1. App repo Actions → Tooling: build and publish the release
-1. Catalog → App repo Actions: report new releases
+1. Creators' app repositories → Tooling: build and publish the release
+1. Catalog → Creators' app repositories: report new releases
 1. Catalog → Tooling: check the new version
 1. Catalog → GitHub: open and merge the entry's update pull request
 1. Catalog → GitHub: build and publish the new copy
@@ -153,19 +172,20 @@ The creator releases a new version. The catalog builds a copy from that release 
 
 When the site frame, the tooling or the app templates improve, the platform passes the improvement on to every repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each one, and it is merged when the checks pass. An improvement of the guidance has been measured before it is passed on.
 
-1. Website → Renovate: pass on the improved site frame
-1. App templates → Renovate: pass on the improved archetypes
-1. Tooling → Renovate: pass on the improved tooling
+1. Renovate → Website: report new versions of the site frame
+1. Renovate → App templates: report new versions of the archetypes
+1. Renovate → Tooling: report new versions of the tooling
 1. Renovate → Catalog: take the new versions (pull request)
 1. Renovate → Docs: take the new site frame (pull request)
 1. Renovate → Tooling: take the new versions (pull request)
-1. Owner → Catalog: merge it, if not merged automatically
+1. Renovate → Creators' app repositories: take the new versions (pull request)
+1. Platform owner → Catalog: merge it, if not merged automatically
 
 ### [A platform site is published](../architecture/#06-runtime-view.arc42.md:el-rs-site-published)
 
-A change is merged to a site's main line: the website, the catalog, the docs or the tooling's pages. The tooling's site actions build the site, run site-check from the site frame on the built pages, and deploy them to GitHub Pages under lernapps.net. A failing check stops the deploy.
+A change is merged to a site's main line: the website, the catalog, the docs or the tooling's pages; the diagram shows the docs as the example. The tooling's site actions build the site, run site-check from the site frame on the built pages, and deploy them to GitHub Pages under lernapps.net. A failing check stops the deploy.
 
-1. A platform site → Tooling: build the site (site action)
+1. Docs → Tooling: build the site (site action)
 1. Tooling → Website: check the built pages (site-check)
 1. Website ⇢ Tooling: passed, or stop the deploy
 1. Tooling → GitHub: publish the pages under lernapps.net
@@ -197,7 +217,7 @@ Each part with the interfaces it offers, the services they serve and the parts t
 
 #### [Website](../architecture/#05-building-blocks.arc42.md:el-bb-website) ([lernapps/lernapps.github.io](https://github.com/lernapps/lernapps.github.io))
 
-The website at lernapps.net: the home page that tells the platform's story in plain language, the privacy notice and the imprint that cover every served app, and the entry point for AI assistants. It provides the shared frame every site of the platform is built with.
+The home page tells the platform's story in plain language; the privacy notice and the imprint cover every served app; llms.txt is the entry point for AI assistants. The frame is the shared header and footer and site-check, the checks every site has to pass before it is published.
 
 - **Home pages:** The home page, the privacy notice and the imprint, and the root llms.txt that leads AI assistants to the other parts of the platform.
   - Serves: Guidance for building apps, Clarity on fitness for use
@@ -210,7 +230,7 @@ The website at lernapps.net: the home page that tells the platform's story in pl
 
 #### [Catalog](../architecture/#05-building-blocks.arc42.md:el-bb-catalog) ([lernapps/apps](https://github.com/lernapps/apps))
 
-The catalog is the core of the platform. For adults and students, it makes apps findable by topic and grade, serves a copy of every listed app under lernapps.net and keeps it current, and takes the thanks of adults and students. For creators, it takes their entries and helps them list; it checks each entry and, at the platform owner's request, has a review agent look at the app.
+For adults and students, it makes apps findable by topic and grade, serves a copy of every listed app under lernapps.net and keeps it current, and takes the thanks of adults and students. For creators, it takes their entries and helps them list; it checks each entry and, at the platform owner's request, has a review agent look at the app.
 
 - **Catalog pages:** The pages where adults and students find an app for a topic and grade, see its fitness for use, and find the way to build an app when none fits.
   - Serves: Finding apps by topic and grade, Finding apps for a topic one struggles with, Clarity on fitness for use
@@ -227,10 +247,10 @@ The catalog is the core of the platform. For adults and students, it makes apps 
 
 #### [Tooling](../architecture/#05-building-blocks.arc42.md:el-bb-tooling) ([lernapps/tooling](https://github.com/lernapps/tooling))
 
-Everything a creator's AI assistant needs to build an app that meets the platform's rules: the guidance by phase and the skills, the CLI that creates an app and checks it, and the workflows an app's repository runs. It also holds the actions every platform site is checked and deployed with.
+It also holds the actions that build every platform site and publish it once site-check has passed.
 
 - **App actions:** The reusable workflows and actions an app's repository runs to check and build the app and to publish the creator's own release, at the creator's address.
-  - Works with, outside the system: GitHub Actions of the app repositories, GitHub
+  - Works with, outside the system: Creators' app repositories, GitHub
 - **Guidance:** The guidance by phase, the skills and the documentation that AI assistants read to build and list an app.
   - Serves: Guidance for building apps
   - Works with, outside the system: Creator's AI assistant
@@ -239,11 +259,11 @@ Everything a creator's AI assistant needs to build an app that meets the platfor
 - **Tooling CLI:** The command line an assistant and the workflows run: create an app from an archetype, check it against the rules, update it.
   - Serves: Guidance for building apps
   - Used by: Catalog
-  - Works with, outside the system: Creator's AI assistant, GitHub Actions of the app repositories, Renovate
+  - Works with, outside the system: Creator's AI assistant, Creators' app repositories, Renovate
 
 #### [App templates](../architecture/#05-building-blocks.arc42.md:el-bb-app-templates) ([lernapps/app-templates](https://github.com/lernapps/app-templates))
 
-The templates and runtimes of the three archetypes: quiz, explainer and interactive app. They carry the rules every app has to meet into the code, so a creator does not have to know them.
+They carry the rules into the code, so a creator does not have to know them.
 
 - **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with.
   - Serves: Guidance for building apps
@@ -252,17 +272,15 @@ The templates and runtimes of the three archetypes: quiz, explainer and interact
 
 ### Parts that support the others
 
-These parts deliver nothing to the journeys themselves; the platform is designed, decided and kept consistent with them.
+These parts provide no service to a journey, but they take part in the flows behind them.
 
 #### [Docs](../architecture/#05-building-blocks.arc42.md:el-bb-docs) ([lernapps/docs](https://github.com/lernapps/docs))
 
-The models of the platform: the platform design, the business model and the architecture of the whole system, each in a modelling language that people and AI assistants can read and check, rendered as pages.
+They are the platform design, the business model and the architecture of the whole system, each in a modelling language that people and AI assistants can read and check, rendered as pages.
 
 - **Models:** The platform design, the business model and the architecture as pages under lernapps.net/docs/, and a skill that lets an AI assistant work with the platform design.
 
 #### [Organisation](../architecture/#05-building-blocks.arc42.md:el-bb-org) ([lernapps/.github](https://github.com/lernapps/.github))
-
-The organisation's rules that hold for every repository: the profile, the governance, the templates for issues and pull requests, and the decision issues.
 
 - **Organisation rules:** The rules, governance and templates every repository of the organisation follows, and the decisions that concern several repositories.
   - Works with, outside the system: GitHub
