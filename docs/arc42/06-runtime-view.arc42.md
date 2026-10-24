@@ -43,8 +43,8 @@ sequenceDiagram
     teacher->>student: open this app (link or QR code)
     student->>catalog: serve me the app
     catalog-->>student: the app, from lernapps.net
-    teacher->>catalog: pass on my thanks (one click)
-    catalog->>mail: carry the thanks to the creator
+    teacher->>catalog: pass on my thanks, my feedback and my recommendation (one click each)
+    catalog->>mail: carry them to the creator
 ```
 
 ## Help where a child struggles
@@ -82,7 +82,7 @@ sequenceDiagram
     student->>catalog: serve me the app
     catalog-->>student: the app, no sign-up, no installation
     parent->>catalog: pass on my thanks (one click)
-    catalog->>mail: carry the thanks to the creator
+    catalog->>mail: carry them to the creator
 ```
 
 ## Build and list an app
@@ -136,7 +136,7 @@ sequenceDiagram
     assistant->>catalog: list this app (pull request with the entry)
     catalog->>tooling: check the entry and the app
     catalog-->>assistant: the results, as a comment
-    catalog->>catalog: have a review agent look at the app
+    catalog->>catalog: have the review agent, an AI with a checklist, look at the app
     catalog->>github: build and publish a copy under lernapps.net
 ```
 
@@ -170,7 +170,7 @@ sequenceDiagram
     participant tooling as Tooling
     participant github as GitHub
     appactions->>tooling: build and publish the release
-    catalog->>appactions: report new releases
+    catalog->>appactions: show me your new releases
     catalog->>tooling: check the new version
     catalog->>github: open the entry's update pull request, merged by policy
     catalog->>github: build and publish the new copy
@@ -210,9 +210,9 @@ sequenceDiagram
     participant docs as Docs
     participant renovate as Renovate
     participant apps as App repositories
-    renovate->>website: report changes of the site frame
-    renovate->>templates: report changes of the archetypes
-    renovate->>tooling: report changes of the tooling
+    renovate->>website: show me your changes
+    renovate->>templates: show me your changes
+    renovate->>tooling: show me your changes
     renovate->>catalog: take the changes (pull request)
     renovate->>docs: take the new site frame (pull request)
     renovate->>tooling: take the changes (pull request)

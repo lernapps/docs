@@ -126,8 +126,8 @@ requires: if-home-pages
 ## Platform owner
 
 Oliver Jägle, who [owns and runs the platform](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-platform-owner) alone today ([KD-09](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-09-oliver-jägle-alone-owns-the-platform-2026-09-30)). He decides and keeps the models of the
-platform; nothing in the system waits on him, and where it still does, that is the risk of one owner
-(`risk-one-owner`).
+platform. The system itself needs no step of his; what still waits on him is recorded as a gap at the interface
+concerned, with the risk it carries (`risk-one-owner`).
 
 ```arc42
 :::actor
