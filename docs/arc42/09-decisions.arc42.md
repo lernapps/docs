@@ -102,7 +102,7 @@ x-source: lernapps/tooling and lernapps/app-templates architectures
 update every repository by hand.
 
 **Decision.** A repository uses another by a pinned commit (packages from git, actions by commit). When a pinned
-block gets a new version, Renovate passes it on as a pull request in every repository that uses it.
+block changes, Renovate passes the change on as a pull request in every repository that uses it.
 
 **Consequences.** Every repository builds reproducibly, and updates arrive as pull requests that only need a merge.
 Rejected: published npm versions, which would need a release process.

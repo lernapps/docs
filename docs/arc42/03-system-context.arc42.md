@@ -141,7 +141,7 @@ requires: if-listing, if-org-rules, if-models
 ## Creators' app repositories
 
 Every learning app lives in a repository of its own, which belongs to its creator and is outside the system. Their GitHub Actions run the tooling's
-workflows to check, build and publish an app, and the platform passes its new versions on to them as pull requests;
+workflows to check, build and publish an app, and the platform passes its changes on to them as pull requests;
 this is where the system meets them. If this boundary needs more
 detail, it is refined in the tooling's architecture, not here.
 
@@ -173,7 +173,7 @@ requires: if-listing, if-app-actions, if-org-rules
 ## Renovate
 
 Renovate keeps the pins between the repositories current: when the site frame, the tooling or
-the archetypes get a new version, it passes it on as a pull request in every repository that uses them.
+the archetypes change, it passes the change on as a pull request in every repository that uses them.
 
 ```arc42
 :::actor

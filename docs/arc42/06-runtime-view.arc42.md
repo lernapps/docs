@@ -172,22 +172,22 @@ sequenceDiagram
     appactions->>tooling: build and publish the release
     catalog->>appactions: report new releases
     catalog->>tooling: check the new version
-    catalog->>github: open and merge the entry's update pull request
+    catalog->>github: open the entry's update pull request, merged by policy
     catalog->>github: build and publish the new copy
     github-->>catalog: the same address serves the new copy
 ```
 
 ## The platform passes on its updates
 
-When the site frame, the tooling or the app templates get a new version, the platform passes it on to every
+When the site frame, the tooling or the app templates change, the platform passes the change on to every
 repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each
-one, and it is merged when the checks pass. An improvement of the guidance has been measured before it is passed on.
+one, and it is merged when the checks pass. Every change of the guidance has been measured by the evals before it is passed on.
 
 ```arc42
 :::runtime-scenario
 id: rs-block-update
 title: The platform passes on its updates
-trigger: The site frame, the tooling or the app templates get a new version
+trigger: The site frame, the tooling or the app templates change
 involves: bb-website, bb-tooling, bb-app-templates, bb-catalog, bb-docs
 :::
 ```
@@ -211,13 +211,13 @@ sequenceDiagram
     participant renovate as Renovate
     participant apps as App repositories
     participant owner as Owner
-    renovate->>website: report new versions of the site frame
-    renovate->>templates: report new versions of the archetypes
-    renovate->>tooling: report new versions of the tooling
-    renovate->>catalog: take the new versions (pull request)
+    renovate->>website: report changes of the site frame
+    renovate->>templates: report changes of the archetypes
+    renovate->>tooling: report changes of the tooling
+    renovate->>catalog: take the changes (pull request)
     renovate->>docs: take the new site frame (pull request)
-    renovate->>tooling: take the new versions (pull request)
-    renovate->>apps: take the new versions (pull request)
+    renovate->>tooling: take the changes (pull request)
+    renovate->>apps: take the changes (pull request)
     owner->>catalog: merge it, if not merged automatically
 ```
 

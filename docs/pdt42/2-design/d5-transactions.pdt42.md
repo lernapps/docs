@@ -68,7 +68,7 @@ relationship: r-creators-adults
 from: e-creators
 to: e-adopters
 direction: one-way
-value-unit: A signal of fitness for use: sends nothing to third parties, runs in the browser only, needs no installation or sign-up
+value-unit: A signal of fitness for use: sends nothing to third parties, accesses only its own data in the browser, needs no installation or sign-up
 happening: no
 channel: ch-fitness-signal
 kind: knowledge
