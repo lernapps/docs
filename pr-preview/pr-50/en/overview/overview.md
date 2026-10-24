@@ -88,8 +88,8 @@ Mainly for adopting adults; also involves app creators, students. What they get:
 1. Adopting adult → Student: open this app (link or QR code)
 1. Student → Catalog: serve me the app
 1. Catalog ⇢ Student: the app, from lernapps.net
-1. Adopting adult → Catalog: pass on my thanks (one click)
-1. Catalog → E-mail: carry the thanks to the creator
+1. Adopting adult → Catalog: pass on my thanks, my feedback and my recommendation (one click each)
+1. Catalog → E-mail: carry them to the creator
 
 ### [Help where a child struggles](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-child-struggles)
 
@@ -113,7 +113,7 @@ Mainly for adopting adults; also involves students, app creators. What they get:
 1. Student → Catalog: serve me the app
 1. Catalog ⇢ Student: the app, no sign-up, no installation
 1. Adopting adult → Catalog: pass on my thanks (one click)
-1. Catalog → E-mail: carry the thanks to the creator
+1. Catalog → E-mail: carry them to the creator
 
 ### [List an app and hear it is used](../platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back)
 
@@ -152,7 +152,7 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 1. Creator's AI assistant → Catalog: list this app (pull request with the entry)
 1. Catalog → Tooling: check the entry and the app
 1. Catalog ⇢ Creator's AI assistant: the results, as a comment
-1. Catalog → Catalog: have a review agent look at the app
+1. Catalog → Catalog: have the review agent, an AI with a checklist, look at the app
 1. Catalog → GitHub: build and publish a copy under lernapps.net
 
 ## How the parts work together
@@ -164,7 +164,7 @@ The journeys show what users see. Behind them the parts pass work to each other 
 The creator releases a new version. The catalog builds a copy from that release and replaces the served copy; the address stays the same and never stops working.
 
 1. Creators' app repositories → Tooling: build and publish the release
-1. Catalog → Creators' app repositories: report new releases
+1. Catalog → Creators' app repositories: show me your new releases
 1. Catalog → Tooling: check the new version
 1. Catalog → GitHub: open the entry's update pull request, merged by policy
 1. Catalog → GitHub: build and publish the new copy
@@ -174,9 +174,9 @@ The creator releases a new version. The catalog builds a copy from that release 
 
 When the site frame, the tooling or the app templates change, the platform passes the change on to every repository that uses them, the creators' apps included: Renovate, an update service, opens a pull request in each one, and it is merged when the checks pass. Every change of the guidance has been measured by the evals before it is passed on.
 
-1. Renovate → Website: report changes of the site frame
-1. Renovate → App templates: report changes of the archetypes
-1. Renovate → Tooling: report changes of the tooling
+1. Renovate → Website: show me your changes
+1. Renovate → App templates: show me your changes
+1. Renovate → Tooling: show me your changes
 1. Renovate → Catalog: take the changes (pull request)
 1. Renovate → Docs: take the new site frame (pull request)
 1. Renovate → Tooling: take the changes (pull request)
@@ -231,14 +231,14 @@ Each part with the interfaces it offers, the services they serve and the parts t
 
 - **Catalog pages:** The pages where adults and students find an app for a topic and grade, see its fitness for use, and find the way to build an app when none fits.
   - Serves: Finding apps by topic and grade, Finding apps for a topic one struggles with, Clarity on fitness for use
-- **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published. Nothing waits on a person; where it still does, that is the risk of one owner.
+- **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap below, with the risk it carries.
   - Serves: Help to list an app, Clarity on fitness for use
   - ┆ Not yet: A listing is published only after the platform owner approves the pull request, and the review agent runs only at their request.
   - Risk until then: [One owner](../architecture/#11-risks.arc42.md:el-risk-one-owner).
   - Works with, outside the system: Creator's AI assistant, GitHub
 - **Served apps:** The copy of every listed app that lernapps.net serves and links: built from the release the creator publishes at their own address, and served under one address that keeps working.
   - Serves: Starting an app right away
-- **Thanks:** A thank-you and feedback in one click from the catalog or an app, counted openly and passed on to the creator. The interface stays the same when its realisation changes. Nothing waits on a person; where it still does, that is the risk of one owner.
+- **Thanks:** A thank-you and feedback in one click from the catalog or an app, counted openly and passed on to the creator. The interface stays the same when its realisation changes. No person has to act for thanks to arrive. What still waits on the platform owner is recorded as a gap below, with the risk it carries.
   - Serves: Insight into use and feedback, Giving feedback and thanks
   - ┆ Not yet: A click opens a prepared e-mail from the sender's own account; thanks and feedback arrive, but they are neither anonymous nor counted, and recommendations are not recorded.
   - ┆ Not yet: Thanks reach the creator only if the platform owner passes them on.
