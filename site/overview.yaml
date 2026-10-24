@@ -73,7 +73,6 @@ together:
     The journeys show what users see. Behind them the parts pass work to each other: how a creator's app gets into
     the catalog, and how the platform keeps itself and the creators' apps current. Read this if you run or change
     the system; the architecture describes each flow step by step.
-  parts: "Parts involved:"
 
 ideas:
   heading: Ideas

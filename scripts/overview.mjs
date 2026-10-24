@@ -9,7 +9,9 @@
 // site/overview.yaml holds only headings and the texts that lead into each part, with placeholders the script fills
 // from the models; it names no element of a model. The script fails when the models do not fit together, so the
 // page cannot drift from them: an interface names a channel that does not exist, or an experience needs a service
-// that no interface realises.
+// that no interface realises, or a flow names a part its sequence diagram does not show (or the other way round).
+// The flows are drawn from their sequence diagrams in the architecture: every arrow carries the order to the part
+// it points at.
 //
 //   node scripts/overview.mjs <out-dir>   (writes <out-dir>/index.html and <out-dir>/overview.md, the same content)
 import { execFile, execFileSync } from "node:child_process";
@@ -177,12 +179,39 @@ const addressesOf = (bb) =>
   arc.elements.filter((e) => e.kind === "deployment-node" && e.parent && arcById.get(e.parent)?.type === "environment" && /lernapps\.net/.test(e.title) && list(e.hosts).includes(bb.id)).map((e) => e.title);
 const outsideSystems = [...new Set(blocks.flatMap((b) => b.offers.flatMap((o) => o.outside)))];
 // How the parts work together: the runtime scenarios of the architecture that involve at least two parts; a
+// The sequence diagram of a runtime scenario, read from its chapter: the `:::diagram` block with `scenario: <id>`
+// and its aliases (name in the diagram = element id), then the Mermaid sequence that follows it.
+const sequenceOf = (sc) => {
+  const text = readFileSync(sc.loc.file, "utf8");
+  const block = [...text.matchAll(/:::diagram\n([\s\S]*?):::/g)].find((d) => d[1].includes(`scenario: ${sc.id}\n`));
+  if (!block) return null;
+  const alias = Object.fromEntries((block[1].match(/aliases: (.+)/)?.[1] ?? "").split(/,\s*/).map((pair) => pair.split("=")));
+  const body = text.slice(block.index).match(/```mermaid\n([\s\S]*?)```/)?.[1] ?? "";
+  const participants = [...body.matchAll(/^\s*participant (\w+) as (.+)$/gm)].map(([, key, name]) => ({ key, name: name.trim(), id: alias[key] ?? key }));
+  const byKey = new Map(participants.map((p) => [p.key, p]));
+  const messages = [...body.matchAll(/^\s*(\w+)\s*(-->>|->>)\s*(\w+)\s*:\s*(.+)$/gm)].map(([, from, arrow, to, label]) => ({ from: byKey.get(from), to: byKey.get(to), label: label.trim(), reply: arrow === "-->>" }));
+  return { participants, messages };
+};
 // scenario named like a journey is left out, the journey itself tells it.
 const scenarios = arc.elements
   .filter((e) => e.kind === "runtime-scenario" && list(e.involves).filter((id) => arcById.get(id)?.kind === "building-block").length >= 2)
   .filter((e) => !experiences.some((x) => x.title === e.title))
   .sort((a, b) => a.loc.line - b.loc.line)
-  .map((sc) => ({ sc, parts: list(sc.involves).map((id) => arcById.get(id)).filter((e) => e?.kind === "building-block") }));
+  .map((sc) => ({ sc, parts: list(sc.involves).map((id) => arcById.get(id)).filter((e) => e?.kind === "building-block"), seq: sequenceOf(sc) }));
+{
+  const wrong = scenarios.flatMap(({ sc, parts, seq }) => {
+    if (!seq) return [`${sc.id}: no sequence diagram`];
+    const shown = new Set(seq.participants.filter((p) => seq.messages.some((m) => m.from === p || m.to === p)).map((p) => p.id));
+    return [
+      ...parts.filter((b) => !shown.has(b.id)).map((b) => `${sc.id}: involves ${b.id}, but no arrow of its sequence diagram reaches it`),
+      ...[...shown].filter((id) => arcById.get(id)?.kind === "building-block" && !parts.some((b) => b.id === id)).map((id) => `${sc.id}: its sequence diagram shows ${id}, which it does not involve`),
+    ];
+  });
+  if (wrong.length) {
+    console.error(`overview: a flow and its sequence diagram do not fit together:\n- ${wrong.join("\n- ")}`);
+    process.exit(1);
+  }
+}
 const example = (() => {
   const st = journeys[0].steps.find((s) => s.ts.length && s.services.length);
   const v = st.services[0];
@@ -231,6 +260,58 @@ const stepLabel = (st) =>
 const title = (id) => pdtById.get(id)?.title ?? id;
 const outsideLine = (u) => `${u.title}: ${lower(u.description?.replace(/\s*\(pdt42[^)]*\)/, "") ?? "")}`;
 const siteOf = (bb) => ({ addresses: addressesOf(bb), repo: bb.extensions?.repo });
+// Each part keeps one colour on the whole page: in the site map and in the flows.
+const PALETTE = ["#2563eb", "#0d9488", "#9333ea", "#ea580c", "#db2777", "#65a30d"];
+const colourOf = (id) => {
+  const k = blocks.findIndex((b) => b.bb.id === id);
+  return k < 0 ? null : PALETTE[k % PALETTE.length];
+};
+// A flow's sequence diagram as SVG: a column per participant, time runs down, every arrow numbered and labelled
+// with the order to the participant it points at; replies dashed. Labels wrap to the width between the columns.
+const sequenceSvg = ({ sc, seq }) => {
+  const ps = seq.participants.filter((p) => seq.messages.some((m) => m.from === p || m.to === p));
+  // Drawn at its natural size, never scaled: the columns share the width of the page, down to a minimum.
+  const COL = Math.max(96, Math.min(150, Math.floor(880 / ps.length))), HEAD = 46, LINE = 15, CH = 6.4;
+  const x = (p) => COL / 2 + ps.indexOf(p) * COL;
+  const wrap = (text, width) => {
+    const lines = [""];
+    for (const w of text.split(" ")) (lines.at(-1) && (lines.at(-1).length + w.length + 1) * CH > width ? lines.push(w) : (lines[lines.length - 1] = lines.at(-1) ? `${lines.at(-1)} ${w}` : w));
+    return lines;
+  };
+  let y = HEAD + 16;
+  const rows = seq.messages.map((m, k) => {
+    const self = m.from === m.to;
+    const x1 = x(m.from), x2 = x(m.to);
+    const width = self ? COL - 30 : Math.abs(x2 - x1) - 24;
+    const lines = wrap(m.label, width);
+    const top = y + lines.length * LINE;
+    const colour = colourOf(m.to.id);
+    const style = colour ? ` style="--c:${colour}"` : "";
+    const lx = self ? x1 + 18 : (x1 + x2) / 2;
+    const text = `<text class="lbl" x="${lx}" y="${y + 10}" text-anchor="${self ? "start" : "middle"}">${lines.map((l, i) => `<tspan x="${lx}" dy="${i ? LINE : 0}">${esc(l)}</tspan>`).join("")}</text>`;
+    const arrow = self
+      ? `<path class="arrow${colour ? " part" : ""}" d="M${x1} ${top} h14 v14 h-10" marker-end="url(#${sc.id}-head)"/>`
+      : `<line class="arrow${m.reply ? " reply" : ""}${colour ? " part" : ""}" x1="${x1}" y1="${top}" x2="${x2 + (x2 > x1 ? -4 : 4)}" y2="${top}" marker-end="url(#${sc.id}-head)"/>`;
+    const nx = self ? x1 : x1 + (x2 > x1 ? 12 : -12);
+    const row = `<g${style}>${text}${arrow}<circle class="num" cx="${nx}" cy="${top}" r="8"/><text class="num-t" x="${nx}" y="${top + 3.5}" text-anchor="middle">${k + 1}</text></g>`;
+    y = top + (self ? 30 : 18);
+    return row;
+  });
+  const h = y + 6, w = ps.length * COL;
+  const heads = ps
+    .map((p) => {
+      const colour = colourOf(p.id);
+      return `<g class="head${colour ? " part" : ""}"${colour ? ` style="--c:${colour}"` : ""}><line class="life" x1="${x(p)}" y1="${HEAD}" x2="${x(p)}" y2="${h}"/><rect x="${x(p) - COL / 2 + 8}" y="4" width="${COL - 16}" height="${HEAD - 12}" rx="${(HEAD - 12) / 2}"/>${(() => {
+        const lines = wrap(p.name, COL - 34); // bold, so wider than the labels
+        const top = 4 + (HEAD - 12) / 2 + 4.5 - ((lines.length - 1) * 13) / 2;
+        return `<text x="${x(p)}" y="${top}" text-anchor="middle">${lines.map((l, i) => `<tspan x="${x(p)}" dy="${i ? 13 : 0}">${esc(l)}</tspan>`).join("")}</text>`;
+      })()}</g>`;
+    })
+    .join("");
+  return `<div class="sequence"><svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(sc.title)}"><defs><marker id="${sc.id}-head" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" class="tip"/></marker></defs>${heads}${rows.join("")}</svg></div>`;
+};
+// The same as text: one numbered line per arrow.
+const sequenceLines = ({ seq }) => seq.messages.map((m) => `${m.from.name} ${m.reply ? "⇢" : "→"} ${m.to.name}: ${m.label}`);
 const stepHow = (st) => (st.services.length || !st.ts.length || st.channel ? null : [meta.reading.insideApp]);
 const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })} ${st.ts.map((t) => t.title).join(" · ")}.`];
 
@@ -276,7 +357,11 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
     M.push("");
   }
   M.push(`## ${meta.together.heading}`, "", meta.together.intro, "");
-  for (const { sc, parts } of scenarios) M.push(`- **${md([L(sc.title, arcUrl(sc))])}.** ${prose(sc)} ${meta.together.parts} ${md(linksTo(parts, arcUrl))}.`);
+  for (const f of scenarios) {
+    M.push(`### ${md([L(f.sc.title, arcUrl(f.sc))])}`, "", prose(f.sc), "");
+    for (const l of sequenceLines(f)) M.push(`1. ${l}`);
+    M.push("");
+  }
   M.push("", `## ${meta.ideas.heading}`, "", meta.ideas.intro, "");
   for (const v of ideas) mdService(v, "", { idea: true });
   M.push("", `## ${meta.blocks.heading}`, "", meta.blocks.intro, "");
@@ -383,7 +468,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
           .map(({ bb }) => {
             const { addresses, repo } = siteOf(bb);
             const where = addresses.length ? `${esc(meta.parts.address)} ${addresses.map((a) => `<a href="https://${esc(a)}/">${esc(a)}</a>`).join(", ")}` : esc(meta.parts.noAddress);
-            return `<li><a href="${esc(arcUrl(bb))}"><strong>${esc(bb.title)}</strong></a><span>${esc(job(bb))}</span><span class="where">${where}</span>${repo ? `<span class="where">${esc(meta.parts.repo)} <a href="https://github.com/${esc(repo)}">${esc(repo)}</a></span>` : ""}</li>`;
+            return `<li style="--c:${colourOf(bb.id)}"><a href="${esc(arcUrl(bb))}"><strong>${esc(bb.title)}</strong></a><span>${esc(job(bb))}</span><span class="where">${where}</span>${repo ? `<span class="where">${esc(meta.parts.repo)} <a href="https://github.com/${esc(repo)}">${esc(repo)}</a></span>` : ""}</li>`;
           })
           .join("")}</ul>
       </section>
@@ -401,7 +486,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
         <h2 class="section" id="together-h">${esc(meta.together.heading)}</h2>
         <p class="lead">${esc(meta.together.intro)}</p>
         <ul class="together">${scenarios
-          .map(({ sc, parts }) => `<li><a href="${esc(arcUrl(sc))}"><strong>${esc(sc.title)}</strong></a><p>${esc(prose(sc))}</p><p class="meta">${esc(meta.together.parts)} ${ht(linksTo(parts, arcUrl))}.</p></li>`)
+          .map((f) => `<li><h3><a href="${esc(arcUrl(f.sc))}">${esc(f.sc.title)}</a></h3><p>${esc(prose(f.sc))}</p>${sequenceSvg(f)}</li>`)
           .join("")}</ul>
       </section>
       <section aria-labelledby="ideas-h">

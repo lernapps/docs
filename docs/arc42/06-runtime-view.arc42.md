@@ -36,14 +36,14 @@ sequenceDiagram
     participant website as Website
     participant catalog as Catalog
     participant mail as E-mail
-    teacher->>catalog: find an app by topic and grade
+    teacher->>catalog: find me an app for this topic and grade
     catalog-->>teacher: listed apps with their measured fitness
-    teacher->>website: privacy notice, if asked
-    teacher->>student: link or QR code to the served app
-    student->>catalog: open the served app
+    teacher->>website: show me the privacy notice, if asked
+    teacher->>student: open this app (link or QR code)
+    student->>catalog: serve me the app
     catalog-->>student: the app, from lernapps.net
-    teacher->>catalog: thanks, one click
-    catalog->>mail: thanks, as a prepared e-mail
+    teacher->>catalog: pass on my thanks (one click)
+    catalog->>mail: carry the thanks to the platform owner
 ```
 
 ## Help where a child struggles
@@ -75,12 +75,12 @@ sequenceDiagram
     participant student as Student
     participant catalog as Catalog
     participant mail as E-mail
-    parent->>catalog: find an app for the topic the child struggles with
+    parent->>catalog: find me an app for the topic my child struggles with
     catalog-->>parent: listed apps
-    student->>catalog: open the served app
+    student->>catalog: serve me the app
     catalog-->>student: the app, no sign-up, no installation
-    parent->>catalog: thanks, one click
-    catalog->>mail: thanks, as a prepared e-mail
+    parent->>catalog: pass on my thanks (one click)
+    catalog->>mail: carry the thanks to the platform owner
 ```
 
 ## Build and list an app
@@ -119,19 +119,20 @@ sequenceDiagram
     participant org as Organisation
     participant appactions as App repo Actions
     participant owner as Owner
-    creator->>catalog: no fitting app found
+    creator->>catalog: find me an app for my class
+    catalog-->>creator: no fitting app
     creator->>assistant: build an app for my class
-    assistant->>website: llms.txt, the way in
-    assistant->>tooling: guidance by phase, skills
+    assistant->>website: show me the way in (llms.txt)
+    assistant->>tooling: give me the guidance for this phase
     assistant->>tooling: create the app
-    tooling->>templates: the archetype's template
+    tooling->>templates: provide the archetype's template
     assistant->>tooling: check the app
-    appactions->>tooling: check, build and publish in the app's repository
-    assistant->>catalog: listing pull request with the entry
-    catalog->>org: pull request template and rules
+    appactions->>tooling: check, build and publish the app
+    assistant->>catalog: list this app (pull request with the entry)
+    catalog->>org: provide the pull request template and the rules
     catalog->>tooling: check the entry and the app
-    catalog-->>assistant: results comment
-    owner->>catalog: review on request, approve, merge
+    catalog-->>assistant: the results, as a comment
+    owner->>catalog: have the app reviewed if needed, then publish it
     catalog->>catalog: publish a copy under lernapps.net
 ```
 
@@ -164,10 +165,10 @@ sequenceDiagram
     participant catalog as Catalog
     participant tooling as Tooling
     participant github as GitHub
-    appactions->>tooling: build and publish the release in the app's repository
-    catalog->>appactions: notice the new release
+    appactions->>tooling: build and publish the release
+    catalog->>appactions: report new releases
     catalog->>tooling: check the new version
-    catalog->>github: update pull request for the entry, merged by policy
+    catalog->>github: open and merge the entry's update pull request
     catalog->>github: build and publish the new copy
     github-->>catalog: the same address serves the new copy
 ```
@@ -205,13 +206,13 @@ sequenceDiagram
     participant docs as Docs
     participant renovate as Renovate
     participant owner as Owner
-    website-->>renovate: the site frame improves
-    templates-->>renovate: the archetypes improve
-    tooling-->>renovate: the tooling improves
-    renovate->>catalog: pull request: new pins
-    renovate->>docs: pull request: new pin of the site frame
-    renovate->>tooling: pull request: new pins
-    owner->>catalog: merge, if not merged automatically
+    website->>renovate: pass on the improved site frame
+    templates->>renovate: pass on the improved archetypes
+    tooling->>renovate: pass on the improved tooling
+    renovate->>catalog: take the new versions (pull request)
+    renovate->>docs: take the new site frame (pull request)
+    renovate->>tooling: take the new versions (pull request)
+    owner->>catalog: merge it, if not merged automatically
 ```
 
 ## A platform site is published
@@ -245,9 +246,9 @@ sequenceDiagram
     participant website as Website
     participant github as GitHub
     participant counter as GoatCounter
-    docs->>tooling: site action: build the site
-    tooling->>website: site-check of the site frame on the built pages
-    website-->>tooling: passed, or the deploy stops
-    tooling->>github: deploy to GitHub Pages under lernapps.net
-    github-->>counter: open counts from the published pages
+    docs->>tooling: build the site (site action)
+    tooling->>website: check the built pages (site-check)
+    website-->>tooling: passed, or stop the deploy
+    tooling->>github: publish the pages under lernapps.net
+    github->>counter: count the visits to the published pages
 ```
