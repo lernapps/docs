@@ -1,6 +1,6 @@
 # Runtime View
 
-Six scenarios: the three [experiences](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md) of the platform model, and the three flows that keep the system current.
+The [experiences](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md) of the platform model as they run through the system, and the flows behind them that no user sees: how a listed app gets a new version, how the platform passes on its improvements and how a platform site is published.
 They stop at the building blocks' boundaries; what happens inside the tooling or the app templates is in their own
 runtime views, for example how a change of the guidance is measured by the evals
 ([tooling, chapter 6](https://github.com/lernapps/tooling/blob/main/docs/arc42/06-runtime-view.arc42.md)).
@@ -17,6 +17,7 @@ id: rs-app-in-minutes
 title: An app in class within minutes
 trigger: A teacher has to take over a class at short notice
 involves: bb-catalog, bb-website
+x-experience: x-app-in-minutes
 :::
 ```
 
@@ -57,6 +58,7 @@ id: rs-child-struggles
 title: Help where a child struggles
 trigger: A parent or a student notices a topic the student struggles with
 involves: bb-catalog
+x-experience: x-child-struggles
 :::
 ```
 
@@ -96,6 +98,7 @@ id: rs-build-and-list
 title: Build and list an app
 trigger: A creator finds no fitting app in the catalog
 involves: bb-website, bb-catalog, bb-tooling, bb-app-templates, bb-org
+x-experience: x-list-and-hear-back
 :::
 ```
 
@@ -104,7 +107,7 @@ involves: bb-website, bb-catalog, bb-tooling, bb-app-templates, bb-org
 id: rs-build-and-list-sequence
 scenario: rs-build-and-list
 notation: mermaid-sequence
-aliases: creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, owner=actor-platform-owner
+aliases: creator=actor-creator, assistant=actor-ai-assistant, website=bb-website, catalog=bb-catalog, tooling=bb-tooling, templates=bb-app-templates, org=bb-org, appactions=actor-app-repo-actions, owner=actor-platform-owner, github=actor-github
 :::
 ```
 
@@ -119,6 +122,7 @@ sequenceDiagram
     participant org as Organisation
     participant appactions as App repo Actions
     participant owner as Owner
+    participant github as GitHub
     creator->>catalog: find me an app for my class
     catalog-->>creator: no fitting app
     creator->>assistant: build an app for my class
@@ -128,12 +132,12 @@ sequenceDiagram
     tooling->>templates: provide the archetype's template
     assistant->>tooling: check the app
     appactions->>tooling: check, build and publish the app
+    assistant->>org: give me the pull request template and the rules
     assistant->>catalog: list this app (pull request with the entry)
-    catalog->>org: provide the pull request template and the rules
     catalog->>tooling: check the entry and the app
     catalog-->>assistant: the results, as a comment
     owner->>catalog: have the app reviewed if needed, then publish it
-    catalog->>catalog: publish a copy under lernapps.net
+    catalog->>github: build and publish a copy under lernapps.net
 ```
 
 ## A listed app gets a new version
@@ -193,7 +197,7 @@ involves: bb-website, bb-tooling, bb-app-templates, bb-catalog, bb-docs
 id: rs-block-update-sequence
 scenario: rs-block-update
 notation: mermaid-sequence
-aliases: website=bb-website, tooling=bb-tooling, templates=bb-app-templates, catalog=bb-catalog, docs=bb-docs, renovate=actor-renovate, owner=actor-platform-owner
+aliases: website=bb-website, tooling=bb-tooling, templates=bb-app-templates, catalog=bb-catalog, docs=bb-docs, renovate=actor-renovate, owner=actor-platform-owner, apps=actor-app-repo-actions
 :::
 ```
 
@@ -205,20 +209,22 @@ sequenceDiagram
     participant catalog as Catalog
     participant docs as Docs
     participant renovate as Renovate
+    participant apps as App repositories
     participant owner as Owner
-    website->>renovate: pass on the improved site frame
-    templates->>renovate: pass on the improved archetypes
-    tooling->>renovate: pass on the improved tooling
+    renovate->>website: report new versions of the site frame
+    renovate->>templates: report new versions of the archetypes
+    renovate->>tooling: report new versions of the tooling
     renovate->>catalog: take the new versions (pull request)
     renovate->>docs: take the new site frame (pull request)
     renovate->>tooling: take the new versions (pull request)
+    renovate->>apps: take the new versions (pull request)
     owner->>catalog: merge it, if not merged automatically
 ```
 
 ## A platform site is published
 
-A change is merged to a site's main line: the website, the catalog, the docs or the tooling's pages. The tooling's
-site actions build the site, run `site-check` from the site frame on the built pages, and deploy them to GitHub
+A change is merged to a site's main line: the website, the catalog, the docs or the tooling's pages; the diagram
+shows the docs as the example. The tooling's site actions build the site, run `site-check` from the site frame on the built pages, and deploy them to GitHub
 Pages under lernapps.net. A failing check stops the deploy.
 
 ```arc42

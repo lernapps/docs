@@ -16,7 +16,7 @@
 //   node scripts/overview.mjs <out-dir>   (writes <out-dir>/index.html and <out-dir>/overview.md, the same content)
 import { execFile, execFileSync } from "node:child_process";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
-import { basename, join } from "node:path";
+import { basename, isAbsolute, join } from "node:path";
 import { promisify } from "node:util";
 import { parse } from "yaml";
 
@@ -85,12 +85,19 @@ const prose = (e) =>
     .replace(/`([^`]+)`/g, "$1")
     .replace(/\s+/g, " ")
     .trim();
+// The first sentence of a chapter's lead (the paragraph under its title), read from the file of one of its elements.
+const leadOf = (e) => {
+  const file = isAbsolute(e.loc.file) ? e.loc.file : join("docs/pdt42", e.loc.file); // pdt42 gives paths relative to its dir
+  const text = readFileSync(file, "utf8").replace(/^# .*\n+/, "").split(/\n\s*\n/)[0].replace(/^\*|\*$/g, "");
+  return firstSentence(prose({ loc: { prose: text } }));
+};
 const issuesOf = (e) => [...(e?.loc?.prose ?? "").matchAll(/\[([^\]]+)\]\((https:\/\/github\.com\/[^)]+\/issues\/\d+)\)/g)].map((m) => ({ text: m[1], url: m[2] }));
 const firstSentence = (text) => (text.match(/^.+?[.!?](?=\s|$)/) ?? [text])[0];
 const sentence = (text) => (text ? text.charAt(0).toUpperCase() + text.slice(1) + (/[.!?]$/.test(text) ? "" : ".") : "");
 const lower = (text) => (/^[A-Z]{2}/.test(text) ? text : text.charAt(0).toLowerCase() + text.slice(1)); // keeps "AI …"
 const fill = (template, values) => template.replace(/\{(\w+)\}/g, (_, k) => values[k] ?? "");
-const job = (bb) => bb.extensions?.job ?? firstSentence(prose(bb)); // x-job: the part's task in one sentence
+const job = (bb) => firstSentence(prose(bb)); // a block's first sentence is its job
+const afterJob = (bb) => prose(bb).slice(job(bb).length).trim(); // the rest, where the job is already shown
 const pdtUrl = (e) => `../platform-design/#${e.loc.file}:el-${e.id}`;
 const arcUrl = (e) => `../architecture/#${basename(e.loc.file)}:el-${e.id}`;
 
@@ -187,31 +194,52 @@ const sequenceOf = (sc) => {
   if (!block) return null;
   const alias = Object.fromEntries((block[1].match(/aliases: (.+)/)?.[1] ?? "").split(/,\s*/).map((pair) => pair.split("=")));
   const body = text.slice(block.index).match(/```mermaid\n([\s\S]*?)```/)?.[1] ?? "";
-  const participants = [...body.matchAll(/^\s*participant (\w+) as (.+)$/gm)].map(([, key, name]) => ({ key, name: name.trim(), id: alias[key] ?? key }));
+  const participants = [...body.matchAll(/^\s*participant (\w+) as (.+)$/gm)].map(([, key, name]) => ({ key, id: alias[key] ?? key, name: arcById.get(alias[key])?.title ?? name.trim() })); // named as in the model
   const byKey = new Map(participants.map((p) => [p.key, p]));
   const messages = [...body.matchAll(/^\s*(\w+)\s*(-->>|->>)\s*(\w+)\s*:\s*(.+)$/gm)].map(([, from, arrow, to, label]) => ({ from: byKey.get(from), to: byKey.get(to), label: label.trim(), reply: arrow === "-->>" }));
   return { participants, messages };
 };
-// scenario named like a journey is left out, the journey itself tells it.
-const scenarios = arc.elements
-  .filter((e) => e.kind === "runtime-scenario" && list(e.involves).filter((id) => arcById.get(id)?.kind === "building-block").length >= 2)
-  .filter((e) => !experiences.some((x) => x.title === e.title))
+// A scenario that tells a journey names it (`x-experience`) and is drawn inside that journey; the others are the
+// flows behind the journeys.
+const allScenarios = arc.elements
+  .filter((e) => e.kind === "runtime-scenario")
   .sort((a, b) => a.loc.line - b.loc.line)
   .map((sc) => ({ sc, parts: list(sc.involves).map((id) => arcById.get(id)).filter((e) => e?.kind === "building-block"), seq: sequenceOf(sc) }));
+const behind = new Map(allScenarios.filter((f) => f.sc.extensions?.experience).map((f) => [f.sc.extensions.experience, f]));
+const scenarios = allScenarios.filter((f) => !f.sc.extensions?.experience);
 {
-  const wrong = scenarios.flatMap(({ sc, parts, seq }) => {
+  const wrong = [
+    ...[...behind.keys()].filter((id) => !experiences.some((x) => x.id === id)).map((id) => `${behind.get(id).sc.id}: x-experience names '${id}', which is no experience of the platform design`),
+    ...experiences.filter((x) => !behind.has(x.id)).map((x) => `${x.id}: no runtime scenario tells this experience (x-experience)`),
+  ];
+  wrong.push(...allScenarios.flatMap(({ sc, parts, seq }) => {
     if (!seq) return [`${sc.id}: no sequence diagram`];
     const shown = new Set(seq.participants.filter((p) => seq.messages.some((m) => m.from === p || m.to === p)).map((p) => p.id));
     return [
       ...parts.filter((b) => !shown.has(b.id)).map((b) => `${sc.id}: involves ${b.id}, but no arrow of its sequence diagram reaches it`),
       ...[...shown].filter((id) => arcById.get(id)?.kind === "building-block" && !parts.some((b) => b.id === id)).map((id) => `${sc.id}: its sequence diagram shows ${id}, which it does not involve`),
     ];
-  });
+  }));
   if (wrong.length) {
     console.error(`overview: a flow and its sequence diagram do not fit together:\n- ${wrong.join("\n- ")}`);
     process.exit(1);
   }
 }
+// Section intros: what the models say about the section, then the frame's sentence on why to read it.
+// The page guide: every section's heading and why to read it.
+const guide = [
+  ["roles-h", meta.roles],
+  ["parts-h", meta.parts],
+  ["reading-h", meta.reading],
+  ["experiences-h", meta.experiences],
+  ["together-h", meta.together],
+  ["ideas-h", meta.ideas],
+  ["blocks-h", meta.blocks],
+].map(([id, m]) => [id, m.heading, m.why]);
+const intro = {
+  parts: `${leadOf(blocks[0].bb)} ${meta.parts.intro}`,
+  experiences: `${meta.experiences.intro} ${leadOf(experiences[0])}`,
+};
 const example = (() => {
   const st = journeys[0].steps.find((s) => s.ts.length && s.services.length);
   const v = st.services[0];
@@ -271,7 +299,7 @@ const colourOf = (id) => {
 const sequenceSvg = ({ sc, seq }) => {
   const ps = seq.participants.filter((p) => seq.messages.some((m) => m.from === p || m.to === p));
   // Drawn at its natural size, never scaled: the columns share the width of the page, down to a minimum.
-  const COL = Math.max(96, Math.min(150, Math.floor(880 / ps.length))), HEAD = 46, LINE = 15, CH = 6.4;
+  const COL = Math.max(84, Math.min(150, Math.floor(840 / ps.length))), HEAD = 46, LINE = 15, CH = 6.4;
   const x = (p) => COL / 2 + ps.indexOf(p) * COL;
   const wrap = (text, width) => {
     const lines = [""];
@@ -282,9 +310,9 @@ const sequenceSvg = ({ sc, seq }) => {
   const rows = seq.messages.map((m, k) => {
     const self = m.from === m.to;
     const x1 = x(m.from), x2 = x(m.to);
-    const width = self ? COL - 30 : Math.abs(x2 - x1) - 24;
+    const width = self ? COL - 30 : Math.max(Math.abs(x2 - x1) - 24, 2 * COL - 40); // a short arrow's label may reach past its ends
     const lines = wrap(m.label, width);
-    const top = y + lines.length * LINE;
+    const top = y + lines.length * LINE + 6; // the arrow below its label
     const colour = colourOf(m.to.id);
     const style = colour ? ` style="--c:${colour}"` : "";
     const lx = self ? x1 + 18 : (x1 + x2) / 2;
@@ -312,7 +340,7 @@ const sequenceSvg = ({ sc, seq }) => {
 };
 // The same as text: one numbered line per arrow.
 const sequenceLines = ({ seq }) => seq.messages.map((m) => `${m.from.name} ${m.reply ? "⇢" : "→"} ${m.to.name}: ${m.label}`);
-const stepHow = (st) => (st.services.length || !st.ts.length || st.channel ? null : [meta.reading.insideApp]);
+const stepHow = (st) => (st.services.length || !st.ts.length ? null : [meta.reading.insideApp]);
 const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })} ${st.ts.map((t) => t.title).join(" · ")}.`];
 
 // --- Markdown -------------------------------------------------------------------------------------------------------
@@ -325,12 +353,12 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
     for (const l of p.lines) M.push(`${indent}  - ${l.notYet ? "┆ " : ""}${md(l.parts)}`);
   };
   M.push(`# ${meta.title}`, "", meta.lead, "", `> ${meta.narrativeLabel} ${platform.narrative}`, "", meta.guide.heading, "");
-  for (const [, head, why] of meta.guide.items) M.push(`- **${head}:** ${why}`);
+  for (const [, head, why] of guide) M.push(`- **${head}:** ${why}`);
   M.push("", `## ${meta.roles.heading}`, "", meta.roles.intro, "");
   for (const r of roles) M.push(`- **${r.title}:** ${firstSentence(prose(r))}`);
   M.push("", meta.roles.outsideIntro, "");
   for (const u of outsideSystems) M.push(`- ${outsideLine(u)}`);
-  M.push("", `## ${meta.parts.heading}`, "", meta.parts.intro, "");
+  M.push("", `## ${meta.parts.heading}`, "", intro.parts, "");
   for (const { bb } of blocks) {
     const { addresses, repo } = siteOf(bb);
     const where = [
@@ -340,7 +368,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
     M.push(`- **${md([L(bb.title, arcUrl(bb))])}:** ${job(bb)} ${where.join(" · ")}`);
   }
   M.push("", `## ${meta.reading.heading}`, "", meta.reading.intro, "", example, "", meta.notYet.explained, "");
-  M.push(`## ${meta.experiences.heading}`, "", meta.experiences.intro, "");
+  M.push(`## ${meta.experiences.heading}`, "", intro.experiences, "");
   for (const j of shownJourneys) {
     M.push(`### ${md([L(j.x.title, pdtUrl(j.x))])}`, "", prose(j.x), "");
     M.push(`Mainly for ${lower(j.core.title)}; also involves ${names(j.roles.map((r) => ({ title: lower(r.title) })))}. What they get: ${sentence(j.x["value-proposition"])}`, "");
@@ -354,6 +382,8 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
       if (how) M.push(`   - ${md(how)}`);
       for (const v of st.services) mdService(v, "   ");
     }
+    M.push("", `**${meta.experiences.behind}**`, "");
+    for (const l of sequenceLines(behind.get(j.x.id))) M.push(`1. ${l}`);
     M.push("");
   }
   M.push(`## ${meta.together.heading}`, "", meta.together.intro, "");
@@ -371,7 +401,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
   ]) {
     M.push(`### ${heading}`, "", ...(intro ? [intro, ""] : []));
     for (const { bb, offers } of group) {
-      M.push(`#### ${md([L(bb.title, arcUrl(bb))])}${bb.extensions?.repo ? ` (${md([L(bb.extensions.repo, `https://github.com/${bb.extensions.repo}`)])})` : ""}`, "", prose(bb), "");
+      M.push(`#### ${md([L(bb.title, arcUrl(bb))])}${bb.extensions?.repo ? ` (${md([L(bb.extensions.repo, `https://github.com/${bb.extensions.repo}`)])})` : ""}`, "", afterJob(bb), "");
       for (const { i, services, notYet, parts, outside } of offers) {
         M.push(`- **${i.title}:** ${prose(i)}`);
         if (services.length) M.push(`  - ${meta.blocks.delivers} ${names(services)}`);
@@ -412,6 +442,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
             })
             .join("")}
           </ol>
+          <details class="behind"><summary>${esc(meta.experiences.behind)}</summary>${sequenceSvg(behind.get(j.x.id))}</details>
         </article>`,
     )
     .join("");
@@ -420,7 +451,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
           <li class="block">
             <h4><a href="${esc(arcUrl(bb))}">${esc(bb.title)}</a></h4>
             ${bb.extensions?.repo ? `<p class="repo"><a href="https://github.com/${esc(bb.extensions.repo)}">${esc(bb.extensions.repo)}</a></p>` : ""}
-            <p>${esc(prose(bb))}</p>
+            <p>${esc(afterJob(bb))}</p>
             <ul class="offers">${offers
               .map(
                 ({ i, services, notYet, parts, outside }) =>
@@ -450,7 +481,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
         <h1>${esc(meta.title)}</h1>
         <p>${esc(meta.lead)}</p>
         <blockquote class="narrative"><span>${esc(meta.narrativeLabel)}</span> <a href="${esc(pdtUrl(platform))}">${esc(platform.narrative)}</a></blockquote>
-        <nav class="guide" aria-label="${esc(meta.guide.heading)}"><span>${esc(meta.guide.heading)}</span><ul>${meta.guide.items.map(([id, head, why]) => `<li><a href="#${id}">${esc(head)}</a> – ${esc(why)}</li>`).join("")}</ul></nav>
+        <nav class="guide" aria-label="${esc(meta.guide.heading)}"><span>${esc(meta.guide.heading)}</span><ul>${guide.map(([id, head, why]) => `<li><a href="#${id}">${esc(head)}</a> – ${esc(why)}</li>`).join("")}</ul></nav>
       </div>
     </header>
     <div class="wrap overview">
@@ -463,7 +494,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
       </section>
       <section aria-labelledby="parts-h">
         <h2 class="section" id="parts-h">${esc(meta.parts.heading)}</h2>
-        <p class="lead">${esc(meta.parts.intro)}</p>
+        <p class="lead">${esc(intro.parts)}</p>
         <ul class="parts">${blocks
           .map(({ bb }) => {
             const { addresses, repo } = siteOf(bb);
@@ -480,7 +511,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
       </section>
       <section aria-labelledby="experiences-h">
         <h2 class="section" id="experiences-h">${esc(meta.experiences.heading)}</h2>
-        <p class="lead">${esc(meta.experiences.intro)}</p>${journeysHtml}
+        <p class="lead">${esc(intro.experiences)}</p>${journeysHtml}
       </section>
       <section aria-labelledby="together-h">
         <h2 class="section" id="together-h">${esc(meta.together.heading)}</h2>

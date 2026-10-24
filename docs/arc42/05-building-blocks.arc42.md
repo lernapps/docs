@@ -1,9 +1,9 @@
 # Building Blocks
 
-Level 1 of lernapps.net: every repository of the organisation is one building block. Each stays a black box here;
-where a block has an architecture of its own, that architecture refines it. This chapter names each block's
-responsibility, the interfaces it provides and those it requires. The learning apps' repositories are outside the
-system (chapter 3).
+The platform is built from one building block per repository of the organisation, each with a job of its own. The
+learning apps' repositories are outside the system (chapter 3). This is level 1: each block stays a black box here;
+where a block has an architecture of its own, that architecture refines it. This chapter names each block's job, the
+interfaces it provides and those it requires.
 
 ## Level 1
 
@@ -35,9 +35,10 @@ flowchart TB
 
 ## Website
 
-The website at lernapps.net: the home page that tells the platform's story in plain language ([KD-20](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-20-idealistic-free-possibly-a-verein-later)), the privacy
-notice and the imprint that cover every served app ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)), and the entry point for AI assistants. It provides the
-shared frame every site of the platform is built with.
+Gives the platform its face at lernapps.net and the frame every platform site is built with. The home page tells the
+platform's story in plain language ([KD-20](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-20-idealistic-free-possibly-a-verein-later)); the privacy notice and the imprint cover every served app ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)); llms.txt
+is the entry point for AI assistants. The frame is the shared header and footer and site-check, the checks every site
+has to pass before it is published.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/lernapps.github.io: https://github.com/lernapps/lernapps.github.io :::
@@ -48,7 +49,6 @@ title: Website
 technology: Eleventy, GitHub Pages
 x-repo: lernapps/lernapps.github.io
 requires: if-site-actions
-x-job: Gives the platform its face at lernapps.net, the privacy notice that covers every served app, and the shared header, footer and checks every platform site is built with.
 :::
 ```
 
@@ -87,7 +87,7 @@ x-missing-ch-creator-insight: Only visits to an app's page in the catalog are co
 
 ## Catalog
 
-The catalog is the core of the platform. For adults and students, it makes [apps findable by topic and grade](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-finding), serves a copy of
+Lets adults and students find, trust and start apps, and lets creators list them; it is the core of the platform. For adults and students, it makes [apps findable by topic and grade](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-finding), serves a copy of
 every listed app under lernapps.net and keeps it current ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)), and takes [the thanks of adults and students](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-giving-back). For creators, it
 [takes their entries](https://lernapps.net/docs/platform-design/#2-design/d5-transactions.pdt42.md:el-t-list-app) and [helps them list](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-listing-help); it [checks each entry and, at the platform owner's request, has a review agent look at the app](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-fitness-clarity).
 
@@ -100,7 +100,6 @@ title: Catalog
 technology: Eleventy, GitHub Actions, GitHub Pages
 requires: if-site-frame, if-tooling-cli, if-site-actions
 x-repo: lernapps/apps
-x-job: Lets adults and students find, trust and start apps, and lets creators list them; it serves a copy of every listed app under lernapps.net.
 :::
 ```
 
@@ -172,9 +171,9 @@ x-missing-ch-creator-insight: Thanks reach the creator only if the platform owne
 
 ## Tooling
 
-Everything a creator's AI assistant needs to [build an app that meets the platform's rules](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-building-guidance):
+Gives a creator's AI assistant everything it needs to [build an app that meets the platform's rules](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-building-guidance):
 the guidance by phase and the skills, the CLI that creates an app and checks it, and the workflows an app's
-repository runs. It also holds the actions every platform site is checked and deployed with.
+repository runs. It also holds the actions that build every platform site and publish it once site-check has passed.
 
 Its own architecture refines this block: [tooling, chapter 5](https://github.com/lernapps/tooling/blob/main/docs/arc42/05-building-blocks.arc42.md).
 
@@ -187,7 +186,6 @@ title: Tooling
 technology: TypeScript, Node.js, GitHub Actions
 requires: if-site-frame, if-archetypes
 x-repo: lernapps/tooling
-x-job: Gives a creator's AI assistant the guidance, the commands and the workflows to build an app that keeps the platform's rules.
 :::
 ```
 
@@ -254,8 +252,8 @@ protocol: GitHub reusable workflows and actions, pinned to a commit
 
 ## App templates
 
-The templates and runtimes of the three archetypes: quiz, explainer and interactive app. They carry the rules every
-app has to meet into the code, so a creator does not have to know them.
+Provides the three kinds of app, quiz, explainer and interactive app, as templates and runtimes that already keep the
+platform's rules. They carry the rules into the code, so a creator does not have to know them.
 
 Its own architecture refines this block:
 [app-templates, chapter 5](https://github.com/lernapps/app-templates/blob/main/docs/arc42/05-building-blocks.arc42.md).
@@ -268,7 +266,6 @@ implements: concept-privacy-by-construction, concept-checked-not-declared, conce
 title: App templates
 technology: TypeScript, Vite, Vue
 x-repo: lernapps/app-templates
-x-job: Provides the three kinds of app (quiz, explainer and interactive app) as templates that already keep the platform's rules.
 :::
 ```
 
@@ -289,8 +286,9 @@ x-realises: ch-guidance
 
 ## Docs
 
-The models of the platform: the platform design, the business model and the architecture of the whole system,
-each in a modelling language that people and AI assistants can read and check, rendered as pages.
+Holds the models of the platform: why it exists, who carries it and how the system is built. They are the platform
+design, the business model and the architecture of the whole system, each in a modelling language that people and AI
+assistants can read and check, rendered as pages.
 
 ```arc42
 :::building-block
@@ -301,7 +299,6 @@ technology: pdt42, biz42 and arc42 CLIs, GitHub Pages
 requires: if-site-frame, if-site-actions
 x-repo: lernapps/docs
 path: docs
-x-job: Holds the models of the platform: why it exists, who carries it and how the system is built.
 :::
 ```
 
@@ -322,8 +319,8 @@ path: site
 
 ## Organisation
 
-The organisation's rules that hold for every repository: the profile, the governance, the templates for issues and
-pull requests, and the decision issues.
+Holds the rules and decisions that every repository of the platform follows: the profile, the governance, the
+templates for issues and pull requests, and the decision issues.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/.github: https://github.com/lernapps/.github :::
@@ -333,7 +330,6 @@ implements: concept-plain-language, concept-why-in-history
 title: Organisation
 technology: GitHub organisation repository
 x-repo: lernapps/.github
-x-job: Holds the rules and decisions that every repository of the platform follows.
 :::
 ```
 

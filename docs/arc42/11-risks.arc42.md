@@ -69,16 +69,16 @@ x-source: apps src/_data/catalog.js header; pdt42 KD-21
 :::
 ```
 
-## Thanks are not counted and reach the creator only by hand
+## Creators do not hear when their app helped
 
-Thanks are the currency that keeps creators contributing ([KD-17](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-17-acute-moments-and-thanks-as-the-currency-d7)). Today the thanks interface is a prepared e-mail
-to the platform owner (`dec-thanks-interface`): thanks are not counted, and they reach the creator only if the owner
-passes them on.
+Thanks are the currency that keeps creators contributing ([KD-17](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-17-acute-moments-and-thanks-as-the-currency-d7)). What the thanks interface does not yet
+deliver is described at the interface itself (`if-thanks`, chapter 5). The risk: as long as that holds, creators do not
+hear when their app helped, and stop building.
 
 ```arc42
 :::risk
 id: risk-thanks-not-delivered
-title: Thanks are not counted and reach the creator only by hand
+title: Creators do not hear when their app helped
 severity: medium
 mitigation: The interface stays when its realisation changes (dec-thanks-interface). OPEN: how thanks will be counted and passed on to the creator.
 x-source: pdt42 KD-17, KD-18; dec-thanks-interface

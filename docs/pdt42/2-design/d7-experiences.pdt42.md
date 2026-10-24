@@ -1,6 +1,6 @@
 # Assemble the platform experiences
 
-*Each experience takes one role's point of view in one core relationship (D4) and orders transactions (D5) and services (D6) into a journey. Two are the core entity's, adults in an acute moment: teachers who have to take over a class at short notice, parents who notice that their child struggles with something they cannot help with. The third is the creators', because supply does not come by itself (D4).*
+*Adults in an acute moment and creators each have their journey: teachers who have to take over a class at short notice, parents who notice that their child struggles with something they cannot help with, and creators, because supply does not come by itself (D4). Each experience takes one role's point of view in one core relationship (D4) and orders transactions (D5) and services (D6) into a journey.*
 
 Adults rarely plan ahead: they look for an app when they need it now. What they feel is relief, not excitement: "it fits and it runs right away". This shapes every step: trust has to be built in rather than checked, one app counts more than a collection, and anything asked afterwards must take a single click.
 

@@ -23,7 +23,7 @@ flowchart LR
     actor-ai-assistant["Creator's AI assistant"]
     actor-gatekeeper["School gatekeeper"]
     actor-platform-owner["Platform owner"]
-    actor-app-repo-actions["GitHub Actions of the app repositories"]
+    actor-app-repo-actions["Creators' app repositories"]
     actor-github["GitHub"]
     actor-renovate["Renovate"]
     actor-goatcounter["GoatCounter"]
@@ -138,18 +138,19 @@ requires: if-listing, if-org-rules, if-models
 :::
 ```
 
-## GitHub Actions of the app repositories
+## Creators' app repositories
 
 Every learning app lives in a repository of its own, which belongs to its creator and is outside the system. Their GitHub Actions run the tooling's
-workflows to check, build and publish an app; this is where the system meets them. If this boundary needs more
+workflows to check, build and publish an app, and the platform passes its improvements on to them as pull requests;
+this is where the system meets them. If this boundary needs more
 detail, it is refined in the tooling's architecture, not here.
 
 ```arc42
 :::actor
 id: actor-app-repo-actions
-title: GitHub Actions of the app repositories
+title: Creators' app repositories
 type: system
-description: Workflows in creators' app repositories that use the tooling's actions
+description: The creators' own app repositories, whose workflows use the tooling's actions
 requires: if-app-actions, if-tooling-cli
 :::
 ```
