@@ -318,6 +318,30 @@ motivation: m-students-creators-gratitude
 :::
 ```
 
+## Creators and their AI assistants
+
+Creators build through their AI assistant (KD-10, KD-11). This is no core relationship (D4), but the platform lowers the cost of the exchange with its guidance.
+
+### Build an app with an AI assistant
+
+The creator brings the occasion and the material, the assistant reviews the material, agrees the scope with the creator and builds the content.
+
+```pdt42
+:::ignore H108 Creators and their assistants are no core relationship (D4) :::
+:::transaction
+id: t-build-with-assistant
+title: Build an app with an AI assistant
+from: e-ai-assistants
+to: e-creators
+direction: two-way
+value-unit: The content of an app, made from the creator's occasion and material within the scope agreed with them
+happening: yes
+channel: ch-guidance
+kind: services
+motivation: m-ai-creators
+:::
+```
+
 ## Channels
 
 The channels the platform would need, described by what they make easier, not by how they are built; the means are decided later (D8). Several transactions share one channel. None of them needs accounts for students.

@@ -121,7 +121,7 @@ revenues:
 
 ## A tailor-made app for an acute occasion
 
-The journey of a creator with an acute occasion for which no app fits, such as a parent before their child's test or a teacher who needs exercises for a class during an absence: their assistant writes the content, and the learners practise with the app built from it. The photos of school material go to the assistant only. What proved itself continues as in "List an app and hear it is used".
+The journey of a creator with an acute occasion for which no app fits, such as a parent before their child's test or a teacher who needs exercises for a class during an absence: their assistant builds the content with them, and the learners practise with the app made from it. The photos of school material go to the assistant only. What proved itself continues as in "List an app and hear it is used".
 
 ```pdt42
 :::canvas
@@ -136,10 +136,10 @@ of: x-tailor-made-app
 id: x-tailor-made-app
 title: A tailor-made app for an acute occasion
 core-entity: e-creators
-roles: e-adopters, e-students
+roles: e-ai-assistants, e-adopters, e-students
 relationship: r-creators-students
 value-proposition: An acute occasion and no app that fits: your assistant makes one to measure, ready within minutes
-steps: s-finding, t-find-app, s-building-guidance, s-temporary-preview, t-hand-over-made-to-measure, t-learn-with-app
+steps: s-finding, t-find-app, s-building-guidance, t-build-with-assistant, s-temporary-preview, t-hand-over-made-to-measure, t-learn-with-app
 activities:
   - Checking the content and building apps from it
   - Keeping the guidance for creators' assistants current

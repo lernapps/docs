@@ -85,7 +85,7 @@ evolves-to: e-creators
 
 ### Guidance for building apps
 
-Helps creators build apps with their AI assistant that are easy to use and fit the platform. Creators get it even if nobody else uses their app (D4).
+Helps creators build apps with their AI assistant that are easy to use and fit the platform. Creators get it even if nobody else uses their app (D4). It makes building with the assistant easier.
 
 ```pdt42
 :::service
@@ -94,6 +94,7 @@ title: Guidance for building apps
 for: e-creators
 stage: onboarding
 kind: empowering
+supports: t-build-with-assistant
 channel: ch-guidance
 :::
 ```

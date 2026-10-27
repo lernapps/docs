@@ -168,7 +168,7 @@ sequenceDiagram
 
 ## A tailor-made app for an acute occasion
 
-[A creator has an acute occasion and no app fits](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-tailor-made-app). Their assistant looks in the catalog; when none fits, the creator submits the content the assistant wrote and gets a temporary app for the learners.
+[A creator has an acute occasion and no app fits](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-tailor-made-app). When the catalog has none, their assistant builds the content with them, and the creator submits it and gets a temporary app for the learners.
 
 ```arc42
 :::runtime-scenario
@@ -192,20 +192,24 @@ aliases: creator=actor-creator, assistant=actor-ai-assistant, student=actor-stud
 ```mermaid
 sequenceDiagram
     participant creator as Creator
-    participant student as Student
     participant assistant as AI assistant
     participant catalog as Catalog
     participant practice as Practice
-    Note over creator,practice: Guidance for building apps
-    creator->>assistant: make me an app for this occasion
-    assistant->>practice: give me the guidance
+    participant student as Student
     Note over creator,catalog: Find an app for a topic and grade
-    assistant->>catalog: find an app for this topic and grade
-    catalog-->>assistant: no fitting app
+    creator->>catalog: find me an app for this occasion
+    catalog-->>creator: no fitting app
+    Note over creator,practice: Build an app with an AI assistant
+    creator->>assistant: make an app for this occasion, from this material
+    assistant->>practice: give me the guidance
+    practice-->>assistant: the guidance
+    assistant->>assistant: review the material and prepare the content
+    assistant->>creator: agree the scope with me
+    creator-->>assistant: the agreed scope
+    assistant-->>creator: the content of the app
     Note over creator,practice: Hand over a made-to-measure app
-    assistant->>creator: the content and the way to submit it
     creator->>practice: submit the content
-    practice-->>creator: the address, or what to correct
+    practice-->>creator: the address of the app, or what to correct
     creator->>student: open this address
     Note over student,practice: Learn with an app
     student->>practice: serve me the app
