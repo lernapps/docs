@@ -31,6 +31,8 @@ flowchart TB
     bb-tooling -->|"if-archetypes"| bb-app-templates
     bb-practice -->|"if-site-frame"| bb-website
     bb-practice -->|"if-tooling-cli"| bb-tooling
+    bb-practice -->|"if-site-actions"| bb-tooling
+    bb-practice -->|"if-catalog-pages"| bb-catalog
     bb-practice -->|"if-archetypes"| bb-app-templates
     bb-website -->|"if-site-actions"| bb-tooling
     bb-catalog -->|"if-site-actions"| bb-tooling
@@ -305,7 +307,7 @@ id: bb-practice
 implements: concept-one-origin, concept-privacy-by-construction, concept-checked-not-declared, concept-assistants-as-readers, concept-plain-language, concept-pinned-and-pulled, concept-why-in-history
 title: Practice
 technology: TypeScript, Node.js, GitHub Actions, GitHub Pages
-requires: if-site-frame, if-tooling-cli, if-archetypes
+requires: if-site-frame, if-site-actions, if-tooling-cli, if-archetypes, if-catalog-pages
 x-repo: lernapps/practice
 :::
 ```
@@ -342,7 +344,7 @@ x-realises: ch-temporary-preview
 
 ### Preview pages
 
-The temporary app of each submission, below its issue number. A preview ends after two weeks, or when its issue is closed, unless someone has reacted to the issue with a thumbs-up; a preparation kept that way can be checked for the catalog.
+The temporary app of each submission, below its issue number. A preview ends when its issue is closed, and after two weeks unless someone has reacted to the issue with a thumbs-up; a preparation kept that way can be checked for the catalog.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::

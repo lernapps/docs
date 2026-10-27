@@ -486,7 +486,7 @@ improvement: Building an app that keeps the platform's rules no longer needs exp
 
 ### A temporary app for one test
 
-A family's assistant turns the child's school material into content of its own, and the platform turns the content into an app the child opens at once. The content is data, not code: it uses only the building blocks of the explainer, so content from outside runs no code under lernapps.net. The app is temporary on purpose, so that nothing about a child stays on the platform longer than it helps.
+A family's assistant turns the child's school material into content of its own, and the platform turns the content into an app the child opens at once. The content is data, not code: it uses only the building blocks of the explainer, so content from outside runs no code under lernapps.net. The app is temporary on purpose, so that nothing about a child stays on the platform longer than it helps. It ends when the family closes the issue, or after two weeks unless someone keeps it.
 
 ```pdt42
 :::channel
@@ -499,7 +499,7 @@ components:
   - Results as comments that the family's assistant can act on
   - A temporary address the child opens at once, without installation or sign-up
   - The learning state stays in the child's browser, never in the content
-  - Deleted after two weeks unless someone reacts with a thumbs-up; a preparation that proved itself can be checked for the catalog
+  - Deleted after two weeks, or at once when the issue is closed; a thumbs-up keeps it past the two weeks, and a preparation kept that way can be checked for the catalog
 improvement: A family has a working practice app before the test, without a repository, hosting, a listing or an account
 :::
 ```
