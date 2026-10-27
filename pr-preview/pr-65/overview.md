@@ -200,7 +200,7 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 
 ### [A tailor-made app for an acute occasion](platform-design/#2-design/d7-experiences.pdt42.md:el-x-tailor-made-app)
 
-The journey of an adult or a student with an acute occasion, such as a test of their own child or exercises for a class during an absence, for which no app fits: their assistant writes content of its own, and the learners practise with the app built from it. The photos of school material go to the assistant only. What proved itself continues as in "List an app and hear it is used".
+The journey of a creator with an acute occasion for which no app fits, such as a parent before their child's test or a teacher who needs exercises for a class during an absence: their assistant writes the content, and the learners practise with the app built from it. The photos of school material go to the assistant only. What proved itself continues as in "List an app and hear it is used".
 
 Mainly for app creators; also involves adopting adults, students. What they get: An acute occasion and no app that fits: your assistant makes one to measure, ready within minutes.
 
