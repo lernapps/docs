@@ -5,7 +5,7 @@
     "commit": "3b8a25b661c79aa7b73acd0537d8d0808f824894"
   },
   "head": {
-    "label": "94a471c411eac832df6fd7d50eecf7864fcd2175"
+    "label": "3d0fcd9f5d26eee7c0d9d04d9e4a1f66976e8aec"
   },
   "acceptanceBase": "3b8a25b661c79aa7b73acd0537d8d0808f824894",
   "untracked": [],
@@ -377,10 +377,99 @@
           ],
           "occurrence": 1
         }
+      },
+      {
+        "id": "mvp-first-draft",
+        "kind": "mvp",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "base",
+            "before": [
+              "5 to 10 potential creators from the platform owner's network",
+              "Teachers reached through the owner's contacts, who forward a referral link",
+              "The first apps in the [app catalogue](https://lernapps.net/apps/), each served as a copy under lernapps.net",
+              "The docs site and the GitHub organisation lernapps with its workflows"
+            ],
+            "after": [
+              "5 to 10 potential creators from the platform owner's network",
+              "Teachers reached through the owner's contacts, who forward a referral link",
+              "The first apps in the [app catalogue](https://lernapps.net/apps/), each served as a copy under lernapps.net",
+              "The docs site and the GitHub organisation lernapps with its workflows",
+              "Temporary apps made to measure, open to anyone"
+            ]
+          },
+          {
+            "name": "experiences",
+            "before": [
+              "x-list-and-hear-back",
+              "x-app-in-minutes"
+            ],
+            "after": [
+              "x-list-and-hear-back",
+              "x-app-in-minutes",
+              "x-tailor-made-app"
+            ]
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 20
+        },
+        "head": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 20
+        },
+        "section": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "headingPath": [
+            "Set up the Minimum Viable Platform",
+            "First draft: first apps"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "a-set-scope-creators",
+        "kind": "assumption",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 144
+        },
+        "section": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "headingPath": [
+            "Set up the Minimum Viable Platform",
+            "First draft: first apps",
+            "Assumptions",
+            "Adults with a set scope and no fitting app become creators when it costs minutes"
+          ],
+          "occurrence": 1
+        }
       }
     ],
     "diagrams": [],
     "edges": [
+      {
+        "status": "added",
+        "edge": {
+          "from": "a-set-scope-creators",
+          "to": "mvp-first-draft",
+          "relation": "mvp"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "mvp-first-draft",
+          "to": "x-tailor-made-app",
+          "relation": "experiences"
+        }
+      },
       {
         "status": "added",
         "edge": {
@@ -671,6 +760,12 @@
         "file": "2-design/d7-experiences.pdt42.md",
         "added": 1,
         "modified": 2,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d8-mvp.pdt42.md",
+        "added": 1,
+        "modified": 1,
         "removed": 0
       }
     ]
