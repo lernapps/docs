@@ -5,7 +5,7 @@
     "commit": "3b8a25b661c79aa7b73acd0537d8d0808f824894"
   },
   "head": {
-    "label": "c3b9c95f6a4baf8fac42f18db9ad6b5f91d61661"
+    "label": "94a471c411eac832df6fd7d50eecf7864fcd2175"
   },
   "acceptanceBase": "3b8a25b661c79aa7b73acd0537d8d0808f824894",
   "untracked": [],
@@ -264,6 +264,35 @@
         }
       },
       {
+        "id": "rs-child-struggles",
+        "kind": "runtime-scenario",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "title",
+            "before": "Help where a child struggles",
+            "after": "Understand a topic at one's own pace"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 60
+        },
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 60
+        },
+        "section": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "headingPath": [
+            "Runtime View",
+            "Understand a topic at one's own pace"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "rs-tailor-made-app",
         "kind": "runtime-scenario",
         "status": "added",
@@ -277,7 +306,7 @@
           "file": "docs/arc42/06-runtime-view.arc42.md",
           "headingPath": [
             "Runtime View",
-            "A tailor-made app for an acute occasion"
+            "Practise a given scope, made to measure"
           ],
           "occurrence": 1
         }
@@ -340,6 +369,25 @@
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
           "line": 11
+        }
+      },
+      {
+        "id": "rs-build-and-list-sequence",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "source",
+            "before": "sequenceDiagram\n    participant creator as Creator\n    participant assistant as AI assistant\n    participant website as Website\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant templates as App templates\n    participant org as Organisation\n    participant appactions as App repositories\n    participant github as GitHub\n    participant adult as Adopting adult\n    participant counter as GoatCounter\n    participant mail as E-mail\n    Note over creator,templates: Guidance for building apps\n    creator->>catalog: find me an app for my class\n    catalog-->>creator: no fitting app\n    creator->>assistant: build an app for my class\n    assistant->>website: show me the way in (llms.txt)\n    assistant->>tooling: give me the guidance for this phase\n    assistant->>tooling: create the app\n    tooling->>templates: provide the archetype's template\n    assistant->>tooling: check the app\n    appactions->>tooling: check, build and publish the app\n    Note over assistant,github: List an app\n    assistant->>org: give me the pull request template and the rules\n    assistant->>catalog: list this app (pull request with the entry)\n    catalog->>tooling: check the entry and the app\n    catalog-->>assistant: the results, as a comment\n    catalog->>catalog: have the review agent (an AI) check the app\n    catalog->>github: build and publish a copy under lernapps.net\n    Note over adult,mail: Use an app in class\n    adult->>catalog: serve the app to my class\n    website->>counter: count this use of the app\n    Note over adult,mail: Thank the creator\n    adult->>catalog: pass on my thanks, my feedback and my recommendation\n    catalog->>mail: carry them to the creator\n    creator->>catalog: show me how my app is used\n    catalog-->>creator: its uses, thanks and feedback, as totals",
+            "after": "sequenceDiagram\n    participant creator as Creator\n    participant assistant as AI assistant\n    participant website as Website\n    participant catalog as Catalog\n    participant tooling as Tooling\n    participant templates as App templates\n    participant org as Organisation\n    participant appactions as App repositories\n    participant github as GitHub\n    participant adult as Adopting adult\n    participant counter as GoatCounter\n    participant mail as E-mail\n    Note over creator,templates: Build an app with an AI assistant\n    creator->>catalog: find me an app for my class\n    catalog-->>creator: no fitting app\n    creator->>assistant: build an app for my class\n    assistant->>website: show me the way in (llms.txt)\n    assistant->>tooling: give me the guidance for this phase\n    assistant->>tooling: create the app\n    tooling->>templates: provide the archetype's template\n    assistant->>tooling: check the app\n    appactions->>tooling: check, build and publish the app\n    Note over assistant,github: List an app\n    assistant->>org: give me the pull request template and the rules\n    assistant->>catalog: list this app (pull request with the entry)\n    catalog->>tooling: check the entry and the app\n    catalog-->>assistant: the results, as a comment\n    catalog->>catalog: have the review agent (an AI) check the app\n    catalog->>github: build and publish a copy under lernapps.net\n    Note over adult,mail: Use an app in class\n    adult->>catalog: serve the app to my class\n    website->>counter: count this use of the app\n    Note over adult,mail: Thank the creator\n    adult->>catalog: pass on my thanks, my feedback and my recommendation\n    catalog->>mail: carry them to the creator\n    creator->>catalog: show me how my app is used\n    catalog-->>creator: its uses, thanks and feedback, as totals"
+          }
+        ],
+        "base": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 120
+        },
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 120
         }
       },
       {
@@ -589,7 +637,7 @@
       {
         "file": "docs/arc42/06-runtime-view.arc42.md",
         "added": 2,
-        "modified": 0,
+        "modified": 2,
         "removed": 0
       },
       {

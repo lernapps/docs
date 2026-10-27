@@ -5,7 +5,7 @@
     "commit": "3b8a25b661c79aa7b73acd0537d8d0808f824894"
   },
   "head": {
-    "label": "c3b9c95f6a4baf8fac42f18db9ad6b5f91d61661"
+    "label": "94a471c411eac832df6fd7d50eecf7864fcd2175"
   },
   "acceptanceBase": "3b8a25b661c79aa7b73acd0537d8d0808f824894",
   "untracked": [],
@@ -268,6 +268,98 @@
         }
       },
       {
+        "id": "x-child-struggles",
+        "kind": "experience",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "title",
+            "before": "Help where a child struggles",
+            "after": "Understand a topic at one's own pace"
+          },
+          {
+            "name": "value-proposition",
+            "before": "When your child struggles and you cannot help: an app for exactly that topic, to start right away and come back to",
+            "after": "When your child struggles with a topic: an app that helps them understand it, to start right away and come back to as long as they need"
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 59
+        },
+        "head": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 59
+        },
+        "section": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "headingPath": [
+            "Assemble the platform experiences",
+            "Understand a topic at one's own pace"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "x-list-and-hear-back",
+        "kind": "experience",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "roles",
+            "before": [
+              "e-adopters"
+            ],
+            "after": [
+              "e-ai-assistants",
+              "e-adopters"
+            ]
+          },
+          {
+            "name": "steps",
+            "before": [
+              "s-building-guidance",
+              "s-listing-help",
+              "t-list-app",
+              "t-use-in-class",
+              "s-use-insight",
+              "t-thank-creator-adult",
+              "t-give-feedback",
+              "t-recommend-app"
+            ],
+            "after": [
+              "s-building-guidance",
+              "t-build-with-assistant",
+              "s-listing-help",
+              "t-list-app",
+              "t-use-in-class",
+              "s-use-insight",
+              "t-thank-creator-adult",
+              "t-give-feedback",
+              "t-recommend-app"
+            ]
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 95
+        },
+        "head": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 95
+        },
+        "section": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "headingPath": [
+            "Assemble the platform experiences",
+            "List an app and hear it is used"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "x-tailor-made-app",
         "kind": "experience",
         "status": "added",
@@ -281,7 +373,7 @@
           "file": "2-design/d7-experiences.pdt42.md",
           "headingPath": [
             "Assemble the platform experiences",
-            "A tailor-made app for an acute occasion"
+            "Practise a given scope, made to measure"
           ],
           "occurrence": 1
         }
@@ -415,6 +507,22 @@
           "from": "t-hand-over-made-to-measure",
           "to": "e-students",
           "relation": "to"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-list-and-hear-back",
+          "to": "e-ai-assistants",
+          "relation": "roles"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-list-and-hear-back",
+          "to": "t-build-with-assistant",
+          "relation": "steps"
         }
       },
       {
@@ -562,7 +670,7 @@
       {
         "file": "2-design/d7-experiences.pdt42.md",
         "added": 1,
-        "modified": 0,
+        "modified": 2,
         "removed": 0
       }
     ]

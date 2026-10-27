@@ -101,11 +101,11 @@ Mainly for adopting adults; also involves app creators, students. What they get:
 1. Adopting adult → Catalog: pass on my thanks, my feedback and my recommendation (one click each)
 1. Catalog → E-mail: carry them to the creator
 
-### [Help where a child struggles](platform-design/#2-design/d7-experiences.pdt42.md:el-x-child-struggles)
+### [Understand a topic at one's own pace](platform-design/#2-design/d7-experiences.pdt42.md:el-x-child-struggles)
 
-The journey of a parent who notices that their child struggles with a topic and cannot help, for lack of time or because they do not know the subject well enough: find an app for exactly that topic, let the child start right away and practise, and say thanks afterwards. The child keeps coming back to the app, or finds the next one alone, for as long as it needs; the child may also be the one who notices the gap. The app starts from lernapps.net like every listed app, so parents do not have to judge a stranger's address.
+The journey of a parent who notices that their child struggles with a topic and cannot help, for lack of time or because they do not know the subject well enough: find an app that helps the child understand that topic, with no scope set from outside, let the child start right away and practise, and say thanks afterwards. The child keeps coming back to the app, or finds the next one alone, for as long as it needs; the child may also be the one who notices the gap. The app starts from lernapps.net like every listed app, so parents do not have to judge a stranger's address.
 
-Mainly for adopting adults; also involves students, app creators. What they get: When your child struggles and you cannot help: an app for exactly that topic, to start right away and come back to.
+Mainly for adopting adults; also involves students, app creators. What they get: When your child struggles with a topic: an app that helps them understand it, to start right away and come back to as long as they need.
 
 1. As in the journey “An app in class within minutes”: Find an app for a topic and grade · Confirm an app may be used · Bring an app to students.
 1. Learn with an app
@@ -144,11 +144,11 @@ Mainly for adopting adults; also involves students, app creators. What they get:
 
 ### [List an app and hear it is used](platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back)
 
-The journey of the supply side: a creator who built an app for their own class lists it with almost no effort and then hears whether and how it helped elsewhere. Creators do not start for the reach, but use and praise keep them going. The thanks they receive come from the one click every user is asked for. The platform serves a copy of the app under lernapps.net, so the creator stays the author but no longer answers to schools for data protection; in return the app needs a licence that allows the copy.
+The journey of the supply side: a creator who built an app for their own class with their AI assistant lists it with almost no effort and then hears whether and how it helped elsewhere. Creators do not start for the reach, but use and praise keep them going. The thanks they receive come from the one click every user is asked for. The platform serves a copy of the app under lernapps.net, so the creator stays the author but no longer answers to schools for data protection; in return the app needs a licence that allows the copy.
 
-Mainly for app creators; also involves adopting adults. What they get: Build your app faster with good guidance, list it in minutes without answering to schools for data protection yourself, and hear with every thank-you when it helped a class beyond your own.
+Mainly for app creators; also involves AI assistants, adopting adults. What they get: Build your app faster with good guidance, list it in minutes without answering to schools for data protection yourself, and hear with every thank-you when it helped a class beyond your own.
 
-1. Building the app:
+1. Build an app with an AI assistant
    - **Guidance for building apps**
      - For app creators: Helps creators build apps with their AI assistant that are easy to use and fit the platform. Creators get it even if nobody else uses their app. It makes building with the assistant easier.
      - Delivered by: Archetypes (App templates), Guidance (Tooling), Home pages (Website), Practice guidance (Practice), Tooling CLI (Tooling).
@@ -166,7 +166,7 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 
 **Behind this journey: how the parts work together**
 
-*Guidance for building apps*
+*Build an app with an AI assistant*
 
 1. Creator → Catalog: find me an app for my class
 1. Catalog ⇢ Creator: no fitting app
@@ -199,22 +199,20 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 1. Creator → Catalog: show me how my app is used
 1. Catalog ⇢ Creator: its uses, thanks and feedback, as totals
 
-### [A tailor-made app for an acute occasion](platform-design/#2-design/d7-experiences.pdt42.md:el-x-tailor-made-app)
+### [Practise a given scope, made to measure](platform-design/#2-design/d7-experiences.pdt42.md:el-x-tailor-made-app)
 
-The journey of a creator with an acute occasion for which no app fits, such as a parent before their child's test or a teacher who needs exercises for a class during an absence: their assistant builds the content with them, and the learners practise with the app made from it. The photos of school material go to the assistant only. What proved itself continues as in "List an app and hear it is used".
+The journey of a creator for whom an occasion sets exactly what to practise and no app covers it, such as a parent before their child's test or a teacher who needs exercises for a substitute lesson. It often follows “Understand a topic at one's own pace”, when a test comes up and the general app does not cover its material. The photos of school material go to the assistant only. What proved itself continues as in “List an app and hear it is used”.
 
-Mainly for app creators; also involves AI assistants, adopting adults, students. What they get: An acute occasion and no app that fits: your assistant makes one to measure, ready within minutes.
+Mainly for app creators; also involves AI assistants, adopting adults, students. What they get: When a test, a substitute lesson or missed lessons set exactly what to practise and no app covers it: your assistant makes one from that material, ready within minutes.
 
 1. As in the journey “An app in class within minutes”: Find an app for a topic and grade.
-1. Build an app with an AI assistant
-   - **Guidance for building apps**
-     - Helps creators build apps with their AI assistant that are easy to use and fit the platform. (See above.)
+1. As in the journey “List an app and hear it is used”: Build an app with an AI assistant.
 1. Hand over a made-to-measure app
    - **A temporary app made to measure**
      - For app creators: Turns the content a creator's assistant wrote for an acute occasion into an app the learners open at once, and tells the assistant what to correct.
      - Delivered by: Submission form (Practice).
      - ┆ Not yet: Preview pages (Practice): How a kept solution becomes an entry of the catalog, with its metadata, is not defined.
-1. As in the journey “Help where a child struggles”: Learn with an app.
+1. As in the journey “Understand a topic at one's own pace”: Learn with an app.
 
 **Behind this journey: how the parts work together**
 
