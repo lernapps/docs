@@ -5,7 +5,7 @@
     "commit": "3b8a25b661c79aa7b73acd0537d8d0808f824894"
   },
   "head": {
-    "label": "d10cbc6174947ccd78504a21ec11df7b7eab2b3f"
+    "label": "0c07f4d556d1b678f501c39f90b5a070511eae64"
   },
   "acceptanceBase": "3b8a25b661c79aa7b73acd0537d8d0808f824894",
   "untracked": [],
@@ -159,7 +159,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 303
+          "line": 305
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -178,7 +178,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 319
+          "line": 321
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -198,7 +198,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 334
+          "line": 336
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -218,7 +218,7 @@
         "proseChanged": true,
         "head": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
-          "line": 349
+          "line": 351
         },
         "section": {
           "file": "docs/arc42/05-building-blocks.arc42.md",
@@ -297,7 +297,7 @@
           {
             "name": "source",
             "before": "flowchart TB\n    bb-website[\"Website (lernapps.github.io)\"]\n    bb-catalog[\"Catalog (apps)\"]\n    bb-tooling[\"Tooling (tooling)\"]\n    bb-app-templates[\"App templates (app-templates)\"]\n    bb-docs[\"Docs (docs)\"]\n    bb-org[\"Organisation (.github)\"]\n    bb-catalog -->|\"if-site-frame\"| bb-website\n    bb-tooling -->|\"if-site-frame\"| bb-website\n    bb-docs -->|\"if-site-frame\"| bb-website\n    bb-catalog -->|\"if-tooling-cli\"| bb-tooling\n    bb-tooling -->|\"if-archetypes\"| bb-app-templates\n    bb-website -->|\"if-site-actions\"| bb-tooling\n    bb-catalog -->|\"if-site-actions\"| bb-tooling\n    bb-docs -->|\"if-site-actions\"| bb-tooling",
-            "after": "flowchart TB\n    bb-website[\"Website (lernapps.github.io)\"]\n    bb-catalog[\"Catalog (apps)\"]\n    bb-tooling[\"Tooling (tooling)\"]\n    bb-app-templates[\"App templates (app-templates)\"]\n    bb-practice[\"Practice (practice)\"]\n    bb-docs[\"Docs (docs)\"]\n    bb-org[\"Organisation (.github)\"]\n    bb-catalog -->|\"if-site-frame\"| bb-website\n    bb-tooling -->|\"if-site-frame\"| bb-website\n    bb-docs -->|\"if-site-frame\"| bb-website\n    bb-catalog -->|\"if-tooling-cli\"| bb-tooling\n    bb-tooling -->|\"if-archetypes\"| bb-app-templates\n    bb-practice -->|\"if-site-frame\"| bb-website\n    bb-practice -->|\"if-tooling-cli\"| bb-tooling\n    bb-practice -->|\"if-archetypes\"| bb-app-templates\n    bb-website -->|\"if-site-actions\"| bb-tooling\n    bb-catalog -->|\"if-site-actions\"| bb-tooling\n    bb-docs -->|\"if-site-actions\"| bb-tooling"
+            "after": "flowchart TB\n    bb-website[\"Website (lernapps.github.io)\"]\n    bb-catalog[\"Catalog (apps)\"]\n    bb-tooling[\"Tooling (tooling)\"]\n    bb-app-templates[\"App templates (app-templates)\"]\n    bb-practice[\"Practice (practice)\"]\n    bb-docs[\"Docs (docs)\"]\n    bb-org[\"Organisation (.github)\"]\n    bb-catalog -->|\"if-site-frame\"| bb-website\n    bb-tooling -->|\"if-site-frame\"| bb-website\n    bb-docs -->|\"if-site-frame\"| bb-website\n    bb-catalog -->|\"if-tooling-cli\"| bb-tooling\n    bb-tooling -->|\"if-archetypes\"| bb-app-templates\n    bb-practice -->|\"if-site-frame\"| bb-website\n    bb-practice -->|\"if-tooling-cli\"| bb-tooling\n    bb-practice -->|\"if-site-actions\"| bb-tooling\n    bb-practice -->|\"if-catalog-pages\"| bb-catalog\n    bb-practice -->|\"if-archetypes\"| bb-app-templates\n    bb-website -->|\"if-site-actions\"| bb-tooling\n    bb-catalog -->|\"if-site-actions\"| bb-tooling\n    bb-docs -->|\"if-site-actions\"| bb-tooling"
           }
         ],
         "base": {
@@ -461,6 +461,22 @@
         "edge": {
           "from": "bb-practice",
           "to": "if-archetypes",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "if-catalog-pages",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "if-site-actions",
           "relation": "requires"
         }
       },

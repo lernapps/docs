@@ -250,7 +250,7 @@ The creator's journey shows that creators build with an AI assistant of their ow
 
 ### [Catalog](architecture/#05-building-blocks.arc42.md:el-bb-catalog) ([lernapps.net/apps](https://lernapps.net/apps/))
 
-- **Catalog pages:** The pages where adults and students find an app for a topic and grade, see its fitness for use, and find the way to build an app when none fits. Used by: Family's AI assistant.
+- **Catalog pages:** The pages where adults and students find an app for a topic and grade, see its fitness for use, and find the way to build an app when none fits. Used by: Family's AI assistant, Practice.
 - **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap of this interface, with the risk it carries. Used by: Creator's AI assistant.
 
 ### [Tooling](architecture/#05-building-blocks.arc42.md:el-bb-tooling) ([lernapps.net/tooling](https://lernapps.net/tooling/))
@@ -343,6 +343,7 @@ Each part with the interfaces it offers, the services they serve and the parts t
 
 - **Catalog pages:** The pages where adults and students find an app for a topic and grade, see its fitness for use, and find the way to build an app when none fits.
   - Serves: Finding apps by topic and grade, Finding apps for a topic one struggles with, Clarity on fitness for use
+  - Used by: Practice
   - Works with, outside the system: Family's AI assistant
 - **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap of this interface, with the risk it carries.
   - Serves: Help to list an app, Clarity on fitness for use
@@ -366,7 +367,7 @@ Each part with the interfaces it offers, the services they serve and the parts t
   - Serves: Guidance for building apps, Guidance for preparing a test
   - Works with, outside the system: Creator's AI assistant
 - **Site actions:** The actions every platform site is built, checked and deployed with, and the previews of its pull requests: the website, the catalog, the docs and the tooling's own pages.
-  - Used by: Website, Catalog, Docs
+  - Used by: Website, Catalog, Practice, Docs
 - **Tooling CLI:** The command line an assistant and the workflows run: create an app from an archetype, check it against the rules, update it.
   - Serves: Guidance for building apps, Guidance for preparing a test
   - Used by: Catalog, Practice
@@ -386,7 +387,7 @@ Each part with the interfaces it offers, the services they serve and the parts t
 - **Practice guidance:** The guidance and the llms.txt that lead the family's AI assistant through the preparation: what to ask, how to read the photos, how to write content of its own, how to zip it and how to hand it over.
   - Serves: Guidance for building apps, Guidance for preparing a test
   - Works with, outside the system: Family's AI assistant
-- **Preview pages:** The temporary app of each submission, below its issue number. A preview ends after two weeks, or when its issue is closed, unless someone has reacted to the issue with a thumbs-up; a preparation kept that way can be checked for the catalog.
+- **Preview pages:** The temporary app of each submission, below its issue number. A preview ends when its issue is closed, and after two weeks unless someone has reacted to the issue with a thumbs-up; a preparation kept that way can be checked for the catalog.
   - Serves: A temporary app for a test
   - ┆ Not yet: How a kept preparation becomes an entry of the catalog, with its metadata, is not defined.
 
