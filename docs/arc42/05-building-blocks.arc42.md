@@ -298,7 +298,7 @@ x-realises: ch-guidance
 
 ## Practice
 
-Lets a family have a temporary app built for one test: the family's assistant writes the content, the family submits it through a form, and the child opens the app at an address of its own. The block holds the guidance for the family's assistant, the form, the workflows that check the content, build the app and publish and delete it, and the site below which the previews live. It holds no app and no runtime: each app is built from the submitted content, the explainer template and the tooling's checks. The content is data, and the learning state stays in the child's browser.
+Lets a family have a temporary app built for one test: the family's assistant writes the content, the family submits it through a form, and the child opens the app at an address of its own. The block holds the guidance for the family's assistant, the form, the workflows that check the content, build the app and publish and delete it, and the site below which the previews live. It holds no app and no runtime: each app is built from the submitted content, the explainer template and the tooling's checks. The content is data, and nothing about the child leaves the browser: the app keeps nothing on the platform side, and whatever the child's browser keeps stays there.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::

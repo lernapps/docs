@@ -121,7 +121,7 @@ revenues:
 
 ## Prepare for a test with the family's assistant
 
-The journey of a parent whose child has a test coming up: the parent's AI assistant looks for an app for the topic and, when none fits, reads photos of the school material, agrees the scope with the child and writes content of its own. The parent submits it, the platform checks it and builds an app, and the child practises with it at a temporary address. The learning state stays in the child's browser, and the photos go to the family's assistant only. The family wrote the content, so no other creator is thanked. A preparation that helped can be kept and checked for the catalog.
+The journey of a parent whose child has a test coming up: the parent's AI assistant looks for an app for the topic and, when none fits, reads photos of the school material, agrees the scope with the child and writes content of its own. The parent submits it, the platform checks it and builds an app, and the child practises with it at a temporary address. Nothing about the child leaves the browser, and the photos go to the family's assistant only. The family wrote the content, so no other creator is thanked. A preparation that helped can be kept and checked for the catalog.
 
 ```pdt42
 :::canvas
