@@ -5,7 +5,7 @@
     "commit": "3b8a25b661c79aa7b73acd0537d8d0808f824894"
   },
   "head": {
-    "label": "bb58bed7a191b40bef945db543c6b2411e453451"
+    "label": "d607f4008bba3f75df777feecef620ced405c5bd"
   },
   "acceptanceBase": "3b8a25b661c79aa7b73acd0537d8d0808f824894",
   "untracked": [],
@@ -16,17 +16,25 @@
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/03-system-context.arc42.md",
-      "line": 61,
-      "elementId": "actor-adopting-adult",
-      "message": "Block 'actor-adopting-adult' changed without changing its section prose."
+      "line": 73,
+      "elementId": "actor-student",
+      "message": "Block 'actor-student' changed without changing its section prose."
     },
     {
       "kind": "block-without-prose-change",
       "severity": "warning",
       "file": "docs/arc42/03-system-context.arc42.md",
-      "line": 75,
-      "elementId": "actor-student",
-      "message": "Block 'actor-student' changed without changing its section prose."
+      "line": 88,
+      "elementId": "actor-creator",
+      "message": "Block 'actor-creator' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/03-system-context.arc42.md",
+      "line": 103,
+      "elementId": "actor-ai-assistant",
+      "message": "Block 'actor-ai-assistant' changed without changing its section prose."
     }
   ],
   "groups": {
@@ -35,17 +43,25 @@
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/03-system-context.arc42.md",
-        "line": 61,
-        "elementId": "actor-adopting-adult",
-        "message": "Block 'actor-adopting-adult' changed without changing its section prose."
+        "line": 73,
+        "elementId": "actor-student",
+        "message": "Block 'actor-student' changed without changing its section prose."
       },
       {
         "kind": "block-without-prose-change",
         "severity": "warning",
         "file": "docs/arc42/03-system-context.arc42.md",
-        "line": 75,
-        "elementId": "actor-student",
-        "message": "Block 'actor-student' changed without changing its section prose."
+        "line": 88,
+        "elementId": "actor-creator",
+        "message": "Block 'actor-creator' changed without changing its section prose."
+      },
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
+        "file": "docs/arc42/03-system-context.arc42.md",
+        "line": 103,
+        "elementId": "actor-ai-assistant",
+        "message": "Block 'actor-ai-assistant' changed without changing its section prose."
       }
     ],
     "untouched": [],
@@ -54,46 +70,6 @@
   },
   "architecture": {
     "elements": [
-      {
-        "id": "actor-adopting-adult",
-        "kind": "actor",
-        "status": "modified",
-        "attributes": [
-          {
-            "name": "requires",
-            "before": [
-              "if-catalog-pages",
-              "if-served-apps",
-              "if-thanks",
-              "if-home-pages"
-            ],
-            "after": [
-              "if-catalog-pages",
-              "if-served-apps",
-              "if-thanks",
-              "if-home-pages",
-              "if-practice-form"
-            ]
-          }
-        ],
-        "proseChanged": false,
-        "base": {
-          "file": "docs/arc42/03-system-context.arc42.md",
-          "line": 58
-        },
-        "head": {
-          "file": "docs/arc42/03-system-context.arc42.md",
-          "line": 61
-        },
-        "section": {
-          "file": "docs/arc42/03-system-context.arc42.md",
-          "headingPath": [
-            "System Scope and Context",
-            "Adopting adult"
-          ],
-          "occurrence": 1
-        }
-      },
       {
         "id": "actor-student",
         "kind": "actor",
@@ -121,7 +97,7 @@
         },
         "head": {
           "file": "docs/arc42/03-system-context.arc42.md",
-          "line": 75
+          "line": 73
         },
         "section": {
           "file": "docs/arc42/03-system-context.arc42.md",
@@ -133,20 +109,77 @@
         }
       },
       {
-        "id": "actor-family-assistant",
+        "id": "actor-creator",
         "kind": "actor",
-        "status": "added",
-        "attributes": [],
-        "proseChanged": true,
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "requires",
+            "before": [
+              "if-home-pages",
+              "if-catalog-pages"
+            ],
+            "after": [
+              "if-home-pages",
+              "if-catalog-pages",
+              "if-practice-form"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 87
+        },
         "head": {
           "file": "docs/arc42/03-system-context.arc42.md",
-          "line": 119
+          "line": 88
         },
         "section": {
           "file": "docs/arc42/03-system-context.arc42.md",
           "headingPath": [
             "System Scope and Context",
-            "Family's AI assistant"
+            "Creator"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "actor-ai-assistant",
+        "kind": "actor",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "requires",
+            "before": [
+              "if-guidance",
+              "if-tooling-cli",
+              "if-listing",
+              "if-home-pages"
+            ],
+            "after": [
+              "if-guidance",
+              "if-tooling-cli",
+              "if-listing",
+              "if-home-pages",
+              "if-practice-guidance"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 102
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 103
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "Creator's AI assistant"
           ],
           "occurrence": 1
         }
@@ -231,7 +264,7 @@
         }
       },
       {
-        "id": "rs-prepare-for-test",
+        "id": "rs-tailor-made-app",
         "kind": "runtime-scenario",
         "status": "added",
         "attributes": [],
@@ -244,7 +277,7 @@
           "file": "docs/arc42/06-runtime-view.arc42.md",
           "headingPath": [
             "Runtime View",
-            "Prepare for a test with the family's assistant"
+            "A tailor-made app for an acute occasion"
           ],
           "occurrence": 1
         }
@@ -278,7 +311,7 @@
           {
             "name": "source",
             "before": "flowchart LR\n    actor-adopting-adult[\"Adopting adult\"]\n    actor-student[\"Student\"]\n    actor-creator[\"Creator\"]\n    actor-ai-assistant[\"Creator's AI assistant\"]\n    actor-gatekeeper[\"School gatekeeper\"]\n    actor-platform-owner[\"Platform owner\"]\n    actor-app-repo-actions[\"Creators' app repositories\"]\n    actor-github[\"GitHub\"]\n    actor-renovate[\"Renovate\"]\n    actor-goatcounter[\"GoatCounter\"]\n    actor-email[\"E-mail\"]\n    subgraph system[\"lernapps.net\"]\n        bb-website[\"Website\"]\n        bb-catalog[\"Catalog\"]\n        bb-tooling[\"Tooling\"]\n        bb-app-templates[\"App templates\"]\n        bb-docs[\"Docs\"]\n        bb-org[\"Organisation\"]\n    end\n    actor-adopting-adult -->|\"finds, passes on and thanks\"| system\n    actor-student -->|\"uses an app and thanks\"| system\n    actor-creator -->|\"decides to build an app\"| system\n    actor-ai-assistant -->|\"builds and lists an app\"| system\n    actor-gatekeeper -->|\"reads privacy notice and imprint\"| system\n    actor-platform-owner -->|\"decides and keeps the models\"| system\n    actor-app-repo-actions -->|\"checks, builds and publishes an app\"| system\n    actor-github -->|\"hosts, runs and carries every contribution\"| system\n    actor-renovate -->|\"moves the pins between repositories\"| system\n    actor-goatcounter -->|\"counts the platform's open counts\"| system\n    actor-email -->|\"carries thanks\"| system",
-            "after": "flowchart LR\n    actor-adopting-adult[\"Adopting adult\"]\n    actor-student[\"Student\"]\n    actor-creator[\"Creator\"]\n    actor-ai-assistant[\"Creator's AI assistant\"]\n    actor-family-assistant[\"Family's AI assistant\"]\n    actor-gatekeeper[\"School gatekeeper\"]\n    actor-platform-owner[\"Platform owner\"]\n    actor-app-repo-actions[\"Creators' app repositories\"]\n    actor-github[\"GitHub\"]\n    actor-renovate[\"Renovate\"]\n    actor-goatcounter[\"GoatCounter\"]\n    actor-email[\"E-mail\"]\n    subgraph system[\"lernapps.net\"]\n        bb-website[\"Website\"]\n        bb-catalog[\"Catalog\"]\n        bb-tooling[\"Tooling\"]\n        bb-app-templates[\"App templates\"]\n        bb-practice[\"Practice\"]\n        bb-docs[\"Docs\"]\n        bb-org[\"Organisation\"]\n    end\n    actor-adopting-adult -->|\"finds, passes on and thanks\"| system\n    actor-student -->|\"uses an app and thanks\"| system\n    actor-creator -->|\"decides to build an app\"| system\n    actor-ai-assistant -->|\"builds and lists an app\"| system\n    actor-family-assistant -->|\"prepares a test with the family\"| system\n    actor-gatekeeper -->|\"reads privacy notice and imprint\"| system\n    actor-platform-owner -->|\"decides and keeps the models\"| system\n    actor-app-repo-actions -->|\"checks, builds and publishes an app\"| system\n    actor-github -->|\"hosts, runs and carries every contribution\"| system\n    actor-renovate -->|\"moves the pins between repositories\"| system\n    actor-goatcounter -->|\"counts the platform's open counts\"| system\n    actor-email -->|\"carries thanks\"| system"
+            "after": "flowchart LR\n    actor-adopting-adult[\"Adopting adult\"]\n    actor-student[\"Student\"]\n    actor-creator[\"Creator\"]\n    actor-ai-assistant[\"Creator's AI assistant\"]\n    actor-gatekeeper[\"School gatekeeper\"]\n    actor-platform-owner[\"Platform owner\"]\n    actor-app-repo-actions[\"Creators' app repositories\"]\n    actor-github[\"GitHub\"]\n    actor-renovate[\"Renovate\"]\n    actor-goatcounter[\"GoatCounter\"]\n    actor-email[\"E-mail\"]\n    subgraph system[\"lernapps.net\"]\n        bb-website[\"Website\"]\n        bb-catalog[\"Catalog\"]\n        bb-tooling[\"Tooling\"]\n        bb-app-templates[\"App templates\"]\n        bb-practice[\"Practice\"]\n        bb-docs[\"Docs\"]\n        bb-org[\"Organisation\"]\n    end\n    actor-adopting-adult -->|\"finds, passes on and thanks\"| system\n    actor-student -->|\"uses an app and thanks\"| system\n    actor-creator -->|\"decides to build an app\"| system\n    actor-ai-assistant -->|\"builds and lists an app\"| system\n    actor-gatekeeper -->|\"reads privacy notice and imprint\"| system\n    actor-platform-owner -->|\"decides and keeps the models\"| system\n    actor-app-repo-actions -->|\"checks, builds and publishes an app\"| system\n    actor-github -->|\"hosts, runs and carries every contribution\"| system\n    actor-renovate -->|\"moves the pins between repositories\"| system\n    actor-goatcounter -->|\"counts the platform's open counts\"| system\n    actor-email -->|\"carries thanks\"| system"
           }
         ],
         "base": {
@@ -310,7 +343,7 @@
         }
       },
       {
-        "id": "rs-prepare-for-test-sequence",
+        "id": "rs-tailor-made-app-sequence",
         "status": "added",
         "attributes": [],
         "head": {
@@ -347,24 +380,16 @@
       {
         "status": "added",
         "edge": {
-          "from": "actor-adopting-adult",
-          "to": "if-practice-form",
-          "relation": "requires"
-        }
-      },
-      {
-        "status": "added",
-        "edge": {
-          "from": "actor-family-assistant",
-          "to": "if-catalog-pages",
-          "relation": "requires"
-        }
-      },
-      {
-        "status": "added",
-        "edge": {
-          "from": "actor-family-assistant",
+          "from": "actor-ai-assistant",
           "to": "if-practice-guidance",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "actor-creator",
+          "to": "if-practice-form",
           "relation": "requires"
         }
       },
@@ -507,7 +532,7 @@
       {
         "status": "added",
         "edge": {
-          "from": "rs-prepare-for-test",
+          "from": "rs-tailor-made-app",
           "to": "bb-catalog",
           "relation": "involves"
         }
@@ -515,7 +540,7 @@
       {
         "status": "added",
         "edge": {
-          "from": "rs-prepare-for-test",
+          "from": "rs-tailor-made-app",
           "to": "bb-practice",
           "relation": "involves"
         }
@@ -551,8 +576,8 @@
       },
       {
         "file": "docs/arc42/03-system-context.arc42.md",
-        "added": 1,
-        "modified": 3,
+        "added": 0,
+        "modified": 4,
         "removed": 0
       },
       {

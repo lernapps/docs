@@ -5,7 +5,7 @@
     "commit": "3b8a25b661c79aa7b73acd0537d8d0808f824894"
   },
   "head": {
-    "label": "bb58bed7a191b40bef945db543c6b2411e453451"
+    "label": "d607f4008bba3f75df777feecef620ced405c5bd"
   },
   "acceptanceBase": "3b8a25b661c79aa7b73acd0537d8d0808f824894",
   "untracked": [],
@@ -30,7 +30,7 @@
               "Website with the app overview",
               "Agent guidance and starter templates",
               "A copy of every listed app, served under lernapps.net",
-              "Temporary apps for families, served under lernapps.net",
+              "Temporary apps made to measure, served under lernapps.net",
               "GitHub as the means of production: issue templates, GitHub Actions workflows, apps with their labels"
             ]
           }
@@ -54,41 +54,21 @@
         }
       },
       {
-        "id": "t-hand-over-preparation",
+        "id": "t-hand-over-made-to-measure",
         "kind": "transaction",
         "status": "added",
         "attributes": [],
         "proseChanged": true,
         "head": {
           "file": "2-design/d5-transactions.pdt42.md",
-          "line": 235
+          "line": 265
         },
         "section": {
           "file": "2-design/d5-transactions.pdt42.md",
           "headingPath": [
             "Identify the elementary transactions and channels",
-            "Transactions Board: Adults and students",
-            "Hand over a preparation to the child"
-          ],
-          "occurrence": 1
-        }
-      },
-      {
-        "id": "t-practise-for-test",
-        "kind": "transaction",
-        "status": "added",
-        "attributes": [],
-        "proseChanged": true,
-        "head": {
-          "file": "2-design/d5-transactions.pdt42.md",
-          "line": 256
-        },
-        "section": {
-          "file": "2-design/d5-transactions.pdt42.md",
-          "headingPath": [
-            "Identify the elementary transactions and channels",
-            "Transactions Board: Adults and students",
-            "Practise for a test"
+            "Transactions Board: Creators and students",
+            "Hand over a made-to-measure app"
           ],
           "occurrence": 1
         }
@@ -101,34 +81,97 @@
         "proseChanged": true,
         "head": {
           "file": "2-design/d5-transactions.pdt42.md",
-          "line": 492
+          "line": 473
         },
         "section": {
           "file": "2-design/d5-transactions.pdt42.md",
           "headingPath": [
             "Identify the elementary transactions and channels",
             "Channels",
-            "A temporary app for one test"
+            "A temporary app made to measure"
           ],
           "occurrence": 1
         }
       },
       {
-        "id": "s-preparation-guidance",
-        "kind": "service",
-        "status": "added",
-        "attributes": [],
+        "id": "le-creators",
+        "kind": "learning-engine",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "entry",
+            "before": [
+              "An app built for their own class or child",
+              "Guidance for building apps with their AI assistant"
+            ],
+            "after": [
+              "An app, or an acute occasion of their own such as a test of their child or exercises for a class during an absence, for their own class or child",
+              "Guidance for building apps with their AI assistant"
+            ]
+          },
+          {
+            "name": "getting-better",
+            "before": [
+              "Learn whether and how the app is used",
+              "Improve the app with feedback from classes"
+            ],
+            "after": [
+              "Learn whether and how the app is used",
+              "Improve the app with feedback from classes",
+              "Keep a solution that proved itself and offer it to others"
+            ]
+          }
+        ],
         "proseChanged": true,
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 21
+        },
         "head": {
           "file": "2-design/d6-learning-engine.pdt42.md",
-          "line": 282
+          "line": 21
         },
         "section": {
           "file": "2-design/d6-learning-engine.pdt42.md",
           "headingPath": [
             "Design the learning engine",
-            "Services",
-            "Guidance for preparing a test"
+            "Learning engine",
+            "App creators"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "le-adults",
+        "kind": "learning-engine",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "new-opportunity",
+            "before": [
+              "Adapt an app or build their own"
+            ],
+            "after": [
+              "Adapt an app or build their own",
+              "Get a solution made to measure for an acute occasion when no app fits"
+            ]
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 44
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 45
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Learning engine",
+            "Adopting adults"
           ],
           "occurrence": 1
         }
@@ -141,20 +184,20 @@
         "proseChanged": true,
         "head": {
           "file": "2-design/d6-learning-engine.pdt42.md",
-          "line": 298
+          "line": 284
         },
         "section": {
           "file": "2-design/d6-learning-engine.pdt42.md",
           "headingPath": [
             "Design the learning engine",
             "Services",
-            "A temporary app for a test"
+            "A temporary app made to measure"
           ],
           "occurrence": 1
         }
       },
       {
-        "id": "x-prepare-for-test",
+        "id": "x-tailor-made-app",
         "kind": "experience",
         "status": "added",
         "attributes": [],
@@ -167,7 +210,7 @@
           "file": "2-design/d7-experiences.pdt42.md",
           "headingPath": [
             "Assemble the platform experiences",
-            "Prepare for a test with the family's assistant"
+            "A tailor-made app for an acute occasion"
           ],
           "occurrence": 1
         }
@@ -178,30 +221,6 @@
       {
         "status": "added",
         "edge": {
-          "from": "s-preparation-guidance",
-          "to": "ch-guidance",
-          "relation": "channel"
-        }
-      },
-      {
-        "status": "added",
-        "edge": {
-          "from": "s-preparation-guidance",
-          "to": "e-adopters",
-          "relation": "for"
-        }
-      },
-      {
-        "status": "added",
-        "edge": {
-          "from": "s-preparation-guidance",
-          "to": "t-hand-over-preparation",
-          "relation": "supports"
-        }
-      },
-      {
-        "status": "added",
-        "edge": {
           "from": "s-temporary-preview",
           "to": "ch-temporary-preview",
           "relation": "channel"
@@ -211,7 +230,7 @@
         "status": "added",
         "edge": {
           "from": "s-temporary-preview",
-          "to": "e-adopters",
+          "to": "e-creators",
           "relation": "for"
         }
       },
@@ -219,14 +238,14 @@
         "status": "added",
         "edge": {
           "from": "s-temporary-preview",
-          "to": "t-hand-over-preparation",
+          "to": "t-hand-over-made-to-measure",
           "relation": "supports"
         }
       },
       {
         "status": "added",
         "edge": {
-          "from": "t-hand-over-preparation",
+          "from": "t-hand-over-made-to-measure",
           "to": "ch-temporary-preview",
           "relation": "channel"
         }
@@ -234,31 +253,31 @@
       {
         "status": "added",
         "edge": {
-          "from": "t-hand-over-preparation",
-          "to": "e-adopters",
+          "from": "t-hand-over-made-to-measure",
+          "to": "e-creators",
           "relation": "from"
         }
       },
       {
         "status": "added",
         "edge": {
-          "from": "t-hand-over-preparation",
-          "to": "m-adopters-students",
+          "from": "t-hand-over-made-to-measure",
+          "to": "m-creators-students",
           "relation": "motivation"
         }
       },
       {
         "status": "added",
         "edge": {
-          "from": "t-hand-over-preparation",
-          "to": "r-adults-students",
+          "from": "t-hand-over-made-to-measure",
+          "to": "r-creators-students",
           "relation": "relationship"
         }
       },
       {
         "status": "added",
         "edge": {
-          "from": "t-hand-over-preparation",
+          "from": "t-hand-over-made-to-measure",
           "to": "e-students",
           "relation": "to"
         }
@@ -266,55 +285,31 @@
       {
         "status": "added",
         "edge": {
-          "from": "t-practise-for-test",
-          "to": "e-adopters",
-          "relation": "from"
-        }
-      },
-      {
-        "status": "added",
-        "edge": {
-          "from": "t-practise-for-test",
-          "to": "r-adults-students",
-          "relation": "relationship"
-        }
-      },
-      {
-        "status": "added",
-        "edge": {
-          "from": "t-practise-for-test",
-          "to": "e-students",
-          "relation": "to"
-        }
-      },
-      {
-        "status": "added",
-        "edge": {
-          "from": "x-prepare-for-test",
-          "to": "e-adopters",
+          "from": "x-tailor-made-app",
+          "to": "e-creators",
           "relation": "core-entity"
         }
       },
       {
         "status": "added",
         "edge": {
-          "from": "x-prepare-for-test",
-          "to": "r-adults-students",
+          "from": "x-tailor-made-app",
+          "to": "r-creators-students",
           "relation": "relationship"
         }
       },
       {
         "status": "added",
         "edge": {
-          "from": "x-prepare-for-test",
-          "to": "e-creators",
+          "from": "x-tailor-made-app",
+          "to": "e-adopters",
           "relation": "roles"
         }
       },
       {
         "status": "added",
         "edge": {
-          "from": "x-prepare-for-test",
+          "from": "x-tailor-made-app",
           "to": "e-students",
           "relation": "roles"
         }
@@ -322,7 +317,15 @@
       {
         "status": "added",
         "edge": {
-          "from": "x-prepare-for-test",
+          "from": "x-tailor-made-app",
+          "to": "s-building-guidance",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-tailor-made-app",
           "to": "s-finding",
           "relation": "steps"
         }
@@ -330,15 +333,7 @@
       {
         "status": "added",
         "edge": {
-          "from": "x-prepare-for-test",
-          "to": "s-preparation-guidance",
-          "relation": "steps"
-        }
-      },
-      {
-        "status": "added",
-        "edge": {
-          "from": "x-prepare-for-test",
+          "from": "x-tailor-made-app",
           "to": "s-temporary-preview",
           "relation": "steps"
         }
@@ -346,7 +341,7 @@
       {
         "status": "added",
         "edge": {
-          "from": "x-prepare-for-test",
+          "from": "x-tailor-made-app",
           "to": "t-find-app",
           "relation": "steps"
         }
@@ -354,16 +349,16 @@
       {
         "status": "added",
         "edge": {
-          "from": "x-prepare-for-test",
-          "to": "t-hand-over-preparation",
+          "from": "x-tailor-made-app",
+          "to": "t-hand-over-made-to-measure",
           "relation": "steps"
         }
       },
       {
         "status": "added",
         "edge": {
-          "from": "x-prepare-for-test",
-          "to": "t-practise-for-test",
+          "from": "x-tailor-made-app",
+          "to": "t-learn-with-app",
           "relation": "steps"
         }
       }
@@ -378,14 +373,14 @@
       },
       {
         "file": "2-design/d5-transactions.pdt42.md",
-        "added": 3,
+        "added": 2,
         "modified": 0,
         "removed": 0
       },
       {
         "file": "2-design/d6-learning-engine.pdt42.md",
-        "added": 2,
-        "modified": 0,
+        "added": 1,
+        "modified": 2,
         "removed": 0
       },
       {

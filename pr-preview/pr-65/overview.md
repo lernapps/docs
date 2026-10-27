@@ -24,7 +24,7 @@ On this page:
 
 The platform exists for these people. The journeys below are told from their views, so knowing them tells you whose problem a part solves.
 
-- **Adopting adults:** Adults who come across apps built by others, browse them and bring them to their students or their own children: teachers and parents. Brings: the AI assistant a family already has.
+- **Adopting adults:** Adults who come across apps built by others, browse them and bring them to their students or their own children: teachers and parents.
 - **App creators:** Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves. Brings: the AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI.
 - **Students:** The learners the apps are built for.
 
@@ -36,7 +36,7 @@ The platform is built from one building block per repository of the organisation
 - **[Catalog](architecture/#05-building-blocks.arc42.md:el-bb-catalog):** Lets adults and students find, trust and start apps, and lets creators list them; it is the core of the platform. Address: [lernapps.net/apps](https://lernapps.net/apps/) · Repository: [lernapps/apps](https://github.com/lernapps/apps)
 - **[Tooling](architecture/#05-building-blocks.arc42.md:el-bb-tooling):** Gives a creator's AI assistant everything it needs to build an app that meets the platform's rules: the guidance by phase and the skills, the CLI that creates an app and checks it, and the workflows an app's repository runs. Address: [lernapps.net/tooling](https://lernapps.net/tooling/) · Repository: [lernapps/tooling](https://github.com/lernapps/tooling)
 - **[App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates):** Provides the three kinds of app, quiz, explainer and interactive app, as templates and runtimes that already keep the platform's rules. No page of its own; it lives in its repository. · Repository: [lernapps/app-templates](https://github.com/lernapps/app-templates)
-- **[Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice):** Turns content that a family's assistant wrote into a temporary app for one test, and guides that assistant. Address: [lernapps.net/practice](https://lernapps.net/practice/) · Repository: [lernapps/practice](https://github.com/lernapps/practice)
+- **[Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice):** Turns content that a creator's assistant wrote for an acute occasion into a temporary app for a child or a class, and guides that assistant. Address: [lernapps.net/practice](https://lernapps.net/practice/) · Repository: [lernapps/practice](https://github.com/lernapps/practice)
 - **[Docs](architecture/#05-building-blocks.arc42.md:el-bb-docs):** Holds the models of the platform: why it exists, who carries it and how the system is built. Address: [lernapps.net/docs](https://lernapps.net/docs/) · Repository: [lernapps/docs](https://github.com/lernapps/docs)
 - **[Organisation](architecture/#05-building-blocks.arc42.md:el-bb-org):** Holds the rules and decisions that every repository of the platform follows: the profile, the governance, the templates for issues and pull requests, and the decision issues. No page of its own; it lives in its repository. · Repository: [lernapps/.github](https://github.com/lernapps/.github)
 
@@ -198,40 +198,43 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 1. Creator → Catalog: show me how my app is used
 1. Catalog ⇢ Creator: its uses, thanks and feedback, as totals
 
-### [Prepare for a test with the family's assistant](platform-design/#2-design/d7-experiences.pdt42.md:el-x-prepare-for-test)
+### [A tailor-made app for an acute occasion](platform-design/#2-design/d7-experiences.pdt42.md:el-x-tailor-made-app)
 
-The journey of a parent whose child has a test coming up: the family's assistant looks for an app and otherwise writes content of its own, and the child practises with the app built from it. The photos of the school material go to the family's assistant only. The family wrote the content, so there is no creator to thank.
+The journey of an adult or a student with an acute occasion, such as a test of their own child or exercises for a class during an absence, for which no app fits: their assistant writes content of its own, and the learners practise with the app built from it. The photos of school material go to the assistant only. What proved itself continues as in "List an app and hear it is used".
 
-Mainly for adopting adults; also involves students, app creators. What they get: A test next week and a child who is not ready: your assistant turns the school material into practice of its own, ready to open within minutes.
+Mainly for app creators; also involves adopting adults, students. What they get: An acute occasion and no app that fits: your assistant makes one to measure, ready within minutes.
 
+1. Building the app:
+   - **Guidance for building apps**
+     - Helps creators build apps with their AI assistant that are easy to use and fit the platform. (See above.)
 1. As in the journey “An app in class within minutes”: Find an app for a topic and grade.
-1. Hand over a preparation to the child
-   - **Guidance for preparing a test**
-     - For adopting adults: Guides the family's AI assistant through preparing one child for one test, from the school material to content of its own.
-     - Delivered by: Archetypes (App templates), Guidance (Tooling), Home pages (Website), Practice guidance (Practice), Tooling CLI (Tooling).
-   - **A temporary app for a test**
-     - For adopting adults: Turns the assistant's content into an app the child opens at once, and tells the assistant what to correct.
+1. Hand over a made-to-measure app
+   - **A temporary app made to measure**
+     - For app creators: Turns the content a creator's assistant wrote for an acute occasion into an app the learners open at once, and tells the assistant what to correct.
      - Delivered by: Submission form (Practice).
-     - ┆ Not yet: Preview pages (Practice): How a kept preparation becomes an entry of the catalog, with its metadata, is not defined.
-1. Practise for a test
-   - Happens inside the app, without the platform.
+     - ┆ Not yet: Preview pages (Practice): How a kept solution becomes an entry of the catalog, with its metadata, is not defined.
+1. As in the journey “Help where a child struggles”: Learn with an app.
 
 **Behind this journey: how the parts work together**
 
+*Guidance for building apps*
+
+1. Creator → Creator's AI assistant: make me an app for this occasion
+1. Creator's AI assistant → Practice: give me the guidance
+
 *Find an app for a topic and grade*
 
-1. Adopting adult → Family's AI assistant: prepare my child for this test
-1. Family's AI assistant → Catalog: find an app for this topic and grade
-1. Catalog ⇢ Family's AI assistant: no fitting app
+1. Creator's AI assistant → Catalog: find an app for this topic and grade
+1. Catalog ⇢ Creator's AI assistant: no fitting app
 
-*Hand over a preparation to the child*
+*Hand over a made-to-measure app*
 
-1. Family's AI assistant → Adopting adult: the content and the way to submit it
-1. Adopting adult → Practice: submit the content
-1. Practice ⇢ Adopting adult: the address, or what to correct
-1. Adopting adult → Student: open this address
+1. Creator's AI assistant → Creator: the content and the way to submit it
+1. Creator → Practice: submit the content
+1. Practice ⇢ Creator: the address, or what to correct
+1. Creator → Student: open this address
 
-*Practise for a test*
+*Learn with an app*
 
 1. Student → Practice: serve me the app
 1. Practice ⇢ Student: the app, no sign-up, no installation
@@ -246,7 +249,6 @@ The creator's journey shows that creators build with an AI assistant of their ow
 
 ### [Catalog](architecture/#05-building-blocks.arc42.md:el-bb-catalog) ([lernapps.net/apps](https://lernapps.net/apps/))
 
-- **Catalog pages:** The pages where adults and students find an app for a topic and grade, see its fitness for use, and find the way to build an app when none fits. Used by: Family's AI assistant, Practice.
 - **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap of this interface, with the risk it carries. Used by: Creator's AI assistant.
 
 ### [Tooling](architecture/#05-building-blocks.arc42.md:el-bb-tooling) ([lernapps.net/tooling](https://lernapps.net/tooling/))
@@ -261,7 +263,7 @@ The creator's journey shows that creators build with an AI assistant of their ow
 
 ### [Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice) ([lernapps.net/practice](https://lernapps.net/practice/))
 
-- **Practice guidance:** The guidance that leads the family's AI assistant, with an llms.txt. Used by: Family's AI assistant.
+- **Practice guidance:** The guidance that leads a creator's AI assistant to such an app, with an llms.txt. Used by: Creator's AI assistant.
 
 ### How apps and the platform stay current
 
@@ -327,7 +329,7 @@ Each part with the interfaces it offers, the services they serve and the parts t
 #### [Website](architecture/#05-building-blocks.arc42.md:el-bb-website) ([lernapps/lernapps.github.io](https://github.com/lernapps/lernapps.github.io))
 
 - **Home pages:** The home page, the privacy notice and the imprint, and the root llms.txt that leads AI assistants to the other parts of the platform. The privacy notice is part of the signal that an app may be used: it covers every app served under lernapps.net.
-  - Serves: Guidance for building apps, Clarity on fitness for use, Guidance for preparing a test
+  - Serves: Guidance for building apps, Clarity on fitness for use
   - Works with, outside the system: Creator's AI assistant
 - **Site frame:** The shared header, footer, styles and counting snippet of every platform site, and site-check, the check every site runs on its built pages before it is deployed. The counting snippet reports visits to GoatCounter; this is where a creator's insight into the use of their app begins.
   - Serves: Insight into use and feedback
@@ -340,7 +342,6 @@ Each part with the interfaces it offers, the services they serve and the parts t
 - **Catalog pages:** The pages where adults and students find an app for a topic and grade, see its fitness for use, and find the way to build an app when none fits.
   - Serves: Finding apps by topic and grade, Finding apps for a topic one struggles with, Clarity on fitness for use
   - Used by: Practice
-  - Works with, outside the system: Family's AI assistant
 - **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap of this interface, with the risk it carries.
   - Serves: Help to list an app, Clarity on fitness for use
   - ┆ Not yet: A listing is published only after the platform owner approves the pull request, and the review agent runs only at their request.
@@ -360,32 +361,32 @@ Each part with the interfaces it offers, the services they serve and the parts t
 - **App actions:** The reusable workflows and actions an app's repository runs to check and build the app and to publish the creator's own release, at the creator's address.
   - Works with, outside the system: Creators' app repositories, GitHub
 - **Guidance:** The guidance by phase, the skills and the documentation that AI assistants read to build and list an app.
-  - Serves: Guidance for building apps, Guidance for preparing a test
+  - Serves: Guidance for building apps
   - Works with, outside the system: Creator's AI assistant
 - **Site actions:** The actions every platform site is built, checked and deployed with, and the previews of its pull requests: the website, the catalog, the docs and the tooling's own pages.
   - Used by: Website, Catalog, Practice, Docs
 - **Tooling CLI:** The command line an assistant and the workflows run: create an app from an archetype, check it against the rules, update it.
-  - Serves: Guidance for building apps, Guidance for preparing a test
+  - Serves: Guidance for building apps
   - Used by: Catalog, Practice
   - Works with, outside the system: Creator's AI assistant, Creators' app repositories, Renovate
 
 #### [App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates) ([lernapps/app-templates](https://github.com/lernapps/app-templates))
 
 - **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with.
-  - Serves: Guidance for building apps, Guidance for preparing a test
+  - Serves: Guidance for building apps
   - Used by: Tooling, Practice
   - Works with, outside the system: Renovate
 
 #### [Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice) ([lernapps/practice](https://github.com/lernapps/practice))
 
-- **Submission form:** The form through which a parent submits the content.
-  - Serves: A temporary app for a test
-- **Practice guidance:** The guidance that leads the family's AI assistant, with an llms.txt.
-  - Serves: Guidance for building apps, Guidance for preparing a test
-  - Works with, outside the system: Family's AI assistant
+- **Submission form:** The form through which a creator submits the content.
+  - Serves: A temporary app made to measure
+- **Practice guidance:** The guidance that leads a creator's AI assistant to such an app, with an llms.txt.
+  - Serves: Guidance for building apps
+  - Works with, outside the system: Creator's AI assistant
 - **Preview pages:** The temporary app of each submission.
-  - Serves: A temporary app for a test
-  - ┆ Not yet: How a kept preparation becomes an entry of the catalog, with its metadata, is not defined.
+  - Serves: A temporary app made to measure
+  - ┆ Not yet: How a kept solution becomes an entry of the catalog, with its metadata, is not defined.
 
 ### Parts that support the others
 
