@@ -5,7 +5,7 @@
     "commit": "3b8a25b661c79aa7b73acd0537d8d0808f824894"
   },
   "head": {
-    "label": "ed19ac67b5c02b73398953ac99053afa7b0ebdf7"
+    "label": "bb58bed7a191b40bef945db543c6b2411e453451"
   },
   "acceptanceBase": "3b8a25b661c79aa7b73acd0537d8d0808f824894",
   "untracked": [],
@@ -30,7 +30,7 @@
               "Website with the app overview",
               "Agent guidance and starter templates",
               "A copy of every listed app, served under lernapps.net",
-              "Temporary apps built from a family's own content, served under lernapps.net",
+              "Temporary apps for families, served under lernapps.net",
               "GitHub as the means of production: issue templates, GitHub Actions workflows, apps with their labels"
             ]
           }

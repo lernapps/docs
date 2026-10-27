@@ -24,7 +24,7 @@ On this page:
 
 The platform exists for these people. The journeys below are told from their views, so knowing them tells you whose problem a part solves.
 
-- **Adopting adults:** Adults who come across apps built by others, browse them and bring them to their students or their own children: teachers and parents. Brings: the AI assistant a family already has, which prepares a child for a test and writes the content of a temporary app; it reads the guidance and searches the catalog.
+- **Adopting adults:** Adults who come across apps built by others, browse them and bring them to their students or their own children: teachers and parents. Brings: the AI assistant a family already has.
 - **App creators:** Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves. Brings: the AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI.
 - **Students:** The learners the apps are built for.
 
@@ -36,7 +36,7 @@ The platform is built from one building block per repository of the organisation
 - **[Catalog](architecture/#05-building-blocks.arc42.md:el-bb-catalog):** Lets adults and students find, trust and start apps, and lets creators list them; it is the core of the platform. Address: [lernapps.net/apps](https://lernapps.net/apps/) · Repository: [lernapps/apps](https://github.com/lernapps/apps)
 - **[Tooling](architecture/#05-building-blocks.arc42.md:el-bb-tooling):** Gives a creator's AI assistant everything it needs to build an app that meets the platform's rules: the guidance by phase and the skills, the CLI that creates an app and checks it, and the workflows an app's repository runs. Address: [lernapps.net/tooling](https://lernapps.net/tooling/) · Repository: [lernapps/tooling](https://github.com/lernapps/tooling)
 - **[App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates):** Provides the three kinds of app, quiz, explainer and interactive app, as templates and runtimes that already keep the platform's rules. No page of its own; it lives in its repository. · Repository: [lernapps/app-templates](https://github.com/lernapps/app-templates)
-- **[Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice):** Lets a family have a temporary app built for one test: the family's assistant writes the content, the family submits it through a form, and the child opens the app at an address of its own. Address: [lernapps.net/practice](https://lernapps.net/practice/) · Repository: [lernapps/practice](https://github.com/lernapps/practice)
+- **[Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice):** Turns content that a family's assistant wrote into a temporary app for one test, and guides that assistant. Address: [lernapps.net/practice](https://lernapps.net/practice/) · Repository: [lernapps/practice](https://github.com/lernapps/practice)
 - **[Docs](architecture/#05-building-blocks.arc42.md:el-bb-docs):** Holds the models of the platform: why it exists, who carries it and how the system is built. Address: [lernapps.net/docs](https://lernapps.net/docs/) · Repository: [lernapps/docs](https://github.com/lernapps/docs)
 - **[Organisation](architecture/#05-building-blocks.arc42.md:el-bb-org):** Holds the rules and decisions that every repository of the platform follows: the profile, the governance, the templates for issues and pull requests, and the decision issues. No page of its own; it lives in its repository. · Repository: [lernapps/.github](https://github.com/lernapps/.github)
 
@@ -200,17 +200,17 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 
 ### [Prepare for a test with the family's assistant](platform-design/#2-design/d7-experiences.pdt42.md:el-x-prepare-for-test)
 
-The journey of a parent whose child has a test coming up: the parent's AI assistant looks for an app for the topic and, when none fits, reads photos of the school material, agrees the scope with the child and writes content of its own. The parent submits it, the platform checks it and builds an app, and the child practises with it at a temporary address. Nothing about the child leaves the browser, and the photos go to the family's assistant only. The family wrote the content, so no other creator is thanked. A preparation that helped can be kept and checked for the catalog.
+The journey of a parent whose child has a test coming up: the family's assistant looks for an app and otherwise writes content of its own, and the child practises with the app built from it. The photos of the school material go to the family's assistant only. The family wrote the content, so there is no creator to thank.
 
-Mainly for adopting adults; also involves students, app creators. What they get: A test next week and a child who is not ready: your assistant turns the school material into practice of its own, ready to open within minutes, with nothing about your child leaving the family.
+Mainly for adopting adults; also involves students, app creators. What they get: A test next week and a child who is not ready: your assistant turns the school material into practice of its own, ready to open within minutes.
 
 1. As in the journey “An app in class within minutes”: Find an app for a topic and grade.
 1. Hand over a preparation to the child
    - **Guidance for preparing a test**
-     - For adopting adults: Helps a parent and their AI assistant prepare one child for one test: the assistant asks what the test covers, reads photos of the school material, agrees the scope with the child and writes content of its own, never copied from the material. The guidance is written for the assistant, and the photos go to the family's assistant only.
+     - For adopting adults: Guides the family's AI assistant through preparing one child for one test, from the school material to content of its own.
      - Delivered by: Archetypes (App templates), Guidance (Tooling), Home pages (Website), Practice guidance (Practice), Tooling CLI (Tooling).
    - **A temporary app for a test**
-     - For adopting adults: Turns the content the family's assistant wrote into an app the child can open at once, and tells the assistant what to correct when the content does not pass the checks. The app is deleted after two weeks, unless someone keeps it.
+     - For adopting adults: Turns the assistant's content into an app the child opens at once, and tells the assistant what to correct.
      - Delivered by: Submission form (Practice).
      - ┆ Not yet: Preview pages (Practice): How a kept preparation becomes an entry of the catalog, with its metadata, is not defined.
 1. Practise for a test
@@ -226,13 +226,9 @@ Mainly for adopting adults; also involves students, app creators. What they get:
 
 *Hand over a preparation to the child*
 
-1. Family's AI assistant → Practice: give me the guidance (llms.txt)
-1. Family's AI assistant → Adopting adult: the content, as a ZIP file, and the link to the form
-1. Adopting adult → Practice: submit the form with the ZIP file
-1. Practice → App templates: provide the explainer template
-1. Practice → Tooling: check the built app
-1. Practice → GitHub: publish the app at a temporary address
-1. Practice ⇢ Adopting adult: the address, or what to correct, as a comment
+1. Family's AI assistant → Adopting adult: the content and the way to submit it
+1. Adopting adult → Practice: submit the content
+1. Practice ⇢ Adopting adult: the address, or what to correct
 1. Adopting adult → Student: open this address
 
 *Practise for a test*
@@ -265,7 +261,7 @@ The creator's journey shows that creators build with an AI assistant of their ow
 
 ### [Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice) ([lernapps.net/practice](https://lernapps.net/practice/))
 
-- **Practice guidance:** The guidance and the llms.txt that lead the family's AI assistant through the preparation: what to ask, how to read the photos, how to write content of its own, how to zip it and how to hand it over. Used by: Family's AI assistant.
+- **Practice guidance:** The guidance that leads the family's AI assistant, with an llms.txt. Used by: Family's AI assistant.
 
 ### How apps and the platform stay current
 
@@ -382,12 +378,12 @@ Each part with the interfaces it offers, the services they serve and the parts t
 
 #### [Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice) ([lernapps/practice](https://github.com/lernapps/practice))
 
-- **Submission form:** The form through which a parent submits the content: a GitHub issue with subject, grade and federal state and the content as an attached ZIP file. The checks and the build answer as comments on the issue, in plain language, so that the family's assistant can correct the content. The issue's author is the author of the content.
+- **Submission form:** The form through which a parent submits the content.
   - Serves: A temporary app for a test
-- **Practice guidance:** The guidance and the llms.txt that lead the family's AI assistant through the preparation: what to ask, how to read the photos, how to write content of its own, how to zip it and how to hand it over.
+- **Practice guidance:** The guidance that leads the family's AI assistant, with an llms.txt.
   - Serves: Guidance for building apps, Guidance for preparing a test
   - Works with, outside the system: Family's AI assistant
-- **Preview pages:** The temporary app of each submission, below its issue number. A preview ends when its issue is closed, and after two weeks unless someone has reacted to the issue with a thumbs-up; a preparation kept that way can be checked for the catalog.
+- **Preview pages:** The temporary app of each submission.
   - Serves: A temporary app for a test
   - ┆ Not yet: How a kept preparation becomes an entry of the catalog, with its metadata, is not defined.
 
