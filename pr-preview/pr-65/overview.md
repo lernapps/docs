@@ -27,6 +27,7 @@ The platform exists for these people. The journeys below are told from their vie
 - **Adopting adults:** Adults who come across apps built by others, browse them and bring them to their students or their own children: teachers and parents.
 - **App creators:** Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves. Brings: the AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI.
 - **Students:** The learners the apps are built for.
+- **AI assistants:** The tools creators build their apps with.
 
 ## The parts and where they live
 
@@ -149,7 +150,7 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 
 1. Building the app:
    - **Guidance for building apps**
-     - For app creators: Helps creators build apps with their AI assistant that are easy to use and fit the platform. Creators get it even if nobody else uses their app.
+     - For app creators: Helps creators build apps with their AI assistant that are easy to use and fit the platform. Creators get it even if nobody else uses their app. It makes building with the assistant easier.
      - Delivered by: Archetypes (App templates), Guidance (Tooling), Home pages (Website), Practice guidance (Practice), Tooling CLI (Tooling).
 1. List an app
    - **Help to list an app**
@@ -200,14 +201,14 @@ Mainly for app creators; also involves adopting adults. What they get: Build you
 
 ### [A tailor-made app for an acute occasion](platform-design/#2-design/d7-experiences.pdt42.md:el-x-tailor-made-app)
 
-The journey of a creator with an acute occasion for which no app fits, such as a parent before their child's test or a teacher who needs exercises for a class during an absence: their assistant writes the content, and the learners practise with the app built from it. The photos of school material go to the assistant only. What proved itself continues as in "List an app and hear it is used".
+The journey of a creator with an acute occasion for which no app fits, such as a parent before their child's test or a teacher who needs exercises for a class during an absence: their assistant builds the content with them, and the learners practise with the app made from it. The photos of school material go to the assistant only. What proved itself continues as in "List an app and hear it is used".
 
-Mainly for app creators; also involves adopting adults, students. What they get: An acute occasion and no app that fits: your assistant makes one to measure, ready within minutes.
+Mainly for app creators; also involves AI assistants, adopting adults, students. What they get: An acute occasion and no app that fits: your assistant makes one to measure, ready within minutes.
 
-1. Building the app:
+1. As in the journey “An app in class within minutes”: Find an app for a topic and grade.
+1. Build an app with an AI assistant
    - **Guidance for building apps**
      - Helps creators build apps with their AI assistant that are easy to use and fit the platform. (See above.)
-1. As in the journey “An app in class within minutes”: Find an app for a topic and grade.
 1. Hand over a made-to-measure app
    - **A temporary app made to measure**
      - For app creators: Turns the content a creator's assistant wrote for an acute occasion into an app the learners open at once, and tells the assistant what to correct.
@@ -217,21 +218,25 @@ Mainly for app creators; also involves adopting adults, students. What they get:
 
 **Behind this journey: how the parts work together**
 
-*Guidance for building apps*
-
-1. Creator → Creator's AI assistant: make me an app for this occasion
-1. Creator's AI assistant → Practice: give me the guidance
-
 *Find an app for a topic and grade*
 
-1. Creator's AI assistant → Catalog: find an app for this topic and grade
-1. Catalog ⇢ Creator's AI assistant: no fitting app
+1. Creator → Catalog: find me an app for this occasion
+1. Catalog ⇢ Creator: no fitting app
+
+*Build an app with an AI assistant*
+
+1. Creator → Creator's AI assistant: make an app for this occasion, from this material
+1. Creator's AI assistant → Practice: give me the guidance
+1. Practice ⇢ Creator's AI assistant: the guidance
+1. Creator's AI assistant → Creator's AI assistant: review the material and prepare the content
+1. Creator's AI assistant → Creator: agree the scope with me
+1. Creator ⇢ Creator's AI assistant: the agreed scope
+1. Creator's AI assistant ⇢ Creator: the content of the app
 
 *Hand over a made-to-measure app*
 
-1. Creator's AI assistant → Creator: the content and the way to submit it
 1. Creator → Practice: submit the content
-1. Practice ⇢ Creator: the address, or what to correct
+1. Practice ⇢ Creator: the address of the app, or what to correct
 1. Creator → Student: open this address
 
 *Learn with an app*
