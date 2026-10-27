@@ -1,6 +1,6 @@
 # Identify the elementary transactions and channels
 
-*One Transactions Board per core relationship (D4). Each transaction is a repeatable action with a specific value unit; `happening: yes` marks what already occurs today, without lernapps.net. The channels are what the platform would build to lower the cost of each transaction.*
+*One Transactions Board per relationship (D4). Each transaction is a repeatable action with a specific value unit; `happening: yes` marks what already occurs today, without lernapps.net. The channels are what the platform would build to lower the cost of each transaction.*
 
 Three transactions have no platform channel on purpose: learning with an app and working on it happen inside the app itself, and students thank adults directly in class. The platform does not need to stand between them.
 
@@ -318,19 +318,27 @@ motivation: m-students-creators-gratitude
 :::
 ```
 
-## Creators and their AI assistants
+## Transactions Board: Creators and their AI assistants
 
-Creators build through their AI assistant (KD-10, KD-11). This is no core relationship (D4), but the platform lowers the cost of the exchange with its guidance.
+```pdt42
+:::canvas
+id: cv-board-creators-ai-assistants
+canvas: transactions-board
+of: r-creators-ai-assistants
+:::
+```
+
+The relationship is not a core one (D4); the platform lowers the cost of its transaction with its guidance.
 
 ### Build an app with an AI assistant
 
-The creator brings the occasion and the material, the assistant reviews the material, agrees the scope with the creator and builds the content.
+In their relationship, the creator brings the occasion and the material, and the assistant reviews the material, agrees the scope with the creator and builds the content.
 
 ```pdt42
-:::ignore H108 Creators and their assistants are no core relationship (D4) :::
 :::transaction
 id: t-build-with-assistant
 title: Build an app with an AI assistant
+relationship: r-creators-ai-assistants
 from: e-ai-assistants
 to: e-creators
 direction: two-way
