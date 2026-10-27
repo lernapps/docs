@@ -51,7 +51,7 @@ sequenceDiagram
     catalog->>mail: carry them to the creator
 ```
 
-## Help where a child struggles
+## Understand a topic at one's own pace
 
 [A parent whose child struggles with a topic looks for an app the child can start right away](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-child-struggles), or a
 student looks for one alone. The flow is the same as in class, without passing the app on.
@@ -59,7 +59,7 @@ student looks for one alone. The flow is the same as in class, without passing t
 ```arc42
 :::runtime-scenario
 id: rs-child-struggles
-title: Help where a child struggles
+title: Understand a topic at one's own pace
 trigger: A parent or a student notices a topic the student struggles with
 involves: bb-catalog
 x-experience: x-child-struggles
@@ -139,7 +139,7 @@ sequenceDiagram
     participant adult as Adopting adult
     participant counter as GoatCounter
     participant mail as E-mail
-    Note over creator,templates: Guidance for building apps
+    Note over creator,templates: Build an app with an AI assistant
     creator->>catalog: find me an app for my class
     catalog-->>creator: no fitting app
     creator->>assistant: build an app for my class
@@ -166,14 +166,14 @@ sequenceDiagram
     catalog-->>creator: its uses, thanks and feedback, as totals
 ```
 
-## A tailor-made app for an acute occasion
+## Practise a given scope, made to measure
 
-[A creator has an acute occasion and no app fits](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-tailor-made-app). When the catalog has none, their assistant builds the content with them, and the creator submits it and gets a temporary app for the learners.
+[An occasion sets exactly what a creator's learners have to practise, and no app covers it](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-tailor-made-app). When the catalog has none, their assistant builds the content with them, and the creator submits it and gets a temporary app for the learners.
 
 ```arc42
 :::runtime-scenario
 id: rs-tailor-made-app
-title: A tailor-made app for an acute occasion
+title: Practise a given scope, made to measure
 trigger: A creator has an acute occasion for which the catalog has no fitting app
 involves: bb-catalog, bb-practice
 x-experience: x-tailor-made-app
