@@ -5,7 +5,7 @@
     "commit": "3b8a25b661c79aa7b73acd0537d8d0808f824894"
   },
   "head": {
-    "label": "61bb6d5e8b5caa51222ff994914edd35e56100da"
+    "label": "c3b9c95f6a4baf8fac42f18db9ad6b5f91d61661"
   },
   "acceptanceBase": "3b8a25b661c79aa7b73acd0537d8d0808f824894",
   "untracked": [],
@@ -54,6 +54,25 @@
         }
       },
       {
+        "id": "r-creators-ai-assistants",
+        "kind": "relationship",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "2-design/d4-relationships.pdt42.md",
+          "line": 55
+        },
+        "section": {
+          "file": "2-design/d4-relationships.pdt42.md",
+          "headingPath": [
+            "Choose the core relationships",
+            "Creators and their AI assistants"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
         "id": "t-hand-over-made-to-measure",
         "kind": "transaction",
         "status": "added",
@@ -81,13 +100,13 @@
         "proseChanged": true,
         "head": {
           "file": "2-design/d5-transactions.pdt42.md",
-          "line": 331
+          "line": 338
         },
         "section": {
           "file": "2-design/d5-transactions.pdt42.md",
           "headingPath": [
             "Identify the elementary transactions and channels",
-            "Creators and their AI assistants",
+            "Transactions Board: Creators and their AI assistants",
             "Build an app with an AI assistant"
           ],
           "occurrence": 1
@@ -101,7 +120,7 @@
         "proseChanged": true,
         "head": {
           "file": "2-design/d5-transactions.pdt42.md",
-          "line": 497
+          "line": 505
         },
         "section": {
           "file": "2-design/d5-transactions.pdt42.md",
@@ -273,6 +292,22 @@
       {
         "status": "added",
         "edge": {
+          "from": "r-creators-ai-assistants",
+          "to": "e-ai-assistants",
+          "relation": "between"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "r-creators-ai-assistants",
+          "to": "e-creators",
+          "relation": "between"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
           "from": "s-building-guidance",
           "to": "t-build-with-assistant",
           "relation": "supports"
@@ -324,6 +359,14 @@
           "from": "t-build-with-assistant",
           "to": "m-ai-creators",
           "relation": "motivation"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "t-build-with-assistant",
+          "to": "r-creators-ai-assistants",
+          "relation": "relationship"
         }
       },
       {
@@ -473,18 +516,21 @@
     ],
     "proseSections": [
       {
-        "status": "added",
+        "status": "modified",
         "section": {
           "file": "2-design/d5-transactions.pdt42.md",
           "headingPath": [
-            "Identify the elementary transactions and channels",
-            "Creators and their AI assistants"
+            "Identify the elementary transactions and channels"
           ],
           "occurrence": 1
         },
+        "base": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 1
+        },
         "head": {
           "file": "2-design/d5-transactions.pdt42.md",
-          "line": 321
+          "line": 1
         }
       }
     ],
@@ -496,9 +542,15 @@
         "removed": 0
       },
       {
-        "file": "2-design/d5-transactions.pdt42.md",
-        "added": 4,
+        "file": "2-design/d4-relationships.pdt42.md",
+        "added": 1,
         "modified": 0,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d5-transactions.pdt42.md",
+        "added": 3,
+        "modified": 1,
         "removed": 0
       },
       {
