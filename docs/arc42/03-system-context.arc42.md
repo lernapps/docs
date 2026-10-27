@@ -33,6 +33,7 @@ flowchart LR
         bb-catalog["Catalog"]
         bb-tooling["Tooling"]
         bb-app-templates["App templates"]
+        bb-practice["Practice"]
         bb-docs["Docs"]
         bb-org["Organisation"]
     end
@@ -74,7 +75,7 @@ id: actor-student
 title: Student
 type: person
 description: Learners (pdt42 e-students) who use an app and may say thanks
-requires: if-served-apps, if-thanks, if-catalog-pages
+requires: if-served-apps, if-thanks, if-catalog-pages, if-practice-previews
 :::
 ```
 
@@ -89,7 +90,7 @@ id: actor-creator
 title: Creator
 type: person
 description: App creators (pdt42 e-creators); they build and list through their AI assistant
-requires: if-home-pages, if-catalog-pages
+requires: if-home-pages, if-catalog-pages, if-practice-form
 :::
 ```
 
@@ -104,7 +105,7 @@ id: actor-ai-assistant
 title: Creator's AI assistant
 type: system
 description: The AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI (pdt42 e-ai-assistants)
-requires: if-guidance, if-tooling-cli, if-listing, if-home-pages
+requires: if-guidance, if-tooling-cli, if-listing, if-home-pages, if-practice-guidance
 :::
 ```
 

@@ -46,3 +46,16 @@ between: e-creators, e-students
 core: yes
 :::
 ```
+
+## Creators and their AI assistants
+
+Creators build through their AI assistant (KD-10, KD-11); the assistant builds the app and the creator decides. It is no core relationship: the platform does not stand between them, but its guidance makes the exchange easier.
+
+```pdt42
+:::relationship
+id: r-creators-ai-assistants
+title: Creators and their AI assistants
+between: e-creators, e-ai-assistants
+core: no
+:::
+```

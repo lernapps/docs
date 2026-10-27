@@ -6,7 +6,7 @@ Two constraints shape every test. There is no hidden data collection (KD-18): on
 
 ## First draft: first apps
 
-Starts now, with the creators the platform owner knows. It tests the supply side, whether the anonymous thanks works at all, also from school networks, and whether the platform convinces teachers on its own. It also tests whether creators accept that the platform serves a copy of their app (KD-21); the copies are in place before the first referral wave, so teachers already meet every app under lernapps.net. For the last, the owner's contacts forward a referral link to colleagues the owner does not know: the platform itself is the pitch. The thanks is part of the first draft too, and nobody is told about it: if thanks arrive, the platform made them self-evident.
+Starts now, with the creators the platform owner knows. It tests the supply side, whether the anonymous thanks works at all, also from school networks, and whether the platform convinces teachers on its own. It also tests whether creators accept that the platform serves a copy of their app (KD-21); the copies are in place before the first referral wave, so teachers already meet every app under lernapps.net. For the last, the owner's contacts forward a referral link to colleagues the owner does not know: the platform itself is the pitch. The thanks is part of the first draft too, and nobody is told about it: if thanks arrive, the platform made them self-evident. It also tests whether adults become creators when an occasion sets what to practise and no app fits; this needs no invitation, as temporary apps made to measure are open to anyone.
 
 ```pdt42
 :::canvas
@@ -20,12 +20,13 @@ of: mvp-first-draft
 :::mvp
 id: mvp-first-draft
 title: First draft: first apps
-experiences: x-list-and-hear-back, x-app-in-minutes
+experiences: x-list-and-hear-back, x-app-in-minutes, x-tailor-made-app
 base:
   - 5 to 10 potential creators from the platform owner's network
   - Teachers reached through the owner's contacts, who forward a referral link
   - The first apps in the [app catalogue](https://lernapps.net/apps/), each served as a copy under lernapps.net
   - The docs site and the GitHub organisation lernapps with its workflows
+  - Temporary apps made to measure, open to anyone
 implementation: Concierge: the owner invites the creators personally and helps with the first listing; listing, the copy of each listed app under lernapps.net, overview, referral links and the anonymous thanks are built for real, in their simplest form; the thanks is explained to no one, the platform has to make it self-evident
 status: planned
 :::
@@ -131,6 +132,23 @@ kind: other
 riskiest: no
 test: Creators who teach send one thank-you from their school network and say whether it worked
 criteria: It works at most of the schools of the creators who teach
+status: open
+:::
+```
+
+#### Adults with a set scope and no fitting app become creators when it costs minutes
+
+Building got cheap; an adult whose occasion sets exactly what to practise should make an app instead of giving up, if it costs minutes. Submissions and approvals are explicit, public actions, so counting them keeps to KD-18. Approval can be missing because no one looks again once the app has done its job, so the platform asks the creator when the app ends.
+
+```pdt42
+:::assumption
+id: a-set-scope-creators
+title: Adults with a set scope and no fitting app become creators when it costs minutes
+mvp: mvp-first-draft
+kind: attraction
+riskiest: yes
+test: Count the apps made to measure and the thumbs-up they receive; when a temporary app ends, the platform asks its creator for feedback
+criteria: At least 10 apps made to measure by creators within 3 weeks, at least 5 of them with a thumbs-up
 status: open
 :::
 ```

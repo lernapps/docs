@@ -1,6 +1,6 @@
 # Identify the elementary transactions and channels
 
-*One Transactions Board per core relationship (D4). Each transaction is a repeatable action with a specific value unit; `happening: yes` marks what already occurs today, without lernapps.net. The channels are what the platform would build to lower the cost of each transaction.*
+*One Transactions Board per relationship (D4). Each transaction is a repeatable action with a specific value unit; `happening: yes` marks what already occurs today, without lernapps.net. The channels are what the platform would build to lower the cost of each transaction.*
 
 Three transactions have no platform channel on purpose: learning with an app and working on it happen inside the app itself, and students thank adults directly in class. The platform does not need to stand between them.
 
@@ -257,6 +257,26 @@ motivation: m-creators-students
 :::
 ```
 
+### Hand over a made-to-measure app
+
+A creator has a solution made for an acute occasion, such as a test of their own child, and hands it to the learners as a temporary app. The creator's own assistant writes the content, so the creator stays its author.
+
+```pdt42
+:::transaction
+id: t-hand-over-made-to-measure
+title: Hand over a made-to-measure app
+relationship: r-creators-students
+from: e-creators
+to: e-students
+direction: one-way
+value-unit: Access to a temporary app made to measure for one occasion
+happening: no
+channel: ch-temporary-preview
+kind: goods
+motivation: m-creators-students
+:::
+```
+
 ### Return to an app
 
 Students come back to an app on their own, as often as they need to practise a topic.
@@ -295,6 +315,38 @@ happening: no
 channel: ch-feedback
 kind: reputation
 motivation: m-students-creators-gratitude
+:::
+```
+
+## Transactions Board: Creators and their AI assistants
+
+```pdt42
+:::canvas
+id: cv-board-creators-ai-assistants
+canvas: transactions-board
+of: r-creators-ai-assistants
+:::
+```
+
+The relationship is not a core one (D4); the platform lowers the cost of its transaction with its guidance.
+
+### Build an app with an AI assistant
+
+In their relationship, the creator brings the occasion and the material, and the assistant reviews the material, agrees the scope with the creator and builds the content.
+
+```pdt42
+:::transaction
+id: t-build-with-assistant
+title: Build an app with an AI assistant
+relationship: r-creators-ai-assistants
+from: e-ai-assistants
+to: e-creators
+direction: two-way
+value-unit: The content of an app, made from the creator's occasion and material within the scope agreed with them
+happening: yes
+channel: ch-guidance
+kind: services
+motivation: m-ai-creators
 :::
 ```
 
@@ -442,5 +494,23 @@ components:
   - Templates for three kinds of app that already keep those rules
   - A command that creates an app and checks it
 improvement: Building an app that keeps the platform's rules no longer needs expert knowledge, only the creator's idea and their assistant
+:::
+```
+
+### A temporary app made to measure
+
+The creator's assistant writes content of its own for an acute occasion, and the platform turns it into an app the learners open at once.
+
+```pdt42
+:::channel
+id: ch-temporary-preview
+title: A temporary app made to measure
+medium: digital
+components:
+  - Content the assistant wrote, checked automatically, with plain answers it can act on
+  - An app built from it, which the learners open at once, without installation or sign-up
+  - Nothing about the learners leaves the browser: the platform keeps nothing, and whatever their browser keeps stays there
+  - Gone after two weeks, or at once when the creator ends it; a solution that proved itself can be kept and checked for the catalog
+improvement: A solution for an acute occasion exists in minutes, without a repository, hosting, a listing or an account
 :::
 ```

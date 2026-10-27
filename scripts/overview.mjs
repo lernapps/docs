@@ -15,7 +15,8 @@
 // Rules of this script that the models do not show: the people on the page are the roles of the journeys; a part's
 // addresses are the deployment nodes under lernapps.net that host it; the trailing steps of a journey that flow
 // back to its main role are shown as what that role gets back; a block's first sentence is its job; an interface's
-// `x-risk` names the risk that holds while it does not deliver.
+// `x-risk` names the risk that holds while it does not deliver; a step before any transaction, or in a relationship that
+// is not core, is building the app.
 //
 //   node scripts/overview.mjs <site-dir>   (writes <site-dir>/index.html (German frame), <site-dir>/en/index.html and
 //                                           <site-dir>/overview.md, the same content)
@@ -33,7 +34,7 @@ const run = promisify(execFile);
 const arc = JSON.parse(execFileSync("arc42", ["--dir", "docs/arc42", "get", "--format", "json"], { encoding: "utf8" }));
 const arcById = new Map(arc.elements.map((e) => [e.id, e]));
 const pdtList = JSON.parse(execFileSync("pdt42", ["--dir", "docs/pdt42", "get", "--format", "json"], { encoding: "utf8" }));
-const KINDS = new Set(["platform", "entity", "experience", "service", "transaction", "channel"]);
+const KINDS = new Set(["platform", "entity", "experience", "service", "transaction", "channel", "relationship"]);
 const pdtById = new Map(
   await Promise.all(
     pdtList
@@ -322,7 +323,10 @@ const descOf = (u) => lower(u.description?.replace(/\s*\(pdt42[^)]*\)/, "") ?? "
 // How the platform helps build an app: the interfaces that realise the channels of the step before any transaction
 // ("Building the app"), and everything else the outside systems that use them in a journey require, grouped by the
 // part that provides them.
-const buildChannels = new Set(journeys.flatMap((j) => j.steps.filter((st) => !st.ts.length).flatMap((st) => st.services.map((v) => v.s.channel))));
+// A building step is one before any transaction, or one whose transactions all belong to a relationship that is not
+// core (the creator and their assistant): the platform supports it, but does not stand between the two.
+const isBuildingStep = (st) => !st.ts.length || st.ts.every((t) => pdtById.get(t.relationship)?.core === false);
+const buildChannels = new Set(journeys.flatMap((j) => j.steps.filter((st) => st.services.length && isBuildingStep(st)).flatMap((st) => st.services.map((v) => v.s.channel))));
 const buildIfaces = new Set(interfaces.filter((i) => list(i.extensions?.realises).some((ch) => buildChannels.has(ch))).map((i) => i.id));
 const inJourneys = new Set([...behind.values()].flatMap(({ seq }) => seq.participants.map((p) => p.id)));
 const builders = arc.elements.filter((e) => e.kind === "actor" && e.type === "system" && inJourneys.has(e.id) && list(e.requires).some((id) => buildIfaces.has(id)));

@@ -12,9 +12,9 @@ own repositories are outside the system: towards them, the system meets their Gi
 ## 1.1 Requirements Overview
 
 The platform's job is to get small, active-learning apps into use (focus arena, [KD-02](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-02-four-arenas-in-a-pure-sequence-focus-on-getting-apps-into-use-e1-e4)). The system has to serve
-three [experiences](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md): [a teacher who takes over a class at short notice brings an app into class within minutes](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-app-in-minutes), [a parent whose child struggles finds an
-app the child can start and come back to](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-child-struggles), and [a creator lists an app and hears that
-it is used](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back).
+these [experiences](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md): [a teacher who takes over a class at short notice brings an app into class within minutes](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-app-in-minutes), [a parent whose child struggles finds an
+app that helps the child understand the topic, to start and come back to](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-child-struggles), [a creator lists an app and hears that
+it is used](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back), and [a creator whose test, substitute lesson or missed lessons set a scope that no app covers has an app made to measure](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-tailor-made-app).
 
 From the platform model follow these requirements on the system:
 

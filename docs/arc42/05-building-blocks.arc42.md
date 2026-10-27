@@ -21,6 +21,7 @@ flowchart TB
     bb-catalog["Catalog (apps)"]
     bb-tooling["Tooling (tooling)"]
     bb-app-templates["App templates (app-templates)"]
+    bb-practice["Practice (practice)"]
     bb-docs["Docs (docs)"]
     bb-org["Organisation (.github)"]
     bb-catalog -->|"if-site-frame"| bb-website
@@ -28,6 +29,11 @@ flowchart TB
     bb-docs -->|"if-site-frame"| bb-website
     bb-catalog -->|"if-tooling-cli"| bb-tooling
     bb-tooling -->|"if-archetypes"| bb-app-templates
+    bb-practice -->|"if-site-frame"| bb-website
+    bb-practice -->|"if-tooling-cli"| bb-tooling
+    bb-practice -->|"if-site-actions"| bb-tooling
+    bb-practice -->|"if-catalog-pages"| bb-catalog
+    bb-practice -->|"if-archetypes"| bb-app-templates
     bb-website -->|"if-site-actions"| bb-tooling
     bb-catalog -->|"if-site-actions"| bb-tooling
     bb-docs -->|"if-site-actions"| bb-tooling
@@ -287,6 +293,68 @@ title: Archetypes
 provider: bb-app-templates
 protocol: git repository at a pinned commit
 x-realises: ch-guidance
+:::
+```
+
+## Practice
+
+Turns content that a creator's assistant wrote for an acute occasion into a temporary app for a child or a class, and guides that assistant. Its own architecture refines this block: [practice, chapter 5](https://github.com/lernapps/practice/blob/main/docs/arc42/05-building-blocks.arc42.md).
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
+:::building-block
+id: bb-practice
+implements: concept-one-origin, concept-privacy-by-construction, concept-checked-not-declared, concept-assistants-as-readers, concept-plain-language, concept-pinned-and-pulled
+title: Practice
+technology: TypeScript, Node.js, GitHub Actions, GitHub Pages
+requires: if-site-frame, if-site-actions, if-tooling-cli, if-archetypes, if-catalog-pages
+x-repo: lernapps/practice
+:::
+```
+
+### Practice guidance
+
+The guidance that leads a creator's AI assistant to such an app, with an `llms.txt`.
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
+:::interface
+id: if-practice-guidance
+title: Practice guidance
+provider: bb-practice
+protocol: Markdown pages and llms.txt under lernapps.net/practice/
+x-realises: ch-guidance
+:::
+```
+
+### Submission form
+
+The form through which a creator submits the content.
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
+:::interface
+id: if-practice-form
+title: Submission form
+provider: bb-practice
+protocol: Form on GitHub
+x-realises: ch-temporary-preview
+:::
+```
+
+### Preview pages
+
+The temporary app of each submission.
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
+:::interface
+id: if-practice-previews
+title: Preview pages
+provider: bb-practice
+protocol: HTTPS pages under lernapps.net/practice/
+x-realises: ch-temporary-preview
+x-missing-ch-temporary-preview: How a kept solution becomes an entry of the catalog, with its metadata, is not defined.
 :::
 ```
 
