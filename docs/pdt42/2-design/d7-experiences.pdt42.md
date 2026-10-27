@@ -118,3 +118,41 @@ revenues:
   - Thanks as the currency that keeps creators contributing
 :::
 ```
+
+## Prepare for a test with the family's assistant
+
+The journey of a parent whose child has a test coming up: the parent's AI assistant looks for an app for the topic and, when none fits, reads photos of the school material, agrees the scope with the child and writes content of its own. The parent submits it, the platform checks it and builds an app, and the child practises with it at a temporary address. The learning state stays in the child's browser, and the photos go to the family's assistant only. The family wrote the content, so no other creator is thanked. A preparation that helped can be kept and checked for the catalog.
+
+```pdt42
+:::canvas
+id: cv-x-prepare-for-test
+canvas: platform-experience
+of: x-prepare-for-test
+:::
+```
+
+```pdt42
+:::experience
+id: x-prepare-for-test
+title: Prepare for a test with the family's assistant
+core-entity: e-adopters
+roles: e-students, e-creators
+relationship: r-adults-students
+value-proposition: A test next week and a child who is not ready: your assistant turns the school material into practice of its own, ready to open within minutes, with nothing about your child leaving the family
+steps: s-finding, t-find-app, s-preparation-guidance, s-temporary-preview, t-hand-over-preparation, t-practise-for-test
+activities:
+  - Checking and building each submission, and answering with what to correct
+  - Publishing temporary apps and deleting them when they end
+  - Keeping the guidance for the family's assistant current
+resources:
+  - The guidance for the family's assistant
+  - The explainer template and the checks of the platform
+  - GitHub for the form, the builds and the temporary addresses
+costs:
+  - The platform owner's time
+  - Near-zero operating costs: GitHub builds and serves the previews
+revenues:
+  - No money: the platform is free
+  - Preparations that proved themselves, which can enter the catalog
+:::
+```

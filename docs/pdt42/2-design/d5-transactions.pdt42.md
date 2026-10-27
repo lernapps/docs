@@ -227,6 +227,45 @@ motivation: m-students-adopters-gratitude
 :::
 ```
 
+### Hand over a preparation to the child
+
+A parent has the child's school material turned into a preparation for one test, and the child gets it as a temporary app at an address of its own. Parents do this today with worksheets and questioning, without a form that fits one child and one test. The content is written by the family's own AI assistant, not copied from the material, so the parent stays its author; nothing about the child, no photo and no name, reaches the platform.
+
+```pdt42
+:::transaction
+id: t-hand-over-preparation
+title: Hand over a preparation to the child
+relationship: r-adults-students
+from: e-adopters
+to: e-students
+direction: one-way
+value-unit: Access to a preparation for one test, as a temporary app at its own address
+happening: no
+channel: ch-temporary-preview
+kind: access
+motivation: m-adopters-students
+:::
+```
+
+### Practise for a test
+
+The child practises with the preparation: a self-assessment, exercises and a training plan for the days until the test. It happens in the app; the learning state stays in the child's browser and is never part of the content.
+
+```pdt42
+:::ignore H108 Practising happens in the app; no platform channel on purpose :::
+:::transaction
+id: t-practise-for-test
+title: Practise for a test
+relationship: r-adults-students
+from: e-adopters
+to: e-students
+direction: one-way
+value-unit: A practice session on the topics of one test, at the child's own pace
+happening: no
+kind: goods
+:::
+```
+
 ## Transactions Board: Creators and students
 
 ```pdt42
@@ -442,5 +481,25 @@ components:
   - Templates for three kinds of app that already keep those rules
   - A command that creates an app and checks it
 improvement: Building an app that keeps the platform's rules no longer needs expert knowledge, only the creator's idea and their assistant
+:::
+```
+
+### A temporary app for one test
+
+A family's assistant turns the child's school material into content of its own, and the platform turns the content into an app the child opens at once. The content is data, not code: it uses only the building blocks of the explainer, so content from outside runs no code under lernapps.net. The app is temporary on purpose, so that nothing about a child stays on the platform longer than it helps.
+
+```pdt42
+:::channel
+id: ch-temporary-preview
+title: A temporary app for one test
+medium: digital
+components:
+  - A form with subject, grade and federal state, and the content as one file; nothing about the child
+  - Automatic checks of the content and a build of the app from the content and the explainer template
+  - Results as comments that the family's assistant can act on
+  - A temporary address the child opens at once, without installation or sign-up
+  - The learning state stays in the child's browser, never in the content
+  - Deleted after two weeks unless someone reacts with a thumbs-up; a preparation that proved itself can be checked for the catalog
+improvement: A family has a working practice app before the test, without a repository, hosting, a listing or an account
 :::
 ```

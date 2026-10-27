@@ -273,3 +273,35 @@ stage: new-opportunity
 kind: other
 :::
 ```
+
+### Guidance for preparing a test
+
+Helps a parent and their AI assistant prepare one child for one test: the assistant asks what the test covers, reads photos of the school material, agrees the scope with the child and writes content of its own, never copied from the material. The guidance is written for the assistant (KD-16), and the photos go to the family's assistant only.
+
+```pdt42
+:::service
+id: s-preparation-guidance
+title: Guidance for preparing a test
+for: e-adopters
+stage: onboarding
+kind: other
+supports: t-hand-over-preparation
+channel: ch-guidance
+:::
+```
+
+### A temporary app for a test
+
+Turns the content the family's assistant wrote into an app the child can open at once, and tells the assistant what to correct when the content does not pass the checks. The app is deleted after two weeks, unless someone keeps it.
+
+```pdt42
+:::service
+id: s-temporary-preview
+title: A temporary app for a test
+for: e-adopters
+stage: onboarding
+kind: other
+supports: t-hand-over-preparation
+channel: ch-temporary-preview
+:::
+```
