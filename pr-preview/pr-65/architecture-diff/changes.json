@@ -1,0 +1,586 @@
+{
+  "version": 1,
+  "base": {
+    "label": "3b8a25b661c79aa7b73acd0537d8d0808f824894",
+    "commit": "3b8a25b661c79aa7b73acd0537d8d0808f824894"
+  },
+  "head": {
+    "label": "d10cbc6174947ccd78504a21ec11df7b7eab2b3f"
+  },
+  "acceptanceBase": "3b8a25b661c79aa7b73acd0537d8d0808f824894",
+  "untracked": [],
+  "accepted": false,
+  "hasBlockingFindings": true,
+  "findings": [
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/03-system-context.arc42.md",
+      "line": 61,
+      "elementId": "actor-adopting-adult",
+      "message": "Block 'actor-adopting-adult' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/03-system-context.arc42.md",
+      "line": 75,
+      "elementId": "actor-student",
+      "message": "Block 'actor-student' changed without changing its section prose."
+    }
+  ],
+  "groups": {
+    "warnings": [
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
+        "file": "docs/arc42/03-system-context.arc42.md",
+        "line": 61,
+        "elementId": "actor-adopting-adult",
+        "message": "Block 'actor-adopting-adult' changed without changing its section prose."
+      },
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
+        "file": "docs/arc42/03-system-context.arc42.md",
+        "line": 75,
+        "elementId": "actor-student",
+        "message": "Block 'actor-student' changed without changing its section prose."
+      }
+    ],
+    "untouched": [],
+    "updated": [],
+    "uncovered": []
+  },
+  "architecture": {
+    "elements": [
+      {
+        "id": "actor-adopting-adult",
+        "kind": "actor",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "requires",
+            "before": [
+              "if-catalog-pages",
+              "if-served-apps",
+              "if-thanks",
+              "if-home-pages"
+            ],
+            "after": [
+              "if-catalog-pages",
+              "if-served-apps",
+              "if-thanks",
+              "if-home-pages",
+              "if-practice-form"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 58
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 61
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "Adopting adult"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "actor-student",
+        "kind": "actor",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "requires",
+            "before": [
+              "if-served-apps",
+              "if-thanks",
+              "if-catalog-pages"
+            ],
+            "after": [
+              "if-served-apps",
+              "if-thanks",
+              "if-catalog-pages",
+              "if-practice-previews"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 72
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 75
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "Student"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "actor-family-assistant",
+        "kind": "actor",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 121
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "Family's AI assistant"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "bb-practice",
+        "kind": "building-block",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 303
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "Practice"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "if-practice-guidance",
+        "kind": "interface",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 319
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "Practice",
+            "Practice guidance"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "if-practice-form",
+        "kind": "interface",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 334
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "Practice",
+            "Submission form"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "if-practice-previews",
+        "kind": "interface",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 349
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "Practice",
+            "Preview pages"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "rs-prepare-for-test",
+        "kind": "runtime-scenario",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 174
+        },
+        "section": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "headingPath": [
+            "Runtime View",
+            "Prepare for a test with the family's assistant"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "dn-pages-practice",
+        "kind": "deployment-node",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "line": 111
+        },
+        "section": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "headingPath": [
+            "Deployment View",
+            "Production: GitHub Pages under lernapps.net",
+            "lernapps.net/practice"
+          ],
+          "occurrence": 1
+        }
+      }
+    ],
+    "diagrams": [
+      {
+        "id": "context-overall",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "source",
+            "before": "flowchart LR\n    actor-adopting-adult[\"Adopting adult\"]\n    actor-student[\"Student\"]\n    actor-creator[\"Creator\"]\n    actor-ai-assistant[\"Creator's AI assistant\"]\n    actor-gatekeeper[\"School gatekeeper\"]\n    actor-platform-owner[\"Platform owner\"]\n    actor-app-repo-actions[\"Creators' app repositories\"]\n    actor-github[\"GitHub\"]\n    actor-renovate[\"Renovate\"]\n    actor-goatcounter[\"GoatCounter\"]\n    actor-email[\"E-mail\"]\n    subgraph system[\"lernapps.net\"]\n        bb-website[\"Website\"]\n        bb-catalog[\"Catalog\"]\n        bb-tooling[\"Tooling\"]\n        bb-app-templates[\"App templates\"]\n        bb-docs[\"Docs\"]\n        bb-org[\"Organisation\"]\n    end\n    actor-adopting-adult -->|\"finds, passes on and thanks\"| system\n    actor-student -->|\"uses an app and thanks\"| system\n    actor-creator -->|\"decides to build an app\"| system\n    actor-ai-assistant -->|\"builds and lists an app\"| system\n    actor-gatekeeper -->|\"reads privacy notice and imprint\"| system\n    actor-platform-owner -->|\"decides and keeps the models\"| system\n    actor-app-repo-actions -->|\"checks, builds and publishes an app\"| system\n    actor-github -->|\"hosts, runs and carries every contribution\"| system\n    actor-renovate -->|\"moves the pins between repositories\"| system\n    actor-goatcounter -->|\"counts the platform's open counts\"| system\n    actor-email -->|\"carries thanks\"| system",
+            "after": "flowchart LR\n    actor-adopting-adult[\"Adopting adult\"]\n    actor-student[\"Student\"]\n    actor-creator[\"Creator\"]\n    actor-ai-assistant[\"Creator's AI assistant\"]\n    actor-family-assistant[\"Family's AI assistant\"]\n    actor-gatekeeper[\"School gatekeeper\"]\n    actor-platform-owner[\"Platform owner\"]\n    actor-app-repo-actions[\"Creators' app repositories\"]\n    actor-github[\"GitHub\"]\n    actor-renovate[\"Renovate\"]\n    actor-goatcounter[\"GoatCounter\"]\n    actor-email[\"E-mail\"]\n    subgraph system[\"lernapps.net\"]\n        bb-website[\"Website\"]\n        bb-catalog[\"Catalog\"]\n        bb-tooling[\"Tooling\"]\n        bb-app-templates[\"App templates\"]\n        bb-practice[\"Practice\"]\n        bb-docs[\"Docs\"]\n        bb-org[\"Organisation\"]\n    end\n    actor-adopting-adult -->|\"finds, passes on and thanks\"| system\n    actor-student -->|\"uses an app and thanks\"| system\n    actor-creator -->|\"decides to build an app\"| system\n    actor-ai-assistant -->|\"builds and lists an app\"| system\n    actor-family-assistant -->|\"prepares a test with the family and has the content built\"| system\n    actor-gatekeeper -->|\"reads privacy notice and imprint\"| system\n    actor-platform-owner -->|\"decides and keeps the models\"| system\n    actor-app-repo-actions -->|\"checks, builds and publishes an app\"| system\n    actor-github -->|\"hosts, runs and carries every contribution\"| system\n    actor-renovate -->|\"moves the pins between repositories\"| system\n    actor-goatcounter -->|\"counts the platform's open counts\"| system\n    actor-email -->|\"carries thanks\"| system"
+          }
+        ],
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 11
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 11
+        }
+      },
+      {
+        "id": "building-blocks-level-1",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "source",
+            "before": "flowchart TB\n    bb-website[\"Website (lernapps.github.io)\"]\n    bb-catalog[\"Catalog (apps)\"]\n    bb-tooling[\"Tooling (tooling)\"]\n    bb-app-templates[\"App templates (app-templates)\"]\n    bb-docs[\"Docs (docs)\"]\n    bb-org[\"Organisation (.github)\"]\n    bb-catalog -->|\"if-site-frame\"| bb-website\n    bb-tooling -->|\"if-site-frame\"| bb-website\n    bb-docs -->|\"if-site-frame\"| bb-website\n    bb-catalog -->|\"if-tooling-cli\"| bb-tooling\n    bb-tooling -->|\"if-archetypes\"| bb-app-templates\n    bb-website -->|\"if-site-actions\"| bb-tooling\n    bb-catalog -->|\"if-site-actions\"| bb-tooling\n    bb-docs -->|\"if-site-actions\"| bb-tooling",
+            "after": "flowchart TB\n    bb-website[\"Website (lernapps.github.io)\"]\n    bb-catalog[\"Catalog (apps)\"]\n    bb-tooling[\"Tooling (tooling)\"]\n    bb-app-templates[\"App templates (app-templates)\"]\n    bb-practice[\"Practice (practice)\"]\n    bb-docs[\"Docs (docs)\"]\n    bb-org[\"Organisation (.github)\"]\n    bb-catalog -->|\"if-site-frame\"| bb-website\n    bb-tooling -->|\"if-site-frame\"| bb-website\n    bb-docs -->|\"if-site-frame\"| bb-website\n    bb-catalog -->|\"if-tooling-cli\"| bb-tooling\n    bb-tooling -->|\"if-archetypes\"| bb-app-templates\n    bb-practice -->|\"if-site-frame\"| bb-website\n    bb-practice -->|\"if-tooling-cli\"| bb-tooling\n    bb-practice -->|\"if-archetypes\"| bb-app-templates\n    bb-website -->|\"if-site-actions\"| bb-tooling\n    bb-catalog -->|\"if-site-actions\"| bb-tooling\n    bb-docs -->|\"if-site-actions\"| bb-tooling"
+          }
+        ],
+        "base": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 11
+        },
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 11
+        }
+      },
+      {
+        "id": "rs-prepare-for-test-sequence",
+        "status": "added",
+        "attributes": [],
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 184
+        }
+      },
+      {
+        "id": "deployment-overall",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "aliases",
+            "before": "env_production=env-production, dn_pages_root=dn-pages-root, dn_pages_catalog=dn-pages-catalog, dn_pages_docs=dn-pages-docs, dn_pages_tooling=dn-pages-tooling, env_build=env-build, dn_repositories=dn-repositories, dn_actions=dn-actions, bb_website=bb-website, bb_catalog=bb-catalog, bb_docs=bb-docs, bb_tooling=bb-tooling, bb_org=bb-org, bb_app_templates=bb-app-templates",
+            "after": "env_production=env-production, dn_pages_root=dn-pages-root, dn_pages_catalog=dn-pages-catalog, dn_pages_docs=dn-pages-docs, dn_pages_tooling=dn-pages-tooling, dn_pages_practice=dn-pages-practice, env_build=env-build, dn_repositories=dn-repositories, dn_actions=dn-actions, bb_website=bb-website, bb_catalog=bb-catalog, bb_docs=bb-docs, bb_tooling=bb-tooling, bb_practice=bb-practice, bb_org=bb-org, bb_app_templates=bb-app-templates"
+          },
+          {
+            "name": "source",
+            "before": "architecture-beta\n    group env_production(cloud)[GitHub Pages under lernapps.net]\n    group dn_pages_root(server)[lernapps.net] in env_production\n    group dn_pages_catalog(server)[lernapps.net/apps] in env_production\n    group dn_pages_docs(server)[lernapps.net/docs] in env_production\n    group dn_pages_tooling(server)[lernapps.net/tooling] in env_production\n    service bb_website(internet)[Website] in dn_pages_root\n    service bb_catalog(internet)[Catalog and app copies] in dn_pages_catalog\n    service bb_docs(internet)[Docs] in dn_pages_docs\n    service bb_tooling(internet)[Tooling pages] in dn_pages_tooling\n    group env_build(cloud)[GitHub]\n    group dn_repositories(database)[Repositories] in env_build\n    service bb_org(disk)[Organisation] in dn_repositories\n    service bb_app_templates(disk)[App templates] in dn_repositories",
+            "after": "architecture-beta\n    group env_production(cloud)[GitHub Pages under lernapps.net]\n    group dn_pages_root(server)[lernapps.net] in env_production\n    group dn_pages_catalog(server)[lernapps.net/apps] in env_production\n    group dn_pages_docs(server)[lernapps.net/docs] in env_production\n    group dn_pages_tooling(server)[lernapps.net/tooling] in env_production\n    group dn_pages_practice(server)[lernapps.net/practice] in env_production\n    service bb_website(internet)[Website] in dn_pages_root\n    service bb_catalog(internet)[Catalog and app copies] in dn_pages_catalog\n    service bb_docs(internet)[Docs] in dn_pages_docs\n    service bb_tooling(internet)[Tooling pages] in dn_pages_tooling\n    service bb_practice(internet)[Practice] in dn_pages_practice\n    group env_build(cloud)[GitHub]\n    group dn_repositories(database)[Repositories] in env_build\n    service bb_org(disk)[Organisation] in dn_repositories\n    service bb_app_templates(disk)[App templates] in dn_repositories"
+          }
+        ],
+        "base": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "line": 10
+        },
+        "head": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "line": 10
+        }
+      }
+    ],
+    "edges": [
+      {
+        "status": "added",
+        "edge": {
+          "from": "actor-adopting-adult",
+          "to": "if-practice-form",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "actor-family-assistant",
+          "to": "if-catalog-pages",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "actor-family-assistant",
+          "to": "if-practice-guidance",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "actor-student",
+          "to": "if-practice-previews",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "concept-assistants-as-readers",
+          "relation": "implements"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "concept-checked-not-declared",
+          "relation": "implements"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "concept-one-origin",
+          "relation": "implements"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "concept-pinned-and-pulled",
+          "relation": "implements"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "concept-plain-language",
+          "relation": "implements"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "concept-privacy-by-construction",
+          "relation": "implements"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "concept-why-in-history",
+          "relation": "implements"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "if-practice-form",
+          "relation": "provides"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "if-practice-guidance",
+          "relation": "provides"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "if-practice-previews",
+          "relation": "provides"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "if-archetypes",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "if-site-frame",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-practice",
+          "to": "if-tooling-cli",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dn-pages-practice",
+          "to": "bb-practice",
+          "relation": "hosts"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dn-pages-practice",
+          "to": "env-production",
+          "relation": "parent"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "rs-prepare-for-test",
+          "to": "bb-app-templates",
+          "relation": "involves"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "rs-prepare-for-test",
+          "to": "bb-catalog",
+          "relation": "involves"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "rs-prepare-for-test",
+          "to": "bb-practice",
+          "relation": "involves"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "rs-prepare-for-test",
+          "to": "bb-tooling",
+          "relation": "involves"
+        }
+      }
+    ],
+    "proseSections": [
+      {
+        "status": "modified",
+        "section": {
+          "file": "docs/arc42/01-introduction-and-goals.arc42.md",
+          "headingPath": [
+            "Introduction and Goals",
+            "1.1 Requirements Overview"
+          ],
+          "occurrence": 1
+        },
+        "base": {
+          "file": "docs/arc42/01-introduction-and-goals.arc42.md",
+          "line": 12
+        },
+        "head": {
+          "file": "docs/arc42/01-introduction-and-goals.arc42.md",
+          "line": 12
+        }
+      }
+    ],
+    "documents": [
+      {
+        "file": "docs/arc42/01-introduction-and-goals.arc42.md",
+        "added": 0,
+        "modified": 1,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/03-system-context.arc42.md",
+        "added": 1,
+        "modified": 3,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/05-building-blocks.arc42.md",
+        "added": 4,
+        "modified": 1,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/06-runtime-view.arc42.md",
+        "added": 2,
+        "modified": 0,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/07-deployment-view.arc42.md",
+        "added": 1,
+        "modified": 1,
+        "removed": 0
+      }
+    ]
+  }
+}
