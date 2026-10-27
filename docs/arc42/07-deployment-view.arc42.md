@@ -105,7 +105,7 @@ hosts: bb-tooling
 
 ### lernapps.net/practice
 
-The guidance for the family's assistant and the temporary apps.
+The guidance for creators' assistants and the temporary apps.
 
 ```arc42
 :::deployment-node

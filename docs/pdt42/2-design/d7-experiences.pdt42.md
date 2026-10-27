@@ -119,32 +119,32 @@ revenues:
 :::
 ```
 
-## Prepare for a test with the family's assistant
+## A tailor-made app for an acute occasion
 
-The journey of a parent whose child has a test coming up: the family's assistant looks for an app and otherwise writes content of its own, and the child practises with the app built from it. The photos of the school material go to the family's assistant only. The family wrote the content, so there is no creator to thank.
+The journey of an adult or a student with an acute occasion, such as a test of their own child or exercises for a class during an absence, for which no app fits: their assistant writes content of its own, and the learners practise with the app built from it. The photos of school material go to the assistant only. What proved itself continues as in "List an app and hear it is used".
 
 ```pdt42
 :::canvas
-id: cv-x-prepare-for-test
+id: cv-x-tailor-made-app
 canvas: platform-experience
-of: x-prepare-for-test
+of: x-tailor-made-app
 :::
 ```
 
 ```pdt42
 :::experience
-id: x-prepare-for-test
-title: Prepare for a test with the family's assistant
-core-entity: e-adopters
-roles: e-students, e-creators
-relationship: r-adults-students
-value-proposition: A test next week and a child who is not ready: your assistant turns the school material into practice of its own, ready to open within minutes
-steps: s-finding, t-find-app, s-preparation-guidance, s-temporary-preview, t-hand-over-preparation, t-practise-for-test
+id: x-tailor-made-app
+title: A tailor-made app for an acute occasion
+core-entity: e-creators
+roles: e-adopters, e-students
+relationship: r-creators-students
+value-proposition: An acute occasion and no app that fits: your assistant makes one to measure, ready within minutes
+steps: s-finding, t-find-app, s-building-guidance, s-temporary-preview, t-hand-over-made-to-measure, t-learn-with-app
 activities:
   - Checking the content and building apps from it
-  - Keeping the guidance for the family's assistant current
+  - Keeping the guidance for creators' assistants current
 resources:
-  - The guidance for the family's assistant
+  - The guidance for building apps
   - The platform's checks
 costs:
   - The platform owner's time

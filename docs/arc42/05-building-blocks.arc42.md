@@ -298,7 +298,7 @@ x-realises: ch-guidance
 
 ## Practice
 
-Turns content that a family's assistant wrote into a temporary app for one test, and guides that assistant. Its own architecture refines this block: [practice, chapter 5](https://github.com/lernapps/practice/blob/main/docs/arc42/05-building-blocks.arc42.md).
+Turns content that a creator's assistant wrote for an acute occasion into a temporary app for a child or a class, and guides that assistant. Its own architecture refines this block: [practice, chapter 5](https://github.com/lernapps/practice/blob/main/docs/arc42/05-building-blocks.arc42.md).
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
@@ -314,7 +314,7 @@ x-repo: lernapps/practice
 
 ### Practice guidance
 
-The guidance that leads the family's AI assistant, with an `llms.txt`.
+The guidance that leads a creator's AI assistant to such an app, with an `llms.txt`.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
@@ -329,7 +329,7 @@ x-realises: ch-guidance
 
 ### Submission form
 
-The form through which a parent submits the content.
+The form through which a creator submits the content.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
@@ -354,7 +354,7 @@ title: Preview pages
 provider: bb-practice
 protocol: HTTPS pages under lernapps.net/practice/
 x-realises: ch-temporary-preview
-x-missing-ch-temporary-preview: How a kept preparation becomes an entry of the catalog, with its metadata, is not defined.
+x-missing-ch-temporary-preview: How a kept solution becomes an entry of the catalog, with its metadata, is not defined.
 :::
 ```
 

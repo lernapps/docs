@@ -15,20 +15,21 @@ The engine has to solve the supply insight from D4: creators start for themselve
 
 ### App creators
 
-Creators arrive with an app they built for their own class or child. Their hurdle is the first listing; after that, what keeps them is learning that and how their app is used. Experienced creators may want to bring their own best practices into the guidance, and so grow into co-owners of the platform.
+Creators arrive with an app they built for their own class or child, or with an acute occasion of their own. Their hurdle is the first listing; after that, what keeps them is learning that and how their app is used. Experienced creators may want to bring their own best practices into the guidance, and so grow into co-owners of the platform.
 
 ```pdt42
 :::learning-engine
 id: le-creators
 entity: e-creators
 entry:
-  - An app built for their own class or child
+  - An app, or an acute occasion of their own such as a test of their child or exercises for a class during an absence, for their own class or child
   - Guidance for building apps with their AI assistant
 onboarding:
   - List the first app with almost no effort
 getting-better:
   - Learn whether and how the app is used
   - Improve the app with feedback from classes
+  - Keep a solution that proved itself and offer it to others
 new-opportunity:
   - Let others build on the app and build on theirs
   - Bring their own best practices into the guidance and co-own the platform
@@ -38,7 +39,7 @@ evolves-to: e-platform-owner
 
 ### Adopting adults
 
-Adults arrive looking for an app for one topic and grade, or through a colleague's recommendation. Once they trust the platform, they can pass apps on, give back, and eventually adapt apps themselves.
+Adults arrive looking for an app for one topic and grade, or through a colleague's recommendation. Once they trust the platform, they can pass apps on, give back, and eventually adapt apps themselves or have a solution made to measure when none fits.
 
 ```pdt42
 :::learning-engine
@@ -54,6 +55,7 @@ getting-better:
   - Give feedback, recommendations and thanks
 new-opportunity:
   - Adapt an app or build their own
+  - Get a solution made to measure for an acute occasion when no app fits
 evolves-to: e-creators
 :::
 ```
@@ -274,34 +276,18 @@ kind: other
 :::
 ```
 
-### Guidance for preparing a test
+### A temporary app made to measure
 
-Guides the family's AI assistant through preparing one child for one test, from the school material to content of its own (KD-16).
-
-```pdt42
-:::service
-id: s-preparation-guidance
-title: Guidance for preparing a test
-for: e-adopters
-stage: onboarding
-kind: other
-supports: t-hand-over-preparation
-channel: ch-guidance
-:::
-```
-
-### A temporary app for a test
-
-Turns the assistant's content into an app the child opens at once, and tells the assistant what to correct.
+Turns the content a creator's assistant wrote for an acute occasion into an app the learners open at once, and tells the assistant what to correct.
 
 ```pdt42
 :::service
 id: s-temporary-preview
-title: A temporary app for a test
-for: e-adopters
+title: A temporary app made to measure
+for: e-creators
 stage: onboarding
-kind: other
-supports: t-hand-over-preparation
+kind: empowering
+supports: t-hand-over-made-to-measure
 channel: ch-temporary-preview
 :::
 ```

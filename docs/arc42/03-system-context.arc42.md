@@ -21,7 +21,6 @@ flowchart LR
     actor-student["Student"]
     actor-creator["Creator"]
     actor-ai-assistant["Creator's AI assistant"]
-    actor-family-assistant["Family's AI assistant"]
     actor-gatekeeper["School gatekeeper"]
     actor-platform-owner["Platform owner"]
     actor-app-repo-actions["Creators' app repositories"]
@@ -42,7 +41,6 @@ flowchart LR
     actor-student -->|"uses an app and thanks"| system
     actor-creator -->|"decides to build an app"| system
     actor-ai-assistant -->|"builds and lists an app"| system
-    actor-family-assistant -->|"prepares a test with the family"| system
     actor-gatekeeper -->|"reads privacy notice and imprint"| system
     actor-platform-owner -->|"decides and keeps the models"| system
     actor-app-repo-actions -->|"checks, builds and publishes an app"| system
@@ -63,7 +61,7 @@ id: actor-adopting-adult
 title: Adopting adult
 type: person
 description: Teachers and parents (pdt42 e-adopters) who find, pass on and thank
-requires: if-catalog-pages, if-served-apps, if-thanks, if-home-pages, if-practice-form
+requires: if-catalog-pages, if-served-apps, if-thanks, if-home-pages
 :::
 ```
 
@@ -92,7 +90,7 @@ id: actor-creator
 title: Creator
 type: person
 description: App creators (pdt42 e-creators); they build and list through their AI assistant
-requires: if-home-pages, if-catalog-pages
+requires: if-home-pages, if-catalog-pages, if-practice-form
 :::
 ```
 
@@ -107,21 +105,7 @@ id: actor-ai-assistant
 title: Creator's AI assistant
 type: system
 description: The AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI (pdt42 e-ai-assistants)
-requires: if-guidance, if-tooling-cli, if-listing, if-home-pages
-:::
-```
-
-## Family's AI assistant
-
-The assistant of a family, [the same kind of partner](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-ai-assistants) as the creator's assistant, which prepares the child for a test.
-
-```arc42
-:::actor
-id: actor-family-assistant
-title: Family's AI assistant
-type: system
-description: The AI assistant a family already has (pdt42 e-ai-assistants)
-requires: if-practice-guidance, if-catalog-pages
+requires: if-guidance, if-tooling-cli, if-listing, if-home-pages, if-practice-guidance
 :::
 ```
 

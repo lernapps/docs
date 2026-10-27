@@ -227,45 +227,6 @@ motivation: m-students-adopters-gratitude
 :::
 ```
 
-### Hand over a preparation to the child
-
-A parent has the child's school material turned into a preparation for one test. The family's own assistant writes the content, so the parent stays its author.
-
-```pdt42
-:::transaction
-id: t-hand-over-preparation
-title: Hand over a preparation to the child
-relationship: r-adults-students
-from: e-adopters
-to: e-students
-direction: one-way
-value-unit: Access to a preparation for one test, as a temporary app
-happening: no
-channel: ch-temporary-preview
-kind: access
-motivation: m-adopters-students
-:::
-```
-
-### Practise for a test
-
-The child practises in the app itself, so the platform has no channel here.
-
-```pdt42
-:::ignore H108 Practising happens in the app; no platform channel on purpose :::
-:::transaction
-id: t-practise-for-test
-title: Practise for a test
-relationship: r-adults-students
-from: e-adopters
-to: e-students
-direction: one-way
-value-unit: A practice session on the topics of one test, at the child's own pace
-happening: no
-kind: goods
-:::
-```
-
 ## Transactions Board: Creators and students
 
 ```pdt42
@@ -291,6 +252,26 @@ to: e-students
 direction: one-way
 value-unit: A learning session on one topic
 happening: yes
+kind: goods
+motivation: m-creators-students
+:::
+```
+
+### Hand over a made-to-measure app
+
+A creator has a solution made for an acute occasion, such as a test of their own child, and hands it to the learners as a temporary app. The creator's own assistant writes the content, so the creator stays its author.
+
+```pdt42
+:::transaction
+id: t-hand-over-made-to-measure
+title: Hand over a made-to-measure app
+relationship: r-creators-students
+from: e-creators
+to: e-students
+direction: one-way
+value-unit: Access to a temporary app made to measure for one occasion
+happening: no
+channel: ch-temporary-preview
 kind: goods
 motivation: m-creators-students
 :::
@@ -484,20 +465,20 @@ improvement: Building an app that keeps the platform's rules no longer needs exp
 :::
 ```
 
-### A temporary app for one test
+### A temporary app made to measure
 
-The family's assistant writes content of its own from the child's school material, and the platform turns it into an app the child opens at once.
+The creator's assistant writes content of its own for an acute occasion, and the platform turns it into an app the learners open at once.
 
 ```pdt42
 :::channel
 id: ch-temporary-preview
-title: A temporary app for one test
+title: A temporary app made to measure
 medium: digital
 components:
   - Content the assistant wrote, checked automatically, with plain answers it can act on
-  - An app built from it, which the child opens at once, without installation or sign-up
-  - Nothing about the child leaves the browser: the platform keeps nothing, and whatever the child's browser keeps stays there
-  - Gone after two weeks, or at once when the family ends it; a preparation that proved itself can be kept and checked for the catalog
-improvement: A family has a working practice app before the test, without a repository, hosting, a listing or an account
+  - An app built from it, which the learners open at once, without installation or sign-up
+  - Nothing about the learners leaves the browser: the platform keeps nothing, and whatever their browser keeps stays there
+  - Gone after two weeks, or at once when the creator ends it; a solution that proved itself can be kept and checked for the catalog
+improvement: A solution for an acute occasion exists in minutes, without a repository, hosting, a listing or an account
 :::
 ```

@@ -166,46 +166,48 @@ sequenceDiagram
     catalog-->>creator: its uses, thanks and feedback, as totals
 ```
 
-## Prepare for a test with the family's assistant
+## A tailor-made app for an acute occasion
 
-[A parent whose child has a test coming up](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-prepare-for-test) has their assistant look in the catalog. When no app fits, the parent submits the content the assistant wrote and gets a temporary app for the child.
+[A creator has an acute occasion and no app fits](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-tailor-made-app). Their assistant looks in the catalog; when none fits, the creator submits the content the assistant wrote and gets a temporary app for the learners.
 
 ```arc42
 :::runtime-scenario
-id: rs-prepare-for-test
-title: Prepare for a test with the family's assistant
-trigger: A parent notices that their child is not ready for a test
+id: rs-tailor-made-app
+title: A tailor-made app for an acute occasion
+trigger: A creator has an acute occasion for which the catalog has no fitting app
 involves: bb-catalog, bb-practice
-x-experience: x-prepare-for-test
+x-experience: x-tailor-made-app
 :::
 ```
 
 ```arc42
 :::diagram
-id: rs-prepare-for-test-sequence
-scenario: rs-prepare-for-test
+id: rs-tailor-made-app-sequence
+scenario: rs-tailor-made-app
 notation: mermaid-sequence
-aliases: parent=actor-adopting-adult, student=actor-student, assistant=actor-family-assistant, catalog=bb-catalog, practice=bb-practice
+aliases: creator=actor-creator, assistant=actor-ai-assistant, student=actor-student, catalog=bb-catalog, practice=bb-practice
 :::
 ```
 
 ```mermaid
 sequenceDiagram
-    participant parent as Parent
+    participant creator as Creator
     participant student as Student
-    participant assistant as Family's AI assistant
+    participant assistant as AI assistant
     participant catalog as Catalog
     participant practice as Practice
-    Note over parent,catalog: Find an app for a topic and grade
-    parent->>assistant: prepare my child for this test
+    Note over creator,practice: Guidance for building apps
+    creator->>assistant: make me an app for this occasion
+    assistant->>practice: give me the guidance
+    Note over creator,catalog: Find an app for a topic and grade
     assistant->>catalog: find an app for this topic and grade
     catalog-->>assistant: no fitting app
-    Note over parent,practice: Hand over a preparation to the child
-    assistant->>parent: the content and the way to submit it
-    parent->>practice: submit the content
-    practice-->>parent: the address, or what to correct
-    parent->>student: open this address
-    Note over student,practice: Practise for a test
+    Note over creator,practice: Hand over a made-to-measure app
+    assistant->>creator: the content and the way to submit it
+    creator->>practice: submit the content
+    practice-->>creator: the address, or what to correct
+    creator->>student: open this address
+    Note over student,practice: Learn with an app
     student->>practice: serve me the app
     practice-->>student: the app, no sign-up, no installation
 ```
