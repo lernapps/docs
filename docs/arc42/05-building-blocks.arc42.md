@@ -298,13 +298,13 @@ x-realises: ch-guidance
 
 ## Practice
 
-Lets a family have a temporary app built for one test: the family's assistant writes the content, the family submits it through a form, and the child opens the app at an address of its own. The block holds the guidance for the family's assistant, the form, the workflows that check the content, build the app and publish and delete it, and the site below which the previews live. It holds no app and no runtime: each app is built from the submitted content, the explainer template and the tooling's checks. The content is data, and nothing about the child leaves the browser: the app keeps nothing on the platform side, and whatever the child's browser keeps stays there.
+Turns content that a family's assistant wrote into a temporary app for one test, and guides that assistant. Its own architecture refines this block: [practice, chapter 5](https://github.com/lernapps/practice/blob/main/docs/arc42/05-building-blocks.arc42.md).
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
 :::building-block
 id: bb-practice
-implements: concept-one-origin, concept-privacy-by-construction, concept-checked-not-declared, concept-assistants-as-readers, concept-plain-language, concept-pinned-and-pulled, concept-why-in-history
+implements: concept-one-origin, concept-privacy-by-construction, concept-checked-not-declared, concept-assistants-as-readers, concept-plain-language, concept-pinned-and-pulled
 title: Practice
 technology: TypeScript, Node.js, GitHub Actions, GitHub Pages
 requires: if-site-frame, if-site-actions, if-tooling-cli, if-archetypes, if-catalog-pages
@@ -314,7 +314,7 @@ x-repo: lernapps/practice
 
 ### Practice guidance
 
-The guidance and the `llms.txt` that lead the family's AI assistant through the preparation: what to ask, how to read the photos, how to write content of its own, how to zip it and how to hand it over.
+The guidance that leads the family's AI assistant, with an `llms.txt`.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
@@ -329,7 +329,7 @@ x-realises: ch-guidance
 
 ### Submission form
 
-The form through which a parent submits the content: a GitHub issue with subject, grade and federal state and the content as an attached ZIP file. The checks and the build answer as comments on the issue, in plain language, so that the family's assistant can correct the content. The issue's author is the author of the content.
+The form through which a parent submits the content.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
@@ -337,14 +337,14 @@ The form through which a parent submits the content: a GitHub issue with subject
 id: if-practice-form
 title: Submission form
 provider: bb-practice
-protocol: GitHub issue form with the content as a ZIP attachment; results as comments
+protocol: Form on GitHub
 x-realises: ch-temporary-preview
 :::
 ```
 
 ### Preview pages
 
-The temporary app of each submission, below its issue number. A preview ends when its issue is closed, and after two weeks unless someone has reacted to the issue with a thumbs-up; a preparation kept that way can be checked for the catalog.
+The temporary app of each submission.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
@@ -352,7 +352,7 @@ The temporary app of each submission, below its issue number. A preview ends whe
 id: if-practice-previews
 title: Preview pages
 provider: bb-practice
-protocol: HTTPS pages under lernapps.net/practice/i/<issue number>/
+protocol: HTTPS pages under lernapps.net/practice/
 x-realises: ch-temporary-preview
 x-missing-ch-temporary-preview: How a kept preparation becomes an entry of the catalog, with its metadata, is not defined.
 :::

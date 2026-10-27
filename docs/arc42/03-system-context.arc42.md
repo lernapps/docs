@@ -42,7 +42,7 @@ flowchart LR
     actor-student -->|"uses an app and thanks"| system
     actor-creator -->|"decides to build an app"| system
     actor-ai-assistant -->|"builds and lists an app"| system
-    actor-family-assistant -->|"prepares a test with the family and has the content built"| system
+    actor-family-assistant -->|"prepares a test with the family"| system
     actor-gatekeeper -->|"reads privacy notice and imprint"| system
     actor-platform-owner -->|"decides and keeps the models"| system
     actor-app-repo-actions -->|"checks, builds and publishes an app"| system
@@ -113,16 +113,14 @@ requires: if-guidance, if-tooling-cli, if-listing, if-home-pages
 
 ## Family's AI assistant
 
-The AI assistant of a parent whose child has a test coming up, [the same kind of partner](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-ai-assistants) as the creator's assistant. It looks in the catalog first, then reads photos of the school
-material, agrees the scope with the child and writes content of its own. The photos go to this assistant only, never
-to the system. The parent submits what it wrote.
+The assistant of a family, [the same kind of partner](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-ai-assistants) as the creator's assistant, which prepares the child for a test.
 
 ```arc42
 :::actor
 id: actor-family-assistant
 title: Family's AI assistant
 type: system
-description: The AI assistant a family already has, which prepares a child for a test and writes the content of a temporary app; it reads the guidance and searches the catalog (pdt42 e-ai-assistants)
+description: The AI assistant a family already has (pdt42 e-ai-assistants)
 requires: if-practice-guidance, if-catalog-pages
 :::
 ```

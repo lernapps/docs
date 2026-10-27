@@ -105,7 +105,7 @@ hosts: bb-tooling
 
 ### lernapps.net/practice
 
-The guidance for the family's assistant and, below `i/<issue number>/`, the temporary app of each submission.
+The guidance for the family's assistant and the temporary apps.
 
 ```arc42
 :::deployment-node

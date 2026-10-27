@@ -168,14 +168,14 @@ sequenceDiagram
 
 ## Prepare for a test with the family's assistant
 
-[A parent whose child has a test coming up](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-prepare-for-test) has their assistant look in the catalog first. When no app fits, the assistant writes content of its own and the parent submits it. Practice checks the content, builds an app from it with the explainer template and the tooling's checks, and publishes it at a temporary address. The child opens it and practises.
+[A parent whose child has a test coming up](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-prepare-for-test) has their assistant look in the catalog. When no app fits, the parent submits the content the assistant wrote and gets a temporary app for the child.
 
 ```arc42
 :::runtime-scenario
 id: rs-prepare-for-test
 title: Prepare for a test with the family's assistant
 trigger: A parent notices that their child is not ready for a test
-involves: bb-catalog, bb-practice, bb-app-templates, bb-tooling
+involves: bb-catalog, bb-practice
 x-experience: x-prepare-for-test
 :::
 ```
@@ -185,7 +185,7 @@ x-experience: x-prepare-for-test
 id: rs-prepare-for-test-sequence
 scenario: rs-prepare-for-test
 notation: mermaid-sequence
-aliases: parent=actor-adopting-adult, student=actor-student, assistant=actor-family-assistant, catalog=bb-catalog, practice=bb-practice, templates=bb-app-templates, tooling=bb-tooling, github=actor-github
+aliases: parent=actor-adopting-adult, student=actor-student, assistant=actor-family-assistant, catalog=bb-catalog, practice=bb-practice
 :::
 ```
 
@@ -196,21 +196,14 @@ sequenceDiagram
     participant assistant as Family's AI assistant
     participant catalog as Catalog
     participant practice as Practice
-    participant templates as App templates
-    participant tooling as Tooling
-    participant github as GitHub
     Note over parent,catalog: Find an app for a topic and grade
     parent->>assistant: prepare my child for this test
     assistant->>catalog: find an app for this topic and grade
     catalog-->>assistant: no fitting app
-    Note over parent,github: Hand over a preparation to the child
-    assistant->>practice: give me the guidance (llms.txt)
-    assistant->>parent: the content, as a ZIP file, and the link to the form
-    parent->>practice: submit the form with the ZIP file
-    practice->>templates: provide the explainer template
-    practice->>tooling: check the built app
-    practice->>github: publish the app at a temporary address
-    practice-->>parent: the address, or what to correct, as a comment
+    Note over parent,practice: Hand over a preparation to the child
+    assistant->>parent: the content and the way to submit it
+    parent->>practice: submit the content
+    practice-->>parent: the address, or what to correct
     parent->>student: open this address
     Note over student,practice: Practise for a test
     student->>practice: serve me the app

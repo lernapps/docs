@@ -121,7 +121,7 @@ revenues:
 
 ## Prepare for a test with the family's assistant
 
-The journey of a parent whose child has a test coming up: the parent's AI assistant looks for an app for the topic and, when none fits, reads photos of the school material, agrees the scope with the child and writes content of its own. The parent submits it, the platform checks it and builds an app, and the child practises with it at a temporary address. Nothing about the child leaves the browser, and the photos go to the family's assistant only. The family wrote the content, so no other creator is thanked. A preparation that helped can be kept and checked for the catalog.
+The journey of a parent whose child has a test coming up: the family's assistant looks for an app and otherwise writes content of its own, and the child practises with the app built from it. The photos of the school material go to the family's assistant only. The family wrote the content, so there is no creator to thank.
 
 ```pdt42
 :::canvas
@@ -138,21 +138,18 @@ title: Prepare for a test with the family's assistant
 core-entity: e-adopters
 roles: e-students, e-creators
 relationship: r-adults-students
-value-proposition: A test next week and a child who is not ready: your assistant turns the school material into practice of its own, ready to open within minutes, with nothing about your child leaving the family
+value-proposition: A test next week and a child who is not ready: your assistant turns the school material into practice of its own, ready to open within minutes
 steps: s-finding, t-find-app, s-preparation-guidance, s-temporary-preview, t-hand-over-preparation, t-practise-for-test
 activities:
-  - Checking and building each submission, and answering with what to correct
-  - Publishing temporary apps and deleting them when they end
+  - Checking the content and building apps from it
   - Keeping the guidance for the family's assistant current
 resources:
   - The guidance for the family's assistant
-  - The explainer template and the checks of the platform
-  - GitHub for the form, the builds and the temporary addresses
+  - The platform's checks
 costs:
   - The platform owner's time
-  - Near-zero operating costs: GitHub builds and serves the previews
+  - Near-zero operating costs
 revenues:
   - No money: the platform is free
-  - Preparations that proved themselves, which can enter the catalog
 :::
 ```

@@ -276,7 +276,7 @@ kind: other
 
 ### Guidance for preparing a test
 
-Helps a parent and their AI assistant prepare one child for one test: the assistant asks what the test covers, reads photos of the school material, agrees the scope with the child and writes content of its own, never copied from the material. The guidance is written for the assistant (KD-16), and the photos go to the family's assistant only.
+Guides the family's AI assistant through preparing one child for one test, from the school material to content of its own (KD-16).
 
 ```pdt42
 :::service
@@ -292,7 +292,7 @@ channel: ch-guidance
 
 ### A temporary app for a test
 
-Turns the content the family's assistant wrote into an app the child can open at once, and tells the assistant what to correct when the content does not pass the checks. The app is deleted after two weeks, unless someone keeps it.
+Turns the assistant's content into an app the child opens at once, and tells the assistant what to correct.
 
 ```pdt42
 :::service

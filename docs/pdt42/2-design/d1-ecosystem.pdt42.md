@@ -13,7 +13,7 @@ canvas: ecosystem
 
 ## lernapps.net
 
-The platform for the ecosystem of small, active-learning educational apps. The owner runs its infrastructure on GitHub, the platform's means of production: the website with the app overview, the agent guidance and starter templates, and the issue templates and GitHub Actions workflows contributions go through. Families can also have a temporary app built from content their own assistant wrote, for a test their child has to prepare. Its core entity, chosen in D4, is the adopting adults.
+The platform for the ecosystem of small, active-learning educational apps. The owner runs its infrastructure on GitHub, the platform's means of production: the website with the app overview, the agent guidance and starter templates, and the issue templates and GitHub Actions workflows contributions go through, and temporary apps for families. Its core entity, chosen in D4, is the adopting adults.
 
 The platform also serves every listed app itself: when an app is listed, a copy of its built bundle is published under lernapps.net and the overview links to that copy (KD-21). The creator stays the author, keeps the licence, the repository and their own address, and decides on new versions; the platform takes over delivering the app to schools, under one privacy notice and one address that keeps working.
 
@@ -32,7 +32,7 @@ infrastructure:
   - Website with the app overview
   - Agent guidance and starter templates
   - A copy of every listed app, served under lernapps.net
-  - Temporary apps built from a family's own content, served under lernapps.net
+  - Temporary apps for families, served under lernapps.net
   - GitHub as the means of production: issue templates, GitHub Actions workflows, apps with their labels
 :::
 ```
