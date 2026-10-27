@@ -21,6 +21,7 @@ flowchart TB
     bb-catalog["Catalog (apps)"]
     bb-tooling["Tooling (tooling)"]
     bb-app-templates["App templates (app-templates)"]
+    bb-practice["Practice (practice)"]
     bb-docs["Docs (docs)"]
     bb-org["Organisation (.github)"]
     bb-catalog -->|"if-site-frame"| bb-website
@@ -28,6 +29,9 @@ flowchart TB
     bb-docs -->|"if-site-frame"| bb-website
     bb-catalog -->|"if-tooling-cli"| bb-tooling
     bb-tooling -->|"if-archetypes"| bb-app-templates
+    bb-practice -->|"if-site-frame"| bb-website
+    bb-practice -->|"if-tooling-cli"| bb-tooling
+    bb-practice -->|"if-archetypes"| bb-app-templates
     bb-website -->|"if-site-actions"| bb-tooling
     bb-catalog -->|"if-site-actions"| bb-tooling
     bb-docs -->|"if-site-actions"| bb-tooling
@@ -287,6 +291,68 @@ title: Archetypes
 provider: bb-app-templates
 protocol: git repository at a pinned commit
 x-realises: ch-guidance
+:::
+```
+
+## Practice
+
+Lets a family have a temporary app built for one test: the family's assistant writes the content, the family submits it through a form, and the child opens the app at an address of its own. The block holds the guidance for the family's assistant, the form, the workflows that check the content, build the app and publish and delete it, and the site below which the previews live. It holds no app and no runtime: each app is built from the submitted content, the explainer template and the tooling's checks. The content is data, and the learning state stays in the child's browser.
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
+:::building-block
+id: bb-practice
+implements: concept-one-origin, concept-privacy-by-construction, concept-checked-not-declared, concept-assistants-as-readers, concept-plain-language, concept-pinned-and-pulled, concept-why-in-history
+title: Practice
+technology: TypeScript, Node.js, GitHub Actions, GitHub Pages
+requires: if-site-frame, if-tooling-cli, if-archetypes
+x-repo: lernapps/practice
+:::
+```
+
+### Practice guidance
+
+The guidance and the `llms.txt` that lead the family's AI assistant through the preparation: what to ask, how to read the photos, how to write content of its own, how to zip it and how to hand it over.
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
+:::interface
+id: if-practice-guidance
+title: Practice guidance
+provider: bb-practice
+protocol: Markdown pages and llms.txt under lernapps.net/practice/
+x-realises: ch-guidance
+:::
+```
+
+### Submission form
+
+The form through which a parent submits the content: a GitHub issue with subject, grade and federal state and the content as an attached ZIP file. The checks and the build answer as comments on the issue, in plain language, so that the family's assistant can correct the content. The issue's author is the author of the content.
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
+:::interface
+id: if-practice-form
+title: Submission form
+provider: bb-practice
+protocol: GitHub issue form with the content as a ZIP attachment; results as comments
+x-realises: ch-temporary-preview
+:::
+```
+
+### Preview pages
+
+The temporary app of each submission, below its issue number. A preview ends after two weeks, or when its issue is closed, unless someone has reacted to the issue with a thumbs-up; a preparation kept that way can be checked for the catalog.
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/practice: https://github.com/lernapps/practice :::
+:::interface
+id: if-practice-previews
+title: Preview pages
+provider: bb-practice
+protocol: HTTPS pages under lernapps.net/practice/i/<issue number>/
+x-realises: ch-temporary-preview
+x-missing-ch-temporary-preview: How a kept preparation becomes an entry of the catalog, with its metadata, is not defined.
 :::
 ```
 

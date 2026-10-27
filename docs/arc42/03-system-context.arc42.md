@@ -21,6 +21,7 @@ flowchart LR
     actor-student["Student"]
     actor-creator["Creator"]
     actor-ai-assistant["Creator's AI assistant"]
+    actor-family-assistant["Family's AI assistant"]
     actor-gatekeeper["School gatekeeper"]
     actor-platform-owner["Platform owner"]
     actor-app-repo-actions["Creators' app repositories"]
@@ -33,6 +34,7 @@ flowchart LR
         bb-catalog["Catalog"]
         bb-tooling["Tooling"]
         bb-app-templates["App templates"]
+        bb-practice["Practice"]
         bb-docs["Docs"]
         bb-org["Organisation"]
     end
@@ -40,6 +42,7 @@ flowchart LR
     actor-student -->|"uses an app and thanks"| system
     actor-creator -->|"decides to build an app"| system
     actor-ai-assistant -->|"builds and lists an app"| system
+    actor-family-assistant -->|"prepares a test with the family and has the content built"| system
     actor-gatekeeper -->|"reads privacy notice and imprint"| system
     actor-platform-owner -->|"decides and keeps the models"| system
     actor-app-repo-actions -->|"checks, builds and publishes an app"| system
@@ -60,7 +63,7 @@ id: actor-adopting-adult
 title: Adopting adult
 type: person
 description: Teachers and parents (pdt42 e-adopters) who find, pass on and thank
-requires: if-catalog-pages, if-served-apps, if-thanks, if-home-pages
+requires: if-catalog-pages, if-served-apps, if-thanks, if-home-pages, if-practice-form
 :::
 ```
 
@@ -74,7 +77,7 @@ id: actor-student
 title: Student
 type: person
 description: Learners (pdt42 e-students) who use an app and may say thanks
-requires: if-served-apps, if-thanks, if-catalog-pages
+requires: if-served-apps, if-thanks, if-catalog-pages, if-practice-previews
 :::
 ```
 
@@ -105,6 +108,22 @@ title: Creator's AI assistant
 type: system
 description: The AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI (pdt42 e-ai-assistants)
 requires: if-guidance, if-tooling-cli, if-listing, if-home-pages
+:::
+```
+
+## Family's AI assistant
+
+The AI assistant of a parent whose child has a test coming up, [the same kind of partner](https://lernapps.net/docs/platform-design/#1-exploration/e2-scan.pdt42.md:el-e-ai-assistants) as the creator's assistant. It looks in the catalog first, then reads photos of the school
+material, agrees the scope with the child and writes content of its own. The photos go to this assistant only, never
+to the system. The parent submits what it wrote.
+
+```arc42
+:::actor
+id: actor-family-assistant
+title: Family's AI assistant
+type: system
+description: The AI assistant a family already has, which prepares a child for a test and writes the content of a temporary app; it reads the guidance and searches the catalog (pdt42 e-ai-assistants)
+requires: if-practice-guidance, if-catalog-pages
 :::
 ```
 

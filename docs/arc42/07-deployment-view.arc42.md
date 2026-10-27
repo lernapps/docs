@@ -11,7 +11,7 @@ platform's open counts and, for now, e-mail for thanks.
 id: deployment-overall
 view: deployment
 notation: mermaid-architecture
-aliases: env_production=env-production, dn_pages_root=dn-pages-root, dn_pages_catalog=dn-pages-catalog, dn_pages_docs=dn-pages-docs, dn_pages_tooling=dn-pages-tooling, env_build=env-build, dn_repositories=dn-repositories, dn_actions=dn-actions, bb_website=bb-website, bb_catalog=bb-catalog, bb_docs=bb-docs, bb_tooling=bb-tooling, bb_org=bb-org, bb_app_templates=bb-app-templates
+aliases: env_production=env-production, dn_pages_root=dn-pages-root, dn_pages_catalog=dn-pages-catalog, dn_pages_docs=dn-pages-docs, dn_pages_tooling=dn-pages-tooling, dn_pages_practice=dn-pages-practice, env_build=env-build, dn_repositories=dn-repositories, dn_actions=dn-actions, bb_website=bb-website, bb_catalog=bb-catalog, bb_docs=bb-docs, bb_tooling=bb-tooling, bb_practice=bb-practice, bb_org=bb-org, bb_app_templates=bb-app-templates
 :::
 ```
 
@@ -22,10 +22,12 @@ architecture-beta
     group dn_pages_catalog(server)[lernapps.net/apps] in env_production
     group dn_pages_docs(server)[lernapps.net/docs] in env_production
     group dn_pages_tooling(server)[lernapps.net/tooling] in env_production
+    group dn_pages_practice(server)[lernapps.net/practice] in env_production
     service bb_website(internet)[Website] in dn_pages_root
     service bb_catalog(internet)[Catalog and app copies] in dn_pages_catalog
     service bb_docs(internet)[Docs] in dn_pages_docs
     service bb_tooling(internet)[Tooling pages] in dn_pages_tooling
+    service bb_practice(internet)[Practice] in dn_pages_practice
     group env_build(cloud)[GitHub]
     group dn_repositories(database)[Repositories] in env_build
     service bb_org(disk)[Organisation] in dn_repositories
@@ -98,6 +100,20 @@ title: lernapps.net/tooling
 type: server
 parent: env-production
 hosts: bb-tooling
+:::
+```
+
+### lernapps.net/practice
+
+The guidance for the family's assistant and, below `i/<issue number>/`, the temporary app of each submission.
+
+```arc42
+:::deployment-node
+id: dn-pages-practice
+title: lernapps.net/practice
+type: server
+parent: env-production
+hosts: bb-practice
 :::
 ```
 
