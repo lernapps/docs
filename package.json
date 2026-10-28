@@ -10,7 +10,7 @@
   "devDependencies": {
     "@biz42/cli": "0.11.2",
     "@doctc/arc42": "0.38.0",
-    "@lernapps/site": "github:lernapps/lernapps.github.io#e0a7d0140ea8a5619d286abd189074e3b3dd97b7",
+    "@lernapps/site": "github:lernapps/lernapps.github.io#f9d5e6583f255cf5013ca8991d0cfca465e171e6",
     "@pdt42/cli": "0.6.2",
     "marked": "18.1.1",
     "yaml": "2.8.3"
