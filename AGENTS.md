@@ -17,3 +17,7 @@ Do only what the current phase requires; do not work ahead. Check the phase succ
 At each phase boundary, stop: summarize what the phase produced and ask the user whether to continue before calling `proceed_to_phase`.
 
 Do not use your own task management tools; the plan file is the record.
+
+Commit the `.vibe` directory together with the work it plans.
+
+We work with feature branches. Before each merge, squash the commits that belong together (usually the whole branch).
