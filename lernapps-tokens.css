@@ -21,3 +21,20 @@
   --la-radius: 0.5rem;
   --la-focus: 3px solid var(--la-accent);
 }
+
+/* Dark mode, opt-in: a site that wants it sets data-la-theme="auto" on <html>; then the tokens for the page itself
+   (background, text, links, borders) follow the system's prefers-color-scheme. Header, footer and dark sections are
+   dark in both modes (--la-ink and the --la-on-ink tokens stay). It is opt-in because some sites use these tokens
+   for their text but paint their own background: for them the dark text colour would be light on white. There is no
+   color-scheme here either: a site that follows the dark mode sets it for itself, so that form controls and
+   scrollbars match its page. Pairs (checked in test/tokens.test.mjs): text, muted text and link on the surface each
+   reach 4.5:1. */
+@media (prefers-color-scheme: dark) {
+  :root[data-la-theme="auto"] {
+    --la-text: #e2e8f0;         /* slate-200 */
+    --la-muted: #b8c4d6;
+    --la-link: #93c5fd;         /* blue-300 */
+    --la-surface: #0b1220;
+    --la-border: #2a3a52;
+  }
+}
