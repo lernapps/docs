@@ -14,4 +14,6 @@ After every user message, call `whats_next` of the `workflows` MCP server and fo
 
 Do only what the current phase requires; do not work ahead. Check the phase success criteria before calling `proceed_to_phase`.
 
+At each phase boundary, stop: summarize what the phase produced and ask the user whether to continue before calling `proceed_to_phase`.
+
 Do not use your own task management tools; the plan file is the record.
