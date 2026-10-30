@@ -61,7 +61,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  column-gap: 2rem;
+  column-gap: 1.5rem; /* the row of links just fits the width of the header on a wide screen: keep it one row */
 }
 .la-brand {
   display: flex;
