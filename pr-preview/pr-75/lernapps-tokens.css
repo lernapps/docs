@@ -1,0 +1,40 @@
+/* Design tokens of lernapps.net, shared by every site on the origin (home, apps, docs, apps of creators).
+   Source: lernapps/lernapps.github.io, site-frame/. Change them here only; the sites get them with Renovate. */
+:root {
+  /* Brand: the mark is white on dark slate with blue points (README, "Brand mark"). */
+  --la-ink: #0f172a;          /* slate-900: header, footer, dark sections */
+  --la-ink-soft: #1e293b;     /* slate-800 */
+  --la-accent: #60a5fa;       /* blue-400: the points of the mark, ".net", accents on dark */
+  --la-link: #1d4ed8;         /* blue-700: links on light backgrounds (AA on white and on --la-surface) */
+  --la-text: #1e293b;         /* slate-800: body text */
+  --la-muted: #475569;        /* slate-600: secondary text (AA on white) */
+  --la-on-ink: #ffffff;
+  --la-on-ink-muted: #cbd5e1; /* slate-300: links on dark (AA on --la-ink) */
+  --la-surface: #f8fafc;      /* slate-50: page background */
+  --la-border: #e2e8f0;       /* slate-200 */
+  --la-preview: #fcd34d;      /* amber-300: banner of a pull request preview */
+  --la-fallback: #dbeafe;     /* blue-100: line above a page shown in another language than the frame */
+
+  --la-font: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; /* system fonts only: no requests */
+  --la-width: 56rem;          /* content width of header and footer */
+  --la-gutter: 1rem;          /* side padding, 16px at 360px */
+  --la-radius: 0.5rem;
+  --la-focus: 3px solid var(--la-accent);
+}
+
+/* Dark mode, opt-in: a site that wants it sets data-la-theme="auto" on <html>; then the tokens for the page itself
+   (background, text, links, borders) follow the system's prefers-color-scheme. Header, footer and dark sections are
+   dark in both modes (--la-ink and the --la-on-ink tokens stay). It is opt-in because some sites use these tokens
+   for their text but paint their own background: for them the dark text colour would be light on white. There is no
+   color-scheme here either: a site that follows the dark mode sets it for itself, so that form controls and
+   scrollbars match its page. Pairs (checked in test/tokens.test.mjs): text, muted text and link on the surface each
+   reach 4.5:1. */
+@media (prefers-color-scheme: dark) {
+  :root[data-la-theme="auto"] {
+    --la-text: #e2e8f0;         /* slate-200 */
+    --la-muted: #b8c4d6;
+    --la-link: #93c5fd;         /* blue-300 */
+    --la-surface: #0b1220;
+    --la-border: #2a3a52;
+  }
+}
