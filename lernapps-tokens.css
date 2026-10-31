@@ -12,6 +12,13 @@
   --la-on-ink-muted: #cbd5e1; /* slate-300: links on dark (AA on --la-ink) */
   --la-surface: #f8fafc;      /* slate-50: page background */
   --la-border: #e2e8f0;       /* slate-200 */
+  --la-bg: #ffffff;           /* page background of a page of text (page.css) */
+  --la-box: #f8fafc;          /* notes and code blocks on that page */
+  --la-line: #d1d5db;         /* quiet lines: tables, quotations */
+  --la-control: #64748b;      /* slate-500: border of a control (3:1 on the page, WCAG 1.4.11) */
+  --la-button: #1d4ed8;       /* blue-700: primary button; white text on it is AA */
+  --la-button-hover: #1e40af; /* blue-800 */
+  --la-on-button: #ffffff;
   --la-preview: #fcd34d;      /* amber-300: banner of a pull request preview */
   --la-fallback: #dbeafe;     /* blue-100: line above a page shown in another language than the frame */
 
@@ -36,5 +43,11 @@
     --la-link: #93c5fd;         /* blue-300 */
     --la-surface: #0b1220;
     --la-border: #2a3a52;
+    --la-bg: #0b1220;
+    --la-box: #111a2e;
+    --la-line: #64748b;
+    --la-control: #8294ad;
+    --la-button: #2563eb;       /* blue-600: not the bright blue-700 glare, white text on it is AA */
+    --la-button-hover: #1d4ed8;
   }
 }
