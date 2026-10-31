@@ -1,0 +1,153 @@
+/* The overview (/docs/overview/, scripts/overview.mjs), on top of start.css: one card per experience with its steps,
+   each service with its status and the parts of the system that deliver it, then the parts themselves. */
+.narrative { margin: 2rem 0 0; padding: 0.9rem 1.1rem; max-width: 44rem; border-left: 3px solid var(--lc-accent); background: var(--lc-tint); border-radius: 0 0.75rem 0.75rem 0; }
+.narrative a { color: var(--lc-text); text-decoration: none; }
+.narrative a:hover { text-decoration: underline; }
+
+.overview section { padding: 3rem 0 0; }
+.overview p { line-height: 1.5; }
+
+.experience { margin: 0 0 1.2rem; padding: 1.3rem 1.4rem 1.1rem; border-radius: 1.1rem; background: var(--lc-card); border: 1px solid var(--lc-border); box-shadow: var(--lc-shadow); }
+.experience h3 { font-size: 1.25rem; letter-spacing: -0.01em; margin: 0 0 0.4rem; }
+.experience > p { margin: 0 0 0.6rem; color: var(--lc-muted); max-width: 44rem; }
+.experience .who span { color: var(--lc-text); }
+
+.steps { margin: 0.8rem 0 0; display: grid; gap: 0.55rem; }
+.step { padding: 0.35rem 0.9rem; border-left: 3px solid var(--lc-border); color: var(--lc-muted); font-size: 0.95rem; }
+.step a { color: var(--lc-muted); }
+.service { padding: 0.8rem 0.95rem; border-radius: 0.85rem; background: var(--lc-tint); border-left: 3px solid var(--lc-accent); }
+.service-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 0.5rem; }
+.service p { margin: 0.3rem 0 0; font-size: 0.95rem; }
+.service .channel { color: var(--lc-muted); }
+.delivery { margin: 0.4rem 0 0; display: grid; gap: 0.2rem; font-size: 0.92rem; }
+.delivery li::before { content: "→ "; color: var(--lc-muted); }
+.missing { color: var(--lc-muted); }
+
+.status { font-size: 0.72rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.1rem 0.5rem; border-radius: 999px; border: 1px solid currentColor; }
+.status-built { color: #15803d; }
+.status-partial { color: #b45309; }
+.status-missing { color: var(--lc-muted); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .status-built { color: #4ade80; }
+  :root:not([data-theme="light"]) .status-partial { color: #fbbf24; }
+}
+:root[data-theme="dark"] .status-built { color: #4ade80; }
+:root[data-theme="dark"] .status-partial { color: #fbbf24; }
+
+.blocks { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+.block { padding: 1rem 1.15rem; border-radius: 1rem; border: 1px solid var(--lc-border); background: var(--lc-card); }
+.block h3 { font-size: 1.1rem; margin: 0 0 0.15rem; }
+.block p { margin: 0.35rem 0 0; font-size: 0.94rem; }
+.block .repo { margin: 0; font-size: 0.85rem; }
+.block .realises, .block .offers, .block .used-by { color: var(--lc-muted); }
+
+.sources p { color: var(--lc-muted); max-width: 44rem; }
+
+@media (max-width: 48rem) {
+  .blocks { grid-template-columns: 1fr; }
+  .experience { padding: 1.1rem 1rem 1rem; }
+}
+.from-to { margin-left: 0.35rem; font-size: 0.82rem; color: var(--lc-muted); white-space: nowrap; }
+.step-label { padding: 0.15rem 0; }
+.services { display: grid; gap: 0.45rem; margin: 0.35rem 0 0.2rem; }
+.offers { display: grid; gap: 0.3rem; margin: 0.45rem 0 0; font-size: 0.92rem; }
+.offers .used-by { color: var(--lc-muted); }
+.group { font-size: 1.05rem; margin: 1.4rem 0 0.4rem; }
+.gaps { margin-top: 2rem; padding: 1rem 1.2rem; border-radius: 1rem; border: 1px solid var(--lc-border); background: var(--lc-card); }
+.gaps h2 { font-size: 1.1rem; margin: 0 0 0.3rem; }
+.gaps p { margin: 0 0 0.5rem; color: var(--lc-muted); }
+.gaps ul { display: grid; gap: 0.35rem; }
+.roles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
+.roles li { padding: 0.8rem 0.95rem; border-radius: 0.85rem; background: var(--lc-tint); }
+.roles span { display: block; margin-top: 0.25rem; font-size: 0.92rem; color: var(--lc-muted); }
+@media (max-width: 48rem) { .roles { grid-template-columns: 1fr; } }
+.narrative span { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lc-accent); margin-bottom: 0.3rem; }
+.hero .status-line { margin-top: 1rem; font-size: 1rem; color: #e2e8f0; }
+.gets, .how { margin: 0.15rem 0 0; font-size: 0.9rem; color: var(--lc-muted); }
+.reading .example { padding: 0.8rem 1rem; border-radius: 0.85rem; background: var(--lc-tint); max-width: 44rem; }
+.around { margin-top: 0.8rem; }
+.gaps .gap { padding: 0.9rem 1.1rem; border-radius: 1rem; border: 1px solid var(--lc-border); background: var(--lc-card); margin-bottom: 0.7rem; }
+.gaps .gap h3 { font-size: 1.05rem; margin: 0 0 0.3rem; }
+.gaps .gap p { margin: 0.25rem 0 0; font-size: 0.95rem; }
+.offers .meta { color: var(--lc-muted); }
+.closing p { max-width: 44rem; }
+.outside { display: grid; gap: 0.25rem; margin: 0 0 1rem; font-size: 0.92rem; color: var(--lc-muted); }
+.reference { padding: 3rem 0 0; }
+.reference > summary { cursor: pointer; list-style: none; }
+.reference > summary::-webkit-details-marker { display: none; }
+.reference > summary h2 { display: inline; }
+.reference > summary::after { content: " ▸"; color: var(--lc-muted); }
+.reference[open] > summary::after { content: " ▾"; }
+footer.sources { padding: 2.5rem 0 1rem; font-size: 0.88rem; }
+.around-list { display: grid; gap: 0.25rem; font-size: 0.92rem; color: var(--lc-muted); }
+.parts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.7rem; }
+.parts li { padding: 0.8rem 0.95rem; border-radius: 0.85rem; border: 1px solid var(--lc-border); background: var(--lc-card); }
+.parts span { display: block; margin-top: 0.25rem; font-size: 0.9rem; color: var(--lc-muted); }
+@media (max-width: 48rem) { .parts { grid-template-columns: 1fr; } }
+.overview .closing { margin-top: 1rem; font-weight: 600; max-width: 44rem; }
+a.status { text-decoration: none; }
+.together { display: grid; gap: 0.7rem; } .together li { padding: 0.8rem 1rem; border-left: 3px solid var(--lc-accent); background: var(--lc-card); border-radius: 0 0.85rem 0.85rem 0; } .together p { margin: 0.3rem 0 0; font-size: 0.94rem; } .together .meta { color: var(--lc-muted); font-size: 0.88rem; }
+/* Not yet delivered: a dashed block in place, and the ideas at the end. */
+.not-yet { margin: 0.4rem 0 0; padding: 0.45rem 0.7rem; border: 1.5px dashed var(--lc-muted); border-radius: 0.6rem; color: var(--lc-muted); font-size: 0.92rem; }
+.reading .not-yet { max-width: 44rem; }
+.service.idea { background: transparent; border: 1.5px dashed var(--lc-muted); border-left-width: 1.5px; }
+.offers .not-yet { display: block; }
+/* The page guide in the hero and the site map in the parts. */
+.guide { margin: 1rem 0 0; max-width: 44rem; font-size: 0.95rem; color: var(--lc-muted); }
+.guide span { display: block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--lc-accent); margin-bottom: 0.3rem; }
+.guide ul { display: grid; gap: 0.2rem; }
+.guide a { color: var(--lc-text); font-weight: 600; }
+.parts .where { font-size: 0.85rem; }
+/* The flows: sequence diagrams drawn by the generator. Each part keeps its colour (--c) from the site map. */
+.parts li { border-top: 3px solid var(--c, var(--lc-border)); }
+.together h3 { font-size: 1.1rem; margin: 0; }
+.sequence { margin: 0.9rem 0 0.2rem; overflow-x: auto; }
+.sequence svg { display: block; font: 12px/1 var(--lc-font, system-ui, sans-serif); }
+.sequence .head rect { fill: var(--lc-card); stroke: var(--lc-border); }
+.sequence .head text { fill: var(--lc-muted); font-weight: 600; }
+.sequence .head.part rect { fill: color-mix(in srgb, var(--c) 12%, var(--lc-card)); stroke: color-mix(in srgb, var(--c) 45%, transparent); }
+.sequence .head.part text { fill: var(--c); font-weight: 800; }
+.sequence .life { stroke: var(--lc-border); stroke-dasharray: 3 4; }
+.sequence .head.part .life { stroke: color-mix(in srgb, var(--c) 40%, transparent); stroke-dasharray: none; stroke-width: 2; }
+.sequence .arrow { fill: none; stroke: var(--lc-muted); stroke-width: 1.5; }
+.sequence .arrow.part { stroke: var(--c); }
+.sequence .arrow.reply { stroke-dasharray: 5 4; }
+.sequence .tip { fill: context-stroke; }
+.sequence .lbl { fill: var(--lc-text); paint-order: stroke; stroke: var(--lc-card); stroke-width: 4px; stroke-linejoin: round; }
+.sequence .num { fill: var(--lc-card); stroke: var(--lc-muted); }
+.sequence g[style] .num { stroke: var(--c); }
+.sequence .num-t { fill: var(--lc-muted); font-size: 10px; font-weight: 700; }
+.sequence g[style] .num-t { fill: var(--c); }
+.together li { min-width: 0; border-left: none; padding: 1rem 1.1rem; border: 1px solid var(--lc-border); border-radius: 1rem; }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .sequence .head.part text, :root:not([data-theme="light"]) .sequence g[style] .num-t { fill: color-mix(in srgb, var(--c) 55%, white); }
+}
+:root[data-theme="dark"] .sequence .head.part text, :root[data-theme="dark"] .sequence g[style] .num-t { fill: color-mix(in srgb, var(--c) 55%, white); }
+.behind { margin: 1.2rem 0 0; padding-top: 1rem; border-top: 1px solid var(--lc-border); }
+.behind h4 { margin: 0; font-size: 0.95rem; font-weight: 600; color: var(--lc-muted); }
+/* Read on: the documents this page is generated from, and the vision. */
+.documents { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; }
+.documents li { padding: 0.9rem 1rem; border-radius: 0.85rem; border: 1px solid var(--lc-border); background: var(--lc-card); }
+.documents span { display: block; margin-top: 0.25rem; font-size: 0.92rem; color: var(--lc-muted); }
+@media (max-width: 48rem) { .documents { grid-template-columns: 1fr; } }
+/* The vision on top: the claim in two colours, a paragraph, the link. */
+.hero h1 .second { color: #93c5fd; }
+.hero .vision-link { display: inline-block; margin-top: 1.1rem; color: #e2e8f0; }
+/* The cut in the German page: from here on the page comes from the English models. */
+.cut { margin: 2.2rem 0 0; padding: 0.7rem 1rem; border-top: 2px dashed var(--lc-border); border-bottom: 2px dashed var(--lc-border); color: var(--lc-muted); font-size: 0.95rem; max-width: 44rem; }
+/* How to read a journey, inside the journeys. */
+.reading { margin: 0 0 1.4rem; }
+.reading h3 { font-size: 1.05rem; margin: 0 0 0.3rem; }
+.reading > p { max-width: 44rem; }
+/* How the platform helps build an app: one card per part, its interfaces below. */
+.building { display: grid; gap: 0.8rem; }
+.building > li { padding: 1rem 1.15rem; border-radius: 1rem; border: 1px solid var(--lc-border); border-top: 3px solid var(--c, var(--lc-border)); background: var(--lc-card); }
+.building h3 { font-size: 1.1rem; margin: 0 0 0.4rem; }
+.building h3 .where { margin-left: 0.5rem; font-size: 0.85rem; font-weight: 400; }
+.building ul { display: grid; gap: 0.35rem; font-size: 0.94rem; }
+.building .meta { color: var(--lc-muted); }
+/* A section of a journey's diagram: one step of the journey. */
+.sequence .section-row line { stroke: var(--lc-border); stroke-width: 1.5; }
+.sequence .section-row text { fill: var(--lc-muted); font-weight: 700; font-size: 11px; letter-spacing: 0.04em; paint-order: stroke; stroke: var(--lc-card); stroke-width: 4px; }
+.roles .brings { margin-top: 0.4rem; font-size: 0.88rem; }
+.overview .group#flows-h { margin-top: 1.8rem; }

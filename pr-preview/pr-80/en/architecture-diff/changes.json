@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "base": {
+    "label": "e6eaf76ea23363c87ecbe5bab184689ff2c104c0",
+    "commit": "e6eaf76ea23363c87ecbe5bab184689ff2c104c0"
+  },
+  "head": {
+    "label": "8878058eec57dd38b106ac2bf03a6e0b081dc725"
+  },
+  "acceptanceBase": "e6eaf76ea23363c87ecbe5bab184689ff2c104c0",
+  "untracked": [],
+  "accepted": false,
+  "hasBlockingFindings": false,
+  "findings": [
+    {
+      "kind": "implementation-path",
+      "severity": "hint",
+      "file": "site/404.html",
+      "line": 0,
+      "elementId": "if-models",
+      "message": "site/404.html changed; review architecture element 'if-models' (site)."
+    },
+    {
+      "kind": "implementation-path",
+      "severity": "hint",
+      "file": "site/stil.css",
+      "line": 0,
+      "elementId": "if-models",
+      "message": "site/stil.css changed; review architecture element 'if-models' (site)."
+    },
+    {
+      "kind": "implementation-path",
+      "severity": "hint",
+      "file": "site/vision.template.html",
+      "line": 0,
+      "elementId": "if-models",
+      "message": "site/vision.template.html changed; review architecture element 'if-models' (site)."
+    }
+  ],
+  "groups": {
+    "warnings": [],
+    "untouched": [
+      {
+        "elementId": "if-models",
+        "files": [
+          "site/404.html",
+          "site/stil.css",
+          "site/vision.template.html"
+        ]
+      }
+    ],
+    "updated": [],
+    "uncovered": []
+  },
+  "architecture": {
+    "elements": [],
+    "diagrams": [],
+    "edges": [],
+    "proseSections": [],
+    "documents": []
+  }
+}
