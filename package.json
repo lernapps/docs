@@ -13,7 +13,7 @@
     "@lernapps/site": "github:lernapps/lernapps.github.io#0ff48573923ece2657de2b2cb63f0ce35083dc80",
     "@pdt42/cli": "0.6.2",
     "marked": "18.1.1",
-    "yaml": "2.8.3"
+    "yaml": "2.9.1"
   },
   "license": "CC-BY-SA-4.0"
 }
