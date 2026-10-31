@@ -4,14 +4,31 @@
   --text: var(--la-text);
   --grau: var(--la-muted);
   --link: var(--la-link);
-  --flaeche: var(--la-surface);
+  --hintergrund: #ffffff;
+  --kasten: var(--la-surface);
+  --linie: #d1d5db;
+  color-scheme: light dark;
   font-family: var(--la-font);
   line-height: 1.6;
   color: var(--text);
 }
 
+/* The dark scheme follows the system (prefers-color-scheme), like the apps and the start page. The tokens of the frame
+   are not used for the dark values: they apply only with data-la-theme, and their surface is the page, not a box. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #e2e8f0;
+    --grau: #b8c4d6;
+    --link: #93c5fd;
+    --hintergrund: #0b1220;
+    --kasten: #111a2e;
+    --linie: #64748b;
+  }
+}
+
 body {
   margin: 0;
+  background: var(--hintergrund);
 }
 
 main {
@@ -36,11 +53,11 @@ a:focus-visible {
 }
 
 .hinweis {
-  background: var(--flaeche);
+  background: var(--kasten);
   padding: 0.5rem 0.75rem;
   border-radius: 0.25rem;
 }
 
 table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
-th, td { border: 1px solid #d1d5db; padding: 0.35rem 0.5rem; text-align: left; vertical-align: top; }
-blockquote { border-left: 4px solid #d1d5db; margin: 1rem 0; padding: 0 1rem; color: var(--grau); }
+th, td { border: 1px solid var(--linie); padding: 0.35rem 0.5rem; text-align: left; vertical-align: top; }
+blockquote { border-left: 4px solid var(--linie); margin: 1rem 0; padding: 0 1rem; color: var(--grau); }
