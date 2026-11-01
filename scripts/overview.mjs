@@ -540,6 +540,7 @@ const asInLine = (st) => [`${fill(meta.reading.asIn, { journey: st.asIn.title })
   <meta name="description" content="${esc(t.lead)}">
   <link rel="canonical" href="https://lernapps.net/docs/${lang === "de" ? "" : "en/"}">
   <link rel="stylesheet" href="${up}lernapps-page.css">
+  <link rel="stylesheet" href="${up}lernapps-landing.css">
   <link rel="stylesheet" href="${up}start.css">
   <link rel="stylesheet" href="${up}overview.css">
 </head>
