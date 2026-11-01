@@ -189,7 +189,7 @@ job: j-bring-to-students
 
 ### Work on their own with an app
 
-Students work with the app on their own, which gives the teacher free time.
+Students work with the app on their own, so the teacher can attend to those who need particular attention.
 
 ```pdt42
 :::ignore H108 Working on an app happens in the app; no platform channel on purpose :::

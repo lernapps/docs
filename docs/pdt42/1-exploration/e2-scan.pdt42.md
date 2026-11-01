@@ -26,6 +26,8 @@ Engaged people who build small educational apps, typically with AI tools, for a 
 
 Portrait (D2): the lack of feedback, the wish for recognition and knowing the app helped are assumptions of the platform owner, still to be validated with creators. Creators build their apps as personal software anyway; reaching other classrooms is a nice-to-have for them, not what drives them to start. Once their apps are used, though, most engaged creators are strongly motivated by praise and use (D4).
 
+Two goals lead them to build for others. Teachers digitise their own material, choosing the parts that gain most from it: learners check their own answers, try things out, or are accompanied by an AI tutor. Parents and other adults with a good concept teach something they know well, to many children rather than only their own. Building does not need programming: having worked with a coding agent once is enough. Building for others differs from an app made to measure for one's own test or lesson (D7), which is never listed.
+
 ```pdt42
 :::entity
 id: e-creators
@@ -44,11 +46,14 @@ assets:
   - Classroom experience (teachers) or development skills (engineers)
 capabilities:
   - Build a working app in a weekend with AI assistance
+  - Work with a coding agent, without programming themselves
 potential:
   - Build on existing apps instead of starting from scratch
   - Evolve apps with feedback from use
 goals:
   - Close a gap they noticed themselves, for their own class or child
+  - Teachers: digitise their own material where it gains most, with self-checking, interactivity and an AI tutor
+  - Teach something they know well, with a good concept, to many children
 pressures:
   - Little time
   - The app rots after a single use
@@ -98,8 +103,8 @@ potential:
   - Give feedback from classroom use
   - Recommend apps to colleagues
 goals:
-  - Teachers: gain free time by keeping students busy, for individual support or preparation
-  - Parents: support their child where they cannot help themselves, for lack of time or of knowledge
+  - Teachers: let an app accompany the class while it practises, so they can attend to the students who need particular attention
+  - Parents: support their child where they cannot help themselves, for lack of time or of knowledge, also before a test
 pressures:
   - Lack of time
   - Responsibility for data protection
@@ -147,8 +152,10 @@ pressures:
   - A topic they struggle with, often noticed before a test
 convenience-gains:
   - Start right away, without an account or installation
+  - Practise without being watched or graded
 reach-gains:
   - An app for exactly the topic they struggle with
+  - A patient AI tutor, also in the evening
 value-gains:
   - Better grades
   - Understanding the subject

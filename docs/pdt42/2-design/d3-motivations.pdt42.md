@@ -210,16 +210,16 @@ kind: access
 :::
 ```
 
-## Free time while they work on their own
+## Room for the students who need them
 
-While students work with an app on their own, teachers gain free time, for individual support or preparation.
+While students work with an app on their own, teachers can attend to the students who need particular attention.
 
 ```pdt42
 :::motivation
 id: m-students-adopters
 from: e-students
 to: e-adopters
-gives: Free time while they work on their own
+gives: Room for the students who need them, while they work on their own
 status: current
 kind: other
 :::

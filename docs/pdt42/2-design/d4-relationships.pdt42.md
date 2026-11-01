@@ -23,7 +23,7 @@ core: yes
 
 ## Adults and students
 
-Adults bring apps to students by link, QR code or projector; students give teachers free time by working on their own. This is how most students get to know an app.
+Adults bring apps to students by link, QR code or projector; students give teachers room for those who need them by working on their own. This is how most students get to know an app.
 
 ```pdt42
 :::relationship
