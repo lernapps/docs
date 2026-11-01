@@ -44,14 +44,14 @@ needs: c-app, c-bring-to-students
 :::
 ```
 
-### Teachers gain free time by keeping students busy
+### Teachers attend to the students who need them
 
-Teachers want to gain free time by keeping students busy with an app. Their reasons differ: time for individual support, time to prepare other things, and more.
+While an app accompanies the class as it practises, each student at their own pace and with feedback, teachers can attend to the students who need particular attention.
 
 ```pdt42
 :::component
 id: c-need-teachers
-title: Teachers gain free time by keeping students busy
+title: Teachers attend to the students who need them
 arena: ar-into-use
 visibility: 90
 entity: e-adopters
