@@ -201,7 +201,7 @@ Mainly for app creators; also involves AI assistants, adopting adults. What they
 
 ### [Practise a given scope, made to measure](platform-design/#2-design/d7-experiences.pdt42.md:el-x-tailor-made-app)
 
-The journey of a creator for whom an occasion sets exactly what to practise and no app covers it, such as a parent before their child's test or a teacher who needs exercises for a substitute lesson. It often follows “Understand a topic at one's own pace”, when a test comes up and the general app does not cover its material. The photos of school material go to the assistant only. What proved itself continues as in “List an app and hear it is used”.
+The journey of a creator for whom an occasion sets exactly what to practise and no app covers it, such as a parent before their child's test, a student before their own test, or a teacher who needs exercises for a substitute lesson. It often follows “Understand a topic at one's own pace”, when a test comes up and the general app does not cover its material. The photos of school material go to the assistant only. What proved itself continues as in “List an app and hear it is used”.
 
 Mainly for app creators; also involves AI assistants, adopting adults, students. What they get: When a test, a substitute lesson or missed lessons set exactly what to practise and no app covers it: your assistant makes one from that material, ready within minutes.
 
