@@ -57,7 +57,7 @@ rm _site/vision/content.html
 for app in _site/about _site/platform-design _site/architecture _site/architecture-diff; do
   [ -f "$app/index.html" ] || continue
   cp site/spa.css "$app/"
-  sed -i '0,/<\/head>/s||<link rel="stylesheet" href="spa.css">\n</head>|' "$app/index.html"
+  node scripts/html-edit.mjs head-link spa.css "$app/index.html"
 done
 lernapps-frame --site /docs/ --source https://github.com/lernapps/docs --out _site
 # The frame copies the start page's folder into the other language, 404.html included; 404.html acts only at the
@@ -67,7 +67,7 @@ rm -f _site/en/404.html
 # its README): this site's pages count their visits, never in a preview. Not part of the site frame: apps use the
 # frame too, and apps are never counted.
 if [ -z "${SITE_PREVIEW:-}" ]; then
-  find _site -name '*.html' -exec sed -i '0,/<\/head>/s||<script src="/lernapps-count.js" defer></script>\n</head>|' {} +
+  node scripts/html-edit.mjs head-script /lernapps-count.js _site
 fi
 
 touch _site/.nojekyll
