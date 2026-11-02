@@ -12,6 +12,8 @@ When you work on a new feature, first clarify how it fits into the platform desi
 
 After every user message, call `whats_next` of the `workflows` MCP server and follow its `instructions`. Keep the session state in the returned `plan_file_path`: read it at the start of each phase and update it as directed.
 
+If the `workflows` MCP tools are not available, for example because several repositories are checked out, the gist https://gist.github.com/mrsimpson/8bedb66984ce1dbc9e60ac393b708c09 explains how to use the workflows server from the shell. Pass the repository you work in as `project_path`.
+
 Do only what the current phase requires; do not work ahead. Check the phase success criteria before calling `proceed_to_phase`.
 
 At each phase boundary, stop: summarize what the phase produced and ask the user whether to continue before calling `proceed_to_phase`. Skip this stop only if the user asks you to work autonomously.
