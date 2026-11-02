@@ -1,5 +1,0 @@
-{
-  "permissions": {
-    "ask": ["mcp__workflows__proceed_to_phase"]
-  }
-}

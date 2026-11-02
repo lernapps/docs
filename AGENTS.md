@@ -14,10 +14,10 @@ After every user message, call `whats_next` of the `workflows` MCP server and fo
 
 Do only what the current phase requires; do not work ahead. Check the phase success criteria before calling `proceed_to_phase`.
 
-At each phase boundary, stop: summarize what the phase produced and ask the user whether to continue before calling `proceed_to_phase`.
+At each phase boundary, stop: summarize what the phase produced and ask the user whether to continue before calling `proceed_to_phase`. Skip this stop only if the user asks you to work autonomously.
 
 Do not use your own task management tools; the plan file is the record.
 
 Commit the `.vibe` directory together with the work it plans.
 
-We work with feature branches. Before each merge, squash the commits that belong together (usually the whole branch).
+We work with feature branches. Before starting a feature, create a branch for it. Before each merge, squash the commits that belong together (usually the whole branch).
