@@ -129,7 +129,7 @@ x-realises: ch-app-overview, ch-fitness-signal
 
 ### Learning map
 
-The map of what there is to learn in a subject and which of it no app practises yet: one page per subject, per strand and per competency, per curriculum on request, and the same data as JSON for AI assistants and the tooling. A subject has one file with its strands and competencies, a curriculum has one file with its placements; both are checked when the catalog is built. The curriculum a visitor chose is in the address, never stored.
+The map of what there is to learn in a subject and which of it no app practises yet (apps without a strand are listed but not on it): one page per subject, per strand and per competency, per curriculum on request, and the same data as JSON for AI assistants and the tooling. A subject has one file with its strands and competencies, a curriculum has one file with its placements; both are checked when the catalog is built. The curriculum a visitor chose is in the address, never stored.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
