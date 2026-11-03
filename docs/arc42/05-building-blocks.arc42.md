@@ -97,7 +97,7 @@ x-missing-ch-creator-insight: Only visits to an app's page in the catalog are co
 
 Lets adults and students find, trust and start apps, and lets creators list them; it is the core of the platform. For adults and students, it makes [apps findable by topic and grade](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-finding), serves a copy of
 every listed app under lernapps.net and keeps it current ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)), and takes [the thanks of adults and students](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-giving-back). For creators, it
-[takes their entries](https://lernapps.net/docs/platform-design/#2-design/d5-transactions.pdt42.md:el-t-list-app) and [helps them list](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-listing-help); it [checks each entry and has a review agent look at the app](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-fitness-clarity), and publishes the copy once the checks pass.
+[takes their entries](https://lernapps.net/docs/platform-design/#2-design/d5-transactions.pdt42.md:el-t-list-app) and [helps them list](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-listing-help); it [checks each entry and has a review agent look at the app](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-fitness-clarity), and publishes the copy once the checks pass. It also offers the [map of what there is to learn](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-gap-finding), which shows creators which app is still missing.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
@@ -124,6 +124,21 @@ title: Catalog pages
 provider: bb-catalog
 protocol: HTTPS pages under lernapps.net/apps/
 x-realises: ch-app-overview, ch-fitness-signal
+:::
+```
+
+### Learning map
+
+The map of what there is to learn in a subject and which of it no app practises yet (apps without a strand are listed but not on it): one page per subject, per strand and per competency, per curriculum on request, and the same data as JSON for AI assistants and the tooling. A subject has one file with its strands and competencies, a curriculum has one file with its placements; both are checked when the catalog is built. The curriculum a visitor chose is in the address, never stored.
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
+:::interface
+id: if-learning-map
+title: Learning map
+provider: bb-catalog
+protocol: HTTPS pages and JSON under lernapps.net/apps/map/
+x-realises: ch-app-overview
 :::
 ```
 
@@ -283,7 +298,7 @@ x-repo: lernapps/app-templates
 
 ### Archetypes
 
-The template and runtime of each archetype, which the tooling creates apps from and apps build with.
+The template and runtime of each archetype, which the tooling creates apps from and apps build with. Format 2 of the explainer carries the learning map's contract: an app names its strand, and every page names the competencies it practises (`if-learning-map`).
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/app-templates: https://github.com/lernapps/app-templates :::
