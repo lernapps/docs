@@ -211,6 +211,22 @@ channel: ch-app-overview
 :::
 ```
 
+### Seeing which app is still missing
+
+Shows creators, per subject, what there is to learn and which of it no app practises yet, so they can build for a gap they see instead of guessing. The same learning map helps adults and students to find an app: it shows by topic and grade (as the curriculum in the address names it) what exists, and for a student who struggles, what comes before. Nothing is stored for it.
+
+```pdt42
+:::service
+id: s-gap-finding
+title: Seeing which app is still missing
+for: e-creators
+stage: new-opportunity
+kind: empowering
+supports: t-build-with-assistant
+channel: ch-app-overview
+:::
+```
+
 ### Clarity on fitness for use
 
 Answers whether an app may be used, before an adult passes it on to a learner: it sends nothing to third parties, accesses only its own data in the browser and needs no installation or sign-up.

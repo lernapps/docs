@@ -384,6 +384,7 @@ medium: digital
 components:
   - Listings in one comparable format
   - Finding by topic and grade
+  - A map of what there is to learn in a subject and which of it no app covers yet
   - Tailored to the visitor without accounts
   - Entry through referral links, with an explicit first step to have a look
 improvement: Finding an app no longer depends on word of mouth or luck

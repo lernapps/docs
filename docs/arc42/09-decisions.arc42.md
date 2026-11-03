@@ -226,6 +226,44 @@ x-source: lernapps/.github#22; lernapps/.github ORGANIZATION.md "Language"
 :::
 ```
 
+## The learning map belongs to the catalog: one file per subject, one per curriculum
+
+**Context.** The catalog shows which apps exist, not what there is to learn and which of it no app covers. A map of a subject needs the same source of truth for everyone: pages, assistants and the listing check. Curricula differ by Land and school type, are public documents of different quality, and cannot be captured all at once.
+
+**Decision.** The catalog owns the learning map. A subject is one YAML file with its strands and, nested in them, its competencies, so a competency belongs to exactly one strand by the form of the file. A curriculum is one YAML file per subject that places competencies in grades; it may place only some of them, and every competency has a grade band that applies wherever a curriculum does not place it. Schemas are written in Zod and checked when the catalog is built, across files as well (ids, no cycles). The state of a curriculum is computed, not declared.
+
+**Consequences.** The map stays static and readable without JavaScript, like all catalog pages (`con-platform-static-for-now`). Curricula can be contributed one by one, and a pull request is enough to add one. Subject models and curricula have to be maintained (`risk-map-upkeep`). Rejected: one file for everything, which could not grow step by step; a database, which the static platform does not have.
+
+```arc42
+:::decision
+id: dec-learning-map-in-catalog
+title: "The learning map belongs to the catalog: one file per subject, one per curriculum"
+status: accepted
+date: 2026-11-03
+addresses: qg-operable-by-one, qg-understandable, qg-nothing-collected, con-platform-static-for-now, con-one-owner, risk-map-upkeep
+x-source: lernapps/apps#115; lernapps/apps .vibe/development-plan-feat-learning-map.md KD-06, KD-09
+:::
+```
+
+## One app, one strand; explainer format 2
+
+**Context.** An app that covers a whole subject is too big to build and to keep; an app without a place in the subject cannot show which gap it closes. Counting what is covered and what is not only works if every competency has one owner.
+
+**Decision.** An app names one strand of one subject, or none, and an app without a strand is not on the map. An explainer says it in format 2: its `app.yaml` has the strand, and every page names the competencies it practises, so the app's competencies are computed from its pages. Any other app lists its competencies in its catalog entry. The listing checks that all competencies of an app belong to its strand. Format 2 requires both fields, so every explainer decides and none forgets; format 1 stays valid for apps that do not move.
+
+**Consequences.** Coverage and gaps are counted without duplicates, and it is clear which app is responsible. Creators have to know the strand when they plan an app; the guidance reads it from the map (`if-guidance`). The explainer's build writes a list of its pages that the catalog reads instead of hand-written topics. Rejected: several strands per app; competencies belonging to several strands.
+
+```arc42
+:::decision
+id: dec-one-app-one-strand
+title: One app, one strand; explainer format 2
+status: accepted
+date: 2026-11-03
+addresses: qg-learnable-for-creators, qg-understandable, con-creator-stays-author
+x-source: lernapps/apps#115; lernapps/apps .vibe/development-plan-feat-learning-map.md KD-07, KD-08, KD-11
+:::
+```
+
 ## Licences: open source platform, copy-friendly apps
 
 **Context.** The platform is built in the open; the copy of a listed app needs a licence that allows it ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)).

@@ -36,6 +36,20 @@ x-source: pdt42 KD-09, KD-20
 :::
 ```
 
+## One owner cannot keep the subject models and 16 curricula
+
+The learning map needs a model for every subject and a curriculum for every Land and school type (`dec-learning-map-in-catalog`). One person cannot write and keep all of them, and curricula change.
+
+```arc42
+:::risk
+id: risk-map-upkeep
+title: One owner cannot keep the subject models and 16 curricula
+severity: medium
+mitigation: A curriculum may be incomplete and the grade band of every competency always applies, so the map is useful with one curriculum and grows by contributed files; each file is checked when the catalog is built, and the state of a curriculum is computed (dec-learning-map-in-catalog). Accepted until contributors share the upkeep.
+x-source: lernapps/apps .vibe/development-plan-feat-learning-map.md KD-06; qg-operable-by-one
+:::
+```
+
 ## All apps share one origin
 
 Every served copy and every platform site lives under lernapps.net and so shares one origin in the browser

@@ -153,6 +153,23 @@ status: open
 :::
 ```
 
+#### Creators build an app for a gap they see on the map
+
+The learning map shows per subject what there is to learn and which of it no app practises yet. If seeing the gap is what makes creators start, the map belongs to the guidance for building; if they build what they would have built anyway, it is only an overview. The creators of the first draft are the ones who list the first new apps.
+
+```pdt42
+:::assumption
+id: a-gaps-guide-creators
+title: Creators build an app for a gap they see on the map
+mvp: mvp-first-draft
+kind: attraction
+riskiest: no
+test: Ask each creator who lists a new app whether a gap on the map was the reason, and which one
+criteria: At least 2 of the newly listed apps name a gap on the map as the reason
+status: open
+:::
+```
+
 ## First apps, first thanks
 
 The real MVP, once the first draft holds. All three experiences take part. Teachers are reached through referral links that the platform owner's contacts forward, with the platform itself as the pitch and a short letter to go with it. Thanks and feedback run through the real anonymous click; users are not accompanied or observed.
