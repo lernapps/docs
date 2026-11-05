@@ -62,7 +62,7 @@ Mainly for adopting adults; also involves app creators, students. What they get:
 1. Find an app for a topic and grade
    - **Finding apps by topic and grade**
      - For adopting adults: Helps adults find a fitting app in one place.
-     - Delivered by: Catalog pages (Catalog).
+     - Delivered by: Catalog pages (Catalog), Learning map (Catalog).
 1. Confirm an app may be used
    - **Clarity on fitness for use**
      - For adopting adults: Answers whether an app may be used, before an adult passes it on to a learner: it sends nothing to third parties, accesses only its own data in the browser and needs no installation or sign-up.
@@ -113,7 +113,7 @@ Mainly for adopting adults; also involves students, app creators. What they get:
 1. Return to an app
    - **Finding apps for a topic one struggles with**
      - For students: Helps students return to apps and find new ones on their own, for the topic they struggle with.
-     - Delivered by: Catalog pages (Catalog).
+     - Delivered by: Catalog pages (Catalog), Learning map (Catalog).
 1. As in the journey “An app in class within minutes”: Thank the creator.
 
 **Behind this journey: how the parts work together**
@@ -262,7 +262,7 @@ The creator's journey shows that creators build with an AI assistant of their ow
 
 ### [App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates)
 
-- **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with. Used by: Tooling, Practice.
+- **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with. Format 2 of the explainer carries the learning map's contract: an app names its strand, and every page names the competencies it practises. Used by: Tooling, Practice.
 
 ### [Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice) ([lernapps.net/practice](https://lernapps.net/practice/))
 
@@ -315,6 +315,10 @@ Services the platform design names but no journey needs. They show where the pla
 - **Contributing best practices to the guidance**
   - For app creators: Lets experienced creators bring their own best practices into the guidance for building apps. Whoever shapes the guidance shapes the platform, so this is the path from creator to co-owner.
   - Issue: [lernapps/docs#53](https://github.com/lernapps/docs/issues/53).
+- **Seeing which app is still missing**
+  - For app creators: Shows creators, per subject, what there is to learn and which of it no app practises yet, so they can build for a gap they see instead of guessing. The same learning map helps adults and students to find an app: it shows by topic and grade (as the curriculum in the address names it) what exists, and for a student who struggles, what comes before. Nothing is stored for it.
+  - Delivered by: Catalog pages (Catalog), Learning map (Catalog).
+  - Would support: Build an app with an AI assistant.
 - **Assembling apps for a class**
   - For adopting adults: Lets adults bundle apps for one class and bring them to students in one step, so students start without installation or sign-up.
   - Would support: Bring an app to students.
@@ -343,8 +347,10 @@ Each part with the interfaces it offers, the services they serve and the parts t
 #### [Catalog](architecture/#05-building-blocks.arc42.md:el-bb-catalog) ([lernapps/apps](https://github.com/lernapps/apps))
 
 - **Catalog pages:** The pages where adults and students find an app for a topic and grade, see its fitness for use, and find the way to build an app when none fits.
-  - Serves: Finding apps by topic and grade, Finding apps for a topic one struggles with, Clarity on fitness for use
+  - Serves: Finding apps by topic and grade, Finding apps for a topic one struggles with, Seeing which app is still missing, Clarity on fitness for use
   - Used by: Practice
+- **Learning map:** The map of what there is to learn in a subject and which of it no app practises yet (apps without a strand are listed but not on it): one page per subject, per strand and per competency, per curriculum on request, and the same data as JSON for AI assistants and the tooling. A subject has one file with its strands and competencies, a curriculum has one file with its placements; both are checked when the catalog is built. The curriculum a visitor chose is in the address, never stored.
+  - Serves: Finding apps by topic and grade, Finding apps for a topic one struggles with, Seeing which app is still missing
 - **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap of this interface, with the risk it carries.
   - Serves: Help to list an app, Clarity on fitness for use
   - ┆ Not yet: A listing is published only after the platform owner approves the pull request, and the review agent runs only at their request.
@@ -375,7 +381,7 @@ Each part with the interfaces it offers, the services they serve and the parts t
 
 #### [App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates) ([lernapps/app-templates](https://github.com/lernapps/app-templates))
 
-- **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with.
+- **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with. Format 2 of the explainer carries the learning map's contract: an app names its strand, and every page names the competencies it practises.
   - Serves: Guidance for building apps
   - Used by: Tooling, Practice
   - Works with, outside the system: Renovate
