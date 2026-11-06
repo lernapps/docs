@@ -22,9 +22,9 @@ concurrency:
 
 jobs:
   changes:
-    uses: lernapps/tooling/.github/workflows/changes.yml@ed48e1acf1b69ee2b6ce059e7ba42a0e9046a70a # main
+    uses: lernapps/tooling/.github/workflows/changes.yml@47c0494af823b5e914bf89343cc4c99008b3a6f5 # main
     with:
-      tooling-ref: ed48e1acf1b69ee2b6ce059e7ba42a0e9046a70a # the classifier of the same commit
+      tooling-ref: 47c0494af823b5e914bf89343cc4c99008b3a6f5 # the classifier of the same commit
     permissions:
       contents: read
 
@@ -39,7 +39,7 @@ jobs:
       PDT42_DIFF_BASE: origin/${{ github.base_ref }} # the build renders the changes since the merge base
     steps:
       - id: preview
-        uses: lernapps/tooling/actions/site-preview@ed48e1acf1b69ee2b6ce059e7ba42a0e9046a70a # main
+        uses: lernapps/tooling/actions/site-preview@47c0494af823b5e914bf89343cc4c99008b3a6f5 # main
         with:
           site: /docs/
           fetch-depth: 0 # the diff needs the base branch
