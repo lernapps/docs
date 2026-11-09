@@ -257,12 +257,12 @@ The creator's journey shows that creators build with an AI assistant of their ow
 ### [Tooling](architecture/#05-building-blocks.arc42.md:el-bb-tooling) ([lernapps.net/tooling](https://lernapps.net/tooling/))
 
 - **App actions:** The reusable workflows and actions an app's repository runs to check and build the app and to publish the creator's own release, at the creator's address. Used by: Creators' app repositories.
-- **Guidance:** The guidance by phase, the skills and the documentation that AI assistants read to build and list an app. Used by: Creator's AI assistant.
+- **Guidance:** The guidance by phase, the skills and the documentation that AI assistants read to build and list an app. It reads the strand, the competencies and the subject's explainer focus from the learning map. Used by: Creator's AI assistant.
 - **Tooling CLI:** The command line an assistant and the workflows run: create an app from an archetype, check it against the rules, update it. Used by: Creator's AI assistant, Creators' app repositories, Catalog, Practice.
 
 ### [App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates)
 
-- **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with. Format 2 of the explainer carries the learning map's contract: an app names its strand, and every page names the competencies it practises. Used by: Tooling, Practice.
+- **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with. Format 2 of the explainer carries the learning map's contract: an app names its strand, or its subject if the subject's focus is the competency, and every page names the competencies it practises, all of one strand. Used by: Tooling, Practice.
 
 ### [Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice) ([lernapps.net/practice](https://lernapps.net/practice/))
 
@@ -349,7 +349,7 @@ Each part with the interfaces it offers, the services they serve and the parts t
 - **Catalog pages:** The pages where adults and students find an app for a topic and grade, see its fitness for use, and find the way to build an app when none fits.
   - Serves: Finding apps by topic and grade, Finding apps for a topic one struggles with, Seeing which app is still missing, Clarity on fitness for use
   - Used by: Practice
-- **Learning map:** The map of what there is to learn in a subject and which of it no app practises yet (apps without a strand are listed but not on it): one page per subject, per strand and per competency, per curriculum on request, and the same data as JSON for AI assistants and the tooling. A subject has one file with its strands and competencies, a curriculum has one file with its placements; both are checked when the catalog is built. The curriculum a visitor chose is in the address, never stored.
+- **Learning map:** The map of what there is to learn in a subject and which of it no app practises yet (apps without a strand or subject are listed but not on it): one page per subject, per strand and per competency, per curriculum on request, and the same data as JSON for AI assistants and the tooling. A subject has one file with its strands, its competencies and its explainer focus, a curriculum has one file with its placements; both are checked when the catalog is built. The curriculum a visitor chose is in the address, never stored.
   - Serves: Finding apps by topic and grade, Finding apps for a topic one struggles with, Seeing which app is still missing
 - **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap of this interface, with the risk it carries.
   - Serves: Help to list an app, Clarity on fitness for use
@@ -369,7 +369,7 @@ Each part with the interfaces it offers, the services they serve and the parts t
 
 - **App actions:** The reusable workflows and actions an app's repository runs to check and build the app and to publish the creator's own release, at the creator's address.
   - Works with, outside the system: Creators' app repositories, GitHub
-- **Guidance:** The guidance by phase, the skills and the documentation that AI assistants read to build and list an app.
+- **Guidance:** The guidance by phase, the skills and the documentation that AI assistants read to build and list an app. It reads the strand, the competencies and the subject's explainer focus from the learning map.
   - Serves: Guidance for building apps
   - Works with, outside the system: Creator's AI assistant
 - **Site actions:** The actions every platform site is built, checked and deployed with, and the previews of its pull requests: the website, the catalog, the docs and the tooling's own pages.
@@ -381,7 +381,7 @@ Each part with the interfaces it offers, the services they serve and the parts t
 
 #### [App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates) ([lernapps/app-templates](https://github.com/lernapps/app-templates))
 
-- **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with. Format 2 of the explainer carries the learning map's contract: an app names its strand, and every page names the competencies it practises.
+- **Archetypes:** The template and runtime of each archetype, which the tooling creates apps from and apps build with. Format 2 of the explainer carries the learning map's contract: an app names its strand, or its subject if the subject's focus is the competency, and every page names the competencies it practises, all of one strand.
   - Serves: Guidance for building apps
   - Used by: Tooling, Practice
   - Works with, outside the system: Renovate
