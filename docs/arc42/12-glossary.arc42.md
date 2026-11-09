@@ -22,7 +22,43 @@ The word "competency" is not used for strands or areas, although the KMK standar
 :::glossary-term
 id: term-strand
 title: Strand (Strang)
-definition: A part of a subject that runs over several school years and builds on itself; an app covers one strand.
+definition: A part of a subject that runs over several school years and builds on itself; a page practises competencies of one strand.
+:::
+```
+
+## Explainer focus (Fokus)
+
+Set in the subject file as `explainerFocus` (`dec-explainer-focus`).
+
+```arc42
+:::glossary-term
+id: term-explainer-focus
+title: Explainer focus (Fokus)
+definition: What an app of a subject concentrates on, the strand (default) or the competency; with competency focus an app may practise competencies of several strands of the subject.
+:::
+```
+
+## Strand app (Strang-App)
+
+The usual app: its strand is in `strand: <subject>/<strand>`, in any subject.
+
+```arc42
+:::glossary-term
+id: term-strand-app
+title: Strand app (Strang-App)
+definition: An app that names one strand and practises competencies of that strand only.
+:::
+```
+
+## Unit app (Einheiten-App)
+
+A unit such as "Essen" in French needs words, grammar and texts.
+
+```arc42
+:::glossary-term
+id: term-unit-app
+title: Unit app (Einheiten-App)
+definition: An app that names a subject instead of a strand and practises competencies of several strands of it; allowed only in a subject with competency focus.
 :::
 ```
 

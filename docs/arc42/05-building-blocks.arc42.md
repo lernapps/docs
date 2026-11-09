@@ -129,7 +129,7 @@ x-realises: ch-app-overview, ch-fitness-signal
 
 ### Learning map
 
-The map of what there is to learn in a subject and which of it no app practises yet (apps without a strand are listed but not on it): one page per subject, per strand and per competency, per curriculum on request, and the same data as JSON for AI assistants and the tooling. A subject has one file with its strands and competencies, a curriculum has one file with its placements; both are checked when the catalog is built. The curriculum a visitor chose is in the address, never stored.
+The map of what there is to learn in a subject and which of it no app practises yet (apps without a strand or subject are listed but not on it): one page per subject, per strand and per competency, per curriculum on request, and the same data as JSON for AI assistants and the tooling. A subject has one file with its strands, its competencies and its explainer focus (`dec-explainer-focus`), a curriculum has one file with its placements; both are checked when the catalog is built. The curriculum a visitor chose is in the address, never stored.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/apps: https://github.com/lernapps/apps :::
@@ -218,7 +218,7 @@ x-repo: lernapps/tooling
 
 ### Guidance
 
-The guidance by phase, the skills and the documentation that AI assistants read to build and list an app.
+The guidance by phase, the skills and the documentation that AI assistants read to build and list an app. It reads the strand, the competencies and the subject's explainer focus from the learning map (`if-learning-map`).
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/tooling: https://github.com/lernapps/tooling :::
@@ -298,7 +298,7 @@ x-repo: lernapps/app-templates
 
 ### Archetypes
 
-The template and runtime of each archetype, which the tooling creates apps from and apps build with. Format 2 of the explainer carries the learning map's contract: an app names its strand, and every page names the competencies it practises (`if-learning-map`).
+The template and runtime of each archetype, which the tooling creates apps from and apps build with. Format 2 of the explainer carries the learning map's contract: an app names its strand, or its subject if the subject's focus is the competency, and every page names the competencies it practises, all of one strand (`if-learning-map`).
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/app-templates: https://github.com/lernapps/app-templates :::
