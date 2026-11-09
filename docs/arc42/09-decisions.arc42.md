@@ -249,9 +249,9 @@ x-source: lernapps/apps#115; lernapps/apps .vibe/development-plan-feat-learning-
 
 **Context.** An app that covers a whole subject is too big to build and to keep; an app without a place in the subject cannot show which gap it closes. Counting what is covered and what is not only works if every competency has one owner.
 
-**Decision.** An app may name one strand of one subject; it is recommended when the app is scoped, not required. An app without a strand (`strand: none`) is listed like any other, only not on the map. An app with a strand practises only the competencies of that strand and invents none; a missing competency is proposed to the catalog. As a rule a page practises one competency; several pages for a large competency are fine, and several competencies on one page are advised against. An explainer says its strand in format 2: its `app.yaml` has the strand or `none`, and every page names the competencies it practises, so the app's competencies are computed from its pages. Any other app lists its competencies in its catalog entry. Format 2 requires the field, so every explainer decides and none forgets; format 1 stays valid for apps that do not move.
+**Decision.** In a subject whose explainer focus is the strand (`dec-explainer-focus`), an app may name one strand of one subject; it is recommended when the app is scoped, not required. An app without a strand (`strand: none`) is listed like any other, only not on the map. An app with a strand practises only the competencies of that strand and invents none; a missing competency is proposed to the catalog. As a rule a page practises one competency; several pages for a large competency are fine, and several competencies on one page are advised against. An explainer says its strand in format 2: its `app.yaml` has the strand or `none`, and every page names the competencies it practises, so the app's competencies are computed from its pages. Any other app lists its competencies in its catalog entry. Format 2 requires the field, so every explainer decides and none forgets; format 1 stays valid for apps that do not move.
 
-**Consequences.** Coverage and gaps are counted without duplicates, and it is clear which app is responsible. Creators are advised to choose the strand when they plan an app; the guidance reads it from the map (`if-guidance`). The rules are enforced in three places: the catalog's listing rule `entry-learning-map` is an error (unknown id, competency of another strand); the review agent's judgements (`content-matches-competencies`, `strand-from-map`) are hints only; `lernapps check` gives early advice (warning `competencies-on-map`, hint `one-competency-per-page`). The explainer's build writes a list of its pages that the catalog reads instead of hand-written topics. Rejected: several strands per app; competencies belonging to several strands.
+**Consequences.** Coverage and gaps are counted without duplicates, and it is clear which app is responsible. Creators are advised to choose the strand when they plan an app; the guidance reads it from the map (`if-guidance`). The rules are enforced in three places: the catalog's listing rule `entry-learning-map` is an error (unknown id, competency of another strand); the review agent's judgements (`content-matches-competencies`, `strand-from-map`) are hints only; `lernapps check` gives early advice (warning `competencies-on-map`, hint `one-competency-per-page`). The explainer's build writes a list of its pages that the catalog reads instead of hand-written topics. Rejected: several strands per app in a subject whose strands separate; competencies belonging to several strands.
 
 ```arc42
 :::decision
@@ -261,6 +261,25 @@ status: accepted
 date: 2026-11-03
 addresses: qg-learnable-for-creators, qg-understandable, con-creator-stays-author
 x-source: lernapps/apps#115; lernapps/apps .vibe/development-plan-feat-learning-map.md KD-07, KD-08, KD-11
+:::
+```
+
+## The subject decides whether apps stay in one strand
+
+**Context.** In foreign languages and in German, the strands are woven together: a unit such as "Essen" needs words, grammar and texts, and many competencies of one strand require competencies of another (in French, grammar requires vocabulary and texts require both). In the sciences and in history, the strands separate: a strand of history is an epoch, and a strand of physics rarely requires another. An app that practises a unit across strands would not count as covering its grammar, and the map would show gaps that are not there (`s-gap-finding`).
+
+**Decision.** Every subject file states the subject's explainer focus: `strand` (the default) or `competency`. With strand focus, an app stays in one strand (`dec-one-app-one-strand`). With competency focus, the competencies are what matters and the strands only illustrate; foreign languages and German have this focus. An explainer names either a strand (or `none`) or a subject, exactly one; an app with a catalog entry always has a subject there, the id of a subject of the map, whose name the catalog shows, and without a strand its competencies make it a unit app. An app that names a subject instead of a strand is a unit app: it may practise competencies of every strand of that subject, and it is allowed only in a subject with competency focus. A page practises competencies of one strand only, so the method stays the same within a strand. Prerequisites follow the order of the app: every direct prerequisite of a competency a page practises is practised or recapped on an earlier page, or linked in the page's text; a recapped competency's own prerequisites are not followed. A missing prerequisite is a gap if one of its ancestors is practised in the app, otherwise the app's entry, where a recap page helps. An app without pages has no order; there only gaps and entries are checked. With competency focus the check is stricter: the listing rejects wrong order and gaps and warns about an entry without recap, while with strand focus everything is a warning. The schema of the app cannot know the subject's focus, so `lernapps check` and the catalog check it.
+
+**Consequences.** Coverage of languages counts what unit apps practise, and the map shows real gaps. A subject changes its focus by a pull request to its subject file, without code. Creators learn one field more and, in a language, one rule more about the order of pages (`qg-learnable-for-creators`); the explainers change nothing, and every catalog entry names its subject by its id on the map. The map research asks for each subject whether its strands separate or illustrate. Rejected: `strand: <subject>` as a value with two meanings; renaming `strand` to `focus`, which would have changed every explainer; a strand on each page, which can be computed from its competencies and could contradict them.
+
+```arc42
+:::decision
+id: dec-explainer-focus
+title: The subject decides whether apps stay in one strand
+status: accepted
+date: 2026-11-09
+addresses: qg-learnable-for-creators, qg-understandable, con-creator-stays-author
+x-source: lernapps/apps#226; lernapps/apps .vibe/development-plan-feat-cross-strand-languages.md KD-01 to KD-08
 :::
 ```
 
