@@ -38,6 +38,18 @@ definition: One thing a child can learn, written as "Ich kann …"; it belongs t
 :::
 ```
 
+## Step (Stufe)
+
+Derived from "requires", never written in a subject file; it says nothing about grades.
+
+```arc42
+:::glossary-term
+id: term-step
+title: Step (Stufe)
+definition: How far down a competency stands in the chain of "requires": 1 when it requires nothing, else one more than its deepest prerequisite.
+:::
+```
+
 ## Grade band (Richtstufe)
 
 Every competency has one.
