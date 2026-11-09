@@ -86,6 +86,18 @@ definition: The two school years in which a competency is roughly taught (5/6, 7
 :::
 ```
 
+## Review state (Status)
+
+A subject's model is a draft until teachers of the subject look it through; the map says so on every page of the subject.
+
+```arc42
+:::glossary-term
+id: term-review-state
+title: Review state (Status)
+definition: How far teachers of a subject reviewed its strands, competencies and requires: draft (an idea to show the principle, not reviewed), checked (one teacher), reviewed (several).
+:::
+```
+
 ## Curriculum (Lehrplan)
 
 Not "Bundesland": two school types of one Land have two curricula. A curriculum may be incomplete.
