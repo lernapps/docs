@@ -1,0 +1,52 @@
+/* The look of a landing page (start pages of docs and tooling, the workshop page): the palette as --lc-* tokens in the
+   light and the dark scheme, and the rules these pages share: a dark hero, an eyebrow, a call to action with an arrow,
+   a content width. Opt-in: a site links it after page.css (lernapps-page.css), which supplies the dark values of the
+   --la-* tokens. Colours that a token has come from the token; the others are their own steps, not a flip.
+   The page's own components (cards, steps, lists) stay in the page. test/landing.test.mjs checks the contrast pairs. */
+:root {
+  --lc-bg: var(--la-surface);
+  --lc-card: var(--la-bg);
+  --lc-text: var(--la-text);
+  --lc-muted: var(--la-muted);
+  --lc-border: var(--la-border);
+  --lc-line: #cbd5e1;
+  --lc-accent: var(--la-link);
+  --lc-tint: #eaf0fd;
+  --lc-on: #ffffff;
+  --lc-hero: var(--la-ink);
+  --lc-shadow: 0 1px 2px rgb(15 23 42 / 0.06), 0 6px 18px rgb(15 23 42 / 0.06);
+}
+
+/* html:root: more specific than the :root above and than tokens.css, whatever the order of the links. */
+@media (prefers-color-scheme: dark) {
+  html:root {
+    --lc-card: var(--la-box);
+    --lc-line: #334155;
+    --lc-tint: #14213d;
+    --lc-on: #0b1220;
+    --lc-hero: #0a101d;
+    --lc-shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 8px 24px rgb(0 0 0 / 0.3);
+  }
+}
+
+body { background: var(--lc-bg); color: var(--lc-text); }
+main { max-width: none; padding: 0; color: var(--lc-text); }
+main a { color: var(--lc-accent); }
+main a:focus-visible { outline: 3px solid var(--lc-accent); outline-offset: 3px; border-radius: 0.5rem; }
+.wrap { max-width: 58rem; margin: 0 auto; padding: 0 var(--la-gutter, 1rem); }
+
+.hero {
+  background: radial-gradient(48rem 22rem at 12% -30%, rgb(96 165 250 / 0.28), transparent 65%), var(--lc-hero);
+  color: #f1f5f9;
+  padding: 3.5rem 0 5.5rem;
+}
+.eyebrow { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: #93c5fd; }
+.hero h1 { font-size: clamp(2rem, 5.6vw, 3.4rem); line-height: 1.08; letter-spacing: -0.03em; margin: 0.6rem 0 1rem; max-width: 18ch; }
+.hero p { max-width: 40rem; font-size: 1.1rem; color: #cbd5e1; margin: 0; }
+
+.cta { display: inline-flex; align-items: center; gap: 0.4rem; font-weight: 700; color: var(--lc-accent); }
+.cta svg { transition: transform 0.15s; }
+a:hover .cta svg, a.cta:hover svg { transform: translateX(3px); }
+@media (prefers-reduced-motion: reduce) { .cta svg { transition: none; } }
+
+section.more { padding: 3rem 0 0; }
