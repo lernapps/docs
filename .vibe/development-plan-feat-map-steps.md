@@ -42,7 +42,7 @@ lernapps/apps): Begriff „Stufe (step)“ im Glossar, ein Satz in `if-learning-
 - Änderung geschrieben.
 
 ### Tasks
-- [ ] Commit und Push des Branches `feat/map-steps`
+- [x] Commit und Push des Branches `feat/map-steps` (kein PR)
 
 ### Completed
 *None yet*
