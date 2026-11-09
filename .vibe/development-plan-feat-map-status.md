@@ -4,7 +4,9 @@
 *Workflow: [minor](https://codemcp.github.io/workflows/workflows/minor)*
 
 ## Goal
-*Define what you're building or fixing - this will be updated as requirements are gathered*
+Die Architektur nennt den Status einer Lernlandkarte (lernapps/apps, Branch `feat/map-status`): Glossar
+`term-review-state`, ein Satz in `if-learning-map`. Entscheidungen des Owners (2026-11-09): lernapps/apps,
+`.vibe/development-plan-feat-map-status.md`. pdt42 bleibt unverändert. Autonom bis zum Push.
 ## Key Decisions
 *Important decisions will be documented here as they are made*
 
