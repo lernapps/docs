@@ -23,16 +23,16 @@ concurrency:
 
 jobs:
   changes:
-    uses: lernapps/tooling/.github/workflows/changes.yml@282b4694672ae2984f478c2a34890aa5ccbd5f5c # main
+    uses: lernapps/tooling/.github/workflows/changes.yml@e448c35760c7ccda088a0dd0706c4668f63ebecc # main
     with:
-      tooling-ref: 282b4694672ae2984f478c2a34890aa5ccbd5f5c # the classifier of the same commit
+      tooling-ref: e448c35760c7ccda088a0dd0706c4668f63ebecc # the classifier of the same commit
 
   build: # builds and checks the site
     needs: changes
     if: needs.changes.outputs.site == 'true'
     runs-on: ubuntu-latest
     steps:
-      - uses: lernapps/tooling/actions/site-check@282b4694672ae2984f478c2a34890aa5ccbd5f5c # main
+      - uses: lernapps/tooling/actions/site-check@e448c35760c7ccda088a0dd0706c4668f63ebecc # main
 
   deploy:
     if: github.ref == 'refs/heads/main' && needs.changes.outputs.site == 'true'
@@ -41,7 +41,7 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: lernapps/tooling/actions/site-deploy@282b4694672ae2984f478c2a34890aa5ccbd5f5c # main
+      - uses: lernapps/tooling/actions/site-deploy@e448c35760c7ccda088a0dd0706c4668f63ebecc # main
 
   site: # required status check: always runs, fails when a job above failed or was cancelled
     needs: [changes, build, deploy]
