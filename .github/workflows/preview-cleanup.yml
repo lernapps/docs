@@ -21,7 +21,7 @@ permissions:
 
 jobs:
   cleanup:
-    uses: lernapps/tooling/.github/workflows/preview-cleanup.yml@e448c35760c7ccda088a0dd0706c4668f63ebecc # main
+    uses: lernapps/tooling/.github/workflows/preview-cleanup.yml@cd063c46d9ac17fbf7e4836a524ef129f3f67ccf # main
     with:
-      tooling-ref: e448c35760c7ccda088a0dd0706c4668f63ebecc # the script of the same commit
+      tooling-ref: cd063c46d9ac17fbf7e4836a524ef129f3f67ccf # the script of the same commit
       dry-run: ${{ inputs.dry-run == true }}
