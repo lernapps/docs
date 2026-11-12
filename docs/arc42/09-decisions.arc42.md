@@ -288,7 +288,7 @@ x-source: lernapps/apps#226; lernapps/apps .vibe/development-plan-feat-cross-str
 **Context.** The platform is built in the open; the copy of a listed app needs a licence that allows it ([KD-21](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-21-lernappsnet-serves-a-copy-of-every-listed-app-lernappsapps58-2026-10-20)).
 
 **Decision.** The platform's own components are under the licences decided for the organisation (lernapps/.github#19).
-A listed app needs a licence that allows the copy: MIT or Apache 2.0 for code, CC BY 4.0 for content.
+A listed app needs a licence that allows the copy: MIT or Apache 2.0 for code, CC BY-SA 4.0 for content.
 
 **Consequences.** The listing has to know the app's licence.
 
@@ -299,6 +299,6 @@ title: "Licences: open source platform, copy-friendly apps"
 status: accepted
 date: 2026-10-20
 addresses: con-creator-stays-author
-x-source: lernapps/.github#19; pdt42 KD-21; owner decision 2026-10-23
+x-source: lernapps/.github#19; pdt42 KD-21; owner decision 2026-10-23, 2026-11-12
 :::
 ```
