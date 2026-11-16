@@ -81,18 +81,13 @@ settings stop them before the first line (pdt42 `a-creators-build-on-own-compute
 the platform nothing to run (`con-free`, `con-github-means-of-production`), and the creator pays for their own
 assistant (`con-creator-brings-ai`).
 
-**Decision.** Creators build in a development container that GitHub starts for them in the browser, a codespace, from a
-template repository (`bb-start`). A shared image (`if-workplace-image`), built and published by the tooling, carries
-Node, the browser the checks use and the browser tool for assistants. The assistants are the editor extensions of
-Claude Code and Codex, which bring their own command lines; anyone who wants them in the terminal installs them. The
-image is kept lean, because pulling it is almost all of the time a codespace needs to start. `lernapps create` writes the
-same container file into every app, so a creator can open an app in a codespace later too. The container file names the
-image by its digest, and Renovate moves the digest and the versions pinned inside the image (`dec-pinned-by-commit`).
-The README of the template and a page of the catalog (`/build/codespaces/`) lead through opening the workplace,
-signing in to the assistant and pausing.
+**Decision.** Creators build in a codespace that GitHub starts for them in the browser, from a template repository
+(`bb-start`), on a shared image of the tooling (`if-workplace-image`). The image is kept lean, because pulling it is almost
+all of the time a codespace needs to start. The assistants are the editor extensions of Claude Code and Codex, which bring
+their own command lines. `lernapps create` writes the same container file into every app. The container file names the
+image by its digest, which Renovate moves (`dec-pinned-by-commit`).
 
-**Consequences.** The creator needs a GitHub account, pays for their assistant, and for codespace hours beyond GitHub's
-free allowance. Signing in to the assistants needs workarounds in a codespace (`risk-workplace-sign-in`). The
+**Consequences.** The creator needs a GitHub account and pays for codespace hours beyond GitHub's free allowance. Signing in to the assistants needs workarounds in a codespace (`risk-workplace-sign-in`). The
 dependence on GitHub grows (`risk-external-services`). The workplace is open (`dec-open-workplace`). Rejected:
 
 - A workplace in the browser alone, on WebContainers (as bolt.diy uses): it runs Node only, so no native command lines;
@@ -126,12 +121,10 @@ command; no firewall and no approval prompt is preset. The protection sits where
 of the tooling and the catalog look at the finished app (`dec-check-fitness`), and the workflows treat the source of
 another repository as untrusted: no secrets for runs on foreign code, minimal rights, actions pinned by commit.
 
-**Consequences.** A page or a project the assistant reads can steer it and take what is in the codespace: the creator's
-sign-in to the assistant and a token limited to one repository (`risk-open-workplace`). The damage stays with the
-creator, and the guide says so plainly. Whether an assistant asks before it acts is a user setting of its editor
-extension that the container file cannot preset, so each creator decides. Rejected: a firewall with an allowlist, as in
-the reference container of an AI provider: it blocks research and the sign-in of the assistants and needs extra rights
-in the container.
+**Consequences.** A page or a project the assistant reads can steer it and take what is in the codespace
+(`risk-open-workplace`). Whether an assistant asks before it acts is a user setting of its editor extension, which the
+container file cannot preset. Rejected: a firewall with an allowlist, as in the reference container of an AI provider: it
+blocks research and the sign-in of the assistants and needs extra rights in the container.
 
 ```arc42
 :::decision

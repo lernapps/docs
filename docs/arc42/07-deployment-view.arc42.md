@@ -4,8 +4,7 @@ lernapps.net runs entirely on GitHub (`con-github-means-of-production`): every r
 own `gh-pages` branch, and GitHub Pages serves all of them under the one domain lernapps.net (`dec-one-domain`), each
 repository at `lernapps.net/<repo>/` and the website at the root. Builds, checks and publications run on GitHub
 Actions. There is no server of the platform's own; the only services outside GitHub are GoatCounter for the
-platform's open counts and, for now, e-mail for thanks. The creator's workplace is a GitHub codespace that the creator
-starts and pays for, not a server of the platform.
+platform's open counts and, for now, e-mail for thanks.
 
 ```arc42
 :::diagram
@@ -167,10 +166,8 @@ hosts: bb-tooling, bb-catalog
 
 ## Workplace: GitHub Codespaces
 
-A creator builds in a codespace that GitHub starts for them from the starting point (`bb-start`) and that pulls the
-workplace image of the tooling from GitHub's package registry. It belongs to the creator, who pays for it beyond
-GitHub's free allowance; the platform runs nothing for it. By default a codespace stops after 30 minutes without
-input and is deleted after 30 days without use; a creator can change both.
+A creator builds in a codespace that GitHub starts from the starting point and that pulls the workplace image from
+GitHub's package registry. It belongs to the creator; the platform runs nothing for it.
 
 ```arc42
 :::deployment-node

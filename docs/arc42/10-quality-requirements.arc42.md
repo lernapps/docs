@@ -330,8 +330,7 @@ metric: no step by the owner other than merging, where a merge is not automatic;
 
 ## A creator who is not technical builds without setting anything up
 
-Learnable for creators includes the creators who cannot install tools or run commands. The workplace has to be ready
-when they open it, and the one step it cannot prepare, signing in to the assistant, has to be explained.
+The workplace has to be ready when a creator who cannot install tools opens it; only the sign-in has to be explained.
 
 ```arc42
 :::quality-scenario

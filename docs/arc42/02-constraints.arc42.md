@@ -83,10 +83,8 @@ source: pdt42 KD-17, KD-20
 
 ## The creator brings and pays for the AI
 
-The platform pays for no AI usage and holds no key or account of an AI provider. A creator builds with an assistant
-whose access they bring and pay for themselves, a subscription or a key. This follows from the platform being free and
-without running costs (`con-free`), and from the providers' own rules: a subscription may be used in the provider's own
-applications, not in a product of the platform.
+The platform pays for no AI usage and holds no key or account of an AI provider: a creator brings the access to their
+assistant, a subscription or a key, and pays for it. This follows from the platform being free (`con-free`).
 
 ```arc42
 :::constraint

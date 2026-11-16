@@ -38,46 +38,44 @@ x-source: pdt42 KD-09, KD-20
 
 ## Signing in to the assistant needs workarounds in a codespace
 
-An assistant's sign-in sends the browser back to an address on the machine the assistant runs on. In a codespace that
-is not the creator's machine, so the sign-in of Claude does not finish by itself, and the sign-in of Codex needs the
-device code, which the creator has to allow in their account first. The providers' rules also decide how an assistant
-may be signed in at all, and they change.
+In a codespace the browser cannot return to the machine the assistant runs on, so the sign-in of Claude does not finish
+by itself, and the sign-in of Codex needs the device code, which the creator allows in their account. The providers'
+rules decide how an assistant may be signed in, and they change.
 
 ```arc42
 :::risk
 id: risk-workplace-sign-in
 title: Signing in to the assistant needs workarounds in a codespace
 severity: medium
-mitigation: The page of the catalog and the README of the starting point show each workaround with pictures (dec-codespace-workplace); a creator who cannot sign in can still build on their own computer with the same container file
+mitigation: Both workarounds are shown with pictures (dec-codespace-workplace); a creator who cannot sign in can build on their own computer with the same container file
 x-source: pdt42 a-creators-build-in-workplace
 :::
 ```
 
 ## A page or a project can steer the open assistant
 
-With the workplace open (`dec-open-workplace`), a page the assistant reads or a project it opens can tell it to do
-things the creator did not ask for, and take what is in the codespace.
+A page the assistant reads or a project it opens can tell it to do things the creator did not ask for.
 
 ```arc42
 :::risk
 id: risk-open-workplace
 title: A page or a project can steer the open assistant
 severity: medium
-mitigation: Nothing but the creator's sign-in to the assistant and a token limited to one repository is in the codespace; the checks look at the finished app and the workflows treat foreign source as untrusted (dec-open-workplace); the guide tells creators not to type passwords or data of learners there
+mitigation: Only the creator's sign-in and a token limited to one repository are in the codespace, and the checks sit at the app (dec-open-workplace); the guide says what not to type there
 x-source: owner decision 2026-11-15
 :::
 ```
 
 ## The free hours of a codespace run out
 
-GitHub gives an account a limited number of codespace hours each month; beyond them the creator pays or waits.
+GitHub gives an account a limited number of codespace hours each month.
 
 ```arc42
 :::risk
 id: risk-codespace-quota
 title: The free hours of a codespace run out
 severity: low
-mitigation: A stopped codespace costs no computing time; the guide says to stop it when done and how to continue later; the same container file opens on a creator's own computer
+mitigation: A stopped codespace costs no computing time, and the same container file opens on the creator's own computer
 x-source: pdt42 a-creators-build-in-workplace
 :::
 ```

@@ -118,7 +118,7 @@ A creator works in it without installing anything.
 :::glossary-term
 id: term-codespace
 title: Codespace
-definition: A workplace in the browser that GitHub starts for a creator from a repository, with an editor and the workplace image underneath; it stops when idle and belongs to the creator.
+definition: A workplace in the browser that GitHub starts for a creator from a repository, and that belongs to the creator.
 :::
 ```
 
@@ -130,6 +130,6 @@ The repository a non-technical creator begins with.
 :::glossary-term
 id: term-starting-point
 title: Starting point (Startvorlage)
-definition: The template repository lernapps/start: a creator makes a repository of their own from it, opens it in a codespace and signs in to their assistant (bb-start).
+definition: The template repository lernapps/start (bb-start), from which a creator makes a repository of their own.
 :::
 ```

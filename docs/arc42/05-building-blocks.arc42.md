@@ -251,10 +251,9 @@ x-realises: ch-guidance
 
 ### Workplace image
 
-The image a creator's workplace starts from: Node, the browser the checks use and the browser tool for assistants, with
-every version pinned and moved by Renovate. It does not carry the assistants; those are editor extensions. The tooling
-builds it, tests that it starts, and publishes it to GitHub's package registry; the container file that
-`lernapps create` writes into every app and the one of the starting point (`bb-start`) name it by its digest.
+The image of the creator's workplace (`dec-codespace-workplace`): Node, the browser the checks use and the browser tool
+for assistants, every version pinned and moved by Renovate. The tooling builds, tests and publishes it; the container
+files name it by its digest.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/tooling: https://github.com/lernapps/tooling :::
@@ -299,11 +298,9 @@ protocol: GitHub reusable workflows and actions, pinned to a commit
 
 ## Start
 
-The starting point of a creator who is not technical: a template repository with a container file, a first AGENTS.md
-and a README in plain language. A creator uses the template to make a repository of their own, opens it in a codespace
-and signs in to their assistant; the assistant then asks whether the creator wants an app to share or one to practise
-for an occasion, and starts the matching app in that folder. The README points to the pages that lead through it with
-pictures: the catalog's (`/build/codespaces/`) and the practice site's (`/practice/codespaces/`).
+The starting point (`dec-codespace-workplace`): a template repository with a container file, a first AGENTS.md that
+asks what the creator wants, and a README in plain language that links the guides with pictures, `/build/codespaces/`
+and `/practice/codespaces/`.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/start: https://github.com/lernapps/start :::
@@ -319,7 +316,7 @@ x-repo: lernapps/start
 
 ### Starting point
 
-The template a creator makes their own repository from, and the codespace they open from it.
+The template a creator makes their own repository from.
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/start: https://github.com/lernapps/start :::
