@@ -36,7 +36,7 @@ The platform is built from one building block per repository of the organisation
 - **[Website](architecture/#05-building-blocks.arc42.md:el-bb-website):** Gives the platform its face at lernapps.net and the frame every platform site is built with. Address: [lernapps.net](https://lernapps.net/) · Repository: [lernapps/lernapps.github.io](https://github.com/lernapps/lernapps.github.io)
 - **[Catalog](architecture/#05-building-blocks.arc42.md:el-bb-catalog):** Lets adults and students find, trust and start apps, and lets creators list them; it is the core of the platform. Address: [lernapps.net/apps](https://lernapps.net/apps/) · Repository: [lernapps/apps](https://github.com/lernapps/apps)
 - **[Tooling](architecture/#05-building-blocks.arc42.md:el-bb-tooling):** Gives a creator's AI assistant everything it needs to build an app that meets the platform's rules: the guidance by phase and the skills, the CLI that creates an app and checks it, and the workflows an app's repository runs. Address: [lernapps.net/tooling](https://lernapps.net/tooling/) · Repository: [lernapps/tooling](https://github.com/lernapps/tooling)
-- **[Start](architecture/#05-building-blocks.arc42.md:el-bb-start):** The starting point of a creator who is not technical: a template repository with a container file, a first AGENTS.md and a README in plain language. No page of its own; it lives in its repository. · Repository: [lernapps/start](https://github.com/lernapps/start)
+- **[Start](architecture/#05-building-blocks.arc42.md:el-bb-start):** The starting point: a template repository with a container file, a first AGENTS.md that asks what the creator wants, and a README in plain language that links the guides with pictures, /build/codespaces/ and /practice/codespaces/. No page of its own; it lives in its repository. · Repository: [lernapps/start](https://github.com/lernapps/start)
 - **[App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates):** Provides the three kinds of app, quiz, explainer and interactive app, as templates and runtimes that already keep the platform's rules. No page of its own; it lives in its repository. · Repository: [lernapps/app-templates](https://github.com/lernapps/app-templates)
 - **[Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice):** Turns content that a creator's assistant wrote for an acute occasion into a temporary app for a child or a class, and guides that assistant. Address: [lernapps.net/practice](https://lernapps.net/practice/) · Repository: [lernapps/practice](https://github.com/lernapps/practice)
 - **[Docs](architecture/#05-building-blocks.arc42.md:el-bb-docs):** Holds the models of the platform: why it exists, who carries it and how the system is built. Address: [lernapps.net/docs](https://lernapps.net/docs/) · Repository: [lernapps/docs](https://github.com/lernapps/docs)
@@ -263,11 +263,11 @@ The creator's journey shows that creators build with an AI assistant of their ow
 - **App actions:** The reusable workflows and actions an app's repository runs to check and build the app and to publish the creator's own release, at the creator's address. Used by: Creators' app repositories, GitHub.
 - **Guidance:** The guidance by phase, the skills and the documentation that AI assistants read to build and list an app. It reads the strand, the competencies and the subject's explainer focus from the learning map. Used by: Creator's AI assistant.
 - **Tooling CLI:** The command line an assistant and the workflows run: create an app from an archetype, check it against the rules, update it. Used by: Creator's AI assistant, Creators' app repositories, Catalog, Practice.
-- **Workplace image:** The image a creator's workplace starts from: Node, the browser the checks use and the browser tool for assistants, with every version pinned and moved by Renovate. It does not carry the assistants; those are editor extensions. The tooling builds it, tests that it starts, and publishes it to GitHub's package registry; the container file that lernapps create writes into every app and the one of the starting point name it by its digest. Used by: GitHub, Start.
+- **Workplace image:** The image of the creator's workplace: Node, the browser the checks use and the browser tool for assistants, every version pinned and moved by Renovate. The tooling builds, tests and publishes it; the container files name it by its digest. Used by: GitHub, Start.
 
 ### [Start](architecture/#05-building-blocks.arc42.md:el-bb-start)
 
-- **Starting point:** The template a creator makes their own repository from, and the codespace they open from it. Used by: .
+- **Starting point:** The template a creator makes their own repository from. Used by: .
 
 ### [App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates)
 
@@ -391,14 +391,14 @@ Each part with the interfaces it offers, the services they serve and the parts t
   - Serves: Guidance for building apps
   - Used by: Catalog, Practice
   - Works with, outside the system: Creator's AI assistant, Creators' app repositories, Renovate
-- **Workplace image:** The image a creator's workplace starts from: Node, the browser the checks use and the browser tool for assistants, with every version pinned and moved by Renovate. It does not carry the assistants; those are editor extensions. The tooling builds it, tests that it starts, and publishes it to GitHub's package registry; the container file that lernapps create writes into every app and the one of the starting point name it by its digest.
+- **Workplace image:** The image of the creator's workplace: Node, the browser the checks use and the browser tool for assistants, every version pinned and moved by Renovate. The tooling builds, tests and publishes it; the container files name it by its digest.
   - Serves: A ready workplace for building
   - Used by: Start
   - Works with, outside the system: GitHub
 
 #### [Start](architecture/#05-building-blocks.arc42.md:el-bb-start) ([lernapps/start](https://github.com/lernapps/start))
 
-- **Starting point:** The template a creator makes their own repository from, and the codespace they open from it.
+- **Starting point:** The template a creator makes their own repository from.
   - Serves: A ready workplace for building
 
 #### [App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates) ([lernapps/app-templates](https://github.com/lernapps/app-templates))
