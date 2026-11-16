@@ -1,0 +1,919 @@
+{
+  "version": 1,
+  "base": {
+    "label": "84877af670609f5dac186fff9f9f87e2289dc1ad",
+    "commit": "84877af670609f5dac186fff9f9f87e2289dc1ad"
+  },
+  "head": {
+    "label": "1faf9186eea6c5b35d734e396890f688330dd915"
+  },
+  "acceptanceBase": "84877af670609f5dac186fff9f9f87e2289dc1ad",
+  "untracked": [],
+  "accepted": false,
+  "hasBlockingFindings": true,
+  "findings": [
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/03-system-context.arc42.md",
+      "line": 89,
+      "elementId": "actor-creator",
+      "message": "Block 'actor-creator' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/03-system-context.arc42.md",
+      "line": 104,
+      "elementId": "actor-ai-assistant",
+      "message": "Block 'actor-ai-assistant' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "docs/arc42/03-system-context.arc42.md",
+      "line": 167,
+      "elementId": "actor-github",
+      "message": "Block 'actor-github' changed without changing its section prose."
+    }
+  ],
+  "groups": {
+    "warnings": [
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
+        "file": "docs/arc42/03-system-context.arc42.md",
+        "line": 89,
+        "elementId": "actor-creator",
+        "message": "Block 'actor-creator' changed without changing its section prose."
+      },
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
+        "file": "docs/arc42/03-system-context.arc42.md",
+        "line": 104,
+        "elementId": "actor-ai-assistant",
+        "message": "Block 'actor-ai-assistant' changed without changing its section prose."
+      },
+      {
+        "kind": "block-without-prose-change",
+        "severity": "warning",
+        "file": "docs/arc42/03-system-context.arc42.md",
+        "line": 167,
+        "elementId": "actor-github",
+        "message": "Block 'actor-github' changed without changing its section prose."
+      }
+    ],
+    "untouched": [],
+    "updated": [],
+    "uncovered": []
+  },
+  "architecture": {
+    "elements": [
+      {
+        "id": "con-creator-brings-ai",
+        "kind": "constraint",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/02-constraints.arc42.md",
+          "line": 92
+        },
+        "section": {
+          "file": "docs/arc42/02-constraints.arc42.md",
+          "headingPath": [
+            "Architecture Constraints",
+            "The creator brings and pays for the AI"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "actor-creator",
+        "kind": "actor",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "requires",
+            "before": [
+              "if-home-pages",
+              "if-catalog-pages",
+              "if-practice-form"
+            ],
+            "after": [
+              "if-home-pages",
+              "if-catalog-pages",
+              "if-practice-form",
+              "if-start-template"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 88
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 89
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "Creator"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "actor-ai-assistant",
+        "kind": "actor",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "description",
+            "before": "The AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI (pdt42 e-ai-assistants)",
+            "after": "The AI assistant a creator already has or can easily get, from a provider whose access the creator pays for themselves (con-creator-brings-ai), and builds and lists an app with; it reads the guidance and runs the CLI (pdt42 e-ai-assistants)"
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 103
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 104
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "Creator's AI assistant"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "actor-github",
+        "kind": "actor",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "description",
+            "before": "Repositories, issues, pull requests, Actions and Pages",
+            "after": "Repositories, issues, pull requests, Actions, Pages, Codespaces and the package registry"
+          },
+          {
+            "name": "requires",
+            "before": [
+              "if-listing",
+              "if-app-actions",
+              "if-org-rules"
+            ],
+            "after": [
+              "if-listing",
+              "if-app-actions",
+              "if-org-rules",
+              "if-workplace-image"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 166
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 167
+        },
+        "section": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "headingPath": [
+            "System Scope and Context",
+            "GitHub"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "bb-tooling",
+        "kind": "building-block",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 209
+        },
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 211
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "Tooling"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "if-workplace-image",
+        "kind": "interface",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 261
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "Tooling",
+            "Workplace image"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "bb-start",
+        "kind": "building-block",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 309
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "Start"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "if-start-template",
+        "kind": "interface",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 325
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "Start",
+            "Starting point"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "rs-build-in-workplace",
+        "kind": "runtime-scenario",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 109
+        },
+        "section": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "headingPath": [
+            "Runtime View",
+            "A creator builds in a ready workplace"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "env-workplace",
+        "kind": "deployment-node",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "line": 176
+        },
+        "section": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "headingPath": [
+            "Deployment View",
+            "Workplace: GitHub Codespaces"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "dn-codespace",
+        "kind": "deployment-node",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "line": 189
+        },
+        "section": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "headingPath": [
+            "Deployment View",
+            "Workplace: GitHub Codespaces",
+            "A creator's codespace"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "dn-image-registry",
+        "kind": "deployment-node",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "line": 203
+        },
+        "section": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "headingPath": [
+            "Deployment View",
+            "Workplace: GitHub Codespaces",
+            "Image registry"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "dec-codespace-workplace",
+        "kind": "decision",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/09-decisions.arc42.md",
+          "line": 108
+        },
+        "section": {
+          "file": "docs/arc42/09-decisions.arc42.md",
+          "headingPath": [
+            "Architecture Decisions",
+            "A ready workplace in a GitHub codespace"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "dec-open-workplace",
+        "kind": "decision",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/09-decisions.arc42.md",
+          "line": 137
+        },
+        "section": {
+          "file": "docs/arc42/09-decisions.arc42.md",
+          "headingPath": [
+            "Architecture Decisions",
+            "The workplace is open, the checks sit at the app"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "qs-creator-builds-without-setup",
+        "kind": "quality-scenario",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/10-quality-requirements.arc42.md",
+          "line": 337
+        },
+        "section": {
+          "file": "docs/arc42/10-quality-requirements.arc42.md",
+          "headingPath": [
+            "Quality Requirements",
+            "A creator who is not technical builds without setting anything up"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "risk-workplace-sign-in",
+        "kind": "risk",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/11-risks.arc42.md",
+          "line": 47
+        },
+        "section": {
+          "file": "docs/arc42/11-risks.arc42.md",
+          "headingPath": [
+            "Risks and Technical Debt",
+            "Signing in to the assistant needs workarounds in a codespace"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "risk-open-workplace",
+        "kind": "risk",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/11-risks.arc42.md",
+          "line": 62
+        },
+        "section": {
+          "file": "docs/arc42/11-risks.arc42.md",
+          "headingPath": [
+            "Risks and Technical Debt",
+            "A page or a project can steer the open assistant"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "risk-codespace-quota",
+        "kind": "risk",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/11-risks.arc42.md",
+          "line": 76
+        },
+        "section": {
+          "file": "docs/arc42/11-risks.arc42.md",
+          "headingPath": [
+            "Risks and Technical Debt",
+            "The free hours of a codespace run out"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "term-codespace",
+        "kind": "glossary-term",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/12-glossary.arc42.md",
+          "line": 118
+        },
+        "section": {
+          "file": "docs/arc42/12-glossary.arc42.md",
+          "headingPath": [
+            "Glossary",
+            "Codespace"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "term-starting-point",
+        "kind": "glossary-term",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/12-glossary.arc42.md",
+          "line": 130
+        },
+        "section": {
+          "file": "docs/arc42/12-glossary.arc42.md",
+          "headingPath": [
+            "Glossary",
+            "Starting point (Startvorlage)"
+          ],
+          "occurrence": 1
+        }
+      }
+    ],
+    "diagrams": [
+      {
+        "id": "context-overall",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "source",
+            "before": "flowchart LR\n    actor-adopting-adult[\"Adopting adult\"]\n    actor-student[\"Student\"]\n    actor-creator[\"Creator\"]\n    actor-ai-assistant[\"Creator's AI assistant\"]\n    actor-gatekeeper[\"School gatekeeper\"]\n    actor-platform-owner[\"Platform owner\"]\n    actor-app-repo-actions[\"Creators' app repositories\"]\n    actor-github[\"GitHub\"]\n    actor-renovate[\"Renovate\"]\n    actor-goatcounter[\"GoatCounter\"]\n    actor-email[\"E-mail\"]\n    subgraph system[\"lernapps.net\"]\n        bb-website[\"Website\"]\n        bb-catalog[\"Catalog\"]\n        bb-tooling[\"Tooling\"]\n        bb-app-templates[\"App templates\"]\n        bb-practice[\"Practice\"]\n        bb-docs[\"Docs\"]\n        bb-org[\"Organisation\"]\n    end\n    actor-adopting-adult -->|\"finds, passes on and thanks\"| system\n    actor-student -->|\"uses an app and thanks\"| system\n    actor-creator -->|\"decides to build an app\"| system\n    actor-ai-assistant -->|\"builds and lists an app\"| system\n    actor-gatekeeper -->|\"reads privacy notice and imprint\"| system\n    actor-platform-owner -->|\"decides and keeps the models\"| system\n    actor-app-repo-actions -->|\"checks, builds and publishes an app\"| system\n    actor-github -->|\"hosts, runs and carries every contribution\"| system\n    actor-renovate -->|\"moves the pins between repositories\"| system\n    actor-goatcounter -->|\"counts the platform's open counts\"| system\n    actor-email -->|\"carries thanks\"| system",
+            "after": "flowchart LR\n    actor-adopting-adult[\"Adopting adult\"]\n    actor-student[\"Student\"]\n    actor-creator[\"Creator\"]\n    actor-ai-assistant[\"Creator's AI assistant\"]\n    actor-gatekeeper[\"School gatekeeper\"]\n    actor-platform-owner[\"Platform owner\"]\n    actor-app-repo-actions[\"Creators' app repositories\"]\n    actor-github[\"GitHub\"]\n    actor-renovate[\"Renovate\"]\n    actor-goatcounter[\"GoatCounter\"]\n    actor-email[\"E-mail\"]\n    subgraph system[\"lernapps.net\"]\n        bb-website[\"Website\"]\n        bb-catalog[\"Catalog\"]\n        bb-tooling[\"Tooling\"]\n        bb-start[\"Start\"]\n        bb-app-templates[\"App templates\"]\n        bb-practice[\"Practice\"]\n        bb-docs[\"Docs\"]\n        bb-org[\"Organisation\"]\n    end\n    actor-adopting-adult -->|\"finds, passes on and thanks\"| system\n    actor-student -->|\"uses an app and thanks\"| system\n    actor-creator -->|\"decides to build an app\"| system\n    actor-ai-assistant -->|\"builds and lists an app\"| system\n    actor-gatekeeper -->|\"reads privacy notice and imprint\"| system\n    actor-platform-owner -->|\"decides and keeps the models\"| system\n    actor-app-repo-actions -->|\"checks, builds and publishes an app\"| system\n    actor-github -->|\"hosts, runs and carries every contribution\"| system\n    actor-renovate -->|\"moves the pins between repositories\"| system\n    actor-goatcounter -->|\"counts the platform's open counts\"| system\n    actor-email -->|\"carries thanks\"| system"
+          }
+        ],
+        "base": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 11
+        },
+        "head": {
+          "file": "docs/arc42/03-system-context.arc42.md",
+          "line": 11
+        }
+      },
+      {
+        "id": "building-blocks-level-1",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "source",
+            "before": "flowchart TB\n    bb-website[\"Website (lernapps.github.io)\"]\n    bb-catalog[\"Catalog (apps)\"]\n    bb-tooling[\"Tooling (tooling)\"]\n    bb-app-templates[\"App templates (app-templates)\"]\n    bb-practice[\"Practice (practice)\"]\n    bb-docs[\"Docs (docs)\"]\n    bb-org[\"Organisation (.github)\"]\n    bb-catalog -->|\"if-site-frame\"| bb-website\n    bb-tooling -->|\"if-site-frame\"| bb-website\n    bb-docs -->|\"if-site-frame\"| bb-website\n    bb-catalog -->|\"if-tooling-cli\"| bb-tooling\n    bb-tooling -->|\"if-archetypes\"| bb-app-templates\n    bb-practice -->|\"if-site-frame\"| bb-website\n    bb-practice -->|\"if-tooling-cli\"| bb-tooling\n    bb-practice -->|\"if-site-actions\"| bb-tooling\n    bb-practice -->|\"if-catalog-pages\"| bb-catalog\n    bb-practice -->|\"if-archetypes\"| bb-app-templates\n    bb-website -->|\"if-site-actions\"| bb-tooling\n    bb-catalog -->|\"if-site-actions\"| bb-tooling\n    bb-docs -->|\"if-site-actions\"| bb-tooling",
+            "after": "flowchart TB\n    bb-website[\"Website (lernapps.github.io)\"]\n    bb-catalog[\"Catalog (apps)\"]\n    bb-tooling[\"Tooling (tooling)\"]\n    bb-app-templates[\"App templates (app-templates)\"]\n    bb-practice[\"Practice (practice)\"]\n    bb-docs[\"Docs (docs)\"]\n    bb-org[\"Organisation (.github)\"]\n    bb-start[\"Start (start)\"]\n    bb-catalog -->|\"if-site-frame\"| bb-website\n    bb-tooling -->|\"if-site-frame\"| bb-website\n    bb-docs -->|\"if-site-frame\"| bb-website\n    bb-catalog -->|\"if-tooling-cli\"| bb-tooling\n    bb-tooling -->|\"if-archetypes\"| bb-app-templates\n    bb-practice -->|\"if-site-frame\"| bb-website\n    bb-practice -->|\"if-tooling-cli\"| bb-tooling\n    bb-practice -->|\"if-site-actions\"| bb-tooling\n    bb-practice -->|\"if-catalog-pages\"| bb-catalog\n    bb-practice -->|\"if-archetypes\"| bb-app-templates\n    bb-website -->|\"if-site-actions\"| bb-tooling\n    bb-catalog -->|\"if-site-actions\"| bb-tooling\n    bb-docs -->|\"if-site-actions\"| bb-tooling\n    bb-start -->|\"if-workplace-image\"| bb-tooling"
+          }
+        ],
+        "base": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 11
+        },
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 11
+        }
+      },
+      {
+        "id": "rs-build-in-workplace-sequence",
+        "status": "added",
+        "attributes": [],
+        "head": {
+          "file": "docs/arc42/06-runtime-view.arc42.md",
+          "line": 119
+        }
+      },
+      {
+        "id": "deployment-overall",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "aliases",
+            "before": "env_production=env-production, dn_pages_root=dn-pages-root, dn_pages_catalog=dn-pages-catalog, dn_pages_docs=dn-pages-docs, dn_pages_tooling=dn-pages-tooling, dn_pages_practice=dn-pages-practice, env_build=env-build, dn_repositories=dn-repositories, dn_actions=dn-actions, bb_website=bb-website, bb_catalog=bb-catalog, bb_docs=bb-docs, bb_tooling=bb-tooling, bb_practice=bb-practice, bb_org=bb-org, bb_app_templates=bb-app-templates",
+            "after": "env_production=env-production, dn_pages_root=dn-pages-root, dn_pages_catalog=dn-pages-catalog, dn_pages_docs=dn-pages-docs, dn_pages_tooling=dn-pages-tooling, dn_pages_practice=dn-pages-practice, env_build=env-build, dn_repositories=dn-repositories, dn_actions=dn-actions, bb_website=bb-website, bb_catalog=bb-catalog, bb_docs=bb-docs, bb_tooling=bb-tooling, bb_practice=bb-practice, bb_org=bb-org, bb_app_templates=bb-app-templates, env_workplace=env-workplace, dn_codespace=dn-codespace, bb_start=bb-start, dn_image_registry=dn-image-registry"
+          },
+          {
+            "name": "source",
+            "before": "architecture-beta\n    group env_production(cloud)[GitHub Pages under lernapps.net]\n    group dn_pages_root(server)[lernapps.net] in env_production\n    group dn_pages_catalog(server)[lernapps.net/apps] in env_production\n    group dn_pages_docs(server)[lernapps.net/docs] in env_production\n    group dn_pages_tooling(server)[lernapps.net/tooling] in env_production\n    group dn_pages_practice(server)[lernapps.net/practice] in env_production\n    service bb_website(internet)[Website] in dn_pages_root\n    service bb_catalog(internet)[Catalog and app copies] in dn_pages_catalog\n    service bb_docs(internet)[Docs] in dn_pages_docs\n    service bb_tooling(internet)[Tooling pages] in dn_pages_tooling\n    service bb_practice(internet)[Practice] in dn_pages_practice\n    group env_build(cloud)[GitHub]\n    group dn_repositories(database)[Repositories] in env_build\n    service bb_org(disk)[Organisation] in dn_repositories\n    service bb_app_templates(disk)[App templates] in dn_repositories",
+            "after": "architecture-beta\n    group env_production(cloud)[GitHub Pages under lernapps.net]\n    group dn_pages_root(server)[lernapps.net] in env_production\n    group dn_pages_catalog(server)[lernapps.net/apps] in env_production\n    group dn_pages_docs(server)[lernapps.net/docs] in env_production\n    group dn_pages_tooling(server)[lernapps.net/tooling] in env_production\n    group dn_pages_practice(server)[lernapps.net/practice] in env_production\n    service bb_website(internet)[Website] in dn_pages_root\n    service bb_catalog(internet)[Catalog and app copies] in dn_pages_catalog\n    service bb_docs(internet)[Docs] in dn_pages_docs\n    service bb_tooling(internet)[Tooling pages] in dn_pages_tooling\n    service bb_practice(internet)[Practice] in dn_pages_practice\n    group env_build(cloud)[GitHub]\n    group dn_repositories(database)[Repositories] in env_build\n    service bb_org(disk)[Organisation] in dn_repositories\n    service bb_app_templates(disk)[App templates] in dn_repositories\n    group env_workplace(cloud)[GitHub Codespaces and packages]\n    group dn_codespace(server)[A creator's codespace] in env_workplace\n    service bb_start(disk)[Start] in dn_codespace\n    group dn_image_registry(database)[Image registry] in env_workplace"
+          }
+        ],
+        "base": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "line": 10
+        },
+        "head": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "line": 11
+        }
+      }
+    ],
+    "edges": [
+      {
+        "status": "added",
+        "edge": {
+          "from": "actor-creator",
+          "to": "if-start-template",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "actor-github",
+          "to": "if-workplace-image",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-start",
+          "to": "concept-assistants-as-readers",
+          "relation": "implements"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-start",
+          "to": "concept-pinned-and-pulled",
+          "relation": "implements"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-start",
+          "to": "concept-plain-language",
+          "relation": "implements"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-start",
+          "to": "if-start-template",
+          "relation": "provides"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-start",
+          "to": "if-workplace-image",
+          "relation": "requires"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-tooling",
+          "to": "if-workplace-image",
+          "relation": "provides"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dec-codespace-workplace",
+          "to": "con-creator-brings-ai",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dec-codespace-workplace",
+          "to": "con-free",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dec-codespace-workplace",
+          "to": "con-github-means-of-production",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dec-codespace-workplace",
+          "to": "qg-learnable-for-creators",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dec-codespace-workplace",
+          "to": "risk-codespace-quota",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dec-codespace-workplace",
+          "to": "risk-weak-supply",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dec-codespace-workplace",
+          "to": "risk-workplace-sign-in",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dec-open-workplace",
+          "to": "con-apps-collect-nothing",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dec-open-workplace",
+          "to": "qg-learnable-for-creators",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dec-open-workplace",
+          "to": "qg-nothing-collected",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dec-open-workplace",
+          "to": "risk-open-workplace",
+          "relation": "addresses"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dn-codespace",
+          "to": "bb-start",
+          "relation": "hosts"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dn-codespace",
+          "to": "env-workplace",
+          "relation": "parent"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dn-image-registry",
+          "to": "bb-tooling",
+          "relation": "hosts"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "dn-image-registry",
+          "to": "env-workplace",
+          "relation": "parent"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "qs-creator-builds-without-setup",
+          "to": "qg-learnable-for-creators",
+          "relation": "elaborates"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "rs-build-in-workplace",
+          "to": "bb-start",
+          "relation": "involves"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "rs-build-in-workplace",
+          "to": "bb-tooling",
+          "relation": "involves"
+        }
+      }
+    ],
+    "proseSections": [
+      {
+        "status": "modified",
+        "section": {
+          "file": "docs/arc42/04-solution-strategy.arc42.md",
+          "headingPath": [
+            "Solution Strategy",
+            "System decomposition"
+          ],
+          "occurrence": 1
+        },
+        "base": {
+          "file": "docs/arc42/04-solution-strategy.arc42.md",
+          "line": 15
+        },
+        "head": {
+          "file": "docs/arc42/04-solution-strategy.arc42.md",
+          "line": 15
+        }
+      },
+      {
+        "status": "modified",
+        "section": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "headingPath": [
+            "Deployment View"
+          ],
+          "occurrence": 1
+        },
+        "base": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "line": 1
+        },
+        "head": {
+          "file": "docs/arc42/07-deployment-view.arc42.md",
+          "line": 1
+        }
+      },
+      {
+        "status": "modified",
+        "section": {
+          "file": "docs/arc42/12-glossary.arc42.md",
+          "headingPath": [
+            "Glossary"
+          ],
+          "occurrence": 1
+        },
+        "base": {
+          "file": "docs/arc42/12-glossary.arc42.md",
+          "line": 1
+        },
+        "head": {
+          "file": "docs/arc42/12-glossary.arc42.md",
+          "line": 1
+        }
+      }
+    ],
+    "documents": [
+      {
+        "file": "docs/arc42/02-constraints.arc42.md",
+        "added": 1,
+        "modified": 0,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/03-system-context.arc42.md",
+        "added": 0,
+        "modified": 4,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/04-solution-strategy.arc42.md",
+        "added": 0,
+        "modified": 1,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/05-building-blocks.arc42.md",
+        "added": 3,
+        "modified": 2,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/06-runtime-view.arc42.md",
+        "added": 2,
+        "modified": 0,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/07-deployment-view.arc42.md",
+        "added": 3,
+        "modified": 2,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/09-decisions.arc42.md",
+        "added": 2,
+        "modified": 0,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/10-quality-requirements.arc42.md",
+        "added": 1,
+        "modified": 0,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/11-risks.arc42.md",
+        "added": 3,
+        "modified": 0,
+        "removed": 0
+      },
+      {
+        "file": "docs/arc42/12-glossary.arc42.md",
+        "added": 2,
+        "modified": 1,
+        "removed": 0
+      }
+    ]
+  }
+}

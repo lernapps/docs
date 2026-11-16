@@ -1,0 +1,292 @@
+{
+  "version": 1,
+  "base": {
+    "label": "84877af670609f5dac186fff9f9f87e2289dc1ad",
+    "commit": "84877af670609f5dac186fff9f9f87e2289dc1ad"
+  },
+  "head": {
+    "label": "1faf9186eea6c5b35d734e396890f688330dd915"
+  },
+  "acceptanceBase": "84877af670609f5dac186fff9f9f87e2289dc1ad",
+  "untracked": [],
+  "accepted": false,
+  "findings": [
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "2-design/d7-experiences.pdt42.md",
+      "line": 95,
+      "elementId": "x-list-and-hear-back",
+      "message": "Block 'x-list-and-hear-back' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "2-design/d8-mvp.pdt42.md",
+      "line": 20,
+      "elementId": "mvp-first-draft",
+      "message": "Block 'mvp-first-draft' changed without changing its section prose."
+    }
+  ],
+  "model": {
+    "elements": [
+      {
+        "id": "ch-workplace",
+        "kind": "channel",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 506
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Channels",
+            "A ready workplace for building"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "s-ready-workplace",
+        "kind": "service",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 107
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Services",
+            "A ready workplace for building"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "x-list-and-hear-back",
+        "kind": "experience",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "steps",
+            "before": [
+              "s-building-guidance",
+              "t-build-with-assistant",
+              "s-listing-help",
+              "t-list-app",
+              "t-use-in-class",
+              "s-use-insight",
+              "t-thank-creator-adult",
+              "t-give-feedback",
+              "t-recommend-app"
+            ],
+            "after": [
+              "s-ready-workplace",
+              "s-building-guidance",
+              "t-build-with-assistant",
+              "s-listing-help",
+              "t-list-app",
+              "t-use-in-class",
+              "s-use-insight",
+              "t-thank-creator-adult",
+              "t-give-feedback",
+              "t-recommend-app"
+            ]
+          },
+          {
+            "name": "value-proposition",
+            "before": "Build your app faster with good guidance, list it in minutes without answering to schools for data protection yourself, and hear with every thank-you when it helped a class beyond your own",
+            "after": "Build your app without setting anything up and faster with good guidance, list it in minutes without answering to schools for data protection yourself, and hear with every thank-you when it helped a class beyond your own"
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 95
+        },
+        "head": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 95
+        },
+        "section": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "headingPath": [
+            "Assemble the platform experiences",
+            "List an app and hear it is used"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "mvp-first-draft",
+        "kind": "mvp",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "base",
+            "before": [
+              "5 to 10 potential creators from the platform owner's network",
+              "Teachers reached through the owner's contacts, who forward a referral link",
+              "The first apps in the [app catalogue](https://lernapps.net/apps/), each served as a copy under lernapps.net",
+              "The docs site and the GitHub organisation lernapps with its workflows",
+              "Temporary apps made to measure, open to anyone"
+            ],
+            "after": [
+              "5 to 10 potential creators from the platform owner's network",
+              "Teachers reached through the owner's contacts, who forward a referral link",
+              "The first apps in the [app catalogue](https://lernapps.net/apps/), each served as a copy under lernapps.net",
+              "The docs site and the GitHub organisation lernapps with its workflows",
+              "Temporary apps made to measure, open to anyone",
+              "A ready workplace for building, opened from a starting point, for creators who are not technical"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 20
+        },
+        "head": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 20
+        },
+        "section": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "headingPath": [
+            "Set up the Minimum Viable Platform",
+            "First draft: first apps"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "a-creators-build-on-own-computer",
+        "kind": "assumption",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 179
+        },
+        "section": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "headingPath": [
+            "Set up the Minimum Viable Platform",
+            "First draft: first apps",
+            "Assumptions",
+            "Creators build with their assistant on their own computer"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "a-creators-build-in-workplace",
+        "kind": "assumption",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 196
+        },
+        "section": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "headingPath": [
+            "Set up the Minimum Viable Platform",
+            "First draft: first apps",
+            "Assumptions",
+            "Creators build in a ready workplace without help"
+          ],
+          "occurrence": 1
+        }
+      }
+    ],
+    "diagrams": [],
+    "edges": [
+      {
+        "status": "added",
+        "edge": {
+          "from": "a-creators-build-in-workplace",
+          "to": "mvp-first-draft",
+          "relation": "mvp"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "a-creators-build-on-own-computer",
+          "to": "mvp-first-draft",
+          "relation": "mvp"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "s-ready-workplace",
+          "to": "ch-workplace",
+          "relation": "channel"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "s-ready-workplace",
+          "to": "e-creators",
+          "relation": "for"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "s-ready-workplace",
+          "to": "t-build-with-assistant",
+          "relation": "supports"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-list-and-hear-back",
+          "to": "s-ready-workplace",
+          "relation": "steps"
+        }
+      }
+    ],
+    "proseSections": [],
+    "documents": [
+      {
+        "file": "2-design/d5-transactions.pdt42.md",
+        "added": 1,
+        "modified": 0,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d6-learning-engine.pdt42.md",
+        "added": 1,
+        "modified": 0,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d7-experiences.pdt42.md",
+        "added": 0,
+        "modified": 1,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d8-mvp.pdt42.md",
+        "added": 2,
+        "modified": 1,
+        "removed": 0
+      }
+    ]
+  }
+}
