@@ -101,7 +101,7 @@ channel: ch-guidance
 
 ### A ready workplace for building
 
-Takes the setup out of building: creators who are not technical open a workplace in which their AI assistant and the tools of the platform are ready, and start with their idea. Creators get it even if nobody else uses their app (D4). It reaches the creators the guidance alone does not, because the guidance presumes an assistant that can run commands on the creator's own computer (D8).
+Takes the setup out of building, and so reaches the creators the guidance alone does not (D8). Creators get it even if nobody else uses their app (D4). The creator brings the access to their assistant and pays for it; the platform pays nothing for the workplace.
 
 ```pdt42
 :::service
