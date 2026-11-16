@@ -25,7 +25,7 @@ On this page:
 The platform exists for these people. The journeys below are told from their views, so knowing them tells you whose problem a part solves.
 
 - **Adopting adults:** Adults who come across apps built by others, browse them and bring them to their students or their own children: teachers and parents.
-- **App creators:** Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves. Brings: the AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI.
+- **App creators:** Engaged people who build small educational apps, typically with AI tools, for a gap they noticed themselves. Brings: the AI assistant a creator already has or can easily get, from a provider whose access the creator pays for themselves (con-creator-brings-ai), and builds and lists an app with; it reads the guidance and runs the CLI.
 - **Students:** The learners the apps are built for.
 - **AI assistants:** The tools creators build their apps with.
 
@@ -36,6 +36,7 @@ The platform is built from one building block per repository of the organisation
 - **[Website](architecture/#05-building-blocks.arc42.md:el-bb-website):** Gives the platform its face at lernapps.net and the frame every platform site is built with. Address: [lernapps.net](https://lernapps.net/) · Repository: [lernapps/lernapps.github.io](https://github.com/lernapps/lernapps.github.io)
 - **[Catalog](architecture/#05-building-blocks.arc42.md:el-bb-catalog):** Lets adults and students find, trust and start apps, and lets creators list them; it is the core of the platform. Address: [lernapps.net/apps](https://lernapps.net/apps/) · Repository: [lernapps/apps](https://github.com/lernapps/apps)
 - **[Tooling](architecture/#05-building-blocks.arc42.md:el-bb-tooling):** Gives a creator's AI assistant everything it needs to build an app that meets the platform's rules: the guidance by phase and the skills, the CLI that creates an app and checks it, and the workflows an app's repository runs. Address: [lernapps.net/tooling](https://lernapps.net/tooling/) · Repository: [lernapps/tooling](https://github.com/lernapps/tooling)
+- **[Start](architecture/#05-building-blocks.arc42.md:el-bb-start):** The starting point: a template repository with a container file, a first AGENTS.md that asks what the creator wants, and a README in plain language that links the guides with pictures, /build/codespaces/ and /practice/codespaces/. No page of its own; it lives in its repository. · Repository: [lernapps/start](https://github.com/lernapps/start)
 - **[App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates):** Provides the three kinds of app, quiz, explainer and interactive app, as templates and runtimes that already keep the platform's rules. No page of its own; it lives in its repository. · Repository: [lernapps/app-templates](https://github.com/lernapps/app-templates)
 - **[Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice):** Turns content that a creator's assistant wrote for an acute occasion into a temporary app for a child or a class, and guides that assistant. Address: [lernapps.net/practice](https://lernapps.net/practice/) · Repository: [lernapps/practice](https://github.com/lernapps/practice)
 - **[Docs](architecture/#05-building-blocks.arc42.md:el-bb-docs):** Holds the models of the platform: why it exists, who carries it and how the system is built. Address: [lernapps.net/docs](https://lernapps.net/docs/) · Repository: [lernapps/docs](https://github.com/lernapps/docs)
@@ -146,9 +147,12 @@ Mainly for adopting adults; also involves students, app creators. What they get:
 
 The journey of the supply side: a creator who built an app for their own class with their AI assistant lists it with almost no effort and then hears whether and how it helped elsewhere. Creators do not start for the reach, but use and praise keep them going. The thanks they receive come from the one click every user is asked for. The platform serves a copy of the app under lernapps.net, so the creator stays the author but no longer answers to schools for data protection; in return the app needs a licence that allows the copy.
 
-Mainly for app creators; also involves AI assistants, adopting adults. What they get: Build your app faster with good guidance, list it in minutes without answering to schools for data protection yourself, and hear with every thank-you when it helped a class beyond your own.
+Mainly for app creators; also involves AI assistants, adopting adults. What they get: Build your app without setting anything up and faster with good guidance, list it in minutes without answering to schools for data protection yourself, and hear with every thank-you when it helped a class beyond your own.
 
 1. Build an app with an AI assistant
+   - **A ready workplace for building**
+     - For app creators: Takes the setup out of building: creators who are not technical open a workplace in which their AI assistant and the tools of the platform are ready, and start with their idea. Creators get it even if nobody else uses their app. It reaches the creators the guidance alone does not, because the guidance presumes an assistant that can run commands on the creator's own computer.
+     - Delivered by: Starting point (Start), Workplace image (Tooling).
    - **Guidance for building apps**
      - For app creators: Helps creators build apps with their AI assistant that are easy to use and fit the platform. Creators get it even if nobody else uses their app. It makes building with the assistant easier.
      - Delivered by: Archetypes (App templates), Guidance (Tooling), Home pages (Website), Practice guidance (Practice), Tooling CLI (Tooling).
@@ -252,13 +256,18 @@ The creator's journey shows that creators build with an AI assistant of their ow
 
 ### [Catalog](architecture/#05-building-blocks.arc42.md:el-bb-catalog) ([lernapps.net/apps](https://lernapps.net/apps/))
 
-- **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap of this interface, with the risk it carries. Used by: Creator's AI assistant.
+- **Listing:** How a creator, through their AI assistant, lists an app: an entry by pull request, checked automatically (what the app sends to third parties and keeps in the browser, whether its links and topics hold, and that its licence allows the copy) and by a review agent, an AI that checks the app against a checklist, with the result as a comment on the pull request. Once the checks pass, the copy is published; no person has to act. What still waits on the platform owner is recorded as a gap of this interface, with the risk it carries. Used by: Creator's AI assistant, GitHub.
 
 ### [Tooling](architecture/#05-building-blocks.arc42.md:el-bb-tooling) ([lernapps.net/tooling](https://lernapps.net/tooling/))
 
-- **App actions:** The reusable workflows and actions an app's repository runs to check and build the app and to publish the creator's own release, at the creator's address. Used by: Creators' app repositories.
+- **App actions:** The reusable workflows and actions an app's repository runs to check and build the app and to publish the creator's own release, at the creator's address. Used by: Creators' app repositories, GitHub.
 - **Guidance:** The guidance by phase, the skills and the documentation that AI assistants read to build and list an app. It reads the strand, the competencies and the subject's explainer focus from the learning map. Used by: Creator's AI assistant.
 - **Tooling CLI:** The command line an assistant and the workflows run: create an app from an archetype, check it against the rules, update it. Used by: Creator's AI assistant, Creators' app repositories, Catalog, Practice.
+- **Workplace image:** The image of the creator's workplace: Node, the browser the checks use and the browser tool for assistants, every version pinned and moved by Renovate. The tooling builds, tests and publishes it; the container files name it by its digest. Used by: GitHub, Start.
+
+### [Start](architecture/#05-building-blocks.arc42.md:el-bb-start)
+
+- **Starting point:** The template a creator makes their own repository from. Used by: .
 
 ### [App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates)
 
@@ -267,6 +276,10 @@ The creator's journey shows that creators build with an AI assistant of their ow
 ### [Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice) ([lernapps.net/practice](https://lernapps.net/practice/))
 
 - **Practice guidance:** The guidance that leads a creator's AI assistant to such an app, with an llms.txt. Used by: Creator's AI assistant.
+
+### [Organisation](architecture/#05-building-blocks.arc42.md:el-bb-org)
+
+- **Organisation rules:** The rules, governance and templates every repository of the organisation follows, and the decisions that concern several repositories. Used by: GitHub.
 
 ### How apps and the platform stay current
 
@@ -378,6 +391,15 @@ Each part with the interfaces it offers, the services they serve and the parts t
   - Serves: Guidance for building apps
   - Used by: Catalog, Practice
   - Works with, outside the system: Creator's AI assistant, Creators' app repositories, Renovate
+- **Workplace image:** The image of the creator's workplace: Node, the browser the checks use and the browser tool for assistants, every version pinned and moved by Renovate. The tooling builds, tests and publishes it; the container files name it by its digest.
+  - Serves: A ready workplace for building
+  - Used by: Start
+  - Works with, outside the system: GitHub
+
+#### [Start](architecture/#05-building-blocks.arc42.md:el-bb-start) ([lernapps/start](https://github.com/lernapps/start))
+
+- **Starting point:** The template a creator makes their own repository from.
+  - Serves: A ready workplace for building
 
 #### [App templates](architecture/#05-building-blocks.arc42.md:el-bb-app-templates) ([lernapps/app-templates](https://github.com/lernapps/app-templates))
 
