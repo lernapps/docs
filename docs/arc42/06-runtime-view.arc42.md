@@ -97,6 +97,53 @@ sequenceDiagram
     catalog->>mail: carry them to the creator
 ```
 
+## A creator builds in a ready workplace
+
+A creator who is not technical has no assistant set up on their own computer. They use the starting point to make a
+repository of their own and open it in a codespace. GitHub starts the workplace from the image of the tooling. The
+creator signs in to their assistant with their own subscription or key, and says what app they want. The assistant
+asks, starts the app in the folder with the tooling's CLI, builds it with the creator's confirmation of the plan and
+checks it. The platform answers for nothing of this but the checked app (`dec-open-workplace`).
+
+```arc42
+:::runtime-scenario
+id: rs-build-in-workplace
+title: A creator builds in a ready workplace
+trigger: A teacher or parent who is not technical wants to build an app
+involves: bb-start, bb-tooling
+x-experience: x-list-and-hear-back
+:::
+```
+
+```arc42
+:::diagram
+id: rs-build-in-workplace-sequence
+scenario: rs-build-in-workplace
+notation: mermaid-sequence
+aliases: creator=actor-creator, start=bb-start, github=actor-github, tooling=bb-tooling, assistant=actor-ai-assistant
+:::
+```
+
+```mermaid
+sequenceDiagram
+    participant creator as Creator
+    participant start as Start
+    participant github as GitHub
+    participant tooling as Tooling
+    participant assistant as AI assistant
+    Note over creator,github: Open the workplace
+    creator->>start: use this template, a repository of my own
+    creator->>github: open a codespace of it
+    github->>tooling: pull the workplace image
+    github-->>creator: editor in the browser, the assistant's extension in it
+    Note over creator,assistant: Sign in and describe the app
+    creator->>assistant: sign in with my own subscription or key
+    creator->>assistant: the app I want
+    Note over assistant,tooling: Build and check
+    assistant->>tooling: start the app, create it after the plan is confirmed, check it
+    assistant-->>creator: the plan, interim results, the checked app
+```
+
 ## List an app and hear it is used
 
 [A creator finds no fitting app and decides to build one](https://lernapps.net/docs/platform-design/#2-design/d7-experiences.pdt42.md:el-x-list-and-hear-back). Their AI assistant follows the

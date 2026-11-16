@@ -25,7 +25,7 @@ repository holds the rules for all repositories.
 | Accessible | Templates and the site frame bring accessibility; every page is checked before it is published | `dec-archetypes`, `dec-check-fitness` |
 | Nothing collected | Apps in the browser only; the catalog measures what an app sends before it lists it; counting only on the platform's pages | `dec-check-fitness`, `dec-counting-goatcounter`, `dec-serve-copies` |
 | Reliable | Every listed app served from lernapps.net under an address that keeps working; thanks behind one interface | `dec-serve-copies`, `dec-thanks-interface` |
-| Learnable for creators | Guidance for AI assistants, archetypes that carry the rules, a CLI that checks | `dec-guidance-for-assistants`, `dec-archetypes` |
+| Learnable for creators | Guidance for AI assistants, archetypes that carry the rules, a CLI that checks, and a ready workplace in the browser for creators who are not technical | `dec-guidance-for-assistants`, `dec-archetypes`, `dec-codespace-workplace` |
 
 ## Technology and communication approach
 

@@ -98,8 +98,8 @@ title: List an app and hear it is used
 core-entity: e-creators
 roles: e-ai-assistants, e-adopters
 relationship: r-creators-adults
-value-proposition: Build your app faster with good guidance, list it in minutes without answering to schools for data protection yourself, and hear with every thank-you when it helped a class beyond your own
-steps: s-building-guidance, t-build-with-assistant, s-listing-help, t-list-app, t-use-in-class, s-use-insight, t-thank-creator-adult, t-give-feedback, t-recommend-app
+value-proposition: Build your app without setting anything up and faster with good guidance, list it in minutes without answering to schools for data protection yourself, and hear with every thank-you when it helped a class beyond your own
+steps: s-ready-workplace, s-building-guidance, t-build-with-assistant, s-listing-help, t-list-app, t-use-in-class, s-use-insight, t-thank-creator-adult, t-give-feedback, t-recommend-app
 activities:
   - Maintaining the guidance for building apps
   - Checking and publishing listings

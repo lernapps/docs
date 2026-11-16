@@ -73,6 +73,77 @@ x-source: pdt42 KD-16, PP4
 :::
 ```
 
+## A ready workplace in a GitHub codespace
+
+**Context.** Teachers and parents, the creators the platform needs most, are not technical enough, or lack the
+environment, to build with an AI assistant on their own computer: installing tools, running commands and network
+settings stop them before the first line (pdt42 `a-creators-build-on-own-computer`). A workplace for them has to cost
+the platform nothing to run (`con-free`, `con-github-means-of-production`), and the creator pays for their own
+assistant (`con-creator-brings-ai`).
+
+**Decision.** Creators build in a development container that GitHub starts for them in the browser, a codespace, from a
+template repository (`bb-start`). A shared image (`if-workplace-image`), built and published by the tooling, carries
+Node, the browser the checks use and the browser tool for assistants. The assistants are the editor extensions of
+Claude Code and Codex, which bring their own command lines; anyone who wants them in the terminal installs them. The
+image is kept lean, because pulling it is almost all of the time a codespace needs to start. `lernapps create` writes the
+same container file into every app, so a creator can open an app in a codespace later too. The container file names the
+image by its digest, and Renovate moves the digest and the versions pinned inside the image (`dec-pinned-by-commit`).
+The README of the template and a page of the catalog (`/build/codespaces/`) lead through opening the workplace,
+signing in to the assistant and pausing.
+
+**Consequences.** The creator needs a GitHub account, pays for their assistant, and for codespace hours beyond GitHub's
+free allowance. Signing in to the assistants needs workarounds in a codespace (`risk-workplace-sign-in`). The
+dependence on GitHub grows (`risk-external-services`). The workplace is open (`dec-open-workplace`). Rejected:
+
+- A workplace in the browser alone, on WebContainers (as bolt.diy uses): it runs Node only, so no native command lines;
+  a production use needs a commercial licence of its vendor whose terms are not public; the tool that wraps it has a
+  server part; and its assistant needs an API key, because a provider's subscription may not be used in a third party's
+  product.
+- A server of the platform with a container per creator, on a cloud service or its own cluster: it needs running costs
+  and operation (`con-free`, `con-platform-static-for-now`, `qg-operable-by-one`).
+- The provider's own cloud service for its assistant: it serves one assistant only, needs a paid subscription, and has no
+  image of the platform's.
+
+```arc42
+:::decision
+id: dec-codespace-workplace
+title: A ready workplace in a GitHub codespace
+status: accepted
+date: 2026-11-16
+addresses: qg-learnable-for-creators, con-free, con-github-means-of-production, con-creator-brings-ai, risk-weak-supply, risk-workplace-sign-in, risk-codespace-quota
+x-source: pdt42 s-ready-workplace, a-creators-build-on-own-computer, a-creators-build-in-workplace
+:::
+```
+
+## The workplace is open, the checks sit at the app
+
+**Context.** An assistant has to research on the internet, and a teacher cannot judge a prompt for permission. The
+assistant runs in the creator's own codespace, apart from their computer. What the platform answers for is the
+published app (`con-apps-collect-nothing`), not the creator's workplace.
+
+**Decision.** The assistant works without restrictions in the workplace: it may use the whole internet and run any
+command; no firewall and no approval prompt is preset. The protection sits where the platform's promise is: the checks
+of the tooling and the catalog look at the finished app (`dec-check-fitness`), and the workflows treat the source of
+another repository as untrusted: no secrets for runs on foreign code, minimal rights, actions pinned by commit.
+
+**Consequences.** A page or a project the assistant reads can steer it and take what is in the codespace: the creator's
+sign-in to the assistant and a token limited to one repository (`risk-open-workplace`). The damage stays with the
+creator, and the guide says so plainly. Whether an assistant asks before it acts is a user setting of its editor
+extension that the container file cannot preset, so each creator decides. Rejected: a firewall with an allowlist, as in
+the reference container of an AI provider: it blocks research and the sign-in of the assistants and needs extra rights
+in the container.
+
+```arc42
+:::decision
+id: dec-open-workplace
+title: The workplace is open, the checks sit at the app
+status: accepted
+date: 2026-11-16
+addresses: qg-learnable-for-creators, qg-nothing-collected, con-apps-collect-nothing, risk-open-workplace
+x-source: owner decision 2026-11-15; dec-check-fitness
+:::
+```
+
 ## Three archetypes whose templates carry the rules
 
 **Context.** A creator should meet the rules every app has to meet (accessible, nothing collected, fast, browser

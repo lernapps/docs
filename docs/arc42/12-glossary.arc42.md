@@ -1,6 +1,6 @@
 # Glossary
 
-The terms of the learning map. The platform uses German words for people and English words in contracts (`dec-english-contracts`).
+The terms of the learning map and of the creator's workplace. The platform uses German words for people and English words in contracts (`dec-english-contracts`).
 
 ## Subject (Fach)
 
@@ -107,5 +107,29 @@ A competency may be placed more than once, or not at all.
 id: term-placement
 title: Placement (Einordnung)
 definition: The grade or grades in which a curriculum places a competency.
+:::
+```
+
+## Codespace
+
+A creator works in it without installing anything.
+
+```arc42
+:::glossary-term
+id: term-codespace
+title: Codespace
+definition: A workplace in the browser that GitHub starts for a creator from a repository, with an editor and the workplace image underneath; it stops when idle and belongs to the creator.
+:::
+```
+
+## Starting point (Startvorlage)
+
+The repository a non-technical creator begins with.
+
+```arc42
+:::glossary-term
+id: term-starting-point
+title: Starting point (Startvorlage)
+definition: The template repository lernapps/start: a creator makes a repository of their own from it, opens it in a codespace and signs in to their assistant (bb-start).
 :::
 ```
