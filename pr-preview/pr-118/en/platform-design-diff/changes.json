@@ -1,13 +1,13 @@
 {
   "version": 1,
   "base": {
-    "label": "84877af670609f5dac186fff9f9f87e2289dc1ad",
-    "commit": "84877af670609f5dac186fff9f9f87e2289dc1ad"
+    "label": "01146d002c24e277645a3711536480609151441a",
+    "commit": "01146d002c24e277645a3711536480609151441a"
   },
   "head": {
-    "label": "1faf9186eea6c5b35d734e396890f688330dd915"
+    "label": "fad55ca1ae748f30a0c4c0fa36683c6753984775"
   },
-  "acceptanceBase": "84877af670609f5dac186fff9f9f87e2289dc1ad",
+  "acceptanceBase": "01146d002c24e277645a3711536480609151441a",
   "untracked": [],
   "accepted": false,
   "findings": [
@@ -18,6 +18,14 @@
       "line": 95,
       "elementId": "x-list-and-hear-back",
       "message": "Block 'x-list-and-hear-back' changed without changing its section prose."
+    },
+    {
+      "kind": "block-without-prose-change",
+      "severity": "warning",
+      "file": "2-design/d7-experiences.pdt42.md",
+      "line": 135,
+      "elementId": "x-tailor-made-app",
+      "message": "Block 'x-tailor-made-app' changed without changing its section prose."
     },
     {
       "kind": "block-without-prose-change",
@@ -121,6 +129,52 @@
           "headingPath": [
             "Assemble the platform experiences",
             "List an app and hear it is used"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "x-tailor-made-app",
+        "kind": "experience",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "steps",
+            "before": [
+              "s-finding",
+              "t-find-app",
+              "s-building-guidance",
+              "t-build-with-assistant",
+              "s-temporary-preview",
+              "t-hand-over-made-to-measure",
+              "t-learn-with-app"
+            ],
+            "after": [
+              "s-finding",
+              "t-find-app",
+              "s-ready-workplace",
+              "s-building-guidance",
+              "t-build-with-assistant",
+              "s-temporary-preview",
+              "t-hand-over-made-to-measure",
+              "t-learn-with-app"
+            ]
+          }
+        ],
+        "proseChanged": false,
+        "base": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 135
+        },
+        "head": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 135
+        },
+        "section": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "headingPath": [
+            "Assemble the platform experiences",
+            "Practise a given scope, made to measure"
           ],
           "occurrence": 1
         }
@@ -259,6 +313,14 @@
           "to": "s-ready-workplace",
           "relation": "steps"
         }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-tailor-made-app",
+          "to": "s-ready-workplace",
+          "relation": "steps"
+        }
       }
     ],
     "proseSections": [],
@@ -278,7 +340,7 @@
       {
         "file": "2-design/d7-experiences.pdt42.md",
         "added": 0,
-        "modified": 1,
+        "modified": 2,
         "removed": 0
       },
       {
