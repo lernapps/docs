@@ -173,7 +173,7 @@ status: open
 
 #### Creators build with their assistant on their own computer
 
-The guidance for building presumes that the creator's AI assistant can run commands on the creator's own computer. The first draft shows that this fails for the creators who matter most: teachers and parents are not technical enough, or do not have the environment, to install tools, run commands and get through network settings, and they stop before the first line. The assumption does not hold; the ready workplace for building answers it, and the next assumption tests that answer.
+The guidance for building presumes an assistant that can run commands on the creator's own computer. The first draft shows that teachers and parents are not technical enough, or lack the environment, to install tools, run commands and get through network settings: they stop before the first line. The assumption does not hold; the ready workplace for building answers it (D6), and the next assumption tests that answer.
 
 ```pdt42
 :::assumption
@@ -190,7 +190,7 @@ status: invalidated
 
 #### Creators build in a ready workplace without help
 
-If the setup is taken away, a teacher or parent still has to sign in to an assistant they pay for themselves, describe the app and confirm a plan. Whether that is possible without help decides whether the supply side reaches beyond the creators the owner knows personally.
+The workplace takes the setup away. Signing in to an assistant the creator pays for, describing the app and confirming a plan remain. Whether that works without help decides whether the supply side reaches beyond the creators the owner knows.
 
 ```pdt42
 :::assumption
