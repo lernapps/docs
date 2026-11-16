@@ -151,7 +151,7 @@ Mainly for app creators; also involves AI assistants, adopting adults. What they
 
 1. Build an app with an AI assistant
    - **A ready workplace for building**
-     - For app creators: Takes the setup out of building: creators who are not technical open a workplace in which their AI assistant and the tools of the platform are ready, and start with their idea. Creators get it even if nobody else uses their app. It reaches the creators the guidance alone does not, because the guidance presumes an assistant that can run commands on the creator's own computer.
+     - For app creators: Takes the setup out of building, and so reaches the creators the guidance alone does not. Creators get it even if nobody else uses their app. The creator brings the access to their assistant and pays for it; the platform pays nothing for the workplace.
      - Delivered by: Starting point (Start), Workplace image (Tooling).
    - **Guidance for building apps**
      - For app creators: Helps creators build apps with their AI assistant that are easy to use and fit the platform. Creators get it even if nobody else uses their app. It makes building with the assistant easier.
