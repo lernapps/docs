@@ -1,0 +1,143 @@
+{
+  "version": 1,
+  "base": {
+    "label": "504ed75a1355838104eefdfc5d5699b34d192787",
+    "commit": "504ed75a1355838104eefdfc5d5699b34d192787"
+  },
+  "head": {
+    "label": "87ceaa2ed8316834bdbe4aae3c3f193ab8e0f998"
+  },
+  "acceptanceBase": "504ed75a1355838104eefdfc5d5699b34d192787",
+  "untracked": [],
+  "accepted": false,
+  "findings": [],
+  "model": {
+    "elements": [
+      {
+        "id": "ch-workplace",
+        "kind": "channel",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 506
+        },
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 506
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Channels",
+            "A ready workplace for building"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "s-ready-workplace",
+        "kind": "service",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 107
+        },
+        "head": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "line": 107
+        },
+        "section": {
+          "file": "2-design/d6-learning-engine.pdt42.md",
+          "headingPath": [
+            "Design the learning engine",
+            "Services",
+            "A ready workplace for building"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "a-creators-build-on-own-computer",
+        "kind": "assumption",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 179
+        },
+        "head": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 179
+        },
+        "section": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "headingPath": [
+            "Set up the Minimum Viable Platform",
+            "First draft: first apps",
+            "Assumptions",
+            "Creators build with their assistant on their own computer"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "a-creators-build-in-workplace",
+        "kind": "assumption",
+        "status": "unchanged",
+        "attributes": [],
+        "proseChanged": true,
+        "proseMentions": [],
+        "base": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 196
+        },
+        "head": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "line": 196
+        },
+        "section": {
+          "file": "2-design/d8-mvp.pdt42.md",
+          "headingPath": [
+            "Set up the Minimum Viable Platform",
+            "First draft: first apps",
+            "Assumptions",
+            "Creators build in a ready workplace without help"
+          ],
+          "occurrence": 1
+        }
+      }
+    ],
+    "diagrams": [],
+    "edges": [],
+    "proseSections": [],
+    "documents": [
+      {
+        "file": "2-design/d5-transactions.pdt42.md",
+        "added": 0,
+        "modified": 1,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d6-learning-engine.pdt42.md",
+        "added": 0,
+        "modified": 1,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d8-mvp.pdt42.md",
+        "added": 0,
+        "modified": 2,
+        "removed": 0
+      }
+    ]
+  }
+}
