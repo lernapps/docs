@@ -36,6 +36,50 @@ x-source: pdt42 KD-09, KD-20
 :::
 ```
 
+## Signing in to the assistant needs workarounds in a codespace
+
+In a codespace the browser cannot return to the machine the assistant runs on, so the sign-in of Claude does not finish
+by itself, and the sign-in of Codex needs the device code, which the creator allows in their account. The providers'
+rules decide how an assistant may be signed in, and they change.
+
+```arc42
+:::risk
+id: risk-workplace-sign-in
+title: Signing in to the assistant needs workarounds in a codespace
+severity: medium
+mitigation: Both workarounds are shown with pictures (dec-codespace-workplace); a creator who cannot sign in can build on their own computer with the same container file
+x-source: pdt42 a-creators-build-in-workplace
+:::
+```
+
+## A page or a project can steer the open assistant
+
+A page the assistant reads or a project it opens can tell it to do things the creator did not ask for.
+
+```arc42
+:::risk
+id: risk-open-workplace
+title: A page or a project can steer the open assistant
+severity: medium
+mitigation: Only the creator's sign-in and a token limited to one repository are in the codespace, and the checks sit at the app (dec-open-workplace); the guide says what not to type there
+x-source: owner decision 2026-11-15
+:::
+```
+
+## The free hours of a codespace run out
+
+GitHub gives an account a limited number of codespace hours each month.
+
+```arc42
+:::risk
+id: risk-codespace-quota
+title: The free hours of a codespace run out
+severity: low
+mitigation: A stopped codespace costs no computing time, and the same container file opens on the creator's own computer
+x-source: pdt42 a-creators-build-in-workplace
+:::
+```
+
 ## One owner cannot keep the subject models and 16 curricula
 
 The learning map needs a model for every subject and a curriculum for every Land and school type (`dec-learning-map-in-catalog`). One person cannot write and keep all of them, and curricula change.

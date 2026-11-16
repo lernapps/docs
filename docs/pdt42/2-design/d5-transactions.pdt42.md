@@ -498,6 +498,23 @@ improvement: Building an app that keeps the platform's rules no longer needs exp
 :::
 ```
 
+### A ready workplace for building
+
+Creators who are teachers or parents are not technical enough, or lack the environment, to build with their AI assistant on their own computer: installing tools, running commands and getting through network settings stops them before the first line (D8). The channel gives them a workplace that is ready when they open it: a starting point they open with one click, an editor in the browser with the assistant and the tools already in it, and instructions in plain language for the one step that cannot be prepared, signing in to the assistant. The creator brings the access to their assistant and pays for it; the platform pays nothing for the workplace (D6).
+
+```pdt42
+:::channel
+id: ch-workplace
+title: A ready workplace for building
+medium: digital
+components:
+  - A starting point a creator opens with one click
+  - A workplace in the browser with the assistant and the tools already in it
+  - Instructions in plain language, with pictures, for signing in and starting
+improvement: A creator without technical knowledge builds an app without installing, configuring or understanding anything on their own computer
+:::
+```
+
 ### A temporary app made to measure
 
 The creator's assistant writes content of its own for an acute occasion, and the platform turns it into an app the learners open at once.

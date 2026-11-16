@@ -327,3 +327,18 @@ response: The update reaches every repo and every served copy by pull request
 metric: no step by the owner other than merging, where a merge is not automatic; measured by reviewing the update workflows
 :::
 ```
+
+## A creator who is not technical builds without setting anything up
+
+The workplace has to be ready when a creator who cannot install tools opens it; only the sign-in has to be explained.
+
+```arc42
+:::quality-scenario
+id: qs-creator-builds-without-setup
+title: A creator who is not technical builds without setting anything up
+quality: qg-learnable-for-creators
+stimulus: A teacher or parent who has not built an app before opens the starting point
+response: They reach a confirmed plan and a running first page in one sitting, without installing anything and without help
+metric: Observed with creators who have not built an app before: most reach it in one sitting; creating the workplace takes under 2 minutes in the creation log of a codespace
+:::
+```

@@ -32,6 +32,7 @@ flowchart LR
         bb-website["Website"]
         bb-catalog["Catalog"]
         bb-tooling["Tooling"]
+        bb-start["Start"]
         bb-app-templates["App templates"]
         bb-practice["Practice"]
         bb-docs["Docs"]
@@ -90,7 +91,7 @@ id: actor-creator
 title: Creator
 type: person
 description: App creators (pdt42 e-creators); they build and list through their AI assistant
-requires: if-home-pages, if-catalog-pages, if-practice-form
+requires: if-home-pages, if-catalog-pages, if-practice-form, if-start-template
 :::
 ```
 
@@ -104,7 +105,7 @@ tooling, and opens the listing pull request.
 id: actor-ai-assistant
 title: Creator's AI assistant
 type: system
-description: The AI assistant a creator already has or can easily get, and builds and lists an app with; it reads the guidance and runs the CLI (pdt42 e-ai-assistants)
+description: The AI assistant a creator already has or can easily get, from a provider whose access the creator pays for themselves (con-creator-brings-ai), and builds and lists an app with; it reads the guidance and runs the CLI (pdt42 e-ai-assistants)
 requires: if-guidance, if-tooling-cli, if-listing, if-home-pages, if-practice-guidance
 :::
 ```
@@ -167,8 +168,8 @@ run every check and publication, Pages serves every site and every app copy.
 id: actor-github
 title: GitHub
 type: system
-description: Repositories, issues, pull requests, Actions and Pages
-requires: if-listing, if-app-actions, if-org-rules
+description: Repositories, issues, pull requests, Actions, Pages, Codespaces and the package registry
+requires: if-listing, if-app-actions, if-org-rules, if-workplace-image
 :::
 ```
 

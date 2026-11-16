@@ -99,6 +99,22 @@ channel: ch-guidance
 :::
 ```
 
+### A ready workplace for building
+
+Takes the setup out of building: creators who are not technical open a workplace in which their AI assistant and the tools of the platform are ready, and start with their idea. Creators get it even if nobody else uses their app (D4). It reaches the creators the guidance alone does not, because the guidance presumes an assistant that can run commands on the creator's own computer (D8).
+
+```pdt42
+:::service
+id: s-ready-workplace
+title: A ready workplace for building
+for: e-creators
+stage: onboarding
+kind: empowering
+supports: t-build-with-assistant
+channel: ch-workplace
+:::
+```
+
 ### Help to list an app
 
 The first listing is the biggest hurdle for creators; this service takes the effort out of it (D4).

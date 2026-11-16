@@ -24,6 +24,7 @@ flowchart TB
     bb-practice["Practice (practice)"]
     bb-docs["Docs (docs)"]
     bb-org["Organisation (.github)"]
+    bb-start["Start (start)"]
     bb-catalog -->|"if-site-frame"| bb-website
     bb-tooling -->|"if-site-frame"| bb-website
     bb-docs -->|"if-site-frame"| bb-website
@@ -37,6 +38,7 @@ flowchart TB
     bb-website -->|"if-site-actions"| bb-tooling
     bb-catalog -->|"if-site-actions"| bb-tooling
     bb-docs -->|"if-site-actions"| bb-tooling
+    bb-start -->|"if-workplace-image"| bb-tooling
 ```
 
 ## Website
@@ -200,7 +202,7 @@ x-risk: risk-one-owner
 
 Gives a creator's AI assistant everything it needs to [build an app that meets the platform's rules](https://lernapps.net/docs/platform-design/#2-design/d6-learning-engine.pdt42.md:el-s-building-guidance):
 the guidance by phase and the skills, the CLI that creates an app and checks it, and the workflows an app's
-repository runs. It also holds the actions that build every platform site and publish it once site-check has passed.
+repository runs. It also holds the actions that build every platform site and publish it once site-check has passed, and it builds the image of the creator's workplace.
 
 Its own architecture refines this block: [tooling, chapter 5](https://github.com/lernapps/tooling/blob/main/docs/arc42/05-building-blocks.arc42.md).
 
@@ -247,6 +249,23 @@ x-realises: ch-guidance
 :::
 ```
 
+### Workplace image
+
+The image of the creator's workplace (`dec-codespace-workplace`): Node, the browser the checks use and the browser tool
+for assistants, every version pinned and moved by Renovate. The tooling builds, tests and publishes it; the container
+files name it by its digest.
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/tooling: https://github.com/lernapps/tooling :::
+:::interface
+id: if-workplace-image
+title: Workplace image
+provider: bb-tooling
+protocol: OCI image at ghcr.io/lernapps/devcontainer, pinned by digest in a dev container file
+x-realises: ch-workplace
+:::
+```
+
 ### Site actions
 
 The actions every platform site is built, checked and deployed with, and the previews of its pull requests: the
@@ -274,6 +293,39 @@ id: if-app-actions
 title: App actions
 provider: bb-tooling
 protocol: GitHub reusable workflows and actions, pinned to a commit
+:::
+```
+
+## Start
+
+The starting point (`dec-codespace-workplace`): a template repository with a container file, a first AGENTS.md that
+asks what the creator wants, and a README in plain language that links the guides with pictures, `/build/codespaces/`
+and `/practice/codespaces/`.
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/start: https://github.com/lernapps/start :::
+:::building-block
+id: bb-start
+implements: concept-assistants-as-readers, concept-plain-language, concept-pinned-and-pulled
+title: Start
+technology: GitHub template repository, dev container file
+requires: if-workplace-image
+x-repo: lernapps/start
+:::
+```
+
+### Starting point
+
+The template a creator makes their own repository from.
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/start: https://github.com/lernapps/start :::
+:::interface
+id: if-start-template
+title: Starting point
+provider: bb-start
+protocol: GitHub template repository, opened in a codespace
+x-realises: ch-workplace
 :::
 ```
 

@@ -98,8 +98,8 @@ title: List an app and hear it is used
 core-entity: e-creators
 roles: e-ai-assistants, e-adopters
 relationship: r-creators-adults
-value-proposition: Build your app faster with good guidance, list it in minutes without answering to schools for data protection yourself, and hear with every thank-you when it helped a class beyond your own
-steps: s-building-guidance, t-build-with-assistant, s-listing-help, t-list-app, t-use-in-class, s-use-insight, t-thank-creator-adult, t-give-feedback, t-recommend-app
+value-proposition: Build your app without setting anything up and faster with good guidance, list it in minutes without answering to schools for data protection yourself, and hear with every thank-you when it helped a class beyond your own
+steps: s-ready-workplace, s-building-guidance, t-build-with-assistant, s-listing-help, t-list-app, t-use-in-class, s-use-insight, t-thank-creator-adult, t-give-feedback, t-recommend-app
 activities:
   - Maintaining the guidance for building apps
   - Checking and publishing listings
@@ -139,7 +139,7 @@ core-entity: e-creators
 roles: e-ai-assistants, e-adopters, e-students
 relationship: r-creators-students
 value-proposition: When a test, a substitute lesson or missed lessons set exactly what to practise and no app covers it: your assistant makes one from that material, ready within minutes
-steps: s-finding, t-find-app, s-building-guidance, t-build-with-assistant, s-temporary-preview, t-hand-over-made-to-measure, t-learn-with-app
+steps: s-finding, t-find-app, s-ready-workplace, s-building-guidance, t-build-with-assistant, s-temporary-preview, t-hand-over-made-to-measure, t-learn-with-app
 activities:
   - Checking the content and building apps from it
   - Keeping the guidance for creators' assistants current

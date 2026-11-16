@@ -81,6 +81,20 @@ source: pdt42 KD-17, KD-20
 :::
 ```
 
+## The creator brings and pays for the AI
+
+The platform pays for no AI usage and holds no key or account of an AI provider: a creator brings the access to their
+assistant, a subscription or a key, and pays for it. This follows from the platform being free (`con-free`).
+
+```arc42
+:::constraint
+id: con-creator-brings-ai
+title: The creator brings and pays for the AI
+category: organizational
+source: pdt42 s-ready-workplace, a-creators-unpaid; owner decision 2026-11-15
+:::
+```
+
 ## One owner, and later an association
 
 One person owns and runs the platform today ([KD-09](https://github.com/lernapps/docs/blob/main/.vibe/development-plan-feat-platform-design.md#kd-09-oliver-jägle-alone-owns-the-platform-2026-09-30)). If it takes off, it may become a registered association that

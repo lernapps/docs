@@ -27,6 +27,7 @@ base:
   - The first apps in the [app catalogue](https://lernapps.net/apps/), each served as a copy under lernapps.net
   - The docs site and the GitHub organisation lernapps with its workflows
   - Temporary apps made to measure, open to anyone
+  - A ready workplace for building, opened from a starting point, for creators who are not technical
 implementation: Concierge: the owner invites the creators personally and helps with the first listing; listing, the copy of each listed app under lernapps.net, overview, referral links and the anonymous thanks are built for real, in their simplest form; the thanks is explained to no one, the platform has to make it self-evident
 status: planned
 :::
@@ -166,6 +167,40 @@ kind: attraction
 riskiest: no
 test: Ask each creator who lists a new app whether a gap on the map was the reason, and which one
 criteria: At least 2 of the newly listed apps name a gap on the map as the reason
+status: open
+:::
+```
+
+#### Creators build with their assistant on their own computer
+
+The guidance for building presumes that the creator's AI assistant can run commands on the creator's own computer. The first draft shows that this fails for the creators who matter most: teachers and parents are not technical enough, or do not have the environment, to install tools, run commands and get through network settings, and they stop before the first line. The assumption does not hold; the ready workplace for building answers it, and the next assumption tests that answer.
+
+```pdt42
+:::assumption
+id: a-creators-build-on-own-computer
+title: Creators build with their assistant on their own computer
+mvp: mvp-first-draft
+kind: attraction
+riskiest: yes
+test: Invite the creators personally and watch where they stop when they build with their assistant on their own computer
+criteria: Creators who are teachers or parents get from the first question to a running first page on their own computer without help
+status: invalidated
+:::
+```
+
+#### Creators build in a ready workplace without help
+
+If the setup is taken away, a teacher or parent still has to sign in to an assistant they pay for themselves, describe the app and confirm a plan. Whether that is possible without help decides whether the supply side reaches beyond the creators the owner knows personally.
+
+```pdt42
+:::assumption
+id: a-creators-build-in-workplace
+title: Creators build in a ready workplace without help
+mvp: mvp-first-draft
+kind: attraction
+riskiest: yes
+test: Give teachers and parents the starting point and watch, without helping, where they stop
+criteria: Most of those who open the starting point reach a confirmed plan and a running first page in one sitting without help
 status: open
 :::
 ```

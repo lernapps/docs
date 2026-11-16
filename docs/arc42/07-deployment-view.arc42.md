@@ -11,7 +11,7 @@ platform's open counts and, for now, e-mail for thanks.
 id: deployment-overall
 view: deployment
 notation: mermaid-architecture
-aliases: env_production=env-production, dn_pages_root=dn-pages-root, dn_pages_catalog=dn-pages-catalog, dn_pages_docs=dn-pages-docs, dn_pages_tooling=dn-pages-tooling, dn_pages_practice=dn-pages-practice, env_build=env-build, dn_repositories=dn-repositories, dn_actions=dn-actions, bb_website=bb-website, bb_catalog=bb-catalog, bb_docs=bb-docs, bb_tooling=bb-tooling, bb_practice=bb-practice, bb_org=bb-org, bb_app_templates=bb-app-templates
+aliases: env_production=env-production, dn_pages_root=dn-pages-root, dn_pages_catalog=dn-pages-catalog, dn_pages_docs=dn-pages-docs, dn_pages_tooling=dn-pages-tooling, dn_pages_practice=dn-pages-practice, env_build=env-build, dn_repositories=dn-repositories, dn_actions=dn-actions, bb_website=bb-website, bb_catalog=bb-catalog, bb_docs=bb-docs, bb_tooling=bb-tooling, bb_practice=bb-practice, bb_org=bb-org, bb_app_templates=bb-app-templates, env_workplace=env-workplace, dn_codespace=dn-codespace, bb_start=bb-start, dn_image_registry=dn-image-registry
 :::
 ```
 
@@ -32,6 +32,10 @@ architecture-beta
     group dn_repositories(database)[Repositories] in env_build
     service bb_org(disk)[Organisation] in dn_repositories
     service bb_app_templates(disk)[App templates] in dn_repositories
+    group env_workplace(cloud)[GitHub Codespaces and packages]
+    group dn_codespace(server)[A creator's codespace] in env_workplace
+    service bb_start(disk)[Start] in dn_codespace
+    group dn_image_registry(database)[Image registry] in env_workplace
 ```
 
 ## Production: GitHub Pages under lernapps.net
@@ -157,5 +161,47 @@ title: Actions runners
 type: server
 parent: env-build
 hosts: bb-tooling, bb-catalog
+:::
+```
+
+## Workplace: GitHub Codespaces
+
+A creator builds in a codespace that GitHub starts from the starting point and that pulls the workplace image from
+GitHub's package registry. It belongs to the creator; the platform runs nothing for it.
+
+```arc42
+:::deployment-node
+id: env-workplace
+title: GitHub Codespaces and packages
+type: environment
+:::
+```
+
+### A creator's codespace
+
+The editor in the browser with the creator's repository, the workplace image underneath, and the assistant the creator
+signs in to.
+
+```arc42
+:::deployment-node
+id: dn-codespace
+title: A creator's codespace
+type: server
+parent: env-workplace
+hosts: bb-start
+:::
+```
+
+### Image registry
+
+The package `ghcr.io/lernapps/devcontainer`, public, to which the tooling publishes the workplace image.
+
+```arc42
+:::deployment-node
+id: dn-image-registry
+title: Image registry
+type: server
+parent: env-workplace
+hosts: bb-tooling
 :::
 ```
