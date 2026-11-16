@@ -101,9 +101,9 @@ sequenceDiagram
 
 A creator who is not technical has no assistant set up on their own computer. They use the starting point to make a
 repository of their own and open it in a codespace. GitHub starts the workplace from the image of the tooling. The
-creator signs in to their assistant with their own subscription or key, and says what app they want. The assistant
-asks, starts the app in the folder with the tooling's CLI, builds it with the creator's confirmation of the plan and
-checks it. The platform answers for nothing of this but the checked app (`dec-open-workplace`).
+creator signs in to their assistant with their own subscription or key, and says what app they want, one to share
+or one to practise for an occasion. The assistant asks, starts the app in the folder with the CLI of the tooling or of
+the practice site, builds it with the creator's confirmation of the plan and checks it. The platform answers for nothing of this but the checked app (`dec-open-workplace`).
 
 ```arc42
 :::runtime-scenario

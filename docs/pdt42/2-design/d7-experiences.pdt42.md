@@ -139,7 +139,7 @@ core-entity: e-creators
 roles: e-ai-assistants, e-adopters, e-students
 relationship: r-creators-students
 value-proposition: When a test, a substitute lesson or missed lessons set exactly what to practise and no app covers it: your assistant makes one from that material, ready within minutes
-steps: s-finding, t-find-app, s-building-guidance, t-build-with-assistant, s-temporary-preview, t-hand-over-made-to-measure, t-learn-with-app
+steps: s-finding, t-find-app, s-ready-workplace, s-building-guidance, t-build-with-assistant, s-temporary-preview, t-hand-over-made-to-measure, t-learn-with-app
 activities:
   - Checking the content and building apps from it
   - Keeping the guidance for creators' assistants current

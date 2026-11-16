@@ -301,8 +301,9 @@ protocol: GitHub reusable workflows and actions, pinned to a commit
 
 The starting point of a creator who is not technical: a template repository with a container file, a first AGENTS.md
 and a README in plain language. A creator uses the template to make a repository of their own, opens it in a codespace
-and signs in to their assistant; the assistant then asks what to build and starts the app in that folder. The README
-points to the page of the catalog that leads through it with pictures (`/build/codespaces/`).
+and signs in to their assistant; the assistant then asks whether the creator wants an app to share or one to practise
+for an occasion, and starts the matching app in that folder. The README points to the pages that lead through it with
+pictures: the catalog's (`/build/codespaces/`) and the practice site's (`/practice/codespaces/`).
 
 ```arc42
 :::ignore H014 implemented in another repository, lernapps/start: https://github.com/lernapps/start :::
