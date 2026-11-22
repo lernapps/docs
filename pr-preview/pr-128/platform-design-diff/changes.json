@@ -5,7 +5,7 @@
     "commit": "1de7a0a7fde99de36185d158954097a7337448f7"
   },
   "head": {
-    "label": "dd0b813fe61f0f823b560ea10403035b7879f06e"
+    "label": "135702c4fb07207058a63062e64db030b5357767"
   },
   "acceptanceBase": "1de7a0a7fde99de36185d158954097a7337448f7",
   "untracked": [],
@@ -48,7 +48,7 @@
           "headingPath": [
             "Identify the elementary transactions and channels",
             "Channels",
-            "Notes on the content, handed to the creator"
+            "Suggestions on the content, handed to the creator"
           ],
           "occurrence": 1
         }

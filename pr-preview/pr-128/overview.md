@@ -56,7 +56,7 @@ A dashed block marks where a part does not yet deliver what the journey needs, a
 
 ### [An app in class within minutes](platform-design/#2-design/d7-experiences.pdt42.md:el-x-app-in-minutes)
 
-The journey of a teacher who has to take over a class at short notice, for a colleague and perhaps outside their own subject: find an app for this topic and grade, see at a glance that it may be used, put it on the projector or the class's devices, and say thanks afterwards. It may be used because the platform lists only apps that pass its checks of fitness for use and serves each one itself, under lernapps.net and its privacy notice. A teacher who knows the subject may also note in the app what to improve and hand the notes to the creator.
+The journey of a teacher who has to take over a class at short notice, for a colleague and perhaps outside their own subject: find an app for this topic and grade, see at a glance that it may be used, put it on the projector or the class's devices, and say thanks afterwards. It may be used because the platform lists only apps that pass its checks of fitness for use and serves each one itself, under lernapps.net and its privacy notice. A teacher who knows the subject may also suggest to the creator what to improve.
 
 Mainly for adopting adults; also involves app creators, students. What they get: The right active-learning app for this topic and grade, even outside your subject, running in class within minutes, safe to use without checking it yourself.
 
@@ -106,7 +106,7 @@ Mainly for adopting adults; also involves app creators, students. What they get:
 
 ### [Understand a topic at one's own pace](platform-design/#2-design/d7-experiences.pdt42.md:el-x-child-struggles)
 
-The journey of a parent who notices that their child struggles with a topic and cannot help, for lack of time or because they do not know the subject well enough: find an app that helps the child understand that topic, with no scope set from outside, let the child start right away and practise, and say thanks afterwards. The child keeps coming back to the app, or finds the next one alone, for as long as it needs; the child may also be the one who notices the gap. The app starts from lernapps.net like every listed app, so parents do not have to judge a stranger's address. A parent who knows the subject may also note in the app what to improve and hand the notes to the creator.
+The journey of a parent who notices that their child struggles with a topic and cannot help, for lack of time or because they do not know the subject well enough: find an app that helps the child understand that topic, with no scope set from outside, let the child start right away and practise, and say thanks afterwards. The child keeps coming back to the app, or finds the next one alone, for as long as it needs; the child may also be the one who notices the gap. The app starts from lernapps.net like every listed app, so parents do not have to judge a stranger's address. A parent who knows the subject may also suggest to the creator what to improve.
 
 Mainly for adopting adults; also involves students, app creators. What they get: When your child struggles with a topic: an app that helps them understand it, to start right away and come back to as long as they need.
 
@@ -409,7 +409,7 @@ Each part with the interfaces it offers, the services they serve and the parts t
   - Serves: Guidance for building apps
   - Used by: Tooling, Practice
   - Works with, outside the system: Renovate
-- **Feedback mode of the explainer:** In an explainer, teachers and parents note what to improve, block by block, on their own device, and copy all notes into a new issue in the app's repository; GitHub carries them to the creator. The app sends nothing (dec-explainer-feedback-issue in app-templates).
+- **Feedback mode of the explainer:** In an explainer, teachers and parents suggest what to improve and hand their suggestions to the creator as an issue in the app's repository. The app sends nothing (dec-explainer-feedback-issue in app-templates).
   - ┆ Not yet: Only the explainer has the feedback mode; the quiz and the interactive app do not.
 
 #### [Practice](architecture/#05-building-blocks.arc42.md:el-bb-practice) ([lernapps/practice](https://github.com/lernapps/practice))
