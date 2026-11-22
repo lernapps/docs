@@ -16,6 +16,7 @@ gesammelt als Text eines neuen Issues im Repository der App ab, mit ihrem eigene
 - Neue Transaktion mit `happening: no` (Zielzustand; „happening: yes“ heißt: kommt heute ohne lernapps.net vor).
 - Die Journeys der Erwachsenen bekommen den Schritt, als optionalen am Ende (Owner).
 - Kein Service im Lernmotor: GitHub trägt die Notizen, es ist nur ein Kanal (Owner).
+- pdt42 beschreibt nur Interaktion und Wert, arc42 nur Verantwortung und Interaktion, keine Funktionsweise (Owner).
 
 ## Notes
 - Heute: `t-give-feedback` (e-adopters → e-creators, „Structured feedback from one class“, Kanal `ch-feedback`,

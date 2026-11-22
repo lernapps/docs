@@ -8,7 +8,7 @@ In every journey, the thank-you after use is a step of its own. The platform is 
 
 ## An app in class within minutes
 
-The journey of a teacher who has to take over a class at short notice, for a colleague and perhaps outside their own subject: find an app for this topic and grade, see at a glance that it may be used, put it on the projector or the class's devices, and say thanks afterwards. It may be used because the platform lists only apps that pass its checks of fitness for use and serves each one itself, under lernapps.net and its privacy notice (KD-21). A teacher who knows the subject may also note in the app what to improve and hand the notes to the creator.
+The journey of a teacher who has to take over a class at short notice, for a colleague and perhaps outside their own subject: find an app for this topic and grade, see at a glance that it may be used, put it on the projector or the class's devices, and say thanks afterwards. It may be used because the platform lists only apps that pass its checks of fitness for use and serves each one itself, under lernapps.net and its privacy notice (KD-21). A teacher who knows the subject may also suggest to the creator what to improve.
 
 ```pdt42
 :::canvas
@@ -45,7 +45,7 @@ revenues:
 
 ## Understand a topic at one's own pace
 
-The journey of a parent who notices that their child struggles with a topic and cannot help, for lack of time or because they do not know the subject well enough: find an app that helps the child understand that topic, with no scope set from outside, let the child start right away and practise, and say thanks afterwards. The child keeps coming back to the app, or finds the next one alone, for as long as it needs; the child may also be the one who notices the gap. The app starts from lernapps.net like every listed app (KD-21), so parents do not have to judge a stranger's address. A parent who knows the subject may also note in the app what to improve and hand the notes to the creator.
+The journey of a parent who notices that their child struggles with a topic and cannot help, for lack of time or because they do not know the subject well enough: find an app that helps the child understand that topic, with no scope set from outside, let the child start right away and practise, and say thanks afterwards. The child keeps coming back to the app, or finds the next one alone, for as long as it needs; the child may also be the one who notices the gap. The app starts from lernapps.net like every listed app (KD-21), so parents do not have to judge a stranger's address. A parent who knows the subject may also suggest to the creator what to improve.
 
 ```pdt42
 :::canvas

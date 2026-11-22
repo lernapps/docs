@@ -158,7 +158,7 @@ motivation: m-adopters-creators-gratitude
 
 ### Suggest improvements to the content
 
-An adult who knows the subject, a teacher or a parent, notes in the app what is wrong or unclear, at the place it concerns, and hands the notes over to the creator. This hardly happens today: the creator rarely learns where the content needs work.
+An adult who knows the subject, a teacher or a parent, tells the creator what to improve in an app's content. This hardly happens today: creators rarely learn where their content needs work.
 
 ```pdt42
 :::transaction
@@ -168,7 +168,7 @@ relationship: r-creators-adults
 from: e-adopters
 to: e-creators
 direction: one-way
-value-unit: Notes on an app's content, each at the place it concerns, handed over together
+value-unit: Suggestions for an app's content, each tied to the place it concerns
 happening: no
 channel: ch-content-notes
 kind: feedback
@@ -483,21 +483,20 @@ improvement: Use and praise reach the creator instead of staying invisible, and 
 :::
 ```
 
-### Notes on the content, handed to the creator
+### Suggestions on the content, handed to the creator
 
-Unlike thanks (KD-17), these notes are about the content: what is wrong or unclear, and how the app gets better. Inside the app, an adult who knows the subject notes it paragraph by paragraph, figure by figure, exercise by exercise. The notes stay on their device, and the app sends nothing. They hand them over at once as one issue in the app's repository, with their own GitHub account, where the creator works anyway. No service of the platform stands in between: GitHub carries the notes.
+Unlike thanks (KD-17), these suggestions are about the content: they help creators make their apps better, and they let adults who know the subject take part in the quality of the apps. The platform runs no service of its own for it: the suggestions reach the creator where they work on the app anyway.
 
 ```pdt42
 :::channel
 id: ch-content-notes
-title: Notes on the content, handed to the creator
+title: Suggestions on the content, handed to the creator
 medium: digital
 components:
-  - Notes inside the app, each at the paragraph, figure or exercise it concerns
-  - Kept on the person's device only; the app sends nothing
-  - Handed over together as one issue in the app's repository, with the person's own GitHub account
-  - A note shows when its place has changed since
-improvement: The creator learns where the content needs work, at the exact place, from people who know the subject
+  - Suggestions made inside the app, at the place they concern
+  - Nothing leaves the device until the person hands it over
+  - Handed over where the creator works on the app, its repository
+improvement: The creator learns where the content needs work, from people who know the subject
 :::
 ```
 
