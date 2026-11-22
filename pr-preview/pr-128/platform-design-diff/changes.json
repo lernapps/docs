@@ -1,0 +1,238 @@
+{
+  "version": 1,
+  "base": {
+    "label": "1de7a0a7fde99de36185d158954097a7337448f7",
+    "commit": "1de7a0a7fde99de36185d158954097a7337448f7"
+  },
+  "head": {
+    "label": "dd0b813fe61f0f823b560ea10403035b7879f06e"
+  },
+  "acceptanceBase": "1de7a0a7fde99de36185d158954097a7337448f7",
+  "untracked": [],
+  "accepted": false,
+  "findings": [],
+  "model": {
+    "elements": [
+      {
+        "id": "t-suggest-improvements",
+        "kind": "transaction",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 164
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Transactions Board: Creators and adults",
+            "Suggest improvements to the content"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "ch-content-notes",
+        "kind": "channel",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "line": 491
+        },
+        "section": {
+          "file": "2-design/d5-transactions.pdt42.md",
+          "headingPath": [
+            "Identify the elementary transactions and channels",
+            "Channels",
+            "Notes on the content, handed to the creator"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "x-app-in-minutes",
+        "kind": "experience",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "steps",
+            "before": [
+              "s-finding",
+              "t-find-app",
+              "s-fitness-clarity",
+              "t-confirm-fitness",
+              "s-start-right-away",
+              "t-bring-app",
+              "t-use-in-class",
+              "s-giving-back",
+              "t-thank-creator-adult",
+              "t-give-feedback"
+            ],
+            "after": [
+              "s-finding",
+              "t-find-app",
+              "s-fitness-clarity",
+              "t-confirm-fitness",
+              "s-start-right-away",
+              "t-bring-app",
+              "t-use-in-class",
+              "s-giving-back",
+              "t-thank-creator-adult",
+              "t-give-feedback",
+              "t-suggest-improvements"
+            ]
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 22
+        },
+        "head": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 22
+        },
+        "section": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "headingPath": [
+            "Assemble the platform experiences",
+            "An app in class within minutes"
+          ],
+          "occurrence": 1
+        }
+      },
+      {
+        "id": "x-child-struggles",
+        "kind": "experience",
+        "status": "modified",
+        "attributes": [
+          {
+            "name": "steps",
+            "before": [
+              "s-finding",
+              "t-find-app",
+              "s-fitness-clarity",
+              "t-confirm-fitness",
+              "t-bring-app",
+              "s-start-right-away",
+              "t-learn-with-app",
+              "s-student-finding",
+              "t-return-to-app",
+              "s-giving-back",
+              "t-thank-creator-adult"
+            ],
+            "after": [
+              "s-finding",
+              "t-find-app",
+              "s-fitness-clarity",
+              "t-confirm-fitness",
+              "t-bring-app",
+              "s-start-right-away",
+              "t-learn-with-app",
+              "s-student-finding",
+              "t-return-to-app",
+              "s-giving-back",
+              "t-thank-creator-adult",
+              "t-suggest-improvements"
+            ]
+          }
+        ],
+        "proseChanged": true,
+        "base": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 59
+        },
+        "head": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "line": 59
+        },
+        "section": {
+          "file": "2-design/d7-experiences.pdt42.md",
+          "headingPath": [
+            "Assemble the platform experiences",
+            "Understand a topic at one's own pace"
+          ],
+          "occurrence": 1
+        }
+      }
+    ],
+    "diagrams": [],
+    "edges": [
+      {
+        "status": "added",
+        "edge": {
+          "from": "t-suggest-improvements",
+          "to": "ch-content-notes",
+          "relation": "channel"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "t-suggest-improvements",
+          "to": "e-adopters",
+          "relation": "from"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "t-suggest-improvements",
+          "to": "m-adopters-creators-feedback",
+          "relation": "motivation"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "t-suggest-improvements",
+          "to": "r-creators-adults",
+          "relation": "relationship"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "t-suggest-improvements",
+          "to": "e-creators",
+          "relation": "to"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-app-in-minutes",
+          "to": "t-suggest-improvements",
+          "relation": "steps"
+        }
+      },
+      {
+        "status": "added",
+        "edge": {
+          "from": "x-child-struggles",
+          "to": "t-suggest-improvements",
+          "relation": "steps"
+        }
+      }
+    ],
+    "proseSections": [],
+    "documents": [
+      {
+        "file": "2-design/d5-transactions.pdt42.md",
+        "added": 2,
+        "modified": 0,
+        "removed": 0
+      },
+      {
+        "file": "2-design/d7-experiences.pdt42.md",
+        "added": 0,
+        "modified": 2,
+        "removed": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "base": {
+    "label": "1de7a0a7fde99de36185d158954097a7337448f7",
+    "commit": "1de7a0a7fde99de36185d158954097a7337448f7"
+  },
+  "head": {
+    "label": "dd0b813fe61f0f823b560ea10403035b7879f06e"
+  },
+  "acceptanceBase": "1de7a0a7fde99de36185d158954097a7337448f7",
+  "untracked": [],
+  "accepted": false,
+  "hasBlockingFindings": false,
+  "findings": [],
+  "groups": {
+    "warnings": [],
+    "untouched": [],
+    "updated": [],
+    "uncovered": []
+  },
+  "architecture": {
+    "elements": [
+      {
+        "id": "if-feedback-mode",
+        "kind": "interface",
+        "status": "added",
+        "attributes": [],
+        "proseChanged": true,
+        "head": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "line": 372
+        },
+        "section": {
+          "file": "docs/arc42/05-building-blocks.arc42.md",
+          "headingPath": [
+            "Building Blocks",
+            "App templates",
+            "Feedback mode"
+          ],
+          "occurrence": 1
+        }
+      }
+    ],
+    "diagrams": [],
+    "edges": [
+      {
+        "status": "added",
+        "edge": {
+          "from": "bb-app-templates",
+          "to": "if-feedback-mode",
+          "relation": "provides"
+        }
+      }
+    ],
+    "proseSections": [],
+    "documents": [
+      {
+        "file": "docs/arc42/05-building-blocks.arc42.md",
+        "added": 1,
+        "modified": 0,
+        "removed": 0
+      }
+    ]
+  }
+}
