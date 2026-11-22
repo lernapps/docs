@@ -8,7 +8,7 @@ In every journey, the thank-you after use is a step of its own. The platform is 
 
 ## An app in class within minutes
 
-The journey of a teacher who has to take over a class at short notice, for a colleague and perhaps outside their own subject: find an app for this topic and grade, see at a glance that it may be used, put it on the projector or the class's devices, and say thanks afterwards. It may be used because the platform lists only apps that pass its checks of fitness for use and serves each one itself, under lernapps.net and its privacy notice (KD-21).
+The journey of a teacher who has to take over a class at short notice, for a colleague and perhaps outside their own subject: find an app for this topic and grade, see at a glance that it may be used, put it on the projector or the class's devices, and say thanks afterwards. It may be used because the platform lists only apps that pass its checks of fitness for use and serves each one itself, under lernapps.net and its privacy notice (KD-21). A teacher who knows the subject may also suggest to the creator what to improve.
 
 ```pdt42
 :::canvas
@@ -26,7 +26,7 @@ core-entity: e-adopters
 roles: e-creators, e-students
 relationship: r-creators-adults
 value-proposition: The right active-learning app for this topic and grade, even outside your subject, running in class within minutes, safe to use without checking it yourself
-steps: s-finding, t-find-app, s-fitness-clarity, t-confirm-fitness, s-start-right-away, t-bring-app, t-use-in-class, s-giving-back, t-thank-creator-adult, t-give-feedback
+steps: s-finding, t-find-app, s-fitness-clarity, t-confirm-fitness, s-start-right-away, t-bring-app, t-use-in-class, s-giving-back, t-thank-creator-adult, t-give-feedback, t-suggest-improvements
 activities:
   - Keeping listings comparable and current
   - Listing only apps that meet the fitness criteria, so trust is built in
@@ -45,7 +45,7 @@ revenues:
 
 ## Understand a topic at one's own pace
 
-The journey of a parent who notices that their child struggles with a topic and cannot help, for lack of time or because they do not know the subject well enough: find an app that helps the child understand that topic, with no scope set from outside, let the child start right away and practise, and say thanks afterwards. The child keeps coming back to the app, or finds the next one alone, for as long as it needs; the child may also be the one who notices the gap. The app starts from lernapps.net like every listed app (KD-21), so parents do not have to judge a stranger's address.
+The journey of a parent who notices that their child struggles with a topic and cannot help, for lack of time or because they do not know the subject well enough: find an app that helps the child understand that topic, with no scope set from outside, let the child start right away and practise, and say thanks afterwards. The child keeps coming back to the app, or finds the next one alone, for as long as it needs; the child may also be the one who notices the gap. The app starts from lernapps.net like every listed app (KD-21), so parents do not have to judge a stranger's address. A parent who knows the subject may also suggest to the creator what to improve.
 
 ```pdt42
 :::canvas
@@ -63,7 +63,7 @@ core-entity: e-adopters
 roles: e-students, e-creators
 relationship: r-adults-students
 value-proposition: When your child struggles with a topic: an app that helps them understand it, to start right away and come back to as long as they need
-steps: s-finding, t-find-app, s-fitness-clarity, t-confirm-fitness, t-bring-app, s-start-right-away, t-learn-with-app, s-student-finding, t-return-to-app, s-giving-back, t-thank-creator-adult
+steps: s-finding, t-find-app, s-fitness-clarity, t-confirm-fitness, t-bring-app, s-start-right-away, t-learn-with-app, s-student-finding, t-return-to-app, s-giving-back, t-thank-creator-adult, t-suggest-improvements
 activities:
   - Keeping listings findable by topic and grade
   - Keeping apps startable without installation or sign-up

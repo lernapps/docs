@@ -156,6 +156,26 @@ motivation: m-adopters-creators-gratitude
 :::
 ```
 
+### Suggest improvements to the content
+
+An adult who knows the subject, a teacher or a parent, tells the creator what to improve in an app's content. This hardly happens today: creators rarely learn where their content needs work.
+
+```pdt42
+:::transaction
+id: t-suggest-improvements
+title: Suggest improvements to the content
+relationship: r-creators-adults
+from: e-adopters
+to: e-creators
+direction: one-way
+value-unit: Suggestions for an app's content, each tied to the place it concerns
+happening: no
+channel: ch-content-notes
+kind: feedback
+motivation: m-adopters-creators-feedback
+:::
+```
+
 ## Transactions Board: Adults and students
 
 ```pdt42
@@ -460,6 +480,23 @@ components:
   - Counted openly: only explicit clicks and totals, no accounts or free text
   - Steps aside quietly when it cannot be reached
 improvement: Use and praise reach the creator instead of staying invisible, and every user knows that thanking keeps the free platform alive
+:::
+```
+
+### Suggestions on the content, handed to the creator
+
+Unlike thanks (KD-17), these suggestions are about the content: they help creators make their apps better, and they let adults who know the subject take part in the quality of the apps. The platform runs no service of its own for it: the suggestions reach the creator where they work on the app anyway.
+
+```pdt42
+:::channel
+id: ch-content-notes
+title: Suggestions on the content, handed to the creator
+medium: digital
+components:
+  - Suggestions made inside the app, at the place they concern
+  - Nothing leaves the device until the person hands it over
+  - Handed over where the creator works on the app, its repository
+improvement: The creator learns where the content needs work, from people who know the subject
 :::
 ```
 
