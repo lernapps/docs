@@ -156,6 +156,26 @@ motivation: m-adopters-creators-gratitude
 :::
 ```
 
+### Suggest improvements to the content
+
+An adult who knows the subject, a teacher or a parent, notes in the app what is wrong or unclear, at the place it concerns, and hands the notes over to the creator. This hardly happens today: the creator rarely learns where the content needs work.
+
+```pdt42
+:::transaction
+id: t-suggest-improvements
+title: Suggest improvements to the content
+relationship: r-creators-adults
+from: e-adopters
+to: e-creators
+direction: one-way
+value-unit: Notes on an app's content, each at the place it concerns, handed over together
+happening: no
+channel: ch-content-notes
+kind: feedback
+motivation: m-adopters-creators-feedback
+:::
+```
+
 ## Transactions Board: Adults and students
 
 ```pdt42
@@ -460,6 +480,24 @@ components:
   - Counted openly: only explicit clicks and totals, no accounts or free text
   - Steps aside quietly when it cannot be reached
 improvement: Use and praise reach the creator instead of staying invisible, and every user knows that thanking keeps the free platform alive
+:::
+```
+
+### Notes on the content, handed to the creator
+
+Unlike thanks (KD-17), these notes are about the content: what is wrong or unclear, and how the app gets better. Inside the app, an adult who knows the subject notes it paragraph by paragraph, figure by figure, exercise by exercise. The notes stay on their device, and the app sends nothing. They hand them over at once as one issue in the app's repository, with their own GitHub account, where the creator works anyway. No service of the platform stands in between: GitHub carries the notes.
+
+```pdt42
+:::channel
+id: ch-content-notes
+title: Notes on the content, handed to the creator
+medium: digital
+components:
+  - Notes inside the app, each at the paragraph, figure or exercise it concerns
+  - Kept on the person's device only; the app sends nothing
+  - Handed over together as one issue in the app's repository, with the person's own GitHub account
+  - A note shows when its place has changed since
+improvement: The creator learns where the content needs work, at the exact place, from people who know the subject
 :::
 ```
 

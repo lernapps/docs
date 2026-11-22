@@ -363,6 +363,22 @@ x-realises: ch-guidance
 :::
 ```
 
+### Feedback mode
+
+In an explainer, teachers and parents note what to improve, block by block, on their own device, and copy all notes into a new issue in the app's repository; GitHub carries them to the creator. The app sends nothing (`dec-explainer-feedback-issue` in app-templates).
+
+```arc42
+:::ignore H014 implemented in another repository, lernapps/app-templates: https://github.com/lernapps/app-templates :::
+:::interface
+id: if-feedback-mode
+title: Feedback mode of the explainer
+provider: bb-app-templates
+protocol: in the app's pages; notes in the browser's storage, handed over as the text of a GitHub issue
+x-realises: ch-content-notes
+x-missing-ch-content-notes: Only the explainer has the feedback mode; the quiz and the interactive app do not.
+:::
+```
+
 ## Practice
 
 Turns content that a creator's assistant wrote for an acute occasion into a temporary app for a child or a class, and guides that assistant. Its own architecture refines this block: [practice, chapter 5](https://github.com/lernapps/practice/blob/main/docs/arc42/05-building-blocks.arc42.md).
