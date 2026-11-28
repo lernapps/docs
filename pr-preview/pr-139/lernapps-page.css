@@ -1,0 +1,82 @@
+/* The base of a page of text (docs, practice, tooling: vision, 404, notes) and the button classes, in the light and the
+   dark scheme. Opt-in: a site links it after tokens.css (lernapps-page.css) and gets, without any attribute, the dark
+   values of the tokens, the page colours, the native scheme of form controls and scrollbars, and the classes below.
+   Pages that paint their own background (start pages, apps) do not link it. The dark values are the ones of
+   tokens.css (data-la-theme="auto"); test/page.test.mjs keeps them equal and checks the contrast pairs. */
+:root {
+  color-scheme: light dark;
+}
+
+/* html:root is more specific than the :root of tokens.css, which the frame links after the page's own stylesheets:
+   the dark values win whatever the order of the links. */
+@media (prefers-color-scheme: dark) {
+  html:root {
+    --la-text: #e2e8f0;
+    --la-muted: #b8c4d6;
+    --la-link: #93c5fd;
+    --la-surface: #0b1220;
+    --la-border: #2a3a52;
+    --la-bg: #0b1220;
+    --la-box: #111a2e;
+    --la-line: #64748b;
+    --la-control: #8294ad;
+    --la-button: #2563eb;
+    --la-button-hover: #1d4ed8;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--la-bg);
+  color: var(--la-text);
+  font-family: var(--la-font);
+  line-height: 1.6;
+}
+main {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 1rem var(--la-gutter);
+  outline: none;
+}
+h1 { font-size: 1.75rem; line-height: 1.25; }
+a { color: var(--la-link); }
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--la-link);
+  outline-offset: 2px;
+}
+table { border-collapse: collapse; width: 100%; font-size: 0.95rem; }
+th, td { border: 1px solid var(--la-line); padding: 0.35rem 0.5rem; text-align: left; vertical-align: top; }
+blockquote { border-left: 4px solid var(--la-line); margin: 1rem 0; padding: 0 1rem; color: var(--la-muted); }
+pre { background: var(--la-box); padding: 0.75rem; border-radius: 0.25rem; white-space: pre-wrap; overflow-wrap: anywhere; }
+code { font-size: 0.95em; }
+.la-note { background: var(--la-box); padding: 0.5rem 0.75rem; border-radius: 0.25rem; }
+
+/* Buttons: a link or a button element. Primary is filled, secondary has the colours of the page and a border that
+   reaches 3:1; the text of both reaches 4.5:1 in both schemes. */
+.la-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--la-radius);
+  background: var(--la-button);
+  color: var(--la-on-button);
+  font: 600 0.875rem/1.4 var(--la-font);
+  text-decoration: none;
+  cursor: pointer;
+}
+.la-button:hover {
+  background: var(--la-button-hover);
+}
+.la-button--secondary {
+  background: var(--la-bg);
+  color: var(--la-text);
+  border-color: var(--la-control);
+}
+.la-button--secondary:hover {
+  background: var(--la-bg);
+  border-color: var(--la-link);
+  color: var(--la-link);
+}
